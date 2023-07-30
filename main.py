@@ -26,7 +26,7 @@ def main():
     # 打印匹配的字符串
     if match:
         with open("yudou66.txt", "w") as f:
-            f.write(match.group())
+            f.write(get_url(match.group()))
 
 
 if __name__ == '__main__':
