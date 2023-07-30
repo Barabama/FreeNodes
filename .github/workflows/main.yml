@@ -36,4 +36,7 @@ jobs:
         git add yudou66.txt
         git commit -m "Update"
         git push
-    
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
