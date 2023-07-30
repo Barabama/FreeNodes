@@ -1,0 +1,39 @@
+name: Daily Update
+
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 5 * * *" # 在每天的5点运行
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.x" # 指定Python版本
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+        pip install bs4
+
+
+    - name: Run main.py
+      run: python main.py
+
+    - name: Commit and Push
+      run: |
+        git config --global user.name "Barabama"
+        git config --global user.email "barabama@qq.com"
+        git add yudou66.txt
+        git commit -m "Update"
+        git push
+    
