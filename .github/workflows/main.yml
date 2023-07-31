@@ -4,40 +4,44 @@ on:
   push:
   workflow_dispatch:
   schedule:
-    - cron: "0 5 * * *" # 在每天的5点运行
+    - cron: '0 5 * * *' # 在每天的5点运行
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: "3.x" # 指定Python版本
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x' # 指定Python版本
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install requests
-        pip install bs4
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+          pip install bs4
 
+      - name: Run main.py
+        run: python main.py
 
-    - name: Run main.py
-      run: python main.py
+      - name: Commit changes
+        run: |
+          git config --global user.name 'Barabama'
+          git config --global user.email 'barabama@qq.com'
+          git add yudou66.txt
+          git commit -m 'Update'
 
-    - name: Commit and Push
-      run: |
-        git config --global user.name "Barabama"
-        git config --global user.email "barabama@qq.com"
-        git add yudou66.txt
-        git commit -m "Update"
-        git git pull --rebase
+#       - name: Check if there are differences
+#         id: check_diff
+#         run: git diff --quiet
 
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+        if: git diff --quiet
+#         steps.check_diff.outputs.returncode != '0'
