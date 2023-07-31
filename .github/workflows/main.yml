@@ -35,13 +35,12 @@ jobs:
           git add yudou66.txt
           git commit -m 'Update'
 
-#       - name: Check if there are differences
-#         id: check_diff
-#         run: git diff --quiet
+      - name: Check if there are differences
+        id: check_diff
+        run: git diff --quiet
 
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-        if: git diff --quiet
-#         steps.check_diff.outputs.returncode != '0'
+        if: steps.check_diff.outputs.returncode != '0'
