@@ -34,13 +34,13 @@ jobs:
           git add FreeNodes.txt
           git commit -m 'Daliy Update'
 
-      - name: Check if there are differences
-        id: check_diff
-        run: |
-          git diff --quiet || echo "::set-output name=returncode::1"
+#       - name: Check if there are differences
+#         id: check_diff
+#         run: |
+#           git diff --quiet || echo "::set-output name=returncode::1"
 
       - name: Push changes
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-        if: steps.check_diff.outputs.returncode != '0'
+#         if: steps.check_diff.outputs.returncode != '0'
