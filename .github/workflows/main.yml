@@ -36,7 +36,8 @@ jobs:
 
       - name: Check if there are differences
         id: check_diff
-        run: git diff --quiet
+        run: |
+          git diff --quiet || echo "::set-output name=returncode::1"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
