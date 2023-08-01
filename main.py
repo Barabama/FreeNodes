@@ -18,14 +18,12 @@ def main():
     article = soup.find("article")
     latest_link = article.find("a").get("href")
 
-    # 使用正则表达式查找匹配的字符串
+    # 使用正则表达式匹配链接字符串
     # pattern = r".+\.txt"
     pattern = r"http://yy\.yudou66\.top/[^/]+/[^/]+\.txt"
     match = re.search(pattern, get_url(latest_link))
-
-    # 打印匹配的字符串
     if match:
-        with open("yudou66.txt", "w") as f:
+        with open("FreeNodes.txt", "w") as f:
             f.write(get_url(match.group()))
 
 
