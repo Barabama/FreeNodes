@@ -27,20 +27,15 @@ jobs:
       - name: Run main.py
         run: python main.py
 
-      - name: Commit changes
-        run: |
-          git config --global user.name 'Barabama'
-          git config --global user.email 'barabama@qq.com'
-          git add FreeNodes.txt
-          git commit -m 'Daliy Update'
+      - name: Commit and Push
+        uses: actions-js/push@v1.4
+        with:
+          github_token: $\{{ secrets.GITHUB_TOKEN }}
+          message: 'Daliy Update'
+          empty: true
+          directory: FreeNodes.txt
 
 #       - name: Check if there are differences
 #         id: check_diff
 #         run: |
 #           git diff --quiet || echo "::set-output name=returncode::1"
-
-      - name: Push changes
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-#         if: steps.check_diff.outputs.returncode != '0'
