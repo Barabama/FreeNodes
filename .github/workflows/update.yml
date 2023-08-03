@@ -28,12 +28,13 @@ jobs:
         run: python main.py
 
       - name: Commit and Push
-        uses: actions-js/push@v1.4
+        uses: GuillaumeFalourd/git-commit-push@v1.3
         with:
-          github_token: $\{{ secrets.GITHUB_TOKEN }}
-          message: 'Daliy Update'
-          repository: ${GITHUB_REPOSITORY}
-          empty: true
+
+          commit_message: 'Daliy Update'
+          files: FreeNodes.txt
+          access_token: $\{{ secrets.GITHUB_TOKEN }}
+          empty: 1
 
 #       - name: Check if there are differences
 #         id: check_diff
