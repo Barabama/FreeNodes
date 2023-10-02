@@ -27,6 +27,7 @@ def scrape():
     # 使用BeautifulSoup解析网页内容
     article = _scrape(main_url, "article", True)
 
+    # 前2个需要密码, 取第3个
     article_url = article[2].find("a").get("href")
 
     # 使用正则表达式匹配链接字符串
