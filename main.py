@@ -2,6 +2,7 @@ import re
 import requests
 import kuser_agent
 from bs4 import BeautifulSoup
+from concurrent.futures import ThreadPoolExecutor
 
 
 def _get_url(url: str):
@@ -12,32 +13,60 @@ def _get_url(url: str):
     return html_content
 
 
-def _scrape(url: str, element="", ret_all=True):
+def _scrape(url: str, element="", attrs: dict = {}, ret_all=True):
     """获取网页元素"""
     soup = BeautifulSoup(_get_url(url), "html.parser")
     if element == "":
         return soup
     else:
-        return soup.find_all(element) if ret_all else soup.find(element)
+        return soup.find_all(element, attrs) if ret_all else soup.find(element, attrs)
 
 
-def scrape():
-    main_url = "https://www.yudou66.com/search/label/free"
+def scrape_66(url: str):
+    a = _scrape(url, "a", {"class": "entry-image-wrap is-image"}, True)
 
-    # 使用BeautifulSoup解析网页内容
-    article = _scrape(main_url, "article", True)
-
-    # 前2个需要密码, 取第3个
-    article_url = article[2].find("a").get("href")
+    # 前3个需要密码, 多取几个
+    a_urls = [a[i].get("href") for i in range(5)]
 
     # 使用正则表达式匹配链接字符串
-    # pattern = r".+\.txt"
-    pattern = r"http://yy\.yudou66\.top/[^/]+/[^/]+\.txt"
-    match = re.search(pattern, _get_url(article_url))
+    pattern = r"http.*?\.txt"
+    # pattern = r"http://yy\.yudou66\.top/[^/]+/[^/]+\.txt
+    match = None
+    for a_url in a_urls:
+        html_text = _get_url(a_url)
+        match = re.search(pattern, html_text)
+        if match:
+            break
+    return _get_url(match.group())
+
+
+def scrape_share(url: str):
+    link = _scrape(url, "a", {"class": "media-content"}, False)
+
+    # 使用正则表达式匹配链接字符串
+    pattern = r"http.*?\.txt"
+
+    html_text = _get_url(link.get("href"))
+    match = re.search(pattern, html_text)
     if match:
-        with open("FreeNodes.txt", "w") as f:
-            f.write(_get_url(match.group()))
+        return _get_url(match.group())
 
 
-if __name__ == '__main__':
-    scrape()
+if __name__ == "__main__":
+    
+    # 创建线程池
+    with ThreadPoolExecutor() as executor:
+        futures = []
+        # 提交函数给线程池
+        future1 = executor.submit(scrape_66, "https://www.yudou66.com/search/label/free")
+        futures.append(future1)
+
+        future2 = executor.submit(scrape_share, "https://v2rayshare.com")
+        futures.append(future2)
+
+        # 等待函数完成
+        results = [future.result() for future in futures]
+
+    with open("FreeNodes.txt", "w") as f:
+        for result in results:
+            f.write(f"{result}\n")

@@ -21,8 +21,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests
-          pip install bs4
+          pip install -r requirements.txt
 
       - name: Run main.py
         run: python main.py
