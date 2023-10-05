@@ -22,6 +22,11 @@ def _scrape(url: str, element="", attrs: dict = {}, ret_all=True):
         return soup.find_all(element, attrs) if ret_all else soup.find(element, attrs)
 
 
+def _write_nodes(content: str, file_name: str):
+    with open(file_name, "w") as f:
+        f.write(content)
+
+
 def scrape_66(url: str):
     a = _scrape(url, "a", {"class": "entry-image-wrap is-image"}, True)
 
@@ -37,7 +42,8 @@ def scrape_66(url: str):
         match = re.search(pattern, html_text)
         if match:
             break
-    return _get_url(match.group())
+    nodes = _get_url(match.group())
+    _write_nodes(nodes, "yudou66.txt")
 
 
 def scrape_share(url: str):
@@ -49,11 +55,12 @@ def scrape_share(url: str):
     html_text = _get_url(link.get("href"))
     match = re.search(pattern, html_text)
     if match:
-        return _get_url(match.group())
+        nodes = _get_url(match.group())
+        _write_nodes(nodes, "v2rayshare.txt")
 
 
 if __name__ == "__main__":
-    
+
     # 创建线程池
     with ThreadPoolExecutor() as executor:
         futures = []
@@ -67,6 +74,3 @@ if __name__ == "__main__":
         # 等待函数完成
         results = [future.result() for future in futures]
 
-    with open("FreeNodes.txt", "w") as f:
-        for result in results:
-            f.write(f"{result}\n")
