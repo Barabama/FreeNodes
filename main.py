@@ -55,7 +55,7 @@ if __name__ == "__main__":
     webs = [
         {"name": "yudou66", "url": "https://www.yudou66.com", "attrs": {"class": "entry-image-wrap is-image"}},
         {"name": "v2rayshare", "url": "https://v2rayshare.com", "attrs": {"class": "media-content"}},
-        {"name": "nodefree", "url": "https://nodefree.org/", "attrs": {"class": "item-img-inner"}},
+        {"name": "nodefree", "url": "https://nodefree.org", "attrs": {"class": "item-img-inner"}},
     ]
 
     # 创建线程池
