@@ -27,15 +27,20 @@ def _write_nodes(content: str, file_name: str):
         f.write(content)
 
 
-def scrape_66(url: str):
-    a = _scrape(url, "a", {"class": "entry-image-wrap is-image"}, True)
+def scrape(name: str, url: str, attrs: dict):
+    """抓取节点内容并保存
+    :param name: 保存的文件名
+    :param url: 网页链接
+    :param attrs: 抓取属性
+    """
+    a = _scrape(url, "a", attrs, True)
 
     # 前3个需要密码, 多取几个
     a_urls = [a[i].get("href") for i in range(5)]
 
     # 使用正则表达式匹配链接字符串
     pattern = r"http.*?\.txt"
-    # pattern = r"http://yy\.yudou66\.top/[^/]+/[^/]+\.txt
+
     match = None
     for a_url in a_urls:
         html_text = _get_url(a_url)
@@ -43,34 +48,23 @@ def scrape_66(url: str):
         if match:
             break
     nodes = _get_url(match.group())
-    _write_nodes(nodes, "yudou66.txt")
-
-
-def scrape_share(url: str):
-    link = _scrape(url, "a", {"class": "media-content"}, False)
-
-    # 使用正则表达式匹配链接字符串
-    pattern = r"http.*?\.txt"
-
-    html_text = _get_url(link.get("href"))
-    match = re.search(pattern, html_text)
-    if match:
-        nodes = _get_url(match.group())
-        _write_nodes(nodes, "v2rayshare.txt")
+    _write_nodes(nodes, f"{name}.txt")
 
 
 if __name__ == "__main__":
+    webs = [
+        {"name": "yudou66", "url": "https://www.yudou66.com", "attrs": {"class": "entry-image-wrap is-image"}},
+        {"name": "v2rayshare", "url": "https://v2rayshare.com", "attrs": {"class": "media-content"}},
+        {"name": "nodefree", "url": "https://nodefree.org/", "attrs": {"class": "item-img-inner"}},
+    ]
 
     # 创建线程池
     with ThreadPoolExecutor() as executor:
         futures = []
         # 提交函数给线程池
-        future1 = executor.submit(scrape_66, "https://www.yudou66.com/search/label/free")
-        futures.append(future1)
-
-        future2 = executor.submit(scrape_share, "https://v2rayshare.com")
-        futures.append(future2)
+        for web in webs:
+            future = executor.submit(scrape, **web)
+            futures.append(future)
 
         # 等待函数完成
         results = [future.result() for future in futures]
-
