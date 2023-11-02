@@ -104,14 +104,14 @@ def scrape(name: str, list_url: str, attrs: dict, pattern: r""):
 
 if __name__ == "__main__":
     webs = [
-        # {"name": "yudou66", "list_url": "https://www.yudou66.com", "attrs": {"class": "entry-image-wrap is-image"},
-        #  "pattern": r"http.*?\.txt", },
+        {"name": "yudou66", "list_url": "https://www.yudou66.com", "attrs": {"class": "entry-image-wrap is-image"},
+         "pattern": r"http.*?\.txt", },
         # {"name": "blues", "list_url": "https://blues2022.blogspot.com", "attrs": {"class": "entry-image-wrap is-image"},
         #  "pattern": r"https://agit\.ai/blue/youlingkaishi/.+", },
         {"name": "v2rayshare", "list_url": "https://v2rayshare.com", "attrs": {"class": "media-content"},
          "pattern": r"http.*?\.txt", },
-        # {"name": "nodefree", "list_url": "https://nodefree.org", "attrs": {"class": "item-img-inner"},
-        #  "pattern": r"http.*?\.txt", },
+        {"name": "nodefree", "list_url": "https://nodefree.org", "attrs": {"class": "item-img-inner"},
+         "pattern": r"http.*?\.txt", },
     ]
     try:
         # 创建线程池
