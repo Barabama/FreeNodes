@@ -1,9 +1,10 @@
 import os
 import re
 import requests
+from concurrent.futures import ThreadPoolExecutor
+
 import kuser_agent
 from bs4 import BeautifulSoup
-from concurrent.futures import ThreadPoolExecutor
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
@@ -28,7 +29,7 @@ def _get_elements(url: str, element="", attrs: dict = {}, ret_all=True):
         return soup.find_all(element, attrs) if ret_all else soup.find(element, attrs)
 
 
-def _need_pwd(url) -> bool:
+def _is_locked(url) -> bool:
     if _get_elements(url, "input", {"id": "EPassword"}, False):
         return True
     else:
@@ -86,7 +87,8 @@ def scrape(name: str, list_url: str, attrs: dict, pattern: r""):
     nodes_url = _match_text(detail_url, pattern, True)
     if nodes_url:
         print("获取节点")
-    elif (nodes_url is None) and _need_pwd(detail_url):
+    elif (nodes_url is None) and _is_locked(detail_url):
+        # 需要解密
         hrefs = [str(a.get("href")) for a in _get_elements(detail_url, "a", {}, True)]
         yt_url = ""
         for href in reversed(hrefs):
@@ -94,7 +96,7 @@ def scrape(name: str, list_url: str, attrs: dict, pattern: r""):
                 yt_url = href
                 break
 
-        ocr = True if name == "yudou66" else False
+        ocr = True if (name == "yudou66") else False
         pwds = get_pwd(yt_url, ocr)
         result = _decrypt_for_text(detail_url, pwds)
         nodes_url = _match_text(result, pattern, False)
@@ -106,8 +108,8 @@ if __name__ == "__main__":
     webs = [
         {"name": "yudou66", "list_url": "https://www.yudou66.com", "attrs": {"class": "entry-image-wrap is-image"},
          "pattern": r"http.*?\.txt", },
-        # {"name": "blues", "list_url": "https://blues2022.blogspot.com", "attrs": {"class": "entry-image-wrap is-image"},
-        #  "pattern": r"https://agit\.ai/blue/youlingkaishi/.+", },
+        {"name": "blues", "list_url": "https://blues2022.blogspot.com", "attrs": {"class": "entry-image-wrap is-image"},
+         "pattern": r"https://agit\.ai/blue/youlingkaishi/.+", },
         {"name": "v2rayshare", "list_url": "https://v2rayshare.com", "attrs": {"class": "media-content"},
          "pattern": r"http.*?\.txt", },
         {"name": "nodefree", "list_url": "https://nodefree.org", "attrs": {"class": "item-img-inner"},
