@@ -3,7 +3,7 @@ name: Daily Update
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 2 * * *' # 每天, 时区+8
+    - cron: '0 4 * * *' # 每天, 时区+8
 
 jobs:
   build:
@@ -14,9 +14,9 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v4
         with:
-          python-version: '3.x' # 指定Python版本
+          python-version: '3.x'
 
       - name: Install dependencies
         run: |
@@ -26,16 +26,23 @@ jobs:
       - name: Run main.py
         run: python main.py
 
-      - name: Commit and Push
-        uses: GuillaumeFalourd/git-commit-push@v1.3
-        with:
-
-          commit_message: 'Daliy Update'
-          files: nodes
-          access_token: $\{{ secrets.GITHUB_TOKEN }}
+      - name: GitHub Commit & Push
+        uses: actions-js/push@v1.4
+        with: 
+          github_token: $\{{ secrets.GITHUB_TOKEN }}
+          message: 'Daliy Update by Bot'
           empty: 1
+          directory: nodes
+          
+      # - name: Commit and Push
+      #   uses: GuillaumeFalourd/git-commit-push@v1.3
+      #   with:
+      #     commit_message: 'Daliy Update'
+      #     files: nodes
+      #     access_token: $\{{ secrets.GITHUB_TOKEN }}
+      #     empty: 1
 
-#       - name: Check if there are differences
-#         id: check_diff
-#         run: |
-#           git diff --quiet || echo "::set-output name=returncode::1"
+      # - name: Check if there are differences
+      #   id: check_diff
+      #   run: |
+      #     git diff --quiet || echo "::set-output name=returncode::1"
