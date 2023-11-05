@@ -110,6 +110,7 @@ if __name__ == "__main__":
          "pattern": r"http.*?\.txt", },
         {"name": "blues", "list_url": "https://blues2022.blogspot.com", "attrs": {"class": "entry-image-wrap is-image"},
          "pattern": r"https://agit\.ai/blue/youlingkaishi/.+", },
+        # https://halekj.top/
         {"name": "v2rayshare", "list_url": "https://v2rayshare.com", "attrs": {"class": "media-content"},
          "pattern": r"http.*?\.txt", },
         {"name": "nodefree", "list_url": "https://nodefree.org", "attrs": {"class": "item-img-inner"},

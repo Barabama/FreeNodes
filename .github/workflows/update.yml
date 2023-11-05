@@ -3,7 +3,7 @@ name: Daily Update
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 4 * * *' # 每天, 时区+8
+    - cron: "0 4 * * *" # 每天, 时区+8
 
 jobs:
   build:
@@ -16,36 +16,39 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
+          python-version: "3.x"
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run main.py
-        run: python main.py
+      - name: Run Python
+        run: python test.py
 
-      - name: GitHub Commit & Push
-        uses: actions-js/push@v1.4
-        with: 
-          github_token: $\{{ secrets.GITHUB_TOKEN }}
-          message: 'Daliy Update by Bot'
+      - name: Git Commit Push Action
+        uses: GuillaumeFalourd/git-commit-push@v1.3
+        with:
+          # Committer's email address
+          email: ${{ github.actor }}@users.noreply.github.com
+          # Committer's username
+          name: ${{ github.actor }}
+          # Commit message
+          commit_message: "Daliy Update by Bot"
+          # Branch to push the changes back to
+          target_branch: ${{ github.ref }}
+          # Files to add separated by space
+          files: .
+          # Repository url to push the code to
+          remote_repository: origin
+          # Token used to push the code
+          access_token: ${{ github.token }}
+          # Whether to perform force push
+          force: 0
+          # Whether to allow empty commit
           empty: 1
-          directory: nodes
-          
+          # Whether to use --tags
+          tags: 0
+
       - name: Delete workflow runs
         uses: Mattraks/delete-workflow-runs@v2.0.5
-            
-      # - name: Commit and Push
-      #   uses: GuillaumeFalourd/git-commit-push@v1.3
-      #   with:
-      #     commit_message: 'Daliy Update'
-      #     files: nodes
-      #     access_token: $\{{ secrets.GITHUB_TOKEN }}
-      #     empty: 1
-
-      # - name: Check if there are differences
-      #   id: check_diff
-      #   run: |
-      #     git diff --quiet || echo "::set-output name=returncode::1"
