@@ -23,15 +23,13 @@ class Config:
     def get_configs(self):
         return self.configs
 
-    def set_data(self, name: str, data:dict):
+    def write_config(self):
+        with open(self.file_path, "w") as file:
+            json.dump(self.configs, file, indent=4)
 
+    def set_data(self, name: str, data: dict):
         for config in self.configs:
             if config["name"] == name:
                 config.update(data)
                 break
-            else:
-                print(f"未找到 {name}")
-
-    def write_config(self):
-        with open(self.file_path, "w") as file:
-            json.dump(self.configs, file, indent=4)
+        self.write_config()
