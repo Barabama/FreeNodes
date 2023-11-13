@@ -68,20 +68,20 @@ def scrape(name: str, main_url: str, attrs: dict, pattern: str, by_ocr: bool, up
 if __name__ == "__main__":
     # "https://halekj.top"
     conf = Config("config.json")
-    try:
-        # 创建线程池
-        with ThreadPoolExecutor() as executor:
-            futures = []
-            # 提交函数给线程池
-            for config in conf.configs:
-                future = executor.submit(scrape, **config)
-                futures.append(future)
-                # 写更新日期
-                if res := future.result():
-                    name, data = res
-                    conf.set_data(name, data)
-    except Exception as e:
-        print(e)
+    # try:
+    # 创建线程池
+    with ThreadPoolExecutor() as executor:
+        futures = []
+        # 提交函数给线程池
+        for config in conf.configs:
+            future = executor.submit(scrape, **config)
+            futures.append(future)
+            # 写更新日期
+            if res := future.result():
+                name, data = res
+                conf.set_data(name, data)
+    # except Exception as e:
+    #     print(e)
     # if res := scrape(**conf.configs[3]):
     #     name, data = res
     #     conf.set_data(name, data)
