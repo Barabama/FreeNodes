@@ -49,8 +49,8 @@ def is_locked(text: str) -> bool:
 def is_new(text: str, up_date: str) -> bool:
     """判断网页的是否更新"""
     h1 = next(get_elements(text, "h1")).text
-    date_text = next(match_text(h1, r"\d{2}月\d{2}日"))
-    text_date = datetime.strptime(date_text, "%m月%d日")
+    date_text = next(match_text(h1, r"\d{2}月\d{2}"))
+    text_date = datetime.strptime(date_text, "%m月%d")
     text_date = text_date.replace(year=datetime.today().year)
 
     up_date = datetime.strptime(up_date, "%Y-%m-%d")
