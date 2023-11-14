@@ -1,3 +1,4 @@
+import base64
 import os
 import re
 from datetime import datetime
@@ -74,5 +75,5 @@ def write_nodes(text: str, file_name: str):
     if not os.path.isdir(folder_path): os.mkdir(folder_path)  # 新建文件夹
     with open(os.path.join(folder_path, file_name), "w") as f:
         print(f"更新 {file_name}")
+        text = base64.b64decode(text).decode("utf-8")
         f.write(text)
-
