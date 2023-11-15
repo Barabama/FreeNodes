@@ -26,7 +26,7 @@ def get_url(url: str) -> str:
     """获取网页内容"""
     headers = {"User-Agent": kuser_agent.get()}  # 设置请求头信息
     response = requests.get(url, headers=headers)
-    return response.text
+    return response.text if response.status_code < 400 else ""
 
 
 def get_elements(text: str, element="", attrs={}) -> Generator[Tag, None, None]:
