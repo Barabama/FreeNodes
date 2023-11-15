@@ -5,13 +5,12 @@ from WebScraper import *
 from get_pwd import get_pwd
 
 
-def scrape(name: str, main_url: str, attrs: dict, pattern: str, by_ocr: bool, up_date: str) -> list:
+def scrape(name: str, main_url: str, attrs: dict, pattern: str, up_date: str) -> list:
     """抓取节点内容并保存
     :param name: 保存的文件名
     :param main_url: 主页链接
     :param attrs: 抓取属性
     :param pattern: 匹配表达式
-    :param by_ocr: 是否通过 ocr
     :param up_date: 更新日期
     """
     # 主页内容
@@ -49,7 +48,7 @@ def scrape(name: str, main_url: str, attrs: dict, pattern: str, by_ocr: bool, up
         driver.get(detail_url)  # 打开详情页
 
         # 获取解密密码
-        for pwd in get_pwd(yt_url, by_ocr):
+        for pwd in get_pwd(yt_url):
             if result := decrypt_for_text(driver, pwd):
                 print(f"\n解密密码 {pwd}")
                 # 倒一 txt 文本链接
@@ -82,6 +81,7 @@ if __name__ == "__main__":
                 conf.set_data(name, data)
     # except Exception as e:
     #     print(e)
+    # test
     # if res := scrape(**conf.configs[3]):
     #     name, data = res
     #     conf.set_data(name, data)
