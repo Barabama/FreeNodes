@@ -1,6 +1,7 @@
 import re
 import xml.etree.ElementTree as ET
-
+from urllib.error import URLError
+from http.client import IncompleteRead
 import cv2
 import numpy as np
 import pytube
@@ -28,12 +29,24 @@ def __get_frame(video_capture: cv2.VideoCapture) -> np.ndarray:
 
 
 def __find_pwd(text: str) -> str:
-    # 判断文本中是否包含"密码"
+    """判断文本中是否包含'密码'"""
     if "密码" in text:
         num_list = re.findall(r'\d+', text)
         word = "".join(num_list)
         print(f"\n候选 {word}")
         return "".join(num_list)
+
+
+def _get_stream(yt: pytube.YouTube):
+    for opt in ["360p", "480p", "720p"]:
+        for i in range(3):
+            try:
+                if stream := yt.streams.get_by_resolution(opt):
+                    print(f"获取视频流 {opt}")
+                    return stream
+            except (URLError, IncompleteRead) as e:
+                print(e)
+    raise "无法获取视频流"
 
 
 def _get_pwd_by_ocr(apicaller: APICaller, image: np.ndarray) -> str:
@@ -51,7 +64,6 @@ def _get_pwd_by_ocr(apicaller: APICaller, image: np.ndarray) -> str:
     # 遍历截图中的候选词
     for i in range(int(num)):
         text = words_result[i]["words"]
-
         yield __find_pwd(text)
 
 
@@ -72,15 +84,13 @@ def _get_pwd_from_caption(subtitles: list[pytube.Caption]) -> str:
             text = p_element.text
             time = int(p_element.get("t"))
             duration = int(p_element.get("d"))
-
             yield __find_pwd(text)
 
 
-def get_pwd(url: str, by_ocr: bool) -> str:
+def get_pwd(url: str, ) -> str:
     """
     获取候选密码列表
     :param url: YouTube 视频链接
-    :param by_ocr: 是否通过 ocr
     :return: 候选密码
     """
     # 创建 YouTube 对象
@@ -88,14 +98,13 @@ def get_pwd(url: str, by_ocr: bool) -> str:
     print(f"访问 {url}")
 
     # 获取视频流
-    stream: pytube.Stream
-    for opt in ["360p", "480p", "720p"]:
-        stream = yt.streams.get_by_resolution(opt)
-        if stream:
-            print(f"获取视频流 {opt}")
-            break
+    stream = _get_stream(yt)
 
-    if by_ocr:
+    # 通过字幕获取密码
+    if subtitles := yt.captions.all():
+        yield from (pwd for pwd in _get_pwd_from_caption(subtitles) if pwd)
+
+    else:
         # 调用ocr获得密码
         apicaller = APICaller()  # apicaller 实例
         cap = cv2.VideoCapture(stream.url)  # VideoCapture 实例获取截图
@@ -103,15 +112,11 @@ def get_pwd(url: str, by_ocr: bool) -> str:
             yield from (pwd for pwd in _get_pwd_by_ocr(apicaller, frame) if pwd)
 
         cap.release()  # 释放视频捕获对象
-    else:
-        # 通过字幕获取密码
-        subtitles = yt.captions.all()
-        yield from (pwd for pwd in _get_pwd_from_caption(subtitles) if pwd)
 
 
 if __name__ == "__main__":
     # test
-    link_urls = [("https://youtu.be/ZUSNmlndeR8", False), ("https://youtu.be/bYEbmGSBsi8", True)]
+    link_urls = ["https://youtu.be/pOudt0bNR-E", "https://youtu.be/iSjIqpII2AY"]
 
-    for PWD in get_pwd(*link_urls[1]):
+    for PWD in get_pwd(link_urls[0]):
         print(PWD)
