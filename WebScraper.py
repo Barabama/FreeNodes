@@ -64,8 +64,10 @@ def decrypt_for_text(driver: webdriver.Chrome, pwd: str) -> str:
     driver.execute_script("multiDecrypt(arguments[0]);", pwd)
     try:
         alert = WebDriverWait(driver, 2).until(EC.alert_is_present())
+        print(f"页面提示 {alert.text}")  # 获取弹窗的文本内容
         alert.accept()  # 处理 alert 弹窗
     except TimeoutException:
+        print(f"解密成功, 密码 {pwd}")
         return driver.find_element(By.ID, "result").text
 
 

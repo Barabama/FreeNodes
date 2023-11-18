@@ -52,7 +52,7 @@ def scrape(name: str, main_url: str, attrs: dict, pattern: str, up_date: str) ->
         # 获取解密密码
         for pwd in get_pwd(yt_url):
             if pwd and (result := decrypt_for_text(driver, pwd)):
-                print(f"\n解密密码 {pwd}")
+                print(f"解密成功获取节点")
                 # 倒一 txt 文本链接
                 nodes_url = next(reversed([text for text in match_text(result, pattern)]))
                 break
