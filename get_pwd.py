@@ -38,6 +38,7 @@ def __find_pwd(text: str) -> str:
 
 
 def _get_stream(yt: pytube.YouTube):
+    """获取视频流"""
     for opt in ["360p", "480p", "720p"]:
         for i in range(3):
             try:
@@ -50,12 +51,7 @@ def _get_stream(yt: pytube.YouTube):
 
 
 def _get_pwd_by_ocr(apicaller: APICaller, image: np.ndarray) -> str:
-    """
-    调用ocr获得密码
-    :param apicaller: APICaller
-    :param image: 截图
-    :return: 候选密码文本
-    """
+    """调用ocr获得密码"""
     apicaller.img_to_base64(image)  # 传入截图
     result = apicaller.digital_ocr()  # 调用ocr
     words_result = result.get("words_result")
@@ -68,11 +64,7 @@ def _get_pwd_by_ocr(apicaller: APICaller, image: np.ndarray) -> str:
 
 
 def _get_pwd_from_caption(subtitles: list[pytube.Caption]) -> str:
-    """
-    遍历字幕获得密码
-    :param subtitles:字幕
-    :return: 候选密码文本
-    """
+    """遍历字幕获得密码"""
     for caption in subtitles:
         # 遍历字幕
         xml_str = caption.xml_captions
