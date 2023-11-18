@@ -10,31 +10,28 @@ from APICaller import APICaller
 
 
 def __get_frame(video_capture: cv2.VideoCapture) -> np.ndarray:
-    """
-    生成视频截图
-    :param video_capture: 视频流链接
-    :return: 截图
-    """
+    """生成视频截图"""
     total_frames = int(video_capture.get(cv2.CAP_PROP_FRAME_COUNT))
     fps = video_capture.get(cv2.CAP_PROP_FPS)
     start_frame = total_frames * 2 // 3  # 从视频2/3处开始
 
+    # 倒序截图
     for i in range(int(total_frames - fps), start_frame, int(-2 * fps)):
         video_capture.set(cv2.CAP_PROP_POS_FRAMES, i)
         ret, frame = video_capture.read()
         if ret:
             print(f"截图在 {i // fps}s", end="\t")
             h, w = frame.shape[:2]
-            yield frame[h // 6:h, w // 4:w * 3 // 4]  # 保留字幕部分
+            yield frame[h // 4:h, w // 8:w * 7 // 8]  # 保留字幕部分
 
 
 def __find_pwd(text: str) -> str:
-    """判断文本中是否包含'密码'"""
-    if "密码" in text:
-        num_list = re.findall(r'\d+', text)
+    """判断文本中是否包含密码"""
+    if "码" in text:
+        num_list = re.findall(r"\d+", text)
         word = "".join(num_list)
         print(f"\n候选 {word}")
-        return "".join(num_list)
+        return word
 
 
 def _get_stream(yt: pytube.YouTube):

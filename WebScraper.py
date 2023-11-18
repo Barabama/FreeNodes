@@ -42,8 +42,9 @@ def match_text(text: str, pattern: str):
 
 
 def is_locked(text: str) -> bool:
-    """判断网页中是否存在加密元素"""
-    elem = next(get_elements(text, "input", {"id": "EPassword"}))
+    """判断网页中是否存在解密元素"""
+    elem = [e for e in get_elements(text, "input", {"id": "EPassword"})]
+    elem += [e for e in get_elements(text, "input", {"id": "pwbox-426"})]
     return True if elem else False
 
 
@@ -71,7 +72,7 @@ def decrypt_for_text(driver: webdriver.Chrome, pwd: str) -> str:
         return driver.find_element(By.ID, "result").text
 
 
-def write_nodes(text: str, file_name: str):
+def write_nodes(text: str, file_name: str) -> str:
     """更新节点文本"""
     folder_path = "nodes"
     if not os.path.isdir(folder_path): os.mkdir(folder_path)  # 新建文件夹
@@ -79,3 +80,4 @@ def write_nodes(text: str, file_name: str):
         print(f"更新 {file_name}")
         text = base64.b64decode(text).decode("utf-8")
         f.write(text)
+    return text

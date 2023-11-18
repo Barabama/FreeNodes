@@ -32,4 +32,4 @@ class Config:
             if config["name"] == name:
                 config.update(data)
                 break
-        self.write_config()
+

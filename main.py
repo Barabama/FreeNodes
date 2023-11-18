@@ -13,6 +13,8 @@ def scrape(name: str, main_url: str, attrs: dict, pattern: str, up_date: str) ->
     :param pattern: 匹配表达式
     :param up_date: 更新日期
     """
+    default_res = [name, {"up_date": up_date}, ""]
+
     # 主页内容
     main_text = get_url(main_url)
 
@@ -26,7 +28,7 @@ def scrape(name: str, main_url: str, attrs: dict, pattern: str, up_date: str) ->
     # 不需要更新
     if not is_new(detail_text, up_date):
         print(f"无需更新 {name}")
-        return []
+        return default_res
 
     nodes_url = ""
     # 成功搜索倒一 txt 文本链接
@@ -40,8 +42,10 @@ def scrape(name: str, main_url: str, attrs: dict, pattern: str, up_date: str) ->
 
         # 获取详情页所有链接
         hrefs = [str(tag.get("href")) for tag in get_elements(detail_text, "a", {})]
-        # 最后一个 youtube 链接
-        yt_url = next((href for href in reversed(hrefs) if href.startswith("https://youtu.be/")))
+        # 获取 youtube 链接
+        yt_urls = [href for href in hrefs if href.startswith("https://youtu.be/")]
+        # 取首尾 youtube 链接
+        yt_url = yt_urls[0] if name == "halekj" else yt_urls[-1]
 
         # 虚拟浏览器初始化
         options = webdriver.ChromeOptions()
@@ -61,18 +65,16 @@ def scrape(name: str, main_url: str, attrs: dict, pattern: str, up_date: str) ->
 
     if not nodes_url:
         print("更新节点失败")
-        return []
+        return default_res
     # 更新节点文本
     nodes_text = get_url(nodes_url)
-    write_nodes(nodes_text, f"{name}.txt")
+    nodes_text = write_nodes(nodes_text, f"{name}.txt")
 
-    return [name, {"up_date": datetime.today().date().strftime("%Y-%m-%d")}]
+    return [name, {"up_date": datetime.today().date().strftime("%Y-%m-%d")}, nodes_text]
 
 
 if __name__ == "__main__":
-    # "https://halekj.top"
     conf = Config("config.json")
-    # try:
     # 创建线程池
     with ThreadPoolExecutor() as executor:
         futures = []
@@ -80,13 +82,18 @@ if __name__ == "__main__":
         for config in conf.configs:
             future = executor.submit(scrape, **config)
             futures.append(future)
-            # 写更新日期
-            if res := future.result():
-                name, data = res
-                conf.set_data(name, data)
-    # except Exception as e:
-    #     print(e)
-    # test
-    # if res := scrape(**conf.configs[3]):
+        results = [future.result() for future in futures]
+    # 写更新日期
+    all_nodes = ""
+    for name, data, text in results:
+        conf.set_data(name, data)
+        all_nodes.join(text)
+    with open("nodes.all.txt", "w") as f:
+        f.write(all_nodes)
+    # # test
+    # conf = Config("todo.json")
+    # if res := scrape(**conf.configs[0]):
     #     name, data = res
     #     conf.set_data(name, data)
+
+    conf.write_config()
