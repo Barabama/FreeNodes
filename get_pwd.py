@@ -92,8 +92,8 @@ def get_pwd(url: str) -> str:
     if subtitles := yt.captions.all():
         yield from (pwd for pwd in _get_pwd_from_caption(subtitles) if pwd)
 
+    # 调用ocr获得密码
     else:
-        # 调用ocr获得密码
         apicaller = APICaller()  # apicaller 实例
         cap = cv2.VideoCapture(stream.url)  # VideoCapture 实例获取截图
         for frame in __get_frame(cap):
