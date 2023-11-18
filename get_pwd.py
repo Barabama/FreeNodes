@@ -87,12 +87,8 @@ def _get_pwd_from_caption(subtitles: list[pytube.Caption]) -> str:
             yield __find_pwd(text)
 
 
-def get_pwd(url: str, ) -> str:
-    """
-    获取候选密码列表
-    :param url: YouTube 视频链接
-    :return: 候选密码
-    """
+def get_pwd(url: str) -> str:
+    """获取候选密码"""
     # 创建 YouTube 对象
     yt = pytube.YouTube(url)
     print(f"访问 {url}")

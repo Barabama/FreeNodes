@@ -18,6 +18,7 @@ def scrape(name: str, main_url: str, attrs: dict, pattern: str, up_date: str) ->
 
     # 详情页链接
     detail_url = next(get_elements(main_text, "a", attrs)).get("href")
+    print(f"访问 {detail_url}")
 
     # 详情页内容
     detail_text = get_url(detail_url)
@@ -30,11 +31,12 @@ def scrape(name: str, main_url: str, attrs: dict, pattern: str, up_date: str) ->
     nodes_url = ""
     # 成功搜索倒一 txt 文本链接
     if texts := [text for text in match_text(detail_text, pattern)]:
+        print(f"{name} 无需密码直接获取节点")
         nodes_url = next(reversed(texts))
-        print("获取节点")
 
     # 未搜索到 txt 文本链接, 需要解密
     elif is_locked(detail_text):
+        print(f"{name} 需要解密")
 
         # 获取详情页所有链接
         hrefs = [str(tag.get("href")) for tag in get_elements(detail_text, "a", {})]
@@ -49,7 +51,7 @@ def scrape(name: str, main_url: str, attrs: dict, pattern: str, up_date: str) ->
 
         # 获取解密密码
         for pwd in get_pwd(yt_url):
-            if result := decrypt_for_text(driver, pwd):
+            if pwd and (result := decrypt_for_text(driver, pwd)):
                 print(f"\n解密密码 {pwd}")
                 # 倒一 txt 文本链接
                 nodes_url = next(reversed([text for text in match_text(result, pattern)]))
@@ -57,6 +59,9 @@ def scrape(name: str, main_url: str, attrs: dict, pattern: str, up_date: str) ->
 
         driver.quit()  # 关闭浏览器
 
+    if not nodes_url:
+        print("更新节点失败")
+        return []
     # 更新节点文本
     nodes_text = get_url(nodes_url)
     write_nodes(nodes_text, f"{name}.txt")
