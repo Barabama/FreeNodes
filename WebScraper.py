@@ -72,7 +72,7 @@ def decrypt_for_text(driver: webdriver.Chrome, pwd: str) -> str:
         return driver.find_element(By.ID, "result").text
 
 
-def write_nodes(text: str, file_name: str) -> str:
+def write_nodes(text: str, file_name: str):
     """更新节点文本"""
     folder_path = "nodes"
     if not os.path.isdir(folder_path): os.mkdir(folder_path)  # 新建文件夹
@@ -80,4 +80,3 @@ def write_nodes(text: str, file_name: str) -> str:
         print(f"更新 {file_name}")
         text = base64.b64decode(text).decode("utf-8")
         f.write(text)
-    return text

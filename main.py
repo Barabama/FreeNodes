@@ -5,6 +5,14 @@ from WebScraper import *
 from get_pwd import get_pwd
 
 
+def merge_nodes():
+    folder_path = "nodes"
+    with open(os.path.join(folder_path, "merged.txt"), "w") as merged_file:
+        for file_name in [file for file in os.listdir(folder_path) if file.endswith(".txt")]:
+            with open(os.path.join(folder_path, file_name), "r") as file:
+                merged_file.write(file.read() + "\n")
+
+
 def scrape(name: str, main_url: str, attrs: dict, pattern: str, up_date: str) -> list:
     """抓取节点内容并保存
     :param name: 保存的文件名
@@ -13,7 +21,7 @@ def scrape(name: str, main_url: str, attrs: dict, pattern: str, up_date: str) ->
     :param pattern: 匹配表达式
     :param up_date: 更新日期
     """
-    default_res = [name, {"up_date": up_date}, ""]
+    default_res = [name, {"up_date": up_date}]
 
     # 主页内容
     main_text = get_url(main_url)
@@ -68,9 +76,9 @@ def scrape(name: str, main_url: str, attrs: dict, pattern: str, up_date: str) ->
         return default_res
     # 更新节点文本
     nodes_text = get_url(nodes_url)
-    nodes_text = write_nodes(nodes_text, f"{name}.txt")
+    write_nodes(nodes_text, f"{name}.txt")
 
-    return [name, {"up_date": datetime.today().date().strftime("%Y-%m-%d")}, nodes_text]
+    return [name, {"up_date": datetime.today().date().strftime("%Y-%m-%d")}]
 
 
 if __name__ == "__main__":
@@ -84,16 +92,15 @@ if __name__ == "__main__":
             futures.append(future)
         results = [future.result() for future in futures]
     # 写更新日期
-    all_nodes = ""
-    for name, data, text in results:
+    for name, data in results:
         conf.set_data(name, data)
-        all_nodes.join(text)
-    with open("nodes/all.txt", "w") as f:
-        f.write(all_nodes)
+
     # # test
-    # conf = Config("todo.json")
+    # conf = Config("test.json")
     # if res := scrape(**conf.configs[0]):
     #     name, data = res
     #     conf.set_data(name, data)
 
     conf.write_config()
+
+    merge_nodes()

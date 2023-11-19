@@ -7,7 +7,6 @@ class ConfigData(TypedDict):
     list_url: str
     attrs: dict
     pattern: str
-    by_ocr: bool
     date: str
 
 
