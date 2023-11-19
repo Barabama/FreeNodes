@@ -20,7 +20,7 @@ def __get_frame(video_capture: cv2.VideoCapture) -> np.ndarray:
         video_capture.set(cv2.CAP_PROP_POS_FRAMES, i)
         ret, frame = video_capture.read()
         if ret:
-            print(f"截图在 {i // fps}s", end="\t")
+            # print(f"截图在 {i // fps}s", end="\t")
             h, w = frame.shape[:2]
             yield frame[h // 4:h, w // 8:w * 7 // 8]  # 保留字幕部分
 
@@ -30,7 +30,7 @@ def __find_pwd(text: str) -> str:
     if "码" in text:
         num_list = re.findall(r"\d+", text)
         word = "".join(num_list)
-        print(f"\n候选 {word}")
+        print(f"候选 {word}")
         return word
 
 
@@ -80,7 +80,6 @@ def get_pwd(url: str) -> str:
     """获取候选密码"""
     # 创建 YouTube 对象
     yt = pytube.YouTube(url)
-    print(f"访问 {url}")
 
     # 获取视频流
     stream = _get_stream(yt)

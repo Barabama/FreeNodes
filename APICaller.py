@@ -39,5 +39,5 @@ class APICaller:
 
         # 发送 POST 请求
         response = requests.request("POST", post_url, params=params, headers=headers, data=payload)
-        print("接收百度云ocr响应", end="\t")
+        # print("接收百度云ocr响应", end="\t")
         return json.loads(response.text)

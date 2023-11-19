@@ -28,25 +28,25 @@ def scrape(name: str, main_url: str, attrs: dict, pattern: str, up_date: str) ->
 
     # 详情页链接
     detail_url = next(get_elements(main_text, "a", attrs)).get("href")
-    print(f"访问 {detail_url}")
+    print(f"{name}: 访问 {detail_url}")
 
     # 详情页内容
     detail_text = get_url(detail_url)
 
     # 不需要更新
     if not is_new(detail_text, up_date):
-        print(f"无需更新 {name}")
+        print(f"{name}: 无需更新")
         return default_res
 
     nodes_url = ""
     # 成功搜索倒一 txt 文本链接
     if texts := [text for text in match_text(detail_text, pattern)]:
-        print(f"{name} 无需密码直接获取节点")
+        print(f"{name}: 无需密码直接获取节点")
         nodes_url = next(reversed(texts))
 
     # 未搜索到 txt 文本链接, 需要解密
     elif is_locked(detail_text):
-        print(f"{name} 需要解密")
+        print(f"{name}: 需要解密")
 
         # 获取详情页所有链接
         hrefs = [str(tag.get("href")) for tag in get_elements(detail_text, "a", {})]
@@ -62,9 +62,10 @@ def scrape(name: str, main_url: str, attrs: dict, pattern: str, up_date: str) ->
         driver.get(detail_url)  # 打开详情页
 
         # 获取解密密码
+        print(f"{name} 访问 {yt_url}")
         for pwd in get_pwd(yt_url):
             if pwd and (result := decrypt_for_text(driver, pwd)):
-                print(f"解密成功获取节点")
+                print(f"{name}: 解密成功获取节点")
                 # 倒一 txt 文本链接
                 nodes_url = next(reversed([text for text in match_text(result, pattern)]))
                 break
@@ -72,10 +73,12 @@ def scrape(name: str, main_url: str, attrs: dict, pattern: str, up_date: str) ->
         driver.quit()  # 关闭浏览器
 
     if not nodes_url:
-        print("更新节点失败")
+        print(f"{name}: 更新节点失败")
         return default_res
+
     # 更新节点文本
     nodes_text = get_url(nodes_url)
+    print(f"{name}: 更新节点")
     write_nodes(nodes_text, f"{name}.txt")
 
     return [name, {"up_date": datetime.today().date().strftime("%Y-%m-%d")}]
@@ -91,6 +94,7 @@ if __name__ == "__main__":
             future = executor.submit(scrape, **config)
             futures.append(future)
         results = [future.result() for future in futures]
+
     # 写更新日期
     for name, data in results:
         conf.set_data(name, data)
@@ -101,6 +105,7 @@ if __name__ == "__main__":
     #     name, data = res
     #     conf.set_data(name, data)
 
+    print("更新记录")
     conf.write_config()
 
     merge_nodes()

@@ -32,7 +32,6 @@ def get_url(url: str) -> str:
 def get_elements(text: str, element="", attrs={}) -> Generator[Tag, None, None]:
     """获取网页元素"""
     soup = BeautifulSoup(text, "html.parser")
-    print(f"寻找网页元素 {element}:{attrs}")
     yield from soup.find_all(element, attrs)
 
 
@@ -68,7 +67,6 @@ def decrypt_for_text(driver: webdriver.Chrome, pwd: str) -> str:
         print(f"页面提示 {alert.text}")  # 获取弹窗的文本内容
         alert.accept()  # 处理 alert 弹窗
     except TimeoutException:
-        print(f"解密成功, 密码 {pwd}")
         return driver.find_element(By.ID, "result").text
 
 
@@ -77,6 +75,5 @@ def write_nodes(text: str, file_name: str):
     folder_path = "nodes"
     if not os.path.isdir(folder_path): os.mkdir(folder_path)  # 新建文件夹
     with open(os.path.join(folder_path, file_name), "w") as f:
-        print(f"更新 {file_name}")
         text = base64.b64decode(text).decode("utf-8")
         f.write(text)
