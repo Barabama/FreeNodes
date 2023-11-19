@@ -88,7 +88,7 @@ if __name__ == "__main__":
     for name, data, text in results:
         conf.set_data(name, data)
         all_nodes.join(text)
-    with open("nodes.all.txt", "w") as f:
+    with open("nodes/all.txt", "w") as f:
         f.write(all_nodes)
     # # test
     # conf = Config("todo.json")
