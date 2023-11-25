@@ -24,7 +24,7 @@ class Config:
 
     def write_config(self):
         with open(self.file_path, "w") as file:
-            json.dump(self.configs, file, indent=4)
+            json.dump(self.configs, file)
 
     def set_data(self, name: str, data: dict):
         for config in self.configs:
