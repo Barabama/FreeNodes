@@ -1,23 +1,23 @@
 import base64
-import json
 import requests
-
 import cv2
 from numpy import ndarray
 
 
 class APICaller:
-    __url = "https://aip.baidubce.com/oauth/2.0/token"
-    __api_key = "oywBfZcck0aG5cwDMcSNWbYL"
-    __secret_key = "WXDlfqs4ngT7PMkYQGmkCjzrnm7oErGK"
+    __access_url = "https://aip.baidubce.com/oauth/2.0/token"
+    __post_urls = [{"url": "https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic", "usable": True},
+                   {"url": "https://aip.baidubce.com/rest/2.0/ocr/v1/general", "usable": True},
+                   {"url": "https://aip.baidubce.com/rest/2.0/ocr/v1/webimage", "usable": True},
+                   {"url": "https://aip.baidubce.com/rest/2.0/ocr/v1/accurate", "usable": True}]
     __access_token: str
     image: ndarray
     b_base64: base64
 
-    def __init__(self):
+    def __init__(self, api_key: str, secret_key: str):
         """使用 AK, SK 生成鉴权签名(Access Token)"""
-        params = {"grant_type": "client_credentials", "client_id": self.__api_key, "client_secret": self.__secret_key}
-        self.__access_token = str(requests.post(self.__url, params=params).json().get("access_token"))
+        params = {"grant_type": "client_credentials", "client_id": api_key, "client_secret": secret_key}
+        self.__access_token = str(requests.post(self.__access_url, params=params).json().get("access_token"))
         print("APICaller初始化, 生成AccessToken")
 
     def img_to_base64(self, image: ndarray):
@@ -30,14 +30,23 @@ class APICaller:
     def digital_ocr(self) -> dict:
         """
         向百度云数字ocr发送图片, 接收响应
-        :return: 响应格式 {"words_result":[] , "words_result_num": int, "log_id"}
+        技术文档: https://cloud.baidu.com/doc/OCR/index.html
+        :return: {"words_result":[] , "words_result_num": int, "log_id"}
         """
-        post_url = "https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic"
         params = {"access_token": self.__access_token}
         headers = {"Content-Type": "application/x-www-form-urlencoded", "Accept": "application/json"}
         payload = {"image": self.b_base64, "detect_direction": "false"}
 
         # 发送 POST 请求
-        response = requests.request("POST", post_url, params=params, headers=headers, data=payload)
-        # print("接收百度云ocr响应", end="\t")
-        return json.loads(response.text)
+        for i, elem in enumerate(self.__post_urls):
+            if not elem.get("usable"):
+                continue
+
+            res = requests.request("POST", elem.get("url"), params=params, headers=headers, data=payload).json()
+            # print("接收百度云ocr响应", end="\t")
+
+            if "error_code" in res:
+                print(res.get("error_msg"))
+                self.__post_urls[i]["usable"] = False
+            else:
+                return res
