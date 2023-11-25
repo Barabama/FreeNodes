@@ -1,6 +1,5 @@
 import sys
 from concurrent.futures import ThreadPoolExecutor
-from requests.exceptions import MissingSchema
 from urllib.parse import urljoin
 
 from Config import *
