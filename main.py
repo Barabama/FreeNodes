@@ -87,24 +87,24 @@ if __name__ == "__main__":
     script, *args = sys.argv
     conf = Config("config.json")
 
-    # # 创建线程池
-    # with ThreadPoolExecutor() as executor:
-    #     futures = []
-    #     # 提交函数给线程池
-    #     for config in conf.configs:
-    #         future = executor.submit(scrape, **config)
-    #         futures.append(future)
-    #     results = [future.result() for future in futures]
-    #
-    # # 写更新日期
-    # for name, data in results:
-    #     conf.set_data(name, data)
+    # 创建线程池
+    with ThreadPoolExecutor() as executor:
+        futures = []
+        # 提交函数给线程池
+        for config in conf.configs:
+            future = executor.submit(scrape, **config)
+            futures.append(future)
+        results = [future.result() for future in futures]
+    
+    # 写更新日期
+    for name, data in results:
+        conf.set_data(name, data)
 
     # # test
     # conf = Config("test.json")
-    if res := scrape(**conf.configs[6]):
-        name, data = res
-        conf.set_data(name, data)
+    # if res := scrape(**conf.configs[6]):
+    #     name, data = res
+    #     conf.set_data(name, data)
 
     print("更新记录")
     conf.write_config()
