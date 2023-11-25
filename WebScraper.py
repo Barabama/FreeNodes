@@ -22,6 +22,9 @@ class WebScraper:
         pass
 
 
+folder_path = "nodes"
+
+
 def get_url(url: str) -> str:
     """获取网页内容"""
     headers = {"User-Agent": kuser_agent.get()}  # 设置请求头信息
@@ -49,7 +52,7 @@ def is_locked(text: str) -> bool:
 
 def is_new(text: str, up_date: str) -> bool:
     """判断网页的是否更新"""
-    h1 = next(get_elements(text, "h1")).text
+    h1 = "".join(e.text for e in get_elements(text, "h1"))
     date_text = next(match_text(h1, r"\d{2}月\d{2}"))
     text_date = datetime.strptime(date_text, "%m月%d")
     text_date = text_date.replace(year=datetime.today().year)
@@ -72,8 +75,18 @@ def decrypt_for_text(driver: webdriver.Chrome, pwd: str) -> str:
 
 def write_nodes(text: str, file_name: str):
     """更新节点文本"""
-    folder_path = "nodes"
     if not os.path.isdir(folder_path): os.mkdir(folder_path)  # 新建文件夹
+    nodes = re.split(r'\n+', base64.b64decode(text).decode("utf-8"))
     with open(os.path.join(folder_path, file_name), "w") as f:
-        text = base64.b64decode(text).decode("utf-8")
-        f.write(text)
+        f.write("\n".join(nodes))
+
+
+def merge_nodes():
+    with open(os.path.join(folder_path, "merged.txt"), "w") as merged_file:
+        for file_name in [file for file in os.listdir(folder_path) if file.endswith(".txt")]:
+            with open(os.path.join(folder_path, file_name), "r") as file:
+                merged_file.write(file.read() + "\n")
+
+
+if __name__ == "__main__":
+    merge_nodes()

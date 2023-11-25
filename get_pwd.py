@@ -1,4 +1,5 @@
 import re
+import sys
 import xml.etree.ElementTree as ET
 from urllib.error import URLError
 from http.client import IncompleteRead
@@ -56,7 +57,7 @@ def _get_pwd_by_ocr(apicaller: APICaller, image: np.ndarray) -> str:
 
     # 遍历截图中的候选词
     for i in range(int(num)):
-        text = words_result[i]["words"]
+        text = words_result[i].get("words")
         yield __find_pwd(text)
 
 
@@ -76,7 +77,7 @@ def _get_pwd_from_caption(subtitles: list[pytube.Caption]) -> str:
             yield __find_pwd(text)
 
 
-def get_pwd(url: str) -> str:
+def get_pwd(url: str, api_key: str, secret_key: str) -> str:
     """获取候选密码"""
     # 创建 YouTube 对象
     yt = pytube.YouTube(url)
@@ -90,7 +91,7 @@ def get_pwd(url: str) -> str:
 
     # 调用ocr获得密码
     else:
-        apicaller = APICaller()  # apicaller 实例
+        apicaller = APICaller(api_key, secret_key)  # apicaller 实例
         cap = cv2.VideoCapture(stream.url)  # VideoCapture 实例获取截图
         for frame in __get_frame(cap):
             yield from (pwd for pwd in _get_pwd_by_ocr(apicaller, frame) if pwd)
@@ -100,7 +101,7 @@ def get_pwd(url: str) -> str:
 
 if __name__ == "__main__":
     # test
-    link_urls = ["https://youtu.be/pOudt0bNR-E", "https://youtu.be/iSjIqpII2AY"]
-
-    for PWD in get_pwd(link_urls[0]):
+    link_urls = ["https://youtu.be/TmGSnfCvZjo", "https://youtu.be/iSjIqpII2AY"]
+    script, *args = sys.argv
+    for PWD in get_pwd(link_urls[0], *args):
         print(PWD)
