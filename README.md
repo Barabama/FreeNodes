@@ -2,33 +2,18 @@
 
 自动爬取互联网上的免费节点。
 
-## 爬虫目标:
+## v2ray订阅链接:
 
-https://www.yudou66.com
-
-https://blues2022.blogspot.com
-
-https://v2rayshare.com
-
-https://nodefree.org
-
-## v2ray订阅链接(镜像网站加速):
-
-```
-https://gh.api.99988866.xyz/https://raw.githubusercontent.com/Barabama/FreeNodes/master/nodes/yudou66.txt
-```
-
-```
-https://gh.api.99988866.xyz/https://raw.githubusercontent.com/Barabama/FreeNodes/master/nodes/blues.txt
-```
-
-```
-https://gh.api.99988866.xyz/https://raw.githubusercontent.com/Barabama/FreeNodes/master/nodes/v2rayshare.txt
-```
-
-```
-https://gh.api.99988866.xyz/https://raw.githubusercontent.com/Barabama/FreeNodes/master/nodes/nodefree.txt
-```
+| 爬虫目标链接                          | 订阅链接(镜像网站加速)                                                                                                      |
+|---------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| https://www.yudou66.com         | ```https://mirror.ghproxy.com/https://raw.githubusercontent.com/Barabama/FreeNodes/master/nodes/yudou66.txt```    |
+| https://blues2022.blogspot.com  | ```https://mirror.ghproxy.com/https://raw.githubusercontent.com/Barabama/FreeNodes/master/nodes/blues.txt```      |
+| https://freenode.openrunner.net | ```https://mirror.ghproxy.com/https://raw.githubusercontent.com/Barabama/FreeNodes/master/nodes/openrunner.txt``` |
+| https://kkzui.com/jd            | ```https://mirror.ghproxy.com/https://raw.githubusercontent.com/Barabama/FreeNodes/master/nodes/kkzui.txt```      |
+| https://wenode.cc               | ```https://mirror.ghproxy.com/https://raw.githubusercontent.com/Barabama/FreeNodes/master/nodes/wenode.txt```     |
+| https://v2rayshare.com          | ```https://mirror.ghproxy.com/https://raw.githubusercontent.com/Barabama/FreeNodes/master/nodes/v2rayshare.txt``` |
+| https://nodefree.org            | ```https://mirror.ghproxy.com/https://raw.githubusercontent.com/Barabama/FreeNodes/master/nodes/nodefree.txt```   |
+| 合集                              | ```https://mirror.ghproxy.com/https://raw.githubusercontent.com/Barabama/FreeNodes/master/nodes/merged.txt```     |
 
 ## 免责声明
 
