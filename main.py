@@ -8,7 +8,7 @@ from get_pwd import get_pwd
 
 
 def scrape(name: str, main_url: str, attrs: dict, up_date: str,
-           pattern: str, nodes_index: int, yt_index=0) -> list:
+           pattern: str, nodes_index: int, yt_index=0):
     """抓取节点内容并保存
     :param name: 保存的文件名
     :param main_url: 主页链接
@@ -18,7 +18,6 @@ def scrape(name: str, main_url: str, attrs: dict, up_date: str,
     :param nodes_index: 节点链接索引
     :param yt_index：yt链接索引
     """
-    default_res = [name, {"up_date": up_date}]
 
     # 主页内容
     main_text = get_url(main_url)
@@ -34,7 +33,6 @@ def scrape(name: str, main_url: str, attrs: dict, up_date: str,
     # 不需要更新
     if not is_new(detail_text, up_date):
         print(f"{name}: 无需更新")
-        return default_res
 
     nodes_url = ""
     # 成功搜索 txt 文本链接
@@ -72,19 +70,21 @@ def scrape(name: str, main_url: str, attrs: dict, up_date: str,
 
     if not nodes_url:
         print(f"{name}: 更新节点失败")
-        return default_res
 
     # 更新节点文本
     print(f"{name}: 更新节点 {nodes_url}")
     nodes_text = get_url(nodes_url)
     write_nodes(nodes_text, f"{name}.txt")
 
-    return [name, {"up_date": datetime.today().date().strftime("%Y-%m-%d")}]
+    # 写更新日期
+    data = {"up_date": datetime.today().date().strftime("%Y-%m-%d")}
+    conf.set_data(name, data)
 
 
 if __name__ == "__main__":
     script, *args = sys.argv
     conf = Config("config.json")
+    # conf = Config("test.json")
 
     # 创建线程池
     with ThreadPoolExecutor() as executor:
@@ -95,15 +95,9 @@ if __name__ == "__main__":
             futures.append(future)
         results = [future.result() for future in futures]
 
-    # 写更新日期
-    for name, data in results:
-        conf.set_data(name, data)
-
-    # # test
-    # conf = Config("test.json")
+    # test
     # if res := scrape(**conf.configs[0]):
-    #     name, data = res
-    #     conf.set_data(name, data)
+    #     pass
 
     print("更新记录")
     conf.write_config()
