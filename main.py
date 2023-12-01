@@ -33,6 +33,7 @@ def scrape(name: str, main_url: str, attrs: dict, up_date: str,
     # 不需要更新
     if not is_new(detail_text, up_date):
         print(f"{name}: 无需更新")
+        return
 
     nodes_url = ""
     # 成功搜索 txt 文本链接
@@ -70,6 +71,7 @@ def scrape(name: str, main_url: str, attrs: dict, up_date: str,
 
     if not nodes_url:
         print(f"{name}: 更新节点失败")
+        return
 
     # 更新节点文本
     print(f"{name}: 更新节点 {nodes_url}")
