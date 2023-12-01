@@ -94,14 +94,14 @@ if __name__ == "__main__":
             future = executor.submit(scrape, **config)
             futures.append(future)
         results = [future.result() for future in futures]
-    
+
     # 写更新日期
     for name, data in results:
         conf.set_data(name, data)
 
     # # test
     # conf = Config("test.json")
-    # if res := scrape(**conf.configs[6]):
+    # if res := scrape(**conf.configs[0]):
     #     name, data = res
     #     conf.set_data(name, data)
 
