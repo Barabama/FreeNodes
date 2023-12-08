@@ -2,12 +2,22 @@ import json
 from typing import TypedDict
 
 
+class Decryption(TypedDict):
+    yt_index: int
+    decrypt_by: str
+    script: str
+    box_id: str
+    button_name: str
+
+
 class ConfigData(TypedDict):
     name: str
     list_url: str
     attrs: dict
+    up_date: str
     pattern: str
-    date: str
+    nodes_index: int
+    decryption: Decryption
 
 
 class Config:
