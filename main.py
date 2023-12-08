@@ -8,7 +8,7 @@ from get_pwd import get_pwd
 
 
 def scrape(name: str, main_url: str, attrs: dict, up_date: str,
-           pattern: str, nodes_index: int, yt_index=0):
+           pattern: str, nodes_index=0, decryption: Decryption = {}):
     """抓取节点内容并保存
     :param name: 保存的文件名
     :param main_url: 主页链接
@@ -16,7 +16,7 @@ def scrape(name: str, main_url: str, attrs: dict, up_date: str,
     :param up_date: 更新日期
     :param pattern: 匹配表达式
     :param nodes_index: 节点链接索引
-    :param yt_index：yt链接索引
+    :param decryption：解密参数
     """
 
     # 主页内容
@@ -50,7 +50,7 @@ def scrape(name: str, main_url: str, attrs: dict, up_date: str,
         # 获取 youtube 链接
         yt_urls = [href for href in hrefs if href.startswith("https://youtu.be/")]
         # 取首尾 youtube 链接
-        yt_url = yt_urls[yt_index]
+        yt_url = yt_urls[decryption["yt_index"]]
 
         # 虚拟浏览器初始化
         options = webdriver.ChromeOptions()
@@ -61,7 +61,7 @@ def scrape(name: str, main_url: str, attrs: dict, up_date: str,
         # 获取解密密码
         print(f"{name} 访问 {yt_url}")
         for pwd in get_pwd(yt_url, *args):
-            if pwd and (result := decrypt_for_text(driver, pwd)):
+            if pwd and (result := decrypt_for_text(driver, pwd, decryption)):
                 print(f"{name}: 解密成功获取节点")
                 # txt 文本链接
                 nodes_url = [text for text in match_text(result, pattern)][nodes_index]
@@ -86,7 +86,6 @@ def scrape(name: str, main_url: str, attrs: dict, up_date: str,
 if __name__ == "__main__":
     script, *args = sys.argv
     conf = Config("config.json")
-    # conf = Config("test.json")
 
     # 创建线程池
     with ThreadPoolExecutor() as executor:
@@ -97,11 +96,13 @@ if __name__ == "__main__":
             futures.append(future)
         results = [future.result() for future in futures]
 
-    # test
-    # if res := scrape(**conf.configs[0]):
-    #     pass
-
     print("更新记录")
     conf.write_config()
+
+    # # test
+    # for c in conf.configs:
+    #     scrape(**c)
+    #     print("更新记录")
+    #     conf.write_config()
 
     merge_nodes()
