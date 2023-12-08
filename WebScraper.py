@@ -56,6 +56,7 @@ def is_locked(text: str) -> bool:
 def is_new(text: str, up_date: str) -> bool:
     """判断网页的是否更新"""
     h1 = "".join(e.text for e in get_elements(text, "h1"))
+    if "正在制作" in h1: return False
     date_text = next(match_text(h1, r"\d+月\d+"))
     text_date = datetime.strptime(date_text, "%m月%d")
     text_date = text_date.replace(year=datetime.today().year)
