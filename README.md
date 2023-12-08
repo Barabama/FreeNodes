@@ -8,6 +8,7 @@
 |---------------------------------|-------------------------------------------------------------------------------------------------------------|
 | https://www.yudou66.com         | https://mirror.ghproxy.com/https://raw.githubusercontent.com/Barabama/FreeNodes/master/nodes/yudou66.txt    |
 | https://blues2022.blogspot.com  | https://mirror.ghproxy.com/https://raw.githubusercontent.com/Barabama/FreeNodes/master/nodes/blues.txt      |
+| https://halekj.top              | https://mirror.ghproxy.com/https://raw.githubusercontent.com/Barabama/FreeNodes/master/nodes/halekj.txt     |
 | https://freenode.openrunner.net | https://mirror.ghproxy.com/https://raw.githubusercontent.com/Barabama/FreeNodes/master/nodes/openrunner.txt |
 | https://kkzui.com/jd            | https://mirror.ghproxy.com/https://raw.githubusercontent.com/Barabama/FreeNodes/master/nodes/kkzui.txt      |
 | https://wenode.cc               | https://mirror.ghproxy.com/https://raw.githubusercontent.com/Barabama/FreeNodes/master/nodes/wenode.txt     |
