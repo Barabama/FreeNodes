@@ -24,7 +24,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run Python
-        run: python main.py ${{secrets.API_KEY}} ${{secrets.SECRET_KEY}} 
+        run: python main.py ${{secrets.API_KEY}} ${{secrets.SECRET_KEY}}
 
       - name: Git Commit Push Action
         uses: GuillaumeFalourd/git-commit-push@v1.3
@@ -38,7 +38,7 @@ jobs:
           # Branch to push the changes back to
           target_branch: ${{ github.ref }}
           # Files to add separated by space
-          files: .
+          files: config.json nodes/*
           # Repository url to push the code to
           remote_repository: origin
           # Token used to push the code
