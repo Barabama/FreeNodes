@@ -1,6 +1,7 @@
 import base64
 import os
 import re
+import warnings
 from datetime import datetime
 from typing import Generator
 
@@ -12,6 +13,8 @@ from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+
+from Config import Decryption
 
 
 class WebScraper:
@@ -61,16 +64,30 @@ def is_new(text: str, up_date: str) -> bool:
     return True if text_date.date() > up_date.date() else False
 
 
-def decrypt_for_text(driver: webdriver.Chrome, pwd: str) -> str:
+def decrypt_for_text(driver: webdriver.Chrome, pwd: str, decryption: Decryption) -> str:
     """网页解密得到隐藏文本内容"""
+    decrypt_by = decryption["decrypt_by"]
+
+    if decrypt_by not in ("js", "click"):
+        warnings.warn(f"解密方法 {decrypt_by} 不支持, 默认 click")
+
     # 传递参数给JavaScript函数
-    driver.execute_script("multiDecrypt(arguments[0]);", pwd)
+    elif decrypt_by == "js":
+        driver.execute_script(decryption["script"], pwd)
+
+    # 模拟输入提交
+    else:
+        text_box = driver.find_element(By.ID, decryption["box_id"])  # 使用元素的id属性来定位文本框
+        text_box.send_keys(pwd)  # 替换为你要输入的密码
+        button = driver.find_element(By.NAME, decryption["button_name"])  # 使用元素的name属性来定位按钮
+        button.submit()
+
     try:
         alert = WebDriverWait(driver, 2).until(EC.alert_is_present())
         print(f"页面提示 {alert.text}")  # 获取弹窗的文本内容
         alert.accept()  # 处理 alert 弹窗
     except TimeoutException:
-        return driver.find_element(By.ID, "result").text
+        return driver.find_element(By.TAG_NAME, "body").text
 
 
 def write_nodes(text: str, file_name: str):
