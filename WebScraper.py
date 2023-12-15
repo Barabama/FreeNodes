@@ -53,7 +53,7 @@ def is_new(text: str, up_date: str) -> bool:
     h1 = "".join(e.text for e in get_elements(text, "h1"))
     if "正在制作" in h1: return False
 
-    if match := re.search(h1, r"\d+月\d+"):
+    if match := re.search(r"\d+月\d+", h1):
         date_text = str(match.group())
         text_date = datetime.strptime(date_text, "%m月%d")
         text_date = text_date.replace(year=datetime.today().year)
