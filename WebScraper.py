@@ -41,11 +41,6 @@ def get_elements(text: str, element="", attrs={}) -> Generator[Tag, None, None]:
     yield from soup.find_all(element, attrs)
 
 
-def match_text(text: str, pattern: str):
-    """正则表达式匹配字符串"""
-    yield from re.findall(pattern, text)
-
-
 def is_locked(text: str) -> bool:
     """判断网页中是否存在解密元素"""
     elem = [e for e in get_elements(text, "input", {"id": "EPassword"})]
@@ -57,12 +52,14 @@ def is_new(text: str, up_date: str) -> bool:
     """判断网页的是否更新"""
     h1 = "".join(e.text for e in get_elements(text, "h1"))
     if "正在制作" in h1: return False
-    date_text = next(match_text(h1, r"\d+月\d+"))
-    text_date = datetime.strptime(date_text, "%m月%d")
-    text_date = text_date.replace(year=datetime.today().year)
 
-    up_date = datetime.strptime(up_date, "%Y-%m-%d")
-    return True if text_date.date() > up_date.date() else False
+    if match := re.search(h1, r"\d+月\d+"):
+        date_text = str(match.group())
+        text_date = datetime.strptime(date_text, "%m月%d")
+        text_date = text_date.replace(year=datetime.today().year)
+
+        up_date = datetime.strptime(up_date, "%Y-%m-%d")
+        return True if text_date.date() > up_date.date() else False
 
 
 def decrypt_for_text(driver: webdriver.Chrome, pwd: str, decryption: Decryption) -> str:
@@ -78,9 +75,11 @@ def decrypt_for_text(driver: webdriver.Chrome, pwd: str, decryption: Decryption)
 
     # 模拟输入提交
     else:
-        text_box = driver.find_element(By.ID, decryption["box_id"])  # 使用元素的id属性来定位文本框
-        text_box.send_keys(pwd)  # 替换为你要输入的密码
-        button = driver.find_element(By.NAME, decryption["button_name"])  # 使用元素的name属性来定位按钮
+        # 使用元素的id属性来定位文本框
+        text_box = driver.find_element(By.ID, decryption["box_id"])
+        text_box.send_keys(pwd)
+        # 使用元素的name属性来定位按钮
+        button = driver.find_element(By.NAME, decryption["button_name"])
         button.submit()
 
     try:

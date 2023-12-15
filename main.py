@@ -37,7 +37,7 @@ def scrape(name: str, main_url: str, attrs: dict, up_date: str,
 
     nodes_url = ""
     # 成功搜索 txt 文本链接
-    if texts := [text for text in match_text(detail_text, pattern)]:
+    if texts := re.findall(detail_text, pattern):
         print(f"{name}: 无需密码直接获取节点")
         nodes_url = texts[nodes_index]
 
@@ -61,10 +61,14 @@ def scrape(name: str, main_url: str, attrs: dict, up_date: str,
         # 获取解密密码
         print(f"{name} 访问 {yt_url}")
         for pwd in get_pwd(yt_url, *args):
-            if pwd and (result := decrypt_for_text(driver, pwd, decryption)):
+            if pwd.strip():
+                continue
+
+            result = decrypt_for_text(driver, pwd, decryption)
+            # txt 文本链接
+            if texts := re.findall(result, pattern):
                 print(f"{name}: 解密成功获取节点")
-                # txt 文本链接
-                nodes_url = [text for text in match_text(result, pattern)][nodes_index]
+                nodes_url = texts[nodes_index]
                 break
 
         driver.quit()  # 关闭浏览器
