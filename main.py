@@ -1,4 +1,4 @@
-import sys
+import argparse
 from concurrent.futures import ThreadPoolExecutor
 from urllib.parse import urljoin
 
@@ -60,8 +60,8 @@ def scrape(name: str, main_url: str, attrs: dict, up_date: str,
 
         # 获取解密密码
         print(f"{name} 访问 {yt_url}")
-        for pwd in get_pwd(yt_url, *args):
-            if pwd.strip():
+        for pwd in get_pwd(yt_url, api_key, secret_key):
+            if not pwd.strip():
                 continue
 
             result = decrypt_for_text(driver, pwd, decryption)
@@ -88,25 +88,35 @@ def scrape(name: str, main_url: str, attrs: dict, up_date: str,
 
 
 if __name__ == "__main__":
-    script, *args = sys.argv
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--debug", default=False, help="For Debug")
+    parser.add_argument("--api_key", default="", help="API key")
+    parser.add_argument("--secret_key", default="", help="Secret key")
+    args = parser.parse_args()
+
+    debug = args.debug
+    api_key = args.api_key
+    secret_key = args.secret_key
+
     conf = Config("config.json")
 
-    # 创建线程池
-    with ThreadPoolExecutor() as executor:
-        futures = []
-        # 提交函数给线程池
-        for config in conf.configs:
-            future = executor.submit(scrape, **config)
-            futures.append(future)
-        results = [future.result() for future in futures]
+    if debug:
+        for c in conf.configs[2:]:
+            scrape(**c)
+            print("更新记录")
+            conf.write_config()
 
-    print("更新记录")
-    conf.write_config()
+    else:
+        # 创建线程池
+        with ThreadPoolExecutor() as executor:
+            futures = []
+            # 提交函数给线程池
+            for config in conf.configs:
+                future = executor.submit(scrape, **config)
+                futures.append(future)
+            results = [future.result() for future in futures]
 
-    # # test
-    # for c in conf.configs:
-    #     scrape(**c)
-    #     print("更新记录")
-    #     conf.write_config()
+        print("更新记录")
+        conf.write_config()
 
     merge_nodes()
