@@ -1,6 +1,7 @@
 import base64
-import requests
+
 import cv2
+import requests
 from numpy import ndarray
 
 
@@ -17,8 +18,11 @@ class APICaller:
     def __init__(self, api_key: str, secret_key: str):
         """使用 AK, SK 生成鉴权签名(Access Token)"""
         params = {"grant_type": "client_credentials", "client_id": api_key, "client_secret": secret_key}
-        self.__access_token = str(requests.post(self.__access_url, params=params).json().get("access_token"))
-        print("APICaller初始化, 生成AccessToken")
+        self.__access_token = requests.post(self.__access_url, params=params).json().get("access_token")
+        if not self.__access_token:
+            print("APICaller初始化失败, 无法生成AccessToken")
+            raise ValueError
+        print("APICaller初始化成功, 生成AccessToken")
 
     def img_to_base64(self, image: ndarray):
         """获取图像 base64 编码"""
@@ -39,7 +43,7 @@ class APICaller:
 
         # 发送 POST 请求
         for i, elem in enumerate(self.__post_urls):
-            if not elem.get("usable"):
+            if not elem["usable"]:
                 continue
 
             res = requests.request("POST", elem.get("url"), params=params, headers=headers, data=payload).json()
