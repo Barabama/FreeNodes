@@ -27,7 +27,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run Python
-        run: python main.py ${{secrets.API_KEY}} ${{secrets.SECRET_KEY}}
+        run: python main.py --api_key ${{secrets.API_KEY}} --secret_key ${{secrets.SECRET_KEY}}
 
       - name: Git Commit Push Action
         uses: GuillaumeFalourd/git-commit-push@v1.3

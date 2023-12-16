@@ -1,8 +1,9 @@
 import re
 import sys
 import xml.etree.ElementTree as ET
-from urllib.error import URLError
 from http.client import IncompleteRead
+from urllib.error import URLError
+
 import cv2
 import numpy as np
 import pytube
@@ -91,7 +92,10 @@ def get_pwd(url: str, api_key: str, secret_key: str) -> str:
 
     # 调用ocr获得密码
     else:
-        apicaller = APICaller(api_key, secret_key)  # apicaller 实例
+        try:
+            apicaller = APICaller(api_key, secret_key)  # apicaller 实例
+        except ValueError:
+            return
         cap = cv2.VideoCapture(stream.url)  # VideoCapture 实例获取截图
         for frame in __get_frame(cap):
             yield from (pwd for pwd in _get_pwd_by_ocr(apicaller, frame) if pwd)
