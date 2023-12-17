@@ -1,15 +1,13 @@
-name: Daily Update
+name: Regular Update
 
 on:
   push:
-    branches:
-      - master
   workflow_dispatch:
   schedule:
-    - cron: "0 2-14/4 * * *" # 每天, 时区+8
+    - cron: "0 2-14/4 * * *" # 时区+8
 
 jobs:
-  build:
+  update:
     runs-on: ubuntu-latest
 
     steps:
@@ -53,5 +51,8 @@ jobs:
           # Whether to use --tags
           tags: 0
 
+  clean:
+    runs-on: ubuntu-latest
+    steps:
       - name: Delete workflow runs
         uses: Mattraks/delete-workflow-runs@v2.0.5
