@@ -1,0 +1,23 @@
+name: Cleanup
+
+on:
+  schedule:
+    - cron: "0 0 * * 0" # Sunday
+
+jobs:
+  clean:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete workflow runs
+        uses: Mattraks/delete-workflow-runs@v2.0.5
+        with:
+          # Authentication token
+          token: ${{ github.token }}
+          # Base API URL
+          baseUrl: https://api.github.com
+          # Name of the repository
+          repository: ${{ github.repository }}
+          # Days-worth of runs to keep for each workflow
+          retain_days: 30
+          # Minimum runs to keep for each workflow
+          keep_minimum_runs: 6
