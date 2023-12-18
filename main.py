@@ -101,7 +101,7 @@ if __name__ == "__main__":
     conf = Config("config.json")
 
     if debug:
-        for c in conf.configs[2:]:
+        for c in conf.configs:
             scrape(**c)
             print("更新记录")
             conf.write_config()
@@ -114,8 +114,10 @@ if __name__ == "__main__":
             for config in conf.configs:
                 future = executor.submit(scrape, **config)
                 futures.append(future)
-            results = [future.result() for future in futures]
-
+            try:
+                results = [future.result() for future in futures]
+            except Exception as e:
+                print(f"Exception from {config["name"]}: {e}")
         print("更新记录")
         conf.write_config()
 
