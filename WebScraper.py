@@ -62,6 +62,11 @@ def is_new(text: str, up_date: str) -> bool:
         return True if text_date.date() > up_date.date() else False
 
 
+def is_base64(s: str) -> bool:
+    """判断字符串是否为base64"""
+    return (bool(re.match(r'^[A-Za-z0-9+/=]+$', s))) and (len(s) % 4 == 0)
+
+
 def decrypt_for_text(driver: webdriver.Chrome, pwd: str, decryption: Decryption) -> str:
     """网页解密得到隐藏文本内容"""
     decrypt_by = decryption["decrypt_by"]
@@ -93,7 +98,8 @@ def decrypt_for_text(driver: webdriver.Chrome, pwd: str, decryption: Decryption)
 def write_nodes(text: str, file_name: str):
     """更新节点文本"""
     if not os.path.isdir(folder_path): os.mkdir(folder_path)  # 新建文件夹
-    nodes = re.split(r'\n+', base64.b64decode(text).decode("utf-8"))
+    text = base64.b64decode(text).decode("utf-8") if is_base64(text) else text
+    nodes = re.split(r'\n+', text)
     with open(os.path.join(folder_path, file_name), "w") as f:
         f.write("\n".join(nodes))
 
