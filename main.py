@@ -42,7 +42,7 @@ def main():
     print(f"{scraper.name}: 访问 {scraper.detail_url}")
 
     # 是否需要更新
-    if (not debug) and scraper.is_new():
+    if not (debug or scraper.is_new()):
         print(f"{scraper.name}: 无需更新")
         return
 
@@ -82,7 +82,7 @@ def main():
     write_nodes(nodes_text, f"{scraper.name}.txt")
 
     # 写更新日期
-    data = {"up_date": datetime.today().date().strftime("%Y-%m-%d")}
+    data = {"up_date": scraper.text_date.date().strftime("%Y-%m-%d")}
     conf.set_data(scraper.name, data)
 
 

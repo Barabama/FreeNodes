@@ -34,6 +34,7 @@ class NodeScraper:
     detail_url: str
     detail_text: str
     up_date: str
+    text_date: datetime
     pattern: str
     nodes_index: int
     decryption: Decryption
@@ -83,10 +84,10 @@ class NodeScraper:
         if match := re.search(r"\d+月\d+", h1):
             date_text = str(match.group())
             text_date = datetime.strptime(date_text, "%m月%d")
-            text_date = text_date.replace(year=datetime.today().year)
+            self.text_date = text_date.replace(year=datetime.today().year)
 
             up_date = datetime.strptime(self.up_date, "%Y-%m-%d")
-            return True if text_date.date() > up_date.date() else False
+            return True if self.text_date.date() > up_date.date() else False
 
     def get_nodes_url(self, text="") -> str:
         """匹配 txt 文本链接"""
