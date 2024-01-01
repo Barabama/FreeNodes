@@ -1,10 +1,11 @@
 import argparse
 import base64
+import itertools
 import os
 import traceback
 
 from Config import *
-from WebScraper import *
+from NodeScraper import *
 from get_pwd import get_pwd
 
 folder_path = "nodes"
@@ -37,12 +38,11 @@ def merge_nodes():
 
 def main():
     """抓取节点内容并保存"""
-
     scraper = NodeScraper(**config)
     print(f"{scraper.name}: 访问 {scraper.detail_url}")
 
     # 是否需要更新
-    if not (debug or scraper.is_new()):
+    if not (scraper.is_new() or debug):
         print(f"{scraper.name}: 无需更新")
         return
 
@@ -54,20 +54,26 @@ def main():
     elif scraper.is_locked():
         print(f"{scraper.name}: 需要解密")
 
-        yt_url = scraper.get_yt_url()
-
         driver = scraper.webdriver_init()
 
         # 获取解密密码
-        print(f"{scraper.name} 访问 {yt_url}")
-        for pwd in get_pwd(yt_url, api_key, secret_key):
+        yt_url = scraper.get_yt_url()
+        print(f"{scraper.name}: 访问 {yt_url}")
+        iter_cur_pwd = iter([scraper.decryption["password"]])
+        gen_new_pwd = get_pwd(yt_url, api_key, secret_key)
+        for pwd in itertools.chain(iter_cur_pwd, gen_new_pwd):
             if not pwd.strip():
                 continue
 
             result = scraper.decrypt_for_text(pwd)
-            # txt 文本链接
+            # 获取 txt 文本链接
             if nodes_url := scraper.get_nodes_url(result):
                 print(f"{scraper.name}: 解密成功获取节点")
+                # 记录解密密码
+                if scraper.decryption["password"] != pwd:
+                    scraper.decryption["password"] = pwd
+                    data = {"decryption": scraper.decryption}
+                    conf.set_data(scraper.name, data)
                 break
 
         driver.quit()  # 关闭浏览器
@@ -81,7 +87,7 @@ def main():
     nodes_text = get_url(nodes_url)
     write_nodes(nodes_text, f"{scraper.name}.txt")
 
-    # 写更新日期
+    # 记录更新日期
     data = {"up_date": scraper.text_date.date().strftime("%Y-%m-%d")}
     conf.set_data(scraper.name, data)
 
@@ -102,10 +108,11 @@ if __name__ == "__main__":
     for config in conf.configs:
         try:
             main()
-            print(f"{config["name"]} 更新记录")
-            conf.write_config()
         except Exception as e:
             traceback.print_exc()
             print(f"{config["name"]} ERROR: {e}")
 
-    # merge_nodes()
+    print("更新记录")
+    conf.write_config()
+
+    merge_nodes()

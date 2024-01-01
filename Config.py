@@ -8,6 +8,7 @@ class Decryption(TypedDict):
     script: str
     box_id: str
     button_name: str
+    password: str
 
 
 class ConfigData(TypedDict):

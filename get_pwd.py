@@ -2,6 +2,7 @@ import re
 import sys
 import xml.etree.ElementTree as ET
 from http.client import IncompleteRead
+from typing import Generator
 from urllib.error import URLError
 
 import cv2
@@ -11,7 +12,7 @@ import pytube
 from APICaller import APICaller
 
 
-def __get_frame(video_capture: cv2.VideoCapture) -> np.ndarray:
+def __get_frame(video_capture: cv2.VideoCapture) -> Generator[np.ndarray, None, None]:
     """生成视频截图"""
     total_frames = int(video_capture.get(cv2.CAP_PROP_FRAME_COUNT))
     fps = video_capture.get(cv2.CAP_PROP_FPS)
@@ -49,7 +50,7 @@ def _get_stream(yt: pytube.YouTube):
     raise "无法获取视频流"
 
 
-def _get_pwd_by_ocr(apicaller: APICaller, image: np.ndarray) -> str:
+def _get_pwd_by_ocr(apicaller: APICaller, image: np.ndarray) -> Generator[str, None, None]:
     """调用ocr获得密码"""
     apicaller.img_to_base64(image)  # 传入截图
     result = apicaller.digital_ocr()  # 调用ocr
@@ -62,7 +63,7 @@ def _get_pwd_by_ocr(apicaller: APICaller, image: np.ndarray) -> str:
         yield __find_pwd(text)
 
 
-def _get_pwd_from_caption(subtitles: list[pytube.Caption]) -> str:
+def _get_pwd_from_caption(subtitles: list[pytube.Caption]) -> Generator[str, None, None]:
     """遍历字幕获得密码"""
     for caption in subtitles:
         # 遍历字幕
@@ -78,7 +79,7 @@ def _get_pwd_from_caption(subtitles: list[pytube.Caption]) -> str:
             yield __find_pwd(text)
 
 
-def get_pwd(url: str, api_key: str, secret_key: str) -> str:
+def get_pwd(url: str, api_key: str, secret_key: str) -> Generator[str, None, None]:
     """获取候选密码"""
     # 创建 YouTube 对象
     yt = pytube.YouTube(url)
