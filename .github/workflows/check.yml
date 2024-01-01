@@ -1,8 +1,10 @@
-name: Regular Update
+name: Check Push
 
 on:
-  schedule:
-    - cron: "0 2-14/4 * * *" # 每天, 时区+8
+  push:
+    branches:
+      - master
+  workflow_dispatch:
 
 jobs:
   update:
@@ -23,7 +25,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run Python
-        run: python main.py --api_key ${{secrets.API_KEY}} --secret_key ${{secrets.SECRET_KEY}}
+        run: python main.py --debug True --api_key ${{secrets.API_KEY}} --secret_key ${{secrets.SECRET_KEY}}
 
       - name: Git Commit Push Action
         uses: GuillaumeFalourd/git-commit-push@v1.3
@@ -33,7 +35,7 @@ jobs:
           # Committer's username
           name: ${{ github.actor }}
           # Commit message
-          commit_message: "Update on Schedule"
+          commit_message: "Force the Update"
           # Branch to push the changes back to
           target_branch: ${{ github.ref }}
           # Files to add separated by space
