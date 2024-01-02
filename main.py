@@ -109,7 +109,7 @@ if __name__ == "__main__":
     # 创建线程池
     with ThreadPoolExecutor() as executor:
         futures = []
-        for config in conf.configs[5:]:
+        for config in conf.configs:
             future = executor.submit(main, config)
             futures.append(future)
         try:
