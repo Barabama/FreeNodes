@@ -13,9 +13,10 @@ class Decryption(TypedDict):
 
 class ConfigData(TypedDict):
     name: str
-    list_url: str
-    attrs: dict
+    tier: int
     up_date: str
+    main_url: str
+    attrs: dict
     pattern: str
     nodes_index: int
     decryption: Decryption

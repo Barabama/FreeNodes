@@ -4,22 +4,23 @@ import cv2
 import requests
 from numpy import ndarray
 
+access_url = "https://aip.baidubce.com/oauth/2.0/token"
+post_urls = [{"url": "https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic", "usable": True},
+             {"url": "https://aip.baidubce.com/rest/2.0/ocr/v1/general", "usable": True},
+             {"url": "https://aip.baidubce.com/rest/2.0/ocr/v1/webimage", "usable": True},
+             {"url": "https://aip.baidubce.com/rest/2.0/ocr/v1/accurate", "usable": True}]
+
 
 class APICaller:
-    __access_url = "https://aip.baidubce.com/oauth/2.0/token"
-    __post_urls = [{"url": "https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic", "usable": True},
-                   {"url": "https://aip.baidubce.com/rest/2.0/ocr/v1/general", "usable": True},
-                   {"url": "https://aip.baidubce.com/rest/2.0/ocr/v1/webimage", "usable": True},
-                   {"url": "https://aip.baidubce.com/rest/2.0/ocr/v1/accurate", "usable": True}]
-    __access_token: str
+    access_token: str
     image: ndarray
     b_base64: base64
 
     def __init__(self, api_key: str, secret_key: str):
         """使用 AK, SK 生成鉴权签名(Access Token)"""
         params = {"grant_type": "client_credentials", "client_id": api_key, "client_secret": secret_key}
-        self.__access_token = requests.post(self.__access_url, params=params).json().get("access_token")
-        if not self.__access_token:
+        self.access_token = requests.post(access_url, params=params).json().get("access_token")
+        if not self.access_token:
             print("APICaller初始化失败, 无法生成AccessToken")
             raise ValueError
         print("APICaller初始化成功, 生成AccessToken")
@@ -37,12 +38,12 @@ class APICaller:
         技术文档: https://cloud.baidu.com/doc/OCR/index.html
         :return: {"words_result":[] , "words_result_num": int, "log_id"}
         """
-        params = {"access_token": self.__access_token}
+        params = {"access_token": self.access_token}
         headers = {"Content-Type": "application/x-www-form-urlencoded", "Accept": "application/json"}
         payload = {"image": self.b_base64, "detect_direction": "false"}
 
         # 发送 POST 请求
-        for i, elem in enumerate(self.__post_urls):
+        for i, elem in enumerate(post_urls):
             if not elem["usable"]:
                 continue
 
@@ -51,6 +52,6 @@ class APICaller:
 
             if "error_code" in res:
                 print(res.get("error_msg"))
-                self.__post_urls[i]["usable"] = False
+                post_urls[i]["usable"] = False
             else:
                 return res

@@ -31,22 +31,23 @@ def get_elements(text: str, element="", attrs={}) -> Generator[Tag, None, None]:
 
 class NodeScraper:
     name: str
-    detail_url: str
-    detail_text: str
     up_date: str
     text_date: datetime
+    detail_url: str
+    detail_text: str
     pattern: str
     nodes_index: int
     decryption: Decryption
     driver: webdriver.Chrome
 
-    def __init__(self, name: str, main_url: str, attrs: dict, up_date: str,
-                 pattern: str, nodes_index=0, decryption: Decryption = {}):
+    def __init__(self, name: str, tier: int, up_date: str,
+                 main_url: str, attrs: dict, pattern: str,
+                 nodes_index=0, decryption: Decryption = {}):
         """
         :param name: 保存的文件名
+        :param up_date: 更新日期
         :param main_url: 主页链接
         :param attrs: 抓取属性
-        :param up_date: 更新日期
         :param pattern: 节点链接匹配表达式
         :param nodes_index: 节点链接索引
         :param decryption: 解密参数

@@ -1,42 +1,32 @@
 import argparse
-import base64
 import itertools
 import os
 import traceback
+from concurrent.futures import ThreadPoolExecutor
 
 from Config import *
+from NodeHandler import *
 from NodeScraper import *
 from get_pwd import get_pwd
 
-folder_path = "nodes"
+nodes_path = "nodes"
 
 
 def is_base64(s: str) -> bool:
-    """判断字符串是否为base64"""
-    return (bool(re.match(r'^[A-Za-z0-9+/=]+$', s))) and (len(s) % 4 == 0)
-
-
-def get_nodes(text: str):
-    yield from text.strip().splitlines()
+    """判断字符串是否为 base64"""
+    return bool(re.match(r"^[A-Za-z0-9+/=]+$", s))
 
 
 def write_nodes(text: str, file_name: str):
     """更新节点文本"""
-    if not os.path.isdir(folder_path): os.mkdir(folder_path)  # 新建文件夹
+    if not os.path.isdir(nodes_path): os.mkdir(nodes_path)  # 新建文件夹
     text = base64.b64decode(text).decode("utf-8") if is_base64(text) else text
 
-    with open(os.path.join(folder_path, file_name), "w") as f:
+    with open(os.path.join(nodes_path, file_name), "w") as f:
         f.write("\n".join(get_nodes(text)))
 
 
-def merge_nodes():
-    with open(os.path.join(folder_path, "merged.txt"), "w") as merged_file:
-        for file_name in [file for file in os.listdir(folder_path) if file.endswith(".txt")]:
-            with open(os.path.join(folder_path, file_name), "r") as file:
-                merged_file.write(file.read() + "\n")
-
-
-def main():
+def main(config: ConfigData):
     """抓取节点内容并保存"""
     scraper = NodeScraper(**config)
     print(f"{scraper.name}: 访问 {scraper.detail_url}")
@@ -91,6 +81,11 @@ def main():
     data = {"up_date": scraper.text_date.date().strftime("%Y-%m-%d")}
     conf.set_data(scraper.name, data)
 
+    # 节点合并
+    if config["tier"]:
+        with open(os.path.join(nodes_path, f"{config["name"]}.txt"), "r") as file:
+            merged_file.write(file.read() + "\n")
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -103,16 +98,27 @@ if __name__ == "__main__":
     api_key = args.api_key
     secret_key = args.secret_key
 
+    merged_path = os.path.join(nodes_path, "merged.txt")
+    with open(merged_path, "w") as merged_file:
+        merged_file.truncate(0)  # 清空文件内容
+    merged_file = open(merged_path, "a")
+
+    # 读取配置文件
     conf = Config("config.json")
 
-    for config in conf.configs:
+    # 创建线程池
+    with ThreadPoolExecutor() as executor:
+        futures = []
+        for config in conf.configs[5:]:
+            future = executor.submit(main, config)
+            futures.append(future)
         try:
-            main()
+            results = [future.result() for future in futures]
         except Exception as e:
             traceback.print_exc()
             print(f"{config["name"]} ERROR: {e}")
 
+    merged_file.close()
+
     print("更新记录")
     conf.write_config()
-
-    merge_nodes()
