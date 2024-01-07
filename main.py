@@ -27,16 +27,19 @@ def write_nodes(text: str, file_name: str):
     nodes = [node for node in text.strip().splitlines()]  # 节点列表
 
     geos = get_geos([get_address(node) for node in nodes])  # geo列表
-    for i, geo in enumerate(geos):
-        if geo.get("status", "fail") == "fail":
-            geo = get_geo(geo["query"])  # 域名再识别
 
-        remarks = f"{geo["country"]}_{geo["city"]}" \
-            if geo["status"] == "success" else "Unknown"
-        nodes[i] = write_remarks(nodes[i], remarks)
+    def iterator():
+        for i, geo in enumerate(geos):
+            if geo.get("status", "fail") == "fail":
+                geo = get_geo(geo["query"])  # 域名再识别
+
+            remarks = f"{geo["country"]}_{geo["city"]}" \
+                if geo["status"] == "success" else "Unknown"
+            nodes[i] = write_remarks(nodes[i], remarks)
+            yield nodes[i]
 
     with open(os.path.join(nodes_path, file_name), "w") as file:
-        file.write("\n".join(nodes))
+        file.write("\n".join(iterator()))
 
 
 def main(config: ConfigData) -> int:
