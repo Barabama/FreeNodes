@@ -24,7 +24,7 @@ add_event.set()
 ips_event.set()
 
 session = requests.Session()
-strategy = Retry(connect=3, read=3, status_forcelist=[500, 502, 503, 504], backoff_factor=3)
+strategy = Retry(connect=3, read=3, status_forcelist=[500, 502, 503, 504], backoff_factor=5)
 session.mount('http://', HTTPAdapter(max_retries=strategy))
 
 
@@ -34,7 +34,7 @@ def get_geo(add: str) -> dict:
     add_url = f"http://ip-api.com/json/{add}"
 
     if add_rl <= 0:
-        print(f"add wait {add_ttl} s")
+        # print(f"add wait {add_ttl} s")
         add_event.clear()
         add_event.wait(timeout=add_ttl)
         add_rl = add_limits  # 重置
@@ -46,7 +46,7 @@ def get_geo(add: str) -> dict:
     with add_lock:
         add_rl -= 1  # = int(response.headers.get("X-Rl", 60))
         add_ttl = int(response.headers.get("X-Ttl", 60))
-    print(response.text)
+    # print(response.text)
     data = response.json()
 
     return data
@@ -61,7 +61,7 @@ def get_geos(ips: list[str]) -> list[dict]:
     for subs in [ips[i:i + 100] for i in range(0, len(ips), 100)]:
 
         if ips_rl <= 0:
-            print(f"ips wait {ips_ttl} s")
+            # print(f"ips wait {ips_ttl} s")
             ips_event.clear()
             ips_event.wait(timeout=ips_ttl)
             ips_rl = ips_limits  # 重置
@@ -74,7 +74,7 @@ def get_geos(ips: list[str]) -> list[dict]:
         with ips_lock:
             ips_rl -= 1  # = int(response.headers.get("X-Rl", 60))
             ips_ttl = int(response.headers.get("X-Ttl", 60))
-        print(response.text)
+        # print(response.text)
         data = response.json()
         res.extend(data)
 
