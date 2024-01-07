@@ -6,8 +6,8 @@ class Decryption(TypedDict):
     yt_index: int
     decrypt_by: str
     script: str
-    box_id: str
-    button_name: str
+    textbox: list
+    button: list
     password: str
 
 

@@ -35,9 +35,10 @@ def find_pwd(text: str) -> str:
         word = "".join(num_list)
         print(f"候选 {word}")
         return word
+    return ""
 
 
-def get_stream(yt: pytube.YouTube):
+def get_stream(yt: pytube.YouTube) -> pytube.Stream:
     """获取视频流"""
     for opt in ["360p", "480p", "720p"]:
         if stream := yt.streams.get_by_resolution(opt):
@@ -69,8 +70,6 @@ def get_pwd_from_caption(subtitles: list[pytube.Caption]) -> Generator[str, None
         for p_element in root.findall(".//p"):
             # 获取文本内容和时间属性
             text = p_element.text
-            time = int(p_element.get("t"))
-            duration = int(p_element.get("d"))
             yield find_pwd(text)
 
 

@@ -23,7 +23,7 @@ def get_url(url: str) -> str:
     return response.text if response.status_code < 400 else ""
 
 
-def get_elements(text: str, element="", attrs={}) -> Generator[Tag, None, None]:
+def get_elements(text: str, element="", attrs=None) -> Generator[Tag, None, None]:
     """获取网页元素"""
     soup = BeautifulSoup(text, "html.parser")
     yield from soup.find_all(element, attrs)
@@ -40,9 +40,8 @@ class NodeScraper:
     decryption: Decryption
     driver: webdriver.Chrome
 
-    def __init__(self, name: str, tier: int, up_date: str,
-                 main_url: str, attrs: dict, pattern: str,
-                 nodes_index=0, decryption: Decryption = {}):
+    def __init__(self, name: str, up_date: str, main_url: str,
+                 attrs: dict, pattern: str, nodes_index=0, decryption=None):
         """
         :param name: 保存的文件名
         :param up_date: 更新日期
@@ -74,7 +73,8 @@ class NodeScraper:
     def is_locked(self) -> bool:
         """判断网页中是否存在解密元素"""
         locked_elements = [{"element": "input", "attrs": {"id": "EPassword"}},
-                           {"element": "input", "attrs": {"id": "pwbox-426"}}]
+                           {"element": "input", "attrs": {"id": "pwbox-426"}},
+                           {"element": "input", "attrs": {"name": "secret-key"}}]
         return any(get_elements(self.detail_text, **e) for e in locked_elements)
 
     def is_new(self) -> bool:
@@ -103,11 +103,11 @@ class NodeScraper:
         # 获取 youtube 链接
         yt_urls = [href for href in hrefs if href.startswith("https://youtu.be/")]
         # 取首尾 youtube 链接
-        return yt_urls[self.decryption["yt_index"]]
+        return yt_urls[self.decryption.get("yt_index", 0)] if len(yt_urls) else ""
 
     def decrypt_for_text(self, pwd: str) -> str:
         """网页解密得到隐藏文本内容"""
-        decrypt_by = self.decryption["decrypt_by"]
+        decrypt_by = self.decryption.get("decrypt_by", "click")
 
         if decrypt_by not in ("js", "click"):
             warnings.warn(f"解密方法 {decrypt_by} 不支持, 默认 click")
@@ -118,11 +118,13 @@ class NodeScraper:
 
         # 模拟输入提交
         else:
-            # 使用元素的id属性来定位文本框
-            text_box = self.driver.find_element(By.ID, self.decryption["box_id"])
-            text_box.send_keys(pwd)
-            # 使用元素的name属性来定位按钮
-            button = self.driver.find_element(By.NAME, self.decryption["button_name"])
+            # 定位文本框
+            by, value = self.decryption["textbox"]
+            textbox = self.driver.find_element(by, value)
+            textbox.send_keys(pwd)
+            # 定位按钮
+            by, value = self.decryption["button"]
+            button = self.driver.find_element(by, value)
             button.submit()
 
         try:
