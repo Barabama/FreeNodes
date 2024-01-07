@@ -4,6 +4,7 @@ import threading
 from urllib.parse import parse_qs, quote, urlencode, urlsplit, urlunsplit
 
 import requests
+from requests import JSONDecodeError
 from requests.adapters import HTTPAdapter
 from urllib3 import Retry
 
@@ -47,8 +48,10 @@ def get_geo(add: str) -> dict:
         add_rl -= 1  # = int(response.headers.get("X-Rl", 60))
         add_ttl = int(response.headers.get("X-Ttl", 60))
     # print(response.text)
-    data = response.json()
-
+    try:
+        data = response.json()
+    except JSONDecodeError:
+        print(response.status_code, response.text)
     return data
 
 
