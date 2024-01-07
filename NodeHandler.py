@@ -24,7 +24,8 @@ add_event.set()
 ips_event.set()
 
 session = requests.Session()
-session.mount('http://', HTTPAdapter(max_retries=Retry(read=3, connect=3)))
+strategy = Retry(connect=3, read=3, status_forcelist=[500, 502, 503, 504], backoff_factor=3)
+session.mount('http://', HTTPAdapter(max_retries=strategy))
 
 
 def get_geo(add: str) -> dict:
@@ -43,10 +44,10 @@ def get_geo(add: str) -> dict:
     response = session.get(add_url, params=params, timeout=20)
     # 检查速率限制
     with add_lock:
-        add_rl -= 1  # = int(response.headers.get("X-Rl"))
-        add_ttl = int(response.headers.get("X-Ttl"))
-    print(type(response.text))
-    data = json.loads(response.text.encode("utf-8"))
+        add_rl -= 1  # = int(response.headers.get("X-Rl", 60))
+        add_ttl = int(response.headers.get("X-Ttl", 60))
+    print(response.text)
+    data = response.json()
 
     return data
 
@@ -67,14 +68,14 @@ def get_geos(ips: list[str]) -> list[dict]:
             ips_event.set()
 
         ips_event.wait()
-        response = requests.post(ips_url, data=json.dumps(subs), params=params)
+        response = session.post(ips_url, data=json.dumps(subs), params=params)
 
         # 检查速率限制
         with ips_lock:
-            ips_rl -= 1  # = int(response.headers.get("X-Rl"))
-            ips_ttl = int(response.headers.get("X-Ttl"))
-        print(type(response.text))
-        data = json.loads(response.text.encode("utf-8"))
+            ips_rl -= 1  # = int(response.headers.get("X-Rl", 60))
+            ips_ttl = int(response.headers.get("X-Ttl", 60))
+        print(response.text)
+        data = response.json()
         res.extend(data)
 
     return res
