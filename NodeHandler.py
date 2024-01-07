@@ -4,6 +4,7 @@ import threading
 from urllib.parse import parse_qs, quote, urlencode, urlsplit, urlunsplit
 
 import requests
+from requests import JSONDecodeError
 from requests.adapters import HTTPAdapter
 from urllib3 import Retry
 
@@ -23,8 +24,9 @@ ips_event = threading.Event()
 add_event.set()
 ips_event.set()
 
+status_forcelist = [408, 425, 429, 500, 502, 503, 504]
 session = requests.Session()
-strategy = Retry(connect=3, read=3, status_forcelist=[500, 502, 503, 504], backoff_factor=5)
+strategy = Retry(connect=3, read=3, status_forcelist=status_forcelist, backoff_factor=5)
 session.mount('http://', HTTPAdapter(max_retries=strategy))
 
 
@@ -41,15 +43,17 @@ def get_geo(add: str) -> dict:
         add_event.set()
 
     add_event.wait()
-    response = session.get(add_url, params=params, timeout=20)
     # 检查速率限制
     with add_lock:
+        response = session.get(add_url, params=params, timeout=20)
         add_rl -= 1  # = int(response.headers.get("X-Rl", 60))
         add_ttl = int(response.headers.get("X-Ttl", 60))
     # print(response.text)
-    data = response.json()
-
-    return data
+    try:
+        data = response.json()
+        return data
+    except JSONDecodeError:
+        print(response.status_code, response.text)
 
 
 def get_geos(ips: list[str]) -> list[dict]:
@@ -68,10 +72,9 @@ def get_geos(ips: list[str]) -> list[dict]:
             ips_event.set()
 
         ips_event.wait()
-        response = session.post(ips_url, data=json.dumps(subs), params=params)
-
         # 检查速率限制
         with ips_lock:
+            response = session.post(ips_url, data=json.dumps(subs), params=params)
             ips_rl -= 1  # = int(response.headers.get("X-Rl", 60))
             ips_ttl = int(response.headers.get("X-Ttl", 60))
         # print(response.text)
