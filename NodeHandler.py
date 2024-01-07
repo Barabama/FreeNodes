@@ -45,7 +45,7 @@ def get_geo(add: str) -> dict:
     with add_lock:
         add_rl -= 1  # = int(response.headers.get("X-Rl"))
         add_ttl = int(response.headers.get("X-Ttl"))
-    print(type(response.text))
+    print("geo:", type(response.text))
     data = json.loads(response.text.encode("utf-8"))
 
     return data
@@ -73,7 +73,7 @@ def get_geos(ips: list[str]) -> list[dict]:
         with ips_lock:
             ips_rl -= 1  # = int(response.headers.get("X-Rl"))
             ips_ttl = int(response.headers.get("X-Ttl"))
-        print(type(response.text))
+        print("geos", type(response.text))
         data = json.loads(response.text.encode("utf-8"))
         res.extend(data)
 
