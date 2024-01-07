@@ -3,7 +3,8 @@ name: Regular Update
 on:
   schedule:
     - cron: "0 2-14/6 * * *" # 每天, 时区+8
-
+  branches:
+    - master
 jobs:
   update:
     runs-on: ubuntu-latest
