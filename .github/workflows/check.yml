@@ -1,15 +1,14 @@
 name: Check Push
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - dev
-  workflow_dispatch:
 
 jobs:
-  update:
+  prepare:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -24,29 +23,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+  check:
+    runs-on: ubuntu-latest
+    steps:
       - name: Run Python
         run: python main.py --debug True --api_key ${{secrets.API_KEY}} --secret_key ${{secrets.SECRET_KEY}}
 
       - name: Git Commit Push Action
         uses: GuillaumeFalourd/git-commit-push@v1.3
         with:
-          # Committer's email address
-          email: ${{ github.actor }}@users.noreply.github.com
-          # Committer's username
-          name: ${{ github.actor }}
-          # Commit message
           commit_message: "Force the Update"
-          # Branch to push the changes back to
-          target_branch: ${{ github.ref }}
-          # Files to add separated by space
           files: config.json nodes/*
-          # Repository url to push the code to
-          remote_repository: origin
-          # Token used to push the code
-          access_token: ${{ github.token }}
-          # Whether to perform force push
-          force: 0
-          # Whether to allow empty commit
           empty: 1
-          # Whether to use --tags
-          tags: 0
