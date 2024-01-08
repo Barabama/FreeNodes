@@ -3,8 +3,7 @@ name: Regular Update
 on:
   schedule:
     - cron: "0 2-14/6 * * *" # 每天, 时区+8
-  branches:
-    - master
+
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -12,8 +11,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        with:
-          repository:
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
