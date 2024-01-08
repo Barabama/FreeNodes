@@ -7,7 +7,7 @@ on:
       - dev
 
 jobs:
-  prepare:
+  check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -23,9 +23,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-  check:
-    runs-on: ubuntu-latest
-    steps:
       - name: Run Python
         run: python main.py --debug True --api_key ${{secrets.API_KEY}} --secret_key ${{secrets.SECRET_KEY}}
 
