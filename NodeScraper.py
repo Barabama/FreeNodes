@@ -58,7 +58,7 @@ class NodeScraper:
         self.decryption = decryption
 
         main_text = get_url(main_url)
-        detail_url = next(get_elements(main_text, "a", attrs)).get("href")
+        detail_url = next(get_elements(main_text, "a", attrs), None).get("href")
         self.detail_url = urljoin(main_url, detail_url)
         self.detail_text = get_url(self.detail_url)
 

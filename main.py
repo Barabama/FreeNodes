@@ -47,6 +47,9 @@ def main(config: ConfigData) -> int:
     kwargs = config.copy()
     kwargs.pop("tier")
     scraper = NodeScraper(**kwargs)
+
+    if not scraper.detail_text:
+        raise f"{scraper.name}: 无法访问 {scraper.detail_url}"
     print(f"{scraper.name}: 访问 {scraper.detail_url}")
 
     # 是否需要更新
@@ -93,8 +96,7 @@ def main(config: ConfigData) -> int:
         driver.quit()  # 关闭浏览器
 
     if not nodes_url:
-        print(f"{scraper.name}: 更新节点失败")
-        return 0
+        raise f"{scraper.name}: 无法获取节点"
 
     # 更新节点文本
     print(f"{scraper.name}: 更新节点 {nodes_url}")
@@ -110,6 +112,8 @@ def main(config: ConfigData) -> int:
         with merge_lock:
             with open(os.path.join(nodes_path, f"{config["name"]}.txt"), "r") as file:
                 merged_file.write(file.read() + "\n")
+
+    print(f"{scraper.name}: 更新完成")
     return 0
 
 
@@ -145,7 +149,5 @@ if __name__ == "__main__":
 
     merged_file.close()
 
-    print("更新记录")
+    print(f"代码 {sum(results)}, 更新记录")
     conf.write_config()
-
-    exit(sum(results))
