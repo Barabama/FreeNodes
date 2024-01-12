@@ -23,7 +23,7 @@ def get_url(url: str) -> str:
     return response.text if response.status_code < 400 else ""
 
 
-def get_elements(text: str, element="", attrs=None) -> Generator[Tag, None, None]:
+def gen_elem(text: str, element="", attrs=None) -> Generator[Tag, None, None]:
     """获取网页元素"""
     soup = BeautifulSoup(text, "html.parser")
     yield from soup.find_all(element, attrs)
@@ -58,11 +58,12 @@ class NodeScraper:
         self.decryption = decryption
 
         main_text = get_url(main_url)
-        detail_url = next(get_elements(main_text, "a", attrs), None).get("href")
+        a_tag = (e for e in gen_elem(main_text, "a", attrs))
+        detail_url = next(a_tag, None).get("href", "")
         self.detail_url = urljoin(main_url, detail_url)
         self.detail_text = get_url(self.detail_url)
 
-    def webdriver_init(self) -> webdriver.Chrome:
+    def init_webdriver(self) -> webdriver.Chrome:
         """虚拟浏览器初始化"""
         options = webdriver.ChromeOptions()
         options.add_argument("--headless")  # 启用无头模式
@@ -75,11 +76,11 @@ class NodeScraper:
         locked_elements = [{"element": "input", "attrs": {"id": "EPassword"}},
                            {"element": "input", "attrs": {"id": "pwbox-426"}},
                            {"element": "input", "attrs": {"name": "secret-key"}}]
-        return any(get_elements(self.detail_text, **e) for e in locked_elements)
+        return any(gen_elem(self.detail_text, **e) for e in locked_elements)
 
     def is_new(self) -> bool:
         """判断网页的是否更新"""
-        h1 = "".join(e.text for e in get_elements(self.detail_text, "h1"))
+        h1 = "".join(e.text for e in gen_elem(self.detail_text, "h1"))
         if "正在制作" in h1: return False
 
         if match := re.search(r"\d+月\d+", h1):
@@ -99,7 +100,7 @@ class NodeScraper:
     def get_yt_url(self) -> str:
         """获取 youtube 视频链接"""
         # 获取详情页所有链接
-        hrefs = [str(tag.get("href")) for tag in get_elements(self.detail_text, "a")]
+        hrefs = [str(tag.get("href")) for tag in gen_elem(self.detail_text, "a")]
         # 获取 youtube 链接
         yt_urls = [href for href in hrefs if href.startswith("https://youtu.be/")]
         # 取首尾 youtube 链接

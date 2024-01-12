@@ -65,7 +65,7 @@ def main(config: ConfigData) -> int:
     elif scraper.is_locked():
         print(f"{scraper.name}: 需要解密")
 
-        driver = scraper.webdriver_init()
+        driver = scraper.init_webdriver()
 
         # 获取解密密码
         cur_pwd = scraper.decryption.get("password", "")
@@ -75,7 +75,7 @@ def main(config: ConfigData) -> int:
             print(f"{scraper.name}: 访问 {yt_url}")
             gen_new_pwd = get_pwd(yt_url, api_key, secret_key)
         else:
-            elems = [e for e in get_elements(scraper.detail_text, "p")]
+            elems = [e for e in gen_elem(scraper.detail_text, "p")]
             gen_new_pwd = iter([find_pwd(e.text) for e in elems])
 
         for pwd in itertools.chain(iter_cur_pwd, gen_new_pwd):
