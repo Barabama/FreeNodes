@@ -59,7 +59,7 @@ class NodeScraper:
 
         main_text = get_url(main_url)
         a_tag = (e for e in gen_elem(main_text, "a", attrs))
-        detail_url = next(a_tag, None).get("href", "")
+        detail_url = next(a_tag, {}).get("href", "")
         self.detail_url = urljoin(main_url, detail_url)
         self.detail_text = get_url(self.detail_url)
 
