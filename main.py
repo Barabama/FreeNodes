@@ -149,5 +149,5 @@ if __name__ == "__main__":
 
     merged_file.close()
 
-    print(f"代码 {sum(results)}, 更新记录")
+    print(f"{sum(results)} 个线程出现错误, 更新记录")
     conf.write_config()
