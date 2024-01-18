@@ -4,7 +4,7 @@ class CustomError(Exception):
         super().__init__(self.msg)
 
     def __str__(self):
-        return {self.msg}
+        return self.msg
 
 
 class MsgHandler:
