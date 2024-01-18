@@ -3,10 +3,7 @@ import json
 import threading
 from urllib.parse import parse_qs, quote, urlencode, urlsplit, urlunsplit
 
-import requests
-from requests import JSONDecodeError
-from requests.adapters import HTTPAdapter
-from urllib3 import Retry
+from RequestHandler import make_request
 
 add_rl = add_limits = 45
 ips_rl = ips_limits = 15
@@ -24,11 +21,6 @@ ips_event = threading.Event()
 add_event.set()
 ips_event.set()
 
-status_forcelist = [408, 425, 429, 500, 502, 503, 504]
-session = requests.Session()
-strategy = Retry(connect=3, read=3, status_forcelist=status_forcelist, backoff_factor=5)
-session.mount('http://', HTTPAdapter(max_retries=strategy))
-
 
 def get_geo(add: str) -> dict:
     """获取 IP 域名 地理位置"""
@@ -36,7 +28,6 @@ def get_geo(add: str) -> dict:
     add_url = f"http://ip-api.com/json/{add}"
 
     if add_rl <= 0:
-        # print(f"add wait {add_ttl} s")
         add_event.clear()
         add_event.wait(timeout=add_ttl)
         add_rl = add_limits  # 重置
@@ -45,15 +36,11 @@ def get_geo(add: str) -> dict:
     add_event.wait()
     # 检查速率限制
     with add_lock:
-        response = session.get(add_url, params=params, timeout=20)
+        response = make_request("GET", add_url, params, timeout=20)
         add_rl -= 1  # = int(response.headers.get("X-Rl", 60))
         add_ttl = int(response.headers.get("X-Ttl", 60))
-    # print(response.text)
-    try:
-        data = response.json()
-        return data
-    except JSONDecodeError:
-        print(response.status_code, response.text)
+
+    return response.json() if response.text else {}
 
 
 def get_geos(ips: list[str]) -> list[dict]:
@@ -65,7 +52,6 @@ def get_geos(ips: list[str]) -> list[dict]:
     for subs in [ips[i:i + 100] for i in range(0, len(ips), 100)]:
 
         if ips_rl <= 0:
-            # print(f"ips wait {ips_ttl} s")
             ips_event.clear()
             ips_event.wait(timeout=ips_ttl)
             ips_rl = ips_limits  # 重置
@@ -74,11 +60,11 @@ def get_geos(ips: list[str]) -> list[dict]:
         ips_event.wait()
         # 检查速率限制
         with ips_lock:
-            response = session.post(ips_url, data=json.dumps(subs), params=params)
+            response = make_request("POST", ips_url, params, json.dumps(subs))
             ips_rl -= 1  # = int(response.headers.get("X-Rl", 60))
             ips_ttl = int(response.headers.get("X-Ttl", 60))
-        # print(response.text)
-        data = response.json()
+
+        data = response.json() if response.text else []
         res.extend(data)
 
     return res
