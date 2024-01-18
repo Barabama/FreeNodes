@@ -74,7 +74,7 @@ def main(config: ConfigData) -> int:
 
         # 获取解密密码
         cur_pwd = scraper.decryption.get("password", "")
-        iter_cur_pwd = iter(cur_pwd)
+        iter_cur_pwd = iter([cur_pwd])
 
         if yt_url := scraper.get_yt_url():
             msg_handler.show_msg(f"访问youtube {yt_url}")
@@ -84,13 +84,13 @@ def main(config: ConfigData) -> int:
             gen_new_pwd = (find_pwd(e.text) for e in gen_elem(scraper.detail_text, "p"))
 
         for pwd in itertools.chain(iter_cur_pwd, gen_new_pwd):
-            if not pwd.strip():
-                continue
-
-            result = scraper.decrypt_for_text(pwd)
+            if not pwd: continue
+            ret, result = scraper.decrypt_for_text(pwd)
+            if not ret:
+                msg_handler.show_msg(result)
             # 获取 txt 文本链接
-            if nodes_url := scraper.get_nodes_url(result):
-                msg_handler.show_msg(f"{scraper.name}: 解密成功获取节点")
+            elif nodes_url := scraper.get_nodes_url(result):
+                msg_handler.show_msg(f"{scraper.name}: {pwd} 解密成功")
                 # 记录解密密码
                 if cur_pwd != pwd:
                     scraper.decryption["password"] = pwd
@@ -141,16 +141,19 @@ if __name__ == "__main__":
     # 读取配置文件
     conf = Config("config.json")
 
-    # 创建线程池
-    with ThreadPoolExecutor(max_workers=4) as executor:
-        futures = [executor.submit(main, config) for config in conf.configs]
-        results = []
-        for future in as_completed(futures):
-            try:
-                results.append(future.result())
-            except Exception:
-                traceback.print_exc()
-                results.append(1)
+    if debug:
+        results = [main(config) for config in conf.configs]
+    else:
+        # 创建线程池
+        with ThreadPoolExecutor(max_workers=4) as executor:
+            futures = [executor.submit(main, config) for config in conf.configs]
+            results = []
+            for future in as_completed(futures):
+                try:
+                    results.append(future.result())
+                except Exception:
+                    traceback.print_last()
+                    results.append(1)
 
     merged_file.close()
 

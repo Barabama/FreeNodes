@@ -72,14 +72,13 @@ class NodeScraper:
 
     def is_new(self, force=True) -> bool:
         """判断网页的是否更新"""
-        if force: return True
         h1 = "".join(e.text for e in gen_elem(self.detail_text, "h1"))
         if "正在制作" in h1: return False
         if match := re.search(r"\d+月\d+", h1):
             web_date = datetime.strptime(str(match.group()), "%m月%d")
             self.web_date = web_date.replace(year=datetime.today().year)
             up_date = datetime.strptime(self.up_date, "%Y-%m-%d")
-            return True if self.web_date.date() > up_date.date() else False
+            return True if self.web_date.date() > up_date.date() or force else False
 
     def get_nodes_url(self, text="") -> str:
         """匹配txt文本链接"""
@@ -96,7 +95,7 @@ class NodeScraper:
         # 取首尾 youtube 链接
         return yt_urls[self.decryption.get("yt_index", 0)] if yt_urls else ""
 
-    def decrypt_for_text(self, pwd: str) -> str:
+    def decrypt_for_text(self, pwd: str) -> tuple:
         """网页解密得到隐藏文本内容"""
         decrypt_by = self.decryption.get("decrypt_by", "click")
 
@@ -117,8 +116,8 @@ class NodeScraper:
 
         try:
             alert = WebDriverWait(self.driver, 2).until(EC.alert_is_present())
-            print(f"页面提示 {alert.text}")  # 获取弹窗的文本内容
+            msg = alert.text
             alert.accept()  # 处理 alert 弹窗
-            return ""
+            return False, msg
         except TimeoutException:
-            return self.driver.find_element(By.TAG_NAME, "body").text
+            return True, self.driver.find_element(By.TAG_NAME, "body").text
