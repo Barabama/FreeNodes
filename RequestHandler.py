@@ -5,10 +5,8 @@ import kuser_agent
 import requests
 from numpy import ndarray
 from requests.adapters import HTTPAdapter
-from requests.exceptions import RetryError
-from urllib3 import Retry
 
-from MsgHandler import CustomError
+from urllib3 import Retry
 
 session = requests.Session()
 status_forces = [408, 413, 424, 425, 429, 500, 502, 503, 504]
@@ -17,8 +15,7 @@ session.mount('http://', HTTPAdapter(max_retries=retries))
 session.mount('https://', HTTPAdapter(max_retries=retries))
 
 
-def make_request(method: str, url: str,
-                 params=None, data=None, headers=None, timeout=1):
+def make_request(method: str, url: str, params=None, data=None, headers=None, timeout=1):
     """请求服务器"""
     headers = headers if headers else {"User-Agent": kuser_agent.get()}
     response = session.request(method, url, params, data, headers, timeout=timeout)
@@ -26,6 +23,7 @@ def make_request(method: str, url: str,
 
 
 class OCRCaller:
+    """技术文档: https://cloud.baidu.com/doc/OCR/index.html"""
     access_url = "https://aip.baidubce.com/oauth/2.0/token"
     post_urls = [{"url": "https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic", "usable": True},
                  {"url": "https://aip.baidubce.com/rest/2.0/ocr/v1/general", "usable": True},
@@ -50,7 +48,6 @@ class OCRCaller:
     def digital_ocr(self) -> dict:
         """
         向百度云数字ocr发送图片, 接收响应
-        技术文档: https://cloud.baidu.com/doc/OCR/index.html
         :return: {"words_result":[] , "words_result_num": int, "log_id"}
         """
         params = {"access_token": self.access_token}
