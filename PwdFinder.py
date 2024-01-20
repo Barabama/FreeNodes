@@ -38,11 +38,6 @@ class PwdFinder:
         if not self.subtitles:
             self.ocr_caller = OCRCaller(api_key, secret_key)
 
-            if not self.ocr_caller.access_token:
-                raise CustomError("OCRCaller初始化失败, 无法生成AccessToken")
-            else:
-                self.msg_handler.show_msg("OCRCaller初始化成功, 生成AccessToken")
-
     def gen_frame(self) -> Generator[np.ndarray, None, None]:
         """生成视频截图"""
         cap = cv2.VideoCapture(self.stream.url)
@@ -71,6 +66,11 @@ class PwdFinder:
                 for p_elem in root.findall(".//p"):
                     yield find_pwd(p_elem.text)
         else:
+            if not self.ocr_caller.access_token:
+                self.msg_handler.show_error(CustomError("OCRCaller初始化失败, 无法生成AccessToken"))
+                yield from []
+            self.msg_handler.show_msg("OCRCaller初始化成功, 生成AccessToken")
+
             for frame in self.gen_frame():
                 self.ocr_caller.img_to_base64(frame)  # 传入截图
                 result = self.ocr_caller.digital_ocr()  # 调用ocr
