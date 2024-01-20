@@ -152,7 +152,7 @@ if __name__ == "__main__":
                 try:
                     results.append(future.result())
                 except Exception:
-                    traceback.print_last()
+                    traceback.print_exc()
                     results.append(1)
 
     merged_file.close()
