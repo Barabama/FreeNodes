@@ -5,12 +5,14 @@ import kuser_agent
 import requests
 from numpy import ndarray
 from requests.adapters import HTTPAdapter
+from requests.exceptions import RetryError
 
 from urllib3 import Retry
 
-session = requests.Session()
 status_forces = [408, 413, 424, 425, 429, 500, 502, 503, 504]
 retries = Retry(connect=3, read=3, status_forcelist=status_forces, backoff_factor=3)
+session = requests.Session()
+session.keep_alive = False
 session.mount('http://', HTTPAdapter(max_retries=retries))
 session.mount('https://', HTTPAdapter(max_retries=retries))
 
