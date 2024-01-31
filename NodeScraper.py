@@ -31,9 +31,8 @@ class NodeScraper:
     decryption: Decryption
     driver: webdriver.Chrome
 
-    def __init__(self, name: str, up_date: str, main_url: str,
-                 attrs: dict, pattern: str, nodes_index=0,
-                 decryption: Decryption = {}):
+    def __init__(self, name: str, up_date: str, main_url: str, attrs: dict,
+                 pattern: str, nodes_index=0, decryption: Decryption = {}):
         """
         :param name: 保存的文件名
         :param up_date: 更新日期
