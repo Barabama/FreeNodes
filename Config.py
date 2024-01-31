@@ -24,7 +24,7 @@ class ConfigData(TypedDict):
 
 class Config:
     file_path: str
-    configs: list[ConfigData]
+    configs: dict[str, ConfigData]
 
     def __init__(self, file_path: str):
         self.file_path = file_path
@@ -32,14 +32,11 @@ class Config:
             self.configs = json.load(file)
 
     def get_configs(self):
-        return self.configs
+        yield from self.configs.values()
 
     def write_config(self):
         with open(self.file_path, "w") as file:
             json.dump(self.configs, file, indent=2)
 
     def set_data(self, name: str, data: dict):
-        for config in self.configs:
-            if config["name"] == name:
-                config.update(data)
-                break
+        self.configs[name].update(data)

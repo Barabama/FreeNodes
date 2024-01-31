@@ -5,12 +5,14 @@ import kuser_agent
 import requests
 from numpy import ndarray
 from requests.adapters import HTTPAdapter
+from requests.exceptions import RetryError
 
 from urllib3 import Retry
 
-session = requests.Session()
 status_forces = [408, 413, 424, 425, 429, 500, 502, 503, 504]
 retries = Retry(connect=3, read=3, status_forcelist=status_forces, backoff_factor=3)
+session = requests.Session()
+session.keep_alive = False
 session.mount('http://', HTTPAdapter(max_retries=retries))
 session.mount('https://', HTTPAdapter(max_retries=retries))
 
@@ -58,8 +60,8 @@ class OCRCaller:
         for i, item in enumerate(self.post_urls):
             if not item["usable"]: continue
             response = make_request("POST", item.get("url"), params, payload, headers)
-            res = response.json()
+            res = response.json() if response.status_code < 400 else {}
             if "error_code" in res:
                 self.post_urls[i]["usable"] = False
-            else:
-                return res
+                continue
+            return res
