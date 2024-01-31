@@ -203,7 +203,7 @@ class NodeHandler:
     def __init__(self, nodes_str: str):
         nodes_str = nodes_str if not is_base64(nodes_str) \
             else b64decode(nodes_str).decode("utf-8")
-
+        self.nodes = [], self.adds = []
         for node in nodes_str.strip().splitlines():
             if prot_sep not in node: continue
 
