@@ -130,17 +130,17 @@ if __name__ == "__main__":
     conf = Config("config.json")  # 读取配置文件
 
     results = []
-    try:
-        if debug:
-            results = [main(config) for config in conf.get_configs()]
-        else:
-            with ThreadPoolExecutor(max_workers=4) as executor:
-                futures = [executor.submit(main, config) for config in conf.get_configs()]
+    if debug:
+        results = [main(config) for config in conf.get_configs()]
+    else:
+        with ThreadPoolExecutor(max_workers=4) as executor:
+            futures = [executor.submit(main, config) for config in conf.get_configs()]
+            try:
                 results = [future.result() for future in as_completed(futures)]
-    except Exception:
-        traceback.print_exc()
-        results.append(1)
-    finally:
-        merged_file.close()
-        print(f"{sum(results)} 个线程出现错误, 更新记录")
-        conf.write_config()
+            except Exception:
+                traceback.print_exc()
+                results.append(1)
+
+    merged_file.close()
+    print(f"{sum(results)} 个线程出现错误, 更新记录")
+    conf.write_config()
