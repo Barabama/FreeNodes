@@ -23,7 +23,7 @@ def write_nodes(text: str, file_name: str):
     if not os.path.isdir(nodes_path): os.mkdir(nodes_path)  # 新建文件夹
     node_handler = NodeHandler(text)
     with open(os.path.join(nodes_path, file_name), "w") as file:
-        file.writelines(node_handler.set_remarks())
+        file.write("\n".join(node_handler.set_remarks()))
 
 
 def main(config: ConfigData) -> int:
@@ -112,7 +112,7 @@ def main(config: ConfigData) -> int:
     if config.get("tier", 0):
         with merge_lock:
             with open(os.path.join(nodes_path, f"{config["name"]}.txt"), "r") as file:
-                merged_file.writelines(file.readlines())
+                merged_file.write(file.read()+"\n")
 
     msg_handler.show_msg("更新完成")
     return 0
