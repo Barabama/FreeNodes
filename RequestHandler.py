@@ -60,8 +60,8 @@ class OCRCaller:
         for i, item in enumerate(self.post_urls):
             if not item["usable"]: continue
             response = make_request("POST", item.get("url"), params, payload, headers)
-            res = response.json() if response.status_code < 400 else {}
+            res = response.json()
             if "error_code" in res:
                 self.post_urls[i]["usable"] = False
                 continue
-            return res
+            return res if res else {}
