@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding=utf-8
 import argparse
+import itertools
 import os
 import threading
 import traceback
@@ -57,40 +58,34 @@ def main(config: ConfigData) -> int:
 
         # 获取旧密码
         cur_pwd = scraper.decryption.get("password", "")
+        iter_cur_pwd = iter([cur_pwd])
 
-        # 旧密码解密
-        ret, result = scraper.decrypt_for_text(cur_pwd)
-        if ret:
-            msg_handler.show_msg(f"{cur_pwd} 解密成功")
-            # 获取txt文本链接
-            nodes_url = scraper.get_nodes_url(result)
+        # 获取新密码
+        if yt_url := scraper.get_yt_url():
+            msg_handler.show_msg(f"访问youtube {yt_url}")
+            pwd_finder = PwdFinder(msg_handler, yt_url, api_key, secret_key)
+            gen_new_pwd = pwd_finder.gen_pwd()
         else:
-            # 获取新密码
-            if yt_url := scraper.get_yt_url():
-                msg_handler.show_msg(f"访问youtube {yt_url}")
-                pwd_finder = PwdFinder(msg_handler, yt_url, api_key, secret_key)
-                gen_new_pwd = pwd_finder.gen_pwd()
-            else:
-                gen_new_pwd = (find_pwd(e.text) for e in gen_elem(scraper.detail_text, "p"))
+            gen_new_pwd = (find_pwd(e.text) for e in gen_elem(scraper.detail_text, "p"))
 
-            # 遍历密码解密
-            for pwd in gen_new_pwd:
-                if not pwd: continue
+        # 遍历密码解密
+        for pwd in itertools.chain(iter_cur_pwd, gen_new_pwd):
+            if not pwd: continue
 
-                # 解密
-                ret, result = scraper.decrypt_for_text(pwd)
-                if not ret:
-                    msg_handler.show_msg(result)
-                # 获取txt文本链接
-                elif nodes_url := scraper.get_nodes_url(result):
-                    msg_handler.show_msg(f"{pwd} 解密成功")
+            # 解密
+            ret, result = scraper.decrypt_for_text(pwd)
+            if not ret:
+                msg_handler.show_msg(result)
+            # 获取txt文本链接
+            elif nodes_url := scraper.get_nodes_url(result):
+                msg_handler.show_msg(f"{pwd} 解密成功")
 
-                    # 记录新密码
-                    if cur_pwd != pwd:
-                        scraper.decryption["password"] = pwd
-                        data = {"decryption": scraper.decryption}
-                        conf.set_data(scraper.name, data)
-                    break
+                # 记录新密码
+                if cur_pwd != pwd:
+                    scraper.decryption["password"] = pwd
+                    data = {"decryption": scraper.decryption}
+                    conf.set_data(scraper.name, data)
+                break
 
         driver.quit()  # 关闭浏览器
 

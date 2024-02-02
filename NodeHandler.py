@@ -215,15 +215,17 @@ class NodeHandler:
 
     def set_remarks(self) -> Generator[str, None, None]:
         """生成处理后的节点"""
-        geos = get_geos(self.adds)
-        for i, geo in enumerate(geos):
-            if geo.get("status", "fail") == "fail":
-                geo = get_geo(geo["query"])  # 域名再识别
-
-            remarks = "Unknown" if geo["status"] == "fail" \
-                else f"{geo["country"]}_{geo["city"]}"
-
-            scheme, body = self.nodes[i]
-            self.parser.parse(scheme, body)
-            self.parser.set_remarks(remarks)
-            yield self.parser.pack()
+        # geos = get_geos(self.adds)
+        # for i, geo in enumerate(geos):
+        #     if geo.get("status", "fail") == "fail":
+        #         geo = get_geo(geo["query"])  # 域名再识别
+        #
+        #     remarks = "Unknown" if geo["status"] == "fail" \
+        #         else f"{geo["country"]}_{geo["city"]}"
+        #
+        #     scheme, body = self.nodes[i]
+        #     self.parser.parse(scheme, body)
+        #     self.parser.set_remarks(remarks)
+        #     yield self.parser.pack()
+        for scheme, body in self.nodes:
+            yield scheme + prot_sep + body
