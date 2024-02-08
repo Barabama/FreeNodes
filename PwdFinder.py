@@ -1,5 +1,4 @@
 import re
-import sys
 import xml.etree.ElementTree as ET
 from typing import Generator
 
@@ -33,7 +32,8 @@ class PwdFinder:
                 break
         
         self.subtitles = yt.captions.all()
-        if not self.subtitles: self.ocr_caller = OCRCaller(name, api_key, secret_key)
+        if not self.subtitles:
+            self.ocr_caller = OCRCaller(name, api_key, secret_key)
     
     def gen_frame(self) -> Generator[np.ndarray, None, None]:
         """生成视频截图"""
@@ -68,7 +68,8 @@ class PwdFinder:
             if self.ocr_caller.access_token:
                 print(f"{self.name}: OCRCaller初始化成功, 生成AccessToken")
             else:
-                raise RuntimeError(f"{self.name}: OCRCaller初始化失败, 无法生成AccessToken")
+                raise RuntimeError(
+                        f"{self.name}: OCRCaller初始化失败, 无法生成AccessToken")
             
             # 遍历视频截图
             for frame in self.gen_frame():
@@ -80,11 +81,3 @@ class PwdFinder:
                 for i in range(words_result_num):
                     word = words_result[i].get("words", "")
                     yield find_pwd(word)
-
-
-if __name__ == "__main__":
-    # test
-    link_urls = ["https://youtu.be/C7skrsccDQQ", "https://youtu.be/1lIctdmKqa0"]
-    script, *args = sys.argv
-    pwd_finder = PwdFinder("test", link_urls[1], *args)
-    print([pwd for pwd in pwd_finder.gen_pwd() if pwd])

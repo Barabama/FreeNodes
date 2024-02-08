@@ -6,22 +6,23 @@ import kuser_agent
 import requests
 from numpy import ndarray
 from requests.adapters import HTTPAdapter
-from requests.exceptions import RetryError
 
 from urllib3 import Retry
 
-status_forces = [408, 413, 424, 425, 429, 500, 502, 503, 504]
-retries = Retry(connect=3, read=3, status_forcelist=status_forces, backoff_factor=3)
+retries = Retry(connect=3, read=3, backoff_factor=3,
+                status_forcelist=[408, 413, 424, 425, 429, 500, 502, 503, 504])
 session = requests.Session()
 session.keep_alive = False
 session.mount('http://', HTTPAdapter(max_retries=retries))
 session.mount('https://', HTTPAdapter(max_retries=retries))
 
 
-def make_request(method: str, url: str, params=None, data=None, headers=None, timeout=None):
+def make_request(method: str, url: str,
+                 params=None, data=None, headers=None, timeout=None):
     """请求服务器"""
     headers = headers if headers else {"User-Agent": kuser_agent.get()}
-    response = session.request(method, url, params, data, headers, timeout=timeout)
+    response = session.request(method, url, params, data, headers,
+                               timeout=timeout)
     return response
 
 
@@ -46,10 +47,15 @@ class OCRRes(TypedDict):
 class OCRCaller:
     """技术文档: https://cloud.baidu.com/doc/OCR/index.html"""
     access_url = "https://aip.baidubce.com/oauth/2.0/token"
-    post_urls = [{"url": "https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic", "usable": True},
-                 {"url": "https://aip.baidubce.com/rest/2.0/ocr/v1/general", "usable": True},
-                 {"url": "https://aip.baidubce.com/rest/2.0/ocr/v1/webimage", "usable": True},
-                 {"url": "https://aip.baidubce.com/rest/2.0/ocr/v1/accurate", "usable": True}]
+    post_urls = [
+        {"url"   : "https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic",
+         "usable": True},
+        {"url"   : "https://aip.baidubce.com/rest/2.0/ocr/v1/general",
+         "usable": True},
+        {"url"   : "https://aip.baidubce.com/rest/2.0/ocr/v1/webimage",
+         "usable": True},
+        {"url"   : "https://aip.baidubce.com/rest/2.0/ocr/v1/accurate",
+         "usable": True}]
     access_token: str
     name: str
     
@@ -71,7 +77,8 @@ class OCRCaller:
         # 发送 POST 请求
         for i, item in enumerate(self.post_urls):
             if not item["usable"]: continue
-            response = make_request("POST", item.get("url"), params, payload, headers)
+            response = make_request("POST", item.get("url"),
+                                    params, payload, headers)
             result = OCRRes(**response.json())
             if "error_code" in result:
                 print(result["error_msg"])

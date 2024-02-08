@@ -34,9 +34,8 @@ class Config:
     def get_config(self, name: str) -> tuple[str, ConfigData]:
         return name, self.configs[name]
     
-    def gen_configs(self, names=None) -> Generator[tuple[str, ConfigData], None, None]:
+    def gen_configs(self, names=None) -> Generator[tuple, None, None]:
         if names is None: names = []
-        
         if names: yield from (self.get_config(name) for name in names)
         else: yield from self.configs.items()
     

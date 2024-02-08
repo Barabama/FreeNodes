@@ -47,7 +47,8 @@ class NodeScraper:
         self.up_date = up_date
         self.pattern = pattern
         self.nodes_index = nodes_index
-        self.decryption = decryption if decryption is not None else Decryption(**{})
+        self.decryption = decryption if decryption is not None \
+            else Decryption(**{})
         
         main_text = make_request("GET", main_url).text
         a_tag_iter = (e for e in gen_elem(main_text, "a", attrs))
@@ -92,9 +93,11 @@ class NodeScraper:
     def get_yt_url(self) -> str:
         """获取 youtube 视频链接"""
         # 获取详情页所有链接
-        hrefs = [str(tag.get("href")) for tag in gen_elem(self.detail_text, "a")]
+        hrefs = [str(tag.get("href")) for tag in
+                 gen_elem(self.detail_text, "a")]
         # 获取youtube链接
-        yt_urls = [href for href in hrefs if href.startswith("https://youtu.be/")]
+        yt_urls = [href for href in hrefs if
+                   href.startswith("https://youtu.be/")]
         # 根据yt_index取链接
         return yt_urls[self.decryption.get("yt_index", 0)] if yt_urls else ""
     
