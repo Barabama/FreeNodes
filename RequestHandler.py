@@ -1,4 +1,5 @@
 import base64
+from threading import Semaphore
 from typing import TypedDict
 
 import cv2
@@ -15,6 +16,8 @@ session = requests.Session()
 session.keep_alive = False
 session.mount('http://', HTTPAdapter(max_retries=retries))
 session.mount('https://', HTTPAdapter(max_retries=retries))
+
+semaphore = Semaphore(2)  # 并发请求
 
 
 def make_request(method: str, url: str,
@@ -77,8 +80,9 @@ class OCRCaller:
         # 发送 POST 请求
         for i, item in enumerate(self.post_urls):
             if not item["usable"]: continue
-            response = make_request("POST", item.get("url"),
-                                    params, payload, headers)
+            with semaphore:
+                response = make_request("POST", item.get("url"),
+                                        params, payload, headers)
             result = OCRRes(**response.json())
             if "error_code" in result:
                 print(result["error_msg"])
