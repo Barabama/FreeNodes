@@ -1,23 +1,7 @@
 # FreeNodes
 
-v2ray 免费节点爬虫，每天 10、16、22 点更新。
+v2ray 免费节点
 
-## v2ray 订阅链接:
-
-| 爬虫目标 T0                        | 订阅链接(镜像网站加速)                                                                                             |
-|--------------------------------|----------------------------------------------------------------------------------------------------------|
-| https://www.yudou66.com        | https://mirror.ghproxy.com/https://raw.githubusercontent.com/Barabama/FreeNodes/master/nodes/yudou66.txt |
-| https://blues2022.blogspot.com | https://mirror.ghproxy.com/https://raw.githubusercontent.com/Barabama/FreeNodes/master/nodes/blues.txt   |
-| https://halekj.top             | https://mirror.ghproxy.com/https://raw.githubusercontent.com/Barabama/FreeNodes/master/nodes/halekj.txt  |
-
-| 爬虫目标 T1                         | 订阅链接(镜像网站加速)                                                                                                |
-|---------------------------------|-------------------------------------------------------------------------------------------------------------|
-| https://kkzui.com/jd            | https://mirror.ghproxy.com/https://raw.githubusercontent.com/Barabama/FreeNodes/master/nodes/kkzui.txt      |
-| https://freenode.openrunner.net | https://mirror.ghproxy.com/https://raw.githubusercontent.com/Barabama/FreeNodes/master/nodes/openrunner.txt |
-| https://wenode.cc               | https://mirror.ghproxy.com/https://raw.githubusercontent.com/Barabama/FreeNodes/master/nodes/wenode.txt     |
-| https://v2rayshare.com          | https://mirror.ghproxy.com/https://raw.githubusercontent.com/Barabama/FreeNodes/master/nodes/v2rayshare.txt |
-| https://nodefree.org            | https://mirror.ghproxy.com/https://raw.githubusercontent.com/Barabama/FreeNodes/master/nodes/nodefree.txt   |
-| 合集                              | https://mirror.ghproxy.com/https://raw.githubusercontent.com/Barabama/FreeNodes/master/nodes/merged.txt     |
 
 ## 免责声明
 
