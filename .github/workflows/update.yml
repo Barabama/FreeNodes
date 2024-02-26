@@ -3,7 +3,7 @@ name: Regular Update
 on:
   schedule:
     - cron: "0 2-14/6 * * *" # 每天, 时区+8
-
+  workflow_dispatch:
 jobs:
   update:
     runs-on: ubuntu-latest
