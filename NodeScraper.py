@@ -1,3 +1,4 @@
+import itertools
 import re
 from datetime import datetime
 from typing import Generator
@@ -72,7 +73,9 @@ class NodeScraper:
         locked_elems = [{"element": "input", "attrs": {"id": "EPassword"}},
                         {"element": "input", "attrs": {"id": "pwbox-426"}},
                         {"element": "input", "attrs": {"name": "secret-key"}}]
-        return any(gen_elem(self.detail_text, **e) for e in locked_elems)
+        elems = [e for le in locked_elems for e in
+                 gen_elem(self.detail_text, **le)]
+        return any(elems)
     
     def is_new(self, force=True) -> bool:
         """判断网页的是否更新"""
