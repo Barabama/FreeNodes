@@ -1,10 +1,9 @@
-import itertools
 import re
 from datetime import datetime
-from typing import Generator
-from urllib.parse import urljoin
+from urllib.parse import parse_qsl, urljoin, urlsplit
 
-from bs4 import Tag, BeautifulSoup
+from bs4 import BeautifulSoup
+from pyyoutube import Api
 from selenium import webdriver
 from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
@@ -12,14 +11,15 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
 from Config import Decryption
+from PwdFinder import find_pwd
 from RequestHandler import make_request
 
 
-def gen_elem(markup: str, element="", attrs=None) -> Generator[Tag, None, None]:
-    """获取网页元素"""
-    if attrs is None: attrs = {}
-    soup = BeautifulSoup(markup, "html.parser")
-    yield from soup.find_all(element, attrs)
+# def gen_elem(markup: str, element="", attrs=None) -> Generator[Tag, None, None]:
+#     """获取网页元素"""
+#     if attrs is None: attrs = {}
+#     soup = BeautifulSoup(markup, "html.parser")
+#     yield from soup.find_all(element, attrs)
 
 
 class NodeScraper:
@@ -28,6 +28,7 @@ class NodeScraper:
     web_date: datetime
     detail_url: str
     detail_text: str
+    detail_soup: BeautifulSoup
     pattern: str
     nodes_index: int
     decryption: Decryption
@@ -51,41 +52,54 @@ class NodeScraper:
         self.decryption = decryption if decryption is not None \
             else Decryption(**{})
         
-        main_text = make_request("GET", main_url).text
-        a_tag_iter = (e for e in gen_elem(main_text, "a", attrs))
-        detail_url = next(a_tag_iter, {}).get("href", "")
-        self.detail_url = urljoin(main_url, detail_url)
-        self.detail_text = make_request("GET", self.detail_url).text
+        if main_url.startswith("https://www.youtube.com"):
+            self.init_webdriver()
+            self.driver.get(main_url)
+            main_text = self.driver.page_source
+        else:
+            main_text = make_request("GET", main_url).text
         
-        if self.detail_text: print(f"{self.name}: 访问 {self.detail_url}")
-        else: raise RuntimeError(f"{self.name}: 无法访问 {self.detail_url}")
+        main_soup = BeautifulSoup(main_text, "html.parser")
+        
+        # 选择最新的有日期的
+        for tag in main_soup.find_all("a", attrs):
+            match = re.search(r"\d+月\d+", tag.prettify())
+            if not match: continue
+            web_date = datetime.strptime(str(match.group()), "%m月%d")
+            self.web_date = web_date.replace(year=datetime.today().year)
+            self.detail_url = urljoin(main_url, tag.get("href", ""))  # 获得完整地址
+            break
     
-    def init_webdriver(self) -> webdriver.Chrome:
+    def init_webdriver(self):
         """虚拟浏览器初始化"""
         options = webdriver.ChromeOptions()
-        options.add_argument("--headless")  # 启用无头模式
+        # options.add_argument("--headless")  # 启用无头模式
         self.driver = webdriver.Chrome(options)  # 创建浏览器实例
-        self.driver.get(self.detail_url)  # 打开详情页
-        return self.driver
+    
+    def get_detail(self):
+        """获取详情页"""
+        if detail_text := make_request("GET", self.detail_url).text:
+            print(f"{self.name}: 访问 {self.detail_url}")
+            self.detail_text = detail_text
+            self.detail_soup = BeautifulSoup(self.detail_text, "html.parser")
+        
+        else:
+            raise RuntimeError(f"{self.name}: 无法访问 {self.detail_url}")
     
     def is_locked(self) -> bool:
         """判断网页中是否存在解密元素"""
-        locked_elems = [{"element": "input", "attrs": {"id": "EPassword"}},
-                        {"element": "input", "attrs": {"id": "pwbox-426"}},
-                        {"element": "input", "attrs": {"name": "secret-key"}}]
+        locked_elems = [{"name": "input", "attrs": {"id": "EPassword"}},
+                        {"name": "input", "attrs": {"id": "pwbox-426"}},
+                        {"name": "input", "attrs": {"name": "secret-key"}}]
         elems = [e for le in locked_elems for e in
-                 gen_elem(self.detail_text, **le)]
+                 self.detail_soup.find_all(**le)]
         return any(elems)
     
-    def is_new(self, force=True) -> bool:
-        """判断网页的是否更新"""
-        h1 = "".join(e.text for e in gen_elem(self.detail_text, "h1"))
-        if "正在制作" in h1: return False
-        if match := re.search(r"\d+月\d+", h1):
-            web_date = datetime.strptime(str(match.group()), "%m月%d")
-            self.web_date = web_date.replace(year=datetime.today().year)
-            up_date = datetime.strptime(self.up_date, "%Y-%m-%d")
-            return True if self.web_date.date() > up_date.date() or force else False
+    def is_latest(self) -> bool:
+        """判断已经是最新的"""
+        # if "正在制作" in h1: return False
+        up_date = datetime.strptime(self.up_date, "%Y-%m-%d")
+        return False if self.web_date.date() > up_date.date() else True
     
     def get_nodes_url(self, text="") -> str:
         """匹配txt文本链接"""
@@ -97,17 +111,22 @@ class NodeScraper:
         """获取 youtube 视频链接"""
         # 获取详情页所有链接
         hrefs = [str(tag.get("href")) for tag in
-                 gen_elem(self.detail_text, "a")]
+                 self.detail_soup.find_all(attrs="a")]
         # 获取youtube链接
         yt_urls = [href for href in hrefs if
-                   href.startswith("https://youtu.be/")]
+                   href.startswith("https://youtu.be")]
         # 根据yt_index取链接
         return yt_urls[self.decryption.get("yt_index", 0)] if yt_urls else ""
     
-    def decrypt_for_text(self, pwd: str) -> tuple[bool, str]:
+    def decrypt_for_text(self, pwd: str, url="") -> tuple[bool, str]:
         """网页解密得到隐藏文本内容"""
-        decrypt_by = self.decryption.get("decrypt_by", "click")
+        url = url if url else self.detail_url
+        print(f"{self.name}: 访问 {url}")
+        self.driver.get(url)
+        wait = WebDriverWait(self.driver, 10)
+        wait.until(EC.presence_of_element_located((By.TAG_NAME, "form")))
         
+        decrypt_by = self.decryption.get("decrypt_by", "click")
         # 传递参数给JavaScript函数
         if decrypt_by == "js":
             self.driver.execute_script(self.decryption["script"], pwd)
@@ -130,3 +149,24 @@ class NodeScraper:
             return False, msg
         except TimeoutException:
             return True, self.driver.find_element(By.TAG_NAME, "body").text
+    
+    def get_description(self, yt_key="") -> tuple[str, str]:
+        """从视频描述中获取密码和下载链接"""
+        id = dict(parse_qsl(urlsplit(self.detail_url).query))["v"]
+        api = Api(api_key=yt_key)
+        response = api.get_video_by_id(video_id=id, parts="snippet")
+        
+        snippet = response.items[0].to_dict().get("snippet", {})
+        description = snippet.get("description", "")
+        ls = [s for s in description.splitlines() if s.strip()]
+        
+        pwd = ""
+        link = ""
+        for i, s in enumerate(ls):
+            if p := find_pwd(s): pwd = p
+            if "下载" not in s: continue
+            elif match := re.search(r"https://[^\r\n\s]+",
+                                    f"{ls[i]}\n{ls[i + 1]}"):
+                link = match.group()
+                break
+        return pwd, link
