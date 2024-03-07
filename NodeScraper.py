@@ -73,7 +73,8 @@ class NodeScraper:
     def init_webdriver(self):
         """虚拟浏览器初始化"""
         options = webdriver.ChromeOptions()
-        # options.add_argument("--headless")  # 启用无头模式
+        options.add_argument("--headless")  # 启用无头模式
+        options.add_argument("--pageLoadStrategy=eager")
         self.driver = webdriver.Chrome(options)  # 创建浏览器实例
     
     def get_detail(self):
@@ -124,7 +125,7 @@ class NodeScraper:
         print(f"{self.name}: 访问 {url}")
         self.driver.get(url)
         wait = WebDriverWait(self.driver, 10)
-        wait.until(EC.presence_of_element_located((By.TAG_NAME, "form")))
+        wait.until(EC.presence_of_element_located((By.TAG_NAME, "body")))
         
         decrypt_by = self.decryption.get("decrypt_by", "click")
         # 传递参数给JavaScript函数
