@@ -1,4 +1,5 @@
 import re
+import time
 from datetime import datetime
 from urllib.parse import parse_qsl, urljoin, urlsplit
 
@@ -126,7 +127,7 @@ class NodeScraper:
         self.driver.get(url)
         wait = WebDriverWait(self.driver, 10)
         wait.until(EC.presence_of_element_located((By.TAG_NAME, "body")))
-        
+        time.sleep(5)  # 强制等待元素加载
         decrypt_by = self.decryption.get("decrypt_by", "click")
         # 传递参数给JavaScript函数
         if decrypt_by == "js":
