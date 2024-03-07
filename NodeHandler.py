@@ -138,6 +138,11 @@ class VLESSParser:
     @classmethod
     def parse(cls, scheme: str, body: str) -> VLESS:
         cls.scheme = scheme
+        
+        f, b = body.split("#")
+        f = f if not is_base64(f) else b64decode(f).decode("utf-8")
+        body = f + "#" + b
+        
         cls.url = urlsplit("//" + body, scheme)
         id, rest = cls.url.netloc.split("@")
         add, port = rest.split(":")

@@ -22,7 +22,7 @@ semaphore = Semaphore(2)  # 并发请求
 
 def make_request(method: str, url: str,
                  params=None, data=None, headers=None, timeout=None):
-    """请求服务器"""
+    """网络请求"""
     headers = headers if headers else {"User-Agent": kuser_agent.get()}
     response = session.request(method, url, params, data, headers,
                                timeout=timeout)
