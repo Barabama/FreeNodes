@@ -98,8 +98,7 @@ class NodeScraper:
         return any(elems)
     
     def is_latest(self) -> bool:
-        """判断已经是最新的"""
-        # if "正在制作" in h1: return False
+        """判断是否已经是最新的"""
         up_date = datetime.strptime(self.up_date, "%Y-%m-%d")
         return False if self.web_date.date() > up_date.date() else True
     
@@ -107,18 +106,15 @@ class NodeScraper:
         """匹配txt文本链接"""
         text = text if text else self.detail_text
         texts = re.findall(self.pattern, text)
-        return texts[self.nodes_index] if texts else ""
+        return texts[self.nodes_index]
     
     def get_yt_url(self) -> str:
         """获取 youtube 视频链接"""
-        # 获取详情页所有链接
-        hrefs = [str(tag.get("href")) for tag in
-                 self.detail_soup.find_all(attrs="a")]
-        # 获取youtube链接
-        yt_urls = [href for href in hrefs if
-                   href.startswith("https://youtu.be")]
+        yt_urls = [str(tag.get("href")) for tag in
+                   self.detail_soup.find_all("a")
+                   if str(tag.get("href")).startswith("https://youtu.be")]
         # 根据yt_index取链接
-        return yt_urls[self.decryption.get("yt_index", 0)] if yt_urls else ""
+        return yt_urls[self.decryption.get("yt_index", 0)]
     
     def decrypt_for_text(self, pwd: str, url="") -> tuple[bool, str]:
         """网页解密得到隐藏文本内容"""
