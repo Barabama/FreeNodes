@@ -106,7 +106,7 @@ class NodeScraper:
         """匹配txt文本链接"""
         text = text if text else self.detail_text
         texts = re.findall(self.pattern, text)
-        return texts[self.nodes_index]
+        return texts[self.nodes_index] if texts else ""
     
     def get_yt_url(self) -> str:
         """获取 youtube 视频链接"""
@@ -114,7 +114,7 @@ class NodeScraper:
                    self.detail_soup.find_all("a")
                    if str(tag.get("href")).startswith("https://youtu.be")]
         # 根据yt_index取链接
-        return yt_urls[self.decryption.get("yt_index", 0)]
+        return yt_urls[self.decryption.get("yt_index", 0)] if yt_urls else ""
     
     def decrypt_for_text(self, pwd: str, url="") -> tuple[bool, str]:
         """网页解密得到隐藏文本内容"""
