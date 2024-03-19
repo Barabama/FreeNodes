@@ -120,7 +120,7 @@ def get_nodes_url_from_yt(name: str, scraper: NodeScraper) -> str:
     return nodes_url
 
 
-def main(name: str, config: ConfigData) -> int:
+def get_nodes(name: str, config: ConfigData) -> list[str]:
     """抓取节点内容并保存"""
     kwargs = config.copy()
     kwargs.pop("tier")
@@ -129,40 +129,45 @@ def main(name: str, config: ConfigData) -> int:
     scraper = NodeScraper(**kwargs)
     
     # 是否需要更新
-    if scraper.is_latest() and not debug: print(f"{name}: 无需更新"); return 0
+    if scraper.is_latest() and not debug:
+        print(f"{name}: 无需更新")
+        with open(os.path.join(nodes_path, f"{scraper.name}.txt"), "r") as file:
+            nodes = file.readlines()
+    else:
+        if scraper.detail_url.startswith("https://www.youtube.com"):
+            nodes_url = get_nodes_url_from_yt(name, scraper)
+        else: nodes_url = get_nodes_url_from_blog(name, scraper)
+        
+        # 无法获取txt文本链接
+        if not nodes_url: raise RuntimeError(f"{name}: 无法获取节点")
+        
+        # 获取节点文本
+        print(f"{name}: 节点地址 {nodes_url}")
+        node_handler = NodeHandler(make_request("GET", nodes_url).text)
+        nodes = [node + "\n" for node in node_handler.set_remarks()]
+        
+        # 记录更新日期
+        data = {"up_date": scraper.web_date.date().strftime("%Y-%m-%d")}
+        conf.set_data(name, data)
     
-    if scraper.detail_url.startswith("https://www.youtube.com"):
-        nodes_url = get_nodes_url_from_yt(name, scraper)
-    else: nodes_url = get_nodes_url_from_blog(name, scraper)
-    
-    # 无法获取txt文本链接
-    if not nodes_url: raise RuntimeError(f"{name}: 无法获取节点")
-    
-    # 更新节点文本
-    print(f"{name}: 节点地址 {nodes_url}")
-    node_handler = NodeHandler(make_request("GET", nodes_url).text)
-    nodes = [node + "\n" for node in node_handler.set_remarks()]
-    if not os.path.isdir(nodes_path): os.mkdir(nodes_path)  # 新建文件夹
-    with open(os.path.join(nodes_path, f"{scraper.name}.txt"), "w") as file:
-        file.writelines(nodes)
-    
-    # 节点合并
-    if config.get("tier", 0):
-        print(f"{name}: 合并节点")
-        with lock: merged_file.writelines(nodes)
-    
-    # 记录更新日期
-    data = {"up_date": scraper.web_date.date().strftime("%Y-%m-%d")}
-    conf.set_data(name, data)
-    
-    print(f"{name}: 更新完成")
-    return 0
+    return nodes
 
 
 def subtask(name: str, config: ConfigData) -> tuple[str, int | Exception]:
     """处理异常"""
     try:
-        return name, main(name, config)
+        nodes = get_nodes(name, config)
+        if not os.path.isdir(nodes_path): os.mkdir(nodes_path)  # 新建文件夹
+        with open(os.path.join(nodes_path, f"{name}.txt"), "w") as file:
+            file.writelines(nodes)
+        
+        # 节点合并
+        if config.get("tier", 0):
+            print(f"{name}: 合并节点")
+            with lock: merged_file.writelines(nodes)
+        
+        print(f"{name}: 更新完成")
+        return name, 0
     except Exception as e:
         traceback.print_exc()
         return name, e
