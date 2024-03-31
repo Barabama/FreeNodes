@@ -1,7 +1,7 @@
 import re
 import time
 from datetime import datetime
-from urllib.parse import parse_qsl, urljoin, urlsplit
+from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
 from pyyoutube import Api
@@ -50,8 +50,7 @@ class NodeScraper:
         self.up_date = up_date
         self.pattern = pattern
         self.nodes_index = nodes_index
-        self.decryption = decryption if decryption is not None \
-            else Decryption(**{})
+        self.decryption = decryption if decryption else Decryption(**{})
         
         if main_url.startswith("https://www.youtube.com"):
             self.init_webdriver()
@@ -64,10 +63,9 @@ class NodeScraper:
         
         # 选择最新的有日期的
         for tag in main_soup.find_all("a", attrs):
-            match = re.search(r"\d+月\d+", tag.prettify())
+            match = re.search(r"\d+年\d+月\d+", tag.prettify())
             if not match: continue
-            web_date = datetime.strptime(str(match.group()), "%m月%d")
-            self.web_date = web_date.replace(year=datetime.today().year)
+            self.web_date = datetime.strptime(str(match.group()), "%Y年%m月%d")
             self.detail_url = urljoin(main_url, tag.get("href", ""))  # 获得完整地址
             break
     
@@ -148,11 +146,12 @@ class NodeScraper:
         except TimeoutException:
             return True, self.driver.find_element(By.TAG_NAME, "body").text
     
-    def get_description(self, yt_key="") -> tuple[str, str]:
+    def get_description(self, yt_url="", yt_key="") -> tuple[str, str]:
         """从视频描述中获取密码和下载链接"""
-        id = dict(parse_qsl(urlsplit(self.detail_url).query))["v"]
+        yt_url = yt_url if yt_url else self.detail_url
+        vid = re.search(r"\w+(?=[/=])", yt_url[::-1]).group()[::-1]
         api = Api(api_key=yt_key)
-        response = api.get_video_by_id(video_id=id, parts="snippet")
+        response = api.get_video_by_id(video_id=vid, parts="snippet")
         
         snippet = response.items[0].to_dict().get("snippet", {})
         description = snippet.get("description", "")

@@ -37,6 +37,8 @@ def get_nodes_url_from_blog(name: str, scraper: NodeScraper) -> str:
         # 获取新密码
         if yt_url := scraper.get_yt_url():
             print(f"{name}: 访问youtube {yt_url}")
+            new_pwd, _ = scraper.get_description(yt_url, yt_key)
+            gen_cur_pwd = iter([cur_pwd, new_pwd])
             pwd_finder = PwdFinder(name, yt_url, api_key, secret_key)
             gen_new_pwd = pwd_finder.gen_pwd()
         else:
