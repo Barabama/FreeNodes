@@ -70,7 +70,7 @@ def get_nodes_url_from_yt(name: str, scraper: NodeScraper) -> str:
     cur_pwd = scraper.decryption.get("password", "")
     
     # 获取新密码
-    new_pwd, download_link = scraper.get_description(yt_key)
+    new_pwd, download_link = scraper.get_description(yt_key=yt_key)
     gen_cur_pwd = iter([cur_pwd, new_pwd])
     pwd_finder = PwdFinder(name, scraper.detail_url, api_key, secret_key)
     gen_new_pwd = pwd_finder.gen_pwd()
@@ -196,7 +196,8 @@ if __name__ == "__main__":
     
     results: list[tuple[str, int | Exception]] = []
     if debug:
-        results = [subtask(name, config) for name, config in conf.gen_configs()]
+        results = [subtask(name, config) for name, config in
+                   conf.gen_configs(['zyfxs'])]
     else:
         with ThreadPoolExecutor(max_workers=4) as executor:
             futures = [executor.submit(subtask, name, config)

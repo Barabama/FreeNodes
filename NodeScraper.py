@@ -63,9 +63,10 @@ class NodeScraper:
         
         # 选择最新的有日期的
         for tag in main_soup.find_all("a", attrs):
-            match = re.search(r"\d+年\d+月\d+", tag.prettify())
+            match = re.search(r"\d+月\d+", tag.prettify())
             if not match: continue
-            self.web_date = datetime.strptime(str(match.group()), "%Y年%m月%d")
+            self.web_date = datetime.strptime(str(match.group()), "%m月%d")
+            self.web_date = self.web_date.replace(year=datetime.today().year)
             self.detail_url = urljoin(main_url, tag.get("href", ""))  # 获得完整地址
             break
     
