@@ -150,7 +150,7 @@ class NodeScraper:
     def get_description(self, yt_url="", yt_key="") -> tuple[str, str]:
         """从视频描述中获取密码和下载链接"""
         yt_url = yt_url if yt_url else self.detail_url
-        vid = re.search(r"\w+(?=[/=])", yt_url[::-1]).group()[::-1]
+        vid = re.search(r"[\w-]+(?=[/=])", yt_url[::-1]).group()[::-1]
         api = Api(api_key=yt_key)
         response = api.get_video_by_id(video_id=vid, parts="snippet")
         
