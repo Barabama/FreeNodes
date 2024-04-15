@@ -196,8 +196,7 @@ if __name__ == "__main__":
     
     results: list[tuple[str, int | Exception]] = []
     if debug:
-        results = [subtask(name, config) for name, config in
-                   conf.gen_configs(['zyfxs'])]
+        results = [subtask(name, config) for name, config in conf.gen_configs()]
     else:
         with ThreadPoolExecutor(max_workers=4) as executor:
             futures = [executor.submit(subtask, name, config)
