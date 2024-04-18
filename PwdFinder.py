@@ -23,17 +23,24 @@ class PwdFinder:
     
     def __init__(self, name: str, url: str, api_key: str, secret_key: str):
         self.name = name
-        
         yt = pytube.YouTube(url)
-        for opt in ["360p", "480p", "720p"]:
-            if stream := yt.streams.get_by_resolution(opt):
-                print(f"{self.name}: 获取视频流 {opt}")
-                self.stream = stream
-                break
         
-        self.subtitles = yt.captions.all()
-        if not self.subtitles:
+        if subtitles := yt.captions.all():
+            self.subtitles = subtitles
+        else:
+            for opt in ["360p", "480p", "720p"]:
+                if stream := yt.streams.get_by_resolution(opt):
+                    print(f"{self.name}: 获取视频流 {opt}")
+                    self.stream = stream
+                    break
+                raise RuntimeError(f"{self.name}: 无法获取视频流")
+            
             self.ocr_caller = OCRCaller(name, api_key, secret_key)
+            if self.ocr_caller.access_token:
+                print(f"{self.name}: OCRCaller初始化成功, 生成AccessToken")
+            else:
+                raise RuntimeError(
+                        f"{self.name}: OCRCaller初始化失败, 无法生成AccessToken")
     
     def gen_frame(self) -> Generator[np.ndarray, None, None]:
         """生成视频截图"""
@@ -65,12 +72,6 @@ class PwdFinder:
                     yield find_pwd(p_elem.text)
         
         else:
-            if self.ocr_caller.access_token:
-                print(f"{self.name}: OCRCaller初始化成功, 生成AccessToken")
-            else:
-                raise RuntimeError(
-                        f"{self.name}: OCRCaller初始化失败, 无法生成AccessToken")
-            
             # 遍历视频截图
             for frame in self.gen_frame():
                 result = self.ocr_caller.request_ocr(frame)  # 传入截图请求ocr

@@ -29,7 +29,7 @@ event.set()
 
 
 def get_geo(add: str) -> ResData:
-    """获取 IP 域名 地理位置"""
+    """获取 IP/域名 地理位置"""
     global add_rl, add_ttl
     url = f"http://ip-api.com/json/{add}"
     
@@ -50,10 +50,11 @@ def get_geo(add: str) -> ResData:
 
 
 def get_geos(ips: list[str]) -> list[ResData]:
-    """获取 IP 地理位置"""
+    """批量获取IP地理位置"""
     global ips_rl, ips_ttl
     url = "http://ip-api.com/batch"
     
+    # 100为单位分批查询
     res: list[ResData] = []
     for subs in [ips[i:i + 100] for i in range(0, len(ips), 100)]:
         if ips_rl <= 0:
@@ -76,7 +77,7 @@ def get_geos(ips: list[str]) -> list[ResData]:
 
 
 def is_base64(string: str) -> bool:
-    """判断字符串是否为 base64"""
+    """判断字符串是否为base64"""
     return bool(re.match(r"^[A-Za-z0-9+/=]+$", string))
 
 

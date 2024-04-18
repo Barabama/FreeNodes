@@ -7,7 +7,6 @@ import kuser_agent
 import requests
 from numpy import ndarray
 from requests.adapters import HTTPAdapter
-
 from urllib3 import Retry
 
 retries = Retry(connect=3, read=3, backoff_factor=3,
@@ -17,15 +16,15 @@ session.keep_alive = False
 session.mount('http://', HTTPAdapter(max_retries=retries))
 session.mount('https://', HTTPAdapter(max_retries=retries))
 
-semaphore = Semaphore(2)  # 并发请求
+semaphore = Semaphore(2)  # 并发请求限制
 
 
-def make_request(method: str, url: str,
-                 params=None, data=None, headers=None, timeout=None):
+def make_request(method: str, url: str, params=None, data=None,
+                 headers=None, timeout=None):
     """网络请求"""
     headers = headers if headers else {"User-Agent": kuser_agent.get()}
-    response = session.request(method, url, params, data, headers,
-                               timeout=timeout)
+    response = session.request(method, url, params, data,
+                               headers, timeout=timeout)
     return response
 
 
@@ -63,7 +62,7 @@ class OCRCaller:
     name: str
     
     def __init__(self, name: str, api_key: str, secret_key: str):
-        """使用 AK, SK 生成鉴权签名(Access Token)"""
+        """使用AK, SK生成鉴权签名(Access Token)"""
         params = {"grant_type": "client_credentials",
                   "client_id" : api_key, "client_secret": secret_key}
         response = make_request("POST", self.access_url, params=params)
@@ -80,12 +79,15 @@ class OCRCaller:
         # 发送 POST 请求
         for i, item in enumerate(self.post_urls):
             if not item["usable"]: continue
+            
             with semaphore:
                 response = make_request("POST", item.get("url"),
                                         params, payload, headers)
             result = OCRRes(**response.json())
+            
             if "error_code" in result:
                 print(result["error_msg"])
                 self.post_urls[i]["usable"] = False
                 continue
+            
             else: return result

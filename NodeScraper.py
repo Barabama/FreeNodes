@@ -108,7 +108,7 @@ class NodeScraper:
         return texts[self.nodes_index] if texts else ""
     
     def get_yt_url(self) -> str:
-        """获取 youtube 视频链接"""
+        """获取youtube视频链接"""
         yt_urls = [str(tag.get("href")) for tag in
                    self.detail_soup.find_all("a")
                    if str(tag.get("href")).startswith("https://youtu.be")]
