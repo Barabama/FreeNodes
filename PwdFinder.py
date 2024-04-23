@@ -19,7 +19,7 @@ def find_pwd(text: str) -> str:
 
 class PwdFinder:
     stream: pytube.Stream
-    subtitles: list[pytube.Caption]
+    subtitles: list[pytube.Caption] = None
     
     def __init__(self, name: str, url: str, api_key: str, secret_key: str):
         self.name = name
