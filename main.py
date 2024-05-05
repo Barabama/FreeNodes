@@ -48,8 +48,10 @@ def get_nodes_url_from_blog(name: str, scraper: NodeScraper) -> str:
         # 遍历密码解密
         for pwd in itertools.chain(gen_cur_pwd, gen_new_pwd):
             if not pwd.strip(): continue
+            
             ret, result = scraper.decrypt_for_text(pwd)  # 解密
             if not ret: print(f"{name}: {result}"); continue
+            
             # 获取txt文本链接
             elif nodes_url := scraper.get_nodes_url(result):
                 print(f"{name}: {pwd} 解密成功")
@@ -81,13 +83,14 @@ def get_nodes_url_from_yt(name: str, scraper: NodeScraper) -> str:
     if download_link.endswith("zip"):
         print(f"{name}: 下载 {download_link}")
         res = make_request("GET", download_link)
-        zip_file = zipfile.ZipFile(io.BytesIO(res.content),
-                                   metadata_encoding="gbk")
+        zip_file = zipfile.ZipFile(io.BytesIO(res.content), metadata_encoding="gbk")
         file_name = [n for n in zip_file.namelist() if "节点" in n][0]
         for pwd in itertools.chain(gen_cur_pwd, gen_new_pwd):
             if not pwd.strip(): continue
+            
             try: file = zip_file.open(file_name, "r", bytes(pwd, "utf-8"))
             except RuntimeError: continue
+            
             print(f"{name}: {pwd} 解密成功")
             
             text = file.read().decode("utf-8")
@@ -105,8 +108,10 @@ def get_nodes_url_from_yt(name: str, scraper: NodeScraper) -> str:
     else:
         for pwd in itertools.chain(gen_cur_pwd, gen_new_pwd):
             if not pwd.strip(): continue
+            
             ret, result = scraper.decrypt_for_text(pwd, download_link)  # 解密
             if not ret: print(f"{name}: {result}"); continue
+            
             # 获取txt文本链接
             elif nodes_url := scraper.get_nodes_url(result):
                 print(f"{name}: {pwd} 解密成功")
@@ -177,7 +182,7 @@ def subtask(name: str, config: ConfigData) -> tuple[str, int | Exception]:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--debug", default=False, help="For Debug")
+    parser.add_argument("--debug", action="store_true", help="For Debug")
     parser.add_argument("--api_key", default="", help="API key")
     parser.add_argument("--secret_key", default="", help="Secret key")
     parser.add_argument("--yt_key", default="", help="YouTube api key")

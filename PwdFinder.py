@@ -37,10 +37,9 @@ class PwdFinder:
             
             self.ocr_caller = OCRCaller(name, api_key, secret_key)
             if self.ocr_caller.access_token:
-                print(f"{self.name}: OCRCaller初始化成功, 生成AccessToken")
+                print(f"{self.name}: OCRCaller初始化成功")
             else:
-                raise RuntimeError(
-                        f"{self.name}: OCRCaller初始化失败, 无法生成AccessToken")
+                raise RuntimeError(f"{self.name}: OCRCaller初始化失败")
     
     def gen_frame(self) -> Generator[np.ndarray, None, None]:
         """生成视频截图"""

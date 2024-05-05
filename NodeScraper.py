@@ -92,9 +92,7 @@ class NodeScraper:
         locked_elems = [{"name": "input", "attrs": {"id": "EPassword"}},
                         {"name": "input", "attrs": {"id": "pwbox-426"}},
                         {"name": "input", "attrs": {"name": "secret-key"}}]
-        elems = [e for le in locked_elems for e in
-                 self.detail_soup.find_all(**le)]
-        return any(elems)
+        return any([e for le in locked_elems for e in self.detail_soup.find_all(**le)])
     
     def is_latest(self) -> bool:
         """判断是否已经是最新的"""
@@ -109,8 +107,7 @@ class NodeScraper:
     
     def get_yt_url(self) -> str:
         """获取youtube视频链接"""
-        yt_urls = [str(tag.get("href")) for tag in
-                   self.detail_soup.find_all("a")
+        yt_urls = [str(tag.get("href")) for tag in self.detail_soup.find_all("a")
                    if str(tag.get("href")).startswith("https://youtu.be")]
         # 根据yt_index取链接
         return yt_urls[self.decryption.get("yt_index", 0)] if yt_urls else ""
@@ -163,8 +160,7 @@ class NodeScraper:
         for i, s in enumerate(ls):
             if p := find_pwd(s): pwd = p
             if "下载" not in s: continue
-            elif match := re.search(r"https://[^\r\n\s]+",
-                                    f"{ls[i]}\n{ls[i + 1]}"):
+            elif match := re.search(r"https://[^\r\n\s]+", f"{ls[i]}\n{ls[i + 1]}"):
                 link = match.group()
                 break
         return pwd, link

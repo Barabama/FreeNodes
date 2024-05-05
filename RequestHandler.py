@@ -23,8 +23,7 @@ def make_request(method: str, url: str, params=None, data=None,
                  headers=None, timeout=None):
     """网络请求"""
     headers = headers if headers else {"User-Agent": kuser_agent.get()}
-    response = session.request(method, url, params, data,
-                               headers, timeout=timeout)
+    response = session.request(method, url, params, data, headers, timeout=timeout)
     return response
 
 
@@ -50,21 +49,18 @@ class OCRCaller:
     """技术文档: https://cloud.baidu.com/doc/OCR/index.html"""
     access_url = "https://aip.baidubce.com/oauth/2.0/token"
     post_urls = [
-        {"url"   : "https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic",
-         "usable": True},
-        {"url"   : "https://aip.baidubce.com/rest/2.0/ocr/v1/general",
-         "usable": True},
-        {"url"   : "https://aip.baidubce.com/rest/2.0/ocr/v1/webimage",
-         "usable": True},
-        {"url"   : "https://aip.baidubce.com/rest/2.0/ocr/v1/accurate",
-         "usable": True}]
+        {"url": "https://aip.baidubce.com/rest/2.0/ocr/v1/general_basic", "usable": True},
+        {"url": "https://aip.baidubce.com/rest/2.0/ocr/v1/general", "usable": True},
+        {"url": "https://aip.baidubce.com/rest/2.0/ocr/v1/webimage", "usable": True},
+        {"url": "https://aip.baidubce.com/rest/2.0/ocr/v1/accurate", "usable": True}]
     access_token: str
     name: str
     
     def __init__(self, name: str, api_key: str, secret_key: str):
         """使用AK, SK生成鉴权签名(Access Token)"""
         params = {"grant_type": "client_credentials",
-                  "client_id" : api_key, "client_secret": secret_key}
+                  "client_id":     api_key,
+                  "client_secret": secret_key}
         response = make_request("POST", self.access_url, params=params)
         self.access_token = response.json().get("access_token")
         self.name = name
@@ -73,7 +69,7 @@ class OCRCaller:
         """向百度云数字ocr发送图片, 接收响应"""
         params = {"access_token": self.access_token}
         headers = {"Content-Type": "application/x-www-form-urlencoded",
-                   "Accept"      : "application/json"}
+                   "Accept": "application/json"}
         payload = {"image": img2base64(image), "detect_direction": "false"}
         
         # 发送 POST 请求
@@ -81,8 +77,7 @@ class OCRCaller:
             if not item["usable"]: continue
             
             with semaphore:
-                response = make_request("POST", item.get("url"),
-                                        params, payload, headers)
+                response = make_request("POST", item.get("url"), params, payload, headers)
             result = OCRRes(**response.json())
             
             if "error_code" in result:

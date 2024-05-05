@@ -168,7 +168,7 @@ class VLESSParser:
 
 class Parser(VMESSParser, VLESSParser):
     scheme: str
-    parsers = {"vmess" : VMESSParser, "vless": VLESSParser,
+    parsers = {"vmess": VMESSParser, "vless": VLESSParser,
                "trojan": VLESSParser, "socks": VLESSParser, "ss": VLESSParser}
     parser: VMESSParser | VLESSParser
     body: VMESS | VLESS
@@ -221,5 +221,7 @@ class NodeHandler:
             self.parser.parse(scheme, body)
             self.parser.set_remarks(remarks)
             yield self.parser.pack()
+        
+        # # 不做处理
         # for scheme, body in self.nodes:
         #     yield scheme + prot_sep + body
