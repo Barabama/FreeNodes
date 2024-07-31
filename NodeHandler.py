@@ -215,7 +215,7 @@ class NodeHandler:
                 geo = get_geo(geo["query"])  # 域名再识别
             
             remarks = "Unknown" if geo["status"] == "fail" \
-                else f"{geo["country"]}_{geo["city"]}"
+                else f"{geo['country']}_{geo['city']}"
             
             scheme, body = self.nodes[i]
             self.parser.parse(scheme, body)
