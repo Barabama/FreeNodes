@@ -4,7 +4,7 @@ from typing import Generator
 
 import cv2
 import numpy as np
-import pytube
+import pytubefix
 
 from RequestHandler import OCRCaller
 
@@ -18,12 +18,12 @@ def find_pwd(text: str) -> str:
 
 
 class PwdFinder:
-    stream: pytube.Stream
-    subtitles: list[pytube.Caption] = None
+    stream: pytubefix.Stream
+    subtitles: list[pytubefix.Caption] = None
     
     def __init__(self, name: str, url: str, api_key: str, secret_key: str):
         self.name = name
-        yt = pytube.YouTube(url)
+        yt = pytubefix.YouTube(url)
         
         if subtitles := yt.captions.all():
             self.subtitles = subtitles

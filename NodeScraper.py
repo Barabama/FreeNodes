@@ -74,6 +74,8 @@ class NodeScraper:
         """虚拟浏览器初始化"""
         options = webdriver.ChromeOptions()
         options.add_argument("--headless")  # 启用无头模式
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-dev-shm-usage")
         options.add_argument("--pageLoadStrategy=eager")
         self.driver = webdriver.Chrome(options)  # 创建浏览器实例
     
