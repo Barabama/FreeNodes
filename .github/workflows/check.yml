@@ -5,6 +5,7 @@ on:
   pull_request:
     branches:
       - main
+      - main
 
 jobs:
   check:
@@ -24,10 +25,10 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run SimpleScraper
-        run: scrapy crawl simple -s FORCE=TRUE
+        run: scrapy crawl simple -s FORCE=True
 
       - name: Run DecryptScraper
-        run: scrapy crawl decrypt -s FORCE=TRUE
+        run: scrapy crawl decrypt -s FORCE=True
 
       - name: Git commit and push
         uses: GuillaumeFalourd/git-commit-push@v1.3
