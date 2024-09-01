@@ -1,0 +1,344 @@
+2024-09-01 14:26:30 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'NodeScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2024-09-01 14:26:30 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2024-09-01 14:26:30 [scrapy.middleware] INFO: Enabled item pipelines:
+['NodeScrapy.pipelines.Pipeline']
+2024-09-01 14:26:30 [scrapy.core.engine] INFO: Spider opened
+2024-09-01 14:26:30 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2024-09-01 14:26:30 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2024-09-01 14:26:30 [decrypt] INFO: yudou66 start
+2024-09-01 14:26:30 [decrypt] INFO: blues start
+2024-09-01 14:26:36 [decrypt] INFO: blues found https://blues2022.blogspot.com/2024/08/2024914kchatgpt4k8kclashv2ray.html on 2024-09-01
+2024-09-01 14:26:36 [decrypt] INFO: blues needs update, accessing https://blues2022.blogspot.com/2024/08/2024914kchatgpt4k8kclashv2ray.html
+2024-09-01 14:26:53 [decrypt] ERROR: blues found no date
+2024-09-01 14:26:53 [scrapy.core.scraper] ERROR: Spider error processing <GET https://blues2022.blogspot.com/2024/08/2024914kchatgpt4k8kclashv2ray.html> (referer: https://blues2022.blogspot.com/)
+Traceback (most recent call last):
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/scrapy/utils/defer.py", line 279, in iter_errback
+    yield next(it)
+          ^^^^^^^^
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/scrapy/utils/python.py", line 350, in __next__
+    return next(self.data)
+           ^^^^^^^^^^^^^^^
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/scrapy/utils/python.py", line 350, in __next__
+    return next(self.data)
+           ^^^^^^^^^^^^^^^
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/scrapy/core/spidermw.py", line 106, in process_sync
+    for r in iterable:
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/scrapy/spidermiddlewares/referer.py", line 352, in <genexpr>
+    return (self._set_referer(r, response) for r in result or ())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/scrapy/core/spidermw.py", line 106, in process_sync
+    for r in iterable:
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/scrapy/spidermiddlewares/urllength.py", line 27, in <genexpr>
+    return (r for r in result or () if self._filter(r, spider))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/scrapy/core/spidermw.py", line 106, in process_sync
+    for r in iterable:
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/scrapy/spidermiddlewares/depth.py", line 31, in <genexpr>
+    return (r for r in result or () if self._filter(r, response, spider))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/scrapy/core/spidermw.py", line 106, in process_sync
+    for r in iterable:
+  File "/home/bar/projects/NodeScraper/NodeScrapy/spiders/DecryptSpider.py", line 74, in parse_detail
+    if pwdfinder.date != response.meta["date"]:
+       ^^^^^^^^^^^^^^
+AttributeError: 'PwdFinder' object has no attribute 'date'
+2024-09-01 14:26:53 [decrypt] INFO: yudou66 found https://www.yudou66.com/2024/09/20240901220-1080p4k-v2rayclash-vpn.html on 2024-09-01
+2024-09-01 14:26:53 [decrypt] INFO: yudou66 needs update, accessing https://www.yudou66.com/2024/09/20240901220-1080p4k-v2rayclash-vpn.html
+2024-09-01 14:26:58 [decrypt] INFO: yudou66 found date: 2024-09-01
+2024-09-01 14:27:13 [decrypt] WARNING: yudou66 found no subtitles
+2024-09-01 14:27:13 [decrypt] INFO: yudou66 found a video stream
+2024-09-01 14:27:35 [decrypt] WARNING: yudou66 1 got 密碼錯誤
+2024-09-01 14:27:41 [decrypt] WARNING: yudou66 2 got 密碼錯誤
+2024-09-01 14:27:47 [decrypt] WARNING: yudou66 3 got 密碼錯誤
+2024-09-01 14:27:55 [decrypt] WARNING: yudou66 4 got 密碼錯誤
+2024-09-01 14:29:25 [decrypt] INFO: yudou66 reading keyframes 0
+2024-09-01 14:30:32 [scrapy.extensions.logstats] INFO: Crawled 6 pages (at 6 pages/min), scraped 0 items (at 0 items/min)
+2024-09-01 14:30:32 [scrapy.core.engine] INFO: Closing spider (finished)
+2024-09-01 14:30:32 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 2006,
+ 'downloader/request_count': 6,
+ 'downloader/request_method_count/GET': 6,
+ 'downloader/response_bytes': 159163,
+ 'downloader/response_count': 6,
+ 'downloader/response_status_count/200': 6,
+ 'elapsed_time_seconds': 241.83098,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2024, 9, 1, 6, 30, 32, 823988, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 856742,
+ 'httpcompression/response_count': 6,
+ 'log_count/ERROR': 2,
+ 'log_count/INFO': 20,
+ 'log_count/WARNING': 5,
+ 'memusage/max': 638070784,
+ 'memusage/startup': 422543360,
+ 'request_depth_max': 1,
+ 'response_received_count': 6,
+ 'robotstxt/request_count': 2,
+ 'robotstxt/response_count': 2,
+ 'robotstxt/response_status_count/200': 2,
+ 'scheduler/dequeued': 4,
+ 'scheduler/dequeued/memory': 4,
+ 'scheduler/enqueued': 4,
+ 'scheduler/enqueued/memory': 4,
+ 'spider_exceptions/AttributeError': 1,
+ 'start_time': datetime.datetime(2024, 9, 1, 6, 26, 30, 993008, tzinfo=datetime.timezone.utc)}
+2024-09-01 14:30:32 [scrapy.core.engine] INFO: Spider closed (finished)
+2024-09-01 14:59:33 [scrapy.addons] INFO: Enabled addons:
+[]
+2024-09-01 14:59:33 [scrapy.extensions.telnet] INFO: Telnet Password: ee1b83c894b04be2
+2024-09-01 14:59:33 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2024-09-01 14:59:33 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'NodeScrapy',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'scrapy.log',
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'NodeScrapy.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['NodeScrapy.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2024-09-01 14:59:33 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'NodeScrapy.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2024-09-01 14:59:33 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2024-09-01 14:59:33 [scrapy.middleware] INFO: Enabled item pipelines:
+['NodeScrapy.pipelines.Pipeline']
+2024-09-01 14:59:33 [scrapy.core.engine] INFO: Spider opened
+2024-09-01 14:59:33 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2024-09-01 14:59:33 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2024-09-01 14:59:33 [decrypt] INFO: yudou66 start
+2024-09-01 14:59:33 [decrypt] INFO: blues start
+2024-09-01 14:59:52 [decrypt] INFO: yudou66 found https://www.yudou66.com/2024/09/20240901220-1080p4k-v2rayclash-vpn.html on 2024-09-01
+2024-09-01 14:59:52 [decrypt] INFO: yudou66 needs update, accessing https://www.yudou66.com/2024/09/20240901220-1080p4k-v2rayclash-vpn.html
+2024-09-01 14:59:59 [scrapy.core.scraper] ERROR: Spider error processing <GET https://www.yudou66.com/2024/09/20240901220-1080p4k-v2rayclash-vpn.html> (referer: https://www.yudou66.com)
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/urllib/request.py", line 1348, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/usr/lib/python3.11/http/client.py", line 1303, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.11/http/client.py", line 1349, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.11/http/client.py", line 1298, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.11/http/client.py", line 1058, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.11/http/client.py", line 996, in send
+    self.connect()
+  File "/usr/lib/python3.11/http/client.py", line 1475, in connect
+    self.sock = self._context.wrap_socket(self.sock,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/ssl.py", line 517, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/ssl.py", line 1104, in _create
+    self.do_handshake()
+  File "/usr/lib/python3.11/ssl.py", line 1382, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLEOFError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/scrapy/utils/defer.py", line 279, in iter_errback
+    yield next(it)
+          ^^^^^^^^
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/scrapy/utils/python.py", line 350, in __next__
+    return next(self.data)
+           ^^^^^^^^^^^^^^^
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/scrapy/utils/python.py", line 350, in __next__
+    return next(self.data)
+           ^^^^^^^^^^^^^^^
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/scrapy/core/spidermw.py", line 106, in process_sync
+    for r in iterable:
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/scrapy/spidermiddlewares/referer.py", line 352, in <genexpr>
+    return (self._set_referer(r, response) for r in result or ())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/scrapy/core/spidermw.py", line 106, in process_sync
+    for r in iterable:
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/scrapy/spidermiddlewares/urllength.py", line 27, in <genexpr>
+    return (r for r in result or () if self._filter(r, spider))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/scrapy/core/spidermw.py", line 106, in process_sync
+    for r in iterable:
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/scrapy/spidermiddlewares/depth.py", line 31, in <genexpr>
+    return (r for r in result or () if self._filter(r, response, spider))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/scrapy/core/spidermw.py", line 106, in process_sync
+    for r in iterable:
+  File "/home/bar/projects/NodeScraper/NodeScrapy/spiders/DecryptSpider.py", line 73, in parse_detail
+    pwdfinder = PwdFinder(name, self.logger, yt_url)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bar/projects/NodeScraper/utils/PwdFinder.py", line 67, in __init__
+    match = re.search(r"(?:\d{4}[-年])?(\d{1,2})[-月](\d{1,2})", yt.title)
+                                                                 ^^^^^^^^
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/pytubefix/__main__.py", line 613, in title
+    self._author = self.vid_info.get("videoDetails", {}).get(
+                   ^^^^^^^^^^^^^
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/pytubefix/__main__.py", line 388, in vid_info
+    innertube_response = innertube.player(self.video_id)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/pytubefix/innertube.py", line 652, in player
+    return self._call_api(endpoint, query, self.base_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/pytubefix/innertube.py", line 595, in _call_api
+    response = request._execute_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/pytubefix/request.py", line 35, in _execute_request
+    return urlopen(request, timeout=timeout)  # nosec
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/urllib/request.py", line 519, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/urllib/request.py", line 536, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/usr/lib/python3.11/urllib/request.py", line 1391, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/urllib/request.py", line 1351, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)>
+2024-09-01 14:59:59 [decrypt] INFO: blues found https://blues2022.blogspot.com/2024/08/2024914kchatgpt4k8kclashv2ray.html on 2024-09-01
+2024-09-01 14:59:59 [decrypt] INFO: blues needs update, accessing https://blues2022.blogspot.com/2024/08/2024914kchatgpt4k8kclashv2ray.html
+2024-09-01 15:01:48 [scrapy.core.scraper] ERROR: Spider error processing <GET https://blues2022.blogspot.com/2024/08/2024914kchatgpt4k8kclashv2ray.html> (referer: https://blues2022.blogspot.com/)
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/http/client.py", line 599, in _read_chunked
+    value.append(self._safe_read(chunk_left))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/http/client.py", line 640, in _safe_read
+    raise IncompleteRead(data, amt-len(data))
+http.client.IncompleteRead: IncompleteRead(2750 bytes read, 4045 more expected)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/scrapy/utils/defer.py", line 279, in iter_errback
+    yield next(it)
+          ^^^^^^^^
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/scrapy/utils/python.py", line 350, in __next__
+    return next(self.data)
+           ^^^^^^^^^^^^^^^
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/scrapy/utils/python.py", line 350, in __next__
+    return next(self.data)
+           ^^^^^^^^^^^^^^^
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/scrapy/core/spidermw.py", line 106, in process_sync
+    for r in iterable:
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/scrapy/spidermiddlewares/referer.py", line 352, in <genexpr>
+    return (self._set_referer(r, response) for r in result or ())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/scrapy/core/spidermw.py", line 106, in process_sync
+    for r in iterable:
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/scrapy/spidermiddlewares/urllength.py", line 27, in <genexpr>
+    return (r for r in result or () if self._filter(r, spider))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/scrapy/core/spidermw.py", line 106, in process_sync
+    for r in iterable:
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/scrapy/spidermiddlewares/depth.py", line 31, in <genexpr>
+    return (r for r in result or () if self._filter(r, response, spider))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/scrapy/core/spidermw.py", line 106, in process_sync
+    for r in iterable:
+  File "/home/bar/projects/NodeScraper/NodeScrapy/spiders/DecryptSpider.py", line 73, in parse_detail
+    pwdfinder = PwdFinder(name, self.logger, yt_url)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bar/projects/NodeScraper/utils/PwdFinder.py", line 67, in __init__
+    match = re.search(r"(?:\d{4}[-年])?(\d{1,2})[-月](\d{1,2})", yt.title)
+                                                                 ^^^^^^^^
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/pytubefix/__main__.py", line 613, in title
+    self._author = self.vid_info.get("videoDetails", {}).get(
+                   ^^^^^^^^^^^^^
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/pytubefix/__main__.py", line 388, in vid_info
+    innertube_response = innertube.player(self.video_id)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/pytubefix/innertube.py", line 652, in player
+    return self._call_api(endpoint, query, self.base_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/bar/projects/NodeScraper/.venv/lib/python3.11/site-packages/pytubefix/innertube.py", line 601, in _call_api
+    return json.loads(response.read())
+                      ^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/http/client.py", line 467, in read
+    return self._read_chunked(amt)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/http/client.py", line 605, in _read_chunked
+    raise IncompleteRead(b''.join(value)) from exc
+http.client.IncompleteRead: IncompleteRead(32768 bytes read)
+2024-09-01 15:01:48 [scrapy.extensions.logstats] INFO: Crawled 6 pages (at 6 pages/min), scraped 0 items (at 0 items/min)
+2024-09-01 15:01:48 [scrapy.core.engine] INFO: Closing spider (finished)
+2024-09-01 15:01:48 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 1,
+ 'downloader/exception_type_count/twisted.web._newclient.ResponseNeverReceived': 1,
+ 'downloader/request_bytes': 2601,
+ 'downloader/request_count': 8,
+ 'downloader/request_method_count/GET': 8,
+ 'downloader/response_bytes': 161388,
+ 'downloader/response_count': 7,
+ 'downloader/response_status_count/200': 6,
+ 'downloader/response_status_count/302': 1,
+ 'elapsed_time_seconds': 134.603462,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2024, 9, 1, 7, 1, 48, 149245, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 860364,
+ 'httpcompression/response_count': 6,
+ 'log_count/ERROR': 2,
+ 'log_count/INFO': 17,
+ 'memusage/max': 432046080,
+ 'memusage/startup': 422785024,
+ 'request_depth_max': 1,
+ 'response_received_count': 6,
+ 'retry/count': 1,
+ 'retry/reason_count/twisted.web._newclient.ResponseNeverReceived': 1,
+ 'robotstxt/request_count': 2,
+ 'robotstxt/response_count': 2,
+ 'robotstxt/response_status_count/200': 2,
+ 'scheduler/dequeued': 4,
+ 'scheduler/dequeued/memory': 4,
+ 'scheduler/enqueued': 4,
+ 'scheduler/enqueued/memory': 4,
+ 'spider_exceptions/IncompleteRead': 1,
+ 'spider_exceptions/URLError': 1,
+ 'start_time': datetime.datetime(2024, 9, 1, 6, 59, 33, 545783, tzinfo=datetime.timezone.utc)}
+2024-09-01 15:01:48 [scrapy.core.engine] INFO: Spider closed (finished)

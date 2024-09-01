@@ -1,38 +1,38 @@
-name: Check Push
+name: Check Pushes
 
 on:
   workflow_dispatch:
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   check:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.x"
+          python-version: 3.11
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run Python
-        run: python main.py
-          --debug
-          --api_key ${{secrets.API_KEY}}
-          --secret_key ${{secrets.SECRET_KEY}}
-          --yt_key ${{secrets.YT_KEY}}
+      - name: Run SimpleScraper
+        run: scrapy crawl simple -s LOG_LEVEL=DEBUG
 
-      - name: Git Commit Push Action
+      - name: Run DecryptScraper
+        run: scrapy crawl decrypt -s LOG_LEVEL=DEBUG
+
+      - name: Git commit and push
         uses: GuillaumeFalourd/git-commit-push@v1.3
         with:
-          commit_message: "Force the Update"
-          files: config.json nodes/*
+          commit-message: "Force the Update"
+          files: config.json scrapy.log nodes/*
+          force: 1
           empty: 1
