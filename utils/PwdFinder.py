@@ -10,6 +10,7 @@ from typing import Generator
 import cv2
 import numpy as np
 import pytubefix
+from pytubefix.cli import on_progress
 from paddleocr import PaddleOCR
 from skimage.metrics import structural_similarity as ssim
 
@@ -60,7 +61,9 @@ class PwdFinder:
         self.name = name
         self.logger = logger
 
-        yt = pytubefix.YouTube(url, use_oauth=True, allow_oauth_cache=True)
+        yt = pytubefix.YouTube(url)#, use_oauth=True, allow_oauth_cache=True,
+                            #     use_po_token=True,
+                            #    on_progress_callback=on_progress)
 
         # date = yt.publish_date.date()
         # self.date = date.strftime("%Y-%m-%d")
@@ -115,11 +118,11 @@ class PwdFinder:
                 yield pwd
 
 
-# if __name__ == "__main__":
-    # logging.disable(logging.DEBUG)
-    # urls = ['https://youtu.be/H5tMkb1SpEo']
-    # logger = logging.getLogger()
-    # console = logging.StreamHandler()
-    # console.setLevel(logging.DEBUG)
-    # logger.addHandler(console)
-    # f = PwdFinder('test', logger, urls[0])
+if __name__ == "__main__":
+    logging.disable(logging.DEBUG)
+    urls = ['https://youtu.be/H5tMkb1SpEo']
+    logger = logging.getLogger()
+    console = logging.StreamHandler()
+    console.setLevel(logging.DEBUG)
+    logger.addHandler(console)
+    f = PwdFinder('test', logger, urls[0])
