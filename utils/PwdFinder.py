@@ -61,12 +61,12 @@ class PwdFinder:
         self.name = name
         self.logger = logger
 
-        yt = pytubefix.YouTube(url)#, use_oauth=True, allow_oauth_cache=True,
-                            #     use_po_token=True,
-                            #    on_progress_callback=on_progress)
+        yt = pytubefix.YouTube(url, use_oauth=True, allow_oauth_cache=True,
+                               on_progress_callback=on_progress)
 
-        # date = yt.publish_date.date()
+        # date = yt.publish_date.date() # Not working
         # self.date = date.strftime("%Y-%m-%d")
+        print(type(yt))
         match = re.search(r"(?:\d{4}[-年])?(\d{1,2})[-月](\d{1,2})", yt.title)
         if not match:
             self.logger.error(f"{name} found no date")

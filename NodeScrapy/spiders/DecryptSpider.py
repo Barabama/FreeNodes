@@ -34,6 +34,10 @@ class DecryptSpider(SimpleSpider):
         options.add_argument("--page-load-strategy=eager")
         self.driver = webdriver.Chrome(options=options)
 
+    def closed(self, reason):
+        super().closed(reason)
+        self.driver.quit()
+
     def start_requests(self):
         yield from super().start_requests()
 
@@ -92,7 +96,3 @@ class DecryptSpider(SimpleSpider):
 
     def parse_link(self, response: Response):
         yield from super().parse_link(response)
-
-    def closed(self, reason):
-        super().closed(reason)
-        self.driver.quit()
