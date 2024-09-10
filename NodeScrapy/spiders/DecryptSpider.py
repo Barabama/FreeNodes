@@ -45,6 +45,7 @@ class DecryptSpider(SimpleSpider):
         yield from super().parse(response)
 
     def _decrypt(self, name: str, url: str, pwd: str) -> tuple[bool, str]:
+        """Decrypt the page with the given password."""
         config = self.configs[name]
 
         self.driver.get(url)
@@ -68,9 +69,16 @@ class DecryptSpider(SimpleSpider):
             return True, self.driver.find_element(By.TAG_NAME, "body").text
 
     def parse_detail(self, response: Response):
-        name = response.meta["name"]
-        config = self.configs[name]
+        """Parse detail page with decryption."""
+        # Yield requests from super class.
+        yield_flag = False
+        for req in super().parse_detail(response):
+            yield_flag = True
+            yield req
+        if yield_flag:
+            return
 
+        name = response.meta["name"]
         yt_url = [url for url in response.css("a::attr(href)").getall()
                   if "youtu.be" in url][CONFIG.get(name)["yt_idx"]]
 
@@ -79,7 +87,7 @@ class DecryptSpider(SimpleSpider):
             self.logger.error(f"{name} found yt_url: {yt_url} mismatch the date, exiting")
             return
 
-        old_pwd = config["password"]
+        old_pwd = self.configs[name]["password"]
         for pwd in itertools.chain(iter([old_pwd]), pwdfinder.password_iter("码")):
             ok, msg = self._decrypt(name, response.url, pwd)
             if not ok:
@@ -93,6 +101,7 @@ class DecryptSpider(SimpleSpider):
             if old_pwd != pwd:
                 CONFIG.set(name, {"password": pwd})
                 self.logger.info(f"{name} saved new password {pwd}")
+            break
 
     def parse_link(self, response: Response):
         yield from super().parse_link(response)
