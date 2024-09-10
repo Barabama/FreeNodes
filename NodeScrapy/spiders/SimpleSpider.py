@@ -24,6 +24,7 @@ class SimpleSpider(scrapy.Spider):
         self.configs = {name: CONFIG.get(name) for name in self.targets}
 
     def _find_link(self, name: str, text: str):
+        """Find links in text and yield them with their extension."""
         for link in re.findall(self.configs[name]["pattern"], text):
             _, ext = os.path.splitext(link)
             if ext not in [".txt", ".yaml"]:
@@ -33,7 +34,8 @@ class SimpleSpider(scrapy.Spider):
             yield link, ext
 
     def _parse_tag(self, name: str, tag: scrapy.Selector) -> tuple[str, dt.date]:
-        link = tag.attrib.get("href")
+        """Parse tag and yield link and date."""
+        link = tag.attrib.get("href", "")
         date = dt.date.today()
         if not link:
             return link, date
@@ -63,37 +65,30 @@ class SimpleSpider(scrapy.Spider):
     def parse(self, response: Response):
         name = response.meta["name"]
         config = self.configs[name]
-        css_selector = "a" + "".join(f"[{k}='{v}']" for k, v in config["attrs"].items())
 
-        # Find the detail url and web_date
-        relative_url = ""
-        web_date = dt.date.today()
-        for tag in response.css(css_selector):
-            relative_url, web_date = self._parse_tag(name, tag)
-            if not relative_url:
-                continue
-            break
-        if not relative_url:
-            self.logger.error(f"{name} could not found detail url, exiting")
-            return
-        detail_url = urljoin(config["start_url"], relative_url)
-
-        # Compare web_date with up_date, DEBUG force update
         up_date = dt.datetime.strptime(config["up_date"], "%Y-%m-%d").date()
-        if web_date <= up_date and not self.settings.getbool("FORCE"):
-            self.logger.info(f"{name} is up to date, exiting")
-            return
+        css_selector = "a" + "".join(f"[{k}='{v}']" for k, v in config["attrs"].items())
+        tag_iter = iter(self._parse_tag(name, tag) for tag in response.css(css_selector))
 
-        self.logger.info(f"{name} needs update, accessing {detail_url}")
-        response.meta.update({"date": web_date.strftime("%Y-%m-%d")})
-        yield response.follow(detail_url, self.parse_detail, meta=response.meta)
+        # First three links are the most recent ones.
+        for rel_url, web_date in list(filter(lambda x: x[0], tag_iter))[0:3]:
+            if web_date <= up_date and not self.settings.getbool("FORCE"):
+                self.logger.info(f"{name} is up to date, exiting")
+                continue
+
+            detail_url = urljoin(config["start_url"], rel_url)
+            self.logger.info(f"{name} needs update, accessing {detail_url}")
+            response.meta["date"] = web_date.strftime("%Y-%m-%d")
+            yield response.follow(detail_url, self.parse_detail, meta=response.meta)
 
     def parse_detail(self, response: Response):
+        """Parse detail page and yield links of nodes."""
         for link, ext in self._find_link(response.meta["name"], response.text):
             response.meta["ext"] = ext
             yield response.follow(link, self.parse_link, meta=response.meta)
 
     def parse_link(self, response: Response):
+        """Parse link text and pack up as item."""
         item = NodeItem()
         item["name"] = response.meta["name"]
         item["ext"] = response.meta["ext"]
