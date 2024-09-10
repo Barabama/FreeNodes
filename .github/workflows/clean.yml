@@ -1,0 +1,15 @@
+name: Cleanup
+
+on:
+  schedule:
+    - cron: "0 0 * * 0" # Every Sunday at 00:00
+
+jobs:
+  clean:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Delete old workflow runs
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          retain_days: 7
+          keep_minimum_runs: 6

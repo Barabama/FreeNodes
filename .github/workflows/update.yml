@@ -1,13 +1,11 @@
-name: Check Pushes
+name: Regular Update
 
 on:
-  workflow_dispatch:
-  pull_request:
-    branches:
-      - main
+  schedule:
+    - cron: "0 2-14/6 * * *" # Run everyday at 10am, 4pm, 10pm, 4am
 
 jobs:
-  check:
+  update:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
@@ -24,15 +22,15 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run SimpleScraper
-        run: scrapy crawl simple -s FORCE=True
+        run: scrapy crawl simple
 
       - name: Run DecryptScraper
-        run: scrapy crawl decrypt -s FORCE=True
+        run: scrapy crawl decrypt
 
       - name: Git commit and push
         uses: GuillaumeFalourd/git-commit-push@v1
         with:
-          commit_message: "Force the Update"
+          commit_message: "Regular update"
           files: config.json scrapy.log nodes/*
           force: 1
           empty: 1

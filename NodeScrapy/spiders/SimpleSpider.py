@@ -16,7 +16,8 @@ class SimpleSpider(scrapy.Spider):
     name = "simple"
     custom_settings = {"LOG_FILE": "scrapy.log",
                        "LOG_FILE_APPEND": False}
-    targets = ("freenode", "wenode", "v2rayshare", "nodefree",)
+    targets = ("freenode", "ndnode", "nodev2ray",
+               "nodefree", "v2rayshare", "wenode")
     configs: dict[str, ConfigData]
 
     def __init__(self, *args, **kwargs):
@@ -67,8 +68,7 @@ class SimpleSpider(scrapy.Spider):
         config = self.configs[name]
 
         up_date = dt.datetime.strptime(config["up_date"], "%Y-%m-%d").date()
-        css_selector = "a" + "".join(f"[{k}='{v}']" for k, v in config["attrs"].items())
-        tag_iter = iter(self._parse_tag(name, tag) for tag in response.css(css_selector))
+        tag_iter = iter(self._parse_tag(name, tag) for tag in response.css(config["selector"]))
 
         # First three links are the most recent ones.
         for rel_url, web_date in list(filter(lambda x: x[0], tag_iter))[0:3]:

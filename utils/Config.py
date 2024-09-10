@@ -8,7 +8,7 @@ from typing import TypedDict
 class ConfigData(TypedDict, total=False):
     start_url: str
     up_date: str
-    attrs: dict
+    selector: str
     pattern: str
     password: str
     yt_idx: int
