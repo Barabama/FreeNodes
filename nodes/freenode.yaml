@@ -17,8 +17,8 @@ proxies:
 - cipher: aes-128-gcm
   client-fingerprint: chrome
   name: 🇭🇰 香港
-  password: 45c4d39d-9f8d-4188-96bf-dedd1f8fac38
-  port: 11003
+  password: 5014dfd8-cbef-46d8-b96a-b75565be73ab
+  port: 11005
   server: group-south-01.nutbit-node.lat
   tfo: false
   type: ss
@@ -30,14 +30,14 @@ proxies:
   server: gdyddx500.xiyunchen.cn
   tfo: false
   type: ss
-- client-fingerprint: chrome
+- cipher: chacha20-ietf-poly1305
+  client-fingerprint: chrome
   name: 🇭🇰 香港3
-  password: d6d86a97-2bef-4f89-9527-ce2003377677
-  port: 13008
-  server: naiu-hk.05vr9nyqg5.download
-  skip-cert-verify: false
-  sni: cloudflare.node-ssl.cdn-alibaba.com
-  type: trojan
+  password: 2b0ea7b4-bd27-4995-bc95-a817174b6f7c
+  port: 23331
+  server: link.karleynetwork.xyz
+  tfo: false
+  type: ss
 - client-fingerprint: chrome
   name: 🇭🇰 香港4
   password: lNOcIAxy
@@ -45,14 +45,6 @@ proxies:
   server: 36.151.195.83
   skip-cert-verify: true
   type: trojan
-- cipher: chacha20-ietf-poly1305
-  client-fingerprint: chrome
-  name: 🇭🇰 香港5
-  password: 0b31e9ee-3e6f-4ecb-bfe4-98412daf24ef
-  port: 39001
-  server: office-0f1df58e3d.f9umiigcm1awo6o-hk.qytnode.com
-  tfo: false
-  type: ss
 - cipher: chacha20-ietf-poly1305
   client-fingerprint: chrome
   name: 🇭🇰 香港6
@@ -64,9 +56,17 @@ proxies:
 - cipher: aes-128-gcm
   client-fingerprint: chrome
   name: 🇹🇼 台湾
-  password: 45c4d39d-9f8d-4188-96bf-dedd1f8fac38
-  port: 11010
+  password: 5014dfd8-cbef-46d8-b96a-b75565be73ab
+  port: 11011
   server: group-south-01.nutbit-node.lat
+  tfo: false
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  client-fingerprint: chrome
+  name: 🇹🇼 台湾2
+  password: 2b0ea7b4-bd27-4995-bc95-a817174b6f7c
+  port: 23334
+  server: link.karleynetwork.xyz
   tfo: false
   type: ss
 - alterId: 0
@@ -85,20 +85,28 @@ proxies:
     headers:
       Host: CfwMEEhvjp3.wzjwkqya.xyz
     path: /video/qTjvEqix
-- cipher: aes-128-gcm
+- cipher: chacha20-ietf-poly1305
   client-fingerprint: chrome
   name: 🇯🇵 日本2
-  password: 45c4d39d-9f8d-4188-96bf-dedd1f8fac38
-  port: 11024
+  password: 2b0ea7b4-bd27-4995-bc95-a817174b6f7c
+  port: 23335
+  server: link.karleynetwork.xyz
+  tfo: false
+  type: ss
+- cipher: aes-128-gcm
+  client-fingerprint: chrome
+  name: 🇯🇵 日本3
+  password: 5014dfd8-cbef-46d8-b96a-b75565be73ab
+  port: 11020
   server: group-east-01.nutbit-node.lat
   tfo: false
   type: ss
-- cipher: chacha20-ietf-poly1305
+- cipher: aes-128-gcm
   client-fingerprint: chrome
   name: 🇰🇷 韩国
-  password: 0b31e9ee-3e6f-4ecb-bfe4-98412daf24ef
-  port: 39051
-  server: office-0f1df58e3d.f9umiigcm1awo6o-kr.qytnode.com
+  password: 5014dfd8-cbef-46d8-b96a-b75565be73ab
+  port: 11034
+  server: group-east-01.nutbit-node.lat
   tfo: false
   type: ss
 - alterId: 0
@@ -117,12 +125,20 @@ proxies:
     headers:
       Host: cscEqFeksg1.wzjwkqya.xyz
     path: /video/orbHPhkP
-- cipher: aes-128-gcm
+- cipher: aes-256-gcm
   client-fingerprint: chrome
   name: 🇸🇬 新加坡2
-  password: 45c4d39d-9f8d-4188-96bf-dedd1f8fac38
-  port: 11016
-  server: group-south-01.nutbit-node.lat
+  password: 19142d25-9952-4a6b-8d0f-ab28782439f5
+  port: 59054
+  server: 6ad1ae37883fcbf8.cdn.jiashule.com
+  tfo: false
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  client-fingerprint: chrome
+  name: 🇸🇬 新加坡3
+  password: 2b0ea7b4-bd27-4995-bc95-a817174b6f7c
+  port: 23339
+  server: link.karleynetwork.xyz
   tfo: false
   type: ss
 - alterId: 0
@@ -157,28 +173,12 @@ proxies:
     headers:
       Host: ip14.freegradely.xyz
     path: github.com/Alvin9999
-- alterId: 0
-  cipher: auto
+- cipher: aes-128-gcm
   client-fingerprint: chrome
   name: 🇺🇸 美国3
-  network: ws
-  port: 80
-  server: 104.16.164.228
-  skip-cert-verify: false
-  tfo: false
-  tls: false
-  type: vmess
-  uuid: e6d76927-edd1-442b-92a4-fa031f522c42
-  ws-opts:
-    headers:
-      Host: sssub.v2.001.ssrsub.com
-    path: /api/v3/download.getFile
-- cipher: chacha20-ietf-poly1305
-  client-fingerprint: chrome
-  name: 🇺🇸 美国4
-  password: 0b31e9ee-3e6f-4ecb-bfe4-98412daf24ef
-  port: 39061
-  server: office-0f1df58e3d.f9umiigcm1awo6o-us.qytnode.com
+  password: shadowsocks
+  port: 443
+  server: 212.102.47.130
   tfo: false
   type: ss
 - alterId: 0
@@ -202,7 +202,7 @@ proxies:
   name: 🇯🇵 日本特殊
   password: amazonskr05
   port: 443
-  server: 52.78.200.155
+  server: 43.203.141.142
   tfo: false
   type: ss
 - cipher: aes-256-cfb
@@ -210,7 +210,7 @@ proxies:
   name: 🇰🇷 韩国特殊
   password: amazonskr05
   port: 443
-  server: 15.165.235.1
+  server: 43.201.253.79
   tfo: false
   type: ss
 - cipher: aes-256-cfb
@@ -218,7 +218,7 @@ proxies:
   name: 🇸🇬 狮城特殊
   password: amazonskr05
   port: 443
-  server: 34.212.155.53
+  server: 3.35.138.208
   tfo: false
   type: ss
 proxy-groups:
@@ -230,18 +230,19 @@ proxy-groups:
   - 🇭🇰 香港2
   - 🇭🇰 香港3
   - 🇭🇰 香港4
-  - 🇭🇰 香港5
   - 🇭🇰 香港6
   - 🇹🇼 台湾
+  - 🇹🇼 台湾2
   - 🇯🇵 日本
   - 🇯🇵 日本2
+  - 🇯🇵 日本3
   - 🇰🇷 韩国
   - 🇸🇬 新加坡
   - 🇸🇬 新加坡2
+  - 🇸🇬 新加坡3
   - 🇺🇸 美国
   - 🇺🇸 美国2
   - 🇺🇸 美国3
-  - 🇺🇸 美国4
   - 🇺🇸 美国5
   - 🇯🇵 日本特殊
   - 🇰🇷 韩国特殊
@@ -254,18 +255,19 @@ proxy-groups:
   - 🇭🇰 香港2
   - 🇭🇰 香港3
   - 🇭🇰 香港4
-  - 🇭🇰 香港5
   - 🇭🇰 香港6
   - 🇹🇼 台湾
+  - 🇹🇼 台湾2
   - 🇯🇵 日本
   - 🇯🇵 日本2
+  - 🇯🇵 日本3
   - 🇰🇷 韩国
   - 🇸🇬 新加坡
   - 🇸🇬 新加坡2
+  - 🇸🇬 新加坡3
   - 🇺🇸 美国
   - 🇺🇸 美国2
   - 🇺🇸 美国3
-  - 🇺🇸 美国4
   - 🇺🇸 美国5
   - 🇯🇵 日本特殊
   - 🇰🇷 韩国特殊
@@ -282,18 +284,19 @@ proxy-groups:
   - 🇭🇰 香港2
   - 🇭🇰 香港3
   - 🇭🇰 香港4
-  - 🇭🇰 香港5
   - 🇭🇰 香港6
   - 🇹🇼 台湾
+  - 🇹🇼 台湾2
   - 🇯🇵 日本
   - 🇯🇵 日本2
+  - 🇯🇵 日本3
   - 🇰🇷 韩国
   - 🇸🇬 新加坡
   - 🇸🇬 新加坡2
+  - 🇸🇬 新加坡3
   - 🇺🇸 美国
   - 🇺🇸 美国2
   - 🇺🇸 美国3
-  - 🇺🇸 美国4
   - 🇺🇸 美国5
   - 🇯🇵 日本特殊
   - 🇰🇷 韩国特殊
@@ -307,18 +310,19 @@ proxy-groups:
   - 🇭🇰 香港2
   - 🇭🇰 香港3
   - 🇭🇰 香港4
-  - 🇭🇰 香港5
   - 🇭🇰 香港6
   - 🇹🇼 台湾
+  - 🇹🇼 台湾2
   - 🇯🇵 日本
   - 🇯🇵 日本2
+  - 🇯🇵 日本3
   - 🇰🇷 韩国
   - 🇸🇬 新加坡
   - 🇸🇬 新加坡2
+  - 🇸🇬 新加坡3
   - 🇺🇸 美国
   - 🇺🇸 美国2
   - 🇺🇸 美国3
-  - 🇺🇸 美国4
   - 🇺🇸 美国5
   - 🇯🇵 日本特殊
   - 🇰🇷 韩国特殊
@@ -332,18 +336,19 @@ proxy-groups:
   - 🇭🇰 香港2
   - 🇭🇰 香港3
   - 🇭🇰 香港4
-  - 🇭🇰 香港5
   - 🇭🇰 香港6
   - 🇹🇼 台湾
+  - 🇹🇼 台湾2
   - 🇯🇵 日本
   - 🇯🇵 日本2
+  - 🇯🇵 日本3
   - 🇰🇷 韩国
   - 🇸🇬 新加坡
   - 🇸🇬 新加坡2
+  - 🇸🇬 新加坡3
   - 🇺🇸 美国
   - 🇺🇸 美国2
   - 🇺🇸 美国3
-  - 🇺🇸 美国4
   - 🇺🇸 美国5
   - 🇯🇵 日本特殊
   - 🇰🇷 韩国特殊
@@ -357,18 +362,19 @@ proxy-groups:
   - 🇭🇰 香港2
   - 🇭🇰 香港3
   - 🇭🇰 香港4
-  - 🇭🇰 香港5
   - 🇭🇰 香港6
   - 🇹🇼 台湾
+  - 🇹🇼 台湾2
   - 🇯🇵 日本
   - 🇯🇵 日本2
+  - 🇯🇵 日本3
   - 🇰🇷 韩国
   - 🇸🇬 新加坡
   - 🇸🇬 新加坡2
+  - 🇸🇬 新加坡3
   - 🇺🇸 美国
   - 🇺🇸 美国2
   - 🇺🇸 美国3
-  - 🇺🇸 美国4
   - 🇺🇸 美国5
   - 🇯🇵 日本特殊
   - 🇰🇷 韩国特殊
@@ -383,18 +389,19 @@ proxy-groups:
   - 🇭🇰 香港2
   - 🇭🇰 香港3
   - 🇭🇰 香港4
-  - 🇭🇰 香港5
   - 🇭🇰 香港6
   - 🇹🇼 台湾
+  - 🇹🇼 台湾2
   - 🇯🇵 日本
   - 🇯🇵 日本2
+  - 🇯🇵 日本3
   - 🇰🇷 韩国
   - 🇸🇬 新加坡
   - 🇸🇬 新加坡2
+  - 🇸🇬 新加坡3
   - 🇺🇸 美国
   - 🇺🇸 美国2
   - 🇺🇸 美国3
-  - 🇺🇸 美国4
   - 🇺🇸 美国5
   - 🇯🇵 日本特殊
   - 🇰🇷 韩国特殊
@@ -425,18 +432,19 @@ proxy-groups:
   - 🇭🇰 香港2
   - 🇭🇰 香港3
   - 🇭🇰 香港4
-  - 🇭🇰 香港5
   - 🇭🇰 香港6
   - 🇹🇼 台湾
+  - 🇹🇼 台湾2
   - 🇯🇵 日本
   - 🇯🇵 日本2
+  - 🇯🇵 日本3
   - 🇰🇷 韩国
   - 🇸🇬 新加坡
   - 🇸🇬 新加坡2
+  - 🇸🇬 新加坡3
   - 🇺🇸 美国
   - 🇺🇸 美国2
   - 🇺🇸 美国3
-  - 🇺🇸 美国4
   - 🇺🇸 美国5
   - 🇯🇵 日本特殊
   - 🇰🇷 韩国特殊
