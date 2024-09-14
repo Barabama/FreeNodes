@@ -14,12 +14,12 @@ log-level: info
 mode: Rule
 port: 7890
 proxies:
-- cipher: aes-256-cfb
+- cipher: aes-128-gcm
   client-fingerprint: chrome
   name: 🇭🇰 香港
-  password: amazonskr05
-  port: 443
-  server: 18.141.159.184
+  password: e825e523-a6e5-4a1a-bd46-48c797a62e49
+  port: 11001
+  server: group-south-01.nutbit-node.lat
   tfo: false
   type: ss
 - cipher: chacha20-ietf-poly1305
@@ -30,56 +30,24 @@ proxies:
   server: gdyddx500.xiyunchen.cn
   tfo: false
   type: ss
-- cipher: chacha20-ietf
+- alterId: 0
+  cipher: auto
   client-fingerprint: chrome
   name: 🇭🇰 香港3
-  password: 67FxYtanE2g5
-  port: 8388
-  server: 103.97.128.45
+  port: 21971
+  server: 38.147.189.150
+  skip-cert-verify: false
   tfo: false
-  type: ss
+  tls: false
+  type: vmess
+  uuid: ce69ee1c-293e-45cf-aa8a-9fd05b4da2d3
 - client-fingerprint: chrome
   name: 🇭🇰 香港4
   password: lNOcIAxy
   port: 55314
   server: 36.151.195.83
-  skip-cert-verify: true
-  type: trojan
-- cipher: chacha20-ietf
-  client-fingerprint: chrome
-  name: 🇭🇰 香港5
-  password: sacQKAwXBLMR
-  port: 7568
-  server: 103.97.131.204
-  tfo: false
-  type: ss
-- alterId: 0
-  cipher: auto
-  client-fingerprint: chrome
-  name: 🇭🇰 香港6
-  port: 44806
-  server: ambxxic01hk.dorabbb.top
   skip-cert-verify: false
-  tfo: false
-  tls: false
-  type: vmess
-  uuid: fe9333e9-c864-41ea-8076-a0df85cc50de
-- cipher: chacha20-ietf-poly1305
-  client-fingerprint: chrome
-  name: 🇭🇰 香港7
-  password: ce19c839-49d3-4b65-bd5d-201862ead65b
-  port: 40000
-  server: cname-heyck2gkxig6ajkp.bestruisleipa.com
-  tfo: false
-  type: ss
-- cipher: chacha20-ietf-poly1305
-  client-fingerprint: chrome
-  name: 🇭🇰 香港8
-  password: ce19c839-49d3-4b65-bd5d-201862ead65b
-  port: 40000
-  server: cnamepc01-drwtbltc3xwmfzhd.coffeehouse.wiki
-  tfo: false
-  type: ss
+  type: trojan
 - cipher: aes-256-cfb
   client-fingerprint: chrome
   name: 🇭🇰 香港R
@@ -88,12 +56,12 @@ proxies:
   server: 103.161.255.195
   tfo: false
   type: ss
-- cipher: chacha20-ietf-poly1305
+- cipher: aes-128-gcm
   client-fingerprint: chrome
   name: 🇹🇼 台湾
-  password: ce19c839-49d3-4b65-bd5d-201862ead65b
-  port: 40040
-  server: cnamepc02-tdkdep2xnpmwi4ga.coffeehouse.wiki
+  password: e825e523-a6e5-4a1a-bd46-48c797a62e49
+  port: 11011
+  server: group-south-01.nutbit-node.lat
   tfo: false
   type: ss
 - alterId: 0
@@ -115,27 +83,46 @@ proxies:
 - cipher: chacha20-ietf
   client-fingerprint: chrome
   name: 🇯🇵 日本
-  password: d1Q123CsJzqx
-  port: 8388
-  server: 103.106.0.10
+  password: YCxWVzJ5291c
+  port: 6259
+  server: 154.205.139.44
   tfo: false
   type: ss
-- cipher: chacha20-ietf
+- alterId: 0
+  cipher: auto
   client-fingerprint: chrome
   name: 🇯🇵 日本2
-  password: d1Q123CsJzqx
-  port: 8388
-  server: 103.106.0.10
+  network: ws
+  port: 80
+  server: cfcdn3.sanfencdn9.com
+  skip-cert-verify: false
   tfo: false
-  type: ss
-- cipher: chacha20-ietf-poly1305
+  tls: false
+  type: vmess
+  uuid: cd47cb10-d851-489b-86cd-ffaf659ed943
+  ws-opts:
+    headers:
+      Host: zqWukzdtjp1.wzjwkqya.xyz
+    path: /video/RPKZwKFW
+- cipher: aes-128-gcm
   client-fingerprint: chrome
   name: 🇯🇵 日本3
-  password: ce19c839-49d3-4b65-bd5d-201862ead65b
-  port: 40060
-  server: cnamepc03-ndtabspegg7plp3p.coffeehouse.wiki
+  password: e825e523-a6e5-4a1a-bd46-48c797a62e49
+  port: 11022
+  server: group-east-01.nutbit-node.lat
   tfo: false
   type: ss
+- alterId: 0
+  cipher: auto
+  client-fingerprint: chrome
+  name: 🇯🇵 日本4
+  port: 16718
+  server: relay.gz.flyidc.top
+  skip-cert-verify: false
+  tfo: false
+  tls: false
+  type: vmess
+  uuid: 2d9a81f6-e86e-48e6-9646-b3b1325f8d61
 - cipher: aes-256-cfb
   client-fingerprint: chrome
   name: 🇯🇵 日本R
@@ -152,20 +139,31 @@ proxies:
   server: p232.panda004.net
   tfo: false
   type: ss
-- cipher: chacha20-ietf
-  client-fingerprint: chrome
-  name: 🇰🇷 韩国2
-  password: asyjfiaQwEpC
-  port: 8388
-  server: 206.237.15.241
-  tfo: false
-  type: ss
-- cipher: chacha20-ietf-poly1305
+- cipher: aes-128-gcm
   client-fingerprint: chrome
   name: 🇸🇬 新加坡
-  password: ce19c839-49d3-4b65-bd5d-201862ead65b
-  port: 40050
-  server: cnamepc01-drwtbltc3xwmfzhd.coffeehouse.wiki
+  password: e825e523-a6e5-4a1a-bd46-48c797a62e49
+  port: 11015
+  server: group-south-01.nutbit-node.lat
+  tfo: false
+  type: ss
+- alterId: 0
+  cipher: auto
+  client-fingerprint: chrome
+  name: 🇸🇬 新加坡2
+  port: 17575
+  server: relay.gz.flyidc.top
+  skip-cert-verify: false
+  tfo: false
+  tls: false
+  type: vmess
+  uuid: 2d9a81f6-e86e-48e6-9646-b3b1325f8d61
+- cipher: chacha20-ietf
+  client-fingerprint: chrome
+  name: 🇸🇬 新加坡3
+  password: Kjuj8hC6UofM
+  port: 8388
+  server: 103.136.68.199
   tfo: false
   type: ss
 - alterId: 0
@@ -224,20 +222,12 @@ proxies:
     headers:
       Host: us3AJ8biuQx.fzbqfrse.xyz
     path: /video/QXjZG5u4F2
-- cipher: chacha20-ietf
-  client-fingerprint: chrome
-  name: 🇺🇸 美国5
-  password: z5WzrVUCMZa2
-  port: 6297
-  server: 45.89.53.134
-  tfo: false
-  type: ss
 - cipher: aes-256-cfb
   client-fingerprint: chrome
   name: 🇯🇵 日本特殊
   password: amazonskr05
   port: 443
-  server: 3.35.19.182
+  server: 13.250.108.128
   tfo: false
   type: ss
 - cipher: aes-256-cfb
@@ -245,7 +235,7 @@ proxies:
   name: 🇰🇷 韩国特殊
   password: amazonskr05
   port: 443
-  server: 43.201.112.173
+  server: 3.112.149.87
   tfo: false
   type: ss
 - cipher: aes-256-cfb
@@ -253,15 +243,7 @@ proxies:
   name: 🇸🇬 狮城特殊
   password: amazonskr05
   port: 443
-  server: 18.141.159.184
-  tfo: false
-  type: ss
-- cipher: chacha20-ietf
-  client-fingerprint: chrome
-  name: 🇩🇪 德国
-  password: RyEehZX93Swf
-  port: 7133
-  server: 94.131.111.81
+  server: 54.179.175.221
   tfo: false
   type: ss
 proxy-groups:
@@ -273,29 +255,25 @@ proxy-groups:
   - 🇭🇰 香港2
   - 🇭🇰 香港3
   - 🇭🇰 香港4
-  - 🇭🇰 香港5
-  - 🇭🇰 香港6
-  - 🇭🇰 香港7
-  - 🇭🇰 香港8
   - 🇭🇰 香港R
   - 🇹🇼 台湾
   - 🇹🇼 台湾2
   - 🇯🇵 日本
   - 🇯🇵 日本2
   - 🇯🇵 日本3
+  - 🇯🇵 日本4
   - 🇯🇵 日本R
   - 🇰🇷 韩国
-  - 🇰🇷 韩国2
   - 🇸🇬 新加坡
+  - 🇸🇬 新加坡2
+  - 🇸🇬 新加坡3
   - 🇺🇸 美国
   - 🇺🇸 美国2
   - 🇺🇸 美国3
   - 🇺🇸 美国4
-  - 🇺🇸 美国5
   - 🇯🇵 日本特殊
   - 🇰🇷 韩国特殊
   - 🇸🇬 狮城特殊
-  - 🇩🇪 德国
   type: select
 - interval: 300
   name: ♻️ 自动选择
@@ -304,29 +282,25 @@ proxy-groups:
   - 🇭🇰 香港2
   - 🇭🇰 香港3
   - 🇭🇰 香港4
-  - 🇭🇰 香港5
-  - 🇭🇰 香港6
-  - 🇭🇰 香港7
-  - 🇭🇰 香港8
   - 🇭🇰 香港R
   - 🇹🇼 台湾
   - 🇹🇼 台湾2
   - 🇯🇵 日本
   - 🇯🇵 日本2
   - 🇯🇵 日本3
+  - 🇯🇵 日本4
   - 🇯🇵 日本R
   - 🇰🇷 韩国
-  - 🇰🇷 韩国2
   - 🇸🇬 新加坡
+  - 🇸🇬 新加坡2
+  - 🇸🇬 新加坡3
   - 🇺🇸 美国
   - 🇺🇸 美国2
   - 🇺🇸 美国3
   - 🇺🇸 美国4
-  - 🇺🇸 美国5
   - 🇯🇵 日本特殊
   - 🇰🇷 韩国特殊
   - 🇸🇬 狮城特殊
-  - 🇩🇪 德国
   tolerance: 50
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -339,29 +313,25 @@ proxy-groups:
   - 🇭🇰 香港2
   - 🇭🇰 香港3
   - 🇭🇰 香港4
-  - 🇭🇰 香港5
-  - 🇭🇰 香港6
-  - 🇭🇰 香港7
-  - 🇭🇰 香港8
   - 🇭🇰 香港R
   - 🇹🇼 台湾
   - 🇹🇼 台湾2
   - 🇯🇵 日本
   - 🇯🇵 日本2
   - 🇯🇵 日本3
+  - 🇯🇵 日本4
   - 🇯🇵 日本R
   - 🇰🇷 韩国
-  - 🇰🇷 韩国2
   - 🇸🇬 新加坡
+  - 🇸🇬 新加坡2
+  - 🇸🇬 新加坡3
   - 🇺🇸 美国
   - 🇺🇸 美国2
   - 🇺🇸 美国3
   - 🇺🇸 美国4
-  - 🇺🇸 美国5
   - 🇯🇵 日本特殊
   - 🇰🇷 韩国特殊
   - 🇸🇬 狮城特殊
-  - 🇩🇪 德国
   type: select
 - name: 📲 电报信息
   proxies:
@@ -371,29 +341,25 @@ proxy-groups:
   - 🇭🇰 香港2
   - 🇭🇰 香港3
   - 🇭🇰 香港4
-  - 🇭🇰 香港5
-  - 🇭🇰 香港6
-  - 🇭🇰 香港7
-  - 🇭🇰 香港8
   - 🇭🇰 香港R
   - 🇹🇼 台湾
   - 🇹🇼 台湾2
   - 🇯🇵 日本
   - 🇯🇵 日本2
   - 🇯🇵 日本3
+  - 🇯🇵 日本4
   - 🇯🇵 日本R
   - 🇰🇷 韩国
-  - 🇰🇷 韩国2
   - 🇸🇬 新加坡
+  - 🇸🇬 新加坡2
+  - 🇸🇬 新加坡3
   - 🇺🇸 美国
   - 🇺🇸 美国2
   - 🇺🇸 美国3
   - 🇺🇸 美国4
-  - 🇺🇸 美国5
   - 🇯🇵 日本特殊
   - 🇰🇷 韩国特殊
   - 🇸🇬 狮城特殊
-  - 🇩🇪 德国
   type: select
 - name: Ⓜ️ 微软服务
   proxies:
@@ -403,29 +369,25 @@ proxy-groups:
   - 🇭🇰 香港2
   - 🇭🇰 香港3
   - 🇭🇰 香港4
-  - 🇭🇰 香港5
-  - 🇭🇰 香港6
-  - 🇭🇰 香港7
-  - 🇭🇰 香港8
   - 🇭🇰 香港R
   - 🇹🇼 台湾
   - 🇹🇼 台湾2
   - 🇯🇵 日本
   - 🇯🇵 日本2
   - 🇯🇵 日本3
+  - 🇯🇵 日本4
   - 🇯🇵 日本R
   - 🇰🇷 韩国
-  - 🇰🇷 韩国2
   - 🇸🇬 新加坡
+  - 🇸🇬 新加坡2
+  - 🇸🇬 新加坡3
   - 🇺🇸 美国
   - 🇺🇸 美国2
   - 🇺🇸 美国3
   - 🇺🇸 美国4
-  - 🇺🇸 美国5
   - 🇯🇵 日本特殊
   - 🇰🇷 韩国特殊
   - 🇸🇬 狮城特殊
-  - 🇩🇪 德国
   type: select
 - name: 🍎 苹果服务
   proxies:
@@ -435,29 +397,25 @@ proxy-groups:
   - 🇭🇰 香港2
   - 🇭🇰 香港3
   - 🇭🇰 香港4
-  - 🇭🇰 香港5
-  - 🇭🇰 香港6
-  - 🇭🇰 香港7
-  - 🇭🇰 香港8
   - 🇭🇰 香港R
   - 🇹🇼 台湾
   - 🇹🇼 台湾2
   - 🇯🇵 日本
   - 🇯🇵 日本2
   - 🇯🇵 日本3
+  - 🇯🇵 日本4
   - 🇯🇵 日本R
   - 🇰🇷 韩国
-  - 🇰🇷 韩国2
   - 🇸🇬 新加坡
+  - 🇸🇬 新加坡2
+  - 🇸🇬 新加坡3
   - 🇺🇸 美国
   - 🇺🇸 美国2
   - 🇺🇸 美国3
   - 🇺🇸 美国4
-  - 🇺🇸 美国5
   - 🇯🇵 日本特殊
   - 🇰🇷 韩国特殊
   - 🇸🇬 狮城特殊
-  - 🇩🇪 德国
   type: select
 - name: 📢 谷歌FCM
   proxies:
@@ -468,29 +426,25 @@ proxy-groups:
   - 🇭🇰 香港2
   - 🇭🇰 香港3
   - 🇭🇰 香港4
-  - 🇭🇰 香港5
-  - 🇭🇰 香港6
-  - 🇭🇰 香港7
-  - 🇭🇰 香港8
   - 🇭🇰 香港R
   - 🇹🇼 台湾
   - 🇹🇼 台湾2
   - 🇯🇵 日本
   - 🇯🇵 日本2
   - 🇯🇵 日本3
+  - 🇯🇵 日本4
   - 🇯🇵 日本R
   - 🇰🇷 韩国
-  - 🇰🇷 韩国2
   - 🇸🇬 新加坡
+  - 🇸🇬 新加坡2
+  - 🇸🇬 新加坡3
   - 🇺🇸 美国
   - 🇺🇸 美国2
   - 🇺🇸 美国3
   - 🇺🇸 美国4
-  - 🇺🇸 美国5
   - 🇯🇵 日本特殊
   - 🇰🇷 韩国特殊
   - 🇸🇬 狮城特殊
-  - 🇩🇪 德国
   type: select
 - name: 🎯 全球直连
   proxies:
@@ -517,29 +471,25 @@ proxy-groups:
   - 🇭🇰 香港2
   - 🇭🇰 香港3
   - 🇭🇰 香港4
-  - 🇭🇰 香港5
-  - 🇭🇰 香港6
-  - 🇭🇰 香港7
-  - 🇭🇰 香港8
   - 🇭🇰 香港R
   - 🇹🇼 台湾
   - 🇹🇼 台湾2
   - 🇯🇵 日本
   - 🇯🇵 日本2
   - 🇯🇵 日本3
+  - 🇯🇵 日本4
   - 🇯🇵 日本R
   - 🇰🇷 韩国
-  - 🇰🇷 韩国2
   - 🇸🇬 新加坡
+  - 🇸🇬 新加坡2
+  - 🇸🇬 新加坡3
   - 🇺🇸 美国
   - 🇺🇸 美国2
   - 🇺🇸 美国3
   - 🇺🇸 美国4
-  - 🇺🇸 美国5
   - 🇯🇵 日本特殊
   - 🇰🇷 韩国特殊
   - 🇸🇬 狮城特殊
-  - 🇩🇪 德国
   type: select
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
