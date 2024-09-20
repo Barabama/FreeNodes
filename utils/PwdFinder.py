@@ -15,6 +15,11 @@ from paddleocr import PaddleOCR
 from skimage.metrics import structural_similarity as ssim
 
 
+def _po_token_verifier() -> tuple[str, str]:
+    visitor_data = "CgtYWmNoRU9pbWdJTSix3bO3BjIKCgJVUxIEGgAgSg%3D%3D"
+    po_token = "MnQUEXQ1hE5yBBQpC9sIfhiP66EsX4u0i6pZSGr4mNPL0UqE1NBlGUXLEjMCkk7inSNyRtKccTwIQngy3bJB4i8N-T2XiZkky39_09E62azviFiqWSUmTxT5iqeydDCawGauufKCHz-SN-iiCRyH69e9_oxXTg=="
+    return visitor_data, po_token
+
 def find_password(text: str, key: str) -> str:
     if key in text:
         nums = re.findall(r"\d+", text)
@@ -61,7 +66,7 @@ class PwdFinder:
         self.name = name
         self.logger = logger
 
-        yt = pytubefix.YouTube(url, use_po_token=True)
+        yt = pytubefix.YouTube(url, use_po_token=True, po_token_verifier=_po_token_verifier)
 
         # date = yt.publish_date.date() # Not working
         # self.date = date.strftime("%Y-%m-%d")
@@ -119,7 +124,7 @@ class PwdFinder:
 
 if __name__ == "__main__":
     logging.disable(logging.DEBUG)
-    urls = ['https://youtu.be/H5tMkb1SpEo']
+    urls = ['https://www.youtube.com/embed/aqz-KE-bpKQ']
     logger = logging.getLogger()
     console = logging.StreamHandler()
     console.setLevel(logging.DEBUG)
