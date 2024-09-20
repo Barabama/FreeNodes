@@ -38,7 +38,7 @@ def _keyframe_iter(url: str, threshold=0.8) -> Generator[tuple[int, np.ndarray],
         if not ret:
             break
 
-        frame = frame[height * 3 // 4:height, 0:width]
+        # frame = frame[height * 3 // 4:height, 0:width]
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         if prev is not None and ssim(prev, gray) < threshold:
             yield i, frame
@@ -61,12 +61,11 @@ class PwdFinder:
         self.name = name
         self.logger = logger
 
-        yt = pytubefix.YouTube(url, use_oauth=True, allow_oauth_cache=True,
-                               on_progress_callback=on_progress)
+        yt = pytubefix.YouTube(url, use_po_token=True)
 
         # date = yt.publish_date.date() # Not working
         # self.date = date.strftime("%Y-%m-%d")
-        print(type(yt))
+
         match = re.search(r"(?:\d{4}[-年])?(\d{1,2})[-月](\d{1,2})", yt.title)
         if not match:
             self.logger.error(f"{name} found no date")
