@@ -27,8 +27,8 @@ class SimpleSpider(scrapy.Spider):
     def _find_link(self, name: str, text: str):
         """Find links in text and yield them with their extension."""
         for link in re.findall(self.configs[name]["pattern"], text):
-            _, ext = os.path.splitext(link)
-            if ext not in [".txt", ".yaml"]:
+            _, ext = os.path.splitext(link.strip())
+            if ext not in (".txt", ".yaml"):
                 self.logger.warning(f"{name} could not parse {link}, skipping")
                 continue
             self.logger.info(f"{name} found {link}")
