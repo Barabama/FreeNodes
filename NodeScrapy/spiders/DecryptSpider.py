@@ -81,10 +81,10 @@ class DecryptSpider(SimpleSpider):
         name = response.meta["name"]
         yt_url = [url for url in response.css("a::attr(href)").getall()
                   if "youtu.be" in url][CONFIG.get(name)["yt_idx"]]
-
+        self.logger.info(f"{name} found {yt_url}")
         pwdfinder = PwdFinder(name, self.logger, yt_url)
         if pwdfinder.date != response.meta["date"]:
-            self.logger.error(f"{name} found yt_url: {yt_url} mismatch the date, exiting")
+            self.logger.error(f"{name} found yt_url mismatch the date, exiting")
             return
 
         old_pwd = self.configs[name]["password"]
