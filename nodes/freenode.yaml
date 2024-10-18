@@ -14,33 +14,30 @@ log-level: info
 mode: Rule
 port: 7890
 proxies:
-- cipher: chacha20-ietf-poly1305
-  client-fingerprint: chrome
+- client-fingerprint: chrome
   name: 🇭🇰 香港
-  password: be650aa0-a121-49dd-a951-25650a56a50c
-  port: 11001
-  server: 183.240.255.75
-  tfo: false
-  type: ss
+  password: 3690911436885991424
+  port: 443
+  server: giving-marmoset.opossum872.cfd
+  skip-cert-verify: false
+  sni: giving-marmoset.opossum872.cfd
+  type: trojan
 - cipher: chacha20-ietf-poly1305
   client-fingerprint: chrome
   name: 🇭🇰 香港2
-  password: 4b3391e1-3cc6-4e82-816c-6b7bf516c12b
-  port: 29527
+  password: 509ca182-c182-410c-84a7-d22cafec8392
+  port: 11001
+  server: hk.bazhuayujiasu.cc
+  tfo: false
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  client-fingerprint: chrome
+  name: 🇭🇰 香港3
+  password: 0143905a-7f2d-4f95-a2d6-9947d4017bcd
+  port: 39301
   server: hzhz1.sssyun.xyz
   tfo: false
   type: ss
-- alterId: 0
-  cipher: auto
-  client-fingerprint: chrome
-  name: 🇭🇰 香港3
-  port: 50023
-  server: 50023.baidu-cdn.top
-  skip-cert-verify: false
-  tfo: false
-  tls: false
-  type: vmess
-  uuid: 0900abc9-29a4-4f70-98de-336b5d4b79d6
 - alterId: 0
   cipher: auto
   client-fingerprint: chrome
@@ -63,6 +60,14 @@ proxies:
   tls: false
   type: vmess
   uuid: 640c1077-d10b-4225-a9fb-d3e9c3ce7a00
+- cipher: chacha20-ietf-poly1305
+  client-fingerprint: chrome
+  name: 🇭🇰 香港6
+  password: b1bfb546-0259-44f0-8c9a-8b8702618df9
+  port: 11001
+  server: 183.240.255.75
+  tfo: false
+  type: ss
 - cipher: aes-256-cfb
   client-fingerprint: chrome
   name: 🇭🇰 香港R
@@ -71,20 +76,12 @@ proxies:
   server: 120.232.81.50
   tfo: false
   type: ss
-- client-fingerprint: chrome
-  name: 🇹🇼 台湾
-  password: 981db44e-9f07-49eb-9ba0-6ab4939919a2
-  port: 443
-  server: twnode11.oportal.cc
-  skip-cert-verify: false
-  sni: twnode11.oportal.cc
-  type: trojan
 - cipher: chacha20-ietf-poly1305
   client-fingerprint: chrome
-  name: 🇹🇼 台湾2
-  password: 4b3391e1-3cc6-4e82-816c-6b7bf516c12b
-  port: 40017
-  server: hzhz2.sssyun.xyz
+  name: 🇹🇼 台湾
+  password: 0143905a-7f2d-4f95-a2d6-9947d4017bcd
+  port: 39201
+  server: hzhz1.sssyun.xyz
   tfo: false
   type: ss
 - cipher: aes-256-cfb
@@ -97,42 +94,36 @@ proxies:
   type: ss
 - client-fingerprint: chrome
   name: 🇯🇵 日本2
-  password: 5OZS3AXSpw9DOEc6x83D3uIYCZBDCFFSjqz24NyaxeelCKn3TyA8p0Y7RgaRal
+  password: AaS7EXZSZ0CY933ApSTN4gxlF3DORl8jyD6pwKBIYDunq23ezeyCa85cxaFCRO
   port: 18333
-  server: 154.31.115.26
+  server: pretty.meijireform.com
   skip-cert-verify: false
-  sni: caterpie.superpokemon.com
+  sni: pretty.meijireform.com
   type: trojan
-- alterId: 0
-  cipher: auto
+- cipher: chacha20-ietf-poly1305
   client-fingerprint: chrome
   name: 🇯🇵 日本3
-  port: 50032
-  server: 50032.baidu-cdn.top
-  skip-cert-verify: false
+  password: 0143905a-7f2d-4f95-a2d6-9947d4017bcd
+  port: 40015
+  server: hzhz2.sssyun.xyz
   tfo: false
-  tls: false
-  type: vmess
-  uuid: 0900abc9-29a4-4f70-98de-336b5d4b79d6
+  type: ss
 - cipher: chacha20-ietf-poly1305
   client-fingerprint: chrome
   name: 🇯🇵 日本4
-  password: 04f8339c-2aa2-489b-bd74-e666714f9d49
+  password: 9bfad321-59c2-42dc-be43-6985c6f84bba
   port: 11001
   server: 61.172.235.22
   tfo: false
   type: ss
-- alterId: 0
-  cipher: auto
-  client-fingerprint: chrome
+- client-fingerprint: chrome
   name: 🇯🇵 日本5
-  port: 35976
-  server: 5.104.82.173
+  password: 3690911436885991424
+  port: 443
+  server: deciding-mantis.opossum872.cfd
   skip-cert-verify: false
-  tfo: false
-  tls: false
-  type: vmess
-  uuid: dccaf5fa-5482-49cb-8519-5434af52ccbc
+  sni: deciding-mantis.opossum872.cfd
+  type: trojan
 - cipher: dummy
   client-fingerprint: chrome
   name: 🇯🇵 日本R
@@ -152,12 +143,36 @@ proxies:
   skip-cert-verify: false
   sni: cloudflare.node-ssl.cdn-alibaba.com
   type: trojan
+- client-fingerprint: chrome
+  name: 🇰🇷 韩国2
+  password: 3690911436885991424
+  port: 443
+  server: caring-kit.opossum872.cfd
+  skip-cert-verify: false
+  sni: caring-kit.opossum872.cfd
+  type: trojan
 - cipher: chacha20-ietf-poly1305
   client-fingerprint: chrome
   name: 🇸🇬 新加坡
-  password: 4b3391e1-3cc6-4e82-816c-6b7bf516c12b
-  port: 39204
-  server: hzhz1.sssyun.xyz
+  password: 0143905a-7f2d-4f95-a2d6-9947d4017bcd
+  port: 40014
+  server: hzhz2.sssyun.xyz
+  tfo: false
+  type: ss
+- client-fingerprint: chrome
+  name: 🇸🇬 新加坡2
+  password: 3690911436885991424
+  port: 443
+  server: winning-doe.sheepdog670.boats
+  skip-cert-verify: false
+  sni: winning-doe.sheepdog670.boats
+  type: trojan
+- cipher: chacha20-ietf-poly1305
+  client-fingerprint: chrome
+  name: 🇸🇬 新加坡3
+  password: 88d31532-7497-452a-8f13-791f7f8bba6c
+  port: 11008
+  server: hk.bazhuayujiasu.cc
   tfo: false
   type: ss
 - alterId: 0
@@ -165,31 +180,31 @@ proxies:
   client-fingerprint: chrome
   name: 🇺🇸 美国
   network: ws
-  port: 2086
-  server: cfcdn1.sanfencdn9.com
+  port: 2082
+  server: 104.19.58.175
   skip-cert-verify: false
   tfo: false
   tls: false
   type: vmess
-  uuid: 7ad8da0c-fda5-416b-9e72-47cc68313ffe
+  uuid: 5f3f09ad-89cb-4e94-a7ad-aa8239913555
   ws-opts:
     headers:
-      Host: us5aVnNnWmn.wawhnyjm.xyz
-    path: /video/MmoigmCm
-- cipher: aes-256-cfb
-  client-fingerprint: chrome
-  name: 🇰🇷 韩国特殊
-  password: amazonskr05
-  port: 443
-  server: 54.255.167.158
-  tfo: false
-  type: ss
+      Host: ip15.6929198.xyz
+    path: /github.com/Alvin9999
 - cipher: aes-256-cfb
   client-fingerprint: chrome
   name: 🇸🇬 狮城特殊
   password: amazonskr05
   port: 443
-  server: 54.254.23.34
+  server: 13.229.212.209
+  tfo: false
+  type: ss
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 🇰🇷 韩国特殊
+  password: amazonskr05
+  port: 443
+  server: 35.89.80.84
   tfo: false
   type: ss
 - cipher: aes-256-cfb
@@ -197,7 +212,7 @@ proxies:
   name: 🇯🇵 日本特殊
   password: amazonskr05
   port: 443
-  server: 3.112.45.212
+  server: 13.231.124.247
   tfo: false
   type: ss
 - alterId: 64
@@ -219,25 +234,6 @@ proxies:
   server: 212.102.53.198
   tfo: false
   type: ss
-- cipher: aes-128-gcm
-  client-fingerprint: chrome
-  name: 🇬🇧 英国2
-  password: shadowsocks
-  port: 443
-  server: 212.102.53.198
-  tfo: false
-  type: ss
-- alterId: 0
-  cipher: auto
-  client-fingerprint: chrome
-  name: 🇮🇹 意大利
-  port: 2098
-  server: f41.maryam1500.top
-  skip-cert-verify: false
-  tfo: false
-  tls: false
-  type: vmess
-  uuid: 83876222-64a4-4912-aa18-b7d9d34959de
 - cipher: aes-256-cfb
   client-fingerprint: chrome
   name: 🇻🇳 越南
@@ -256,9 +252,9 @@ proxy-groups:
   - 🇭🇰 香港3
   - 🇭🇰 香港4
   - 🇭🇰 香港5
+  - 🇭🇰 香港6
   - 🇭🇰 香港R
   - 🇹🇼 台湾
-  - 🇹🇼 台湾2
   - 🇯🇵 日本
   - 🇯🇵 日本2
   - 🇯🇵 日本3
@@ -266,15 +262,16 @@ proxy-groups:
   - 🇯🇵 日本5
   - 🇯🇵 日本R
   - 🇰🇷 韩国
+  - 🇰🇷 韩国2
   - 🇸🇬 新加坡
+  - 🇸🇬 新加坡2
+  - 🇸🇬 新加坡3
   - 🇺🇸 美国
-  - 🇰🇷 韩国特殊
   - 🇸🇬 狮城特殊
+  - 🇰🇷 韩国特殊
   - 🇯🇵 日本特殊
   - 🇩🇪 德国
   - 🇬🇧 英国
-  - 🇬🇧 英国2
-  - 🇮🇹 意大利
   - 🇻🇳 越南
   type: select
 - interval: 300
@@ -285,9 +282,9 @@ proxy-groups:
   - 🇭🇰 香港3
   - 🇭🇰 香港4
   - 🇭🇰 香港5
+  - 🇭🇰 香港6
   - 🇭🇰 香港R
   - 🇹🇼 台湾
-  - 🇹🇼 台湾2
   - 🇯🇵 日本
   - 🇯🇵 日本2
   - 🇯🇵 日本3
@@ -295,15 +292,16 @@ proxy-groups:
   - 🇯🇵 日本5
   - 🇯🇵 日本R
   - 🇰🇷 韩国
+  - 🇰🇷 韩国2
   - 🇸🇬 新加坡
+  - 🇸🇬 新加坡2
+  - 🇸🇬 新加坡3
   - 🇺🇸 美国
-  - 🇰🇷 韩国特殊
   - 🇸🇬 狮城特殊
+  - 🇰🇷 韩国特殊
   - 🇯🇵 日本特殊
   - 🇩🇪 德国
   - 🇬🇧 英国
-  - 🇬🇧 英国2
-  - 🇮🇹 意大利
   - 🇻🇳 越南
   tolerance: 50
   type: url-test
@@ -318,9 +316,9 @@ proxy-groups:
   - 🇭🇰 香港3
   - 🇭🇰 香港4
   - 🇭🇰 香港5
+  - 🇭🇰 香港6
   - 🇭🇰 香港R
   - 🇹🇼 台湾
-  - 🇹🇼 台湾2
   - 🇯🇵 日本
   - 🇯🇵 日本2
   - 🇯🇵 日本3
@@ -328,15 +326,16 @@ proxy-groups:
   - 🇯🇵 日本5
   - 🇯🇵 日本R
   - 🇰🇷 韩国
+  - 🇰🇷 韩国2
   - 🇸🇬 新加坡
+  - 🇸🇬 新加坡2
+  - 🇸🇬 新加坡3
   - 🇺🇸 美国
-  - 🇰🇷 韩国特殊
   - 🇸🇬 狮城特殊
+  - 🇰🇷 韩国特殊
   - 🇯🇵 日本特殊
   - 🇩🇪 德国
   - 🇬🇧 英国
-  - 🇬🇧 英国2
-  - 🇮🇹 意大利
   - 🇻🇳 越南
   type: select
 - name: 📲 电报信息
@@ -348,9 +347,9 @@ proxy-groups:
   - 🇭🇰 香港3
   - 🇭🇰 香港4
   - 🇭🇰 香港5
+  - 🇭🇰 香港6
   - 🇭🇰 香港R
   - 🇹🇼 台湾
-  - 🇹🇼 台湾2
   - 🇯🇵 日本
   - 🇯🇵 日本2
   - 🇯🇵 日本3
@@ -358,15 +357,16 @@ proxy-groups:
   - 🇯🇵 日本5
   - 🇯🇵 日本R
   - 🇰🇷 韩国
+  - 🇰🇷 韩国2
   - 🇸🇬 新加坡
+  - 🇸🇬 新加坡2
+  - 🇸🇬 新加坡3
   - 🇺🇸 美国
-  - 🇰🇷 韩国特殊
   - 🇸🇬 狮城特殊
+  - 🇰🇷 韩国特殊
   - 🇯🇵 日本特殊
   - 🇩🇪 德国
   - 🇬🇧 英国
-  - 🇬🇧 英国2
-  - 🇮🇹 意大利
   - 🇻🇳 越南
   type: select
 - name: Ⓜ️ 微软服务
@@ -378,9 +378,9 @@ proxy-groups:
   - 🇭🇰 香港3
   - 🇭🇰 香港4
   - 🇭🇰 香港5
+  - 🇭🇰 香港6
   - 🇭🇰 香港R
   - 🇹🇼 台湾
-  - 🇹🇼 台湾2
   - 🇯🇵 日本
   - 🇯🇵 日本2
   - 🇯🇵 日本3
@@ -388,15 +388,16 @@ proxy-groups:
   - 🇯🇵 日本5
   - 🇯🇵 日本R
   - 🇰🇷 韩国
+  - 🇰🇷 韩国2
   - 🇸🇬 新加坡
+  - 🇸🇬 新加坡2
+  - 🇸🇬 新加坡3
   - 🇺🇸 美国
-  - 🇰🇷 韩国特殊
   - 🇸🇬 狮城特殊
+  - 🇰🇷 韩国特殊
   - 🇯🇵 日本特殊
   - 🇩🇪 德国
   - 🇬🇧 英国
-  - 🇬🇧 英国2
-  - 🇮🇹 意大利
   - 🇻🇳 越南
   type: select
 - name: 🍎 苹果服务
@@ -408,9 +409,9 @@ proxy-groups:
   - 🇭🇰 香港3
   - 🇭🇰 香港4
   - 🇭🇰 香港5
+  - 🇭🇰 香港6
   - 🇭🇰 香港R
   - 🇹🇼 台湾
-  - 🇹🇼 台湾2
   - 🇯🇵 日本
   - 🇯🇵 日本2
   - 🇯🇵 日本3
@@ -418,15 +419,16 @@ proxy-groups:
   - 🇯🇵 日本5
   - 🇯🇵 日本R
   - 🇰🇷 韩国
+  - 🇰🇷 韩国2
   - 🇸🇬 新加坡
+  - 🇸🇬 新加坡2
+  - 🇸🇬 新加坡3
   - 🇺🇸 美国
-  - 🇰🇷 韩国特殊
   - 🇸🇬 狮城特殊
+  - 🇰🇷 韩国特殊
   - 🇯🇵 日本特殊
   - 🇩🇪 德国
   - 🇬🇧 英国
-  - 🇬🇧 英国2
-  - 🇮🇹 意大利
   - 🇻🇳 越南
   type: select
 - name: 📢 谷歌FCM
@@ -439,9 +441,9 @@ proxy-groups:
   - 🇭🇰 香港3
   - 🇭🇰 香港4
   - 🇭🇰 香港5
+  - 🇭🇰 香港6
   - 🇭🇰 香港R
   - 🇹🇼 台湾
-  - 🇹🇼 台湾2
   - 🇯🇵 日本
   - 🇯🇵 日本2
   - 🇯🇵 日本3
@@ -449,15 +451,16 @@ proxy-groups:
   - 🇯🇵 日本5
   - 🇯🇵 日本R
   - 🇰🇷 韩国
+  - 🇰🇷 韩国2
   - 🇸🇬 新加坡
+  - 🇸🇬 新加坡2
+  - 🇸🇬 新加坡3
   - 🇺🇸 美国
-  - 🇰🇷 韩国特殊
   - 🇸🇬 狮城特殊
+  - 🇰🇷 韩国特殊
   - 🇯🇵 日本特殊
   - 🇩🇪 德国
   - 🇬🇧 英国
-  - 🇬🇧 英国2
-  - 🇮🇹 意大利
   - 🇻🇳 越南
   type: select
 - name: 🎯 全球直连
@@ -486,9 +489,9 @@ proxy-groups:
   - 🇭🇰 香港3
   - 🇭🇰 香港4
   - 🇭🇰 香港5
+  - 🇭🇰 香港6
   - 🇭🇰 香港R
   - 🇹🇼 台湾
-  - 🇹🇼 台湾2
   - 🇯🇵 日本
   - 🇯🇵 日本2
   - 🇯🇵 日本3
@@ -496,15 +499,16 @@ proxy-groups:
   - 🇯🇵 日本5
   - 🇯🇵 日本R
   - 🇰🇷 韩国
+  - 🇰🇷 韩国2
   - 🇸🇬 新加坡
+  - 🇸🇬 新加坡2
+  - 🇸🇬 新加坡3
   - 🇺🇸 美国
-  - 🇰🇷 韩国特殊
   - 🇸🇬 狮城特殊
+  - 🇰🇷 韩国特殊
   - 🇯🇵 日本特殊
   - 🇩🇪 德国
   - 🇬🇧 英国
-  - 🇬🇧 英国2
-  - 🇮🇹 意大利
   - 🇻🇳 越南
   type: select
 rules:
