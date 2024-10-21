@@ -15,17 +15,6 @@ from paddleocr import PaddleOCR
 from skimage.metrics import structural_similarity as ssim
 
 
-def _po_token_verifier() -> tuple[str, str]:
-    visitor_data = "CgtYWmNoRU9pbWdJTSix3bO3BjIKCgJVUxIEGgAgSg%3D%3D"
-    po_token = "MnQUEXQ1hE5yBBQpC9sIfhiP66EsX4u0i6pZSGr4mNPL0UqE1NBlGUXLEjMCkk7inSNyRtKccTwIQngy3bJB4i8N-T2XiZkky39_09E62azviFiqWSUmTxT5iqeydDCawGauufKCHz-SN-iiCRyH69e9_oxXTg=="
-    return visitor_data, po_token
-
-def find_password(text: str, key: str) -> str:
-    if key in text:
-        nums = re.findall(r"\d+", text)
-        return "".join(nums)
-
-
 def _keyframe_iter(url: str, threshold=0.8) -> Generator[tuple[int, np.ndarray], None, None]:
     """Generate keyframes backwards."""
     cap = cv2.VideoCapture(url)
@@ -57,7 +46,7 @@ class PwdFinder:
     name: str
     logger: logging.Logger
     date: str
-    description: str
+    descriptions: list[str]
     subtitles: pytubefix.CaptionQuery
     stream: pytubefix.Stream
     ocr: PaddleOCR
@@ -66,7 +55,9 @@ class PwdFinder:
         self.name = name
         self.logger = logger
 
-        yt = pytubefix.YouTube(url, use_po_token=True, po_token_verifier=_po_token_verifier)
+        yt = pytubefix.YouTube(url, use_oauth=True, use_po_token=True,
+                               allow_oauth_cache=True,
+                               on_progress_callback=on_progress)
 
         # date = yt.publish_date.date() # Not working
         # self.date = date.strftime("%Y-%m-%d")
@@ -79,7 +70,7 @@ class PwdFinder:
         self.date = date.strftime("%Y-%m-%d")
         self.logger.info(f"{name} found date: {self.date}")
 
-        self.description = yt.description
+        self.descriptions = yt.description.splitlines()
         self.subtitles = yt.captions
         if not self.subtitles:
             self.logger.warning(f"{name} found no subtitles")
@@ -117,16 +108,20 @@ class PwdFinder:
     def password_iter(self, key: str):
         """Generate possible passwords."""
         text_iter = self._xml_caption_iter if self.subtitles else self._ocr_result_iter
-        for text in itertools.chain(iter(self.description), text_iter()):
-            if pwd := find_password(text, key):
-                yield pwd
+        for text in itertools.chain(iter(self.descriptions), text_iter()):
+            self.logger.debug(f"{self.name} found text: {text}")
+            if key not in text:
+                continue
+            yield from filter(lambda x: x, re.findall(f"\\d+", text))
 
 
 if __name__ == "__main__":
     logging.disable(logging.DEBUG)
-    urls = ['https://www.youtube.com/embed/aqz-KE-bpKQ']
+    urls = ['https://www.youtube.com/watch?v=StNJHi5b2oM',
+            'https://www.youtube.com/watch?v=is7vn5URVcc']
     logger = logging.getLogger()
     console = logging.StreamHandler()
     console.setLevel(logging.DEBUG)
     logger.addHandler(console)
-    f = PwdFinder('test', logger, urls[0])
+    for url in urls:
+        f = PwdFinder('test', logger, url)
