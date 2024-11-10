@@ -13,11 +13,7 @@ v2ray、Clash免费节点爬虫，每日 10、16、22 点运行一次。
 | ---- | ---- |
 | [yudou66](https://www.yudou66.com) | [nodes/yudou66.txt](https://ghp.ci/raw.githubusercontent.com/Barabama/clashmetas/main/nodes/yudou66.txt)<br>[nodes/yudou66.yaml](https://ghp.ci/raw.githubusercontent.com/Barabama/clashmetas/main/nodes/yudou66.yaml) |
 | [blues](https://blues2022.blogspot.com) | [nodes/blues.txt](https://ghp.ci/raw.githubusercontent.com/Barabama/clashmetas/main/nodes/blues.txt)<br>[nodes/blues.yaml](https://ghp.ci/raw.githubusercontent.com/Barabama/clashmetas/main/nodes/blues.yaml) |
-<<<<<<< HEAD
-| [clashmeta](https://clashmeta.openrunner.net) | [nodes/clashmeta.txt](https://ghp.ci/raw.githubusercontent.com/Barabama/clashmetas/main/nodes/clashmeta.txt)<br>[nodes/clashmeta.yaml](https://ghp.ci/raw.githubusercontent.com/Barabama/clashmetas/main/nodes/clashmeta.yaml) |
-=======
 | [clashmeta](https://clash-meta.github.io) | [nodes/clashmeta.txt](https://ghp.ci/raw.githubusercontent.com/Barabama/clashmetas/main/nodes/clashmeta.txt)<br>[nodes/clashmeta.yaml](https://ghp.ci/raw.githubusercontent.com/Barabama/clashmetas/main/nodes/clashmeta.yaml) |
->>>>>>> e8e29ed (classmeta instead of freenode)
 | [ndnode](https://www.naidounode.com) | [nodes/ndnode.txt](https://ghp.ci/raw.githubusercontent.com/Barabama/clashmetas/main/nodes/ndnode.txt)<br>[nodes/ndnode.yaml](https://ghp.ci/raw.githubusercontent.com/Barabama/clashmetas/main/nodes/ndnode.yaml) |
 | [nodev2ray](https://nodev2ray.com) | [nodes/nodev2ray.txt](https://ghp.ci/raw.githubusercontent.com/Barabama/clashmetas/main/nodes/nodev2ray.txt)<br>[nodes/nodev2ray.yaml](https://ghp.ci/raw.githubusercontent.com/Barabama/clashmetas/main/nodes/nodev2ray.yaml) |
 | [nodefree](https://nodefree.org) | [nodes/nodefree.txt](https://ghp.ci/raw.githubusercontent.com/Barabama/clashmetas/main/nodes/nodefree.txt)<br>[noddes/nodefree.yaml](https://ghp.ci/raw.githubusercontent.com/Barabama/clashmetas/main/nodes/nodefree.yaml) |
