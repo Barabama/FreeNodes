@@ -15,7 +15,8 @@ from utils.Config import CONFIG, ConfigData
 class SimpleSpider(scrapy.Spider):
     name = "simple"
     custom_settings = {"LOG_FILE": "scrapy.log",
-                       "LOG_FILE_APPEND": False}
+                       "LOG_FILE_APPEND": False,
+                       "LOG_LEVEL": "INFO"}
     targets = ("clashmeta", "ndnode", "nodev2ray",
                "nodefree", "v2rayshare", "wenode")
     configs: dict[str, ConfigData]
@@ -76,13 +77,13 @@ class SimpleSpider(scrapy.Spider):
                 self.logger.info(f"{name} is up to date, exiting")
                 continue
 
-            detail_url = urljoin(config["start_url"], rel_url)
-            self.logger.info(f"{name} needs update, accessing {detail_url}")
+            blog_url = urljoin(config["start_url"], rel_url)
+            self.logger.info(f"{name} needs update, accessing {blog_url}")
             response.meta["date"] = web_date.strftime("%Y-%m-%d")
-            yield response.follow(detail_url, self.parse_detail, meta=response.meta)
+            yield response.follow(blog_url, self.parse_blog, meta=response.meta)
 
-    def parse_detail(self, response: Response):
-        """Parse detail page and yield links of nodes."""
+    def parse_blog(self, response: Response):
+        """Parse blog and yield links of nodes."""
         for link, ext in self._find_link(response.meta["name"], response.text):
             response.meta["ext"] = ext
             yield response.follow(link, self.parse_link, meta=response.meta)
