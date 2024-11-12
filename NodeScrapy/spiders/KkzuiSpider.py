@@ -17,6 +17,17 @@ class KkzuiSpider(DecryptSpider):
     targets = ("kkzui",)
     configs: dict[str, ConfigData]
 
+    def _find_link(self, name: str, text: str):
+        """Find links in text and yield links with extensions."""
+        pattern = re.compile(f"([^<>\r\n]*)({self.configs[name]['pattern']})")
+        for match in pattern.finditer(text):
+            if "v2ray" in match.group(1):
+                yield match.group(2), ".txt"
+            elif "clash" in match.group(1):
+                yield match.group(2), ".yaml"
+            else:
+                self.logger.warning(f"{name} could not parse {match.group()}, skipping")
+
     def parse_blog(self, response: Response):
         """Parse blog with decryption."""
         name = response.meta["name"]
@@ -30,7 +41,7 @@ class KkzuiSpider(DecryptSpider):
                 self.logger.warning(f"{name} {pwd} got {msg}")
                 continue
 
-            for link, ext in super()._find_link(name, msg):
+            for link, ext in self._find_link(name, msg):
                 response.meta["ext"] = ext
                 yield response.follow(link, callback=self.parse_link, meta=response.meta)
 
