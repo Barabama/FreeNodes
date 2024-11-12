@@ -26,7 +26,6 @@ class DecryptSpider(SimpleSpider):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.configs = {name: CONFIG.get(name) for name in self.targets}
-
         options = webdriver.ChromeOptions()
         options.add_argument("--headless")
         options.add_argument("--no-sandbox")
@@ -35,31 +34,22 @@ class DecryptSpider(SimpleSpider):
         self.driver = webdriver.Chrome(options=options)
 
     def closed(self, reason):
-        super().closed(reason)
         self.driver.quit()
+        super().closed(reason)
 
-    def start_requests(self):
-        yield from super().start_requests()
-
-    def parse(self, response: Response):
-        yield from super().parse(response)
-
-    def _decrypt(self, name: str, url: str, pwd: str) -> tuple[bool, str]:
+    def _decrypt(self, url: str, method: dict, pwd: str) -> tuple[bool, str]:
         """Decrypt the page with the given password."""
-        config = self.configs[name]
-
         self.driver.get(url)
         wait = WebDriverWait(self.driver, 10)
         wait.until(EC.presence_of_all_elements_located((By.TAG_NAME, "input")))
-
-        self.driver.execute_script(config["script"], pwd)
-        # by, val = self.configs[name]["textbox"]
-        # textbox = self.driver.find_element(by, val)
-        # textbox.send_keys(pwd)
-        # by, val = self.configs[name]["button"]
-        # button = self.driver.find_element(by, val)
-        # button.submit()
-
+        wait.until(EC.presence_of_all_elements_located((By.TAG_NAME, "button")))
+        if "script" in method:
+            self.driver.execute_script(method["script"], pwd)
+        else:
+            textbox = self.driver.find_element(*method["textbox"])
+            textbox.send_keys(pwd)
+            button = self.driver.find_element(*method["button"])
+            button.submit()
         try:
             alert = WebDriverWait(self.driver, 2).until(EC.alert_is_present())
             msg = alert.text
@@ -68,16 +58,17 @@ class DecryptSpider(SimpleSpider):
         except TimeoutException:
             return True, self.driver.find_element(By.TAG_NAME, "body").text
 
-    def parse_detail(self, response: Response):
-        """Parse detail page with decryption."""
-        # Yield requests from super class.
+    def parse_blog(self, response: Response):
+        """Parse blog with decryption."""
+        # Yield requests from super class, which no need to be decrypted.
         yield_flag = False
-        for req in super().parse_detail(response):
+        for req in super().parse_blog(response):
             yield_flag = True
             yield req
         if yield_flag:
             return
 
+        # If nothing yielded from super method, parse what needs to be decrypted.
         name = response.meta["name"]
         yt_url = [url for url in response.css("a::attr(href)").getall()
                   if "youtu.be" in url][CONFIG.get(name)["yt_idx"]]
@@ -88,8 +79,9 @@ class DecryptSpider(SimpleSpider):
             return
 
         old_pwd = self.configs[name]["password"]
+        method = {"script": self.configs[name]["script"]}
         for pwd in itertools.chain(iter([old_pwd]), pwdfinder.password_iter("码")):
-            ok, msg = self._decrypt(name, response.url, pwd)
+            ok, msg = self._decrypt(response.url, method, pwd)
             if not ok:
                 self.logger.warning(f"{name} {pwd} got {msg}")
                 continue
@@ -102,6 +94,3 @@ class DecryptSpider(SimpleSpider):
                 CONFIG.set(name, {"password": pwd})
                 self.logger.info(f"{name} saved new password {pwd}")
             break
-
-    def parse_link(self, response: Response):
-        yield from super().parse_link(response)
