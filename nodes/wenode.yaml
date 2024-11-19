@@ -32,55 +32,6 @@ log-level: info
 mixed-port: 7890
 mode: rule
 proxies:
-- cipher: aes-256-cfb
-  name: 🇺🇸_US_美国_1
-  password: amazonskr05
-  port: 443
-  server: 34.209.103.254
-  type: ss
-  udp: true
-- cipher: aes-256-gcm
-  name: 🇷🇺_RU_俄罗斯_1
-  password: dongtaiwang.com
-  port: 12345
-  server: 46.17.40.57
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  name: 🇩🇪_DE_德国->🇨🇳_CN_中国
-  password: 1RWwXhwfAB5gAEozU4G2Pg
-  port: 8080
-  server: 45.87.175.188
-  type: ss
-  udp: true
-- cipher: aes-256-cfb
-  name: 🇷🇺_RU_俄罗斯_2
-  password: UTJA57ypk2XKQpnm
-  port: 9033
-  server: 217.30.10.18
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  name: 🇩🇪_DE_德国_1
-  password: cvII85TrW6n0OGyfpHVS1u
-  port: 8080
-  server: 45.87.175.192
-  type: ss
-  udp: true
-- cipher: aes-256-cfb
-  name: 🇺🇸_US_美国_2
-  password: amazonskr05
-  port: 443
-  server: 54.187.244.22
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  name: 🇩🇪_DE_德国_2
-  password: cvII85TrW6n0OGyfpHVS1u
-  port: 8080
-  server: 45.87.175.166
-  type: ss
-  udp: true
 - cipher: aes-128-cfb
   name: 🇳🇱_NL_荷兰
   password: shadowsocks
@@ -88,31 +39,152 @@ proxies:
   server: 109.201.152.181
   type: ss
   udp: true
+- cipher: aes-256-gcm
+  name: 🇫🇷_FR_法国_1
+  password: XKFKl2rULjIp74
+  port: 8009
+  server: 217.182.198.219
+  type: ss
+  udp: true
+- cipher: aes-256-gcm
+  name: 🇫🇷_FR_法国_2
+  password: XKFKl2rULjIp74
+  port: 8008
+  server: 217.182.198.219
+  type: ss
+  udp: true
+- cipher: aes-256-cfb
+  name: 🇺🇸_US_美国->🇸🇬_SG_新加坡
+  password: amazonskr05
+  port: 443
+  server: 34.209.103.254
+  type: ss
+  udp: true
+- cipher: aes-256-gcm
+  name: 🇫🇷_FR_法国_3
+  password: zDNVedRFPQexG9v
+  port: 6379
+  server: 217.182.198.219
+  type: ss
+  udp: true
+- cipher: aes-256-gcm
+  name: 🇫🇷_FR_法国_4
+  password: faBAoD54k87UJG7
+  port: 2376
+  server: 217.182.198.219
+  type: ss
+  udp: true
+- cipher: aes-256-cfb
+  name: 🇺🇸_US_美国_1
+  password: amazonskr05
+  port: 443
+  server: 35.86.117.124
+  type: ss
+  udp: true
+- cipher: aes-256-gcm
+  name: 🇫🇷_FR_法国_5
+  password: FoOiGlkAA9yPEGP
+  port: 7306
+  server: 217.182.198.219
+  type: ss
+  udp: true
+- cipher: aes-256-gcm
+  name: 🇫🇷_FR_法国_6
+  password: PCnnH6SQSnfoS27
+  port: 8090
+  server: 217.182.198.219
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 🇩🇪_DE_德国
+  password: 4a2rfixophdjffa8KVA4Aa
+  port: 8080
+  server: 45.87.175.166
+  type: ss
+  udp: true
+- cipher: aes-256-gcm
+  name: 🇫🇷_FR_法国_7
+  password: cdBIDV42DCwnfIN
+  port: 8119
+  server: 217.182.198.219
+  type: ss
+  udp: true
+- cipher: aes-256-gcm
+  name: 🇫🇷_FR_法国_8
+  password: Y6R9pAtvxxzmGC
+  port: 3306
+  server: 217.182.198.219
+  type: ss
+  udp: true
+- cipher: aes-256-gcm
+  name: 🇫🇷_FR_法国_9
+  password: faBAoD54k87UJG7
+  port: 2375
+  server: 217.182.198.219
+  type: ss
+  udp: true
+- cipher: aes-256-gcm
+  name: 🇫🇷_FR_法国_10
+  password: cdBIDV42DCwnfIN
+  port: 8118
+  server: 217.182.198.219
+  type: ss
+  udp: true
+- cipher: aes-256-cfb
+  name: 🇺🇸_US_美国_2
+  password: amazonskr05
+  port: 443
+  server: 54.191.9.106
+  type: ss
+  udp: true
+- cipher: aes-256-cfb
+  name: 🇺🇸_US_美国_3
+  password: amazonskr05
+  port: 443
+  server: 44.243.115.246
+  type: ss
+  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - 🇺🇸_US_美国_1
-  - 🇷🇺_RU_俄罗斯_1
-  - 🇩🇪_DE_德国->🇨🇳_CN_中国
-  - 🇷🇺_RU_俄罗斯_2
-  - 🇩🇪_DE_德国_1
-  - 🇺🇸_US_美国_2
-  - 🇩🇪_DE_德国_2
   - 🇳🇱_NL_荷兰
+  - 🇫🇷_FR_法国_1
+  - 🇫🇷_FR_法国_2
+  - 🇺🇸_US_美国->🇸🇬_SG_新加坡
+  - 🇫🇷_FR_法国_3
+  - 🇫🇷_FR_法国_4
+  - 🇺🇸_US_美国_1
+  - 🇫🇷_FR_法国_5
+  - 🇫🇷_FR_法国_6
+  - 🇩🇪_DE_德国
+  - 🇫🇷_FR_法国_7
+  - 🇫🇷_FR_法国_8
+  - 🇫🇷_FR_法国_9
+  - 🇫🇷_FR_法国_10
+  - 🇺🇸_US_美国_2
+  - 🇺🇸_US_美国_3
   type: select
 - interval: 300
   name: ♻️ 自动选择
   proxies:
-  - 🇺🇸_US_美国_1
-  - 🇷🇺_RU_俄罗斯_1
-  - 🇩🇪_DE_德国->🇨🇳_CN_中国
-  - 🇷🇺_RU_俄罗斯_2
-  - 🇩🇪_DE_德国_1
-  - 🇺🇸_US_美国_2
-  - 🇩🇪_DE_德国_2
   - 🇳🇱_NL_荷兰
+  - 🇫🇷_FR_法国_1
+  - 🇫🇷_FR_法国_2
+  - 🇺🇸_US_美国->🇸🇬_SG_新加坡
+  - 🇫🇷_FR_法国_3
+  - 🇫🇷_FR_法国_4
+  - 🇺🇸_US_美国_1
+  - 🇫🇷_FR_法国_5
+  - 🇫🇷_FR_法国_6
+  - 🇩🇪_DE_德国
+  - 🇫🇷_FR_法国_7
+  - 🇫🇷_FR_法国_8
+  - 🇫🇷_FR_法国_9
+  - 🇫🇷_FR_法国_10
+  - 🇺🇸_US_美国_2
+  - 🇺🇸_US_美国_3
   tolerance: 50
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -121,53 +193,85 @@ proxy-groups:
   - 🚀 节点选择
   - ♻️ 自动选择
   - 🎯 全球直连
-  - 🇺🇸_US_美国_1
-  - 🇷🇺_RU_俄罗斯_1
-  - 🇩🇪_DE_德国->🇨🇳_CN_中国
-  - 🇷🇺_RU_俄罗斯_2
-  - 🇩🇪_DE_德国_1
-  - 🇺🇸_US_美国_2
-  - 🇩🇪_DE_德国_2
   - 🇳🇱_NL_荷兰
+  - 🇫🇷_FR_法国_1
+  - 🇫🇷_FR_法国_2
+  - 🇺🇸_US_美国->🇸🇬_SG_新加坡
+  - 🇫🇷_FR_法国_3
+  - 🇫🇷_FR_法国_4
+  - 🇺🇸_US_美国_1
+  - 🇫🇷_FR_法国_5
+  - 🇫🇷_FR_法国_6
+  - 🇩🇪_DE_德国
+  - 🇫🇷_FR_法国_7
+  - 🇫🇷_FR_法国_8
+  - 🇫🇷_FR_法国_9
+  - 🇫🇷_FR_法国_10
+  - 🇺🇸_US_美国_2
+  - 🇺🇸_US_美国_3
   type: select
 - name: 📲 电报信息
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
-  - 🇺🇸_US_美国_1
-  - 🇷🇺_RU_俄罗斯_1
-  - 🇩🇪_DE_德国->🇨🇳_CN_中国
-  - 🇷🇺_RU_俄罗斯_2
-  - 🇩🇪_DE_德国_1
-  - 🇺🇸_US_美国_2
-  - 🇩🇪_DE_德国_2
   - 🇳🇱_NL_荷兰
+  - 🇫🇷_FR_法国_1
+  - 🇫🇷_FR_法国_2
+  - 🇺🇸_US_美国->🇸🇬_SG_新加坡
+  - 🇫🇷_FR_法国_3
+  - 🇫🇷_FR_法国_4
+  - 🇺🇸_US_美国_1
+  - 🇫🇷_FR_法国_5
+  - 🇫🇷_FR_法国_6
+  - 🇩🇪_DE_德国
+  - 🇫🇷_FR_法国_7
+  - 🇫🇷_FR_法国_8
+  - 🇫🇷_FR_法国_9
+  - 🇫🇷_FR_法国_10
+  - 🇺🇸_US_美国_2
+  - 🇺🇸_US_美国_3
   type: select
 - name: Ⓜ️ 微软服务
   proxies:
   - 🎯 全球直连
   - 🚀 节点选择
-  - 🇺🇸_US_美国_1
-  - 🇷🇺_RU_俄罗斯_1
-  - 🇩🇪_DE_德国->🇨🇳_CN_中国
-  - 🇷🇺_RU_俄罗斯_2
-  - 🇩🇪_DE_德国_1
-  - 🇺🇸_US_美国_2
-  - 🇩🇪_DE_德国_2
   - 🇳🇱_NL_荷兰
+  - 🇫🇷_FR_法国_1
+  - 🇫🇷_FR_法国_2
+  - 🇺🇸_US_美国->🇸🇬_SG_新加坡
+  - 🇫🇷_FR_法国_3
+  - 🇫🇷_FR_法国_4
+  - 🇺🇸_US_美国_1
+  - 🇫🇷_FR_法国_5
+  - 🇫🇷_FR_法国_6
+  - 🇩🇪_DE_德国
+  - 🇫🇷_FR_法国_7
+  - 🇫🇷_FR_法国_8
+  - 🇫🇷_FR_法国_9
+  - 🇫🇷_FR_法国_10
+  - 🇺🇸_US_美国_2
+  - 🇺🇸_US_美国_3
   type: select
 - name: 🍎 苹果服务
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
-  - 🇺🇸_US_美国_1
-  - 🇷🇺_RU_俄罗斯_1
-  - 🇩🇪_DE_德国->🇨🇳_CN_中国
-  - 🇷🇺_RU_俄罗斯_2
-  - 🇩🇪_DE_德国_1
-  - 🇺🇸_US_美国_2
-  - 🇩🇪_DE_德国_2
   - 🇳🇱_NL_荷兰
+  - 🇫🇷_FR_法国_1
+  - 🇫🇷_FR_法国_2
+  - 🇺🇸_US_美国->🇸🇬_SG_新加坡
+  - 🇫🇷_FR_法国_3
+  - 🇫🇷_FR_法国_4
+  - 🇺🇸_US_美国_1
+  - 🇫🇷_FR_法国_5
+  - 🇫🇷_FR_法国_6
+  - 🇩🇪_DE_德国
+  - 🇫🇷_FR_法国_7
+  - 🇫🇷_FR_法国_8
+  - 🇫🇷_FR_法国_9
+  - 🇫🇷_FR_法国_10
+  - 🇺🇸_US_美国_2
+  - 🇺🇸_US_美国_3
   type: select
 - name: 🎯 全球直连
   proxies:
@@ -190,14 +294,22 @@ proxy-groups:
   - 🚀 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
-  - 🇺🇸_US_美国_1
-  - 🇷🇺_RU_俄罗斯_1
-  - 🇩🇪_DE_德国->🇨🇳_CN_中国
-  - 🇷🇺_RU_俄罗斯_2
-  - 🇩🇪_DE_德国_1
-  - 🇺🇸_US_美国_2
-  - 🇩🇪_DE_德国_2
   - 🇳🇱_NL_荷兰
+  - 🇫🇷_FR_法国_1
+  - 🇫🇷_FR_法国_2
+  - 🇺🇸_US_美国->🇸🇬_SG_新加坡
+  - 🇫🇷_FR_法国_3
+  - 🇫🇷_FR_法国_4
+  - 🇺🇸_US_美国_1
+  - 🇫🇷_FR_法国_5
+  - 🇫🇷_FR_法国_6
+  - 🇩🇪_DE_德国
+  - 🇫🇷_FR_法国_7
+  - 🇫🇷_FR_法国_8
+  - 🇫🇷_FR_法国_9
+  - 🇫🇷_FR_法国_10
+  - 🇺🇸_US_美国_2
+  - 🇺🇸_US_美国_3
   type: select
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
