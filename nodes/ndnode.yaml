@@ -1,2 +1,678 @@
-null
-...
+allow-lan: false
+dns:
+  default-nameserver:
+  - 223.5.5.5
+  - 114.114.114.114
+  enable: true
+  enhanced-mode: fake-ip
+  fake-ip-filter:
+  - '*.lan'
+  - '*.localdomain'
+  - '*.example'
+  - '*.invalid'
+  - '*.localhost'
+  - '*.test'
+  - '*.local'
+  - '*.home.arpa'
+  - router.asus.com
+  - localhost.sec.qq.com
+  - localhost.ptlogin2.qq.com
+  - +.msftconnecttest.com
+  fake-ip-range: 198.18.0.1/16
+  ipv6: false
+  listen: 0.0.0.0:53
+  nameserver:
+  - 223.5.5.5
+  - 114.114.114.114
+  - 119.29.29.29
+  - 180.76.76.76
+external-controller: 127.0.0.1:9999
+log-level: info
+mixed-port: 7890
+mode: rule
+proxies:
+- cipher: rc4-md5
+  name: 🇩🇪_DE_德国
+  password: 14fFPrbezE3HDZzsMOr6
+  port: 8080
+  server: 193.108.119.230
+  type: ss
+- alterId: 0
+  cipher: auto
+  name: 🇺🇸_US_美国->🇨🇦_CA_加拿大
+  network: ws
+  port: 2082
+  server: 190.93.244.228
+  skip-cert-verify: true
+  sni: ''
+  type: vmess
+  uuid: 5f3f09ad-89cb-4e94-a7ad-aa8239913555
+  ws-opts:
+    headers:
+      host: ip18.6929198.xyz
+    path: /github.com/Alvin9999
+- name: 🇨🇷_CR_哥斯达黎加->🇳🇱_NL_荷兰
+  network: ws
+  port: 8080
+  server: 190.93.247.56
+  type: vless
+  uuid: 50076728-e056-4322-ad64-8dea6b19b17a
+  ws-opts:
+    headers:
+      host: legendaryking.ir.www.speedtest.net.www.zula.ir.cloudflare.com.nl.mozdozari.bUzz.
+    path: /telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers?ed=2560
+- cipher: chacha20-ietf-poly1305
+  name: 🇷🇺_RU_俄罗斯
+  password: 3MgIhqwp4pjM8SKwixNkYZ
+  port: 33068
+  server: 193.124.22.253
+  type: ss
+- cipher: aes-256-gcm
+  name: 🇺🇸_US_美国
+  password: lGqs95QkFHo2NV
+  port: 5498
+  server: 69.50.95.53
+  type: ss
+- cipher: aes-256-gcm
+  name: 🇺🇸_US_美国_1
+  password: Y6R9pAtvxxzmGC
+  port: 3389
+  server: 69.50.95.53
+  type: ss
+- cipher: aes-256-cfb
+  name: 🇺🇸_US_美国_2
+  password: amazonskr05
+  port: 443
+  server: 44.244.25.243
+  type: ss
+- cipher: aes-256-gcm
+  name: 🇺🇸_US_美国_3
+  password: cdBIDV42DCwnfIN
+  port: 8118
+  server: 69.50.95.53
+  type: ss
+- name: 🇺🇸_US_美国_4
+  network: ws
+  port: 80
+  server: 151.101.194.219
+  type: vless
+  uuid: ad9ae42c-6858-4635-b93d-8bec2169e569
+  ws-opts:
+    headers:
+      host: snapp.com
+    path: /Join--HAJIMAMADVPN--Join--HAJIMAMADVPN--Join--HAJIMAMADVPN--Join--HAJIMAMADVPN--Join--HAJIMAMADVPN--Join--HAJIMAMADVPN--Join--HAJIMAMADVPN--Join--HAJIMAMADVPN--Join--HAJIMAMADVPN--Join--HAJIMAMADVPN--Join--HAJIMAMADVPN--Join--HAJIMAMADVPN--Join--HAJIMAMADVPN?ed=2048
+- alpn:
+  - http/1.1
+  name: 🇮🇪_IE_爱尔兰
+  network: tcp
+  password: telegram-id-directvpn
+  port: 22222
+  server: 3.255.33.42
+  sni: trojan.burgerip.co.uk
+  type: trojan
+- cipher: aes-256-cfb
+  name: 🇺🇸_US_美国_5
+  password: amazonskr05
+  port: 443
+  server: 52.43.67.42
+  type: ss
+- alterId: 0
+  cipher: auto
+  name: 🇺🇸_US_美国->🇨🇦_CA_加拿大_1
+  network: ws
+  port: 2082
+  server: 190.93.245.174
+  skip-cert-verify: true
+  sni: ''
+  type: vmess
+  uuid: 5f3f09ad-89cb-4e94-a7ad-aa8239913555
+  ws-opts:
+    headers:
+      host: ip18.6929198.xyz
+    path: /github.com/Alvin9999
+- cipher: chacha20-ietf-poly1305
+  name: 🇫🇷_FR_法国->🇺🇸_US_美国
+  password: fHMmtjH3MuKYWYvGEqQpdH
+  port: 443
+  server: 62.210.88.22
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 🇩🇪_DE_德国_1
+  password: 4a2rfixophdjffa8KVA4Aa
+  port: 8080
+  server: 45.87.175.157
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 🇺🇸_US_美国->🇹🇷_TR_土耳其
+  password: vntxqHhPINXu5Ag6876fXO
+  port: 1080
+  server: 51.195.220.179
+  type: ss
+- cipher: aes-256-gcm
+  name: 🇺🇸_US_美国_6
+  password: FoOiGlkAA9yPEGP
+  port: 7306
+  server: 69.50.95.53
+  type: ss
+- alterId: 0
+  cipher: auto
+  name: 🇨🇷_CR_哥斯达黎加->🇨🇦_CA_加拿大
+  network: ws
+  port: 2082
+  server: 190.93.246.178
+  skip-cert-verify: true
+  sni: ''
+  type: vmess
+  uuid: 5f3f09ad-89cb-4e94-a7ad-aa8239913555
+  ws-opts:
+    headers:
+      host: ip18.6929198.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 🇺🇸_US_美国_7
+  network: ws
+  port: 2082
+  server: 190.93.245.168
+  type: vmess
+  uuid: 5f3f09ad-89cb-4e94-a7ad-aa8239913555
+  ws-opts:
+    headers:
+      host: ip18.6929198.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 🇺🇸_US_美国->🇨🇦_CA_加拿大_2
+  network: ws
+  port: 2082
+  server: 190.93.245.76
+  type: vmess
+  uuid: 5f3f09ad-89cb-4e94-a7ad-aa8239913555
+  ws-opts:
+    headers:
+      host: ip18.6929198.xyz
+    path: /github.com/Alvin9999
+- name: 🇸🇪_SE_瑞典
+  network: ws
+  port: 80
+  server: 185.146.173.58
+  servername: m22.6.site.org.ir.com.site.xn--fhq0la447aac5504dea701axr1g.antishop.sbs.
+  type: vless
+  uuid: f151bde4-6981-4ad9-bd01-dd34ad792a3e
+  ws-opts:
+    headers:
+      host: m22.6.site.org.ir.com.site.xn--fhq0la447aac5504dea701axr1g.antishop.sbs.
+    path: /Omid?ed=2560
+- alterId: 64
+  cipher: auto
+  name: 🇨🇳_CN_中国->🇺🇸_US_美国
+  network: tcp
+  port: 52112
+  server: 183.236.51.23
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- alterId: 0
+  cipher: auto
+  name: 🇺🇸_US_美国->🇨🇦_CA_加拿大_3
+  network: ws
+  port: 2082
+  server: 190.93.245.103
+  skip-cert-verify: true
+  sni: ''
+  type: vmess
+  uuid: 5f3f09ad-89cb-4e94-a7ad-aa8239913555
+  ws-opts:
+    headers:
+      host: ip18.6929198.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 🇨🇷_CR_哥斯达黎加->🇨🇦_CA_加拿大_1
+  network: ws
+  port: 2082
+  server: 190.93.247.221
+  type: vmess
+  uuid: 5f3f09ad-89cb-4e94-a7ad-aa8239913555
+  ws-opts:
+    headers:
+      host: ip18.6929198.xyz
+    path: /github.com/Alvin9999
+- cipher: aes-256-gcm
+  name: 🇺🇸_US_美国_8
+  password: KixLvKzwjekG00rm
+  port: 5500
+  server: 69.50.95.53
+  type: ss
+- alterId: 0
+  cipher: auto
+  name: 🇺🇸_US_美国->🇨🇦_CA_加拿大_4
+  network: ws
+  port: 2095
+  server: 172.64.175.88
+  type: vmess
+  uuid: 18d96190-c10f-448f-a82a-2d36df5c3cde
+  ws-opts:
+    headers:
+      host: c3.6016725.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 🇨🇷_CR_哥斯达黎加->🇨🇦_CA_加拿大_2
+  network: ws
+  port: 2082
+  server: 190.93.246.196
+  skip-cert-verify: true
+  sni: ''
+  type: vmess
+  uuid: 5f3f09ad-89cb-4e94-a7ad-aa8239913555
+  ws-opts:
+    headers:
+      host: ip18.6929198.xyz
+    path: /github.com/Alvin9999
+- name: 🇺🇸_US_美国->🇩🇪_DE_德国
+  network: ws
+  port: 80
+  server: 151.101.2.216
+  type: vless
+  uuid: 3314adf5-1a55-45a9-999d-c72b0562a95f
+  ws-opts:
+    headers:
+      host: api.nhl109.ir
+    path: /telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER,telegram-NUFiLTER?ed=2048
+- alterId: 0
+  cipher: auto
+  name: 🇺🇸_US_美国->🇨🇦_CA_加拿大_5
+  network: ws
+  port: 2082
+  server: 190.93.245.16
+  skip-cert-verify: true
+  sni: ''
+  type: vmess
+  uuid: 5f3f09ad-89cb-4e94-a7ad-aa8239913555
+  ws-opts:
+    headers:
+      host: ip18.6929198.xyz
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 🇨🇷_CR_哥斯达黎加->🇨🇦_CA_加拿大_3
+  network: ws
+  port: 2082
+  server: 190.93.247.23
+  type: vmess
+  uuid: 5f3f09ad-89cb-4e94-a7ad-aa8239913555
+  ws-opts:
+    headers:
+      host: ip18.6929198.xyz
+    path: /github.com/Alvin9999
+proxy-groups:
+- name: 🚀 节点选择
+  proxies:
+  - ♻️ 自动选择
+  - DIRECT
+  - 🇩🇪_DE_德国
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大
+  - 🇨🇷_CR_哥斯达黎加->🇳🇱_NL_荷兰
+  - 🇷🇺_RU_俄罗斯
+  - 🇺🇸_US_美国
+  - 🇺🇸_US_美国_1
+  - 🇺🇸_US_美国_2
+  - 🇺🇸_US_美国_3
+  - 🇺🇸_US_美国_4
+  - 🇮🇪_IE_爱尔兰
+  - 🇺🇸_US_美国_5
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_1
+  - 🇫🇷_FR_法国->🇺🇸_US_美国
+  - 🇩🇪_DE_德国_1
+  - 🇺🇸_US_美国->🇹🇷_TR_土耳其
+  - 🇺🇸_US_美国_6
+  - 🇨🇷_CR_哥斯达黎加->🇨🇦_CA_加拿大
+  - 🇺🇸_US_美国_7
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_2
+  - 🇸🇪_SE_瑞典
+  - 🇨🇳_CN_中国->🇺🇸_US_美国
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_3
+  - 🇨🇷_CR_哥斯达黎加->🇨🇦_CA_加拿大_1
+  - 🇺🇸_US_美国_8
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_4
+  - 🇨🇷_CR_哥斯达黎加->🇨🇦_CA_加拿大_2
+  - 🇺🇸_US_美国->🇩🇪_DE_德国
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_5
+  - 🇨🇷_CR_哥斯达黎加->🇨🇦_CA_加拿大_3
+  type: select
+- interval: 300
+  name: ♻️ 自动选择
+  proxies:
+  - 🇩🇪_DE_德国
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大
+  - 🇨🇷_CR_哥斯达黎加->🇳🇱_NL_荷兰
+  - 🇷🇺_RU_俄罗斯
+  - 🇺🇸_US_美国
+  - 🇺🇸_US_美国_1
+  - 🇺🇸_US_美国_2
+  - 🇺🇸_US_美国_3
+  - 🇺🇸_US_美国_4
+  - 🇮🇪_IE_爱尔兰
+  - 🇺🇸_US_美国_5
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_1
+  - 🇫🇷_FR_法国->🇺🇸_US_美国
+  - 🇩🇪_DE_德国_1
+  - 🇺🇸_US_美国->🇹🇷_TR_土耳其
+  - 🇺🇸_US_美国_6
+  - 🇨🇷_CR_哥斯达黎加->🇨🇦_CA_加拿大
+  - 🇺🇸_US_美国_7
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_2
+  - 🇸🇪_SE_瑞典
+  - 🇨🇳_CN_中国->🇺🇸_US_美国
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_3
+  - 🇨🇷_CR_哥斯达黎加->🇨🇦_CA_加拿大_1
+  - 🇺🇸_US_美国_8
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_4
+  - 🇨🇷_CR_哥斯达黎加->🇨🇦_CA_加拿大_2
+  - 🇺🇸_US_美国->🇩🇪_DE_德国
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_5
+  - 🇨🇷_CR_哥斯达黎加->🇨🇦_CA_加拿大_3
+  tolerance: 50
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+- name: 🌍 国外媒体
+  proxies:
+  - 🚀 节点选择
+  - ♻️ 自动选择
+  - 🎯 全球直连
+  - 🇩🇪_DE_德国
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大
+  - 🇨🇷_CR_哥斯达黎加->🇳🇱_NL_荷兰
+  - 🇷🇺_RU_俄罗斯
+  - 🇺🇸_US_美国
+  - 🇺🇸_US_美国_1
+  - 🇺🇸_US_美国_2
+  - 🇺🇸_US_美国_3
+  - 🇺🇸_US_美国_4
+  - 🇮🇪_IE_爱尔兰
+  - 🇺🇸_US_美国_5
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_1
+  - 🇫🇷_FR_法国->🇺🇸_US_美国
+  - 🇩🇪_DE_德国_1
+  - 🇺🇸_US_美国->🇹🇷_TR_土耳其
+  - 🇺🇸_US_美国_6
+  - 🇨🇷_CR_哥斯达黎加->🇨🇦_CA_加拿大
+  - 🇺🇸_US_美国_7
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_2
+  - 🇸🇪_SE_瑞典
+  - 🇨🇳_CN_中国->🇺🇸_US_美国
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_3
+  - 🇨🇷_CR_哥斯达黎加->🇨🇦_CA_加拿大_1
+  - 🇺🇸_US_美国_8
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_4
+  - 🇨🇷_CR_哥斯达黎加->🇨🇦_CA_加拿大_2
+  - 🇺🇸_US_美国->🇩🇪_DE_德国
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_5
+  - 🇨🇷_CR_哥斯达黎加->🇨🇦_CA_加拿大_3
+  type: select
+- name: 📲 电报信息
+  proxies:
+  - 🚀 节点选择
+  - 🎯 全球直连
+  - 🇩🇪_DE_德国
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大
+  - 🇨🇷_CR_哥斯达黎加->🇳🇱_NL_荷兰
+  - 🇷🇺_RU_俄罗斯
+  - 🇺🇸_US_美国
+  - 🇺🇸_US_美国_1
+  - 🇺🇸_US_美国_2
+  - 🇺🇸_US_美国_3
+  - 🇺🇸_US_美国_4
+  - 🇮🇪_IE_爱尔兰
+  - 🇺🇸_US_美国_5
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_1
+  - 🇫🇷_FR_法国->🇺🇸_US_美国
+  - 🇩🇪_DE_德国_1
+  - 🇺🇸_US_美国->🇹🇷_TR_土耳其
+  - 🇺🇸_US_美国_6
+  - 🇨🇷_CR_哥斯达黎加->🇨🇦_CA_加拿大
+  - 🇺🇸_US_美国_7
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_2
+  - 🇸🇪_SE_瑞典
+  - 🇨🇳_CN_中国->🇺🇸_US_美国
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_3
+  - 🇨🇷_CR_哥斯达黎加->🇨🇦_CA_加拿大_1
+  - 🇺🇸_US_美国_8
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_4
+  - 🇨🇷_CR_哥斯达黎加->🇨🇦_CA_加拿大_2
+  - 🇺🇸_US_美国->🇩🇪_DE_德国
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_5
+  - 🇨🇷_CR_哥斯达黎加->🇨🇦_CA_加拿大_3
+  type: select
+- name: Ⓜ️ 微软服务
+  proxies:
+  - 🎯 全球直连
+  - 🚀 节点选择
+  - 🇩🇪_DE_德国
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大
+  - 🇨🇷_CR_哥斯达黎加->🇳🇱_NL_荷兰
+  - 🇷🇺_RU_俄罗斯
+  - 🇺🇸_US_美国
+  - 🇺🇸_US_美国_1
+  - 🇺🇸_US_美国_2
+  - 🇺🇸_US_美国_3
+  - 🇺🇸_US_美国_4
+  - 🇮🇪_IE_爱尔兰
+  - 🇺🇸_US_美国_5
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_1
+  - 🇫🇷_FR_法国->🇺🇸_US_美国
+  - 🇩🇪_DE_德国_1
+  - 🇺🇸_US_美国->🇹🇷_TR_土耳其
+  - 🇺🇸_US_美国_6
+  - 🇨🇷_CR_哥斯达黎加->🇨🇦_CA_加拿大
+  - 🇺🇸_US_美国_7
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_2
+  - 🇸🇪_SE_瑞典
+  - 🇨🇳_CN_中国->🇺🇸_US_美国
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_3
+  - 🇨🇷_CR_哥斯达黎加->🇨🇦_CA_加拿大_1
+  - 🇺🇸_US_美国_8
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_4
+  - 🇨🇷_CR_哥斯达黎加->🇨🇦_CA_加拿大_2
+  - 🇺🇸_US_美国->🇩🇪_DE_德国
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_5
+  - 🇨🇷_CR_哥斯达黎加->🇨🇦_CA_加拿大_3
+  type: select
+- name: 🍎 苹果服务
+  proxies:
+  - 🚀 节点选择
+  - 🎯 全球直连
+  - 🇩🇪_DE_德国
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大
+  - 🇨🇷_CR_哥斯达黎加->🇳🇱_NL_荷兰
+  - 🇷🇺_RU_俄罗斯
+  - 🇺🇸_US_美国
+  - 🇺🇸_US_美国_1
+  - 🇺🇸_US_美国_2
+  - 🇺🇸_US_美国_3
+  - 🇺🇸_US_美国_4
+  - 🇮🇪_IE_爱尔兰
+  - 🇺🇸_US_美国_5
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_1
+  - 🇫🇷_FR_法国->🇺🇸_US_美国
+  - 🇩🇪_DE_德国_1
+  - 🇺🇸_US_美国->🇹🇷_TR_土耳其
+  - 🇺🇸_US_美国_6
+  - 🇨🇷_CR_哥斯达黎加->🇨🇦_CA_加拿大
+  - 🇺🇸_US_美国_7
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_2
+  - 🇸🇪_SE_瑞典
+  - 🇨🇳_CN_中国->🇺🇸_US_美国
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_3
+  - 🇨🇷_CR_哥斯达黎加->🇨🇦_CA_加拿大_1
+  - 🇺🇸_US_美国_8
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_4
+  - 🇨🇷_CR_哥斯达黎加->🇨🇦_CA_加拿大_2
+  - 🇺🇸_US_美国->🇩🇪_DE_德国
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_5
+  - 🇨🇷_CR_哥斯达黎加->🇨🇦_CA_加拿大_3
+  type: select
+- name: 🎯 全球直连
+  proxies:
+  - DIRECT
+  - 🚀 节点选择
+  - ♻️ 自动选择
+  type: select
+- name: 🛑 全球拦截
+  proxies:
+  - REJECT
+  - DIRECT
+  type: select
+- name: 🍃 应用净化
+  proxies:
+  - REJECT
+  - DIRECT
+  type: select
+- name: 🐟 漏网之鱼
+  proxies:
+  - 🚀 节点选择
+  - 🎯 全球直连
+  - ♻️ 自动选择
+  - 🇩🇪_DE_德国
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大
+  - 🇨🇷_CR_哥斯达黎加->🇳🇱_NL_荷兰
+  - 🇷🇺_RU_俄罗斯
+  - 🇺🇸_US_美国
+  - 🇺🇸_US_美国_1
+  - 🇺🇸_US_美国_2
+  - 🇺🇸_US_美国_3
+  - 🇺🇸_US_美国_4
+  - 🇮🇪_IE_爱尔兰
+  - 🇺🇸_US_美国_5
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_1
+  - 🇫🇷_FR_法国->🇺🇸_US_美国
+  - 🇩🇪_DE_德国_1
+  - 🇺🇸_US_美国->🇹🇷_TR_土耳其
+  - 🇺🇸_US_美国_6
+  - 🇨🇷_CR_哥斯达黎加->🇨🇦_CA_加拿大
+  - 🇺🇸_US_美国_7
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_2
+  - 🇸🇪_SE_瑞典
+  - 🇨🇳_CN_中国->🇺🇸_US_美国
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_3
+  - 🇨🇷_CR_哥斯达黎加->🇨🇦_CA_加拿大_1
+  - 🇺🇸_US_美国_8
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_4
+  - 🇨🇷_CR_哥斯达黎加->🇨🇦_CA_加拿大_2
+  - 🇺🇸_US_美国->🇩🇪_DE_德国
+  - 🇺🇸_US_美国->🇨🇦_CA_加拿大_5
+  - 🇨🇷_CR_哥斯达黎加->🇨🇦_CA_加拿大_3
+  type: select
+rule-providers:
+  Apple:
+    behavior: classical
+    format: text
+    interval: 3600
+    path: ./Clash/Apple.list
+    type: http
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list
+  BanAD:
+    behavior: classical
+    format: text
+    interval: 3600
+    path: ./Clash/BanAD.list
+    type: http
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
+  BanProgramAD:
+    behavior: classical
+    format: text
+    interval: 3600
+    path: ./Clash/BanProgramAD.list
+    type: http
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
+  ChinaCompanyIp:
+    behavior: classical
+    format: text
+    interval: 3600
+    path: ./Clash/ChinaCompanyIp.list
+    type: http
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
+  ChinaDomain:
+    behavior: classical
+    format: text
+    interval: 3600
+    path: ./Clash/ChinaDomain.list
+    type: http
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+  GoogleCN:
+    behavior: classical
+    format: text
+    interval: 3600
+    path: ./Clash/GoogleCN.list
+    type: http
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
+  LocalAreaNetwork:
+    behavior: classical
+    format: text
+    interval: 3600
+    path: ./Clash/LocalAreaNetwork.list
+    type: http
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+  Microsoft:
+    behavior: classical
+    format: text
+    interval: 3600
+    path: ./Clash/Microsoft.list
+    type: http
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
+  ProxyLite:
+    behavior: classical
+    format: text
+    interval: 3600
+    path: ./Clash/ProxyLite.list
+    type: http
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list
+  ProxyMedia:
+    behavior: classical
+    format: text
+    interval: 3600
+    path: ./Clash/ProxyMedia.list
+    type: http
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
+  SteamCN:
+    behavior: classical
+    format: text
+    interval: 3600
+    path: ./Clash/SteamCN.list
+    type: http
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/SteamCN.list
+  Telegram:
+    behavior: classical
+    format: text
+    interval: 3600
+    path: ./Clash/Telegram.list
+    type: http
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
+rules:
+- RULE-SET,LocalAreaNetwork,🎯 全球直连
+- RULE-SET,BanAD,🛑 全球拦截
+- RULE-SET,BanProgramAD,🍃 应用净化
+- RULE-SET,GoogleCN,🎯 全球直连
+- RULE-SET,SteamCN,🎯 全球直连
+- RULE-SET,Microsoft,Ⓜ️ 微软服务
+- RULE-SET,Apple,🍎 苹果服务
+- RULE-SET,ProxyMedia,🌍 国外媒体
+- RULE-SET,Telegram,📲 电报信息
+- RULE-SET,ProxyLite,🚀 节点选择
+- RULE-SET,ChinaDomain,🎯 全球直连
+- RULE-SET,ChinaCompanyIp,🎯 全球直连
+- GEOIP,CN,🎯 全球直连
+- MATCH,🐟 漏网之鱼
+tun:
+  auto-detect-interface: true
+  auto-route: true
+  dns-hijack:
+  - 114.114.114.114
+  - 180.76.76.76
+  - 119.29.29.29
+  - 223.5.5.5
+  - 8.8.8.8
+  - 8.8.4.4
+  - 1.1.1.1
+  - 1.0.0.1
+  enable: true
