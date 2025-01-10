@@ -77,9 +77,53 @@ external-controller: 0.0.0.0:9090
 log-level: info
 mixed-port: 7890
 proxies:
+- name: 🇫🇷_FR_法国
+  network: tcp
+  password: telegram-id-privatevpns
+  port: 22222
+  server: 13.38.208.28
+  skip-cert-verify: true
+  sni: trj.rollingnext.co.uk
+  type: trojan
+  udp: true
+- name: 🇺🇸_US_美国_1
+  network: ws
+  password: 56e1f11c-1217-46ab-b127-6afbc23bafba
+  port: 443
+  server: 89.116.180.179
+  skip-cert-verify: true
+  sni: p6us4.pqjc.buzz
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: p6us4.pqjc.buzz
+    path: /pq/us4
+- name: 🇺🇸_US_美国_2
+  network: ws
+  password: 56e1f11c-1217-46ab-b127-6afbc23bafba
+  port: 443
+  server: 89.116.161.133
+  skip-cert-verify: true
+  sni: p1us1.pqjc.buzz
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: p1us1.pqjc.buzz
+    path: /pq/us1
+- name: 🇩🇪_DE_德国
+  network: tcp
+  password: 56e1f11c-1217-46ab-b127-6afbc23bafba
+  port: 443
+  server: 5.104.108.120
+  skip-cert-verify: true
+  sni: 20-24-33-134.nhost.00cdn.com
+  type: trojan
+  udp: true
 - alterId: 0
   cipher: auto
-  name: 🇺🇸_US_美国_1
+  name: 🇺🇸_US_美国_3
   network: ws
   port: 8880
   server: a3.bcbot.in
@@ -93,179 +137,70 @@ proxies:
     path: /
 - alterId: 0
   cipher: auto
-  name: 🇩🇪_DE_德国
-  network: ws
-  port: 8880
-  server: 217.160.45.31
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  uuid: 4e186678-fcca-4325-e4bc-b2916bdf6708
-  ws-opts:
-    path: /
-- alterId: 0
-  cipher: auto
-  name: 🇺🇸_US_美国->🇬🇧_GB_英国
+  name: 🇺🇸_US_美国->🇺🇦_UA_乌克兰
   network: ws
   port: 80
-  server: 104.17.110.63
+  server: 104.17.2.183
   skip-cert-verify: true
   tls: false
   type: vmess
-  uuid: f9ab87c5-c542-4c10-a486-b59c91550787
+  uuid: f256a3ae-0f85-4a1d-d0cd-2d0b4b73f4f1
   ws-opts:
     headers:
-      host: PARspacK51.eSMAIlkOrEA.sHoP
-    path: /?ed=2048
-- alterId: 0
-  cipher: auto
-  name: 🇺🇸_US_美国->🇩🇪_DE_德国_1
-  network: ws
-  port: 2083
-  server: 104.19.154.92
-  skip-cert-verify: true
-  tls: true
-  type: vmess
-  uuid: 9e9b80f1-5555-4f7d-a209-d23b9d9dc047
-  ws-opts:
-    headers:
-      host: PAneljadid.mookoMEilz.homes
-    path: /snsk
-- alterId: 0
-  cipher: auto
-  name: 🇺🇸_US_美国_2
-  network: ws
-  port: 37121
-  server: 132.145.132.227
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  uuid: 93845b50-26f6-4203-f5ad-4d231d4e8f45
-  ws-opts:
+      host: v3ra3do.wakeuptimerap.shop
     path: /
-- alterId: 0
-  cipher: auto
-  name: 🇺🇸_US_美国->🇩🇪_DE_德国_2
+- name: 🇺🇸_US_美国_4
   network: ws
-  port: 2083
-  server: 2bbiozh7wbc.servecounterstrike.com
+  password: 56e1f11c-1217-46ab-b127-6afbc23bafba
+  port: 443
+  server: 167.68.5.183
   skip-cert-verify: true
-  tls: true
-  type: vmess
-  uuid: 9e9b80f1-5555-4f7d-a209-d23b9d9dc047
+  sni: 6us3.pqjc.buzz
+  type: trojan
+  udp: true
   ws-opts:
     headers:
-      host: PAneljadid.mookoMEilz.homes
-    path: /snsk
-- alterId: 64
-  cipher: auto
-  name: 🇺🇸_US_美国_3
-  network: ws
-  port: 30000
-  server: 45.58.153.24
-  skip-cert-verify: true
-  tls: true
-  type: vmess
-  uuid: 4242f9e0-6b7e-4257-9e93-7ad38015c46a
-  ws-opts:
-    headers:
-      host: www.77935707.xyz
-    path: /path/1702392255355
-- alterId: 64
-  cipher: auto
-  name: 🇺🇸_US_美国_4
-  network: ws
-  port: 30000
-  server: 45.58.153.25
-  skip-cert-verify: true
-  tls: true
-  type: vmess
-  uuid: 4242f9e0-6b7e-4257-9e93-7ad38015c46a
-  ws-opts:
-    path: /path/1702961716738
+      host: 6us3.pqjc.buzz
+    path: /pq/us3
 - alterId: 0
   cipher: auto
   name: 🇺🇸_US_美国_5
   network: ws
-  port: 80
-  server: 94.131.14.177
+  port: 8880
+  server: 104.21.32.215
   skip-cert-verify: true
   tls: false
   type: vmess
-  uuid: 2c5fee13-f08b-4ba8-86db-27dd51cb9781
+  uuid: ce9aadc8-8c6e-4867-d247-9a84b469ac27
   ws-opts:
     headers:
-      host: lt2-vmess.sshmax.xyz
-    path: /vmess
-- alterId: 0
-  cipher: auto
-  name: 🇺🇸_US_美国_6
-  network: tcp
-  port: 50104
-  server: 38.180.33.136
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  uuid: 790f6802-7535-4109-de6d-15f676d5e3f7
-- alterId: 0
-  cipher: auto
-  name: 🇺🇸_US_美国_7
-  network: ws
-  port: 2082
-  server: 94.131.14.177
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  uuid: 2c5fee13-f08b-4ba8-86db-27dd51cb9781
-  ws-opts:
-    path: /vmess
-- alterId: 0
-  cipher: auto
-  name: 🇺🇸_US_美国_8
-  network: ws
-  port: 80
-  server: 104.17.184.241
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  uuid: bf3d038a-93a2-4e24-886c-6bc64e3c3a90
-  ws-opts:
-    headers:
-      host: mg_cdn.yunjisuan.cf
+      host: a3.bcbot.in
     path: /
 proxy-groups:
 - name: 🚀 节点选择
   proxies:
   - ♻️ 自动选择
   - DIRECT
+  - 🇫🇷_FR_法国
   - 🇺🇸_US_美国_1
-  - 🇩🇪_DE_德国
-  - 🇺🇸_US_美国->🇬🇧_GB_英国
-  - 🇺🇸_US_美国->🇩🇪_DE_德国_1
   - 🇺🇸_US_美国_2
-  - 🇺🇸_US_美国->🇩🇪_DE_德国_2
+  - 🇩🇪_DE_德国
   - 🇺🇸_US_美国_3
+  - 🇺🇸_US_美国->🇺🇦_UA_乌克兰
   - 🇺🇸_US_美国_4
   - 🇺🇸_US_美国_5
-  - 🇺🇸_US_美国_6
-  - 🇺🇸_US_美国_7
-  - 🇺🇸_US_美国_8
   type: select
 - interval: 300
   name: ♻️ 自动选择
   proxies:
+  - 🇫🇷_FR_法国
   - 🇺🇸_US_美国_1
-  - 🇩🇪_DE_德国
-  - 🇺🇸_US_美国->🇬🇧_GB_英国
-  - 🇺🇸_US_美国->🇩🇪_DE_德国_1
   - 🇺🇸_US_美国_2
-  - 🇺🇸_US_美国->🇩🇪_DE_德国_2
+  - 🇩🇪_DE_德国
   - 🇺🇸_US_美国_3
+  - 🇺🇸_US_美国->🇺🇦_UA_乌克兰
   - 🇺🇸_US_美国_4
   - 🇺🇸_US_美国_5
-  - 🇺🇸_US_美国_6
-  - 🇺🇸_US_美国_7
-  - 🇺🇸_US_美国_8
   tolerance: 50
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -274,69 +209,53 @@ proxy-groups:
   - 🚀 节点选择
   - ♻️ 自动选择
   - 🎯 全球直连
+  - 🇫🇷_FR_法国
   - 🇺🇸_US_美国_1
-  - 🇩🇪_DE_德国
-  - 🇺🇸_US_美国->🇬🇧_GB_英国
-  - 🇺🇸_US_美国->🇩🇪_DE_德国_1
   - 🇺🇸_US_美国_2
-  - 🇺🇸_US_美国->🇩🇪_DE_德国_2
+  - 🇩🇪_DE_德国
   - 🇺🇸_US_美国_3
+  - 🇺🇸_US_美国->🇺🇦_UA_乌克兰
   - 🇺🇸_US_美国_4
   - 🇺🇸_US_美国_5
-  - 🇺🇸_US_美国_6
-  - 🇺🇸_US_美国_7
-  - 🇺🇸_US_美国_8
   type: select
 - name: 📲 电报信息
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
+  - 🇫🇷_FR_法国
   - 🇺🇸_US_美国_1
-  - 🇩🇪_DE_德国
-  - 🇺🇸_US_美国->🇬🇧_GB_英国
-  - 🇺🇸_US_美国->🇩🇪_DE_德国_1
   - 🇺🇸_US_美国_2
-  - 🇺🇸_US_美国->🇩🇪_DE_德国_2
+  - 🇩🇪_DE_德国
   - 🇺🇸_US_美国_3
+  - 🇺🇸_US_美国->🇺🇦_UA_乌克兰
   - 🇺🇸_US_美国_4
   - 🇺🇸_US_美国_5
-  - 🇺🇸_US_美国_6
-  - 🇺🇸_US_美国_7
-  - 🇺🇸_US_美国_8
   type: select
 - name: Ⓜ️ 微软服务
   proxies:
   - 🎯 全球直连
   - 🚀 节点选择
+  - 🇫🇷_FR_法国
   - 🇺🇸_US_美国_1
-  - 🇩🇪_DE_德国
-  - 🇺🇸_US_美国->🇬🇧_GB_英国
-  - 🇺🇸_US_美国->🇩🇪_DE_德国_1
   - 🇺🇸_US_美国_2
-  - 🇺🇸_US_美国->🇩🇪_DE_德国_2
+  - 🇩🇪_DE_德国
   - 🇺🇸_US_美国_3
+  - 🇺🇸_US_美国->🇺🇦_UA_乌克兰
   - 🇺🇸_US_美国_4
   - 🇺🇸_US_美国_5
-  - 🇺🇸_US_美国_6
-  - 🇺🇸_US_美国_7
-  - 🇺🇸_US_美国_8
   type: select
 - name: 🍎 苹果服务
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
+  - 🇫🇷_FR_法国
   - 🇺🇸_US_美国_1
-  - 🇩🇪_DE_德国
-  - 🇺🇸_US_美国->🇬🇧_GB_英国
-  - 🇺🇸_US_美国->🇩🇪_DE_德国_1
   - 🇺🇸_US_美国_2
-  - 🇺🇸_US_美国->🇩🇪_DE_德国_2
+  - 🇩🇪_DE_德国
   - 🇺🇸_US_美国_3
+  - 🇺🇸_US_美国->🇺🇦_UA_乌克兰
   - 🇺🇸_US_美国_4
   - 🇺🇸_US_美国_5
-  - 🇺🇸_US_美国_6
-  - 🇺🇸_US_美国_7
-  - 🇺🇸_US_美国_8
   type: select
 - name: 🎯 全球直连
   proxies:
@@ -359,18 +278,14 @@ proxy-groups:
   - 🚀 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
+  - 🇫🇷_FR_法国
   - 🇺🇸_US_美国_1
-  - 🇩🇪_DE_德国
-  - 🇺🇸_US_美国->🇬🇧_GB_英国
-  - 🇺🇸_US_美国->🇩🇪_DE_德国_1
   - 🇺🇸_US_美国_2
-  - 🇺🇸_US_美国->🇩🇪_DE_德国_2
+  - 🇩🇪_DE_德国
   - 🇺🇸_US_美国_3
+  - 🇺🇸_US_美国->🇺🇦_UA_乌克兰
   - 🇺🇸_US_美国_4
   - 🇺🇸_US_美国_5
-  - 🇺🇸_US_美国_6
-  - 🇺🇸_US_美国_7
-  - 🇺🇸_US_美国_8
   type: select
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
