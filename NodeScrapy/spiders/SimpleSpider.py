@@ -18,7 +18,7 @@ class SimpleSpider(scrapy.Spider):
                        "LOG_FILE_APPEND": False,
                        "LOG_LEVEL": "INFO"}
     targets = ("clashmeta", "ndnode", "nodev2ray",
-               "nodefree", "v2rayshare", "wenode")
+               "nodefree", "v2rayshare", "wenode",)
     configs: dict[str, ConfigData]
 
     def __init__(self, *args, **kwargs):
