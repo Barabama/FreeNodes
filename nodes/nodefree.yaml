@@ -32,49 +32,31 @@ log-level: info
 mixed-port: 7890
 mode: rule
 proxies:
-- cipher: aes-256-cfb
+- alpn:
+  - h2
+  client-fingerprint: chrome
+  grpc-opts:
+    grpc-service-name: i8oL7PsxV002zYFTmiIeg
   ip-version: dual
   name: 🇺🇸_US_美国_1
+  network: grpc
+  password: 576c81b6-4976-4fe3-b1a9-05a9c302e98e
+  port: 443
+  server: 192.3.130.103
+  sni: us10-01.iran2030.ggff.net
+  type: trojan
+  udp: true
+- cipher: aes-256-cfb
+  ip-version: dual
+  name: 🇺🇸_US_美国->🇩🇰_DK_丹麦
   password: amazonskr05
   port: 443
-  server: 54.218.61.43
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  ip-version: dual
-  name: 🇺🇸_US_美国_3
-  password: 11955ffa5b58cae3
-  port: 26268
-  server: 45.10.154.245
-  type: ss
-  udp: true
-- cipher: aes-256-cfb
-  ip-version: dual
-  name: 🇮🇸_IS_冰岛
-  password: f8f7aCzcPKbsF8p3
-  port: 989
-  server: 37.235.49.152
-  type: ss
-  udp: true
-- cipher: aes-256-gcm
-  ip-version: dual
-  name: 🇨🇳_CN_中国->🇺🇸_US_美国
-  password: UUBUEJ1DLDQVJG7D
-  port: 17003
-  server: ti3hyra4.slashdevslashnetslashtun.net
-  type: ss
-  udp: true
-- cipher: aes-256-cfb
-  ip-version: dual
-  name: 🇬🇧_GB_英国
-  password: f8f7aCzcPKbsF8p3
-  port: 989
-  server: 51.15.23.63
+  server: 34.211.230.161
   type: ss
   udp: true
 - cipher: rc4-md5
   ip-version: dual
-  name: 🇩🇪_DE_德国->🇭🇺_HU_匈牙利
+  name: 🇩🇪_DE_德国
   password: 14fFPrbezE3HDZzsMOr6
   port: 8080
   server: 193.108.119.230
@@ -82,10 +64,18 @@ proxies:
   udp: true
 - cipher: aes-256-cfb
   ip-version: dual
-  name: 🇺🇸_US_美国->🇩🇰_DK_丹麦
+  name: 🇺🇸_US_美国_2
   password: amazonskr05
   port: 443
-  server: 34.219.71.252
+  server: 18.236.137.219
+  type: ss
+  udp: true
+- cipher: aes-256-cfb
+  ip-version: dual
+  name: 🇺🇸_US_美国_3
+  password: amazonskr05
+  port: 443
+  server: 34.210.253.95
   type: ss
   udp: true
 proxy-groups:
@@ -94,23 +84,19 @@ proxy-groups:
   - ♻️ 自动选择
   - DIRECT
   - 🇺🇸_US_美国_1
-  - 🇺🇸_US_美国_3
-  - 🇮🇸_IS_冰岛
-  - 🇨🇳_CN_中国->🇺🇸_US_美国
-  - 🇬🇧_GB_英国
-  - 🇩🇪_DE_德国->🇭🇺_HU_匈牙利
   - 🇺🇸_US_美国->🇩🇰_DK_丹麦
+  - 🇩🇪_DE_德国
+  - 🇺🇸_US_美国_2
+  - 🇺🇸_US_美国_3
   type: select
 - interval: 300
   name: ♻️ 自动选择
   proxies:
   - 🇺🇸_US_美国_1
-  - 🇺🇸_US_美国_3
-  - 🇮🇸_IS_冰岛
-  - 🇨🇳_CN_中国->🇺🇸_US_美国
-  - 🇬🇧_GB_英国
-  - 🇩🇪_DE_德国->🇭🇺_HU_匈牙利
   - 🇺🇸_US_美国->🇩🇰_DK_丹麦
+  - 🇩🇪_DE_德国
+  - 🇺🇸_US_美国_2
+  - 🇺🇸_US_美国_3
   tolerance: 5000
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -120,48 +106,40 @@ proxy-groups:
   - ♻️ 自动选择
   - 🎯 全球直连
   - 🇺🇸_US_美国_1
-  - 🇺🇸_US_美国_3
-  - 🇮🇸_IS_冰岛
-  - 🇨🇳_CN_中国->🇺🇸_US_美国
-  - 🇬🇧_GB_英国
-  - 🇩🇪_DE_德国->🇭🇺_HU_匈牙利
   - 🇺🇸_US_美国->🇩🇰_DK_丹麦
+  - 🇩🇪_DE_德国
+  - 🇺🇸_US_美国_2
+  - 🇺🇸_US_美国_3
   type: select
 - name: 📲 电报信息
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
   - 🇺🇸_US_美国_1
-  - 🇺🇸_US_美国_3
-  - 🇮🇸_IS_冰岛
-  - 🇨🇳_CN_中国->🇺🇸_US_美国
-  - 🇬🇧_GB_英国
-  - 🇩🇪_DE_德国->🇭🇺_HU_匈牙利
   - 🇺🇸_US_美国->🇩🇰_DK_丹麦
+  - 🇩🇪_DE_德国
+  - 🇺🇸_US_美国_2
+  - 🇺🇸_US_美国_3
   type: select
 - name: Ⓜ️ 微软服务
   proxies:
   - 🎯 全球直连
   - 🚀 节点选择
   - 🇺🇸_US_美国_1
-  - 🇺🇸_US_美国_3
-  - 🇮🇸_IS_冰岛
-  - 🇨🇳_CN_中国->🇺🇸_US_美国
-  - 🇬🇧_GB_英国
-  - 🇩🇪_DE_德国->🇭🇺_HU_匈牙利
   - 🇺🇸_US_美国->🇩🇰_DK_丹麦
+  - 🇩🇪_DE_德国
+  - 🇺🇸_US_美国_2
+  - 🇺🇸_US_美国_3
   type: select
 - name: 🍎 苹果服务
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
   - 🇺🇸_US_美国_1
-  - 🇺🇸_US_美国_3
-  - 🇮🇸_IS_冰岛
-  - 🇨🇳_CN_中国->🇺🇸_US_美国
-  - 🇬🇧_GB_英国
-  - 🇩🇪_DE_德国->🇭🇺_HU_匈牙利
   - 🇺🇸_US_美国->🇩🇰_DK_丹麦
+  - 🇩🇪_DE_德国
+  - 🇺🇸_US_美国_2
+  - 🇺🇸_US_美国_3
   type: select
 - name: 🎯 全球直连
   proxies:
@@ -185,12 +163,10 @@ proxy-groups:
   - 🎯 全球直连
   - ♻️ 自动选择
   - 🇺🇸_US_美国_1
-  - 🇺🇸_US_美国_3
-  - 🇮🇸_IS_冰岛
-  - 🇨🇳_CN_中国->🇺🇸_US_美国
-  - 🇬🇧_GB_英国
-  - 🇩🇪_DE_德国->🇭🇺_HU_匈牙利
   - 🇺🇸_US_美国->🇩🇰_DK_丹麦
+  - 🇩🇪_DE_德国
+  - 🇺🇸_US_美国_2
+  - 🇺🇸_US_美国_3
   type: select
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
