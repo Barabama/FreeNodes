@@ -33,20 +33,47 @@ mixed-port: 7890
 mode: rule
 proxies:
 - ip-version: dual
+  name: 🇺🇸_US_美国->🇫🇮_FI_芬兰
+  network: ws
+  password: 85950277-f447-48f0-9ead-aaf6d5ff3cad
+  port: 443
+  server: 107.172.132.248
+  sni: huangshang9.zone.id
+  type: trojan
+  udp: true
+  ws-opts:
+    path: /I4L1BP2DQVYmx5NYQ76MGGq
+- cipher: rc4-md5
+  ip-version: dual
+  name: 🇷🇴_RO_罗马尼亚->🇺🇸_US_美国
+  password: 14fFPrbezE3HDZzsMOr6
+  port: 8080
+  server: 194.5.215.59
+  type: ss
+  udp: true
+- ip-version: dual
   name: 🇺🇸_US_美国_1
   password: SaujZeOR2F6eDD09KnxFcl3CY8laTXAyYOyCEI5qgwRSDp4ZCp33ASxN738zBa
   port: 443
-  server: beseech.homeofbrave.net
+  server: 69.5.52.87
   sni: beseech.homeofbrave.net
   type: trojan
   udp: true
 - cipher: aes-256-cfb
   ip-version: dual
-  name: 🇺🇸_US_美国_2
-  password: amazonskr05
-  port: 443
-  server: 34.210.253.95
+  name: 🇫🇮_FI_芬兰
+  password: eath1eicieSh_!MMyb~4HT,}bC@ohpheiRaighier0shohd
+  port: 8388
+  server: 95.217.158.231
   type: ss
+  udp: true
+- ip-version: dual
+  name: 🇺🇸_US_美国_2
+  password: telegram-id-privatevpns
+  port: 22222
+  server: 13.38.175.48
+  sni: trojan.burgerip.co.uk
+  type: trojan
   udp: true
 - cipher: aes-256-cfb
   ip-version: dual
@@ -56,87 +83,20 @@ proxies:
   server: 54.184.74.88
   type: ss
   udp: true
+- grpc-opts:
+    grpc-service-name: i8oL7PsxV002zYFTmiIeg
+  ip-version: dual
+  name: 🇺🇸_US_美国->🇩🇰_DK_丹麦
+  network: grpc
+  password: 576c81b6-4976-4fe3-b1a9-05a9c302e98e
+  port: 443
+  server: 192.3.130.103
+  sni: us10-01zl.huangshang.filegear-sg.me
+  type: trojan
+  udp: true
 - cipher: aes-256-cfb
   ip-version: dual
   name: 🇺🇸_US_美国_4
-  password: amazonskr05
-  port: 443
-  server: 54.202.63.169
-  type: ss
-  udp: true
-- cipher: aes-256-cfb
-  ip-version: dual
-  name: 🇺🇸_US_美国_5
-  password: amazonskr05
-  port: 443
-  server: 18.236.137.219
-  type: ss
-  udp: true
-- ip-version: dual
-  name: 🇺🇸_US_美国_6
-  password: SaujZeOR2F6eDD09KnxFcl3CY8laTXAyYOyCEI5qgwRSDp4ZCp33ASxN738zBa
-  port: 443
-  server: 69.5.52.87
-  sni: beseech.homeofbrave.net
-  type: trojan
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  ip-version: dual
-  name: 🇺🇸_US_美国_7
-  password: 0b381b31811f4d98
-  port: 26905
-  server: 100.42.177.164
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  ip-version: dual
-  name: 🇯🇴_JO_约旦->🇺🇸_US_美国
-  password: 1a17c1f74cdc51d5
-  port: 40006
-  server: 91.106.109.17
-  type: ss
-  udp: true
-- ip-version: dual
-  name: 🇺🇸_US_美国_8
-  network: ws
-  password: 6040a753-e35b-4384-8713-96f3c639b621
-  port: 443
-  server: 104.21.69.41
-  sni: yy8x1.890602.xyz
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: yy8x1.890602.xyz
-    path: /WxWOWO1YA9bs2HOmaeWimvT3
-- cipher: chacha20-ietf-poly1305
-  ip-version: dual
-  name: 🇨🇦_CA_加拿大
-  password: 7bbb0021ab931024
-  port: 11202
-  server: 67.220.67.59
-  type: ss
-  udp: true
-- ip-version: dual
-  name: 🇺🇸_US_美国->🇺🇦_UA_乌克兰
-  password: 6COpljDaSNl2wy8BaFCK3FncI4yOYAZYxRZAxe3uCaDqS3R8ezD0T9g357pESX
-  port: 443
-  server: privacy.taiwanesefood.link
-  skip-cert-verify: false
-  sni: privacy.taiwanesefood.link
-  type: trojan
-  udp: true
-- cipher: aes-256-cfb
-  ip-version: dual
-  name: 🇺🇸_US_美国_9
-  password: amazonskr05
-  port: 443
-  server: 34.221.169.63
-  type: ss
-  udp: true
-- cipher: aes-256-cfb
-  ip-version: dual
-  name: 🇺🇸_US_美国->🇨🇳_CN_中国
   password: amazonskr05
   port: 443
   server: 54.218.61.43
@@ -144,64 +104,99 @@ proxies:
   udp: true
 - cipher: aes-256-cfb
   ip-version: dual
-  name: 🇸🇰_SK_斯洛伐克
+  name: 🇸🇰_SK_斯洛伐克->🇺🇸_US_美国
   password: f8f7aCzcPKbsF8p3
   port: 989
   server: 156.146.40.194
   type: ss
   udp: true
-- grpc-opts:
-    grpc-service-name: i8oL7PsxV002zYFTmiIeg
+- alterId: 0
+  cipher: auto
   ip-version: dual
-  name: 🇺🇸_US_美国_10
-  network: grpc
-  password: 576c81b6-4976-4fe3-b1a9-05a9c302e98e
-  port: 443
-  server: 192.3.130.103
-  sni: us10-01.iran2030.ggff.net
-  type: trojan
-  udp: true
-- ip-version: dual
-  name: 🇺🇸_US_美国_11
+  name: 🇷🇺_RU_俄罗斯->🇺🇸_US_美国
   network: ws
-  password: 85950277-f447-48f0-9ead-aaf6d5ff3cad
-  port: 443
-  server: 104.21.34.159
-  sni: df6xxxx.2031.pp.ua
-  type: trojan
+  port: 2095
+  server: 185.174.138.209
+  skip-cert-verify: true
+  sni: ''
+  type: vmess
   udp: true
+  uuid: 3f638f34-8dba-4186-bc43-2716a7ddd4be
   ws-opts:
-    path: /I4L1BP2DQVYmx5NYQ76MGGq
-- cipher: aes-256-cfb
-  ip-version: dual
-  name: 🇮🇸_IS_冰岛
-  password: f8f7aCzcPKbsF8p3
-  port: 989
-  server: 37.235.49.152
-  type: ss
-  udp: true
-- ip-version: dual
-  name: 🇺🇸_US_美国_12
-  password: S2eR328SOazY60FCx88FKncyu4gAyapCCD3AwZlXCp8clTgO7NO5Sa3exAYExzqXwIFN7
-  port: 443
-  server: whisky.homeofbrave.net
-  sni: whisky.homeofbrave.net
-  type: trojan
-  udp: true
-- cipher: aes-256-cfb
-  ip-version: dual
-  name: 🇺🇸_US_美国_13
-  password: amazonskr05
-  port: 443
-  server: 34.211.230.161
-  type: ss
-  udp: true
+    headers:
+      host: yellow-paper-029c.yvonna.workers.dev
+    path: /az05.beyondy.cfd/link?/TM
 - cipher: chacha20-ietf-poly1305
   ip-version: dual
-  name: 🇵🇱_PL_波兰->🇺🇸_US_美国
-  password: a0665971fb6fd5ed
-  port: 11202
-  server: 151.115.43.27
+  name: 🇬🇧_GB_英国
+  password: IZeqIUCMcao7ReNj5B83Yr
+  port: 49209
+  server: 91.84.109.28
+  type: ss
+  udp: true
+- cipher: aes-256-cfb
+  ip-version: dual
+  name: 🇺🇸_US_美国->🇸🇬_SG_新加坡
+  password: amazonskr05
+  port: 443
+  server: 34.219.71.252
+  type: ss
+  udp: true
+- ip-version: dual
+  name: 🇺🇸_US_美国_5
+  network: tcp
+  password: 3wXO97Y83a9ynFAgyajxxpz6qeSSCu6z3C3RDwTNYcDZyCAFglBE3ANDFA0e7SFaIlDOq
+  port: 443
+  server: socepy.homeofbrave.net
+  sni: socepy.homeofbrave.net
+  type: trojan
+  udp: true
+- cipher: aes-256-cfb
+  ip-version: dual
+  name: 🇬🇧_GB_英国->🇫🇮_FI_芬兰
+  password: f8f7aCzcPKbsF8p3
+  port: 989
+  server: 62.100.205.48
+  type: ss
+  udp: true
+- alterId: 0
+  cipher: auto
+  ip-version: dual
+  name: 🇳🇱_NL_荷兰->🇺🇸_US_美国
+  network: ws
+  port: 2082
+  server: 45.142.120.190
+  skip-cert-verify: true
+  sni: ''
+  type: vmess
+  udp: true
+  uuid: 3f638f34-8dba-4186-bc43-2716a7ddd4be
+  ws-opts:
+    headers:
+      host: yellow-paper-029c.yvonna.workers.dev
+    path: /az05.beyondy.cfd/link#
+- cipher: aes-256-cfb
+  ip-version: dual
+  name: 🇺🇸_US_美国_6
+  password: amazonskr05
+  port: 443
+  server: 35.86.111.233
+  type: ss
+  udp: true
+- cipher: aes-256-cfb
+  ip-version: dual
+  name: 🇨🇭_CH_瑞士->🇺🇸_US_美国
+  password: f8f7aCzcPKbsF8p3
+  port: 989
+  server: 84.17.53.160
+  type: ss
+  udp: true
+- cipher: aes-128-cfb
+  ip-version: dual
+  name: 🇺🇸_US_美国_7
+  password: shadowsocks
+  port: 443
+  server: 184.170.241.194
   type: ss
   udp: true
 proxy-groups:
@@ -209,50 +204,46 @@ proxy-groups:
   proxies:
   - ♻️ 自动选择
   - DIRECT
+  - 🇺🇸_US_美国->🇫🇮_FI_芬兰
+  - 🇷🇴_RO_罗马尼亚->🇺🇸_US_美国
   - 🇺🇸_US_美国_1
+  - 🇫🇮_FI_芬兰
   - 🇺🇸_US_美国_2
   - 🇺🇸_US_美国_3
+  - 🇺🇸_US_美国->🇩🇰_DK_丹麦
   - 🇺🇸_US_美国_4
+  - 🇸🇰_SK_斯洛伐克->🇺🇸_US_美国
+  - 🇷🇺_RU_俄罗斯->🇺🇸_US_美国
+  - 🇬🇧_GB_英国
+  - 🇺🇸_US_美国->🇸🇬_SG_新加坡
   - 🇺🇸_US_美国_5
+  - 🇬🇧_GB_英国->🇫🇮_FI_芬兰
+  - 🇳🇱_NL_荷兰->🇺🇸_US_美国
   - 🇺🇸_US_美国_6
+  - 🇨🇭_CH_瑞士->🇺🇸_US_美国
   - 🇺🇸_US_美国_7
-  - 🇯🇴_JO_约旦->🇺🇸_US_美国
-  - 🇺🇸_US_美国_8
-  - 🇨🇦_CA_加拿大
-  - 🇺🇸_US_美国->🇺🇦_UA_乌克兰
-  - 🇺🇸_US_美国_9
-  - 🇺🇸_US_美国->🇨🇳_CN_中国
-  - 🇸🇰_SK_斯洛伐克
-  - 🇺🇸_US_美国_10
-  - 🇺🇸_US_美国_11
-  - 🇮🇸_IS_冰岛
-  - 🇺🇸_US_美国_12
-  - 🇺🇸_US_美国_13
-  - 🇵🇱_PL_波兰->🇺🇸_US_美国
   type: select
 - interval: 300
   name: ♻️ 自动选择
   proxies:
+  - 🇺🇸_US_美国->🇫🇮_FI_芬兰
+  - 🇷🇴_RO_罗马尼亚->🇺🇸_US_美国
   - 🇺🇸_US_美国_1
+  - 🇫🇮_FI_芬兰
   - 🇺🇸_US_美国_2
   - 🇺🇸_US_美国_3
+  - 🇺🇸_US_美国->🇩🇰_DK_丹麦
   - 🇺🇸_US_美国_4
+  - 🇸🇰_SK_斯洛伐克->🇺🇸_US_美国
+  - 🇷🇺_RU_俄罗斯->🇺🇸_US_美国
+  - 🇬🇧_GB_英国
+  - 🇺🇸_US_美国->🇸🇬_SG_新加坡
   - 🇺🇸_US_美国_5
+  - 🇬🇧_GB_英国->🇫🇮_FI_芬兰
+  - 🇳🇱_NL_荷兰->🇺🇸_US_美国
   - 🇺🇸_US_美国_6
+  - 🇨🇭_CH_瑞士->🇺🇸_US_美国
   - 🇺🇸_US_美国_7
-  - 🇯🇴_JO_约旦->🇺🇸_US_美国
-  - 🇺🇸_US_美国_8
-  - 🇨🇦_CA_加拿大
-  - 🇺🇸_US_美国->🇺🇦_UA_乌克兰
-  - 🇺🇸_US_美国_9
-  - 🇺🇸_US_美国->🇨🇳_CN_中国
-  - 🇸🇰_SK_斯洛伐克
-  - 🇺🇸_US_美国_10
-  - 🇺🇸_US_美国_11
-  - 🇮🇸_IS_冰岛
-  - 🇺🇸_US_美国_12
-  - 🇺🇸_US_美国_13
-  - 🇵🇱_PL_波兰->🇺🇸_US_美国
   tolerance: 5000
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -261,101 +252,93 @@ proxy-groups:
   - 🚀 节点选择
   - ♻️ 自动选择
   - 🎯 全球直连
+  - 🇺🇸_US_美国->🇫🇮_FI_芬兰
+  - 🇷🇴_RO_罗马尼亚->🇺🇸_US_美国
   - 🇺🇸_US_美国_1
+  - 🇫🇮_FI_芬兰
   - 🇺🇸_US_美国_2
   - 🇺🇸_US_美国_3
+  - 🇺🇸_US_美国->🇩🇰_DK_丹麦
   - 🇺🇸_US_美国_4
+  - 🇸🇰_SK_斯洛伐克->🇺🇸_US_美国
+  - 🇷🇺_RU_俄罗斯->🇺🇸_US_美国
+  - 🇬🇧_GB_英国
+  - 🇺🇸_US_美国->🇸🇬_SG_新加坡
   - 🇺🇸_US_美国_5
+  - 🇬🇧_GB_英国->🇫🇮_FI_芬兰
+  - 🇳🇱_NL_荷兰->🇺🇸_US_美国
   - 🇺🇸_US_美国_6
+  - 🇨🇭_CH_瑞士->🇺🇸_US_美国
   - 🇺🇸_US_美国_7
-  - 🇯🇴_JO_约旦->🇺🇸_US_美国
-  - 🇺🇸_US_美国_8
-  - 🇨🇦_CA_加拿大
-  - 🇺🇸_US_美国->🇺🇦_UA_乌克兰
-  - 🇺🇸_US_美国_9
-  - 🇺🇸_US_美国->🇨🇳_CN_中国
-  - 🇸🇰_SK_斯洛伐克
-  - 🇺🇸_US_美国_10
-  - 🇺🇸_US_美国_11
-  - 🇮🇸_IS_冰岛
-  - 🇺🇸_US_美国_12
-  - 🇺🇸_US_美国_13
-  - 🇵🇱_PL_波兰->🇺🇸_US_美国
   type: select
 - name: 📲 电报信息
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
+  - 🇺🇸_US_美国->🇫🇮_FI_芬兰
+  - 🇷🇴_RO_罗马尼亚->🇺🇸_US_美国
   - 🇺🇸_US_美国_1
+  - 🇫🇮_FI_芬兰
   - 🇺🇸_US_美国_2
   - 🇺🇸_US_美国_3
+  - 🇺🇸_US_美国->🇩🇰_DK_丹麦
   - 🇺🇸_US_美国_4
+  - 🇸🇰_SK_斯洛伐克->🇺🇸_US_美国
+  - 🇷🇺_RU_俄罗斯->🇺🇸_US_美国
+  - 🇬🇧_GB_英国
+  - 🇺🇸_US_美国->🇸🇬_SG_新加坡
   - 🇺🇸_US_美国_5
+  - 🇬🇧_GB_英国->🇫🇮_FI_芬兰
+  - 🇳🇱_NL_荷兰->🇺🇸_US_美国
   - 🇺🇸_US_美国_6
+  - 🇨🇭_CH_瑞士->🇺🇸_US_美国
   - 🇺🇸_US_美国_7
-  - 🇯🇴_JO_约旦->🇺🇸_US_美国
-  - 🇺🇸_US_美国_8
-  - 🇨🇦_CA_加拿大
-  - 🇺🇸_US_美国->🇺🇦_UA_乌克兰
-  - 🇺🇸_US_美国_9
-  - 🇺🇸_US_美国->🇨🇳_CN_中国
-  - 🇸🇰_SK_斯洛伐克
-  - 🇺🇸_US_美国_10
-  - 🇺🇸_US_美国_11
-  - 🇮🇸_IS_冰岛
-  - 🇺🇸_US_美国_12
-  - 🇺🇸_US_美国_13
-  - 🇵🇱_PL_波兰->🇺🇸_US_美国
   type: select
 - name: Ⓜ️ 微软服务
   proxies:
   - 🎯 全球直连
   - 🚀 节点选择
+  - 🇺🇸_US_美国->🇫🇮_FI_芬兰
+  - 🇷🇴_RO_罗马尼亚->🇺🇸_US_美国
   - 🇺🇸_US_美国_1
+  - 🇫🇮_FI_芬兰
   - 🇺🇸_US_美国_2
   - 🇺🇸_US_美国_3
+  - 🇺🇸_US_美国->🇩🇰_DK_丹麦
   - 🇺🇸_US_美国_4
+  - 🇸🇰_SK_斯洛伐克->🇺🇸_US_美国
+  - 🇷🇺_RU_俄罗斯->🇺🇸_US_美国
+  - 🇬🇧_GB_英国
+  - 🇺🇸_US_美国->🇸🇬_SG_新加坡
   - 🇺🇸_US_美国_5
+  - 🇬🇧_GB_英国->🇫🇮_FI_芬兰
+  - 🇳🇱_NL_荷兰->🇺🇸_US_美国
   - 🇺🇸_US_美国_6
+  - 🇨🇭_CH_瑞士->🇺🇸_US_美国
   - 🇺🇸_US_美国_7
-  - 🇯🇴_JO_约旦->🇺🇸_US_美国
-  - 🇺🇸_US_美国_8
-  - 🇨🇦_CA_加拿大
-  - 🇺🇸_US_美国->🇺🇦_UA_乌克兰
-  - 🇺🇸_US_美国_9
-  - 🇺🇸_US_美国->🇨🇳_CN_中国
-  - 🇸🇰_SK_斯洛伐克
-  - 🇺🇸_US_美国_10
-  - 🇺🇸_US_美国_11
-  - 🇮🇸_IS_冰岛
-  - 🇺🇸_US_美国_12
-  - 🇺🇸_US_美国_13
-  - 🇵🇱_PL_波兰->🇺🇸_US_美国
   type: select
 - name: 🍎 苹果服务
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
+  - 🇺🇸_US_美国->🇫🇮_FI_芬兰
+  - 🇷🇴_RO_罗马尼亚->🇺🇸_US_美国
   - 🇺🇸_US_美国_1
+  - 🇫🇮_FI_芬兰
   - 🇺🇸_US_美国_2
   - 🇺🇸_US_美国_3
+  - 🇺🇸_US_美国->🇩🇰_DK_丹麦
   - 🇺🇸_US_美国_4
+  - 🇸🇰_SK_斯洛伐克->🇺🇸_US_美国
+  - 🇷🇺_RU_俄罗斯->🇺🇸_US_美国
+  - 🇬🇧_GB_英国
+  - 🇺🇸_US_美国->🇸🇬_SG_新加坡
   - 🇺🇸_US_美国_5
+  - 🇬🇧_GB_英国->🇫🇮_FI_芬兰
+  - 🇳🇱_NL_荷兰->🇺🇸_US_美国
   - 🇺🇸_US_美国_6
+  - 🇨🇭_CH_瑞士->🇺🇸_US_美国
   - 🇺🇸_US_美国_7
-  - 🇯🇴_JO_约旦->🇺🇸_US_美国
-  - 🇺🇸_US_美国_8
-  - 🇨🇦_CA_加拿大
-  - 🇺🇸_US_美国->🇺🇦_UA_乌克兰
-  - 🇺🇸_US_美国_9
-  - 🇺🇸_US_美国->🇨🇳_CN_中国
-  - 🇸🇰_SK_斯洛伐克
-  - 🇺🇸_US_美国_10
-  - 🇺🇸_US_美国_11
-  - 🇮🇸_IS_冰岛
-  - 🇺🇸_US_美国_12
-  - 🇺🇸_US_美国_13
-  - 🇵🇱_PL_波兰->🇺🇸_US_美国
   type: select
 - name: 🎯 全球直连
   proxies:
@@ -378,26 +361,24 @@ proxy-groups:
   - 🚀 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
+  - 🇺🇸_US_美国->🇫🇮_FI_芬兰
+  - 🇷🇴_RO_罗马尼亚->🇺🇸_US_美国
   - 🇺🇸_US_美国_1
+  - 🇫🇮_FI_芬兰
   - 🇺🇸_US_美国_2
   - 🇺🇸_US_美国_3
+  - 🇺🇸_US_美国->🇩🇰_DK_丹麦
   - 🇺🇸_US_美国_4
+  - 🇸🇰_SK_斯洛伐克->🇺🇸_US_美国
+  - 🇷🇺_RU_俄罗斯->🇺🇸_US_美国
+  - 🇬🇧_GB_英国
+  - 🇺🇸_US_美国->🇸🇬_SG_新加坡
   - 🇺🇸_US_美国_5
+  - 🇬🇧_GB_英国->🇫🇮_FI_芬兰
+  - 🇳🇱_NL_荷兰->🇺🇸_US_美国
   - 🇺🇸_US_美国_6
+  - 🇨🇭_CH_瑞士->🇺🇸_US_美国
   - 🇺🇸_US_美国_7
-  - 🇯🇴_JO_约旦->🇺🇸_US_美国
-  - 🇺🇸_US_美国_8
-  - 🇨🇦_CA_加拿大
-  - 🇺🇸_US_美国->🇺🇦_UA_乌克兰
-  - 🇺🇸_US_美国_9
-  - 🇺🇸_US_美国->🇨🇳_CN_中国
-  - 🇸🇰_SK_斯洛伐克
-  - 🇺🇸_US_美国_10
-  - 🇺🇸_US_美国_11
-  - 🇮🇸_IS_冰岛
-  - 🇺🇸_US_美国_12
-  - 🇺🇸_US_美国_13
-  - 🇵🇱_PL_波兰->🇺🇸_US_美国
   type: select
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
