@@ -32,110 +32,40 @@ log-level: info
 mixed-port: 7890
 mode: rule
 proxies:
-- cipher: rc4-md5
-  ip-version: dual
-  name: 🇩🇪_DE_德国->🇺🇸_US_美国
-  password: 14fFPrbezE3HDZzsMOr6
-  port: 8080
-  server: 193.108.119.230
-  type: ss
-  udp: true
-- alterId: 0
-  cipher: auto
-  ip-version: dual
-  name: 🇨🇳_CN_中国_1
-  network: tcp
-  port: 5228
-  server: 1449f183-svhls0-t28b6o-ef48.cu.plebai.net
-  type: vmess
-  udp: true
-  uuid: cb15123a-084c-11f0-8eab-f23c91cfbbc9
 - alterId: 0
   cipher: auto
   ip-version: dual
   name: 🇨🇳_CN_中国->🇺🇸_US_美国_1
-  network: tcp
-  port: 5228
-  server: 87b134e3-svc1s0-t28b6o-ef48.cu.plebai.net
-  type: vmess
-  udp: true
-  uuid: cb15123a-084c-11f0-8eab-f23c91cfbbc9
-- alterId: 2
-  cipher: auto
-  ip-version: dual
-  name: 🇨🇳_CN_中国->🇨🇦_CA_加拿大
   network: ws
-  port: 30835
-  server: v35.heduian.link
-  skip-cert-verify: true
-  sni: ''
+  port: 30840
+  server: v40.heduian.link
   type: vmess
   udp: true
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   ws-opts:
     headers:
-      host: baidu.com
-    path: /oooo
-- alterId: 0
-  cipher: auto
-  ip-version: dual
-  name: 🇺🇸_US_美国_1
-  network: ws
-  port: 8880
-  server: 104.17.213.241
-  type: vmess
-  udp: true
-  uuid: 95cc876c-de44-3d02-ac9a-2cd37c37c600
-  ws-opts:
-    headers:
-      host: 100-135-125-128.s2.db-link01.top
-    path: /dabai.in104.21.29.188
-- ip-version: dual
-  name: 🇳🇱_NL_荷兰->🇺🇸_US_美国_1
-  password: da26f571-6dea-42ff-a90e-8d72561f92b0
-  port: 43499
-  server: 45.146.232.172
-  sni: q08m.vgraxiw73s.hasyaf.cn
-  type: trojan
-  udp: true
-- ip-version: dual
-  name: 🇳🇱_NL_荷兰->🇬🇧_GB_英国
-  password: 8ebcd7aa-c640-4cd1-941f-91c0989f3813
-  port: 44397
-  server: 45.146.232.171
-  sni: q08m.vgraxiw73s.hasyaf.cn
-  type: trojan
-  udp: true
+      host: api100-core-quic-lf.amemv.com
+    path: /index
 - alterId: 0
   cipher: auto
   ip-version: dual
   name: 🇨🇳_CN_中国->🇺🇸_US_美国_2
   network: tcp
-  port: 5228
-  server: c6147365-svjgg0-t28b6o-ef48.cu.plebai.net
+  port: 5229
+  server: 3bb8aaa7-suk9s0-swtza9-1q91p.cu.plebai.net
   type: vmess
   udp: true
-  uuid: cb15123a-084c-11f0-8eab-f23c91cfbbc9
-- ip-version: dual
-  name: 🇳🇱_NL_荷兰->🇺🇸_US_美国_2
-  network: tcp
-  password: abf931d0-5be1-440c-802f-a66bcb850139
-  port: 34014
-  server: 45.146.232.171
-  skip-cert-verify: true
-  sni: q08m.vgraxiw73s.hasyaf.cn
-  type: trojan
-  udp: true
+  uuid: c11ff50c-f582-11ee-94df-f23c9164ca5d
 - alterId: 0
   cipher: auto
   ip-version: dual
   name: 🇨🇳_CN_中国->🇺🇸_US_美国_3
   network: tcp
   port: 5228
-  server: 6a483e32-svfr40-t28b6o-ef48.cu.plebai.net
+  server: 716545eb-sux8g0-t5oe1a-1ejod.cu.plebai.net
   type: vmess
   udp: true
-  uuid: cb15123a-084c-11f0-8eab-f23c91cfbbc9
+  uuid: 6ada1622-e018-11ec-bb74-f23c9164ca5d
 - alterId: 0
   cipher: auto
   ip-version: dual
@@ -146,164 +76,302 @@ proxies:
   type: vmess
   udp: true
   uuid: cb15123a-084c-11f0-8eab-f23c91cfbbc9
-- alterId: 2
-  cipher: auto
-  ip-version: dual
-  name: 🇨🇳_CN_中国_2
-  network: ws
-  port: 30829
-  server: v29.heduian.link
-  type: vmess
-  udp: true
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  ws-opts:
-    headers:
-      host: v29.heduian.link
-    path: /oooo
-- ip-version: dual
-  name: 🇳🇱_NL_荷兰->🇷🇺_RU_俄罗斯
-  password: e7793c4f-2885-475c-8046-26e660c46467
-  port: 43586
-  server: 45.146.232.171
-  sni: q08m.vgraxiw73s.hasyaf.cn
-  type: trojan
-  udp: true
-- ip-version: dual
-  name: 🇮🇪_IE_爱尔兰->🇨🇳_CN_中国
-  password: telegram-id-privatevpns
-  port: 22222
-  server: 54.75.23.185
-  skip-cert-verify: false
-  sni: trojan.burgerip.co.uk
-  type: trojan
-  udp: true
-- ip-version: dual
-  name: 🇺🇸_US_美国_2
-  network: ws
-  password: 5453ae26-250d-4e79-b4ec-016baf806865
-  port: 443
-  server: 104.21.25.95
-  skip-cert-verify: false
-  sni: 1sDFgT.890604.FileGear-sG.mE
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: 1sdfgt.890604.filegear-sg.me
-    path: /OYzPAeaZdXUq2d6J3gc4aj
 - alterId: 0
   cipher: auto
   ip-version: dual
   name: 🇨🇳_CN_中国->🇺🇸_US_美国_4
+  network: tcp
+  port: 5228
+  server: 67149d44-sum4g0-t46yf9-e13q.cu.plebai.net
+  type: vmess
+  udp: true
+  uuid: 8d888b92-eec8-11ef-bca1-f23c91cfbbc9
+- ip-version: dual
+  name: 🇺🇸_US_美国_1
+  network: ws
+  password: 5453ae26-250d-4e79-b4ec-016baf806865
+  port: 443
+  server: 172.67.204.22
+  sni: 1SdfghJk.890602.xyz
+  type: trojan
+  udp: true
+  ws-opts:
+    path: /OYzPAeaZdXUq2d6J3gc4aj
+- alterId: 0
+  cipher: auto
+  ip-version: dual
+  name: 🇨🇳_CN_中国->🇺🇸_US_美国_5
+  network: tcp
+  port: 5229
+  server: e890417c-svc1s0-t1bnjq-1krtb.cu.plebai.net
+  type: vmess
+  udp: true
+  uuid: 60f6b4c4-9d70-11ed-a4d2-f23c9164ca5d
+- alterId: 0
+  cipher: auto
+  ip-version: dual
+  name: 🇨🇳_CN_中国->🇺🇸_US_美国_6
+  network: tcp
+  port: 5229
+  server: b3e1a577-svjgg0-t1bnjq-1krtb.cu.plebai.net
+  type: vmess
+  udp: true
+  uuid: 60f6b4c4-9d70-11ed-a4d2-f23c9164ca5d
+- ip-version: dual
+  name: 🇳🇱_NL_荷兰
+  network: tcp
+  password: f141008b-fc3f-45d3-9c50-d96b09b1e529
+  port: 46926
+  server: 45.146.232.171
+  sni: q08m.vgraxiw73s.hasyaf.cn
+  type: trojan
+  udp: true
+- cipher: aes-256-cfb
+  ip-version: dual
+  name: 🇷🇺_RU_俄罗斯_1
+  password: f8f7aCzcPKbsF8p3
+  port: 989
+  server: 185.231.233.112
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  ip-version: dual
+  name: 🇷🇺_RU_俄罗斯_2
+  password: VekzIVJwbk1f
+  port: 443
+  server: 147.45.177.65
+  type: ss
+  udp: true
+- cipher: rc4-md5
+  ip-version: dual
+  name: 🇩🇪_DE_德国
+  password: 14fFPrbezE3HDZzsMOr6
+  port: 8080
+  server: 193.108.119.230
+  type: ss
+  udp: true
+- alterId: 0
+  cipher: auto
+  ip-version: dual
+  name: 🇨🇳_CN_中国->🇺🇸_US_美国_7
+  network: tcp
+  port: 5229
+  server: 05f88d3f-suk9s0-sxv16d-1k09w.cu.plebai.net
+  type: vmess
+  udp: true
+  uuid: 8de795d2-a06f-11ed-8edf-f23c913c8d2b
+- alterId: 0
+  cipher: auto
+  ip-version: dual
+  name: 🇨🇳_CN_中国->🇰🇷_KR_韩国
+  network: tcp
+  port: 5228
+  server: 60077de0-svlb40-t28b6o-ef48.cu.plebai.net
+  type: vmess
+  udp: true
+  uuid: cb15123a-084c-11f0-8eab-f23c91cfbbc9
+- ip-version: dual
+  name: 🇺🇸_US_美国_2
+  network: ws
+  password: 15b24b56-d667-4fa8-b548-f3dc942fb461
+  port: 443
+  server: 104.21.15.232
+  sni: ab2c7f0b-bf1b-4eb3-9884-256f4de3d.2030.pp.ua
+  type: trojan
+  udp: true
+  ws-opts:
+    path: /4p35eUnmGxQ8YJFJxz
+- ip-version: dual
+  name: 🇺🇸_US_美国->🇩🇪_DE_德国
+  network: ws
+  password: tXsBdKfoe9
+  port: 2083
+  server: 104.25.145.188
+  skip-cert-verify: false
+  sni: cpuhot.boshrachoice.ir.
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: cpuhot.boshrachoice.ir.
+    path: /VPNTV20@_TOP.COM.VPNTV20@_TOP.COM.VPNTV20@_TOP.COM?ed=2048
+- alterId: 0
+  cipher: auto
+  ip-version: dual
+  name: 🇨🇳_CN_中国->🇺🇸_US_美国_8
+  network: tcp
+  port: 5228
+  server: b514723d-suz340-sw0fy8-4c42.cu.plebai.net
+  type: vmess
+  udp: true
+  uuid: 1758c288-c39d-3d20-f34f-f4c62bc1d8d4
+- ip-version: dual
+  name: 🇳🇱_NL_荷兰->🇷🇴_RO_罗马尼亚
+  password: ccae43f0-5daa-4fd1-94fc-406b38ad6f04
+  port: 43499
+  server: 45.146.232.171
+  sni: q08m.vgraxiw73s.hasyaf.cn
+  type: trojan
+  udp: true
+- alterId: 0
+  cipher: auto
+  ip-version: dual
+  name: 🇨🇳_CN_中国->🇺🇸_US_美国_9
+  network: tcp
+  port: 5229
+  server: fb79be22-svfr40-t1bnjq-1krtb.cu.plebai.net
+  type: vmess
+  udp: true
+  uuid: 60f6b4c4-9d70-11ed-a4d2-f23c9164ca5d
+- alterId: 0
+  cipher: auto
+  ip-version: dual
+  name: 🇨🇳_CN_中国->🇺🇸_US_美国_10
   network: tcp
   port: 5229
   server: 5d38531f-sum4g0-svq8ok-ebxr.cu.plebai.net
   type: vmess
   udp: true
   uuid: 5cfde7fa-ed1b-11ef-b5d9-f23c9164ca5d
-- alterId: 0
-  cipher: auto
-  ip-version: dual
-  name: 🇺🇸_US_美国->🇨🇳_CN_中国
-  network: ws
-  port: 8880
-  server: 104.17.221.248
-  type: vmess
-  udp: true
-  uuid: c7ce4f2f-1f87-3a7c-b407-3f8b8a6c33d4
-  ws-opts:
-    headers:
-      host: 100-62-180-62.s3.cn-db.top
-    path: /dabai.in104.20.32.71
 - alterId: 2
   cipher: auto
   ip-version: dual
-  name: 🇨🇳_CN_中国->🇺🇸_US_美国_5
+  name: 🇨🇳_CN_中国->🇺🇸_US_美国_11
   network: ws
-  port: 30808
-  server: v8.heduian.link
+  port: 30837
+  server: v37.heduian.link
   type: vmess
   udp: true
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   ws-opts:
     headers:
-      host: baidu.com
+      host: v37.heduian.link
     path: /oooo
-- ip-version: dual
-  name: 🇳🇱_NL_荷兰->🇷🇴_RO_罗马尼亚
-  password: d1eb768f-b132-4bc4-8256-a042a87b623f
-  port: 43499
-  server: 45.146.232.171
-  sni: q08m.vgraxiw73s.hasyaf.cn
-  type: trojan
-  udp: true
-- cipher: chacha20-ietf-poly1305
+- alterId: 0
+  cipher: auto
   ip-version: dual
-  name: 🇨🇭_CH_瑞士
-  password: Bgr6YBHEnpft
-  port: 443
-  server: 178.22.31.239
-  type: ss
+  name: 🇨🇳_CN_中国->🇺🇸_US_美国_12
+  network: tcp
+  port: 5229
+  server: 0fad9e0f-svlb40-t1bnjq-1krtb.cu.plebai.net
+  type: vmess
   udp: true
+  uuid: 60f6b4c4-9d70-11ed-a4d2-f23c9164ca5d
 - ip-version: dual
-  name: 🇳🇱_NL_荷兰->🇨🇳_CN_中国
-  password: bf4604d3-39e5-4760-aa7a-b78100cae482
-  port: 46927
+  name: 🇳🇱_NL_荷兰->🇺🇸_US_美国
+  password: 51a668c6-d1bb-4e7e-aca3-125349f779fd
+  port: 43592
   server: 45.146.232.171
   sni: q08m.vgraxiw73s.hasyaf.cn
   type: trojan
   udp: true
+- alterId: 0
+  cipher: auto
+  ip-version: dual
+  name: 🇨🇳_CN_中国->🇺🇸_US_美国_13
+  network: tcp
+  port: 5228
+  server: cd04809b-sux8g0-t3f7qr-141tv.cu.plebai.net
+  type: vmess
+  udp: true
+  uuid: bd77bfe8-e0f3-11ec-bd7c-f23c913c8d2b
+- alterId: 0
+  cipher: auto
+  ip-version: dual
+  name: 🇨🇳_CN_中国->🇺🇸_US_美国_14
+  network: tcp
+  port: 5228
+  server: c6147365-svjgg0-t28b6o-ef48.cu.plebai.net
+  type: vmess
+  udp: true
+  uuid: cb15123a-084c-11f0-8eab-f23c91cfbbc9
+- alterId: 2
+  cipher: auto
+  ip-version: dual
+  name: 🇨🇳_CN_中国->🇺🇸_US_美国_15
+  network: ws
+  port: 30805
+  server: v5.heduian.link
+  type: vmess
+  udp: true
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  ws-opts:
+    headers:
+      host: v5.heduian.link
+    path: /oooo
+- alterId: 0
+  cipher: auto
+  ip-version: dual
+  name: 🇨🇳_CN_中国->🇺🇸_US_美国_16
+  network: tcp
+  port: 5229
+  server: 3009e36d-svn5s0-t1bnjq-1krtb.cu.plebai.net
+  type: vmess
+  udp: true
+  uuid: 60f6b4c4-9d70-11ed-a4d2-f23c9164ca5d
 proxy-groups:
 - name: 🚀 节点选择
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - 🇩🇪_DE_德国->🇺🇸_US_美国
-  - 🇨🇳_CN_中国_1
   - 🇨🇳_CN_中国->🇺🇸_US_美国_1
-  - 🇨🇳_CN_中国->🇨🇦_CA_加拿大
-  - 🇺🇸_US_美国_1
-  - 🇳🇱_NL_荷兰->🇺🇸_US_美国_1
-  - 🇳🇱_NL_荷兰->🇬🇧_GB_英国
   - 🇨🇳_CN_中国->🇺🇸_US_美国_2
-  - 🇳🇱_NL_荷兰->🇺🇸_US_美国_2
   - 🇨🇳_CN_中国->🇺🇸_US_美国_3
   - 🇨🇳_CN_中国->🏳️_unKnow_未知
-  - 🇨🇳_CN_中国_2
-  - 🇳🇱_NL_荷兰->🇷🇺_RU_俄罗斯
-  - 🇮🇪_IE_爱尔兰->🇨🇳_CN_中国
-  - 🇺🇸_US_美国_2
   - 🇨🇳_CN_中国->🇺🇸_US_美国_4
-  - 🇺🇸_US_美国->🇨🇳_CN_中国
+  - 🇺🇸_US_美国_1
   - 🇨🇳_CN_中国->🇺🇸_US_美国_5
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_6
+  - 🇳🇱_NL_荷兰
+  - 🇷🇺_RU_俄罗斯_1
+  - 🇷🇺_RU_俄罗斯_2
+  - 🇩🇪_DE_德国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_7
+  - 🇨🇳_CN_中国->🇰🇷_KR_韩国
+  - 🇺🇸_US_美国_2
+  - 🇺🇸_US_美国->🇩🇪_DE_德国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_8
   - 🇳🇱_NL_荷兰->🇷🇴_RO_罗马尼亚
-  - 🇨🇭_CH_瑞士
-  - 🇳🇱_NL_荷兰->🇨🇳_CN_中国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_9
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_10
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_11
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_12
+  - 🇳🇱_NL_荷兰->🇺🇸_US_美国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_13
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_14
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_15
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_16
   type: select
 - interval: 300
   name: ♻️ 自动选择
   proxies:
-  - 🇩🇪_DE_德国->🇺🇸_US_美国
-  - 🇨🇳_CN_中国_1
   - 🇨🇳_CN_中国->🇺🇸_US_美国_1
-  - 🇨🇳_CN_中国->🇨🇦_CA_加拿大
-  - 🇺🇸_US_美国_1
-  - 🇳🇱_NL_荷兰->🇺🇸_US_美国_1
-  - 🇳🇱_NL_荷兰->🇬🇧_GB_英国
   - 🇨🇳_CN_中国->🇺🇸_US_美国_2
-  - 🇳🇱_NL_荷兰->🇺🇸_US_美国_2
   - 🇨🇳_CN_中国->🇺🇸_US_美国_3
   - 🇨🇳_CN_中国->🏳️_unKnow_未知
-  - 🇨🇳_CN_中国_2
-  - 🇳🇱_NL_荷兰->🇷🇺_RU_俄罗斯
-  - 🇮🇪_IE_爱尔兰->🇨🇳_CN_中国
-  - 🇺🇸_US_美国_2
   - 🇨🇳_CN_中国->🇺🇸_US_美国_4
-  - 🇺🇸_US_美国->🇨🇳_CN_中国
+  - 🇺🇸_US_美国_1
   - 🇨🇳_CN_中国->🇺🇸_US_美国_5
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_6
+  - 🇳🇱_NL_荷兰
+  - 🇷🇺_RU_俄罗斯_1
+  - 🇷🇺_RU_俄罗斯_2
+  - 🇩🇪_DE_德国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_7
+  - 🇨🇳_CN_中国->🇰🇷_KR_韩国
+  - 🇺🇸_US_美国_2
+  - 🇺🇸_US_美国->🇩🇪_DE_德国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_8
   - 🇳🇱_NL_荷兰->🇷🇴_RO_罗马尼亚
-  - 🇨🇭_CH_瑞士
-  - 🇳🇱_NL_荷兰->🇨🇳_CN_中国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_9
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_10
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_11
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_12
+  - 🇳🇱_NL_荷兰->🇺🇸_US_美国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_13
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_14
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_15
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_16
   tolerance: 5000
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -312,105 +380,129 @@ proxy-groups:
   - 🚀 节点选择
   - ♻️ 自动选择
   - 🎯 全球直连
-  - 🇩🇪_DE_德国->🇺🇸_US_美国
-  - 🇨🇳_CN_中国_1
   - 🇨🇳_CN_中国->🇺🇸_US_美国_1
-  - 🇨🇳_CN_中国->🇨🇦_CA_加拿大
-  - 🇺🇸_US_美国_1
-  - 🇳🇱_NL_荷兰->🇺🇸_US_美国_1
-  - 🇳🇱_NL_荷兰->🇬🇧_GB_英国
   - 🇨🇳_CN_中国->🇺🇸_US_美国_2
-  - 🇳🇱_NL_荷兰->🇺🇸_US_美国_2
   - 🇨🇳_CN_中国->🇺🇸_US_美国_3
   - 🇨🇳_CN_中国->🏳️_unKnow_未知
-  - 🇨🇳_CN_中国_2
-  - 🇳🇱_NL_荷兰->🇷🇺_RU_俄罗斯
-  - 🇮🇪_IE_爱尔兰->🇨🇳_CN_中国
-  - 🇺🇸_US_美国_2
   - 🇨🇳_CN_中国->🇺🇸_US_美国_4
-  - 🇺🇸_US_美国->🇨🇳_CN_中国
+  - 🇺🇸_US_美国_1
   - 🇨🇳_CN_中国->🇺🇸_US_美国_5
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_6
+  - 🇳🇱_NL_荷兰
+  - 🇷🇺_RU_俄罗斯_1
+  - 🇷🇺_RU_俄罗斯_2
+  - 🇩🇪_DE_德国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_7
+  - 🇨🇳_CN_中国->🇰🇷_KR_韩国
+  - 🇺🇸_US_美国_2
+  - 🇺🇸_US_美国->🇩🇪_DE_德国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_8
   - 🇳🇱_NL_荷兰->🇷🇴_RO_罗马尼亚
-  - 🇨🇭_CH_瑞士
-  - 🇳🇱_NL_荷兰->🇨🇳_CN_中国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_9
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_10
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_11
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_12
+  - 🇳🇱_NL_荷兰->🇺🇸_US_美国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_13
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_14
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_15
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_16
   type: select
 - name: 📲 电报信息
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
-  - 🇩🇪_DE_德国->🇺🇸_US_美国
-  - 🇨🇳_CN_中国_1
   - 🇨🇳_CN_中国->🇺🇸_US_美国_1
-  - 🇨🇳_CN_中国->🇨🇦_CA_加拿大
-  - 🇺🇸_US_美国_1
-  - 🇳🇱_NL_荷兰->🇺🇸_US_美国_1
-  - 🇳🇱_NL_荷兰->🇬🇧_GB_英国
   - 🇨🇳_CN_中国->🇺🇸_US_美国_2
-  - 🇳🇱_NL_荷兰->🇺🇸_US_美国_2
   - 🇨🇳_CN_中国->🇺🇸_US_美国_3
   - 🇨🇳_CN_中国->🏳️_unKnow_未知
-  - 🇨🇳_CN_中国_2
-  - 🇳🇱_NL_荷兰->🇷🇺_RU_俄罗斯
-  - 🇮🇪_IE_爱尔兰->🇨🇳_CN_中国
-  - 🇺🇸_US_美国_2
   - 🇨🇳_CN_中国->🇺🇸_US_美国_4
-  - 🇺🇸_US_美国->🇨🇳_CN_中国
+  - 🇺🇸_US_美国_1
   - 🇨🇳_CN_中国->🇺🇸_US_美国_5
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_6
+  - 🇳🇱_NL_荷兰
+  - 🇷🇺_RU_俄罗斯_1
+  - 🇷🇺_RU_俄罗斯_2
+  - 🇩🇪_DE_德国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_7
+  - 🇨🇳_CN_中国->🇰🇷_KR_韩国
+  - 🇺🇸_US_美国_2
+  - 🇺🇸_US_美国->🇩🇪_DE_德国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_8
   - 🇳🇱_NL_荷兰->🇷🇴_RO_罗马尼亚
-  - 🇨🇭_CH_瑞士
-  - 🇳🇱_NL_荷兰->🇨🇳_CN_中国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_9
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_10
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_11
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_12
+  - 🇳🇱_NL_荷兰->🇺🇸_US_美国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_13
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_14
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_15
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_16
   type: select
 - name: Ⓜ️ 微软服务
   proxies:
   - 🎯 全球直连
   - 🚀 节点选择
-  - 🇩🇪_DE_德国->🇺🇸_US_美国
-  - 🇨🇳_CN_中国_1
   - 🇨🇳_CN_中国->🇺🇸_US_美国_1
-  - 🇨🇳_CN_中国->🇨🇦_CA_加拿大
-  - 🇺🇸_US_美国_1
-  - 🇳🇱_NL_荷兰->🇺🇸_US_美国_1
-  - 🇳🇱_NL_荷兰->🇬🇧_GB_英国
   - 🇨🇳_CN_中国->🇺🇸_US_美国_2
-  - 🇳🇱_NL_荷兰->🇺🇸_US_美国_2
   - 🇨🇳_CN_中国->🇺🇸_US_美国_3
   - 🇨🇳_CN_中国->🏳️_unKnow_未知
-  - 🇨🇳_CN_中国_2
-  - 🇳🇱_NL_荷兰->🇷🇺_RU_俄罗斯
-  - 🇮🇪_IE_爱尔兰->🇨🇳_CN_中国
-  - 🇺🇸_US_美国_2
   - 🇨🇳_CN_中国->🇺🇸_US_美国_4
-  - 🇺🇸_US_美国->🇨🇳_CN_中国
+  - 🇺🇸_US_美国_1
   - 🇨🇳_CN_中国->🇺🇸_US_美国_5
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_6
+  - 🇳🇱_NL_荷兰
+  - 🇷🇺_RU_俄罗斯_1
+  - 🇷🇺_RU_俄罗斯_2
+  - 🇩🇪_DE_德国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_7
+  - 🇨🇳_CN_中国->🇰🇷_KR_韩国
+  - 🇺🇸_US_美国_2
+  - 🇺🇸_US_美国->🇩🇪_DE_德国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_8
   - 🇳🇱_NL_荷兰->🇷🇴_RO_罗马尼亚
-  - 🇨🇭_CH_瑞士
-  - 🇳🇱_NL_荷兰->🇨🇳_CN_中国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_9
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_10
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_11
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_12
+  - 🇳🇱_NL_荷兰->🇺🇸_US_美国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_13
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_14
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_15
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_16
   type: select
 - name: 🍎 苹果服务
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
-  - 🇩🇪_DE_德国->🇺🇸_US_美国
-  - 🇨🇳_CN_中国_1
   - 🇨🇳_CN_中国->🇺🇸_US_美国_1
-  - 🇨🇳_CN_中国->🇨🇦_CA_加拿大
-  - 🇺🇸_US_美国_1
-  - 🇳🇱_NL_荷兰->🇺🇸_US_美国_1
-  - 🇳🇱_NL_荷兰->🇬🇧_GB_英国
   - 🇨🇳_CN_中国->🇺🇸_US_美国_2
-  - 🇳🇱_NL_荷兰->🇺🇸_US_美国_2
   - 🇨🇳_CN_中国->🇺🇸_US_美国_3
   - 🇨🇳_CN_中国->🏳️_unKnow_未知
-  - 🇨🇳_CN_中国_2
-  - 🇳🇱_NL_荷兰->🇷🇺_RU_俄罗斯
-  - 🇮🇪_IE_爱尔兰->🇨🇳_CN_中国
-  - 🇺🇸_US_美国_2
   - 🇨🇳_CN_中国->🇺🇸_US_美国_4
-  - 🇺🇸_US_美国->🇨🇳_CN_中国
+  - 🇺🇸_US_美国_1
   - 🇨🇳_CN_中国->🇺🇸_US_美国_5
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_6
+  - 🇳🇱_NL_荷兰
+  - 🇷🇺_RU_俄罗斯_1
+  - 🇷🇺_RU_俄罗斯_2
+  - 🇩🇪_DE_德国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_7
+  - 🇨🇳_CN_中国->🇰🇷_KR_韩国
+  - 🇺🇸_US_美国_2
+  - 🇺🇸_US_美国->🇩🇪_DE_德国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_8
   - 🇳🇱_NL_荷兰->🇷🇴_RO_罗马尼亚
-  - 🇨🇭_CH_瑞士
-  - 🇳🇱_NL_荷兰->🇨🇳_CN_中国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_9
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_10
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_11
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_12
+  - 🇳🇱_NL_荷兰->🇺🇸_US_美国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_13
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_14
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_15
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_16
   type: select
 - name: 🎯 全球直连
   proxies:
@@ -433,27 +525,33 @@ proxy-groups:
   - 🚀 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
-  - 🇩🇪_DE_德国->🇺🇸_US_美国
-  - 🇨🇳_CN_中国_1
   - 🇨🇳_CN_中国->🇺🇸_US_美国_1
-  - 🇨🇳_CN_中国->🇨🇦_CA_加拿大
-  - 🇺🇸_US_美国_1
-  - 🇳🇱_NL_荷兰->🇺🇸_US_美国_1
-  - 🇳🇱_NL_荷兰->🇬🇧_GB_英国
   - 🇨🇳_CN_中国->🇺🇸_US_美国_2
-  - 🇳🇱_NL_荷兰->🇺🇸_US_美国_2
   - 🇨🇳_CN_中国->🇺🇸_US_美国_3
   - 🇨🇳_CN_中国->🏳️_unKnow_未知
-  - 🇨🇳_CN_中国_2
-  - 🇳🇱_NL_荷兰->🇷🇺_RU_俄罗斯
-  - 🇮🇪_IE_爱尔兰->🇨🇳_CN_中国
-  - 🇺🇸_US_美国_2
   - 🇨🇳_CN_中国->🇺🇸_US_美国_4
-  - 🇺🇸_US_美国->🇨🇳_CN_中国
+  - 🇺🇸_US_美国_1
   - 🇨🇳_CN_中国->🇺🇸_US_美国_5
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_6
+  - 🇳🇱_NL_荷兰
+  - 🇷🇺_RU_俄罗斯_1
+  - 🇷🇺_RU_俄罗斯_2
+  - 🇩🇪_DE_德国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_7
+  - 🇨🇳_CN_中国->🇰🇷_KR_韩国
+  - 🇺🇸_US_美国_2
+  - 🇺🇸_US_美国->🇩🇪_DE_德国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_8
   - 🇳🇱_NL_荷兰->🇷🇴_RO_罗马尼亚
-  - 🇨🇭_CH_瑞士
-  - 🇳🇱_NL_荷兰->🇨🇳_CN_中国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_9
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_10
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_11
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_12
+  - 🇳🇱_NL_荷兰->🇺🇸_US_美国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_13
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_14
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_15
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_16
   type: select
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
