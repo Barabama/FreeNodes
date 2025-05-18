@@ -1,279 +1,347 @@
-allow-lan: false
+allow-lan: true
 dns:
-  default-nameserver:
-  - 223.5.5.5
-  - 114.114.114.114
   enable: true
-  enhanced-mode: fake-ip
-  fake-ip-filter:
-  - '*.lan'
-  - '*.localdomain'
-  - '*.example'
-  - '*.invalid'
-  - '*.localhost'
-  - '*.test'
-  - '*.local'
-  - '*.home.arpa'
-  - router.asus.com
-  - localhost.sec.qq.com
-  - localhost.ptlogin2.qq.com
-  - +.msftconnecttest.com
-  fake-ip-range: 198.18.0.1/16
-  ipv6: false
-  listen: 0.0.0.0:53
+  fallback:
+  - 8.8.8.8
+  - 8.8.4.4
+  - tls://1.0.0.1:853
+  - tls://dns.google:853
   nameserver:
-  - 223.5.5.5
-  - 114.114.114.114
   - 119.29.29.29
-  - 180.76.76.76
-external-controller: 0.0.0.0:9090
-ipv6: false
+  - 223.5.5.5
+external-controller: :9090
 log-level: info
-mixed-port: 7890
-mode: rule
+mode: Rule
+port: 7890
 proxies:
-- ip-version: dual
-  name: 🇨🇳_CN_中国->🇺🇸_US_美国_1
-  password: RlzoEILU
-  port: 7815
-  server: 36.151.251.59
-  skip-cert-verify: true
-  type: trojan
-  udp: true
-- alpn:
-  - http/1.1
-  ip-version: dual
-  name: 🇺🇸_US_美国_1
-  network: ws
-  password: 2734c14b-e4ce-48b3-b3de-f80788cb4c47
-  port: 443
-  server: 104.21.84.58
-  skip-cert-verify: false
-  sni: XXXcddDe.IRaN2035.dpdNs.orG
-  type: trojan
-  udp: true
-  ws-opts:
-    path: /bdtuD5eD7Q29WxRG8DqNAB
-- alterId: 2
-  cipher: auto
-  ip-version: dual
-  name: 🇨🇳_CN_中国->🇺🇸_US_美国_2
-  network: ws
-  port: 30808
-  server: v8.heduian.link
-  skip-cert-verify: true
-  sni: ''
-  type: vmess
-  udp: true
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  ws-opts:
-    headers:
-      host: baidu.com
-    path: /oooo
-- cipher: chacha20-ietf-poly1305
-  ip-version: dual
-  name: 🇳🇱_NL_荷兰
-  password: d3TphPPfMkIxFmPJpA0j7RkPJHjeHqaJk2D7Co7VsFuUU2v1
-  port: 31348
-  server: 45.128.151.67
-  type: ss
-  udp: true
-- cipher: aes-256-gcm
-  ip-version: dual
-  name: 🇷🇺_RU_俄罗斯_1
-  password: e6b547de43730e23
-  port: 2015
-  server: 46.17.44.47
-  type: ss
-  udp: true
-- alterId: 2
-  cipher: auto
-  ip-version: dual
-  name: 🇨🇳_CN_中国->🇨🇦_CA_加拿大_1
-  network: ws
-  port: 30835
-  server: v35.heduian.link
-  skip-cert-verify: true
-  sni: ''
-  type: vmess
-  udp: true
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  ws-opts:
-    headers:
-      host: baidu.com
-    path: /oooo
-- alpn:
-  - http/1.1
-  ip-version: dual
-  name: 🇺🇸_US_美国_2
-  network: ws
-  password: 895552fa-6284-4c1d-ba00-3944e0c7c626
-  port: 443
-  server: 172.67.144.126
-  skip-cert-verify: false
-  sni: CFR56ty7890.288288.sHOP
-  type: trojan
-  udp: true
-  ws-opts:
-    path: /By7cEmOrNRS58yeduy9AOG
-- ip-version: dual
-  name: 🇨🇳_CN_中国->🇺🇸_US_美国_3
-  password: 3e6ae2e4-a8a5-11ef-8578-f23c913c8d2b
-  port: 15229
-  server: 76b15373-swd340-tcudgo-1sa5k.cu.plebai.net
-  sni: 76b15373-swd340-tcudgo-1sa5k.cu.plebai.net
-  type: trojan
-  udp: true
-- alpn:
-  - http/1.1
-  ip-version: dual
-  name: 🇺🇸_US_美国_3
-  network: ws
-  password: c8eac4b7-95ba-4ce0-920d-c3279eb3b391
-  port: 443
-  server: 172.67.138.187
-  skip-cert-verify: false
-  sni: CdVftY.7282728.xYz
-  type: trojan
-  udp: true
-  ws-opts:
-    path: /ptGwaGzcA4KNAXX
-- cipher: aes-128-cfb
-  ip-version: dual
-  name: 🇺🇸_US_美国_4
-  password: shadowsocks
-  port: 443
-  server: 184.170.241.194
-  type: ss
-  udp: true
-- ip-version: dual
-  name: 🇨🇳_CN_中国->🇺🇸_US_美国_4
-  password: 5e2f888c-68ef-11ef-96ca-f23c9164ca5d
-  port: 15229
-  server: c378385c-swd340-swy6li-tni2.cu.plebai.net
-  type: trojan
-  udp: true
-- ip-version: dual
-  name: 🇨🇳_CN_中国->🇺🇸_US_美国_5
-  password: 60f6b4c4-9d70-11ed-a4d2-f23c9164ca5d
-  port: 15229
-  server: 4ef54dd8-swd340-t1bnjq-1krtb.cu.plebai.net
-  type: trojan
-  udp: true
 - cipher: aes-256-cfb
-  ip-version: dual
-  name: 🇷🇺_RU_俄罗斯_2
-  password: f8f7aCzcPKbsF8p3
-  port: 989
-  server: 185.231.233.112
-  type: ss
-  udp: true
-- ip-version: dual
-  name: 🇨🇳_CN_中国->🇳🇱_NL_荷兰
-  password: 905edb54-b4ce-47ad-ac94-51d58161a59a
-  port: 43591
-  server: 58.254.186.231
-  skip-cert-verify: true
-  sni: q08m.vgraxiw73s.hasyaf.cn
-  type: trojan
-  udp: true
-- alterId: 2
-  cipher: auto
-  ip-version: dual
-  name: 🇨🇳_CN_中国->🇺🇸_US_美国_6
-  network: ws
-  port: 30824
-  server: v24.heduian.link
-  skip-cert-verify: true
-  sni: ''
-  type: vmess
-  udp: true
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  ws-opts:
-    headers:
-      host: baidu.com
-    path: /oooo
-- cipher: chacha20-ietf-poly1305
-  ip-version: dual
-  name: 🇨🇳_CN_中国
-  password: VfaEatGj7iXncVpijKFC1e
-  port: 59945
-  server: 62.60.231.81
-  type: ss
-  udp: true
-- cipher: aes-256-cfb
-  ip-version: dual
-  name: 🇺🇸_US_美国->🇧🇪_BE_比利时
+  client-fingerprint: chrome
+  name: 6元高速机场:cczzuu.top
   password: awsps0501
   port: 443
-  server: 35.90.251.87
+  server: 43.207.198.128
+  tfo: false
   type: ss
-  udp: true
-- ip-version: dual
-  name: 🇨🇳_CN_中国->🇨🇦_CA_加拿大_2
-  password: b6200af42ccadea353f5b5856dd20d70
-  port: 39001
-  server: 120.233.128.68
-  skip-cert-verify: true
-  sni: 120.233.128.68
+- cipher: aes-256-gcm
+  client-fingerprint: chrome
+  name: 🇭🇰 香港|@stairnode
+  password: ENYGONDU94UW1G6X
+  port: 15010
+  server: 8tv68qhq.slashdevslashnetslashtun.net
+  tfo: false
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  client-fingerprint: chrome
+  name: 🇭🇰 香港2|@stairnode
+  password: 91a41f4e02dc
+  plugin: v2ray-plugin
+  plugin-opts:
+    host: hkkh11v1.xpmc.cc
+    mode: websocket
+    mux: true
+    path: /utvbnrzejpmt
+    skip-cert-verify: false
+    tls: true
+  port: 55051
+  server: hkkh11v1.xpmc.cc
+  tfo: false
+  type: ss
+- alterId: 64
+  cipher: auto
+  client-fingerprint: chrome
+  name: 🇭🇰 香港3|@stairnode
+  port: 35921
+  server: 120.198.71.216
+  skip-cert-verify: false
+  tfo: false
+  tls: false
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- alterId: 64
+  cipher: auto
+  client-fingerprint: chrome
+  name: 🇭🇰 香港4|@stairnode
+  port: 43302
+  server: 183.236.51.38
+  skip-cert-verify: false
+  tfo: false
+  tls: false
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- client-fingerprint: chrome
+  name: 🇭🇰 香港5|@stairnode
+  password: 2c605663-b89a-5734-a9d6-97d4743d72cf
+  port: 8313
+  server: dozo01.flztjc.top
+  skip-cert-verify: false
+  sni: hk-13-568.flztjc.net
   type: trojan
-  udp: true
-- ip-version: dual
-  name: 🇨🇳_CN_中国->🇺🇸_US_美国_7
-  password: 5e2f888c-68ef-11ef-96ca-f23c9164ca5d
-  port: 15229
-  server: 5541c006-swexs0-swy6li-tni2.cu.plebai.net
-  sni: 5541c006-swexs0-swy6li-tni2.cu.plebai.net
+- alterId: 0
+  cipher: auto
+  client-fingerprint: chrome
+  name: 🇭🇰 香港6|@stairnode
+  port: 45939
+  server: 103.30.76.218
+  skip-cert-verify: false
+  tfo: false
+  tls: false
+  type: vmess
+  uuid: 268fe594-cd35-4038-8bc1-1086ada27fe8
+- alterId: 64
+  cipher: auto
+  client-fingerprint: chrome
+  name: 🇭🇰 香港7|@stairnode
+  port: 41554
+  server: 183.236.51.38
+  skip-cert-verify: false
+  tfo: false
+  tls: false
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- client-fingerprint: chrome
+  name: 🇹🇼 台湾|@stairnode
+  password: 9f19a22d-60d0-4cf8-935d-ebcff8546054
+  port: 42765
+  server: wb.kaiqsz.com
+  skip-cert-verify: false
+  sni: mmbiz1.redapricotcloud.com
   type: trojan
-  udp: true
+- cipher: rc4-md5
+  client-fingerprint: chrome
+  name: 🇯🇵 日本|@stairnode
+  password: efanccyun
+  plugin: obfs
+  plugin-opts:
+    host: 202505121278853-hDhUn5bpB5.download.microsoft.com
+    mode: http
+  port: 8766
+  server: cn01.efan8867801.xyz
+  tfo: false
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  client-fingerprint: chrome
+  name: 🇯🇵 日本2|@stairnode
+  password: af77ad2f906d
+  plugin: v2ray-plugin
+  plugin-opts:
+    host: jp1v9.8vote.cn
+    mode: websocket
+    mux: true
+    path: /ozasebsz
+    skip-cert-verify: false
+    tls: true
+  port: 20774
+  server: 103.140.136.76
+  tfo: false
+  type: ss
+- alterId: 64
+  cipher: auto
+  client-fingerprint: chrome
+  name: 🇯🇵 日本3|@stairnode
+  port: 55002
+  server: 183.237.84.53
+  skip-cert-verify: false
+  tfo: false
+  tls: false
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- alterId: 0
+  cipher: auto
+  client-fingerprint: chrome
+  name: 🇯🇵 日本4|@stairnode
+  port: 33184
+  server: gzhmbkqt.xn--fiqs8sjz2bull.com
+  skip-cert-verify: false
+  tfo: false
+  tls: false
+  type: vmess
+  uuid: fc7b534b-9188-4d81-b804-55b4eb91cd6e
+- alterId: 2
+  cipher: auto
+  client-fingerprint: chrome
+  name: 🇸🇬 新加坡|@stairnode
+  network: ws
+  port: 30812
+  server: v12.heduian.link
+  skip-cert-verify: false
+  tfo: false
+  tls: false
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  ws-opts:
+    headers:
+      Host: ocbc.com
+    path: /oooo
+- alterId: 0
+  cipher: auto
+  client-fingerprint: chrome
+  name: 🇸🇬 新加坡2|@stairnode
+  port: 54652
+  server: 183.236.51.38
+  skip-cert-verify: false
+  tfo: false
+  tls: false
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 🇰🇷 韩国|@stairnode
+  password: qwerREWQ@@
+  port: 15098
+  server: 125.141.31.72
+  tfo: false
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  client-fingerprint: chrome
+  name: 🇰🇷 韩国2|@stairnode
+  password: 1a17b19d-4896-4531-af79-6e91d8ef8228
+  port: 6666
+  server: 3.36.68.170
+  tfo: false
+  type: ss
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 🇰🇷 韩国3|@stairnode
+  password: 1601e3c29c8db1a88942cf0cad731bf3
+  port: 3306
+  server: 43.131.255.175
+  tfo: false
+  type: ss
+- alterId: 2
+  cipher: auto
+  client-fingerprint: chrome
+  name: 🇺🇸 美国|@stairnode
+  network: ws
+  port: 30832
+  server: v32.heduian.link
+  skip-cert-verify: false
+  tfo: false
+  tls: false
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  ws-opts:
+    headers:
+      Host: baidu.com
+    path: /oooo
+- cipher: rc4-md5
+  client-fingerprint: chrome
+  name: 🇺🇸 美国2|@stairnode
+  password: efanccyun
+  plugin: obfs
+  plugin-opts:
+    host: 202505121278853-hDhUn5bpB5.download.microsoft.com
+    mode: http
+  port: 8774
+  server: cn01.efan8867801.xyz
+  tfo: false
+  type: ss
+- alterId: 2
+  cipher: auto
+  client-fingerprint: chrome
+  name: 🇺🇸 美国3|@stairnode
+  network: ws
+  port: 22642
+  server: tk.hzlt.tkddns.xyz
+  servername: zxjp-b.tkong.cc
+  skip-cert-verify: false
+  tfo: false
+  tls: true
+  type: vmess
+  uuid: 98e96c9f-4bb3-39d4-9a2c-fac04257f7c7
+  ws-opts:
+    headers:
+      Host: zxjp-b.tkong.cc
+    path: /
+- alterId: 2
+  cipher: auto
+  client-fingerprint: chrome
+  name: 🇺🇸 美国4|@stairnode
+  network: ws
+  port: 22642
+  server: tk.hzlt.tkddns.xyz
+  servername: zxjp-b.tkong.cc
+  skip-cert-verify: false
+  tfo: false
+  tls: true
+  type: vmess
+  uuid: 98e96c9f-4bb3-39d4-9a2c-fac04257f7c7
+  ws-opts:
+    headers:
+      Host: zxjp-b.tkong.cc
+    path: /
+- alterId: 2
+  cipher: auto
+  client-fingerprint: chrome
+  name: 🇺🇸 美国5|@stairnode
+  network: ws
+  port: 22641
+  server: tk.hzlt.tkddns.xyz
+  servername: zxjp-a.tkong.cc
+  skip-cert-verify: false
+  tfo: false
+  tls: true
+  type: vmess
+  uuid: 98e96c9f-4bb3-39d4-9a2c-fac04257f7c7
+  ws-opts:
+    headers:
+      Host: zxjp-a.tkong.cc
+    path: /
 proxy-groups:
 - name: 🚀 节点选择
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_1
-  - 🇺🇸_US_美国_1
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_2
-  - 🇳🇱_NL_荷兰
-  - 🇷🇺_RU_俄罗斯_1
-  - 🇨🇳_CN_中国->🇨🇦_CA_加拿大_1
-  - 🇺🇸_US_美国_2
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_3
-  - 🇺🇸_US_美国_3
-  - 🇺🇸_US_美国_4
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_4
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_5
-  - 🇷🇺_RU_俄罗斯_2
-  - 🇨🇳_CN_中国->🇳🇱_NL_荷兰
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_6
-  - 🇨🇳_CN_中国
-  - 🇺🇸_US_美国->🇧🇪_BE_比利时
-  - 🇨🇳_CN_中国->🇨🇦_CA_加拿大_2
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_7
+  - 6元高速机场:cczzuu.top
+  - 🇭🇰 香港|@stairnode
+  - 🇭🇰 香港2|@stairnode
+  - 🇭🇰 香港3|@stairnode
+  - 🇭🇰 香港4|@stairnode
+  - 🇭🇰 香港5|@stairnode
+  - 🇭🇰 香港6|@stairnode
+  - 🇭🇰 香港7|@stairnode
+  - 🇹🇼 台湾|@stairnode
+  - 🇯🇵 日本|@stairnode
+  - 🇯🇵 日本2|@stairnode
+  - 🇯🇵 日本3|@stairnode
+  - 🇯🇵 日本4|@stairnode
+  - 🇸🇬 新加坡|@stairnode
+  - 🇸🇬 新加坡2|@stairnode
+  - 🇰🇷 韩国|@stairnode
+  - 🇰🇷 韩国2|@stairnode
+  - 🇰🇷 韩国3|@stairnode
+  - 🇺🇸 美国|@stairnode
+  - 🇺🇸 美国2|@stairnode
+  - 🇺🇸 美国3|@stairnode
+  - 🇺🇸 美国4|@stairnode
+  - 🇺🇸 美国5|@stairnode
   type: select
 - interval: 300
   name: ♻️ 自动选择
   proxies:
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_1
-  - 🇺🇸_US_美国_1
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_2
-  - 🇳🇱_NL_荷兰
-  - 🇷🇺_RU_俄罗斯_1
-  - 🇨🇳_CN_中国->🇨🇦_CA_加拿大_1
-  - 🇺🇸_US_美国_2
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_3
-  - 🇺🇸_US_美国_3
-  - 🇺🇸_US_美国_4
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_4
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_5
-  - 🇷🇺_RU_俄罗斯_2
-  - 🇨🇳_CN_中国->🇳🇱_NL_荷兰
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_6
-  - 🇨🇳_CN_中国
-  - 🇺🇸_US_美国->🇧🇪_BE_比利时
-  - 🇨🇳_CN_中国->🇨🇦_CA_加拿大_2
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_7
-  tolerance: 5000
+  - 6元高速机场:cczzuu.top
+  - 🇭🇰 香港|@stairnode
+  - 🇭🇰 香港2|@stairnode
+  - 🇭🇰 香港3|@stairnode
+  - 🇭🇰 香港4|@stairnode
+  - 🇭🇰 香港5|@stairnode
+  - 🇭🇰 香港6|@stairnode
+  - 🇭🇰 香港7|@stairnode
+  - 🇹🇼 台湾|@stairnode
+  - 🇯🇵 日本|@stairnode
+  - 🇯🇵 日本2|@stairnode
+  - 🇯🇵 日本3|@stairnode
+  - 🇯🇵 日本4|@stairnode
+  - 🇸🇬 新加坡|@stairnode
+  - 🇸🇬 新加坡2|@stairnode
+  - 🇰🇷 韩国|@stairnode
+  - 🇰🇷 韩国2|@stairnode
+  - 🇰🇷 韩国3|@stairnode
+  - 🇺🇸 美国|@stairnode
+  - 🇺🇸 美国2|@stairnode
+  - 🇺🇸 美国3|@stairnode
+  - 🇺🇸 美国4|@stairnode
+  - 🇺🇸 美国5|@stairnode
+  tolerance: 50
   type: url-test
   url: http://www.gstatic.com/generate_204
 - name: 🌍 国外媒体
@@ -281,97 +349,142 @@ proxy-groups:
   - 🚀 节点选择
   - ♻️ 自动选择
   - 🎯 全球直连
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_1
-  - 🇺🇸_US_美国_1
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_2
-  - 🇳🇱_NL_荷兰
-  - 🇷🇺_RU_俄罗斯_1
-  - 🇨🇳_CN_中国->🇨🇦_CA_加拿大_1
-  - 🇺🇸_US_美国_2
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_3
-  - 🇺🇸_US_美国_3
-  - 🇺🇸_US_美国_4
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_4
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_5
-  - 🇷🇺_RU_俄罗斯_2
-  - 🇨🇳_CN_中国->🇳🇱_NL_荷兰
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_6
-  - 🇨🇳_CN_中国
-  - 🇺🇸_US_美国->🇧🇪_BE_比利时
-  - 🇨🇳_CN_中国->🇨🇦_CA_加拿大_2
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_7
+  - 6元高速机场:cczzuu.top
+  - 🇭🇰 香港|@stairnode
+  - 🇭🇰 香港2|@stairnode
+  - 🇭🇰 香港3|@stairnode
+  - 🇭🇰 香港4|@stairnode
+  - 🇭🇰 香港5|@stairnode
+  - 🇭🇰 香港6|@stairnode
+  - 🇭🇰 香港7|@stairnode
+  - 🇹🇼 台湾|@stairnode
+  - 🇯🇵 日本|@stairnode
+  - 🇯🇵 日本2|@stairnode
+  - 🇯🇵 日本3|@stairnode
+  - 🇯🇵 日本4|@stairnode
+  - 🇸🇬 新加坡|@stairnode
+  - 🇸🇬 新加坡2|@stairnode
+  - 🇰🇷 韩国|@stairnode
+  - 🇰🇷 韩国2|@stairnode
+  - 🇰🇷 韩国3|@stairnode
+  - 🇺🇸 美国|@stairnode
+  - 🇺🇸 美国2|@stairnode
+  - 🇺🇸 美国3|@stairnode
+  - 🇺🇸 美国4|@stairnode
+  - 🇺🇸 美国5|@stairnode
   type: select
 - name: 📲 电报信息
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_1
-  - 🇺🇸_US_美国_1
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_2
-  - 🇳🇱_NL_荷兰
-  - 🇷🇺_RU_俄罗斯_1
-  - 🇨🇳_CN_中国->🇨🇦_CA_加拿大_1
-  - 🇺🇸_US_美国_2
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_3
-  - 🇺🇸_US_美国_3
-  - 🇺🇸_US_美国_4
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_4
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_5
-  - 🇷🇺_RU_俄罗斯_2
-  - 🇨🇳_CN_中国->🇳🇱_NL_荷兰
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_6
-  - 🇨🇳_CN_中国
-  - 🇺🇸_US_美国->🇧🇪_BE_比利时
-  - 🇨🇳_CN_中国->🇨🇦_CA_加拿大_2
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_7
+  - 6元高速机场:cczzuu.top
+  - 🇭🇰 香港|@stairnode
+  - 🇭🇰 香港2|@stairnode
+  - 🇭🇰 香港3|@stairnode
+  - 🇭🇰 香港4|@stairnode
+  - 🇭🇰 香港5|@stairnode
+  - 🇭🇰 香港6|@stairnode
+  - 🇭🇰 香港7|@stairnode
+  - 🇹🇼 台湾|@stairnode
+  - 🇯🇵 日本|@stairnode
+  - 🇯🇵 日本2|@stairnode
+  - 🇯🇵 日本3|@stairnode
+  - 🇯🇵 日本4|@stairnode
+  - 🇸🇬 新加坡|@stairnode
+  - 🇸🇬 新加坡2|@stairnode
+  - 🇰🇷 韩国|@stairnode
+  - 🇰🇷 韩国2|@stairnode
+  - 🇰🇷 韩国3|@stairnode
+  - 🇺🇸 美国|@stairnode
+  - 🇺🇸 美国2|@stairnode
+  - 🇺🇸 美国3|@stairnode
+  - 🇺🇸 美国4|@stairnode
+  - 🇺🇸 美国5|@stairnode
   type: select
 - name: Ⓜ️ 微软服务
   proxies:
   - 🎯 全球直连
   - 🚀 节点选择
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_1
-  - 🇺🇸_US_美国_1
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_2
-  - 🇳🇱_NL_荷兰
-  - 🇷🇺_RU_俄罗斯_1
-  - 🇨🇳_CN_中国->🇨🇦_CA_加拿大_1
-  - 🇺🇸_US_美国_2
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_3
-  - 🇺🇸_US_美国_3
-  - 🇺🇸_US_美国_4
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_4
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_5
-  - 🇷🇺_RU_俄罗斯_2
-  - 🇨🇳_CN_中国->🇳🇱_NL_荷兰
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_6
-  - 🇨🇳_CN_中国
-  - 🇺🇸_US_美国->🇧🇪_BE_比利时
-  - 🇨🇳_CN_中国->🇨🇦_CA_加拿大_2
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_7
+  - 6元高速机场:cczzuu.top
+  - 🇭🇰 香港|@stairnode
+  - 🇭🇰 香港2|@stairnode
+  - 🇭🇰 香港3|@stairnode
+  - 🇭🇰 香港4|@stairnode
+  - 🇭🇰 香港5|@stairnode
+  - 🇭🇰 香港6|@stairnode
+  - 🇭🇰 香港7|@stairnode
+  - 🇹🇼 台湾|@stairnode
+  - 🇯🇵 日本|@stairnode
+  - 🇯🇵 日本2|@stairnode
+  - 🇯🇵 日本3|@stairnode
+  - 🇯🇵 日本4|@stairnode
+  - 🇸🇬 新加坡|@stairnode
+  - 🇸🇬 新加坡2|@stairnode
+  - 🇰🇷 韩国|@stairnode
+  - 🇰🇷 韩国2|@stairnode
+  - 🇰🇷 韩国3|@stairnode
+  - 🇺🇸 美国|@stairnode
+  - 🇺🇸 美国2|@stairnode
+  - 🇺🇸 美国3|@stairnode
+  - 🇺🇸 美国4|@stairnode
+  - 🇺🇸 美国5|@stairnode
   type: select
 - name: 🍎 苹果服务
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_1
-  - 🇺🇸_US_美国_1
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_2
-  - 🇳🇱_NL_荷兰
-  - 🇷🇺_RU_俄罗斯_1
-  - 🇨🇳_CN_中国->🇨🇦_CA_加拿大_1
-  - 🇺🇸_US_美国_2
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_3
-  - 🇺🇸_US_美国_3
-  - 🇺🇸_US_美国_4
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_4
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_5
-  - 🇷🇺_RU_俄罗斯_2
-  - 🇨🇳_CN_中国->🇳🇱_NL_荷兰
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_6
-  - 🇨🇳_CN_中国
-  - 🇺🇸_US_美国->🇧🇪_BE_比利时
-  - 🇨🇳_CN_中国->🇨🇦_CA_加拿大_2
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_7
+  - 6元高速机场:cczzuu.top
+  - 🇭🇰 香港|@stairnode
+  - 🇭🇰 香港2|@stairnode
+  - 🇭🇰 香港3|@stairnode
+  - 🇭🇰 香港4|@stairnode
+  - 🇭🇰 香港5|@stairnode
+  - 🇭🇰 香港6|@stairnode
+  - 🇭🇰 香港7|@stairnode
+  - 🇹🇼 台湾|@stairnode
+  - 🇯🇵 日本|@stairnode
+  - 🇯🇵 日本2|@stairnode
+  - 🇯🇵 日本3|@stairnode
+  - 🇯🇵 日本4|@stairnode
+  - 🇸🇬 新加坡|@stairnode
+  - 🇸🇬 新加坡2|@stairnode
+  - 🇰🇷 韩国|@stairnode
+  - 🇰🇷 韩国2|@stairnode
+  - 🇰🇷 韩国3|@stairnode
+  - 🇺🇸 美国|@stairnode
+  - 🇺🇸 美国2|@stairnode
+  - 🇺🇸 美国3|@stairnode
+  - 🇺🇸 美国4|@stairnode
+  - 🇺🇸 美国5|@stairnode
+  type: select
+- name: 📢 谷歌FCM
+  proxies:
+  - 🚀 节点选择
+  - 🎯 全球直连
+  - ♻️ 自动选择
+  - 6元高速机场:cczzuu.top
+  - 🇭🇰 香港|@stairnode
+  - 🇭🇰 香港2|@stairnode
+  - 🇭🇰 香港3|@stairnode
+  - 🇭🇰 香港4|@stairnode
+  - 🇭🇰 香港5|@stairnode
+  - 🇭🇰 香港6|@stairnode
+  - 🇭🇰 香港7|@stairnode
+  - 🇹🇼 台湾|@stairnode
+  - 🇯🇵 日本|@stairnode
+  - 🇯🇵 日本2|@stairnode
+  - 🇯🇵 日本3|@stairnode
+  - 🇯🇵 日本4|@stairnode
+  - 🇸🇬 新加坡|@stairnode
+  - 🇸🇬 新加坡2|@stairnode
+  - 🇰🇷 韩国|@stairnode
+  - 🇰🇷 韩国2|@stairnode
+  - 🇰🇷 韩国3|@stairnode
+  - 🇺🇸 美国|@stairnode
+  - 🇺🇸 美国2|@stairnode
+  - 🇺🇸 美国3|@stairnode
+  - 🇺🇸 美国4|@stairnode
+  - 🇺🇸 美国5|@stairnode
   type: select
 - name: 🎯 全球直连
   proxies:
@@ -394,25 +507,29 @@ proxy-groups:
   - 🚀 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_1
-  - 🇺🇸_US_美国_1
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_2
-  - 🇳🇱_NL_荷兰
-  - 🇷🇺_RU_俄罗斯_1
-  - 🇨🇳_CN_中国->🇨🇦_CA_加拿大_1
-  - 🇺🇸_US_美国_2
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_3
-  - 🇺🇸_US_美国_3
-  - 🇺🇸_US_美国_4
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_4
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_5
-  - 🇷🇺_RU_俄罗斯_2
-  - 🇨🇳_CN_中国->🇳🇱_NL_荷兰
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_6
-  - 🇨🇳_CN_中国
-  - 🇺🇸_US_美国->🇧🇪_BE_比利时
-  - 🇨🇳_CN_中国->🇨🇦_CA_加拿大_2
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_7
+  - 6元高速机场:cczzuu.top
+  - 🇭🇰 香港|@stairnode
+  - 🇭🇰 香港2|@stairnode
+  - 🇭🇰 香港3|@stairnode
+  - 🇭🇰 香港4|@stairnode
+  - 🇭🇰 香港5|@stairnode
+  - 🇭🇰 香港6|@stairnode
+  - 🇭🇰 香港7|@stairnode
+  - 🇹🇼 台湾|@stairnode
+  - 🇯🇵 日本|@stairnode
+  - 🇯🇵 日本2|@stairnode
+  - 🇯🇵 日本3|@stairnode
+  - 🇯🇵 日本4|@stairnode
+  - 🇸🇬 新加坡|@stairnode
+  - 🇸🇬 新加坡2|@stairnode
+  - 🇰🇷 韩国|@stairnode
+  - 🇰🇷 韩国2|@stairnode
+  - 🇰🇷 韩国3|@stairnode
+  - 🇺🇸 美国|@stairnode
+  - 🇺🇸 美国2|@stairnode
+  - 🇺🇸 美国3|@stairnode
+  - 🇺🇸 美国4|@stairnode
+  - 🇺🇸 美国5|@stairnode
   type: select
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
@@ -450,6 +567,24 @@ rules:
 - DOMAIN-SUFFIX,zte.home,🎯 全球直连
 - DOMAIN-SUFFIX,tplogin.cn,🎯 全球直连
 - DOMAIN-SUFFIX,wifi.cmcc,🎯 全球直连
+- DOMAIN-SUFFIX,ol.epicgames.com,🎯 全球直连
+- DOMAIN-SUFFIX,dizhensubao.getui.com,🎯 全球直连
+- DOMAIN,dl.google.com,🎯 全球直连
+- DOMAIN-SUFFIX,googletraveladservices.com,🎯 全球直连
+- DOMAIN-SUFFIX,tracking-protection.cdn.mozilla.net,🎯 全球直连
+- DOMAIN,origin-a.akamaihd.net,🎯 全球直连
+- DOMAIN,fairplay.l.qq.com,🎯 全球直连
+- DOMAIN,livew.l.qq.com,🎯 全球直连
+- DOMAIN,vd.l.qq.com,🎯 全球直连
+- DOMAIN,errlog.umeng.com,🎯 全球直连
+- DOMAIN,msg.umeng.com,🎯 全球直连
+- DOMAIN,msg.umengcloud.com,🎯 全球直连
+- DOMAIN,tracking.miui.com,🎯 全球直连
+- DOMAIN,app.adjust.com,🎯 全球直连
+- DOMAIN,bdtj.tagtic.cn,🎯 全球直连
+- DOMAIN,rewards.hypixel.net,🎯 全球直连
+- DOMAIN-SUFFIX,koodomobile.com,🎯 全球直连
+- DOMAIN-SUFFIX,koodomobile.ca,🎯 全球直连
 - DOMAIN-KEYWORD,admarvel,🛑 全球拦截
 - DOMAIN-KEYWORD,admaster,🛑 全球拦截
 - DOMAIN-KEYWORD,adsage,🛑 全球拦截
@@ -722,7 +857,6 @@ rules:
 - DOMAIN-SUFFIX,mobclix.com,🛑 全球拦截
 - DOMAIN-SUFFIX,mobgi.com,🛑 全球拦截
 - DOMAIN-SUFFIX,mobisage.cn,🛑 全球拦截
-- DOMAIN-SUFFIX,mobvista.com,🛑 全球拦截
 - DOMAIN-SUFFIX,moogos.com,🛑 全球拦截
 - DOMAIN-SUFFIX,mopub.com,🛑 全球拦截
 - DOMAIN-SUFFIX,moquanad.com,🛑 全球拦截
@@ -732,7 +866,6 @@ rules:
 - DOMAIN-SUFFIX,mzy2014.com,🛑 全球拦截
 - DOMAIN-SUFFIX,networkbench.com,🛑 全球拦截
 - DOMAIN-SUFFIX,ninebox.cn,🛑 全球拦截
-- DOMAIN-SUFFIX,ntalker.com,🛑 全球拦截
 - DOMAIN-SUFFIX,nylalobghyhirgh.com,🛑 全球拦截
 - DOMAIN-SUFFIX,o2omobi.com,🛑 全球拦截
 - DOMAIN-SUFFIX,oadz.com,🛑 全球拦截
@@ -2064,6 +2197,41 @@ rules:
 - DOMAIN-SUFFIX,tralog.ganji.com,🍃 应用净化
 - DOMAIN-SUFFIX,up.qingdaonews.com,🍃 应用净化
 - DOMAIN-SUFFIX,vaserviece.10jqka.com.cn,🍃 应用净化
+- DOMAIN,alt1-mtalk.google.com,📢 谷歌FCM
+- DOMAIN,alt2-mtalk.google.com,📢 谷歌FCM
+- DOMAIN,alt3-mtalk.google.com,📢 谷歌FCM
+- DOMAIN,alt4-mtalk.google.com,📢 谷歌FCM
+- DOMAIN,alt5-mtalk.google.com,📢 谷歌FCM
+- DOMAIN,alt6-mtalk.google.com,📢 谷歌FCM
+- DOMAIN,alt7-mtalk.google.com,📢 谷歌FCM
+- DOMAIN,alt8-mtalk.google.com,📢 谷歌FCM
+- DOMAIN,mtalk.google.com,📢 谷歌FCM
+- IP-CIDR,64.233.177.188/32,📢 谷歌FCM,no-resolve
+- IP-CIDR,64.233.186.188/32,📢 谷歌FCM,no-resolve
+- IP-CIDR,64.233.187.188/32,📢 谷歌FCM,no-resolve
+- IP-CIDR,64.233.188.188/32,📢 谷歌FCM,no-resolve
+- IP-CIDR,64.233.189.188/32,📢 谷歌FCM,no-resolve
+- IP-CIDR,74.125.23.188/32,📢 谷歌FCM,no-resolve
+- IP-CIDR,74.125.24.188/32,📢 谷歌FCM,no-resolve
+- IP-CIDR,74.125.28.188/32,📢 谷歌FCM,no-resolve
+- IP-CIDR,74.125.127.188/32,📢 谷歌FCM,no-resolve
+- IP-CIDR,74.125.137.188/32,📢 谷歌FCM,no-resolve
+- IP-CIDR,74.125.203.188/32,📢 谷歌FCM,no-resolve
+- IP-CIDR,74.125.204.188/32,📢 谷歌FCM,no-resolve
+- IP-CIDR,74.125.206.188/32,📢 谷歌FCM,no-resolve
+- IP-CIDR,108.177.125.188/32,📢 谷歌FCM,no-resolve
+- IP-CIDR,142.250.4.188/32,📢 谷歌FCM,no-resolve
+- IP-CIDR,142.250.10.188/32,📢 谷歌FCM,no-resolve
+- IP-CIDR,142.250.31.188/32,📢 谷歌FCM,no-resolve
+- IP-CIDR,142.250.96.188/32,📢 谷歌FCM,no-resolve
+- IP-CIDR,172.217.194.188/32,📢 谷歌FCM,no-resolve
+- IP-CIDR,172.217.218.188/32,📢 谷歌FCM,no-resolve
+- IP-CIDR,172.217.219.188/32,📢 谷歌FCM,no-resolve
+- IP-CIDR,172.253.63.188/32,📢 谷歌FCM,no-resolve
+- IP-CIDR,172.253.122.188/32,📢 谷歌FCM,no-resolve
+- IP-CIDR,173.194.175.188/32,📢 谷歌FCM,no-resolve
+- IP-CIDR,173.194.218.188/32,📢 谷歌FCM,no-resolve
+- IP-CIDR,209.85.233.188/32,📢 谷歌FCM,no-resolve
 - DOMAIN-SUFFIX,265.com,🎯 全球直连
 - DOMAIN-SUFFIX,2mdn.net,🎯 全球直连
 - DOMAIN-SUFFIX,alt1-mtalk.google.com,🎯 全球直连
@@ -2217,8 +2385,60 @@ rules:
 - IP-CIDR,192.35.50.0/24,🍎 苹果服务,no-resolve
 - IP-CIDR,198.183.17.0/24,🍎 苹果服务,no-resolve
 - IP-CIDR,205.180.175.0/24,🍎 苹果服务,no-resolve
+- DOMAIN-SUFFIX,t.me,📲 电报信息
+- DOMAIN-SUFFIX,tdesktop.com,📲 电报信息
+- DOMAIN-SUFFIX,telegra.ph,📲 电报信息
+- DOMAIN-SUFFIX,telegram.me,📲 电报信息
+- DOMAIN-SUFFIX,telegram.org,📲 电报信息
+- DOMAIN-SUFFIX,telesco.pe,📲 电报信息
+- IP-CIDR,91.108.0.0/16,📲 电报信息,no-resolve
+- IP-CIDR,95.161.64.0/20,📲 电报信息,no-resolve
+- IP-CIDR,109.239.140.0/24,📲 电报信息,no-resolve
+- IP-CIDR,149.154.160.0/20,📲 电报信息,no-resolve
+- IP-CIDR6,2001:67c:4e8::/48,📲 电报信息,no-resolve
+- IP-CIDR6,2001:b28:f23d::/48,📲 电报信息,no-resolve
+- IP-CIDR6,2001:b28:f23f::/48,📲 电报信息,no-resolve
 - DOMAIN-SUFFIX,edgedatg.com,🌍 国外媒体
 - DOMAIN-SUFFIX,go.com,🌍 国外媒体
+- DOMAIN-KEYWORD,anthropic,🌍 国外媒体
+- DOMAIN-KEYWORD,claude,🌍 国外媒体
+- DOMAIN-KEYWORD,openai,🌍 国外媒体
+- DOMAIN,ai.google.dev,🌍 国外媒体
+- DOMAIN,api.githubcopilot.com,🌍 国外媒体
+- DOMAIN,api.groq.com,🌍 国外媒体
+- DOMAIN,api.together.xyz,🌍 国外媒体
+- DOMAIN,bard.google.com,🌍 国外媒体
+- DOMAIN,console.groq.com,🌍 国外媒体
+- DOMAIN,copilot-proxy.githubusercontent.com,🌍 国外媒体
+- DOMAIN,gemini.google.com,🌍 国外媒体
+- DOMAIN,generativelanguage.googleapis.com,🌍 国外媒体
+- DOMAIN,sydney.bing.com,🌍 国外媒体
+- DOMAIN-SUFFIX,ai.azure.com,🌍 国外媒体
+- DOMAIN-SUFFIX,anthropic.com,🌍 国外媒体
+- DOMAIN-SUFFIX,auth0.com,🌍 国外媒体
+- DOMAIN-SUFFIX,bard.google.com,🌍 国外媒体
+- DOMAIN-SUFFIX,chatgpt.com,🌍 国外媒体
+- DOMAIN-SUFFIX,claude.ai,🌍 国外媒体
+- DOMAIN-SUFFIX,client-api.arkoselabs.com,🌍 国外媒体
+- DOMAIN-SUFFIX,copilot.cloud.microsoft,🌍 国外媒体
+- DOMAIN-SUFFIX,copilot.microsoft.com,🌍 国外媒体
+- DOMAIN-SUFFIX,events.statsigapi.net,🌍 国外媒体
+- DOMAIN-SUFFIX,featuregates.org,🌍 国外媒体
+- DOMAIN-SUFFIX,gemini.google.com,🌍 国外媒体
+- DOMAIN-SUFFIX,grazie.ai,🌍 国外媒体
+- DOMAIN-SUFFIX,grazie.aws.intellij.net,🌍 国外媒体
+- DOMAIN-SUFFIX,identrust.com,🌍 国外媒体
+- DOMAIN-SUFFIX,intercom.io,🌍 国外媒体
+- DOMAIN-SUFFIX,intercomcdn.com,🌍 国外媒体
+- DOMAIN-SUFFIX,makersuite.google.com,🌍 国外媒体
+- DOMAIN-SUFFIX,meta.ai,🌍 国外媒体
+- DOMAIN-SUFFIX,mistral.ai,🌍 国外媒体
+- DOMAIN-SUFFIX,oaistatic.com,🌍 国外媒体
+- DOMAIN-SUFFIX,oaiusercontent.com,🌍 国外媒体
+- DOMAIN-SUFFIX,openai.com,🌍 国外媒体
+- DOMAIN-SUFFIX,openaiapi-site.azureedge.net,🌍 国外媒体
+- DOMAIN-SUFFIX,perplexity.ai,🌍 国外媒体
+- DOMAIN-SUFFIX,sora.com,🌍 国外媒体
 - DOMAIN-KEYWORD,abematv.akamaized.net,🌍 国外媒体
 - DOMAIN-SUFFIX,abema.io,🌍 国外媒体
 - DOMAIN-SUFFIX,abema.tv,🌍 国外媒体
@@ -2541,19 +2761,6 @@ rules:
 - DOMAIN-SUFFIX,yt.be,🌍 国外媒体
 - DOMAIN-SUFFIX,ytimg.com,🌍 国外媒体
 - DOMAIN,music.youtube.com,🌍 国外媒体
-- DOMAIN-SUFFIX,t.me,📲 电报信息
-- DOMAIN-SUFFIX,tdesktop.com,📲 电报信息
-- DOMAIN-SUFFIX,telegra.ph,📲 电报信息
-- DOMAIN-SUFFIX,telegram.me,📲 电报信息
-- DOMAIN-SUFFIX,telegram.org,📲 电报信息
-- DOMAIN-SUFFIX,telesco.pe,📲 电报信息
-- IP-CIDR,91.108.0.0/16,📲 电报信息,no-resolve
-- IP-CIDR,95.161.64.0/20,📲 电报信息,no-resolve
-- IP-CIDR,109.239.140.0/24,📲 电报信息,no-resolve
-- IP-CIDR,149.154.160.0/20,📲 电报信息,no-resolve
-- IP-CIDR6,2001:67c:4e8::/48,📲 电报信息,no-resolve
-- IP-CIDR6,2001:b28:f23d::/48,📲 电报信息,no-resolve
-- IP-CIDR6,2001:b28:f23f::/48,📲 电报信息,no-resolve
 - DOMAIN-SUFFIX,1password.com,🚀 节点选择
 - DOMAIN-SUFFIX,adguard.org,🚀 节点选择
 - DOMAIN-SUFFIX,bit.no.com,🚀 节点选择
@@ -3145,6 +3352,22 @@ rules:
 - DOMAIN-SUFFIX,cctv.com,🎯 全球直连
 - DOMAIN-SUFFIX,cctvpic.com,🎯 全球直连
 - DOMAIN-SUFFIX,livechina.com,🎯 全球直连
+- DOMAIN,auth.wosms.cn,🎯 全球直连
+- DOMAIN,config.cmpassport.com,🎯 全球直连
+- DOMAIN,enrichgw.10010.com,🎯 全球直连
+- DOMAIN,hmrz.wo.cn,🎯 全球直连
+- DOMAIN,id.mail.wo.cn,🎯 全球直连
+- DOMAIN,log.cmpassport.com,🎯 全球直连
+- DOMAIN,log1.cmpassport.com,🎯 全球直连
+- DOMAIN,mdn.open.wo.cn,🎯 全球直连
+- DOMAIN,nishub1.10010.com,🎯 全球直连
+- DOMAIN,opencloud.wostore.cn,🎯 全球直连
+- DOMAIN,ye.dun.163yun.com,🎯 全球直连
+- DOMAIN-SUFFIX,auth.wo.cn,🎯 全球直连
+- DOMAIN-SUFFIX,cmpassport.com,🎯 全球直连
+- DOMAIN-SUFFIX,id6.me,🎯 全球直连
+- DOMAIN-SUFFIX,mob.com,🎯 全球直连
+- DOMAIN-SUFFIX,open.e.189.cn,🎯 全球直连
 - DOMAIN-SUFFIX,21cn.com,🎯 全球直连
 - DOMAIN-SUFFIX,didialift.com,🎯 全球直连
 - DOMAIN-SUFFIX,didiglobal.com,🎯 全球直连
@@ -3153,6 +3376,7 @@ rules:
 - DOMAIN-SUFFIX,edgesrv.com,🎯 全球直连
 - DOMAIN-SUFFIX,douyu.com,🎯 全球直连
 - DOMAIN-SUFFIX,douyu.tv,🎯 全球直连
+- DOMAIN-SUFFIX,douyucdn.cn,🎯 全球直连
 - DOMAIN-SUFFIX,douyuscdn.com,🎯 全球直连
 - DOMAIN-SUFFIX,douyutv.com,🎯 全球直连
 - DOMAIN-SUFFIX,epicgames.com,🎯 全球直连
@@ -3593,67 +3817,98 @@ rules:
 - DOMAIN-SUFFIX,zhipin.com,🎯 全球直连
 - DOMAIN-SUFFIX,zhongsou.com,🎯 全球直连
 - DOMAIN-SUFFIX,zhuihd.com,🎯 全球直连
+- DOMAIN-SUFFIX,cmbchina.com,🎯 全球直连
+- DOMAIN-SUFFIX,95516.com,🎯 全球直连
 - IP-CIDR,8.128.0.0/10,🎯 全球直连,no-resolve
-- IP-CIDR,8.208.0.0/12,🎯 全球直连,no-resolve
+- IP-CIDR,8.209.32.0/22,🎯 全球直连,no-resolve
+- IP-CIDR,8.209.40.0/21,🎯 全球直连,no-resolve
+- IP-CIDR,8.209.48.0/20,🎯 全球直连,no-resolve
+- IP-CIDR,8.210.0.0/16,🎯 全球直连,no-resolve
+- IP-CIDR,8.211.64.0/18,🎯 全球直连,no-resolve
+- IP-CIDR,8.211.128.0/20,🎯 全球直连,no-resolve
+- IP-CIDR,8.211.144.0/21,🎯 全球直连,no-resolve
+- IP-CIDR,8.211.152.0/22,🎯 全球直连,no-resolve
+- IP-CIDR,8.211.208.0/20,🎯 全球直连,no-resolve
+- IP-CIDR,8.211.224.0/19,🎯 全球直连,no-resolve
+- IP-CIDR,8.212.0.0/14,🎯 全球直连,no-resolve
+- IP-CIDR,8.216.0.0/13,🎯 全球直连,no-resolve
 - IP-CIDR,14.1.112.0/22,🎯 全球直连,no-resolve
-- IP-CIDR,41.222.240.0/22,🎯 全球直连,no-resolve
-- IP-CIDR,41.223.119.0/24,🎯 全球直连,no-resolve
-- IP-CIDR,43.242.168.0/22,🎯 全球直连,no-resolve
 - IP-CIDR,45.112.212.0/22,🎯 全球直连,no-resolve
 - IP-CIDR,47.52.0.0/16,🎯 全球直连,no-resolve
 - IP-CIDR,47.56.0.0/15,🎯 全球直连,no-resolve
-- IP-CIDR,47.74.0.0/15,🎯 全球直连,no-resolve
-- IP-CIDR,47.76.0.0/14,🎯 全球直连,no-resolve
-- IP-CIDR,47.80.0.0/12,🎯 全球直连,no-resolve
-- IP-CIDR,47.235.0.0/16,🎯 全球直连,no-resolve
-- IP-CIDR,47.236.0.0/14,🎯 全球直连,no-resolve
-- IP-CIDR,47.240.0.0/14,🎯 全球直连,no-resolve
-- IP-CIDR,47.244.0.0/15,🎯 全球直连,no-resolve
-- IP-CIDR,47.246.0.0/16,🎯 全球直连,no-resolve
-- IP-CIDR,47.250.0.0/15,🎯 全球直连,no-resolve
-- IP-CIDR,47.252.0.0/15,🎯 全球直连,no-resolve
-- IP-CIDR,47.254.0.0/16,🎯 全球直连,no-resolve
+- IP-CIDR,47.75.0.0/16,🎯 全球直连,no-resolve
+- IP-CIDR,47.89.0.0/18,🎯 全球直连,no-resolve
+- IP-CIDR,47.89.64.0/24,🎯 全球直连,no-resolve
+- IP-CIDR,47.89.82.0/23,🎯 全球直连,no-resolve
+- IP-CIDR,47.89.91.0/24,🎯 全球直连,no-resolve
+- IP-CIDR,47.89.100.0/23,🎯 全球直连,no-resolve
+- IP-CIDR,47.90.0.0/17,🎯 全球直连,no-resolve
+- IP-CIDR,47.91.128.0/17,🎯 全球直连,no-resolve
+- IP-CIDR,47.92.0.0/14,🎯 全球直连,no-resolve
+- IP-CIDR,47.240.0.0/16,🎯 全球直连,no-resolve
+- IP-CIDR,47.242.0.0/15,🎯 全球直连,no-resolve
+- IP-CIDR,47.244.0.0/16,🎯 全球直连,no-resolve
+- IP-CIDR,47.246.5.0/24,🎯 全球直连,no-resolve
+- IP-CIDR,47.246.16.0/24,🎯 全球直连,no-resolve
+- IP-CIDR,47.246.60.0/23,🎯 全球直连,no-resolve
+- IP-CIDR,47.246.65.0/24,🎯 全球直连,no-resolve
 - IP-CIDR,59.82.0.0/20,🎯 全球直连,no-resolve
 - IP-CIDR,59.82.240.0/21,🎯 全球直连,no-resolve
 - IP-CIDR,59.82.248.0/22,🎯 全球直连,no-resolve
-- IP-CIDR,72.254.0.0/16,🎯 全球直连,no-resolve
-- IP-CIDR,103.38.56.0/22,🎯 全球直连,no-resolve
 - IP-CIDR,103.52.76.0/22,🎯 全球直连,no-resolve
 - IP-CIDR,103.206.40.0/22,🎯 全球直连,no-resolve
 - IP-CIDR,110.76.21.0/24,🎯 全球直连,no-resolve
 - IP-CIDR,110.76.23.0/24,🎯 全球直连,no-resolve
 - IP-CIDR,112.125.0.0/17,🎯 全球直连,no-resolve
-- IP-CIDR,116.251.64.0/18,🎯 全球直连,no-resolve
+- IP-CIDR,116.251.79.0/24,🎯 全球直连,no-resolve
+- IP-CIDR,116.251.80.0/22,🎯 全球直连,no-resolve
+- IP-CIDR,116.251.84.0/24,🎯 全球直连,no-resolve
+- IP-CIDR,116.251.88.0/22,🎯 全球直连,no-resolve
+- IP-CIDR,116.251.93.0/24,🎯 全球直连,no-resolve
+- IP-CIDR,116.251.94.0/23,🎯 全球直连,no-resolve
+- IP-CIDR,116.251.102.0/23,🎯 全球直连,no-resolve
+- IP-CIDR,116.251.104.0/21,🎯 全球直连,no-resolve
+- IP-CIDR,116.251.112.0/21,🎯 全球直连,no-resolve
+- IP-CIDR,116.251.124.0/22,🎯 全球直连,no-resolve
 - IP-CIDR,119.38.208.0/20,🎯 全球直连,no-resolve
 - IP-CIDR,119.38.224.0/20,🎯 全球直连,no-resolve
 - IP-CIDR,119.42.224.0/20,🎯 全球直连,no-resolve
-- IP-CIDR,139.95.0.0/16,🎯 全球直连,no-resolve
 - IP-CIDR,140.205.1.0/24,🎯 全球直连,no-resolve
 - IP-CIDR,140.205.122.0/24,🎯 全球直连,no-resolve
-- IP-CIDR,147.139.0.0/16,🎯 全球直连,no-resolve
-- IP-CIDR,149.129.0.0/16,🎯 全球直连,no-resolve
-- IP-CIDR,155.102.0.0/16,🎯 全球直连,no-resolve
-- IP-CIDR,161.117.0.0/16,🎯 全球直连,no-resolve
-- IP-CIDR,163.181.0.0/16,🎯 全球直连,no-resolve
-- IP-CIDR,170.33.0.0/16,🎯 全球直连,no-resolve
-- IP-CIDR,198.11.128.0/18,🎯 全球直连,no-resolve
-- IP-CIDR,205.204.96.0/19,🎯 全球直连,no-resolve
-- IP-CIDR,19.28.0.0/23,🎯 全球直连,no-resolve
+- IP-CIDR,149.129.64.0/18,🎯 全球直连,no-resolve
+- IP-CIDR,163.181.32.0/22,🎯 全球直连,no-resolve
+- IP-CIDR,163.181.40.0/24,🎯 全球直连,no-resolve
+- IP-CIDR,170.33.0.0/22,🎯 全球直连,no-resolve
+- IP-CIDR,198.11.141.0/24,🎯 全球直连,no-resolve
+- IP-CIDR,198.11.184.0/21,🎯 全球直连,no-resolve
+- IP-CIDR,205.204.104.0/23,🎯 全球直连,no-resolve
+- IP-CIDR,205.204.117.0/24,🎯 全球直连,no-resolve
+- IP-CIDR,205.204.122.0/23,🎯 全球直连,no-resolve
+- IP-CIDR,205.204.124.0/22,🎯 全球直连,no-resolve
 - IP-CIDR,45.40.192.0/19,🎯 全球直连,no-resolve
-- IP-CIDR,49.51.0.0/16,🎯 全球直连,no-resolve
+- IP-CIDR,49.51.56.0/22,🎯 全球直连,no-resolve
+- IP-CIDR,49.51.60.0/23,🎯 全球直连,no-resolve
+- IP-CIDR,49.51.110.0/23,🎯 全球直连,no-resolve
+- IP-CIDR,49.51.112.0/20,🎯 全球直连,no-resolve
 - IP-CIDR,62.234.0.0/16,🎯 全球直连,no-resolve
 - IP-CIDR,94.191.0.0/17,🎯 全球直连,no-resolve
 - IP-CIDR,103.7.28.0/22,🎯 全球直连,no-resolve
-- IP-CIDR,103.116.50.0/23,🎯 全球直连,no-resolve
-- IP-CIDR,103.231.60.0/24,🎯 全球直连,no-resolve
 - IP-CIDR,109.244.0.0/16,🎯 全球直连,no-resolve
 - IP-CIDR,111.30.128.0/21,🎯 全球直连,no-resolve
 - IP-CIDR,111.30.136.0/24,🎯 全球直连,no-resolve
 - IP-CIDR,111.30.139.0/24,🎯 全球直连,no-resolve
 - IP-CIDR,111.30.140.0/23,🎯 全球直连,no-resolve
 - IP-CIDR,115.159.0.0/16,🎯 全球直连,no-resolve
-- IP-CIDR,119.28.0.0/15,🎯 全球直连,no-resolve
-- IP-CIDR,120.88.56.0/23,🎯 全球直连,no-resolve
+- IP-CIDR,119.28.0.0/18,🎯 全球直连,no-resolve
+- IP-CIDR,119.28.64.0/19,🎯 全球直连,no-resolve
+- IP-CIDR,119.28.124.0/23,🎯 全球直连,no-resolve
+- IP-CIDR,119.28.128.0/20,🎯 全球直连,no-resolve
+- IP-CIDR,119.28.164.0/22,🎯 全球直连,no-resolve
+- IP-CIDR,119.28.168.0/21,🎯 全球直连,no-resolve
+- IP-CIDR,119.28.176.0/20,🎯 全球直连,no-resolve
+- IP-CIDR,119.28.192.0/19,🎯 全球直连,no-resolve
+- IP-CIDR,119.28.224.0/21,🎯 全球直连,no-resolve
+- IP-CIDR,119.29.0.0/16,🎯 全球直连,no-resolve
 - IP-CIDR,121.51.0.0/16,🎯 全球直连,no-resolve
 - IP-CIDR,129.28.0.0/16,🎯 全球直连,no-resolve
 - IP-CIDR,129.204.0.0/16,🎯 全球直连,no-resolve
@@ -3661,61 +3916,46 @@ rules:
 - IP-CIDR,132.232.0.0/16,🎯 全球直连,no-resolve
 - IP-CIDR,134.175.0.0/16,🎯 全球直连,no-resolve
 - IP-CIDR,146.56.192.0/18,🎯 全球直连,no-resolve
-- IP-CIDR,148.70.0.0/16,🎯 全球直连,no-resolve
-- IP-CIDR,150.109.0.0/16,🎯 全球直连,no-resolve
+- IP-CIDR,150.109.32.0/19,🎯 全球直连,no-resolve
+- IP-CIDR,150.109.64.0/20,🎯 全球直连,no-resolve
+- IP-CIDR,150.109.96.0/19,🎯 全球直连,no-resolve
 - IP-CIDR,152.136.0.0/16,🎯 全球直连,no-resolve
 - IP-CIDR,162.14.0.0/16,🎯 全球直连,no-resolve
-- IP-CIDR,162.62.0.0/16,🎯 全球直连,no-resolve
-- IP-CIDR,170.106.130.0/24,🎯 全球直连,no-resolve
 - IP-CIDR,182.254.0.0/16,🎯 全球直连,no-resolve
 - IP-CIDR,188.131.128.0/17,🎯 全球直连,no-resolve
 - IP-CIDR,203.195.128.0/17,🎯 全球直连,no-resolve
-- IP-CIDR,203.205.128.0/17,🎯 全球直连,no-resolve
-- IP-CIDR,210.4.138.0/24,🎯 全球直连,no-resolve
-- IP-CIDR,211.152.128.0/23,🎯 全球直连,no-resolve
-- IP-CIDR,211.152.132.0/23,🎯 全球直连,no-resolve
-- IP-CIDR,211.152.148.0/23,🎯 全球直连,no-resolve
+- IP-CIDR,203.205.128.0/20,🎯 全球直连,no-resolve
+- IP-CIDR,203.205.144.0/21,🎯 全球直连,no-resolve
+- IP-CIDR,203.205.158.0/24,🎯 全球直连,no-resolve
+- IP-CIDR,203.205.180.0/22,🎯 全球直连,no-resolve
+- IP-CIDR,203.205.208.0/22,🎯 全球直连,no-resolve
+- IP-CIDR,203.205.212.0/23,🎯 全球直连,no-resolve
+- IP-CIDR,203.205.218.0/23,🎯 全球直连,no-resolve
+- IP-CIDR,203.205.220.0/22,🎯 全球直连,no-resolve
+- IP-CIDR,203.205.248.0/21,🎯 全球直连,no-resolve
 - IP-CIDR,212.64.0.0/17,🎯 全球直连,no-resolve
 - IP-CIDR,212.129.128.0/17,🎯 全球直连,no-resolve
-- IP-CIDR,45.113.192.0/22,🎯 全球直连,no-resolve
-- IP-CIDR,63.217.23.0/24,🎯 全球直连,no-resolve
+- IP-CIDR,45.113.194.0/23,🎯 全球直连,no-resolve
 - IP-CIDR,63.243.252.0/24,🎯 全球直连,no-resolve
 - IP-CIDR,103.235.44.0/22,🎯 全球直连,no-resolve
-- IP-CIDR,104.193.88.0/22,🎯 全球直连,no-resolve
 - IP-CIDR,106.12.0.0/15,🎯 全球直连,no-resolve
 - IP-CIDR,114.28.224.0/20,🎯 全球直连,no-resolve
-- IP-CIDR,119.63.192.0/21,🎯 全球直连,no-resolve
-- IP-CIDR,180.76.0.0/24,🎯 全球直连,no-resolve
 - IP-CIDR,180.76.0.0/16,🎯 全球直连,no-resolve
 - IP-CIDR,182.61.0.0/16,🎯 全球直连,no-resolve
-- IP-CIDR,185.10.104.0/22,🎯 全球直连,no-resolve
+- IP-CIDR,185.10.105.0/24,🎯 全球直连,no-resolve
 - IP-CIDR,202.46.48.0/20,🎯 全球直连,no-resolve
 - IP-CIDR,203.90.238.0/24,🎯 全球直连,no-resolve
 - IP-CIDR,43.254.0.0/22,🎯 全球直连,no-resolve
 - IP-CIDR,45.249.212.0/22,🎯 全球直连,no-resolve
 - IP-CIDR,49.4.0.0/17,🎯 全球直连,no-resolve
-- IP-CIDR,78.101.192.0/19,🎯 全球直连,no-resolve
-- IP-CIDR,78.101.224.0/20,🎯 全球直连,no-resolve
-- IP-CIDR,81.52.161.0/24,🎯 全球直连,no-resolve
-- IP-CIDR,85.97.220.0/22,🎯 全球直连,no-resolve
 - IP-CIDR,103.31.200.0/22,🎯 全球直连,no-resolve
-- IP-CIDR,103.69.140.0/23,🎯 全球直连,no-resolve
 - IP-CIDR,103.218.216.0/22,🎯 全球直连,no-resolve
 - IP-CIDR,114.115.128.0/17,🎯 全球直连,no-resolve
 - IP-CIDR,114.116.0.0/16,🎯 全球直连,no-resolve
 - IP-CIDR,116.63.128.0/18,🎯 全球直连,no-resolve
 - IP-CIDR,116.66.184.0/22,🎯 全球直连,no-resolve
-- IP-CIDR,116.71.96.0/20,🎯 全球直连,no-resolve
-- IP-CIDR,116.71.128.0/21,🎯 全球直连,no-resolve
-- IP-CIDR,116.71.136.0/22,🎯 全球直连,no-resolve
-- IP-CIDR,116.71.141.0/24,🎯 全球直连,no-resolve
-- IP-CIDR,116.71.142.0/24,🎯 全球直连,no-resolve
-- IP-CIDR,116.71.243.0/24,🎯 全球直连,no-resolve
-- IP-CIDR,116.71.244.0/24,🎯 全球直连,no-resolve
-- IP-CIDR,116.71.251.0/24,🎯 全球直连,no-resolve
 - IP-CIDR,117.78.0.0/18,🎯 全球直连,no-resolve
 - IP-CIDR,119.3.0.0/16,🎯 全球直连,no-resolve
-- IP-CIDR,119.8.0.0/21,🎯 全球直连,no-resolve
 - IP-CIDR,119.8.32.0/19,🎯 全球直连,no-resolve
 - IP-CIDR,121.36.0.0/17,🎯 全球直连,no-resolve
 - IP-CIDR,121.36.128.0/18,🎯 全球直连,no-resolve
@@ -3744,37 +3984,7 @@ rules:
 - IP-CIDR,159.138.96.0/20,🎯 全球直连,no-resolve
 - IP-CIDR,159.138.112.0/21,🎯 全球直连,no-resolve
 - IP-CIDR,159.138.125.0/24,🎯 全球直连,no-resolve
-- IP-CIDR,159.138.128.0/18,🎯 全球直连,no-resolve
-- IP-CIDR,159.138.192.0/20,🎯 全球直连,no-resolve
-- IP-CIDR,159.138.223.0/24,🎯 全球直连,no-resolve
-- IP-CIDR,159.138.224.0/19,🎯 全球直连,no-resolve
-- IP-CIDR,168.195.92.0/22,🎯 全球直连,no-resolve
-- IP-CIDR,185.176.76.0/22,🎯 全球直连,no-resolve
-- IP-CIDR,197.199.0.0/18,🎯 全球直连,no-resolve
-- IP-CIDR,197.210.163.0/24,🎯 全球直连,no-resolve
-- IP-CIDR,197.252.1.0/24,🎯 全球直连,no-resolve
-- IP-CIDR,197.252.2.0/23,🎯 全球直连,no-resolve
-- IP-CIDR,197.252.4.0/22,🎯 全球直连,no-resolve
-- IP-CIDR,197.252.8.0/21,🎯 全球直连,no-resolve
-- IP-CIDR,200.32.52.0/24,🎯 全球直连,no-resolve
-- IP-CIDR,200.32.54.0/24,🎯 全球直连,no-resolve
-- IP-CIDR,200.32.57.0/24,🎯 全球直连,no-resolve
-- IP-CIDR,203.135.0.0/22,🎯 全球直连,no-resolve
-- IP-CIDR,203.135.4.0/23,🎯 全球直连,no-resolve
-- IP-CIDR,203.135.8.0/23,🎯 全球直连,no-resolve
-- IP-CIDR,203.135.11.0/24,🎯 全球直连,no-resolve
-- IP-CIDR,203.135.13.0/24,🎯 全球直连,no-resolve
-- IP-CIDR,203.135.20.0/24,🎯 全球直连,no-resolve
-- IP-CIDR,203.135.22.0/23,🎯 全球直连,no-resolve
-- IP-CIDR,203.135.24.0/23,🎯 全球直连,no-resolve
-- IP-CIDR,203.135.26.0/24,🎯 全球直连,no-resolve
-- IP-CIDR,203.135.29.0/24,🎯 全球直连,no-resolve
-- IP-CIDR,203.135.33.0/24,🎯 全球直连,no-resolve
-- IP-CIDR,203.135.38.0/23,🎯 全球直连,no-resolve
-- IP-CIDR,203.135.40.0/24,🎯 全球直连,no-resolve
-- IP-CIDR,203.135.43.0/24,🎯 全球直连,no-resolve
-- IP-CIDR,203.135.48.0/24,🎯 全球直连,no-resolve
-- IP-CIDR,203.135.50.0/24,🎯 全球直连,no-resolve
+- IP-CIDR,159.138.128.0/19,🎯 全球直连,no-resolve
 - IP-CIDR,42.186.0.0/16,🎯 全球直连,no-resolve
 - IP-CIDR,45.127.128.0/22,🎯 全球直连,no-resolve
 - IP-CIDR,45.195.24.0/24,🎯 全球直连,no-resolve
@@ -3798,7 +4008,6 @@ rules:
 - IP-CIDR,103.72.128.0/21,🎯 全球直连,no-resolve
 - IP-CIDR,103.74.24.0/21,🎯 全球直连,no-resolve
 - IP-CIDR,103.74.48.0/22,🎯 全球直连,no-resolve
-- IP-CIDR,103.126.92.0/22,🎯 全球直连,no-resolve
 - IP-CIDR,103.129.252.0/22,🎯 全球直连,no-resolve
 - IP-CIDR,103.131.252.0/22,🎯 全球直连,no-resolve
 - IP-CIDR,103.135.240.0/22,🎯 全球直连,no-resolve
@@ -3812,21 +4021,12 @@ rules:
 - IP-CIDR,123.58.160.0/19,🎯 全球直连,no-resolve
 - IP-CIDR,223.252.192.0/19,🎯 全球直连,no-resolve
 - IP-CIDR,101.198.128.0/18,🎯 全球直连,no-resolve
-- IP-CIDR,101.198.192.0/19,🎯 全球直连,no-resolve
+- IP-CIDR,101.198.192.0/24,🎯 全球直连,no-resolve
+- IP-CIDR,101.198.194.0/23,🎯 全球直连,no-resolve
+- IP-CIDR,101.198.196.0/22,🎯 全球直连,no-resolve
+- IP-CIDR,101.198.200.0/21,🎯 全球直连,no-resolve
+- IP-CIDR,101.198.208.0/20,🎯 全球直连,no-resolve
 - IP-CIDR,101.199.196.0/22,🎯 全球直连,no-resolve
 - GEOIP,CN,🎯 全球直连
 - MATCH,🐟 漏网之鱼
-tun:
-  auto-detect-interface: true
-  auto-route: true
-  dns-hijack:
-  - 114.114.114.114
-  - 180.76.76.76
-  - 119.29.29.29
-  - 223.5.5.5
-  - 8.8.8.8
-  - 8.8.4.4
-  - 1.1.1.1
-  - 1.0.0.1
-  enable: true
-  stack: system
+socks-port: 7891
