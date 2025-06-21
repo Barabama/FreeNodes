@@ -10,7 +10,7 @@ from urllib.parse import quote, SplitResult, urlsplit, urlunsplit
 
 def base64decode(string: str) -> str:
     """Decodes a base64 string."""
-    return string if not bool(re.match(r"^[A-Za-z0-9+/=]+$", string)) \
+    return string if not bool(re.match(r"^[A-Za-z0-9+/]+={0,2}$", string)) \
         else b64decode(string).decode("utf-8")
 
 

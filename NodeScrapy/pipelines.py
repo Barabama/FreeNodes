@@ -31,22 +31,22 @@ class Pipeline:
 
         name = item["name"]
         ext = item["ext"]
+        body = item["body"]
         filename = f"{name}{ext}"
-        spider.logger.info(f"Pipeline processing {filename}")
 
         with open(os.path.join(self.folder, filename), "w", encoding="utf-8") as file:
             if ext == ".txt":
-                file.write(base64decode(item["body"]))
+                data = base64decode(body)
+                file.write(data)
 
             elif ext == ".yaml":
-                data = yaml.safe_load(item["body"])
+                data = yaml.safe_load(body)
                 yaml.safe_dump(data, file, default_flow_style=False, allow_unicode=True)
 
             else:
-                file.write(item["body"])
+                file.write(body)
 
         spider.logger.info(f"Pipeline processed {filename}")
-
         CONFIG.set(name, {"up_date": item["date"]})
 
         return item
