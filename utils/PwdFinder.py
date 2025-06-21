@@ -9,9 +9,10 @@ from typing import Generator
 
 import cv2
 import numpy as np
+import pytesseract
 import pytubefix
 from pytubefix.cli import on_progress
-from paddleocr import PaddleOCR
+# from paddleocr import PaddleOCR
 from skimage.metrics import structural_similarity as ssim
 
 
@@ -49,7 +50,7 @@ class PwdFinder:
     descriptions: list[str]
     subtitles: pytubefix.CaptionQuery
     stream: pytubefix.Stream
-    ocr: PaddleOCR
+    # ocr: PaddleOCR
 
     def __init__(self, name: str, logger: logging.Logger, url: str):
         self.name = name
@@ -82,7 +83,7 @@ class PwdFinder:
                 return
 
             self.logger.info(f"{name} found a video stream")
-            self.ocr = PaddleOCR(use_angle_cls=True, lang="ch")
+            # self.ocr = PaddleOCR(use_angle_cls=True, lang="ch")
 
     def _xml_caption_iter(self):
         """Generate subtitles."""
@@ -97,13 +98,16 @@ class PwdFinder:
         """Generate OCR results."""
         for i, frame in _keyframe_iter(self.stream.url):
             self.logger.info(f"{self.name} reading keyframes {i}")
-            results = self.ocr.ocr(frame)[0]
-            if not results:
-                continue
+            # results = self.ocr.ocr(frame)[0]
+            # if not results:
+            #     continue
 
-            for result in results:
-                if result[1][1] > 0.9:
-                    yield result[1][0]
+            # for result in results:
+            #     if result[1][1] > 0.9:
+            #         yield result[1][0]
+
+            if text := pytesseract.image_to_string(frame, lang="chi_sim", config="--psm 6"):
+                yield text.strip()
 
     def password_iter(self, key: str):
         """Generate possible passwords."""
