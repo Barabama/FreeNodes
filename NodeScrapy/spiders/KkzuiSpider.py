@@ -20,7 +20,7 @@ class KkzuiSpider(DecryptSpider):
 
     def _find_link(self, name: str, text: str):
         """Find links in text and yield links with extensions."""
-        pattern = re.compile(f"([^<>\r\n]*)({self.configs[name].get("pattern", {})})")
+        pattern = re.compile(f"([^<>\r\n]*)({self.configs[name].get('pattern', {})})")
         for match in pattern.finditer(text):
             if "v2ray" in match.group(1):
                 yield match.group(2), ".txt"
