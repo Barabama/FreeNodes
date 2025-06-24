@@ -67,10 +67,9 @@ class SimpleSpider(scrapy.Spider):
     def parse(self, response: Response):
         name = response.meta["name"]
         config = self.configs[name]
-
+        # self.logger.debug(response.text)
         up_date = dt.datetime.strptime(config["up_date"], "%Y-%m-%d").date()
         tag_iter = iter(self._parse_tag(name, tag) for tag in response.css(config["selector"]))
-
         # First three links are the most recent ones.
         for rel_url, web_date in list(filter(lambda x: x[0], tag_iter))[0:3]:
             if web_date <= up_date and not self.settings.getbool("FORCE"):
@@ -84,7 +83,9 @@ class SimpleSpider(scrapy.Spider):
 
     def parse_blog(self, response: Response):
         """Parse blog and yield links of nodes."""
-        for link, ext in self._find_link(response.meta["name"], response.text):
+        text_parts = [part.strip() for part in response.text.split("><")]
+        filtered_parts = [part for part in text_parts if part]
+        for link, ext in self._find_link(response.meta["name"], "".join(filtered_parts)):
             response.meta["ext"] = ext
             yield response.follow(link, self.parse_link, meta=response.meta)
 
