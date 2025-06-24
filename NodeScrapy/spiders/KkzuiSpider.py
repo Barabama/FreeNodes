@@ -14,12 +14,13 @@ class KkzuiSpider(DecryptSpider):
     custom_settings = {"LOG_FILE": "scrapy.log",
                        "LOG_FILE_APPEND": True,
                        "LOG_LEVEL": "INFO"}
+
     targets = ("kkzui",)
     configs: dict[str, ConfigData]
 
     def _find_link(self, name: str, text: str):
         """Find links in text and yield links with extensions."""
-        pattern = re.compile(f"([^<>\r\n]*)({self.configs[name]['pattern']})")
+        pattern = re.compile(f"([^<>\r\n]*)({self.configs[name].get("pattern", {})})")
         for match in pattern.finditer(text):
             if "v2ray" in match.group(1):
                 yield match.group(2), ".txt"
@@ -31,10 +32,10 @@ class KkzuiSpider(DecryptSpider):
     def parse_blog(self, response: Response):
         """Parse blog with decryption."""
         name = response.meta["name"]
-        old_pwd = self.configs[name]["password"]
+        old_pwd = self.configs[name].get("password", "")
         pwd = response.meta.get("pwd")
-        method = {"textbox": self.configs[name]["textbox"],
-                  "button": self.configs[name]["button"]}
+        method = {"textbox": self.configs[name].get("textbox", ""),
+                  "button": self.configs[name].get("button", "")}
         for pwd in [old_pwd, pwd]:
             ok, msg = self._decrypt(response.url, method, pwd)
             if not ok:
@@ -70,5 +71,8 @@ class KkzuiSpider(DecryptSpider):
         if not ok:
             self.logger.error(f"{name} failed to get pwd, {msg}")
             return
-        response.meta["pwd"] = re.search(r"密码：(\d+)").group(1)
-        yield response.follow(url, callback=self.parse_blog, meta=response.meta)
+        text_parts = [part.strip() for part in response.text.split("><")]
+        filtered_parts = [part for part in text_parts if part]
+        if match := re.search(r"密码：(\d+)", "".join(filtered_parts)):
+            response.meta["pwd"] = match.group(1)
+            yield response.follow(url, self.parse_blog, meta=response.meta)

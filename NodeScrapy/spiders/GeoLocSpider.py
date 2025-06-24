@@ -45,10 +45,10 @@ class GeoLocSpider(scrapy.Spider):
         """Get geolocations of a list of IPs."""
         url = f"http://ip-api.com/batch"
         for i in range(0, len(nodes), 100):
-            for nodes, ips in zip(nodes[i:i + 100], ips[i:i + 100]):
+            for subnodes, subips in zip(nodes[i:i + 100], ips[i:i + 100]):
                 yield scrapy.http.JsonRequest(
-                    f"{url}?{params}", self.parse_batch, "POST", data=ips,
-                    meta={"file": filename, "nodes": nodes, "ips": ips})
+                    f"{url}?{params}", self.parse_batch, "POST", data=subips,
+                    meta={"file": filename, "nodes": subnodes, "ips": subips})
 
     def _req_geoloc(self, filename: str, node: str, addr: str):
         """Get geolocation of an IP/domain."""

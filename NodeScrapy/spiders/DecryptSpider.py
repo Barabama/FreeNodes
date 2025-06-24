@@ -11,7 +11,7 @@ from scrapy.http import Response
 
 from NodeScrapy.spiders.SimpleSpider import SimpleSpider
 from utils.Config import CONFIG, ConfigData
-from utils.PwdFinder import PwdFinder
+from utils.PwdFinder import PwdFinder, PwdGenerator
 
 
 class DecryptSpider(SimpleSpider):
@@ -73,14 +73,21 @@ class DecryptSpider(SimpleSpider):
         yt_url = [url for url in response.css("a::attr(href)").getall()
                   if "youtu.be" in url][CONFIG.get(name)["yt_idx"]]
         self.logger.info(f"{name} found yt_url: {yt_url}")
-        pwdfinder = PwdFinder(name, self.logger, yt_url)
-        if pwdfinder.date != response.meta["date"]:
-            self.logger.error(f"{name} found yt_url mismatch the date, exiting")
-            return
 
-        old_pwd = self.configs[name]["password"]
-        method = {"script": self.configs[name]["script"]}
-        for pwd in itertools.chain(iter([old_pwd]), pwdfinder.password_iter("码")):
+        # Get password from youtube video.
+        try:
+            pwdfinder = PwdFinder(name, self.logger, yt_url)
+            if pwdfinder.date != response.meta["date"]:
+                self.logger.error(f"{name} found yt_url mismatch the date, exiting")
+                return
+        # Need to brute force the password.
+        except Exception as e:
+            self.logger.error(f"{name} found yt_url error: {e}")
+            pwdfinder = PwdGenerator(name, self.logger)
+
+        old_pwd = self.configs[name].get("password", "")
+        method = {"script": self.configs[name].get("script", "")}
+        for pwd in itertools.chain(iter([old_pwd]), pwdfinder.password_iter()):
             ok, msg = self._decrypt(response.url, method, pwd)
             if not ok:
                 self.logger.warning(f"{name} {pwd} got {msg}")

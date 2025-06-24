@@ -6,7 +6,7 @@ from threading import Lock
 from typing import TypedDict
 
 
-class ConfigData(TypedDict, total=False):
+class ConfigData(TypedDict):
     start_url: str
     up_date: str
     selector: str

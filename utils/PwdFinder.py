@@ -43,6 +43,31 @@ def _keyframe_iter(url: str, threshold=0.8) -> Generator[tuple[int, np.ndarray],
     cap.release()
 
 
+class PwdGenerator:
+    name: str
+    logger: logging.Logger
+    date: str
+
+    def __init__(self, name: str, logger: logging.Logger):
+        self.name = name
+        self.logger = logger
+        self.date = dt.date.today().strftime("%Y-%m-%d")
+
+    def password_iter(self):
+        passd = set()
+        for i in range(10):
+            for j in range(10):
+                pwd = f"{i}{i}{j}{j}"
+                passd.add(pwd)
+                yield pwd
+        # Otherwise.
+        for i in range(10000):
+            i = str(i).zfill(4)
+            if i in passd:
+                continue
+            yield i
+
+
 class PwdFinder:
     name: str
     logger: logging.Logger
@@ -109,12 +134,12 @@ class PwdFinder:
             if text := pytesseract.image_to_string(frame, lang="chi_sim", config="--psm 6"):
                 yield text.strip()
 
-    def password_iter(self, key: str):
+    def password_iter(self):
         """Generate possible passwords."""
         text_iter = self._xml_caption_iter if self.subtitles else self._ocr_result_iter
         for text in itertools.chain(iter(self.descriptions), text_iter()):
             self.logger.debug(f"{self.name} found text: {text}")
-            if key not in text:
+            if "码" not in text:
                 continue
             yield from filter(lambda x: x, re.findall(f"\\d+", text))
 
