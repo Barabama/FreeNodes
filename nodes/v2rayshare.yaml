@@ -34,42 +34,10 @@ mode: rule
 proxies:
 - cipher: chacha20-ietf-poly1305
   ip-version: dual
-  name: 🇳🇱_NL_荷兰->🇲🇩_MD_摩尔多瓦
-  password: 4a2rfixophdjffa8KVA4Aa
-  port: 8080
-  server: 45.158.171.141
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  ip-version: dual
   name: 🇬🇧_GB_英国->🇺🇸_US_美国
   password: Bog0ELmMM9DSxDdQ
   port: 443
   server: 85.210.120.237
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  ip-version: dual
-  name: 🇩🇪_DE_德国
-  password: oZIoA69Q8yhcQV8ka3Pa3A
-  port: 8080
-  server: 45.87.175.28
-  type: ss
-  udp: true
-- cipher: chacha20-ietf-poly1305
-  ip-version: dual
-  name: 🇳🇱_NL_荷兰
-  password: 4a2rfixophdjffa8KVA4Aa
-  port: 8080
-  server: 45.158.171.132
-  type: ss
-  udp: true
-- cipher: aes-256-cfb
-  ip-version: dual
-  name: 🇸🇰_SK_斯洛伐克
-  password: f8f7aCzcPKbsF8p3
-  port: 989
-  server: 156.146.40.194
   type: ss
   udp: true
 - ip-version: dual
@@ -84,42 +52,71 @@ proxies:
   ws-opts:
     path: /XmTzATQPJv9RO3xr1D40NK
 - ip-version: dual
-  name: 🇺🇸_US_美国_2
-  network: ws
-  password: f108e0e2-5f12-42b6-9e67-1b2f073ffb2b
-  port: 443
-  server: 172.67.219.196
-  sni: CCcvfgt6.852224.dpdns.org
+  name: 🇨🇳_CN_中国->🇺🇸_US_美国_1
+  password: d0d08cddacc3190ea81b1b792e1b5fde
+  port: 4447
+  server: 36.151.192.27
+  skip-cert-verify: true
+  sni: www.baidu.com
   type: trojan
-  udp: true
-  ws-opts:
-    path: /CA5bMmr2JMum8sDKRwvFCJq
-- cipher: chacha20-ietf-poly1305
-  ip-version: dual
-  name: 🇳🇱_NL_荷兰->🇺🇸_US_美国
-  password: QCXDxuDlTTMD7jtgHUjIoj
-  port: 8080
-  server: 45.158.171.146
-  type: ss
   udp: true
 - alterId: 2
   cipher: auto
   ip-version: dual
-  name: 🇨🇳_CN_中国->🇺🇸_US_美国_1
+  name: 🇨🇳_CN_中国->🇺🇸_US_美国_2
   network: ws
-  port: 30829
-  server: v29.heduian.link
+  port: 30825
+  server: v25.heduian.link
   type: vmess
   udp: true
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   ws-opts:
     headers:
-      host: ocbc.com
+      host: v25.heduian.link
     path: /oooo
+- ip-version: dual
+  name: 🇨🇳_CN_中国->🇺🇸_US_美国_3
+  password: d0d08cddacc3190ea81b1b792e1b5fde
+  port: 8657
+  server: 36.156.102.123
+  skip-cert-verify: true
+  sni: www.baidu.com
+  type: trojan
+  udp: true
+- ip-version: dual
+  name: 🇺🇸_US_美国_3
+  network: ws
+  password: 6757b7d6-fa32-4708-b5d1-30e3cf928b51
+  port: 443
+  server: 104.21.6.179
+  sni: ZZzzzZZ.890601.XYZ
+  type: trojan
+  udp: true
+  ws-opts:
+    path: /l96MZ8se5Kl2p8BiMhP42l
+- cipher: aes-256-cfb
+  ip-version: dual
+  name: 🇸🇰_SK_斯洛伐克->🏳️_unKnow_未知
+  password: f8f7aCzcPKbsF8p3
+  port: 989
+  server: 156.146.40.194
+  type: ss
+  udp: true
+- ip-version: dual
+  name: 🇺🇸_US_美国_5
+  network: ws
+  password: 288124da-0d68-42f4-9f48-70dc4dcc55a6
+  port: 443
+  server: 104.21.77.79
+  sni: SsXCDfR5.986986.shoP
+  type: trojan
+  udp: true
+  ws-opts:
+    path: /raChT39pjLFYRA5HdHEIupMZeK
 - alterId: 2
   cipher: auto
   ip-version: dual
-  name: 🇨🇳_CN_中国->🇺🇸_US_美国_2
+  name: 🇨🇳_CN_中国
   network: ws
   port: 30829
   server: 111.26.109.79
@@ -128,50 +125,33 @@ proxies:
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   ws-opts:
     path: /oooo
-- ip-version: dual
-  name: 🇺🇸_US_美国->🇫🇷_FR_法国
-  network: ws
-  password: fa050497-fc2a-45ee-89c0-96670c4ecb65
-  port: 443
-  server: 104.21.63.135
-  sni: Rrr4.8906004.xYZ
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: rrr4.8906004.xyz
-    path: /DZxb5QZyWgQPuXTwt
 proxy-groups:
 - name: 🚀 节点选择
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - 🇳🇱_NL_荷兰->🇲🇩_MD_摩尔多瓦
   - 🇬🇧_GB_英国->🇺🇸_US_美国
-  - 🇩🇪_DE_德国
-  - 🇳🇱_NL_荷兰
-  - 🇸🇰_SK_斯洛伐克
   - 🇺🇸_US_美国_1
-  - 🇺🇸_US_美国_2
-  - 🇳🇱_NL_荷兰->🇺🇸_US_美国
   - 🇨🇳_CN_中国->🇺🇸_US_美国_1
   - 🇨🇳_CN_中国->🇺🇸_US_美国_2
-  - 🇺🇸_US_美国->🇫🇷_FR_法国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_3
+  - 🇺🇸_US_美国_3
+  - 🇸🇰_SK_斯洛伐克->🏳️_unKnow_未知
+  - 🇺🇸_US_美国_5
+  - 🇨🇳_CN_中国
   type: select
 - interval: 300
   name: ♻️ 自动选择
   proxies:
-  - 🇳🇱_NL_荷兰->🇲🇩_MD_摩尔多瓦
   - 🇬🇧_GB_英国->🇺🇸_US_美国
-  - 🇩🇪_DE_德国
-  - 🇳🇱_NL_荷兰
-  - 🇸🇰_SK_斯洛伐克
   - 🇺🇸_US_美国_1
-  - 🇺🇸_US_美国_2
-  - 🇳🇱_NL_荷兰->🇺🇸_US_美国
   - 🇨🇳_CN_中国->🇺🇸_US_美国_1
   - 🇨🇳_CN_中国->🇺🇸_US_美国_2
-  - 🇺🇸_US_美国->🇫🇷_FR_法国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_3
+  - 🇺🇸_US_美国_3
+  - 🇸🇰_SK_斯洛伐克->🏳️_unKnow_未知
+  - 🇺🇸_US_美国_5
+  - 🇨🇳_CN_中国
   tolerance: 5000
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -180,65 +160,57 @@ proxy-groups:
   - 🚀 节点选择
   - ♻️ 自动选择
   - 🎯 全球直连
-  - 🇳🇱_NL_荷兰->🇲🇩_MD_摩尔多瓦
   - 🇬🇧_GB_英国->🇺🇸_US_美国
-  - 🇩🇪_DE_德国
-  - 🇳🇱_NL_荷兰
-  - 🇸🇰_SK_斯洛伐克
   - 🇺🇸_US_美国_1
-  - 🇺🇸_US_美国_2
-  - 🇳🇱_NL_荷兰->🇺🇸_US_美国
   - 🇨🇳_CN_中国->🇺🇸_US_美国_1
   - 🇨🇳_CN_中国->🇺🇸_US_美国_2
-  - 🇺🇸_US_美国->🇫🇷_FR_法国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_3
+  - 🇺🇸_US_美国_3
+  - 🇸🇰_SK_斯洛伐克->🏳️_unKnow_未知
+  - 🇺🇸_US_美国_5
+  - 🇨🇳_CN_中国
   type: select
 - name: 📲 电报信息
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
-  - 🇳🇱_NL_荷兰->🇲🇩_MD_摩尔多瓦
   - 🇬🇧_GB_英国->🇺🇸_US_美国
-  - 🇩🇪_DE_德国
-  - 🇳🇱_NL_荷兰
-  - 🇸🇰_SK_斯洛伐克
   - 🇺🇸_US_美国_1
-  - 🇺🇸_US_美国_2
-  - 🇳🇱_NL_荷兰->🇺🇸_US_美国
   - 🇨🇳_CN_中国->🇺🇸_US_美国_1
   - 🇨🇳_CN_中国->🇺🇸_US_美国_2
-  - 🇺🇸_US_美国->🇫🇷_FR_法国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_3
+  - 🇺🇸_US_美国_3
+  - 🇸🇰_SK_斯洛伐克->🏳️_unKnow_未知
+  - 🇺🇸_US_美国_5
+  - 🇨🇳_CN_中国
   type: select
 - name: Ⓜ️ 微软服务
   proxies:
   - 🎯 全球直连
   - 🚀 节点选择
-  - 🇳🇱_NL_荷兰->🇲🇩_MD_摩尔多瓦
   - 🇬🇧_GB_英国->🇺🇸_US_美国
-  - 🇩🇪_DE_德国
-  - 🇳🇱_NL_荷兰
-  - 🇸🇰_SK_斯洛伐克
   - 🇺🇸_US_美国_1
-  - 🇺🇸_US_美国_2
-  - 🇳🇱_NL_荷兰->🇺🇸_US_美国
   - 🇨🇳_CN_中国->🇺🇸_US_美国_1
   - 🇨🇳_CN_中国->🇺🇸_US_美国_2
-  - 🇺🇸_US_美国->🇫🇷_FR_法国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_3
+  - 🇺🇸_US_美国_3
+  - 🇸🇰_SK_斯洛伐克->🏳️_unKnow_未知
+  - 🇺🇸_US_美国_5
+  - 🇨🇳_CN_中国
   type: select
 - name: 🍎 苹果服务
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
-  - 🇳🇱_NL_荷兰->🇲🇩_MD_摩尔多瓦
   - 🇬🇧_GB_英国->🇺🇸_US_美国
-  - 🇩🇪_DE_德国
-  - 🇳🇱_NL_荷兰
-  - 🇸🇰_SK_斯洛伐克
   - 🇺🇸_US_美国_1
-  - 🇺🇸_US_美国_2
-  - 🇳🇱_NL_荷兰->🇺🇸_US_美国
   - 🇨🇳_CN_中国->🇺🇸_US_美国_1
   - 🇨🇳_CN_中国->🇺🇸_US_美国_2
-  - 🇺🇸_US_美国->🇫🇷_FR_法国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_3
+  - 🇺🇸_US_美国_3
+  - 🇸🇰_SK_斯洛伐克->🏳️_unKnow_未知
+  - 🇺🇸_US_美国_5
+  - 🇨🇳_CN_中国
   type: select
 - name: 🎯 全球直连
   proxies:
@@ -261,17 +233,15 @@ proxy-groups:
   - 🚀 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
-  - 🇳🇱_NL_荷兰->🇲🇩_MD_摩尔多瓦
   - 🇬🇧_GB_英国->🇺🇸_US_美国
-  - 🇩🇪_DE_德国
-  - 🇳🇱_NL_荷兰
-  - 🇸🇰_SK_斯洛伐克
   - 🇺🇸_US_美国_1
-  - 🇺🇸_US_美国_2
-  - 🇳🇱_NL_荷兰->🇺🇸_US_美国
   - 🇨🇳_CN_中国->🇺🇸_US_美国_1
   - 🇨🇳_CN_中国->🇺🇸_US_美国_2
-  - 🇺🇸_US_美国->🇫🇷_FR_法国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_3
+  - 🇺🇸_US_美国_3
+  - 🇸🇰_SK_斯洛伐克->🏳️_unKnow_未知
+  - 🇺🇸_US_美国_5
+  - 🇨🇳_CN_中国
   type: select
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
