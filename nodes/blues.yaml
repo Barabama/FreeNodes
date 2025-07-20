@@ -4,53 +4,11 @@ log-level: info
 mode: Rule
 port: 7890
 proxies:
-- name: cx.ylks0033.dpdns.org_1
-  network: ws
-  port: 443
-  server: www.ipchicken.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_1
-  network: ws
-  port: 443
-  server: 172.67.79.211
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_2
-  network: ws
-  port: 443
-  server: www.ipchicken.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
 - name: TW_1
   network: ws
   port: 81
   server: 210.61.97.241
-  servername: mc.ylks0033.dpdns.org
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -58,13 +16,39 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: mc.ylks0033.dpdns.org
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
+- name: US_1
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: 104.17.71.31
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: 🇺🇸US_1
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 2096
+  server: 104.17.128.1
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
 - name: CMCC_1
   network: ws
   port: 443
-  server: 104.18.83.92
-  servername: mc.ylks0033.dpdns.org
+  server: 104.19.150.163
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -72,13 +56,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: mc.ylks0033.dpdns.org
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
 - name: CMCC_2
   network: ws
   port: 443
-  server: 104.16.249.115
-  servername: cx.ylks0033.dpdns.org
+  server: 104.18.83.92
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -86,13 +70,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: cx.ylks0033.dpdns.org
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
 - name: CMCC_3
   network: ws
   port: 443
-  server: 104.19.144.212
-  servername: mc.ylks0033.dpdns.org
+  server: 104.16.246.132
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -100,27 +84,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: US_1
-  network: ws
-  port: 443
-  server: 104.17.68.85
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
 - name: CMCC_4
   network: ws
   port: 443
-  server: 104.16.246.188
-  servername: cx.ylks0033.dpdns.org
+  server: 104.16.242.72
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -128,27 +98,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: 🇺🇸US_1
-  network: ws
-  port: 2083
-  server: 104.16.134.27
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
+      host: ns.ylka.dpdns.org
     path: /?ed=2560
 - name: CMCC_5
   network: ws
   port: 443
-  server: 104.17.100.185
-  servername: cx.ylks0033.dpdns.org
+  server: 104.19.144.212
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -156,13 +112,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: cx.ylks0033.dpdns.org
+      host: ns.ylka.dpdns.org
     path: /?ed=2560
 - name: CMCC_6
   network: ws
   port: 443
-  server: 104.19.150.28
-  servername: cx.ylks0033.dpdns.org
+  server: 104.18.86.131
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -170,13 +126,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: cx.ylks0033.dpdns.org
+      host: ns.ylka.dpdns.org
     path: /?ed=2560
 - name: CMCC_7
   network: ws
   port: 443
-  server: 104.17.104.243
-  servername: mc.ylks0033.dpdns.org
+  server: 104.19.150.163
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -184,13 +140,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: mc.ylks0033.dpdns.org
+      host: ns.ylka.dpdns.org
     path: /?ed=2560
 - name: CMCC_8
   network: ws
   port: 443
-  server: 104.16.253.83
-  servername: cx.ylks0033.dpdns.org
+  server: 104.17.102.95
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -198,13 +154,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: cx.ylks0033.dpdns.org
+      host: ns.ylka.dpdns.org
     path: /?ed=2560
 - name: CMCC_9
   network: ws
   port: 443
-  server: 104.16.242.72
-  servername: mc.ylks0033.dpdns.org
+  server: 104.17.219.208
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -212,13 +168,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: mc.ylks0033.dpdns.org
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
 - name: 🇭🇰HK_1
   network: ws
   port: 443
-  server: 104.17.71.31
-  servername: mc.ylks0033.dpdns.org
+  server: 104.17.68.85
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -226,83 +182,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC_10
-  network: ws
-  port: 443
-  server: 104.19.148.108
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_2
-  network: ws
-  port: 443
-  server: www.glassdoor.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC_11
-  network: ws
-  port: 443
-  server: 104.17.215.102
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC_12
-  network: ws
-  port: 443
-  server: 104.19.144.212
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC_13
-  network: ws
-  port: 443
-  server: 198.41.208.23
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
 - name: TW_2
   network: ws
   port: 81
   server: 210.61.97.241
-  servername: cx.ylks0033.dpdns.org
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -310,13 +196,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: cx.ylks0033.dpdns.org
+      host: ns.ylka.dpdns.org
     path: /?ed=2560
-- name: CMCC_14
+- name: CMCC_10
   network: ws
   port: 443
-  server: 104.16.246.132
-  servername: mc.ylks0033.dpdns.org
+  server: 104.17.101.175
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -324,13 +210,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: mc.ylks0033.dpdns.org
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_3
+- name: CMCC_11
   network: ws
   port: 443
-  server: www.4chan.org
-  servername: mc.ylks0033.dpdns.org
+  server: 104.17.189.171
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -338,2729 +224,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: NL_1
-  network: ws
-  port: 443
-  server: 158.101.214.54
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC_15
-  network: ws
-  port: 443
-  server: 104.18.82.55
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC_16
-  network: ws
-  port: 443
-  server: 104.18.147.201
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC_17
-  network: ws
-  port: 443
-  server: 104.17.102.95
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_3
-  network: ws
-  port: 443
-  server: www.okcupid.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_4
-  network: ws
-  port: 443
-  server: 104.17.68.85
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC_18
-  network: ws
-  port: 443
-  server: 104.17.210.171
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: 🇺🇸US_2
-  network: ws
-  port: 2096
-  server: 104.17.128.1
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC_19
-  network: ws
-  port: 443
-  server: 104.17.102.95
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_1
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC_20
-  network: ws
-  port: 443
-  server: 104.19.150.28
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_4
-  network: ws
-  port: 443
-  server: benedict.ns.cloudflare.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_5
-  network: ws
-  port: 443
-  server: comicabc.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_2
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_3
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC_21
-  network: ws
-  port: 443
-  server: 104.18.86.131
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_6
-  network: ws
-  port: 443
-  server: craig.ns.cloudflare.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: 🇺🇸US_3
-  network: ws
-  port: 8443
-  server: 162.159.129.67
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_4
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_5
-  network: ws
-  port: 443
-  server: shopify.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CT_1
-  network: ws
-  port: 443
-  server: 162.159.153.170
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_7
-  network: ws
-  port: 443
-  server: 172.67.95.24
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_6
-  network: ws
-  port: 443
-  server: 162.159.36.104
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_8
-  network: ws
-  port: 443
-  server: ipv4.ip.sb
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_7
-  network: ws
-  port: 443
-  server: www.wto.org
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_9
-  network: ws
-  port: 443
-  server: 172.67.120.0
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_5
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_6
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_7
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC_22
-  network: ws
-  port: 443
-  server: 104.18.82.55
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CT_2
-  network: ws
-  port: 443
-  server: 162.159.152.53
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_8
-  network: ws
-  port: 443
-  server: rustam.ns.cloudflare.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CT_3
-  network: ws
-  port: 443
-  server: 162.159.152.31
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CT_4
-  network: ws
-  port: 443
-  server: 162.159.153.216
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_10
-  network: ws
-  port: 443
-  server: steamdb.info
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_11
-  network: ws
-  port: 443
-  server: ip.gs
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_12
-  network: ws
-  port: 443
-  server: 104.17.142.12
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: 🇺🇸US_4
-  network: ws
-  port: 8443
-  server: 162.159.129.67
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: 🇺🇸US_5
-  network: ws
-  port: 2087
-  server: 104.25.254.4
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_9
-  network: ws
-  port: 443
-  server: steamdb.info
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_8
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_13
-  network: ws
-  port: 443
-  server: icook.tw
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_10
-  network: ws
-  port: 443
-  server: www.whatismyip.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_14
-  network: ws
-  port: 443
-  server: www.iakeys.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_15
-  network: ws
-  port: 443
-  server: damien.ns.cloudflare.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_11
-  network: ws
-  port: 443
-  server: ip.sb
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_16
-  network: ws
-  port: 443
-  server: www.ddwhm.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_17
-  network: ws
-  port: 443
-  server: 162.159.36.104
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CT_5
-  network: ws
-  port: 443
-  server: 162.159.153.72
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_18
-  network: ws
-  port: 443
-  server: bowen.ns.cloudflare.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_19
-  network: ws
-  port: 443
-  server: www.digitalocean.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_20
-  network: ws
-  port: 443
-  server: kyree.ns.cloudflare.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_12
-  network: ws
-  port: 443
-  server: 172.67.120.0
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_13
-  network: ws
-  port: 443
-  server: ip.gs
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_21
-  network: ws
-  port: 443
-  server: www.4chan.org
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CT_6
-  network: ws
-  port: 443
-  server: 162.159.153.212
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_14
-  network: ws
-  port: 443
-  server: toy-people.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_22
-  network: ws
-  port: 443
-  server: toy-people.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_15
-  network: ws
-  port: 443
-  server: kyree.ns.cloudflare.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_16
-  network: ws
-  port: 443
-  server: www.ddwhm.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_9
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_17
-  network: ws
-  port: 443
-  server: ipinfo.in
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_23
-  network: ws
-  port: 443
-  server: ipinfo.in
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_10
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_24
-  network: ws
-  port: 443
-  server: dnschecker.org
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_25
-  network: ws
-  port: 443
-  server: otto.ns.cloudflare.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_18
-  network: ws
-  port: 443
-  server: uriah.ns.cloudflare.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_26
-  network: ws
-  port: 443
-  server: braden.ns.cloudflare.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CT_7
-  network: ws
-  port: 443
-  server: 162.159.152.81
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_27
-  network: ws
-  port: 443
-  server: huxley.ns.cloudflare.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_19
-  network: ws
-  port: 443
-  server: 172.67.49.134
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: IPV6_1
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_28
-  network: ws
-  port: 443
-  server: www.ipget.net
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_20
-  network: ws
-  port: 443
-  server: damien.ns.cloudflare.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_29
-  network: ws
-  port: 443
-  server: tasteatlas.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_21
-  network: ws
-  port: 443
-  server: pranab.ns.cloudflare.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: US_2
-  network: ws
-  port: 443
-  server: time.is
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_11
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_22
-  network: ws
-  port: 443
-  server: 172.67.243.218
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CT_8
-  network: ws
-  port: 443
-  server: 162.159.153.184
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_23
-  network: ws
-  port: 443
-  server: 172.67.106.26
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CT_9
-  network: ws
-  port: 443
-  server: 162.159.153.194
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_12
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_30
-  network: ws
-  port: 443
-  server: decker.ns.cloudflare.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_24
-  network: ws
-  port: 443
-  server: ashton.ns.cloudflare.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_25
-  network: ws
-  port: 443
-  server: dnschecker.org
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_31
-  network: ws
-  port: 443
-  server: rustam.ns.cloudflare.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_26
-  network: ws
-  port: 443
-  server: julio.ns.cloudflare.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CT_10
-  network: ws
-  port: 443
-  server: 162.159.152.69
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_27
-  network: ws
-  port: 443
-  server: abdullah.ns.cloudflare.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_32
-  network: ws
-  port: 443
-  server: ip.sb
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_33
-  network: ws
-  port: 443
-  server: 172.67.243.218
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: 🇺🇸US_6
-  network: ws
-  port: 443
-  server: 198.62.62.156
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_28
-  network: ws
-  port: 443
-  server: www.pcmag.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_29
-  network: ws
-  port: 443
-  server: www.csgo.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_30
-  network: ws
-  port: 443
-  server: comicabc.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_31
-  network: ws
-  port: 443
-  server: otto.ns.cloudflare.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_34
-  network: ws
-  port: 443
-  server: cris.ns.cloudflare.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: 🇺🇸US_7
-  network: ws
-  port: 2083
-  server: 104.16.134.27
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CT_11
-  network: ws
-  port: 443
-  server: 162.159.152.69
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_32
-  network: ws
-  port: 443
-  server: www.ipget.net
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_35
-  network: ws
-  port: 443
-  server: 172.67.49.134
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_33
-  network: ws
-  port: 443
-  server: wilson.ns.cloudflare.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_13
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_36
-  network: ws
-  port: 443
-  server: lewis.ns.cloudflare.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: US_3
-  network: ws
-  port: 443
-  server: join.my.telegram.channel.cmliussss.to.unlock.more.premium.nodes.cf.090227.xyz
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_37
-  network: ws
-  port: 443
-  server: whatismyipaddress.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: US_4
-  network: ws
-  port: 443
-  server: 129.213.136.180
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_34
-  network: ws
-  port: 443
-  server: iplocation.io
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_35
-  network: ws
-  port: 443
-  server: trevor.ns.cloudflare.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_36
-  network: ws
-  port: 443
-  server: whatismyipaddress.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: 🇺🇸US_8
-  network: ws
-  port: 2096
-  server: 104.17.128.1
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_38
-  network: ws
-  port: 443
-  server: 172.67.110.232
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_37
-  network: ws
-  port: 443
-  server: www.udemy.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_14
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: US_5
-  network: ws
-  port: 443
-  server: time.is
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_39
-  network: ws
-  port: 443
-  server: www.hugedomains.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_15
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_16
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_38
-  network: ws
-  port: 443
-  server: dylan.ns.cloudflare.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_17
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_40
-  network: ws
-  port: 443
-  server: 172.67.181.209
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_39
-  network: ws
-  port: 443
-  server: moura.ns.cloudflare.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CT_12
-  network: ws
-  port: 443
-  server: 162.159.152.205
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_40
-  network: ws
-  port: 443
-  server: nikon.ns.cloudflare.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_41
-  network: ws
-  port: 443
-  server: sullivan.ns.cloudflare.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CT_13
-  network: ws
-  port: 443
-  server: 162.159.152.81
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_18
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_41
-  network: ws
-  port: 443
-  server: www.okcupid.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_42
-  network: ws
-  port: 443
-  server: lewis.ns.cloudflare.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_42
-  network: ws
-  port: 443
-  server: wilson.ns.cloudflare.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_19
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_43
-  network: ws
-  port: 443
-  server: nikon.ns.cloudflare.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CT_14
-  network: ws
-  port: 443
-  server: 162.159.152.155
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CT_15
-  network: ws
-  port: 443
-  server: 162.159.152.225
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC_23
-  network: ws
-  port: 443
-  server: 104.16.249.115
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC_24
-  network: ws
-  port: 443
-  server: 104.18.83.92
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC_25
-  network: ws
-  port: 443
-  server: 104.16.246.173
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_44
-  network: ws
-  port: 443
-  server: www.udemy.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_20
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: 🇺🇸US_9
-  network: ws
-  port: 443
-  server: 198.62.62.156
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_43
-  network: ws
-  port: 443
-  server: braden.ns.cloudflare.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CT_16
-  network: ws
-  port: 443
-  server: 162.159.153.212
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_45
-  network: ws
-  port: 443
-  server: www.csgo.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: 🇺🇸US_10
-  network: ws
-  port: 2087
-  server: 104.25.254.4
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_21
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: US_6
-  network: ws
-  port: 443
-  server: icook.hk
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_22
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_44
-  network: ws
-  port: 443
-  server: sullivan.ns.cloudflare.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: 🇺🇸US_11
-  network: ws
-  port: 2053
-  server: 162.159.129.11
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_46
-  network: ws
-  port: 443
-  server: 172.67.106.26
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_23
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: IPV6_2
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CH_1
-  network: ws
-  port: 443
-  server: 140.238.212.95
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_45
-  network: ws
-  port: 443
-  server: www.glassdoor.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC_26
-  network: ws
-  port: 443
-  server: 104.17.219.208
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_46
-  network: ws
-  port: 443
-  server: 104.17.142.12
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CT_17
-  network: ws
-  port: 443
-  server: 162.159.152.53
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_47
-  network: ws
-  port: 443
-  server: www.iakeys.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_24
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_47
-  network: ws
-  port: 443
-  server: shopify.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_48
-  network: ws
-  port: 443
-  server: dylan.ns.cloudflare.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_48
-  network: ws
-  port: 443
-  server: decker.ns.cloudflare.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_49
-  network: ws
-  port: 443
-  server: 162.159.133.85
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC_27
-  network: ws
-  port: 443
-  server: 104.17.104.243
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC_28
-  network: ws
-  port: 443
-  server: 104.17.110.70
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CT_18
-  network: ws
-  port: 443
-  server: 162.159.152.225
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CT_19
-  network: ws
-  port: 443
-  server: 162.159.153.194
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_49
-  network: ws
-  port: 443
-  server: www.digitalocean.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_50
-  network: ws
-  port: 443
-  server: www.wto.org
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_51
-  network: ws
-  port: 443
-  server: 103.160.204.59
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CT_20
-  network: ws
-  port: 443
-  server: 162.159.153.42
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: US_7
-  network: ws
-  port: 443
-  server: join.my.telegram.channel.cmliussss.to.unlock.more.premium.nodes.cf.090227.xyz
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_50
-  network: ws
-  port: 443
-  server: craig.ns.cloudflare.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC_29
-  network: ws
-  port: 443
-  server: 104.19.145.14
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: US_8
-  network: ws
-  port: 443
-  server: icook.hk
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_25
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_52
-  network: ws
-  port: 443
-  server: abdullah.ns.cloudflare.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_53
-  network: ws
-  port: 443
-  server: julio.ns.cloudflare.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_54
-  network: ws
-  port: 443
-  server: www.pcmag.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_26
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_55
-  network: ws
-  port: 443
-  server: ashton.ns.cloudflare.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_51
-  network: ws
-  port: 443
-  server: benedict.ns.cloudflare.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_52
-  network: ws
-  port: 443
-  server: bowen.ns.cloudflare.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CT_21
-  network: ws
-  port: 443
-  server: 162.159.153.239
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_56
-  network: ws
-  port: 443
-  server: pranab.ns.cloudflare.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_53
-  network: ws
-  port: 443
-  server: tasteatlas.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_54
-  network: ws
-  port: 443
-  server: huxley.ns.cloudflare.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_57
-  network: ws
-  port: 443
-  server: trevor.ns.cloudflare.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC_30
-  network: ws
-  port: 443
-  server: 104.17.223.37
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: US_9
-  network: ws
-  port: 443
-  server: 129.213.130.70
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_58
-  network: ws
-  port: 443
-  server: www.whatismyip.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CT_22
-  network: ws
-  port: 443
-  server: 162.159.153.144
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: 🇺🇸US_12
-  network: ws
-  port: 2053
-  server: 162.159.129.11
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
+      host: ns.ylka.dpdns.org
     path: /?ed=2560
 - name: 🇭🇰HK_2
   network: ws
   port: 443
   server: 104.17.71.31
-  servername: cx.ylks0033.dpdns.org
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -3068,13 +238,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CT_23
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: 🇭🇰HK_3
   network: ws
   port: 443
-  server: 162.159.153.144
-  servername: cx.ylks0033.dpdns.org
+  server: 104.17.68.85
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -3082,13 +252,26 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_55
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: 🇭🇰HK_4
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: 104.17.68.85
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: CMCC_12
   network: ws
   port: 443
-  server: cris.ns.cloudflare.com
-  servername: mc.ylks0033.dpdns.org
+  server: 104.16.246.173
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -3096,13 +279,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: mc.ylks0033.dpdns.org
+      host: ns.ylka.dpdns.org
     path: /?ed=2560
-- name: US_10
+- name: CMCC_13
   network: ws
   port: 443
-  server: 129.213.130.70
-  servername: mc.ylks0033.dpdns.org
+  server: 104.17.219.208
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -3110,13 +293,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: mc.ylks0033.dpdns.org
+      host: ns.ylka.dpdns.org
     path: /?ed=2560
-- name: US_11
+- name: CMCC_14
   network: ws
   port: 443
-  server: 129.213.136.180
-  servername: mc.ylks0033.dpdns.org
+  server: 104.17.102.95
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -3124,13 +307,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: mc.ylks0033.dpdns.org
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
-- name: CT_24
+- name: CMCC_15
   network: ws
   port: 443
-  server: 162.159.153.239
-  servername: mc.ylks0033.dpdns.org
+  server: 104.18.86.131
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -3138,13 +321,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: mc.ylks0033.dpdns.org
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_56
+- name: NL_1
   network: ws
   port: 443
-  server: 103.160.204.59
-  servername: mc.ylks0033.dpdns.org
+  server: 158.101.214.54
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -3152,83 +335,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_57
-  network: ws
-  port: 443
-  server: icook.tw
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_58
-  network: ws
-  port: 443
-  server: www.hugedomains.com
-  servername: mc.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_59
-  network: ws
-  port: 443
-  server: uriah.ns.cloudflare.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_60
-  network: ws
-  port: 443
-  server: iplocation.io
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: cx.ylks0033.dpdns.org_61
-  network: ws
-  port: 443
-  server: moura.ns.cloudflare.com
-  servername: cx.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: cx.ylks0033.dpdns.org
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
 - name: NL_2
   network: ws
   port: 443
   server: 158.101.214.54
-  servername: cx.ylks0033.dpdns.org
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -3236,13 +349,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: cx.ylks0033.dpdns.org
+      host: ns.ylka.dpdns.org
     path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_59
+- name: CMCC_16
   network: ws
   port: 443
-  server: 172.67.181.209
-  servername: mc.ylks0033.dpdns.org
+  server: 104.18.94.107
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -3250,13 +363,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: mc.ylks0033.dpdns.org
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_60
+- name: CMCC_17
   network: ws
   port: 443
-  server: 172.67.110.232
-  servername: mc.ylks0033.dpdns.org
+  server: 104.19.144.212
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -3264,13 +377,55 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: mc.ylks0033.dpdns.org
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
-- name: CH_2
+- name: 🇭🇰HK_5
+  network: ws
+  port: 443
+  server: 104.17.71.31
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: CMCC_18
+  network: ws
+  port: 443
+  server: 104.16.242.72
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_19
+  network: ws
+  port: 443
+  server: 104.17.100.185
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: CH_1
   network: ws
   port: 443
   server: 140.238.212.95
-  servername: cx.ylks0033.dpdns.org
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -3278,13 +433,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: cx.ylks0033.dpdns.org
+      host: ns.ylka.dpdns.org
     path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_61
+- name: CMCC_20
   network: ws
   port: 443
-  server: 162.159.133.85
-  servername: mc.ylks0033.dpdns.org
+  server: 104.17.110.70
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -3292,13 +447,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: mc.ylks0033.dpdns.org
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
-- name: CA
+- name: CMCC_21
   network: ws
   port: 443
-  server: 140.238.158.238
-  servername: cx.ylks0033.dpdns.org
+  server: 104.18.94.107
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -3306,13 +461,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: cx.ylks0033.dpdns.org
+      host: ns.ylka.dpdns.org
     path: /?ed=2560
-- name: US_12
+- name: CMCC_22
   network: ws
   port: 443
-  server: 150.136.87.192
-  servername: cx.ylks0033.dpdns.org
+  server: 104.17.210.171
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -3320,13 +475,1121 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: cx.ylks0033.dpdns.org
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
+- name: CMCC_23
+  network: ws
+  port: 443
+  server: 104.17.101.175
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: 172.67.243.218_1
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: 172.67.243.218
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: CMCC-IPV6_1
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_24
+  network: ws
+  port: 443
+  server: 104.17.215.102
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: 🇭🇰HK_6
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: 104.17.68.85
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: CMCC_25
+  network: ws
+  port: 443
+  server: 104.18.82.55
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: nikon.ns.cloudflare.com_1
+  network: ws
+  port: 443
+  server: nikon.ns.cloudflare.com
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: CMCC_26
+  network: ws
+  port: 443
+  server: 104.17.210.171
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_27
+  network: ws
+  port: 443
+  server: 104.17.215.102
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: nikon.ns.cloudflare.com_2
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: nikon.ns.cloudflare.com
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: ip.sb_1
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: ip.sb
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: nikon.ns.cloudflare.com_3
+  network: ws
+  port: 443
+  server: nikon.ns.cloudflare.com
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: ip.sb_2
+  network: ws
+  port: 443
+  server: ip.sb
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: shopify.com_1
+  network: ws
+  port: 443
+  server: shopify.com
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: sullivan.ns.cloudflare.com_1
+  network: ws
+  port: 443
+  server: sullivan.ns.cloudflare.com
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: 🇭🇰HK_7
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: 104.17.71.31
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: IPV6_1
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 4700
+  server: '[2606'
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: CT_1
+  network: ws
+  port: 443
+  server: 162.159.153.184
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: 🇺🇸US_2
+  network: ws
+  port: 2096
+  server: 104.17.128.1
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: CMCC-IPV6_2
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_28
+  network: ws
+  port: 443
+  server: 104.17.189.171
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: IPV6_2
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 4700
+  server: '[2606'
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: 162.159.36.104_1
+  network: ws
+  port: 443
+  server: 162.159.36.104
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: shopify.com_2
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: shopify.com
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: sullivan.ns.cloudflare.com_2
+  network: ws
+  port: 443
+  server: sullivan.ns.cloudflare.com
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: CMCC_29
+  network: ws
+  port: 443
+  server: 104.16.246.173
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: CT_2
+  network: ws
+  port: 443
+  server: 162.159.153.216
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: shopify.com_3
+  network: ws
+  port: 443
+  server: shopify.com
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: CT_3
+  network: ws
+  port: 443
+  server: 162.159.152.205
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: wilson.ns.cloudflare.com_1
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: wilson.ns.cloudflare.com
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: CT_4
+  network: ws
+  port: 443
+  server: 162.159.152.31
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: 🇺🇸US_3
+  network: ws
+  port: 8443
+  server: 162.159.129.67
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: shopify.com_4
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: shopify.com
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: nikon.ns.cloudflare.com_4
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: nikon.ns.cloudflare.com
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: ip.sb_3
+  network: ws
+  port: 443
+  server: ip.sb
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: sullivan.ns.cloudflare.com_3
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: sullivan.ns.cloudflare.com
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: 172.67.243.218_2
+  network: ws
+  port: 443
+  server: 172.67.243.218
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: US_2
+  network: ws
+  port: 443
+  server: time.is
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: otto.ns.cloudflare.com_1
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: otto.ns.cloudflare.com
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: 172.67.110.232_1
+  network: ws
+  port: 443
+  server: 172.67.110.232
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: CT_5
+  network: ws
+  port: 443
+  server: 162.159.153.209
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: icook.tw_1
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: icook.tw
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: US_3
+  network: ws
+  port: 443
+  server: time.is
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: wilson.ns.cloudflare.com_2
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: wilson.ns.cloudflare.com
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: CMCC_30
+  network: ws
+  port: 443
+  server: 104.17.110.70
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CT_6
+  network: ws
+  port: 443
+  server: 162.159.153.42
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: 172.67.110.232_2
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: 172.67.110.232
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: 🇭🇰HK_8
+  network: ws
+  port: 443
+  server: 103.160.204.59
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: CT_7
+  network: ws
+  port: 443
+  server: 162.159.153.209
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: CT_8
+  network: ws
+  port: 443
+  server: 162.159.152.155
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CT_9
+  network: ws
+  port: 443
+  server: 162.159.153.42
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: 🇺🇸US_4
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 8443
+  server: 162.159.129.67
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: US_4
+  network: ws
+  port: 443
+  server: join.my.telegram.channel.cmliussss.to.unlock.more.premium.nodes.cf.090227.xyz
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: otto.ns.cloudflare.com_2
+  network: ws
+  port: 443
+  server: otto.ns.cloudflare.com
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: 162.159.36.104_2
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: 162.159.36.104
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: ip.sb_4
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: ip.sb
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: CT_10
+  network: ws
+  port: 443
+  server: 162.159.153.184
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: 172.67.110.232_3
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: 172.67.110.232
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: CMCC-IPV6_3
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_4
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: CT_11
+  network: ws
+  port: 443
+  server: 162.159.153.156
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: icook.tw_2
+  network: ws
+  port: 443
+  server: icook.tw
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: CMCC-IPV6_5
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_6
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CT_12
+  network: ws
+  port: 443
+  server: 162.159.152.205
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: 🇭🇰HK_9
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: 103.160.204.59
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: CT_13
+  network: ws
+  port: 443
+  server: 162.159.153.239
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_31
+  network: ws
+  port: 443
+  server: 104.18.83.92
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: otto.ns.cloudflare.com_3
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: otto.ns.cloudflare.com
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: whatismyipaddress.com_1
+  network: ws
+  port: 443
+  server: whatismyipaddress.com
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: CT_14
+  network: ws
+  port: 443
+  server: 162.159.153.144
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_7
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CT_15
+  network: ws
+  port: 443
+  server: 162.159.153.217
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: 🇭🇰HK_10
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: 103.160.204.59
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: CMCC-IPV6_8
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: bowen.ns.cloudflare.com_1
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: bowen.ns.cloudflare.com
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: CT_16
+  network: ws
+  port: 443
+  server: 162.159.153.217
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: 172.67.110.232_4
+  network: ws
+  port: 443
+  server: 172.67.110.232
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: 🇺🇸US_5
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 8443
+  server: 162.159.129.67
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: whatismyipaddress.com_2
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: whatismyipaddress.com
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: wilson.ns.cloudflare.com_3
+  network: ws
+  port: 443
+  server: wilson.ns.cloudflare.com
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
 - name: IPV6_3
   network: ws
   port: 4700
   server: '[2606'
-  servername: cx.ylks0033.dpdns.org
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -3334,13 +1597,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: cx.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: mc.ylks0033.dpdns.org_62
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: US_5
   network: ws
   port: 443
-  server: 172.67.95.24
-  servername: mc.ylks0033.dpdns.org
+  server: join.my.telegram.channel.cmliussss.to.unlock.more.premium.nodes.cf.090227.xyz
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -3348,13 +1611,580 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: mc.ylks0033.dpdns.org
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: www.ddwhm.com_1
+  network: ws
+  port: 443
+  server: www.ddwhm.com
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: www.ddwhm.com_2
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: www.ddwhm.com
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: wilson.ns.cloudflare.com_4
+  network: ws
+  port: 443
+  server: wilson.ns.cloudflare.com
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: CT_17
+  network: ws
+  port: 443
+  server: 162.159.152.31
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: 162.159.36.104_3
+  network: ws
+  port: 443
+  server: 162.159.36.104
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: CT_18
+  network: ws
+  port: 443
+  server: 162.159.153.144
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: 🇺🇸US_6
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 2096
+  server: 104.17.128.1
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: whatismyipaddress.com_3
+  network: ws
+  port: 443
+  server: whatismyipaddress.com
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: 🇭🇰HK_11
+  network: ws
+  port: 443
+  server: 103.160.204.59
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: CT_19
+  network: ws
+  port: 443
+  server: 162.159.152.81
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_9
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: CT_20
+  network: ws
+  port: 443
+  server: 162.159.153.72
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_10
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: otto.ns.cloudflare.com_4
+  network: ws
+  port: 443
+  server: otto.ns.cloudflare.com
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: 🇺🇸US_7
+  network: ws
+  port: 8443
+  server: 162.159.129.67
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: 🇺🇸US_8
+  network: ws
+  port: 2096
+  server: 104.17.128.1
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: bowen.ns.cloudflare.com_2
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: bowen.ns.cloudflare.com
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: CMCC-IPV6_11
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_32
+  network: ws
+  port: 443
+  server: 104.17.100.185
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: www.ddwhm.com_3
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: www.ddwhm.com
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: CT_21
+  network: ws
+  port: 443
+  server: 162.159.153.72
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_12
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_13
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: icook.tw_3
+  network: ws
+  port: 443
+  server: icook.tw
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: CT_22
+  network: ws
+  port: 443
+  server: 162.159.152.81
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CT_23
+  network: ws
+  port: 443
+  server: 162.159.152.155
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_14
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_15
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: www.ddwhm.com_4
+  network: ws
+  port: 443
+  server: www.ddwhm.com
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: bowen.ns.cloudflare.com_3
+  network: ws
+  port: 443
+  server: bowen.ns.cloudflare.com
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: 162.159.36.104_4
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: 162.159.36.104
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: CMCC-IPV6_16
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_17
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: US_6
+  network: ws
+  port: 443
+  server: icook.hk
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: sullivan.ns.cloudflare.com_4
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: sullivan.ns.cloudflare.com
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: CH_2
+  network: ws
+  port: 443
+  server: 140.238.212.95
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: whatismyipaddress.com_4
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: whatismyipaddress.com
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: CMCC-IPV6_18
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_19
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: CT_24
+  network: ws
+  port: 443
+  server: 162.159.153.239
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_20
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
 - name: IPV6_4
   network: ws
   port: 4700
   server: '[2606'
-  servername: mc.ylks0033.dpdns.org
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -3362,13 +2192,26 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: mc.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: IPV6_5
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: icook.tw_4
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: icook.tw
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: CMCC-IPV6_21
   network: ws
   port: 4700
   server: '[2606'
-  servername: mc.ylks0033.dpdns.org
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -3376,13 +2219,27 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: mc.ylks0033.dpdns.org
+      host: ns.ylka.dpdns.org
     path: /?ed=2560
-- name: IPV6_6
+- name: US_7
+  network: ws
+  port: 443
+  server: icook.hk
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: CMCC-IPV6_22
   network: ws
   port: 4700
   server: '[2606'
-  servername: cx.ylks0033.dpdns.org
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -3390,501 +2247,646 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: cx.ylks0033.dpdns.org
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: bowen.ns.cloudflare.com_4
+  network: ws
+  port: 443
+  server: bowen.ns.cloudflare.com
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: CMCC-IPV6_23
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: US_8
+  network: ws
+  port: 443
+  server: 129.213.130.70
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_33
+  network: ws
+  port: 443
+  server: 104.18.82.55
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: US_9
+  network: ws
+  port: 443
+  server: 129.213.130.70
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_24
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CT_25
+  network: ws
+  port: 443
+  server: 162.159.153.216
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: CA_1
+  network: ws
+  port: 443
+  server: 140.238.158.238
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CT_26
+  network: ws
+  port: 443
+  server: 162.159.153.156
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: US_10
+  network: ws
+  port: 443
+  server: 150.136.87.192
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: 172.67.243.218_3
+  network: ws
+  port: 443
+  server: 172.67.243.218
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: US_11
+  network: ws
+  port: 443
+  server: 129.213.136.180
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: US_12
+  network: ws
+  port: 443
+  server: 129.213.136.180
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CA_2
+  network: ws
+  port: 443
+  server: 140.238.158.238
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: 172.67.243.218_4
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: 172.67.243.218
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: JP_1
+  network: ws
+  port: 12333
+  server: 121.80.244.179
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: JP_2
+  network: ws
+  port: 12333
+  server: 121.80.244.179
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: KR
+  network: ws
+  port: 443
+  server: 131.186.17.132
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_34
+  network: ws
+  port: 443
+  server: 104.16.246.132
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
     path: /?ed=2560
 proxy-groups:
 - name: 🚀 节点选择
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - cx.ylks0033.dpdns.org_1
-  - mc.ylks0033.dpdns.org_1
-  - mc.ylks0033.dpdns.org_2
   - TW_1
+  - US_1
+  - 🇺🇸US_1
   - CMCC_1
   - CMCC_2
   - CMCC_3
-  - US_1
   - CMCC_4
-  - 🇺🇸US_1
   - CMCC_5
   - CMCC_6
   - CMCC_7
   - CMCC_8
   - CMCC_9
   - 🇭🇰HK_1
+  - TW_2
   - CMCC_10
-  - cx.ylks0033.dpdns.org_2
   - CMCC_11
+  - 🇭🇰HK_2
+  - 🇭🇰HK_3
+  - 🇭🇰HK_4
   - CMCC_12
   - CMCC_13
-  - TW_2
   - CMCC_14
-  - mc.ylks0033.dpdns.org_3
-  - NL_1
   - CMCC_15
+  - NL_1
+  - NL_2
   - CMCC_16
   - CMCC_17
-  - cx.ylks0033.dpdns.org_3
-  - mc.ylks0033.dpdns.org_4
+  - 🇭🇰HK_5
   - CMCC_18
-  - 🇺🇸US_2
   - CMCC_19
-  - CMCC-IPV6_1
+  - CH_1
   - CMCC_20
-  - cx.ylks0033.dpdns.org_4
-  - cx.ylks0033.dpdns.org_5
-  - CMCC-IPV6_2
-  - CMCC-IPV6_3
   - CMCC_21
-  - cx.ylks0033.dpdns.org_6
-  - 🇺🇸US_3
-  - CMCC-IPV6_4
-  - mc.ylks0033.dpdns.org_5
+  - CMCC_22
+  - CMCC_23
+  - 172.67.243.218_1
+  - CMCC-IPV6_1
+  - CMCC_24
+  - 🇭🇰HK_6
+  - CMCC_25
+  - nikon.ns.cloudflare.com_1
+  - CMCC_26
+  - CMCC_27
+  - nikon.ns.cloudflare.com_2
+  - ip.sb_1
+  - nikon.ns.cloudflare.com_3
+  - ip.sb_2
+  - shopify.com_1
+  - sullivan.ns.cloudflare.com_1
+  - 🇭🇰HK_7
+  - IPV6_1
   - CT_1
-  - cx.ylks0033.dpdns.org_7
-  - mc.ylks0033.dpdns.org_6
-  - cx.ylks0033.dpdns.org_8
-  - mc.ylks0033.dpdns.org_7
-  - cx.ylks0033.dpdns.org_9
+  - 🇺🇸US_2
+  - CMCC-IPV6_2
+  - CMCC_28
+  - IPV6_2
+  - 162.159.36.104_1
+  - shopify.com_2
+  - sullivan.ns.cloudflare.com_2
+  - CMCC_29
+  - CT_2
+  - shopify.com_3
+  - CT_3
+  - wilson.ns.cloudflare.com_1
+  - CT_4
+  - 🇺🇸US_3
+  - shopify.com_4
+  - nikon.ns.cloudflare.com_4
+  - ip.sb_3
+  - sullivan.ns.cloudflare.com_3
+  - 172.67.243.218_2
+  - US_2
+  - otto.ns.cloudflare.com_1
+  - 172.67.110.232_1
+  - CT_5
+  - icook.tw_1
+  - US_3
+  - wilson.ns.cloudflare.com_2
+  - CMCC_30
+  - CT_6
+  - 172.67.110.232_2
+  - 🇭🇰HK_8
+  - CT_7
+  - CT_8
+  - CT_9
+  - 🇺🇸US_4
+  - US_4
+  - otto.ns.cloudflare.com_2
+  - 162.159.36.104_2
+  - ip.sb_4
+  - CT_10
+  - 172.67.110.232_3
+  - CMCC-IPV6_3
+  - CMCC-IPV6_4
+  - CT_11
+  - icook.tw_2
   - CMCC-IPV6_5
   - CMCC-IPV6_6
-  - CMCC-IPV6_7
-  - CMCC_22
-  - CT_2
-  - mc.ylks0033.dpdns.org_8
-  - CT_3
-  - CT_4
-  - cx.ylks0033.dpdns.org_10
-  - cx.ylks0033.dpdns.org_11
-  - cx.ylks0033.dpdns.org_12
-  - 🇺🇸US_4
-  - 🇺🇸US_5
-  - mc.ylks0033.dpdns.org_9
-  - CMCC-IPV6_8
-  - cx.ylks0033.dpdns.org_13
-  - mc.ylks0033.dpdns.org_10
-  - cx.ylks0033.dpdns.org_14
-  - cx.ylks0033.dpdns.org_15
-  - mc.ylks0033.dpdns.org_11
-  - cx.ylks0033.dpdns.org_16
-  - cx.ylks0033.dpdns.org_17
-  - CT_5
-  - cx.ylks0033.dpdns.org_18
-  - cx.ylks0033.dpdns.org_19
-  - cx.ylks0033.dpdns.org_20
-  - mc.ylks0033.dpdns.org_12
-  - mc.ylks0033.dpdns.org_13
-  - cx.ylks0033.dpdns.org_21
-  - CT_6
-  - mc.ylks0033.dpdns.org_14
-  - cx.ylks0033.dpdns.org_22
-  - mc.ylks0033.dpdns.org_15
-  - mc.ylks0033.dpdns.org_16
-  - CMCC-IPV6_9
-  - mc.ylks0033.dpdns.org_17
-  - cx.ylks0033.dpdns.org_23
-  - CMCC-IPV6_10
-  - cx.ylks0033.dpdns.org_24
-  - cx.ylks0033.dpdns.org_25
-  - mc.ylks0033.dpdns.org_18
-  - cx.ylks0033.dpdns.org_26
-  - CT_7
-  - cx.ylks0033.dpdns.org_27
-  - mc.ylks0033.dpdns.org_19
-  - IPV6_1
-  - cx.ylks0033.dpdns.org_28
-  - mc.ylks0033.dpdns.org_20
-  - cx.ylks0033.dpdns.org_29
-  - mc.ylks0033.dpdns.org_21
-  - US_2
-  - CMCC-IPV6_11
-  - mc.ylks0033.dpdns.org_22
-  - CT_8
-  - mc.ylks0033.dpdns.org_23
-  - CT_9
-  - CMCC-IPV6_12
-  - cx.ylks0033.dpdns.org_30
-  - mc.ylks0033.dpdns.org_24
-  - mc.ylks0033.dpdns.org_25
-  - cx.ylks0033.dpdns.org_31
-  - mc.ylks0033.dpdns.org_26
-  - CT_10
-  - mc.ylks0033.dpdns.org_27
-  - cx.ylks0033.dpdns.org_32
-  - cx.ylks0033.dpdns.org_33
-  - 🇺🇸US_6
-  - mc.ylks0033.dpdns.org_28
-  - mc.ylks0033.dpdns.org_29
-  - mc.ylks0033.dpdns.org_30
-  - mc.ylks0033.dpdns.org_31
-  - cx.ylks0033.dpdns.org_34
-  - 🇺🇸US_7
-  - CT_11
-  - mc.ylks0033.dpdns.org_32
-  - cx.ylks0033.dpdns.org_35
-  - mc.ylks0033.dpdns.org_33
-  - CMCC-IPV6_13
-  - cx.ylks0033.dpdns.org_36
-  - US_3
-  - cx.ylks0033.dpdns.org_37
-  - US_4
-  - mc.ylks0033.dpdns.org_34
-  - mc.ylks0033.dpdns.org_35
-  - mc.ylks0033.dpdns.org_36
-  - 🇺🇸US_8
-  - cx.ylks0033.dpdns.org_38
-  - mc.ylks0033.dpdns.org_37
-  - CMCC-IPV6_14
-  - US_5
-  - cx.ylks0033.dpdns.org_39
-  - CMCC-IPV6_15
-  - CMCC-IPV6_16
-  - mc.ylks0033.dpdns.org_38
-  - CMCC-IPV6_17
-  - cx.ylks0033.dpdns.org_40
-  - mc.ylks0033.dpdns.org_39
   - CT_12
-  - mc.ylks0033.dpdns.org_40
-  - cx.ylks0033.dpdns.org_41
+  - 🇭🇰HK_9
   - CT_13
-  - CMCC-IPV6_18
-  - mc.ylks0033.dpdns.org_41
-  - mc.ylks0033.dpdns.org_42
-  - cx.ylks0033.dpdns.org_42
-  - CMCC-IPV6_19
-  - cx.ylks0033.dpdns.org_43
+  - CMCC_31
+  - otto.ns.cloudflare.com_3
+  - whatismyipaddress.com_1
   - CT_14
+  - CMCC-IPV6_7
   - CT_15
-  - CMCC_23
-  - CMCC_24
-  - CMCC_25
-  - cx.ylks0033.dpdns.org_44
-  - CMCC-IPV6_20
-  - 🇺🇸US_9
-  - mc.ylks0033.dpdns.org_43
+  - 🇭🇰HK_10
+  - CMCC-IPV6_8
+  - bowen.ns.cloudflare.com_1
   - CT_16
-  - cx.ylks0033.dpdns.org_45
-  - 🇺🇸US_10
-  - CMCC-IPV6_21
-  - US_6
-  - CMCC-IPV6_22
-  - mc.ylks0033.dpdns.org_44
-  - 🇺🇸US_11
-  - cx.ylks0033.dpdns.org_46
-  - CMCC-IPV6_23
-  - IPV6_2
-  - CH_1
-  - mc.ylks0033.dpdns.org_45
-  - CMCC_26
-  - mc.ylks0033.dpdns.org_46
-  - CT_17
-  - mc.ylks0033.dpdns.org_47
-  - CMCC-IPV6_24
-  - cx.ylks0033.dpdns.org_47
-  - cx.ylks0033.dpdns.org_48
-  - mc.ylks0033.dpdns.org_48
-  - cx.ylks0033.dpdns.org_49
-  - CMCC_27
-  - CMCC_28
-  - CT_18
-  - CT_19
-  - mc.ylks0033.dpdns.org_49
-  - cx.ylks0033.dpdns.org_50
-  - cx.ylks0033.dpdns.org_51
-  - CT_20
-  - US_7
-  - mc.ylks0033.dpdns.org_50
-  - CMCC_29
-  - US_8
-  - CMCC-IPV6_25
-  - cx.ylks0033.dpdns.org_52
-  - cx.ylks0033.dpdns.org_53
-  - cx.ylks0033.dpdns.org_54
-  - CMCC-IPV6_26
-  - cx.ylks0033.dpdns.org_55
-  - mc.ylks0033.dpdns.org_51
-  - mc.ylks0033.dpdns.org_52
-  - CT_21
-  - cx.ylks0033.dpdns.org_56
-  - mc.ylks0033.dpdns.org_53
-  - mc.ylks0033.dpdns.org_54
-  - cx.ylks0033.dpdns.org_57
-  - CMCC_30
-  - US_9
-  - cx.ylks0033.dpdns.org_58
-  - CT_22
-  - 🇺🇸US_12
-  - 🇭🇰HK_2
-  - CT_23
-  - mc.ylks0033.dpdns.org_55
-  - US_10
-  - US_11
-  - CT_24
-  - mc.ylks0033.dpdns.org_56
-  - mc.ylks0033.dpdns.org_57
-  - mc.ylks0033.dpdns.org_58
-  - cx.ylks0033.dpdns.org_59
-  - cx.ylks0033.dpdns.org_60
-  - cx.ylks0033.dpdns.org_61
-  - NL_2
-  - mc.ylks0033.dpdns.org_59
-  - mc.ylks0033.dpdns.org_60
-  - CH_2
-  - mc.ylks0033.dpdns.org_61
-  - CA
-  - US_12
+  - 172.67.110.232_4
+  - 🇺🇸US_5
+  - whatismyipaddress.com_2
+  - wilson.ns.cloudflare.com_3
   - IPV6_3
-  - mc.ylks0033.dpdns.org_62
+  - US_5
+  - www.ddwhm.com_1
+  - www.ddwhm.com_2
+  - wilson.ns.cloudflare.com_4
+  - CT_17
+  - 162.159.36.104_3
+  - CT_18
+  - 🇺🇸US_6
+  - whatismyipaddress.com_3
+  - 🇭🇰HK_11
+  - CT_19
+  - CMCC-IPV6_9
+  - CT_20
+  - CMCC-IPV6_10
+  - otto.ns.cloudflare.com_4
+  - 🇺🇸US_7
+  - 🇺🇸US_8
+  - bowen.ns.cloudflare.com_2
+  - CMCC-IPV6_11
+  - CMCC_32
+  - www.ddwhm.com_3
+  - CT_21
+  - CMCC-IPV6_12
+  - CMCC-IPV6_13
+  - icook.tw_3
+  - CT_22
+  - CT_23
+  - CMCC-IPV6_14
+  - CMCC-IPV6_15
+  - www.ddwhm.com_4
+  - bowen.ns.cloudflare.com_3
+  - 162.159.36.104_4
+  - CMCC-IPV6_16
+  - CMCC-IPV6_17
+  - US_6
+  - sullivan.ns.cloudflare.com_4
+  - CH_2
+  - whatismyipaddress.com_4
+  - CMCC-IPV6_18
+  - CMCC-IPV6_19
+  - CT_24
+  - CMCC-IPV6_20
   - IPV6_4
-  - IPV6_5
-  - IPV6_6
+  - icook.tw_4
+  - CMCC-IPV6_21
+  - US_7
+  - CMCC-IPV6_22
+  - bowen.ns.cloudflare.com_4
+  - CMCC-IPV6_23
+  - US_8
+  - CMCC_33
+  - US_9
+  - CMCC-IPV6_24
+  - CT_25
+  - CA_1
+  - CT_26
+  - US_10
+  - 172.67.243.218_3
+  - US_11
+  - US_12
+  - CA_2
+  - 172.67.243.218_4
+  - JP_1
+  - JP_2
+  - KR
+  - CMCC_34
   type: select
 - interval: 300
   name: ♻️ 自动选择
   proxies:
-  - cx.ylks0033.dpdns.org_1
-  - mc.ylks0033.dpdns.org_1
-  - mc.ylks0033.dpdns.org_2
   - TW_1
+  - US_1
+  - 🇺🇸US_1
   - CMCC_1
   - CMCC_2
   - CMCC_3
-  - US_1
   - CMCC_4
-  - 🇺🇸US_1
   - CMCC_5
   - CMCC_6
   - CMCC_7
   - CMCC_8
   - CMCC_9
   - 🇭🇰HK_1
+  - TW_2
   - CMCC_10
-  - cx.ylks0033.dpdns.org_2
   - CMCC_11
+  - 🇭🇰HK_2
+  - 🇭🇰HK_3
+  - 🇭🇰HK_4
   - CMCC_12
   - CMCC_13
-  - TW_2
   - CMCC_14
-  - mc.ylks0033.dpdns.org_3
-  - NL_1
   - CMCC_15
+  - NL_1
+  - NL_2
   - CMCC_16
   - CMCC_17
-  - cx.ylks0033.dpdns.org_3
-  - mc.ylks0033.dpdns.org_4
+  - 🇭🇰HK_5
   - CMCC_18
-  - 🇺🇸US_2
   - CMCC_19
-  - CMCC-IPV6_1
+  - CH_1
   - CMCC_20
-  - cx.ylks0033.dpdns.org_4
-  - cx.ylks0033.dpdns.org_5
-  - CMCC-IPV6_2
-  - CMCC-IPV6_3
   - CMCC_21
-  - cx.ylks0033.dpdns.org_6
-  - 🇺🇸US_3
-  - CMCC-IPV6_4
-  - mc.ylks0033.dpdns.org_5
+  - CMCC_22
+  - CMCC_23
+  - 172.67.243.218_1
+  - CMCC-IPV6_1
+  - CMCC_24
+  - 🇭🇰HK_6
+  - CMCC_25
+  - nikon.ns.cloudflare.com_1
+  - CMCC_26
+  - CMCC_27
+  - nikon.ns.cloudflare.com_2
+  - ip.sb_1
+  - nikon.ns.cloudflare.com_3
+  - ip.sb_2
+  - shopify.com_1
+  - sullivan.ns.cloudflare.com_1
+  - 🇭🇰HK_7
+  - IPV6_1
   - CT_1
-  - cx.ylks0033.dpdns.org_7
-  - mc.ylks0033.dpdns.org_6
-  - cx.ylks0033.dpdns.org_8
-  - mc.ylks0033.dpdns.org_7
-  - cx.ylks0033.dpdns.org_9
+  - 🇺🇸US_2
+  - CMCC-IPV6_2
+  - CMCC_28
+  - IPV6_2
+  - 162.159.36.104_1
+  - shopify.com_2
+  - sullivan.ns.cloudflare.com_2
+  - CMCC_29
+  - CT_2
+  - shopify.com_3
+  - CT_3
+  - wilson.ns.cloudflare.com_1
+  - CT_4
+  - 🇺🇸US_3
+  - shopify.com_4
+  - nikon.ns.cloudflare.com_4
+  - ip.sb_3
+  - sullivan.ns.cloudflare.com_3
+  - 172.67.243.218_2
+  - US_2
+  - otto.ns.cloudflare.com_1
+  - 172.67.110.232_1
+  - CT_5
+  - icook.tw_1
+  - US_3
+  - wilson.ns.cloudflare.com_2
+  - CMCC_30
+  - CT_6
+  - 172.67.110.232_2
+  - 🇭🇰HK_8
+  - CT_7
+  - CT_8
+  - CT_9
+  - 🇺🇸US_4
+  - US_4
+  - otto.ns.cloudflare.com_2
+  - 162.159.36.104_2
+  - ip.sb_4
+  - CT_10
+  - 172.67.110.232_3
+  - CMCC-IPV6_3
+  - CMCC-IPV6_4
+  - CT_11
+  - icook.tw_2
   - CMCC-IPV6_5
   - CMCC-IPV6_6
-  - CMCC-IPV6_7
-  - CMCC_22
-  - CT_2
-  - mc.ylks0033.dpdns.org_8
-  - CT_3
-  - CT_4
-  - cx.ylks0033.dpdns.org_10
-  - cx.ylks0033.dpdns.org_11
-  - cx.ylks0033.dpdns.org_12
-  - 🇺🇸US_4
-  - 🇺🇸US_5
-  - mc.ylks0033.dpdns.org_9
-  - CMCC-IPV6_8
-  - cx.ylks0033.dpdns.org_13
-  - mc.ylks0033.dpdns.org_10
-  - cx.ylks0033.dpdns.org_14
-  - cx.ylks0033.dpdns.org_15
-  - mc.ylks0033.dpdns.org_11
-  - cx.ylks0033.dpdns.org_16
-  - cx.ylks0033.dpdns.org_17
-  - CT_5
-  - cx.ylks0033.dpdns.org_18
-  - cx.ylks0033.dpdns.org_19
-  - cx.ylks0033.dpdns.org_20
-  - mc.ylks0033.dpdns.org_12
-  - mc.ylks0033.dpdns.org_13
-  - cx.ylks0033.dpdns.org_21
-  - CT_6
-  - mc.ylks0033.dpdns.org_14
-  - cx.ylks0033.dpdns.org_22
-  - mc.ylks0033.dpdns.org_15
-  - mc.ylks0033.dpdns.org_16
-  - CMCC-IPV6_9
-  - mc.ylks0033.dpdns.org_17
-  - cx.ylks0033.dpdns.org_23
-  - CMCC-IPV6_10
-  - cx.ylks0033.dpdns.org_24
-  - cx.ylks0033.dpdns.org_25
-  - mc.ylks0033.dpdns.org_18
-  - cx.ylks0033.dpdns.org_26
-  - CT_7
-  - cx.ylks0033.dpdns.org_27
-  - mc.ylks0033.dpdns.org_19
-  - IPV6_1
-  - cx.ylks0033.dpdns.org_28
-  - mc.ylks0033.dpdns.org_20
-  - cx.ylks0033.dpdns.org_29
-  - mc.ylks0033.dpdns.org_21
-  - US_2
-  - CMCC-IPV6_11
-  - mc.ylks0033.dpdns.org_22
-  - CT_8
-  - mc.ylks0033.dpdns.org_23
-  - CT_9
-  - CMCC-IPV6_12
-  - cx.ylks0033.dpdns.org_30
-  - mc.ylks0033.dpdns.org_24
-  - mc.ylks0033.dpdns.org_25
-  - cx.ylks0033.dpdns.org_31
-  - mc.ylks0033.dpdns.org_26
-  - CT_10
-  - mc.ylks0033.dpdns.org_27
-  - cx.ylks0033.dpdns.org_32
-  - cx.ylks0033.dpdns.org_33
-  - 🇺🇸US_6
-  - mc.ylks0033.dpdns.org_28
-  - mc.ylks0033.dpdns.org_29
-  - mc.ylks0033.dpdns.org_30
-  - mc.ylks0033.dpdns.org_31
-  - cx.ylks0033.dpdns.org_34
-  - 🇺🇸US_7
-  - CT_11
-  - mc.ylks0033.dpdns.org_32
-  - cx.ylks0033.dpdns.org_35
-  - mc.ylks0033.dpdns.org_33
-  - CMCC-IPV6_13
-  - cx.ylks0033.dpdns.org_36
-  - US_3
-  - cx.ylks0033.dpdns.org_37
-  - US_4
-  - mc.ylks0033.dpdns.org_34
-  - mc.ylks0033.dpdns.org_35
-  - mc.ylks0033.dpdns.org_36
-  - 🇺🇸US_8
-  - cx.ylks0033.dpdns.org_38
-  - mc.ylks0033.dpdns.org_37
-  - CMCC-IPV6_14
-  - US_5
-  - cx.ylks0033.dpdns.org_39
-  - CMCC-IPV6_15
-  - CMCC-IPV6_16
-  - mc.ylks0033.dpdns.org_38
-  - CMCC-IPV6_17
-  - cx.ylks0033.dpdns.org_40
-  - mc.ylks0033.dpdns.org_39
   - CT_12
-  - mc.ylks0033.dpdns.org_40
-  - cx.ylks0033.dpdns.org_41
+  - 🇭🇰HK_9
   - CT_13
-  - CMCC-IPV6_18
-  - mc.ylks0033.dpdns.org_41
-  - mc.ylks0033.dpdns.org_42
-  - cx.ylks0033.dpdns.org_42
-  - CMCC-IPV6_19
-  - cx.ylks0033.dpdns.org_43
+  - CMCC_31
+  - otto.ns.cloudflare.com_3
+  - whatismyipaddress.com_1
   - CT_14
+  - CMCC-IPV6_7
   - CT_15
-  - CMCC_23
-  - CMCC_24
-  - CMCC_25
-  - cx.ylks0033.dpdns.org_44
-  - CMCC-IPV6_20
-  - 🇺🇸US_9
-  - mc.ylks0033.dpdns.org_43
+  - 🇭🇰HK_10
+  - CMCC-IPV6_8
+  - bowen.ns.cloudflare.com_1
   - CT_16
-  - cx.ylks0033.dpdns.org_45
-  - 🇺🇸US_10
-  - CMCC-IPV6_21
-  - US_6
-  - CMCC-IPV6_22
-  - mc.ylks0033.dpdns.org_44
-  - 🇺🇸US_11
-  - cx.ylks0033.dpdns.org_46
-  - CMCC-IPV6_23
-  - IPV6_2
-  - CH_1
-  - mc.ylks0033.dpdns.org_45
-  - CMCC_26
-  - mc.ylks0033.dpdns.org_46
-  - CT_17
-  - mc.ylks0033.dpdns.org_47
-  - CMCC-IPV6_24
-  - cx.ylks0033.dpdns.org_47
-  - cx.ylks0033.dpdns.org_48
-  - mc.ylks0033.dpdns.org_48
-  - cx.ylks0033.dpdns.org_49
-  - CMCC_27
-  - CMCC_28
-  - CT_18
-  - CT_19
-  - mc.ylks0033.dpdns.org_49
-  - cx.ylks0033.dpdns.org_50
-  - cx.ylks0033.dpdns.org_51
-  - CT_20
-  - US_7
-  - mc.ylks0033.dpdns.org_50
-  - CMCC_29
-  - US_8
-  - CMCC-IPV6_25
-  - cx.ylks0033.dpdns.org_52
-  - cx.ylks0033.dpdns.org_53
-  - cx.ylks0033.dpdns.org_54
-  - CMCC-IPV6_26
-  - cx.ylks0033.dpdns.org_55
-  - mc.ylks0033.dpdns.org_51
-  - mc.ylks0033.dpdns.org_52
-  - CT_21
-  - cx.ylks0033.dpdns.org_56
-  - mc.ylks0033.dpdns.org_53
-  - mc.ylks0033.dpdns.org_54
-  - cx.ylks0033.dpdns.org_57
-  - CMCC_30
-  - US_9
-  - cx.ylks0033.dpdns.org_58
-  - CT_22
-  - 🇺🇸US_12
-  - 🇭🇰HK_2
-  - CT_23
-  - mc.ylks0033.dpdns.org_55
-  - US_10
-  - US_11
-  - CT_24
-  - mc.ylks0033.dpdns.org_56
-  - mc.ylks0033.dpdns.org_57
-  - mc.ylks0033.dpdns.org_58
-  - cx.ylks0033.dpdns.org_59
-  - cx.ylks0033.dpdns.org_60
-  - cx.ylks0033.dpdns.org_61
-  - NL_2
-  - mc.ylks0033.dpdns.org_59
-  - mc.ylks0033.dpdns.org_60
-  - CH_2
-  - mc.ylks0033.dpdns.org_61
-  - CA
-  - US_12
+  - 172.67.110.232_4
+  - 🇺🇸US_5
+  - whatismyipaddress.com_2
+  - wilson.ns.cloudflare.com_3
   - IPV6_3
-  - mc.ylks0033.dpdns.org_62
+  - US_5
+  - www.ddwhm.com_1
+  - www.ddwhm.com_2
+  - wilson.ns.cloudflare.com_4
+  - CT_17
+  - 162.159.36.104_3
+  - CT_18
+  - 🇺🇸US_6
+  - whatismyipaddress.com_3
+  - 🇭🇰HK_11
+  - CT_19
+  - CMCC-IPV6_9
+  - CT_20
+  - CMCC-IPV6_10
+  - otto.ns.cloudflare.com_4
+  - 🇺🇸US_7
+  - 🇺🇸US_8
+  - bowen.ns.cloudflare.com_2
+  - CMCC-IPV6_11
+  - CMCC_32
+  - www.ddwhm.com_3
+  - CT_21
+  - CMCC-IPV6_12
+  - CMCC-IPV6_13
+  - icook.tw_3
+  - CT_22
+  - CT_23
+  - CMCC-IPV6_14
+  - CMCC-IPV6_15
+  - www.ddwhm.com_4
+  - bowen.ns.cloudflare.com_3
+  - 162.159.36.104_4
+  - CMCC-IPV6_16
+  - CMCC-IPV6_17
+  - US_6
+  - sullivan.ns.cloudflare.com_4
+  - CH_2
+  - whatismyipaddress.com_4
+  - CMCC-IPV6_18
+  - CMCC-IPV6_19
+  - CT_24
+  - CMCC-IPV6_20
   - IPV6_4
-  - IPV6_5
-  - IPV6_6
+  - icook.tw_4
+  - CMCC-IPV6_21
+  - US_7
+  - CMCC-IPV6_22
+  - bowen.ns.cloudflare.com_4
+  - CMCC-IPV6_23
+  - US_8
+  - CMCC_33
+  - US_9
+  - CMCC-IPV6_24
+  - CT_25
+  - CA_1
+  - CT_26
+  - US_10
+  - 172.67.243.218_3
+  - US_11
+  - US_12
+  - CA_2
+  - 172.67.243.218_4
+  - JP_1
+  - JP_2
+  - KR
+  - CMCC_34
   tolerance: 50
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -3893,989 +2895,749 @@ proxy-groups:
   - 🚀 节点选择
   - ♻️ 自动选择
   - 🎯 全球直连
-  - cx.ylks0033.dpdns.org_1
-  - mc.ylks0033.dpdns.org_1
-  - mc.ylks0033.dpdns.org_2
   - TW_1
+  - US_1
+  - 🇺🇸US_1
   - CMCC_1
   - CMCC_2
   - CMCC_3
-  - US_1
   - CMCC_4
-  - 🇺🇸US_1
   - CMCC_5
   - CMCC_6
   - CMCC_7
   - CMCC_8
   - CMCC_9
   - 🇭🇰HK_1
+  - TW_2
   - CMCC_10
-  - cx.ylks0033.dpdns.org_2
   - CMCC_11
+  - 🇭🇰HK_2
+  - 🇭🇰HK_3
+  - 🇭🇰HK_4
   - CMCC_12
   - CMCC_13
-  - TW_2
   - CMCC_14
-  - mc.ylks0033.dpdns.org_3
-  - NL_1
   - CMCC_15
+  - NL_1
+  - NL_2
   - CMCC_16
   - CMCC_17
-  - cx.ylks0033.dpdns.org_3
-  - mc.ylks0033.dpdns.org_4
+  - 🇭🇰HK_5
   - CMCC_18
-  - 🇺🇸US_2
   - CMCC_19
-  - CMCC-IPV6_1
+  - CH_1
   - CMCC_20
-  - cx.ylks0033.dpdns.org_4
-  - cx.ylks0033.dpdns.org_5
-  - CMCC-IPV6_2
-  - CMCC-IPV6_3
   - CMCC_21
-  - cx.ylks0033.dpdns.org_6
-  - 🇺🇸US_3
-  - CMCC-IPV6_4
-  - mc.ylks0033.dpdns.org_5
+  - CMCC_22
+  - CMCC_23
+  - 172.67.243.218_1
+  - CMCC-IPV6_1
+  - CMCC_24
+  - 🇭🇰HK_6
+  - CMCC_25
+  - nikon.ns.cloudflare.com_1
+  - CMCC_26
+  - CMCC_27
+  - nikon.ns.cloudflare.com_2
+  - ip.sb_1
+  - nikon.ns.cloudflare.com_3
+  - ip.sb_2
+  - shopify.com_1
+  - sullivan.ns.cloudflare.com_1
+  - 🇭🇰HK_7
+  - IPV6_1
   - CT_1
-  - cx.ylks0033.dpdns.org_7
-  - mc.ylks0033.dpdns.org_6
-  - cx.ylks0033.dpdns.org_8
-  - mc.ylks0033.dpdns.org_7
-  - cx.ylks0033.dpdns.org_9
+  - 🇺🇸US_2
+  - CMCC-IPV6_2
+  - CMCC_28
+  - IPV6_2
+  - 162.159.36.104_1
+  - shopify.com_2
+  - sullivan.ns.cloudflare.com_2
+  - CMCC_29
+  - CT_2
+  - shopify.com_3
+  - CT_3
+  - wilson.ns.cloudflare.com_1
+  - CT_4
+  - 🇺🇸US_3
+  - shopify.com_4
+  - nikon.ns.cloudflare.com_4
+  - ip.sb_3
+  - sullivan.ns.cloudflare.com_3
+  - 172.67.243.218_2
+  - US_2
+  - otto.ns.cloudflare.com_1
+  - 172.67.110.232_1
+  - CT_5
+  - icook.tw_1
+  - US_3
+  - wilson.ns.cloudflare.com_2
+  - CMCC_30
+  - CT_6
+  - 172.67.110.232_2
+  - 🇭🇰HK_8
+  - CT_7
+  - CT_8
+  - CT_9
+  - 🇺🇸US_4
+  - US_4
+  - otto.ns.cloudflare.com_2
+  - 162.159.36.104_2
+  - ip.sb_4
+  - CT_10
+  - 172.67.110.232_3
+  - CMCC-IPV6_3
+  - CMCC-IPV6_4
+  - CT_11
+  - icook.tw_2
   - CMCC-IPV6_5
   - CMCC-IPV6_6
-  - CMCC-IPV6_7
-  - CMCC_22
-  - CT_2
-  - mc.ylks0033.dpdns.org_8
-  - CT_3
-  - CT_4
-  - cx.ylks0033.dpdns.org_10
-  - cx.ylks0033.dpdns.org_11
-  - cx.ylks0033.dpdns.org_12
-  - 🇺🇸US_4
-  - 🇺🇸US_5
-  - mc.ylks0033.dpdns.org_9
-  - CMCC-IPV6_8
-  - cx.ylks0033.dpdns.org_13
-  - mc.ylks0033.dpdns.org_10
-  - cx.ylks0033.dpdns.org_14
-  - cx.ylks0033.dpdns.org_15
-  - mc.ylks0033.dpdns.org_11
-  - cx.ylks0033.dpdns.org_16
-  - cx.ylks0033.dpdns.org_17
-  - CT_5
-  - cx.ylks0033.dpdns.org_18
-  - cx.ylks0033.dpdns.org_19
-  - cx.ylks0033.dpdns.org_20
-  - mc.ylks0033.dpdns.org_12
-  - mc.ylks0033.dpdns.org_13
-  - cx.ylks0033.dpdns.org_21
-  - CT_6
-  - mc.ylks0033.dpdns.org_14
-  - cx.ylks0033.dpdns.org_22
-  - mc.ylks0033.dpdns.org_15
-  - mc.ylks0033.dpdns.org_16
-  - CMCC-IPV6_9
-  - mc.ylks0033.dpdns.org_17
-  - cx.ylks0033.dpdns.org_23
-  - CMCC-IPV6_10
-  - cx.ylks0033.dpdns.org_24
-  - cx.ylks0033.dpdns.org_25
-  - mc.ylks0033.dpdns.org_18
-  - cx.ylks0033.dpdns.org_26
-  - CT_7
-  - cx.ylks0033.dpdns.org_27
-  - mc.ylks0033.dpdns.org_19
-  - IPV6_1
-  - cx.ylks0033.dpdns.org_28
-  - mc.ylks0033.dpdns.org_20
-  - cx.ylks0033.dpdns.org_29
-  - mc.ylks0033.dpdns.org_21
-  - US_2
-  - CMCC-IPV6_11
-  - mc.ylks0033.dpdns.org_22
-  - CT_8
-  - mc.ylks0033.dpdns.org_23
-  - CT_9
-  - CMCC-IPV6_12
-  - cx.ylks0033.dpdns.org_30
-  - mc.ylks0033.dpdns.org_24
-  - mc.ylks0033.dpdns.org_25
-  - cx.ylks0033.dpdns.org_31
-  - mc.ylks0033.dpdns.org_26
-  - CT_10
-  - mc.ylks0033.dpdns.org_27
-  - cx.ylks0033.dpdns.org_32
-  - cx.ylks0033.dpdns.org_33
-  - 🇺🇸US_6
-  - mc.ylks0033.dpdns.org_28
-  - mc.ylks0033.dpdns.org_29
-  - mc.ylks0033.dpdns.org_30
-  - mc.ylks0033.dpdns.org_31
-  - cx.ylks0033.dpdns.org_34
-  - 🇺🇸US_7
-  - CT_11
-  - mc.ylks0033.dpdns.org_32
-  - cx.ylks0033.dpdns.org_35
-  - mc.ylks0033.dpdns.org_33
-  - CMCC-IPV6_13
-  - cx.ylks0033.dpdns.org_36
-  - US_3
-  - cx.ylks0033.dpdns.org_37
-  - US_4
-  - mc.ylks0033.dpdns.org_34
-  - mc.ylks0033.dpdns.org_35
-  - mc.ylks0033.dpdns.org_36
-  - 🇺🇸US_8
-  - cx.ylks0033.dpdns.org_38
-  - mc.ylks0033.dpdns.org_37
-  - CMCC-IPV6_14
-  - US_5
-  - cx.ylks0033.dpdns.org_39
-  - CMCC-IPV6_15
-  - CMCC-IPV6_16
-  - mc.ylks0033.dpdns.org_38
-  - CMCC-IPV6_17
-  - cx.ylks0033.dpdns.org_40
-  - mc.ylks0033.dpdns.org_39
   - CT_12
-  - mc.ylks0033.dpdns.org_40
-  - cx.ylks0033.dpdns.org_41
+  - 🇭🇰HK_9
   - CT_13
-  - CMCC-IPV6_18
-  - mc.ylks0033.dpdns.org_41
-  - mc.ylks0033.dpdns.org_42
-  - cx.ylks0033.dpdns.org_42
-  - CMCC-IPV6_19
-  - cx.ylks0033.dpdns.org_43
+  - CMCC_31
+  - otto.ns.cloudflare.com_3
+  - whatismyipaddress.com_1
   - CT_14
+  - CMCC-IPV6_7
   - CT_15
-  - CMCC_23
-  - CMCC_24
-  - CMCC_25
-  - cx.ylks0033.dpdns.org_44
-  - CMCC-IPV6_20
-  - 🇺🇸US_9
-  - mc.ylks0033.dpdns.org_43
+  - 🇭🇰HK_10
+  - CMCC-IPV6_8
+  - bowen.ns.cloudflare.com_1
   - CT_16
-  - cx.ylks0033.dpdns.org_45
-  - 🇺🇸US_10
-  - CMCC-IPV6_21
-  - US_6
-  - CMCC-IPV6_22
-  - mc.ylks0033.dpdns.org_44
-  - 🇺🇸US_11
-  - cx.ylks0033.dpdns.org_46
-  - CMCC-IPV6_23
-  - IPV6_2
-  - CH_1
-  - mc.ylks0033.dpdns.org_45
-  - CMCC_26
-  - mc.ylks0033.dpdns.org_46
-  - CT_17
-  - mc.ylks0033.dpdns.org_47
-  - CMCC-IPV6_24
-  - cx.ylks0033.dpdns.org_47
-  - cx.ylks0033.dpdns.org_48
-  - mc.ylks0033.dpdns.org_48
-  - cx.ylks0033.dpdns.org_49
-  - CMCC_27
-  - CMCC_28
-  - CT_18
-  - CT_19
-  - mc.ylks0033.dpdns.org_49
-  - cx.ylks0033.dpdns.org_50
-  - cx.ylks0033.dpdns.org_51
-  - CT_20
-  - US_7
-  - mc.ylks0033.dpdns.org_50
-  - CMCC_29
-  - US_8
-  - CMCC-IPV6_25
-  - cx.ylks0033.dpdns.org_52
-  - cx.ylks0033.dpdns.org_53
-  - cx.ylks0033.dpdns.org_54
-  - CMCC-IPV6_26
-  - cx.ylks0033.dpdns.org_55
-  - mc.ylks0033.dpdns.org_51
-  - mc.ylks0033.dpdns.org_52
-  - CT_21
-  - cx.ylks0033.dpdns.org_56
-  - mc.ylks0033.dpdns.org_53
-  - mc.ylks0033.dpdns.org_54
-  - cx.ylks0033.dpdns.org_57
-  - CMCC_30
-  - US_9
-  - cx.ylks0033.dpdns.org_58
-  - CT_22
-  - 🇺🇸US_12
-  - 🇭🇰HK_2
-  - CT_23
-  - mc.ylks0033.dpdns.org_55
-  - US_10
-  - US_11
-  - CT_24
-  - mc.ylks0033.dpdns.org_56
-  - mc.ylks0033.dpdns.org_57
-  - mc.ylks0033.dpdns.org_58
-  - cx.ylks0033.dpdns.org_59
-  - cx.ylks0033.dpdns.org_60
-  - cx.ylks0033.dpdns.org_61
-  - NL_2
-  - mc.ylks0033.dpdns.org_59
-  - mc.ylks0033.dpdns.org_60
-  - CH_2
-  - mc.ylks0033.dpdns.org_61
-  - CA
-  - US_12
+  - 172.67.110.232_4
+  - 🇺🇸US_5
+  - whatismyipaddress.com_2
+  - wilson.ns.cloudflare.com_3
   - IPV6_3
-  - mc.ylks0033.dpdns.org_62
+  - US_5
+  - www.ddwhm.com_1
+  - www.ddwhm.com_2
+  - wilson.ns.cloudflare.com_4
+  - CT_17
+  - 162.159.36.104_3
+  - CT_18
+  - 🇺🇸US_6
+  - whatismyipaddress.com_3
+  - 🇭🇰HK_11
+  - CT_19
+  - CMCC-IPV6_9
+  - CT_20
+  - CMCC-IPV6_10
+  - otto.ns.cloudflare.com_4
+  - 🇺🇸US_7
+  - 🇺🇸US_8
+  - bowen.ns.cloudflare.com_2
+  - CMCC-IPV6_11
+  - CMCC_32
+  - www.ddwhm.com_3
+  - CT_21
+  - CMCC-IPV6_12
+  - CMCC-IPV6_13
+  - icook.tw_3
+  - CT_22
+  - CT_23
+  - CMCC-IPV6_14
+  - CMCC-IPV6_15
+  - www.ddwhm.com_4
+  - bowen.ns.cloudflare.com_3
+  - 162.159.36.104_4
+  - CMCC-IPV6_16
+  - CMCC-IPV6_17
+  - US_6
+  - sullivan.ns.cloudflare.com_4
+  - CH_2
+  - whatismyipaddress.com_4
+  - CMCC-IPV6_18
+  - CMCC-IPV6_19
+  - CT_24
+  - CMCC-IPV6_20
   - IPV6_4
-  - IPV6_5
-  - IPV6_6
+  - icook.tw_4
+  - CMCC-IPV6_21
+  - US_7
+  - CMCC-IPV6_22
+  - bowen.ns.cloudflare.com_4
+  - CMCC-IPV6_23
+  - US_8
+  - CMCC_33
+  - US_9
+  - CMCC-IPV6_24
+  - CT_25
+  - CA_1
+  - CT_26
+  - US_10
+  - 172.67.243.218_3
+  - US_11
+  - US_12
+  - CA_2
+  - 172.67.243.218_4
+  - JP_1
+  - JP_2
+  - KR
+  - CMCC_34
   type: select
 - name: 📲 电报信息
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
-  - cx.ylks0033.dpdns.org_1
-  - mc.ylks0033.dpdns.org_1
-  - mc.ylks0033.dpdns.org_2
   - TW_1
+  - US_1
+  - 🇺🇸US_1
   - CMCC_1
   - CMCC_2
   - CMCC_3
-  - US_1
   - CMCC_4
-  - 🇺🇸US_1
   - CMCC_5
   - CMCC_6
   - CMCC_7
   - CMCC_8
   - CMCC_9
   - 🇭🇰HK_1
+  - TW_2
   - CMCC_10
-  - cx.ylks0033.dpdns.org_2
   - CMCC_11
+  - 🇭🇰HK_2
+  - 🇭🇰HK_3
+  - 🇭🇰HK_4
   - CMCC_12
   - CMCC_13
-  - TW_2
   - CMCC_14
-  - mc.ylks0033.dpdns.org_3
-  - NL_1
   - CMCC_15
+  - NL_1
+  - NL_2
   - CMCC_16
   - CMCC_17
-  - cx.ylks0033.dpdns.org_3
-  - mc.ylks0033.dpdns.org_4
+  - 🇭🇰HK_5
   - CMCC_18
-  - 🇺🇸US_2
   - CMCC_19
-  - CMCC-IPV6_1
+  - CH_1
   - CMCC_20
-  - cx.ylks0033.dpdns.org_4
-  - cx.ylks0033.dpdns.org_5
-  - CMCC-IPV6_2
-  - CMCC-IPV6_3
   - CMCC_21
-  - cx.ylks0033.dpdns.org_6
-  - 🇺🇸US_3
-  - CMCC-IPV6_4
-  - mc.ylks0033.dpdns.org_5
+  - CMCC_22
+  - CMCC_23
+  - 172.67.243.218_1
+  - CMCC-IPV6_1
+  - CMCC_24
+  - 🇭🇰HK_6
+  - CMCC_25
+  - nikon.ns.cloudflare.com_1
+  - CMCC_26
+  - CMCC_27
+  - nikon.ns.cloudflare.com_2
+  - ip.sb_1
+  - nikon.ns.cloudflare.com_3
+  - ip.sb_2
+  - shopify.com_1
+  - sullivan.ns.cloudflare.com_1
+  - 🇭🇰HK_7
+  - IPV6_1
   - CT_1
-  - cx.ylks0033.dpdns.org_7
-  - mc.ylks0033.dpdns.org_6
-  - cx.ylks0033.dpdns.org_8
-  - mc.ylks0033.dpdns.org_7
-  - cx.ylks0033.dpdns.org_9
+  - 🇺🇸US_2
+  - CMCC-IPV6_2
+  - CMCC_28
+  - IPV6_2
+  - 162.159.36.104_1
+  - shopify.com_2
+  - sullivan.ns.cloudflare.com_2
+  - CMCC_29
+  - CT_2
+  - shopify.com_3
+  - CT_3
+  - wilson.ns.cloudflare.com_1
+  - CT_4
+  - 🇺🇸US_3
+  - shopify.com_4
+  - nikon.ns.cloudflare.com_4
+  - ip.sb_3
+  - sullivan.ns.cloudflare.com_3
+  - 172.67.243.218_2
+  - US_2
+  - otto.ns.cloudflare.com_1
+  - 172.67.110.232_1
+  - CT_5
+  - icook.tw_1
+  - US_3
+  - wilson.ns.cloudflare.com_2
+  - CMCC_30
+  - CT_6
+  - 172.67.110.232_2
+  - 🇭🇰HK_8
+  - CT_7
+  - CT_8
+  - CT_9
+  - 🇺🇸US_4
+  - US_4
+  - otto.ns.cloudflare.com_2
+  - 162.159.36.104_2
+  - ip.sb_4
+  - CT_10
+  - 172.67.110.232_3
+  - CMCC-IPV6_3
+  - CMCC-IPV6_4
+  - CT_11
+  - icook.tw_2
   - CMCC-IPV6_5
   - CMCC-IPV6_6
-  - CMCC-IPV6_7
-  - CMCC_22
-  - CT_2
-  - mc.ylks0033.dpdns.org_8
-  - CT_3
-  - CT_4
-  - cx.ylks0033.dpdns.org_10
-  - cx.ylks0033.dpdns.org_11
-  - cx.ylks0033.dpdns.org_12
-  - 🇺🇸US_4
-  - 🇺🇸US_5
-  - mc.ylks0033.dpdns.org_9
-  - CMCC-IPV6_8
-  - cx.ylks0033.dpdns.org_13
-  - mc.ylks0033.dpdns.org_10
-  - cx.ylks0033.dpdns.org_14
-  - cx.ylks0033.dpdns.org_15
-  - mc.ylks0033.dpdns.org_11
-  - cx.ylks0033.dpdns.org_16
-  - cx.ylks0033.dpdns.org_17
-  - CT_5
-  - cx.ylks0033.dpdns.org_18
-  - cx.ylks0033.dpdns.org_19
-  - cx.ylks0033.dpdns.org_20
-  - mc.ylks0033.dpdns.org_12
-  - mc.ylks0033.dpdns.org_13
-  - cx.ylks0033.dpdns.org_21
-  - CT_6
-  - mc.ylks0033.dpdns.org_14
-  - cx.ylks0033.dpdns.org_22
-  - mc.ylks0033.dpdns.org_15
-  - mc.ylks0033.dpdns.org_16
-  - CMCC-IPV6_9
-  - mc.ylks0033.dpdns.org_17
-  - cx.ylks0033.dpdns.org_23
-  - CMCC-IPV6_10
-  - cx.ylks0033.dpdns.org_24
-  - cx.ylks0033.dpdns.org_25
-  - mc.ylks0033.dpdns.org_18
-  - cx.ylks0033.dpdns.org_26
-  - CT_7
-  - cx.ylks0033.dpdns.org_27
-  - mc.ylks0033.dpdns.org_19
-  - IPV6_1
-  - cx.ylks0033.dpdns.org_28
-  - mc.ylks0033.dpdns.org_20
-  - cx.ylks0033.dpdns.org_29
-  - mc.ylks0033.dpdns.org_21
-  - US_2
-  - CMCC-IPV6_11
-  - mc.ylks0033.dpdns.org_22
-  - CT_8
-  - mc.ylks0033.dpdns.org_23
-  - CT_9
-  - CMCC-IPV6_12
-  - cx.ylks0033.dpdns.org_30
-  - mc.ylks0033.dpdns.org_24
-  - mc.ylks0033.dpdns.org_25
-  - cx.ylks0033.dpdns.org_31
-  - mc.ylks0033.dpdns.org_26
-  - CT_10
-  - mc.ylks0033.dpdns.org_27
-  - cx.ylks0033.dpdns.org_32
-  - cx.ylks0033.dpdns.org_33
-  - 🇺🇸US_6
-  - mc.ylks0033.dpdns.org_28
-  - mc.ylks0033.dpdns.org_29
-  - mc.ylks0033.dpdns.org_30
-  - mc.ylks0033.dpdns.org_31
-  - cx.ylks0033.dpdns.org_34
-  - 🇺🇸US_7
-  - CT_11
-  - mc.ylks0033.dpdns.org_32
-  - cx.ylks0033.dpdns.org_35
-  - mc.ylks0033.dpdns.org_33
-  - CMCC-IPV6_13
-  - cx.ylks0033.dpdns.org_36
-  - US_3
-  - cx.ylks0033.dpdns.org_37
-  - US_4
-  - mc.ylks0033.dpdns.org_34
-  - mc.ylks0033.dpdns.org_35
-  - mc.ylks0033.dpdns.org_36
-  - 🇺🇸US_8
-  - cx.ylks0033.dpdns.org_38
-  - mc.ylks0033.dpdns.org_37
-  - CMCC-IPV6_14
-  - US_5
-  - cx.ylks0033.dpdns.org_39
-  - CMCC-IPV6_15
-  - CMCC-IPV6_16
-  - mc.ylks0033.dpdns.org_38
-  - CMCC-IPV6_17
-  - cx.ylks0033.dpdns.org_40
-  - mc.ylks0033.dpdns.org_39
   - CT_12
-  - mc.ylks0033.dpdns.org_40
-  - cx.ylks0033.dpdns.org_41
+  - 🇭🇰HK_9
   - CT_13
-  - CMCC-IPV6_18
-  - mc.ylks0033.dpdns.org_41
-  - mc.ylks0033.dpdns.org_42
-  - cx.ylks0033.dpdns.org_42
-  - CMCC-IPV6_19
-  - cx.ylks0033.dpdns.org_43
+  - CMCC_31
+  - otto.ns.cloudflare.com_3
+  - whatismyipaddress.com_1
   - CT_14
+  - CMCC-IPV6_7
   - CT_15
-  - CMCC_23
-  - CMCC_24
-  - CMCC_25
-  - cx.ylks0033.dpdns.org_44
-  - CMCC-IPV6_20
-  - 🇺🇸US_9
-  - mc.ylks0033.dpdns.org_43
+  - 🇭🇰HK_10
+  - CMCC-IPV6_8
+  - bowen.ns.cloudflare.com_1
   - CT_16
-  - cx.ylks0033.dpdns.org_45
-  - 🇺🇸US_10
-  - CMCC-IPV6_21
-  - US_6
-  - CMCC-IPV6_22
-  - mc.ylks0033.dpdns.org_44
-  - 🇺🇸US_11
-  - cx.ylks0033.dpdns.org_46
-  - CMCC-IPV6_23
-  - IPV6_2
-  - CH_1
-  - mc.ylks0033.dpdns.org_45
-  - CMCC_26
-  - mc.ylks0033.dpdns.org_46
-  - CT_17
-  - mc.ylks0033.dpdns.org_47
-  - CMCC-IPV6_24
-  - cx.ylks0033.dpdns.org_47
-  - cx.ylks0033.dpdns.org_48
-  - mc.ylks0033.dpdns.org_48
-  - cx.ylks0033.dpdns.org_49
-  - CMCC_27
-  - CMCC_28
-  - CT_18
-  - CT_19
-  - mc.ylks0033.dpdns.org_49
-  - cx.ylks0033.dpdns.org_50
-  - cx.ylks0033.dpdns.org_51
-  - CT_20
-  - US_7
-  - mc.ylks0033.dpdns.org_50
-  - CMCC_29
-  - US_8
-  - CMCC-IPV6_25
-  - cx.ylks0033.dpdns.org_52
-  - cx.ylks0033.dpdns.org_53
-  - cx.ylks0033.dpdns.org_54
-  - CMCC-IPV6_26
-  - cx.ylks0033.dpdns.org_55
-  - mc.ylks0033.dpdns.org_51
-  - mc.ylks0033.dpdns.org_52
-  - CT_21
-  - cx.ylks0033.dpdns.org_56
-  - mc.ylks0033.dpdns.org_53
-  - mc.ylks0033.dpdns.org_54
-  - cx.ylks0033.dpdns.org_57
-  - CMCC_30
-  - US_9
-  - cx.ylks0033.dpdns.org_58
-  - CT_22
-  - 🇺🇸US_12
-  - 🇭🇰HK_2
-  - CT_23
-  - mc.ylks0033.dpdns.org_55
-  - US_10
-  - US_11
-  - CT_24
-  - mc.ylks0033.dpdns.org_56
-  - mc.ylks0033.dpdns.org_57
-  - mc.ylks0033.dpdns.org_58
-  - cx.ylks0033.dpdns.org_59
-  - cx.ylks0033.dpdns.org_60
-  - cx.ylks0033.dpdns.org_61
-  - NL_2
-  - mc.ylks0033.dpdns.org_59
-  - mc.ylks0033.dpdns.org_60
-  - CH_2
-  - mc.ylks0033.dpdns.org_61
-  - CA
-  - US_12
+  - 172.67.110.232_4
+  - 🇺🇸US_5
+  - whatismyipaddress.com_2
+  - wilson.ns.cloudflare.com_3
   - IPV6_3
-  - mc.ylks0033.dpdns.org_62
+  - US_5
+  - www.ddwhm.com_1
+  - www.ddwhm.com_2
+  - wilson.ns.cloudflare.com_4
+  - CT_17
+  - 162.159.36.104_3
+  - CT_18
+  - 🇺🇸US_6
+  - whatismyipaddress.com_3
+  - 🇭🇰HK_11
+  - CT_19
+  - CMCC-IPV6_9
+  - CT_20
+  - CMCC-IPV6_10
+  - otto.ns.cloudflare.com_4
+  - 🇺🇸US_7
+  - 🇺🇸US_8
+  - bowen.ns.cloudflare.com_2
+  - CMCC-IPV6_11
+  - CMCC_32
+  - www.ddwhm.com_3
+  - CT_21
+  - CMCC-IPV6_12
+  - CMCC-IPV6_13
+  - icook.tw_3
+  - CT_22
+  - CT_23
+  - CMCC-IPV6_14
+  - CMCC-IPV6_15
+  - www.ddwhm.com_4
+  - bowen.ns.cloudflare.com_3
+  - 162.159.36.104_4
+  - CMCC-IPV6_16
+  - CMCC-IPV6_17
+  - US_6
+  - sullivan.ns.cloudflare.com_4
+  - CH_2
+  - whatismyipaddress.com_4
+  - CMCC-IPV6_18
+  - CMCC-IPV6_19
+  - CT_24
+  - CMCC-IPV6_20
   - IPV6_4
-  - IPV6_5
-  - IPV6_6
+  - icook.tw_4
+  - CMCC-IPV6_21
+  - US_7
+  - CMCC-IPV6_22
+  - bowen.ns.cloudflare.com_4
+  - CMCC-IPV6_23
+  - US_8
+  - CMCC_33
+  - US_9
+  - CMCC-IPV6_24
+  - CT_25
+  - CA_1
+  - CT_26
+  - US_10
+  - 172.67.243.218_3
+  - US_11
+  - US_12
+  - CA_2
+  - 172.67.243.218_4
+  - JP_1
+  - JP_2
+  - KR
+  - CMCC_34
   type: select
 - name: Ⓜ️ 微软服务
   proxies:
   - 🎯 全球直连
   - 🚀 节点选择
-  - cx.ylks0033.dpdns.org_1
-  - mc.ylks0033.dpdns.org_1
-  - mc.ylks0033.dpdns.org_2
   - TW_1
+  - US_1
+  - 🇺🇸US_1
   - CMCC_1
   - CMCC_2
   - CMCC_3
-  - US_1
   - CMCC_4
-  - 🇺🇸US_1
   - CMCC_5
   - CMCC_6
   - CMCC_7
   - CMCC_8
   - CMCC_9
   - 🇭🇰HK_1
+  - TW_2
   - CMCC_10
-  - cx.ylks0033.dpdns.org_2
   - CMCC_11
+  - 🇭🇰HK_2
+  - 🇭🇰HK_3
+  - 🇭🇰HK_4
   - CMCC_12
   - CMCC_13
-  - TW_2
   - CMCC_14
-  - mc.ylks0033.dpdns.org_3
-  - NL_1
   - CMCC_15
+  - NL_1
+  - NL_2
   - CMCC_16
   - CMCC_17
-  - cx.ylks0033.dpdns.org_3
-  - mc.ylks0033.dpdns.org_4
+  - 🇭🇰HK_5
   - CMCC_18
-  - 🇺🇸US_2
   - CMCC_19
-  - CMCC-IPV6_1
+  - CH_1
   - CMCC_20
-  - cx.ylks0033.dpdns.org_4
-  - cx.ylks0033.dpdns.org_5
-  - CMCC-IPV6_2
-  - CMCC-IPV6_3
   - CMCC_21
-  - cx.ylks0033.dpdns.org_6
-  - 🇺🇸US_3
-  - CMCC-IPV6_4
-  - mc.ylks0033.dpdns.org_5
+  - CMCC_22
+  - CMCC_23
+  - 172.67.243.218_1
+  - CMCC-IPV6_1
+  - CMCC_24
+  - 🇭🇰HK_6
+  - CMCC_25
+  - nikon.ns.cloudflare.com_1
+  - CMCC_26
+  - CMCC_27
+  - nikon.ns.cloudflare.com_2
+  - ip.sb_1
+  - nikon.ns.cloudflare.com_3
+  - ip.sb_2
+  - shopify.com_1
+  - sullivan.ns.cloudflare.com_1
+  - 🇭🇰HK_7
+  - IPV6_1
   - CT_1
-  - cx.ylks0033.dpdns.org_7
-  - mc.ylks0033.dpdns.org_6
-  - cx.ylks0033.dpdns.org_8
-  - mc.ylks0033.dpdns.org_7
-  - cx.ylks0033.dpdns.org_9
+  - 🇺🇸US_2
+  - CMCC-IPV6_2
+  - CMCC_28
+  - IPV6_2
+  - 162.159.36.104_1
+  - shopify.com_2
+  - sullivan.ns.cloudflare.com_2
+  - CMCC_29
+  - CT_2
+  - shopify.com_3
+  - CT_3
+  - wilson.ns.cloudflare.com_1
+  - CT_4
+  - 🇺🇸US_3
+  - shopify.com_4
+  - nikon.ns.cloudflare.com_4
+  - ip.sb_3
+  - sullivan.ns.cloudflare.com_3
+  - 172.67.243.218_2
+  - US_2
+  - otto.ns.cloudflare.com_1
+  - 172.67.110.232_1
+  - CT_5
+  - icook.tw_1
+  - US_3
+  - wilson.ns.cloudflare.com_2
+  - CMCC_30
+  - CT_6
+  - 172.67.110.232_2
+  - 🇭🇰HK_8
+  - CT_7
+  - CT_8
+  - CT_9
+  - 🇺🇸US_4
+  - US_4
+  - otto.ns.cloudflare.com_2
+  - 162.159.36.104_2
+  - ip.sb_4
+  - CT_10
+  - 172.67.110.232_3
+  - CMCC-IPV6_3
+  - CMCC-IPV6_4
+  - CT_11
+  - icook.tw_2
   - CMCC-IPV6_5
   - CMCC-IPV6_6
-  - CMCC-IPV6_7
-  - CMCC_22
-  - CT_2
-  - mc.ylks0033.dpdns.org_8
-  - CT_3
-  - CT_4
-  - cx.ylks0033.dpdns.org_10
-  - cx.ylks0033.dpdns.org_11
-  - cx.ylks0033.dpdns.org_12
-  - 🇺🇸US_4
-  - 🇺🇸US_5
-  - mc.ylks0033.dpdns.org_9
-  - CMCC-IPV6_8
-  - cx.ylks0033.dpdns.org_13
-  - mc.ylks0033.dpdns.org_10
-  - cx.ylks0033.dpdns.org_14
-  - cx.ylks0033.dpdns.org_15
-  - mc.ylks0033.dpdns.org_11
-  - cx.ylks0033.dpdns.org_16
-  - cx.ylks0033.dpdns.org_17
-  - CT_5
-  - cx.ylks0033.dpdns.org_18
-  - cx.ylks0033.dpdns.org_19
-  - cx.ylks0033.dpdns.org_20
-  - mc.ylks0033.dpdns.org_12
-  - mc.ylks0033.dpdns.org_13
-  - cx.ylks0033.dpdns.org_21
-  - CT_6
-  - mc.ylks0033.dpdns.org_14
-  - cx.ylks0033.dpdns.org_22
-  - mc.ylks0033.dpdns.org_15
-  - mc.ylks0033.dpdns.org_16
-  - CMCC-IPV6_9
-  - mc.ylks0033.dpdns.org_17
-  - cx.ylks0033.dpdns.org_23
-  - CMCC-IPV6_10
-  - cx.ylks0033.dpdns.org_24
-  - cx.ylks0033.dpdns.org_25
-  - mc.ylks0033.dpdns.org_18
-  - cx.ylks0033.dpdns.org_26
-  - CT_7
-  - cx.ylks0033.dpdns.org_27
-  - mc.ylks0033.dpdns.org_19
-  - IPV6_1
-  - cx.ylks0033.dpdns.org_28
-  - mc.ylks0033.dpdns.org_20
-  - cx.ylks0033.dpdns.org_29
-  - mc.ylks0033.dpdns.org_21
-  - US_2
-  - CMCC-IPV6_11
-  - mc.ylks0033.dpdns.org_22
-  - CT_8
-  - mc.ylks0033.dpdns.org_23
-  - CT_9
-  - CMCC-IPV6_12
-  - cx.ylks0033.dpdns.org_30
-  - mc.ylks0033.dpdns.org_24
-  - mc.ylks0033.dpdns.org_25
-  - cx.ylks0033.dpdns.org_31
-  - mc.ylks0033.dpdns.org_26
-  - CT_10
-  - mc.ylks0033.dpdns.org_27
-  - cx.ylks0033.dpdns.org_32
-  - cx.ylks0033.dpdns.org_33
-  - 🇺🇸US_6
-  - mc.ylks0033.dpdns.org_28
-  - mc.ylks0033.dpdns.org_29
-  - mc.ylks0033.dpdns.org_30
-  - mc.ylks0033.dpdns.org_31
-  - cx.ylks0033.dpdns.org_34
-  - 🇺🇸US_7
-  - CT_11
-  - mc.ylks0033.dpdns.org_32
-  - cx.ylks0033.dpdns.org_35
-  - mc.ylks0033.dpdns.org_33
-  - CMCC-IPV6_13
-  - cx.ylks0033.dpdns.org_36
-  - US_3
-  - cx.ylks0033.dpdns.org_37
-  - US_4
-  - mc.ylks0033.dpdns.org_34
-  - mc.ylks0033.dpdns.org_35
-  - mc.ylks0033.dpdns.org_36
-  - 🇺🇸US_8
-  - cx.ylks0033.dpdns.org_38
-  - mc.ylks0033.dpdns.org_37
-  - CMCC-IPV6_14
-  - US_5
-  - cx.ylks0033.dpdns.org_39
-  - CMCC-IPV6_15
-  - CMCC-IPV6_16
-  - mc.ylks0033.dpdns.org_38
-  - CMCC-IPV6_17
-  - cx.ylks0033.dpdns.org_40
-  - mc.ylks0033.dpdns.org_39
   - CT_12
-  - mc.ylks0033.dpdns.org_40
-  - cx.ylks0033.dpdns.org_41
+  - 🇭🇰HK_9
   - CT_13
-  - CMCC-IPV6_18
-  - mc.ylks0033.dpdns.org_41
-  - mc.ylks0033.dpdns.org_42
-  - cx.ylks0033.dpdns.org_42
-  - CMCC-IPV6_19
-  - cx.ylks0033.dpdns.org_43
+  - CMCC_31
+  - otto.ns.cloudflare.com_3
+  - whatismyipaddress.com_1
   - CT_14
+  - CMCC-IPV6_7
   - CT_15
-  - CMCC_23
-  - CMCC_24
-  - CMCC_25
-  - cx.ylks0033.dpdns.org_44
-  - CMCC-IPV6_20
-  - 🇺🇸US_9
-  - mc.ylks0033.dpdns.org_43
+  - 🇭🇰HK_10
+  - CMCC-IPV6_8
+  - bowen.ns.cloudflare.com_1
   - CT_16
-  - cx.ylks0033.dpdns.org_45
-  - 🇺🇸US_10
-  - CMCC-IPV6_21
-  - US_6
-  - CMCC-IPV6_22
-  - mc.ylks0033.dpdns.org_44
-  - 🇺🇸US_11
-  - cx.ylks0033.dpdns.org_46
-  - CMCC-IPV6_23
-  - IPV6_2
-  - CH_1
-  - mc.ylks0033.dpdns.org_45
-  - CMCC_26
-  - mc.ylks0033.dpdns.org_46
-  - CT_17
-  - mc.ylks0033.dpdns.org_47
-  - CMCC-IPV6_24
-  - cx.ylks0033.dpdns.org_47
-  - cx.ylks0033.dpdns.org_48
-  - mc.ylks0033.dpdns.org_48
-  - cx.ylks0033.dpdns.org_49
-  - CMCC_27
-  - CMCC_28
-  - CT_18
-  - CT_19
-  - mc.ylks0033.dpdns.org_49
-  - cx.ylks0033.dpdns.org_50
-  - cx.ylks0033.dpdns.org_51
-  - CT_20
-  - US_7
-  - mc.ylks0033.dpdns.org_50
-  - CMCC_29
-  - US_8
-  - CMCC-IPV6_25
-  - cx.ylks0033.dpdns.org_52
-  - cx.ylks0033.dpdns.org_53
-  - cx.ylks0033.dpdns.org_54
-  - CMCC-IPV6_26
-  - cx.ylks0033.dpdns.org_55
-  - mc.ylks0033.dpdns.org_51
-  - mc.ylks0033.dpdns.org_52
-  - CT_21
-  - cx.ylks0033.dpdns.org_56
-  - mc.ylks0033.dpdns.org_53
-  - mc.ylks0033.dpdns.org_54
-  - cx.ylks0033.dpdns.org_57
-  - CMCC_30
-  - US_9
-  - cx.ylks0033.dpdns.org_58
-  - CT_22
-  - 🇺🇸US_12
-  - 🇭🇰HK_2
-  - CT_23
-  - mc.ylks0033.dpdns.org_55
-  - US_10
-  - US_11
-  - CT_24
-  - mc.ylks0033.dpdns.org_56
-  - mc.ylks0033.dpdns.org_57
-  - mc.ylks0033.dpdns.org_58
-  - cx.ylks0033.dpdns.org_59
-  - cx.ylks0033.dpdns.org_60
-  - cx.ylks0033.dpdns.org_61
-  - NL_2
-  - mc.ylks0033.dpdns.org_59
-  - mc.ylks0033.dpdns.org_60
-  - CH_2
-  - mc.ylks0033.dpdns.org_61
-  - CA
-  - US_12
+  - 172.67.110.232_4
+  - 🇺🇸US_5
+  - whatismyipaddress.com_2
+  - wilson.ns.cloudflare.com_3
   - IPV6_3
-  - mc.ylks0033.dpdns.org_62
+  - US_5
+  - www.ddwhm.com_1
+  - www.ddwhm.com_2
+  - wilson.ns.cloudflare.com_4
+  - CT_17
+  - 162.159.36.104_3
+  - CT_18
+  - 🇺🇸US_6
+  - whatismyipaddress.com_3
+  - 🇭🇰HK_11
+  - CT_19
+  - CMCC-IPV6_9
+  - CT_20
+  - CMCC-IPV6_10
+  - otto.ns.cloudflare.com_4
+  - 🇺🇸US_7
+  - 🇺🇸US_8
+  - bowen.ns.cloudflare.com_2
+  - CMCC-IPV6_11
+  - CMCC_32
+  - www.ddwhm.com_3
+  - CT_21
+  - CMCC-IPV6_12
+  - CMCC-IPV6_13
+  - icook.tw_3
+  - CT_22
+  - CT_23
+  - CMCC-IPV6_14
+  - CMCC-IPV6_15
+  - www.ddwhm.com_4
+  - bowen.ns.cloudflare.com_3
+  - 162.159.36.104_4
+  - CMCC-IPV6_16
+  - CMCC-IPV6_17
+  - US_6
+  - sullivan.ns.cloudflare.com_4
+  - CH_2
+  - whatismyipaddress.com_4
+  - CMCC-IPV6_18
+  - CMCC-IPV6_19
+  - CT_24
+  - CMCC-IPV6_20
   - IPV6_4
-  - IPV6_5
-  - IPV6_6
+  - icook.tw_4
+  - CMCC-IPV6_21
+  - US_7
+  - CMCC-IPV6_22
+  - bowen.ns.cloudflare.com_4
+  - CMCC-IPV6_23
+  - US_8
+  - CMCC_33
+  - US_9
+  - CMCC-IPV6_24
+  - CT_25
+  - CA_1
+  - CT_26
+  - US_10
+  - 172.67.243.218_3
+  - US_11
+  - US_12
+  - CA_2
+  - 172.67.243.218_4
+  - JP_1
+  - JP_2
+  - KR
+  - CMCC_34
   type: select
 - name: 🍎 苹果服务
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
-  - cx.ylks0033.dpdns.org_1
-  - mc.ylks0033.dpdns.org_1
-  - mc.ylks0033.dpdns.org_2
   - TW_1
+  - US_1
+  - 🇺🇸US_1
   - CMCC_1
   - CMCC_2
   - CMCC_3
-  - US_1
   - CMCC_4
-  - 🇺🇸US_1
   - CMCC_5
   - CMCC_6
   - CMCC_7
   - CMCC_8
   - CMCC_9
   - 🇭🇰HK_1
+  - TW_2
   - CMCC_10
-  - cx.ylks0033.dpdns.org_2
   - CMCC_11
+  - 🇭🇰HK_2
+  - 🇭🇰HK_3
+  - 🇭🇰HK_4
   - CMCC_12
   - CMCC_13
-  - TW_2
   - CMCC_14
-  - mc.ylks0033.dpdns.org_3
-  - NL_1
   - CMCC_15
+  - NL_1
+  - NL_2
   - CMCC_16
   - CMCC_17
-  - cx.ylks0033.dpdns.org_3
-  - mc.ylks0033.dpdns.org_4
+  - 🇭🇰HK_5
   - CMCC_18
-  - 🇺🇸US_2
   - CMCC_19
-  - CMCC-IPV6_1
+  - CH_1
   - CMCC_20
-  - cx.ylks0033.dpdns.org_4
-  - cx.ylks0033.dpdns.org_5
-  - CMCC-IPV6_2
-  - CMCC-IPV6_3
   - CMCC_21
-  - cx.ylks0033.dpdns.org_6
-  - 🇺🇸US_3
-  - CMCC-IPV6_4
-  - mc.ylks0033.dpdns.org_5
+  - CMCC_22
+  - CMCC_23
+  - 172.67.243.218_1
+  - CMCC-IPV6_1
+  - CMCC_24
+  - 🇭🇰HK_6
+  - CMCC_25
+  - nikon.ns.cloudflare.com_1
+  - CMCC_26
+  - CMCC_27
+  - nikon.ns.cloudflare.com_2
+  - ip.sb_1
+  - nikon.ns.cloudflare.com_3
+  - ip.sb_2
+  - shopify.com_1
+  - sullivan.ns.cloudflare.com_1
+  - 🇭🇰HK_7
+  - IPV6_1
   - CT_1
-  - cx.ylks0033.dpdns.org_7
-  - mc.ylks0033.dpdns.org_6
-  - cx.ylks0033.dpdns.org_8
-  - mc.ylks0033.dpdns.org_7
-  - cx.ylks0033.dpdns.org_9
+  - 🇺🇸US_2
+  - CMCC-IPV6_2
+  - CMCC_28
+  - IPV6_2
+  - 162.159.36.104_1
+  - shopify.com_2
+  - sullivan.ns.cloudflare.com_2
+  - CMCC_29
+  - CT_2
+  - shopify.com_3
+  - CT_3
+  - wilson.ns.cloudflare.com_1
+  - CT_4
+  - 🇺🇸US_3
+  - shopify.com_4
+  - nikon.ns.cloudflare.com_4
+  - ip.sb_3
+  - sullivan.ns.cloudflare.com_3
+  - 172.67.243.218_2
+  - US_2
+  - otto.ns.cloudflare.com_1
+  - 172.67.110.232_1
+  - CT_5
+  - icook.tw_1
+  - US_3
+  - wilson.ns.cloudflare.com_2
+  - CMCC_30
+  - CT_6
+  - 172.67.110.232_2
+  - 🇭🇰HK_8
+  - CT_7
+  - CT_8
+  - CT_9
+  - 🇺🇸US_4
+  - US_4
+  - otto.ns.cloudflare.com_2
+  - 162.159.36.104_2
+  - ip.sb_4
+  - CT_10
+  - 172.67.110.232_3
+  - CMCC-IPV6_3
+  - CMCC-IPV6_4
+  - CT_11
+  - icook.tw_2
   - CMCC-IPV6_5
   - CMCC-IPV6_6
-  - CMCC-IPV6_7
-  - CMCC_22
-  - CT_2
-  - mc.ylks0033.dpdns.org_8
-  - CT_3
-  - CT_4
-  - cx.ylks0033.dpdns.org_10
-  - cx.ylks0033.dpdns.org_11
-  - cx.ylks0033.dpdns.org_12
-  - 🇺🇸US_4
-  - 🇺🇸US_5
-  - mc.ylks0033.dpdns.org_9
-  - CMCC-IPV6_8
-  - cx.ylks0033.dpdns.org_13
-  - mc.ylks0033.dpdns.org_10
-  - cx.ylks0033.dpdns.org_14
-  - cx.ylks0033.dpdns.org_15
-  - mc.ylks0033.dpdns.org_11
-  - cx.ylks0033.dpdns.org_16
-  - cx.ylks0033.dpdns.org_17
-  - CT_5
-  - cx.ylks0033.dpdns.org_18
-  - cx.ylks0033.dpdns.org_19
-  - cx.ylks0033.dpdns.org_20
-  - mc.ylks0033.dpdns.org_12
-  - mc.ylks0033.dpdns.org_13
-  - cx.ylks0033.dpdns.org_21
-  - CT_6
-  - mc.ylks0033.dpdns.org_14
-  - cx.ylks0033.dpdns.org_22
-  - mc.ylks0033.dpdns.org_15
-  - mc.ylks0033.dpdns.org_16
-  - CMCC-IPV6_9
-  - mc.ylks0033.dpdns.org_17
-  - cx.ylks0033.dpdns.org_23
-  - CMCC-IPV6_10
-  - cx.ylks0033.dpdns.org_24
-  - cx.ylks0033.dpdns.org_25
-  - mc.ylks0033.dpdns.org_18
-  - cx.ylks0033.dpdns.org_26
-  - CT_7
-  - cx.ylks0033.dpdns.org_27
-  - mc.ylks0033.dpdns.org_19
-  - IPV6_1
-  - cx.ylks0033.dpdns.org_28
-  - mc.ylks0033.dpdns.org_20
-  - cx.ylks0033.dpdns.org_29
-  - mc.ylks0033.dpdns.org_21
-  - US_2
-  - CMCC-IPV6_11
-  - mc.ylks0033.dpdns.org_22
-  - CT_8
-  - mc.ylks0033.dpdns.org_23
-  - CT_9
-  - CMCC-IPV6_12
-  - cx.ylks0033.dpdns.org_30
-  - mc.ylks0033.dpdns.org_24
-  - mc.ylks0033.dpdns.org_25
-  - cx.ylks0033.dpdns.org_31
-  - mc.ylks0033.dpdns.org_26
-  - CT_10
-  - mc.ylks0033.dpdns.org_27
-  - cx.ylks0033.dpdns.org_32
-  - cx.ylks0033.dpdns.org_33
-  - 🇺🇸US_6
-  - mc.ylks0033.dpdns.org_28
-  - mc.ylks0033.dpdns.org_29
-  - mc.ylks0033.dpdns.org_30
-  - mc.ylks0033.dpdns.org_31
-  - cx.ylks0033.dpdns.org_34
-  - 🇺🇸US_7
-  - CT_11
-  - mc.ylks0033.dpdns.org_32
-  - cx.ylks0033.dpdns.org_35
-  - mc.ylks0033.dpdns.org_33
-  - CMCC-IPV6_13
-  - cx.ylks0033.dpdns.org_36
-  - US_3
-  - cx.ylks0033.dpdns.org_37
-  - US_4
-  - mc.ylks0033.dpdns.org_34
-  - mc.ylks0033.dpdns.org_35
-  - mc.ylks0033.dpdns.org_36
-  - 🇺🇸US_8
-  - cx.ylks0033.dpdns.org_38
-  - mc.ylks0033.dpdns.org_37
-  - CMCC-IPV6_14
-  - US_5
-  - cx.ylks0033.dpdns.org_39
-  - CMCC-IPV6_15
-  - CMCC-IPV6_16
-  - mc.ylks0033.dpdns.org_38
-  - CMCC-IPV6_17
-  - cx.ylks0033.dpdns.org_40
-  - mc.ylks0033.dpdns.org_39
   - CT_12
-  - mc.ylks0033.dpdns.org_40
-  - cx.ylks0033.dpdns.org_41
+  - 🇭🇰HK_9
   - CT_13
-  - CMCC-IPV6_18
-  - mc.ylks0033.dpdns.org_41
-  - mc.ylks0033.dpdns.org_42
-  - cx.ylks0033.dpdns.org_42
-  - CMCC-IPV6_19
-  - cx.ylks0033.dpdns.org_43
+  - CMCC_31
+  - otto.ns.cloudflare.com_3
+  - whatismyipaddress.com_1
   - CT_14
+  - CMCC-IPV6_7
   - CT_15
-  - CMCC_23
-  - CMCC_24
-  - CMCC_25
-  - cx.ylks0033.dpdns.org_44
-  - CMCC-IPV6_20
-  - 🇺🇸US_9
-  - mc.ylks0033.dpdns.org_43
+  - 🇭🇰HK_10
+  - CMCC-IPV6_8
+  - bowen.ns.cloudflare.com_1
   - CT_16
-  - cx.ylks0033.dpdns.org_45
-  - 🇺🇸US_10
-  - CMCC-IPV6_21
-  - US_6
-  - CMCC-IPV6_22
-  - mc.ylks0033.dpdns.org_44
-  - 🇺🇸US_11
-  - cx.ylks0033.dpdns.org_46
-  - CMCC-IPV6_23
-  - IPV6_2
-  - CH_1
-  - mc.ylks0033.dpdns.org_45
-  - CMCC_26
-  - mc.ylks0033.dpdns.org_46
-  - CT_17
-  - mc.ylks0033.dpdns.org_47
-  - CMCC-IPV6_24
-  - cx.ylks0033.dpdns.org_47
-  - cx.ylks0033.dpdns.org_48
-  - mc.ylks0033.dpdns.org_48
-  - cx.ylks0033.dpdns.org_49
-  - CMCC_27
-  - CMCC_28
-  - CT_18
-  - CT_19
-  - mc.ylks0033.dpdns.org_49
-  - cx.ylks0033.dpdns.org_50
-  - cx.ylks0033.dpdns.org_51
-  - CT_20
-  - US_7
-  - mc.ylks0033.dpdns.org_50
-  - CMCC_29
-  - US_8
-  - CMCC-IPV6_25
-  - cx.ylks0033.dpdns.org_52
-  - cx.ylks0033.dpdns.org_53
-  - cx.ylks0033.dpdns.org_54
-  - CMCC-IPV6_26
-  - cx.ylks0033.dpdns.org_55
-  - mc.ylks0033.dpdns.org_51
-  - mc.ylks0033.dpdns.org_52
-  - CT_21
-  - cx.ylks0033.dpdns.org_56
-  - mc.ylks0033.dpdns.org_53
-  - mc.ylks0033.dpdns.org_54
-  - cx.ylks0033.dpdns.org_57
-  - CMCC_30
-  - US_9
-  - cx.ylks0033.dpdns.org_58
-  - CT_22
-  - 🇺🇸US_12
-  - 🇭🇰HK_2
-  - CT_23
-  - mc.ylks0033.dpdns.org_55
-  - US_10
-  - US_11
-  - CT_24
-  - mc.ylks0033.dpdns.org_56
-  - mc.ylks0033.dpdns.org_57
-  - mc.ylks0033.dpdns.org_58
-  - cx.ylks0033.dpdns.org_59
-  - cx.ylks0033.dpdns.org_60
-  - cx.ylks0033.dpdns.org_61
-  - NL_2
-  - mc.ylks0033.dpdns.org_59
-  - mc.ylks0033.dpdns.org_60
-  - CH_2
-  - mc.ylks0033.dpdns.org_61
-  - CA
-  - US_12
+  - 172.67.110.232_4
+  - 🇺🇸US_5
+  - whatismyipaddress.com_2
+  - wilson.ns.cloudflare.com_3
   - IPV6_3
-  - mc.ylks0033.dpdns.org_62
+  - US_5
+  - www.ddwhm.com_1
+  - www.ddwhm.com_2
+  - wilson.ns.cloudflare.com_4
+  - CT_17
+  - 162.159.36.104_3
+  - CT_18
+  - 🇺🇸US_6
+  - whatismyipaddress.com_3
+  - 🇭🇰HK_11
+  - CT_19
+  - CMCC-IPV6_9
+  - CT_20
+  - CMCC-IPV6_10
+  - otto.ns.cloudflare.com_4
+  - 🇺🇸US_7
+  - 🇺🇸US_8
+  - bowen.ns.cloudflare.com_2
+  - CMCC-IPV6_11
+  - CMCC_32
+  - www.ddwhm.com_3
+  - CT_21
+  - CMCC-IPV6_12
+  - CMCC-IPV6_13
+  - icook.tw_3
+  - CT_22
+  - CT_23
+  - CMCC-IPV6_14
+  - CMCC-IPV6_15
+  - www.ddwhm.com_4
+  - bowen.ns.cloudflare.com_3
+  - 162.159.36.104_4
+  - CMCC-IPV6_16
+  - CMCC-IPV6_17
+  - US_6
+  - sullivan.ns.cloudflare.com_4
+  - CH_2
+  - whatismyipaddress.com_4
+  - CMCC-IPV6_18
+  - CMCC-IPV6_19
+  - CT_24
+  - CMCC-IPV6_20
   - IPV6_4
-  - IPV6_5
-  - IPV6_6
+  - icook.tw_4
+  - CMCC-IPV6_21
+  - US_7
+  - CMCC-IPV6_22
+  - bowen.ns.cloudflare.com_4
+  - CMCC-IPV6_23
+  - US_8
+  - CMCC_33
+  - US_9
+  - CMCC-IPV6_24
+  - CT_25
+  - CA_1
+  - CT_26
+  - US_10
+  - 172.67.243.218_3
+  - US_11
+  - US_12
+  - CA_2
+  - 172.67.243.218_4
+  - JP_1
+  - JP_2
+  - KR
+  - CMCC_34
   type: select
 - name: 🎯 全球直连
   proxies:
@@ -4898,248 +3660,188 @@ proxy-groups:
   - 🚀 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
-  - cx.ylks0033.dpdns.org_1
-  - mc.ylks0033.dpdns.org_1
-  - mc.ylks0033.dpdns.org_2
   - TW_1
+  - US_1
+  - 🇺🇸US_1
   - CMCC_1
   - CMCC_2
   - CMCC_3
-  - US_1
   - CMCC_4
-  - 🇺🇸US_1
   - CMCC_5
   - CMCC_6
   - CMCC_7
   - CMCC_8
   - CMCC_9
   - 🇭🇰HK_1
+  - TW_2
   - CMCC_10
-  - cx.ylks0033.dpdns.org_2
   - CMCC_11
+  - 🇭🇰HK_2
+  - 🇭🇰HK_3
+  - 🇭🇰HK_4
   - CMCC_12
   - CMCC_13
-  - TW_2
   - CMCC_14
-  - mc.ylks0033.dpdns.org_3
-  - NL_1
   - CMCC_15
+  - NL_1
+  - NL_2
   - CMCC_16
   - CMCC_17
-  - cx.ylks0033.dpdns.org_3
-  - mc.ylks0033.dpdns.org_4
+  - 🇭🇰HK_5
   - CMCC_18
-  - 🇺🇸US_2
   - CMCC_19
-  - CMCC-IPV6_1
+  - CH_1
   - CMCC_20
-  - cx.ylks0033.dpdns.org_4
-  - cx.ylks0033.dpdns.org_5
-  - CMCC-IPV6_2
-  - CMCC-IPV6_3
   - CMCC_21
-  - cx.ylks0033.dpdns.org_6
-  - 🇺🇸US_3
-  - CMCC-IPV6_4
-  - mc.ylks0033.dpdns.org_5
+  - CMCC_22
+  - CMCC_23
+  - 172.67.243.218_1
+  - CMCC-IPV6_1
+  - CMCC_24
+  - 🇭🇰HK_6
+  - CMCC_25
+  - nikon.ns.cloudflare.com_1
+  - CMCC_26
+  - CMCC_27
+  - nikon.ns.cloudflare.com_2
+  - ip.sb_1
+  - nikon.ns.cloudflare.com_3
+  - ip.sb_2
+  - shopify.com_1
+  - sullivan.ns.cloudflare.com_1
+  - 🇭🇰HK_7
+  - IPV6_1
   - CT_1
-  - cx.ylks0033.dpdns.org_7
-  - mc.ylks0033.dpdns.org_6
-  - cx.ylks0033.dpdns.org_8
-  - mc.ylks0033.dpdns.org_7
-  - cx.ylks0033.dpdns.org_9
+  - 🇺🇸US_2
+  - CMCC-IPV6_2
+  - CMCC_28
+  - IPV6_2
+  - 162.159.36.104_1
+  - shopify.com_2
+  - sullivan.ns.cloudflare.com_2
+  - CMCC_29
+  - CT_2
+  - shopify.com_3
+  - CT_3
+  - wilson.ns.cloudflare.com_1
+  - CT_4
+  - 🇺🇸US_3
+  - shopify.com_4
+  - nikon.ns.cloudflare.com_4
+  - ip.sb_3
+  - sullivan.ns.cloudflare.com_3
+  - 172.67.243.218_2
+  - US_2
+  - otto.ns.cloudflare.com_1
+  - 172.67.110.232_1
+  - CT_5
+  - icook.tw_1
+  - US_3
+  - wilson.ns.cloudflare.com_2
+  - CMCC_30
+  - CT_6
+  - 172.67.110.232_2
+  - 🇭🇰HK_8
+  - CT_7
+  - CT_8
+  - CT_9
+  - 🇺🇸US_4
+  - US_4
+  - otto.ns.cloudflare.com_2
+  - 162.159.36.104_2
+  - ip.sb_4
+  - CT_10
+  - 172.67.110.232_3
+  - CMCC-IPV6_3
+  - CMCC-IPV6_4
+  - CT_11
+  - icook.tw_2
   - CMCC-IPV6_5
   - CMCC-IPV6_6
-  - CMCC-IPV6_7
-  - CMCC_22
-  - CT_2
-  - mc.ylks0033.dpdns.org_8
-  - CT_3
-  - CT_4
-  - cx.ylks0033.dpdns.org_10
-  - cx.ylks0033.dpdns.org_11
-  - cx.ylks0033.dpdns.org_12
-  - 🇺🇸US_4
-  - 🇺🇸US_5
-  - mc.ylks0033.dpdns.org_9
-  - CMCC-IPV6_8
-  - cx.ylks0033.dpdns.org_13
-  - mc.ylks0033.dpdns.org_10
-  - cx.ylks0033.dpdns.org_14
-  - cx.ylks0033.dpdns.org_15
-  - mc.ylks0033.dpdns.org_11
-  - cx.ylks0033.dpdns.org_16
-  - cx.ylks0033.dpdns.org_17
-  - CT_5
-  - cx.ylks0033.dpdns.org_18
-  - cx.ylks0033.dpdns.org_19
-  - cx.ylks0033.dpdns.org_20
-  - mc.ylks0033.dpdns.org_12
-  - mc.ylks0033.dpdns.org_13
-  - cx.ylks0033.dpdns.org_21
-  - CT_6
-  - mc.ylks0033.dpdns.org_14
-  - cx.ylks0033.dpdns.org_22
-  - mc.ylks0033.dpdns.org_15
-  - mc.ylks0033.dpdns.org_16
-  - CMCC-IPV6_9
-  - mc.ylks0033.dpdns.org_17
-  - cx.ylks0033.dpdns.org_23
-  - CMCC-IPV6_10
-  - cx.ylks0033.dpdns.org_24
-  - cx.ylks0033.dpdns.org_25
-  - mc.ylks0033.dpdns.org_18
-  - cx.ylks0033.dpdns.org_26
-  - CT_7
-  - cx.ylks0033.dpdns.org_27
-  - mc.ylks0033.dpdns.org_19
-  - IPV6_1
-  - cx.ylks0033.dpdns.org_28
-  - mc.ylks0033.dpdns.org_20
-  - cx.ylks0033.dpdns.org_29
-  - mc.ylks0033.dpdns.org_21
-  - US_2
-  - CMCC-IPV6_11
-  - mc.ylks0033.dpdns.org_22
-  - CT_8
-  - mc.ylks0033.dpdns.org_23
-  - CT_9
-  - CMCC-IPV6_12
-  - cx.ylks0033.dpdns.org_30
-  - mc.ylks0033.dpdns.org_24
-  - mc.ylks0033.dpdns.org_25
-  - cx.ylks0033.dpdns.org_31
-  - mc.ylks0033.dpdns.org_26
-  - CT_10
-  - mc.ylks0033.dpdns.org_27
-  - cx.ylks0033.dpdns.org_32
-  - cx.ylks0033.dpdns.org_33
-  - 🇺🇸US_6
-  - mc.ylks0033.dpdns.org_28
-  - mc.ylks0033.dpdns.org_29
-  - mc.ylks0033.dpdns.org_30
-  - mc.ylks0033.dpdns.org_31
-  - cx.ylks0033.dpdns.org_34
-  - 🇺🇸US_7
-  - CT_11
-  - mc.ylks0033.dpdns.org_32
-  - cx.ylks0033.dpdns.org_35
-  - mc.ylks0033.dpdns.org_33
-  - CMCC-IPV6_13
-  - cx.ylks0033.dpdns.org_36
-  - US_3
-  - cx.ylks0033.dpdns.org_37
-  - US_4
-  - mc.ylks0033.dpdns.org_34
-  - mc.ylks0033.dpdns.org_35
-  - mc.ylks0033.dpdns.org_36
-  - 🇺🇸US_8
-  - cx.ylks0033.dpdns.org_38
-  - mc.ylks0033.dpdns.org_37
-  - CMCC-IPV6_14
-  - US_5
-  - cx.ylks0033.dpdns.org_39
-  - CMCC-IPV6_15
-  - CMCC-IPV6_16
-  - mc.ylks0033.dpdns.org_38
-  - CMCC-IPV6_17
-  - cx.ylks0033.dpdns.org_40
-  - mc.ylks0033.dpdns.org_39
   - CT_12
-  - mc.ylks0033.dpdns.org_40
-  - cx.ylks0033.dpdns.org_41
+  - 🇭🇰HK_9
   - CT_13
-  - CMCC-IPV6_18
-  - mc.ylks0033.dpdns.org_41
-  - mc.ylks0033.dpdns.org_42
-  - cx.ylks0033.dpdns.org_42
-  - CMCC-IPV6_19
-  - cx.ylks0033.dpdns.org_43
+  - CMCC_31
+  - otto.ns.cloudflare.com_3
+  - whatismyipaddress.com_1
   - CT_14
+  - CMCC-IPV6_7
   - CT_15
-  - CMCC_23
-  - CMCC_24
-  - CMCC_25
-  - cx.ylks0033.dpdns.org_44
-  - CMCC-IPV6_20
-  - 🇺🇸US_9
-  - mc.ylks0033.dpdns.org_43
+  - 🇭🇰HK_10
+  - CMCC-IPV6_8
+  - bowen.ns.cloudflare.com_1
   - CT_16
-  - cx.ylks0033.dpdns.org_45
-  - 🇺🇸US_10
-  - CMCC-IPV6_21
-  - US_6
-  - CMCC-IPV6_22
-  - mc.ylks0033.dpdns.org_44
-  - 🇺🇸US_11
-  - cx.ylks0033.dpdns.org_46
-  - CMCC-IPV6_23
-  - IPV6_2
-  - CH_1
-  - mc.ylks0033.dpdns.org_45
-  - CMCC_26
-  - mc.ylks0033.dpdns.org_46
-  - CT_17
-  - mc.ylks0033.dpdns.org_47
-  - CMCC-IPV6_24
-  - cx.ylks0033.dpdns.org_47
-  - cx.ylks0033.dpdns.org_48
-  - mc.ylks0033.dpdns.org_48
-  - cx.ylks0033.dpdns.org_49
-  - CMCC_27
-  - CMCC_28
-  - CT_18
-  - CT_19
-  - mc.ylks0033.dpdns.org_49
-  - cx.ylks0033.dpdns.org_50
-  - cx.ylks0033.dpdns.org_51
-  - CT_20
-  - US_7
-  - mc.ylks0033.dpdns.org_50
-  - CMCC_29
-  - US_8
-  - CMCC-IPV6_25
-  - cx.ylks0033.dpdns.org_52
-  - cx.ylks0033.dpdns.org_53
-  - cx.ylks0033.dpdns.org_54
-  - CMCC-IPV6_26
-  - cx.ylks0033.dpdns.org_55
-  - mc.ylks0033.dpdns.org_51
-  - mc.ylks0033.dpdns.org_52
-  - CT_21
-  - cx.ylks0033.dpdns.org_56
-  - mc.ylks0033.dpdns.org_53
-  - mc.ylks0033.dpdns.org_54
-  - cx.ylks0033.dpdns.org_57
-  - CMCC_30
-  - US_9
-  - cx.ylks0033.dpdns.org_58
-  - CT_22
-  - 🇺🇸US_12
-  - 🇭🇰HK_2
-  - CT_23
-  - mc.ylks0033.dpdns.org_55
-  - US_10
-  - US_11
-  - CT_24
-  - mc.ylks0033.dpdns.org_56
-  - mc.ylks0033.dpdns.org_57
-  - mc.ylks0033.dpdns.org_58
-  - cx.ylks0033.dpdns.org_59
-  - cx.ylks0033.dpdns.org_60
-  - cx.ylks0033.dpdns.org_61
-  - NL_2
-  - mc.ylks0033.dpdns.org_59
-  - mc.ylks0033.dpdns.org_60
-  - CH_2
-  - mc.ylks0033.dpdns.org_61
-  - CA
-  - US_12
+  - 172.67.110.232_4
+  - 🇺🇸US_5
+  - whatismyipaddress.com_2
+  - wilson.ns.cloudflare.com_3
   - IPV6_3
-  - mc.ylks0033.dpdns.org_62
+  - US_5
+  - www.ddwhm.com_1
+  - www.ddwhm.com_2
+  - wilson.ns.cloudflare.com_4
+  - CT_17
+  - 162.159.36.104_3
+  - CT_18
+  - 🇺🇸US_6
+  - whatismyipaddress.com_3
+  - 🇭🇰HK_11
+  - CT_19
+  - CMCC-IPV6_9
+  - CT_20
+  - CMCC-IPV6_10
+  - otto.ns.cloudflare.com_4
+  - 🇺🇸US_7
+  - 🇺🇸US_8
+  - bowen.ns.cloudflare.com_2
+  - CMCC-IPV6_11
+  - CMCC_32
+  - www.ddwhm.com_3
+  - CT_21
+  - CMCC-IPV6_12
+  - CMCC-IPV6_13
+  - icook.tw_3
+  - CT_22
+  - CT_23
+  - CMCC-IPV6_14
+  - CMCC-IPV6_15
+  - www.ddwhm.com_4
+  - bowen.ns.cloudflare.com_3
+  - 162.159.36.104_4
+  - CMCC-IPV6_16
+  - CMCC-IPV6_17
+  - US_6
+  - sullivan.ns.cloudflare.com_4
+  - CH_2
+  - whatismyipaddress.com_4
+  - CMCC-IPV6_18
+  - CMCC-IPV6_19
+  - CT_24
+  - CMCC-IPV6_20
   - IPV6_4
-  - IPV6_5
-  - IPV6_6
+  - icook.tw_4
+  - CMCC-IPV6_21
+  - US_7
+  - CMCC-IPV6_22
+  - bowen.ns.cloudflare.com_4
+  - CMCC-IPV6_23
+  - US_8
+  - CMCC_33
+  - US_9
+  - CMCC-IPV6_24
+  - CT_25
+  - CA_1
+  - CT_26
+  - US_10
+  - 172.67.243.218_3
+  - US_11
+  - US_12
+  - CA_2
+  - 172.67.243.218_4
+  - JP_1
+  - JP_2
+  - KR
+  - CMCC_34
   type: select
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
