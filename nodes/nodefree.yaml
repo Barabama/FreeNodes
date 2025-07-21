@@ -32,6 +32,71 @@ log-level: info
 mixed-port: 7890
 mode: rule
 proxies:
+- alterId: 2
+  cipher: auto
+  name: 🇨🇳_CN_中国->🇺🇸_US_美国_1
+  network: ws
+  port: 30805
+  server: v5.heduian.link
+  sni: ''
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  ws-opts:
+    headers:
+      host: v5.heduian.link
+    path: /oooo
+- alterId: 2
+  cipher: auto
+  name: 🇨🇳_CN_中国->🇨🇦_CA_加拿大
+  network: ws
+  port: 30808
+  server: v8.heduian.link
+  sni: ''
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  ws-opts:
+    headers:
+      host: v8.heduian.link
+    path: /oooo
+- alterId: 2
+  cipher: auto
+  name: 🇨🇳_CN_中国->🇺🇸_US_美国_2
+  network: ws
+  port: 30837
+  server: v37.heduian.link
+  sni: ''
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  ws-opts:
+    headers:
+      host: v37.heduian.link
+    path: /oooo
+- name: 🇨🇳_CN_中国->🇩🇪_DE_德国_1
+  password: SdCqFLcA
+  port: 40252
+  server: 36.151.251.57
+  skip-cert-verify: true
+  sni: www.baidu.com
+  type: trojan
+- alterId: 0
+  cipher: auto
+  name: 未知
+  network: ws
+  port: 2086
+  server: awetdfgn_cdn.hfhfb.homes
+  type: vmess
+  uuid: 1ae7b2ce-393d-4b22-ab55-a8d3e319f1a9
+  ws-opts:
+    headers:
+      host: mgcdn10.hfhfb.homes
+    path: /market?ed=1024
+- name: 🇨🇳_CN_中国->🇺🇸_US_美国_3
+  password: d0d08cddacc3190ea81b1b792e1b5fde
+  port: 32962
+  server: 36.151.192.239
+  skip-cert-verify: true
+  sni: www.baidu.com
+  type: trojan
 - name: 🇷🇺_RU_俄罗斯
   network: ws
   port: 32391
@@ -43,51 +108,6 @@ proxies:
     headers:
       host: 45f4d22d.Mareza.pages.dev
     path: /
-- alterId: 2
-  cipher: auto
-  name: 🇨🇳_CN_中国->🇩🇪_DE_德国_1
-  network: ws
-  port: 30833
-  server: v33.heduian.link
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  ws-opts:
-    headers:
-      host: v33.heduian.link
-    path: /oooo
-- alterId: 2
-  cipher: auto
-  name: 🇨🇳_CN_中国->🇨🇦_CA_加拿大
-  network: ws
-  port: 30808
-  server: v8.heduian.link
-  skip-cert-verify: true
-  sni: ''
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  ws-opts:
-    headers:
-      host: v8.heduian.link
-    path: /oooo
-- alterId: 2
-  cipher: auto
-  name: 🇨🇳_CN_中国
-  network: ws
-  port: 30837
-  server: v37.heduian.link
-  sni: ''
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  ws-opts:
-    headers:
-      host: v37.heduian.link
-    path: /oooo
-- cipher: aes-256-gcm
-  name: 🇺🇸_US_美国->🇨🇳_CN_中国
-  password: iUB0923RBA
-  port: 30067
-  server: 154.3.8.151
-  type: ss
 - name: 🇺🇸_US_美国->🇫🇷_FR_法国
   network: ws
   port: 2052
@@ -101,6 +121,71 @@ proxies:
     path: /
 - name: 🇺🇸_US_美国_1
   network: ws
+  port: 8080
+  server: 192.0.54.219
+  servername: join-to-unlimiteddev.sabadyt.ir
+  type: vless
+  uuid: 17034eef-9472-45cc-bca5-a71f90e36244
+  ws-opts:
+    headers:
+      host: join-to-unlimiteddev.sabadyt.ir
+    path: /@unlimiteddev----@unlimiteddev-----@unlimiteddev----@unlimiteddev----@unlimiteddev----@unlimiteddev----@unlimiteddev----@unlimiteddev----@unlimitedev----@vmessorg----@unlimiteddev----@unlimiteddev?ed=2480
+- name: 🇨🇳_CN_中国->🇺🇸_US_美国_4
+  password: d0d08cddacc3190ea81b1b792e1b5fde
+  port: 3596
+  server: 36.151.192.239
+  skip-cert-verify: true
+  sni: www.baidu.com
+  type: trojan
+- alterId: 2
+  cipher: auto
+  name: 🇨🇳_CN_中国->🇺🇸_US_美国_5
+  network: ws
+  port: 30804
+  server: v4.heduian.link
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  ws-opts:
+    headers:
+      host: v4.heduian.link
+    path: /oooo
+- name: 🇺🇸_US_美国->🇬🇧_GB_英国
+  network: ws
+  port: 80
+  server: light-presence.oneeat.co
+  type: vless
+  uuid: 7e74ff43-3a90-48b3-8372-7d92a045c2d4
+  ws-opts:
+    headers:
+      host: light-presence.oneeat.co
+    path: /
+- alterId: 2
+  cipher: auto
+  name: 🇨🇳_CN_中国->🇩🇪_DE_德国_2
+  network: ws
+  port: 30833
+  server: v33.heduian.link
+  sni: ''
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  ws-opts:
+    headers:
+      host: v33.heduian.link
+    path: /oooo
+- alterId: 2
+  cipher: auto
+  name: 🇨🇳_CN_中国->🇺🇸_US_美国_6
+  network: ws
+  port: 30835
+  server: v35.heduian.link
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  ws-opts:
+    headers:
+      host: v35.heduian.link
+    path: /oooo
+- name: 🇺🇸_US_美国_2
+  network: ws
   port: 80
   server: 104.18.26.90
   servername: blaze-can-118.blazecanada.site
@@ -110,121 +195,59 @@ proxies:
     headers:
       host: blaze-can-118.blazecanada.site
     path: /?ed=2560
-- name: 🇨🇳_CN_中国->🇩🇪_DE_德国_2
-  password: SdCqFLcA
-  port: 40252
-  server: 36.151.251.57
-  skip-cert-verify: true
-  sni: www.baidu.com
-  type: trojan
-- alterId: 0
-  cipher: auto
-  name: 🇨🇳_CN_中国->🇬🇧_GB_英国
-  network: ws
-  port: 80
-  server: hyttttesgvvxb2.jkhkgj.xyz
-  sni: ''
-  type: vmess
-  uuid: e15ac3ce-6a1a-412a-aa07-4bc52daa5935
-  ws-opts:
-    headers:
-      host: file.dingtalk.com
-    path: /market/sg?ed=512
-- alterId: 0
-  cipher: auto
-  name: 🇺🇸_US_美国_2
-  network: ws
-  port: 8880
-  server: 69.84.182.108
-  sni: ''
-  type: vmess
-  uuid: 922b45c8-1ec8-4a65-9b32-137716a0e55f
-  ws-opts:
-    headers:
-      host: cdn-node-oss-99.paofu.de
-    path: /profile/telegram@ssrsub
-- alterId: 0
-  cipher: auto
-  name: 🇦🇺_AU_澳大利亚
-  network: ws
-  port: 50229
-  server: fhrcvbgffxd.hjdfghfc.asia
-  sni: ''
-  type: vmess
-  uuid: e15ac3ce-6a1a-412a-aa07-4bc52daa5935
-  ws-opts:
-    headers:
-      host: file.dingtalk.com
-    path: /market?ed=512
-- alterId: 0
-  cipher: auto
-  name: 🇨🇳_CN_中国->🇺🇸_US_美国
-  network: ws
-  port: 80
-  server: twjxlnnoljxc2.jkhkgj.xyz
-  sni: ''
-  type: vmess
-  uuid: e15ac3ce-6a1a-412a-aa07-4bc52daa5935
-  ws-opts:
-    headers:
-      host: file.dingtalk.com
-    path: /market/us1?ed=512
 - alterId: 2
   cipher: auto
-  name: 🇨🇳_CN_中国->🇲🇩_MD_摩尔多瓦
+  name: 🇨🇳_CN_中国->🇺🇸_US_美国_7
   network: ws
-  port: 30805
-  server: v5.heduian.link
+  port: 30829
+  server: v29.heduian.link
   type: vmess
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   ws-opts:
     headers:
-      host: v5.heduian.link
+      host: ocbc.com
     path: /oooo
-- name: 🇫🇷_FR_法国->🇺🇸_US_美国
-  network: ws
-  port: 2052
-  server: hf.tin9.ir
-  type: vless
-  uuid: f3242907-f8e4-4166-8156-c773430bd8a4
-  ws-opts: {}
 proxy-groups:
 - name: 🚀 节点选择
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - 🇷🇺_RU_俄罗斯
-  - 🇨🇳_CN_中国->🇩🇪_DE_德国_1
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_1
   - 🇨🇳_CN_中国->🇨🇦_CA_加拿大
-  - 🇨🇳_CN_中国
-  - 🇺🇸_US_美国->🇨🇳_CN_中国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_2
+  - 🇨🇳_CN_中国->🇩🇪_DE_德国_1
+  - 未知
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_3
+  - 🇷🇺_RU_俄罗斯
   - 🇺🇸_US_美国->🇫🇷_FR_法国
   - 🇺🇸_US_美国_1
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_4
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_5
+  - 🇺🇸_US_美国->🇬🇧_GB_英国
   - 🇨🇳_CN_中国->🇩🇪_DE_德国_2
-  - 🇨🇳_CN_中国->🇬🇧_GB_英国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_6
   - 🇺🇸_US_美国_2
-  - 🇦🇺_AU_澳大利亚
-  - 🇨🇳_CN_中国->🇺🇸_US_美国
-  - 🇨🇳_CN_中国->🇲🇩_MD_摩尔多瓦
-  - 🇫🇷_FR_法国->🇺🇸_US_美国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_7
   type: select
 - interval: 300
   name: ♻️ 自动选择
   proxies:
-  - 🇷🇺_RU_俄罗斯
-  - 🇨🇳_CN_中国->🇩🇪_DE_德国_1
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_1
   - 🇨🇳_CN_中国->🇨🇦_CA_加拿大
-  - 🇨🇳_CN_中国
-  - 🇺🇸_US_美国->🇨🇳_CN_中国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_2
+  - 🇨🇳_CN_中国->🇩🇪_DE_德国_1
+  - 未知
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_3
+  - 🇷🇺_RU_俄罗斯
   - 🇺🇸_US_美国->🇫🇷_FR_法国
   - 🇺🇸_US_美国_1
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_4
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_5
+  - 🇺🇸_US_美国->🇬🇧_GB_英国
   - 🇨🇳_CN_中国->🇩🇪_DE_德国_2
-  - 🇨🇳_CN_中国->🇬🇧_GB_英国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_6
   - 🇺🇸_US_美国_2
-  - 🇦🇺_AU_澳大利亚
-  - 🇨🇳_CN_中国->🇺🇸_US_美国
-  - 🇨🇳_CN_中国->🇲🇩_MD_摩尔多瓦
-  - 🇫🇷_FR_法国->🇺🇸_US_美国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_7
   tolerance: 5000
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -244,20 +267,22 @@ proxy-groups:
   - 🚀 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
-  - 🇷🇺_RU_俄罗斯
-  - 🇨🇳_CN_中国->🇩🇪_DE_德国_1
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_1
   - 🇨🇳_CN_中国->🇨🇦_CA_加拿大
-  - 🇨🇳_CN_中国
-  - 🇺🇸_US_美国->🇨🇳_CN_中国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_2
+  - 🇨🇳_CN_中国->🇩🇪_DE_德国_1
+  - 未知
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_3
+  - 🇷🇺_RU_俄罗斯
   - 🇺🇸_US_美国->🇫🇷_FR_法国
   - 🇺🇸_US_美国_1
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_4
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_5
+  - 🇺🇸_US_美国->🇬🇧_GB_英国
   - 🇨🇳_CN_中国->🇩🇪_DE_德国_2
-  - 🇨🇳_CN_中国->🇬🇧_GB_英国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_6
   - 🇺🇸_US_美国_2
-  - 🇦🇺_AU_澳大利亚
-  - 🇨🇳_CN_中国->🇺🇸_US_美国
-  - 🇨🇳_CN_中国->🇲🇩_MD_摩尔多瓦
-  - 🇫🇷_FR_法国->🇺🇸_US_美国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国_7
   type: select
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
