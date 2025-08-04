@@ -4,6 +4,160 @@ log-level: info
 mode: Rule
 port: 7890
 proxies:
+- name: HK_1
+  network: ws
+  port: 443
+  server: 123.58.220.231
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: SG_1
+  network: ws
+  port: 443
+  server: 103.210.22.199
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: HK_2
+  network: ws
+  port: 8443
+  server: 34.150.69.61
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: US_1
+  network: ws
+  port: 443
+  server: 154.38.116.8
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: SG_2
+  network: ws
+  port: 443
+  server: 103.210.22.199
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: HK_3
+  network: ws
+  port: 443
+  server: 152.32.190.226
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: HK_4
+  network: ws
+  port: 443
+  server: 47.238.89.163
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: US_2
+  network: ws
+  port: 443
+  server: 154.38.116.8
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: HK_5
+  network: ws
+  port: 443
+  server: 152.32.190.226
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: JP_1
+  network: ws
+  port: 8443
+  server: 23.147.232.65
+  servername: edga.aimercc.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
+  ws-opts:
+    headers:
+      host: edga.aimercc.dpdns.org
+    path: /?ed=2560&proxyip=ts.hpc.tw
+- name: HK_6
+  network: ws
+  port: 443
+  server: 123.58.220.231
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
 - name: TW_1
   network: ws
   port: 43
@@ -18,39 +172,11 @@ proxies:
     headers:
       host: edga.aimercc.dpdns.org
     path: /?ed=2560&proxyip=ts.hpc.tw
-- name: TW_2
+- name: US_3
   network: ws
-  port: 43
-  server: 61.220.128.226
-  servername: edga.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edga.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: KR_1
-  network: ws
-  port: 12403
-  server: 112.171.112.109
-  servername: edga.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edga.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: KR_2
-  network: ws
-  port: 10001
-  server: 119.202.158.65
-  servername: hx1.ylks0033.dpdns.org
+  port: 443
+  server: 154.21.201.83
+  servername: ax1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -58,10 +184,192 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: US_4
+  network: ws
+  port: 443
+  server: 154.21.201.83
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: KR_1
+  network: ws
+  port: 12335
+  server: 121.170.103.94
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: US_5
+  network: ws
+  port: 443
+  server: 107.148.239.178
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: HK_7
+  network: ws
+  port: 443
+  server: 202.81.230.100
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: KR_2
+  network: ws
+  port: 50000
+  server: 221.161.207.216
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
     path: /?ed=2560
 - name: KR_3
   network: ws
+  port: 12398
+  server: 121.157.92.194
+  servername: edga.aimercc.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
+  ws-opts:
+    headers:
+      host: edga.aimercc.dpdns.org
+    path: /?ed=2560&proxyip=ts.hpc.tw
+- name: KR_4
+  network: ws
+  port: 12270
+  server: 119.200.48.55
+  servername: edga.aimercc.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
+  ws-opts:
+    headers:
+      host: edga.aimercc.dpdns.org
+    path: /?ed=2560&proxyip=ts.hpc.tw
+- name: SG_3
+  network: ws
+  port: 443
+  server: 8.222.87.76
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: TW_2
+  network: ws
+  port: 443
+  server: 125.227.219.100
+  servername: edga.aimercc.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
+  ws-opts:
+    headers:
+      host: edga.aimercc.dpdns.org
+    path: /?ed=2560&proxyip=ts.hpc.tw
+- name: SG_4
+  network: ws
+  port: 443
+  server: 8.222.87.76
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: TW_3
+  network: ws
+  port: 10240
+  server: 34.81.140.124
+  servername: edga.aimercc.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
+  ws-opts:
+    headers:
+      host: edga.aimercc.dpdns.org
+    path: /?ed=2560&proxyip=ts.hpc.tw
+- name: KR_5
+  network: ws
+  port: 50000
+  server: 221.161.207.216
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: KR_6
+  network: ws
+  port: 12335
+  server: 121.170.103.94
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: KR_7
+  network: ws
   port: 12403
   server: 112.171.112.109
   servername: edga.aimercc.dpdns.org
@@ -74,11 +382,11 @@ proxies:
     headers:
       host: edga.aimercc.dpdns.org
     path: /?ed=2560&proxyip=ts.hpc.tw
-- name: hx1.ylks0033.dpdns.org_1
+- name: NL_1
   network: ws
   port: 443
-  server: ipv4.ip.sb
-  servername: hx1.ylks0033.dpdns.org
+  server: 185.212.60.177
+  servername: zx1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -86,13 +394,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: zx1.ylka.dpdns.org
     path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_2
+- name: NL_2
   network: ws
   port: 443
-  server: 104.17.68.85
-  servername: hx1.ylks0033.dpdns.org
+  server: 185.212.60.177
+  servername: ax1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -100,13 +408,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: ax1.ylka.dpdns.org
     path: /?ed=2560
-- name: CMCC_1
+- name: US_6
   network: ws
   port: 443
-  server: 104.16.253.83
-  servername: hx1.ylks0033.dpdns.org
+  server: 206.237.10.69
+  servername: ax1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -114,41 +422,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: ax1.ylka.dpdns.org
     path: /?ed=2560
-- name: KR_4
-  network: ws
-  port: 50000
-  server: 115.94.98.93
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: 🇺🇸US_1
-  network: ws
-  port: 2083
-  server: 104.16.134.27
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC_2
+- name: US_7
   network: ws
   port: 443
-  server: 104.19.148.108
-  servername: hx1.ylks0033.dpdns.org
+  server: 185.148.14.40
+  servername: ax1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -156,13 +436,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: ax1.ylka.dpdns.org
     path: /?ed=2560
-- name: CMCC_3
+- name: NL_3
   network: ws
   port: 443
-  server: 104.17.101.175
-  servername: hx1.ylks0033.dpdns.org
+  server: 194.36.27.67
+  servername: zx1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -170,13 +450,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: zx1.ylka.dpdns.org
     path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_3
+- name: US_8
   network: ws
   port: 443
-  server: www.okcupid.com
-  servername: hx1.ylks0033.dpdns.org
+  server: 38.59.245.103
+  servername: zx1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -184,13 +464,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: zx1.ylka.dpdns.org
     path: /?ed=2560
-- name: CMCC_4
+- name: NL_4
   network: ws
   port: 443
-  server: 104.16.249.115
-  servername: hx1.ylks0033.dpdns.org
+  server: 194.36.27.67
+  servername: ax1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -198,13 +478,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: ax1.ylka.dpdns.org
     path: /?ed=2560
-- name: 🇭🇰HK
+- name: US_9
   network: ws
   port: 443
-  server: 104.17.71.31
-  servername: hx1.ylks0033.dpdns.org
+  server: 206.237.10.69
+  servername: zx1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -212,27 +492,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: zx1.ylka.dpdns.org
     path: /?ed=2560
-- name: 🇺🇸US_2
-  network: ws
-  port: 2096
-  server: 104.17.128.1
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_4
+- name: US_10
   network: ws
   port: 443
-  server: www.glassdoor.com
-  servername: hx1.ylks0033.dpdns.org
+  server: 185.148.14.40
+  servername: zx1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -240,13 +506,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: zx1.ylka.dpdns.org
     path: /?ed=2560
-- name: CMCC_5
+- name: US_11
   network: ws
   port: 443
-  server: 104.18.86.131
-  servername: hx1.ylks0033.dpdns.org
+  server: 38.59.245.103
+  servername: ax1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -254,13 +520,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: ax1.ylka.dpdns.org
     path: /?ed=2560
-- name: CMCC_6
+- name: US_12
   network: ws
   port: 443
-  server: 104.16.242.72
-  servername: hc1.ylks0033.dpdns.org
+  server: 74.120.170.56
+  servername: zx1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -268,13 +534,27 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hc1.ylks0033.dpdns.org
+      host: zx1.ylka.dpdns.org
     path: /?ed=2560
-- name: CMCC_7
+- name: JP_2
+  network: ws
+  port: 12333
+  server: 121.80.244.179
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: US_13
   network: ws
   port: 443
-  server: 104.19.150.28
-  servername: hx1.ylks0033.dpdns.org
+  server: 74.120.170.56
+  servername: ax1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -282,13 +562,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: ax1.ylka.dpdns.org
     path: /?ed=2560
-- name: CMCC_8
+- name: 64.49.46.181_1
   network: ws
   port: 443
-  server: 104.17.100.185
-  servername: hx1.ylks0033.dpdns.org
+  server: 64.49.46.181
+  servername: ax1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -296,13 +576,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: ax1.ylka.dpdns.org
     path: /?ed=2560
-- name: CMCC_9
+- name: US_14
   network: ws
   port: 443
-  server: 104.19.150.28
-  servername: hc1.ylks0033.dpdns.org
+  server: 142.171.123.125
+  servername: ax1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -310,13 +590,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hc1.ylks0033.dpdns.org
+      host: ax1.ylka.dpdns.org
     path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_5
+- name: US_15
   network: ws
   port: 443
-  server: www.4chan.org
-  servername: hx1.ylks0033.dpdns.org
+  server: 5.181.219.253
+  servername: zx1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -324,13 +604,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: zx1.ylka.dpdns.org
     path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_6
+- name: US_16
   network: ws
   port: 443
-  server: 104.17.142.12
-  servername: hx1.ylks0033.dpdns.org
+  server: 142.171.123.125
+  servername: zx1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -338,13 +618,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: zx1.ylka.dpdns.org
     path: /?ed=2560
-- name: CMCC_10
+- name: 64.49.47.64_1
   network: ws
   port: 443
-  server: 104.17.104.243
-  servername: hx1.ylks0033.dpdns.org
+  server: 64.49.47.64
+  servername: zx1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -352,13 +632,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: zx1.ylka.dpdns.org
     path: /?ed=2560
-- name: CMCC_11
+- name: 23.169.184.123_1
   network: ws
   port: 443
-  server: 104.17.102.95
-  servername: hx1.ylks0033.dpdns.org
+  server: 23.169.184.123
+  servername: ax1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -366,13 +646,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: ax1.ylka.dpdns.org
     path: /?ed=2560
-- name: CMCC_12
+- name: HK_8
   network: ws
   port: 443
-  server: 104.18.83.92
-  servername: hx1.ylks0033.dpdns.org
+  server: 23.226.8.80
+  servername: ax1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -380,13 +660,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: ax1.ylka.dpdns.org
     path: /?ed=2560
-- name: CMCC_13
+- name: JP_3
   network: ws
-  port: 443
-  server: 104.17.215.102
-  servername: hx1.ylks0033.dpdns.org
+  port: 7000
+  server: 158.101.139.31
+  servername: zx1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -394,13 +674,27 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: JP_4
+  network: ws
+  port: 7000
+  server: 158.101.139.31
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
     path: /?ed=2560
 - name: CMCC-IPV6_1
   network: ws
   port: 4700
   server: '[2606'
-  servername: hc1.ylks0033.dpdns.org
+  servername: zx1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -408,13 +702,97 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hc1.ylks0033.dpdns.org
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: HK_9
+  network: ws
+  port: 443
+  server: 119.13.79.23
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: 64.49.47.64_2
+  network: ws
+  port: 443
+  server: 64.49.47.64
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: 23.169.184.123_2
+  network: ws
+  port: 443
+  server: 23.169.184.123
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: JP_5
+  network: ws
+  port: 12299
+  server: 47.79.32.90
+  servername: edga.aimercc.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
+  ws-opts:
+    headers:
+      host: edga.aimercc.dpdns.org
+    path: /?ed=2560&proxyip=ts.hpc.tw
+- name: US_17
+  network: ws
+  port: 443
+  server: 66.103.210.62
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: US_18
+  network: ws
+  port: 443
+  server: 66.103.210.62
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
     path: /?ed=2560
 - name: CMCC-IPV6_2
   network: ws
   port: 4700
   server: '[2606'
-  servername: hx1.ylks0033.dpdns.org
+  servername: zx1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -422,13 +800,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: zx1.ylka.dpdns.org
     path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_7
+- name: 64.49.46.181_2
   network: ws
   port: 443
-  server: 162.159.133.85
-  servername: hx1.ylks0033.dpdns.org
+  server: 64.49.46.181
+  servername: zx1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -436,27 +814,27 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: zx1.ylka.dpdns.org
     path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_8
+- name: 官方优选_1
   network: ws
   port: 443
-  server: uriah.ns.cloudflare.com
-  servername: hx1.ylks0033.dpdns.org
+  server: arvind.ns.cloudflare.com
+  servername: edga.aimercc.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_9
+      host: edga.aimercc.dpdns.org
+    path: /?ed=2560&proxyip=ts.hpc.tw
+- name: US_19
   network: ws
   port: 443
-  server: tasteatlas.com
-  servername: hx1.ylks0033.dpdns.org
+  server: 104.207.152.171
+  servername: ax1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -464,13 +842,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: ax1.ylka.dpdns.org
     path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_10
+- name: 美国_1
   network: ws
   port: 443
-  server: ip.gs
-  servername: hx1.ylks0033.dpdns.org
+  server: join.my.telegram.channel.cmliussss.to.unlock.more.premium.nodes.cf.090227.xyz
+  servername: zx1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -478,13 +856,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: zx1.ylka.dpdns.org
     path: /?ed=2560
 - name: CMCC-IPV6_3
   network: ws
   port: 4700
   server: '[2606'
-  servername: hc1.ylks0033.dpdns.org
+  servername: ax1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -492,415 +870,9 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hc1.ylks0033.dpdns.org
+      host: ax1.ylka.dpdns.org
     path: /?ed=2560
-- name: CMCC-IPV6_4
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_5
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: hc1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hc1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_6
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: hc1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hc1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_11
-  network: ws
-  port: 443
-  server: 198.62.62.4
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: t.me/am_clubsTG群(加入解锁免费节点)
-  network: ws
-  port: 443
-  server: icook.hk
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: US_1
-  network: ws
-  port: 4002
-  server: 45.145.42.229
-  servername: hc1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hc1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_7
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: hc1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hc1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_8
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: hc1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hc1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC_14
-  network: ws
-  port: 443
-  server: 104.19.144.212
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_12
-  network: ws
-  port: 443
-  server: ip.sb
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: JP_1
-  network: ws
-  port: 6010
-  server: 47.79.88.21
-  servername: edga.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edga.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_1
-  network: ws
-  port: 443
-  server: thaddeus.ns.cloudflare.com
-  servername: edga.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edga.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: CMCC-IPV6_9
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_13
-  network: ws
-  port: 443
-  server: julio.ns.cloudflare.com
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_14
-  network: ws
-  port: 443
-  server: bowen.ns.cloudflare.com
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_10
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_11
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_15
-  network: ws
-  port: 443
-  server: www.iakeys.com
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_12
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_16
-  network: ws
-  port: 443
-  server: shopify.com
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_17
-  network: ws
-  port: 443
-  server: otto.ns.cloudflare.com
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: 官方优选_2
-  network: ws
-  port: 443
-  server: ignacio.ns.cloudflare.com
-  servername: edga.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edga.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: CMCC-IPV6_13
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_14
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: hc1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hc1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_15
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_18
-  network: ws
-  port: 443
-  server: dylan.ns.cloudflare.com
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_19
-  network: ws
-  port: 443
-  server: 172.67.95.24
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_16
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_20
-  network: ws
-  port: 443
-  server: abdullah.ns.cloudflare.com
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: US_2
+- name: US_20
   network: ws
   port: 2083
   server: 103.116.7.103
@@ -914,150 +886,10 @@ proxies:
     headers:
       host: edga.aimercc.dpdns.org
     path: /?ed=2560&proxyip=ts.hpc.tw
-- name: CT_1
+- name: 官方优选_2
   network: ws
   port: 443
-  server: 162.159.153.144
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_21
-  network: ws
-  port: 443
-  server: www.whatismyip.com
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_17
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: hc1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hc1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_22
-  network: ws
-  port: 443
-  server: steamdb.info
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_18
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: hc1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hc1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_19
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_23
-  network: ws
-  port: 443
-  server: sullivan.ns.cloudflare.com
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_24
-  network: ws
-  port: 443
-  server: 103.160.204.59
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_25
-  network: ws
-  port: 443
-  server: 172.67.110.232
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_26
-  network: ws
-  port: 443
-  server: www.digitalocean.com
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: 官方优选_3
-  network: ws
-  port: 443
-  server: duke.ns.cloudflare.com
+  server: lynn.ns.cloudflare.com
   servername: edga.aimercc.dpdns.org
   skip-cert-verify: true
   tls: true
@@ -1068,11 +900,25 @@ proxies:
     headers:
       host: edga.aimercc.dpdns.org
     path: /?ed=2560&proxyip=ts.hpc.tw
-- name: hx1.ylks0033.dpdns.org_27
+- name: 官方优选_3
   network: ws
   port: 443
-  server: rustam.ns.cloudflare.com
-  servername: hx1.ylks0033.dpdns.org
+  server: theo.ns.cloudflare.com
+  servername: edga.aimercc.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
+  ws-opts:
+    headers:
+      host: edga.aimercc.dpdns.org
+    path: /?ed=2560&proxyip=ts.hpc.tw
+- name: US_21
+  network: ws
+  port: 443
+  server: 5.181.219.253
+  servername: ax1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -1080,13 +926,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: ax1.ylka.dpdns.org
     path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_28
+- name: 美国_2
   network: ws
   port: 443
-  server: benedict.ns.cloudflare.com
-  servername: hx1.ylks0033.dpdns.org
+  server: join.my.telegram.channel.cmliussss.to.unlock.more.premium.nodes.cf.090227.xyz
+  servername: ax1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -1094,55 +940,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: ax1.ylka.dpdns.org
     path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_29
-  network: ws
-  port: 443
-  server: time.is
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_30
-  network: ws
-  port: 443
-  server: comicabc.com
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_31
-  network: ws
-  port: 443
-  server: www.wto.org
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_20
+- name: CMCC-IPV6_4
   network: ws
   port: 4700
   server: '[2606'
-  servername: hx1.ylks0033.dpdns.org
+  servername: ax1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -1150,36 +954,22 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: ax1.ylka.dpdns.org
     path: /?ed=2560
-- name: CMCC-IPV6_21
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_32
+- name: TW_4
   network: ws
   port: 443
-  server: ashton.ns.cloudflare.com
-  servername: hx1.ylks0033.dpdns.org
+  server: 125.227.219.97
+  servername: edga.aimercc.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
+      host: edga.aimercc.dpdns.org
+    path: /?ed=2560&proxyip=ts.hpc.tw
 - name: 官方优选_4
   network: ws
   port: 443
@@ -1194,11 +984,11 @@ proxies:
     headers:
       host: edga.aimercc.dpdns.org
     path: /?ed=2560&proxyip=ts.hpc.tw
-- name: hx1.ylks0033.dpdns.org_33
+- name: NL_5
   network: ws
   port: 443
-  server: www.hugedomains.com
-  servername: hx1.ylks0033.dpdns.org
+  server: 158.101.214.54
+  servername: ax1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -1206,9 +996,79 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_5
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_6
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_7
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
     path: /?ed=2560
 - name: 官方优选_5
+  network: ws
+  port: 443
+  server: sage.ns.cloudflare.com
+  servername: edga.aimercc.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
+  ws-opts:
+    headers:
+      host: edga.aimercc.dpdns.org
+    path: /?ed=2560&proxyip=ts.hpc.tw
+- name: HK_10
+  network: ws
+  port: 443
+  server: 119.13.79.23
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: 官方优选_6
   network: ws
   port: 443
   server: ignacio.ns.cloudflare.com
@@ -1222,234 +1082,10 @@ proxies:
     headers:
       host: edga.aimercc.dpdns.org
     path: /?ed=2560&proxyip=ts.hpc.tw
-- name: CT_2
-  network: ws
-  port: 443
-  server: 162.159.152.81
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: 官方优选_6
-  network: ws
-  port: 443
-  server: kip.ns.cloudflare.com
-  servername: edga.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edga.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: hx1.ylks0033.dpdns.org_34
-  network: ws
-  port: 443
-  server: decker.ns.cloudflare.com
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_35
-  network: ws
-  port: 443
-  server: huxley.ns.cloudflare.com
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_22
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_36
-  network: ws
-  port: 443
-  server: whatismyipaddress.com
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_23
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: hc1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hc1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_37
-  network: ws
-  port: 443
-  server: kyree.ns.cloudflare.com
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CT_3
-  network: ws
-  port: 443
-  server: 162.159.152.205
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CT_4
-  network: ws
-  port: 443
-  server: 162.159.152.69
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_24
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: hc1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hc1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_38
-  network: ws
-  port: 443
-  server: www.udemy.com
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_39
-  network: ws
-  port: 443
-  server: trevor.ns.cloudflare.com
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_40
-  network: ws
-  port: 443
-  server: moura.ns.cloudflare.com
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: 🇺🇸US_3
-  network: ws
-  port: 443
-  server: 198.62.62.156
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_25
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: hc1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hc1.ylks0033.dpdns.org
-    path: /?ed=2560
 - name: 官方优选_7
   network: ws
   port: 443
-  server: theo.ns.cloudflare.com
+  server: thaddeus.ns.cloudflare.com
   servername: edga.aimercc.dpdns.org
   skip-cert-verify: true
   tls: true
@@ -1460,137 +1096,11 @@ proxies:
     headers:
       host: edga.aimercc.dpdns.org
     path: /?ed=2560&proxyip=ts.hpc.tw
-- name: CT_5
-  network: ws
-  port: 443
-  server: 162.159.153.170
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CT_6
-  network: ws
-  port: 443
-  server: 162.159.153.156
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_41
-  network: ws
-  port: 443
-  server: 172.67.181.209
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_42
-  network: ws
-  port: 443
-  server: www.pcmag.com
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_43
-  network: ws
-  port: 443
-  server: damien.ns.cloudflare.com
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_44
-  network: ws
-  port: 443
-  server: cris.ns.cloudflare.com
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: 加入我的频道t.me/CMLiussss解锁更多优选节点
-  network: ws
-  port: 443
-  server: join.my.telegram.channel.cmliussss.to.unlock.more.premium.nodes.cf.090227.xyz
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_45
-  network: ws
-  port: 443
-  server: 172.67.120.0
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_46
-  network: ws
-  port: 443
-  server: icook.tw
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_26
+- name: CMCC-IPV6_8
   network: ws
   port: 4700
   server: '[2606'
-  servername: hc1.ylks0033.dpdns.org
+  servername: zx1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -1598,275 +1108,9 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hc1.ylks0033.dpdns.org
+      host: zx1.ylka.dpdns.org
     path: /?ed=2560
 - name: 官方优选_8
-  network: ws
-  port: 443
-  server: damien.ns.cloudflare.com
-  servername: edga.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edga.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: IPV6_1
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_27
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: hc1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hc1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_47
-  network: ws
-  port: 443
-  server: iplocation.io
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: 官方优选_9
-  network: ws
-  port: 443
-  server: kip.ns.cloudflare.com
-  servername: edga.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edga.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: CMCC-IPV6_28
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: hc1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hc1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: 官方优选_10
-  network: ws
-  port: 443
-  server: arvind.ns.cloudflare.com
-  servername: edga.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edga.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: US_3
-  network: ws
-  port: 2083
-  server: 103.116.7.103
-  servername: edga.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edga.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: CT_7
-  network: ws
-  port: 443
-  server: 162.159.153.194
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: 🇺🇸US_4
-  network: ws
-  port: 2087
-  server: 104.25.254.4
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_48
-  network: ws
-  port: 443
-  server: craig.ns.cloudflare.com
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_29
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_49
-  network: ws
-  port: 443
-  server: braden.ns.cloudflare.com
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: 官方优选_11
-  network: ws
-  port: 443
-  server: damien.ns.cloudflare.com
-  servername: edga.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edga.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_12
-  network: ws
-  port: 443
-  server: sage.ns.cloudflare.com
-  servername: edga.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edga.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: CMCC-IPV6_30
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_50
-  network: ws
-  port: 443
-  server: toy-people.com
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: 官方优选_13
-  network: ws
-  port: 443
-  server: arvind.ns.cloudflare.com
-  servername: edga.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edga.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: hx1.ylks0033.dpdns.org_51
-  network: ws
-  port: 443
-  server: lewis.ns.cloudflare.com
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: 官方优选_14
   network: ws
   port: 443
   server: duke.ns.cloudflare.com
@@ -1880,10 +1124,38 @@ proxies:
     headers:
       host: edga.aimercc.dpdns.org
     path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_15
+- name: US_22
   network: ws
   port: 443
-  server: lynn.ns.cloudflare.com
+  server: 104.207.152.171
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: NL_6
+  network: ws
+  port: 5004
+  server: 45.154.98.230
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: 官方优选_9
+  network: ws
+  port: 443
+  server: damien.ns.cloudflare.com
   servername: edga.aimercc.dpdns.org
   skip-cert-verify: true
   tls: true
@@ -1894,11 +1166,11 @@ proxies:
     headers:
       host: edga.aimercc.dpdns.org
     path: /?ed=2560&proxyip=ts.hpc.tw
-- name: CMCC-IPV6_31
+- name: CMCC-IPV6_9
   network: ws
   port: 4700
   server: '[2606'
-  servername: hx1.ylks0033.dpdns.org
+  servername: zx1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -1906,27 +1178,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: zx1.ylka.dpdns.org
     path: /?ed=2560
-- name: CT_8
-  network: ws
-  port: 443
-  server: 162.159.153.42
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_32
+- name: CMCC-IPV6_10
   network: ws
   port: 4700
   server: '[2606'
-  servername: hx1.ylks0033.dpdns.org
+  servername: zx1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -1934,13 +1192,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: zx1.ylka.dpdns.org
     path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_52
+- name: CMCC-IPV6_11
   network: ws
-  port: 443
-  server: wilson.ns.cloudflare.com
-  servername: hx1.ylks0033.dpdns.org
+  port: 4700
+  server: '[2606'
+  servername: ax1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -1948,55 +1206,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: ax1.ylka.dpdns.org
     path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_53
-  network: ws
-  port: 443
-  server: 162.159.36.104
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: 官方优选_16
-  network: ws
-  port: 443
-  server: sage.ns.cloudflare.com
-  servername: edga.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edga.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: hx1.ylks0033.dpdns.org_54
-  network: ws
-  port: 443
-  server: pranab.ns.cloudflare.com
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: 🇺🇸US_5
+- name: FR_1
   network: ws
   port: 2053
-  server: 162.159.129.11
-  servername: hx1.ylks0033.dpdns.org
+  server: 141.94.70.243
+  servername: ax1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -2004,13 +1220,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: ax1.ylka.dpdns.org
     path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_55
+- name: CMCC-IPV6_12
   network: ws
-  port: 443
-  server: 172.67.243.218
-  servername: hx1.ylks0033.dpdns.org
+  port: 4700
+  server: '[2606'
+  servername: ax1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -2018,12 +1234,54 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: ax1.ylka.dpdns.org
     path: /?ed=2560
-- name: 官方优选_17
+- name: CMCC-IPV6_13
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_14
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_15
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: 官方优选_10
   network: ws
   port: 443
-  server: lynn.ns.cloudflare.com
+  server: kip.ns.cloudflare.com
   servername: edga.aimercc.dpdns.org
   skip-cert-verify: true
   tls: true
@@ -2034,39 +1292,11 @@ proxies:
     headers:
       host: edga.aimercc.dpdns.org
     path: /?ed=2560&proxyip=ts.hpc.tw
-- name: CMCC-IPV6_33
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: 官方优选_18
+- name: HK_11
   network: ws
   port: 443
-  server: pranab.ns.cloudflare.com
-  servername: edga.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edga.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: CT_9
-  network: ws
-  port: 443
-  server: 162.159.153.212
-  servername: hx1.ylks0033.dpdns.org
+  server: 1.65.209.123
+  servername: ax1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -2074,133 +1304,7 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: 官方优选_19
-  network: ws
-  port: 443
-  server: theo.ns.cloudflare.com
-  servername: edga.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edga.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: CMCC-IPV6_34
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: hc1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hc1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_56
-  network: ws
-  port: 443
-  server: www.ipget.net
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_57
-  network: ws
-  port: 443
-  server: dnschecker.org
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: NL_1
-  network: ws
-  port: 443
-  server: 158.101.214.54
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_58
-  network: ws
-  port: 443
-  server: www.csgo.com
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_35
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: hc1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hc1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_59
-  network: ws
-  port: 443
-  server: nikon.ns.cloudflare.com
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: NL_2
-  network: ws
-  port: 443
-  server: 158.101.214.54
-  servername: hc1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hc1.ylks0033.dpdns.org
+      host: ax1.ylka.dpdns.org
     path: /?ed=2560
 - name: PL_1
   network: ws
@@ -2216,11 +1320,11 @@ proxies:
     headers:
       host: edga.aimercc.dpdns.org
     path: /?ed=2560&proxyip=ts.hpc.tw
-- name: hx1.ylks0033.dpdns.org_60
+- name: NL_7
   network: ws
   port: 443
-  server: ipinfo.in
-  servername: hx1.ylks0033.dpdns.org
+  server: 158.101.214.54
+  servername: zx1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -2228,12 +1332,110 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: zx1.ylka.dpdns.org
     path: /?ed=2560
-- name: 官方优选_20
+- name: CMCC-IPV6_16
   network: ws
-  port: 443
-  server: thaddeus.ns.cloudflare.com
+  port: 4700
+  server: '[2606'
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: NL_8
+  network: ws
+  port: 5004
+  server: 45.154.98.230
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: GB_1
+  network: ws
+  port: 2053
+  server: 94.23.153.167
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_17
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: HK_12
+  network: ws
+  port: 8443
+  server: 34.150.69.61
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_18
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: FR_2
+  network: ws
+  port: 2053
+  server: 141.94.70.243
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: TW_5
+  network: ws
+  port: 58888
+  server: 220.132.77.244
   servername: edga.aimercc.dpdns.org
   skip-cert-verify: true
   tls: true
@@ -2244,25 +1446,11 @@ proxies:
     headers:
       host: edga.aimercc.dpdns.org
     path: /?ed=2560&proxyip=ts.hpc.tw
-- name: US_4
-  network: ws
-  port: 4002
-  server: 45.145.42.229
-  servername: hx1.ylks0033.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: hx1.ylks0033.dpdns.org
-    path: /?ed=2560
-- name: CA
+- name: HK_13
   network: ws
   port: 443
-  server: 140.238.158.238
-  servername: hx1.ylks0033.dpdns.org
+  server: 47.238.89.163
+  servername: ax1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -2270,13 +1458,27 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: ax1.ylka.dpdns.org
     path: /?ed=2560
-- name: hx1.ylks0033.dpdns.org_61
+- name: CMCC-IPV6_19
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: HK_14
   network: ws
   port: 443
-  server: 172.67.106.26
-  servername: hx1.ylks0033.dpdns.org
+  server: 1.65.209.123
+  servername: zx1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -2284,12 +1486,40 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: FR_3
+  network: ws
+  port: 443
+  server: 152.228.191.232
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_20
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
     path: /?ed=2560
 - name: PL_2
   network: ws
   port: 443
-  server: 45.144.48.48
+  server: 176.105.253.98
   servername: edga.aimercc.dpdns.org
   skip-cert-verify: true
   tls: true
@@ -2300,11 +1530,151 @@ proxies:
     headers:
       host: edga.aimercc.dpdns.org
     path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 🇺🇸US_6
+- name: US_23
+  network: ws
+  port: 443
+  server: 129.213.136.180
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: DE_1
+  network: ws
+  port: 443
+  server: 91.149.223.242
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: HK_15
+  network: ws
+  port: 443
+  server: 202.81.230.100
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_21
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_22
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_23
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: DE_2
+  network: ws
+  port: 443
+  server: 91.149.223.242
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: US_24
+  network: ws
+  port: 443
+  server: 129.213.136.180
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: US_25
+  network: ws
+  port: 443
+  server: 107.148.239.178
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_24
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: DE_3
   network: ws
   port: 8443
-  server: 162.159.129.67
-  servername: hx1.ylks0033.dpdns.org
+  server: 91.107.159.178
+  servername: zx1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -2312,13 +1682,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: zx1.ylka.dpdns.org
     path: /?ed=2560
-- name: US_5
+- name: DE_4
   network: ws
   port: 443
-  server: 129.213.136.180
-  servername: hx1.ylks0033.dpdns.org
+  server: 91.107.251.232
+  servername: zx1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -2326,13 +1696,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: zx1.ylka.dpdns.org
     path: /?ed=2560
-- name: US_6
+- name: GB_2
   network: ws
-  port: 443
-  server: 129.213.136.180
-  servername: hc1.ylks0033.dpdns.org
+  port: 2053
+  server: 94.23.153.167
+  servername: ax1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -2340,55 +1710,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hc1.ylks0033.dpdns.org
+      host: ax1.ylka.dpdns.org
     path: /?ed=2560
-- name: JP_2
-  network: ws
-  port: 6010
-  server: 47.79.88.21
-  servername: edga.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edga.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: PL_3
+- name: DE_5
   network: ws
   port: 443
-  server: 176.105.253.98
-  servername: edga.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edga.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: PL_4
-  network: ws
-  port: 443
-  server: 176.105.253.98
-  servername: edga.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edga.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: US_7
-  network: ws
-  port: 443
-  server: 129.213.130.70
-  servername: hx1.ylks0033.dpdns.org
+  server: 91.107.254.116
+  servername: ax1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -2396,13 +1724,69 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: ax1.ylka.dpdns.org
     path: /?ed=2560
-- name: IPV6_2
+- name: DE_6
+  network: ws
+  port: 443
+  server: 91.107.189.217
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: DE_7
+  network: ws
+  port: 8443
+  server: 91.107.159.178
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: FR_4
+  network: ws
+  port: 443
+  server: 152.228.191.232
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: DE_8
+  network: ws
+  port: 443
+  server: 91.107.251.232
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_25
   network: ws
   port: 4700
   server: '[2606'
-  servername: hx1.ylks0033.dpdns.org
+  servername: ax1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -2410,13 +1794,41 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: ax1.ylka.dpdns.org
     path: /?ed=2560
-- name: US_8
+- name: CN_1
+  network: ws
+  port: 8443
+  server: 74.119.193.226
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: HK_16
+  network: ws
+  port: 8443
+  server: 2.56.91.89
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: DE_9
   network: ws
   port: 443
-  server: 129.213.130.70
-  servername: hc1.ylks0033.dpdns.org
+  server: 91.107.189.217
+  servername: ax1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -2424,13 +1836,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hc1.ylks0033.dpdns.org
+      host: ax1.ylka.dpdns.org
     path: /?ed=2560
-- name: IPV6_3
+- name: CMCC-IPV6_26
   network: ws
   port: 4700
   server: '[2606'
-  servername: hx1.ylks0033.dpdns.org
+  servername: ax1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -2438,13 +1850,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hx1.ylks0033.dpdns.org
+      host: ax1.ylka.dpdns.org
     path: /?ed=2560
-- name: KR_5
+- name: CMCC-IPV6_27
   network: ws
-  port: 50000
-  server: 115.94.98.93
-  servername: hc1.ylks0033.dpdns.org
+  port: 4700
+  server: '[2606'
+  servername: zx1.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -2452,367 +1864,539 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: hc1.ylks0033.dpdns.org
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: CN_2
+  network: ws
+  port: 8443
+  server: 74.119.193.226
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_28
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_29
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: DE_10
+  network: ws
+  port: 443
+  server: 91.107.254.116
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: IN_1
+  network: ws
+  port: 443
+  server: 103.71.23.121
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_30
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_31
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_32
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: IN_2
+  network: ws
+  port: 443
+  server: 103.71.23.121
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: HK_17
+  network: ws
+  port: 443
+  server: 23.226.8.80
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: HK_18
+  network: ws
+  port: 443
+  server: 219.76.13.169
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: HK_19
+  network: ws
+  port: 443
+  server: 219.76.13.169
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: HK_20
+  network: ws
+  port: 8443
+  server: 2.56.91.89
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: US_26
+  network: ws
+  port: 443
+  server: 129.213.130.70
+  servername: zx1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: zx1.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_33
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_34
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: ax1.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ax1.ylka.dpdns.org
     path: /?ed=2560
 proxy-groups:
 - name: 🚀 节点选择
   proxies:
   - ♻️ 自动选择
   - DIRECT
+  - HK_1
+  - SG_1
+  - HK_2
+  - US_1
+  - SG_2
+  - HK_3
+  - HK_4
+  - US_2
+  - HK_5
+  - JP_1
+  - HK_6
   - TW_1
-  - TW_2
+  - US_3
+  - US_4
   - KR_1
+  - US_5
+  - HK_7
   - KR_2
   - KR_3
-  - hx1.ylks0033.dpdns.org_1
-  - hx1.ylks0033.dpdns.org_2
-  - CMCC_1
   - KR_4
-  - 🇺🇸US_1
-  - CMCC_2
-  - CMCC_3
-  - hx1.ylks0033.dpdns.org_3
-  - CMCC_4
-  - 🇭🇰HK
-  - 🇺🇸US_2
-  - hx1.ylks0033.dpdns.org_4
-  - CMCC_5
-  - CMCC_6
-  - CMCC_7
-  - CMCC_8
-  - CMCC_9
-  - hx1.ylks0033.dpdns.org_5
-  - hx1.ylks0033.dpdns.org_6
-  - CMCC_10
-  - CMCC_11
-  - CMCC_12
-  - CMCC_13
+  - SG_3
+  - TW_2
+  - SG_4
+  - TW_3
+  - KR_5
+  - KR_6
+  - KR_7
+  - NL_1
+  - NL_2
+  - US_6
+  - US_7
+  - NL_3
+  - US_8
+  - NL_4
+  - US_9
+  - US_10
+  - US_11
+  - US_12
+  - JP_2
+  - US_13
+  - 64.49.46.181_1
+  - US_14
+  - US_15
+  - US_16
+  - 64.49.47.64_1
+  - 23.169.184.123_1
+  - HK_8
+  - JP_3
+  - JP_4
   - CMCC-IPV6_1
+  - HK_9
+  - 64.49.47.64_2
+  - 23.169.184.123_2
+  - JP_5
+  - US_17
+  - US_18
   - CMCC-IPV6_2
-  - hx1.ylks0033.dpdns.org_7
-  - hx1.ylks0033.dpdns.org_8
-  - hx1.ylks0033.dpdns.org_9
-  - hx1.ylks0033.dpdns.org_10
+  - 64.49.46.181_2
+  - 官方优选_1
+  - US_19
+  - 美国_1
   - CMCC-IPV6_3
+  - US_20
+  - 官方优选_2
+  - 官方优选_3
+  - US_21
+  - 美国_2
   - CMCC-IPV6_4
+  - TW_4
+  - 官方优选_4
+  - NL_5
   - CMCC-IPV6_5
   - CMCC-IPV6_6
-  - hx1.ylks0033.dpdns.org_11
-  - t.me/am_clubsTG群(加入解锁免费节点)
-  - US_1
   - CMCC-IPV6_7
+  - 官方优选_5
+  - HK_10
+  - 官方优选_6
+  - 官方优选_7
   - CMCC-IPV6_8
-  - CMCC_14
-  - hx1.ylks0033.dpdns.org_12
-  - JP_1
-  - 官方优选_1
+  - 官方优选_8
+  - US_22
+  - NL_6
+  - 官方优选_9
   - CMCC-IPV6_9
-  - hx1.ylks0033.dpdns.org_13
-  - hx1.ylks0033.dpdns.org_14
   - CMCC-IPV6_10
   - CMCC-IPV6_11
-  - hx1.ylks0033.dpdns.org_15
+  - FR_1
   - CMCC-IPV6_12
-  - hx1.ylks0033.dpdns.org_16
-  - hx1.ylks0033.dpdns.org_17
-  - 官方优选_2
   - CMCC-IPV6_13
   - CMCC-IPV6_14
   - CMCC-IPV6_15
-  - hx1.ylks0033.dpdns.org_18
-  - hx1.ylks0033.dpdns.org_19
-  - CMCC-IPV6_16
-  - hx1.ylks0033.dpdns.org_20
-  - US_2
-  - CT_1
-  - hx1.ylks0033.dpdns.org_21
-  - CMCC-IPV6_17
-  - hx1.ylks0033.dpdns.org_22
-  - CMCC-IPV6_18
-  - CMCC-IPV6_19
-  - hx1.ylks0033.dpdns.org_23
-  - hx1.ylks0033.dpdns.org_24
-  - hx1.ylks0033.dpdns.org_25
-  - hx1.ylks0033.dpdns.org_26
-  - 官方优选_3
-  - hx1.ylks0033.dpdns.org_27
-  - hx1.ylks0033.dpdns.org_28
-  - hx1.ylks0033.dpdns.org_29
-  - hx1.ylks0033.dpdns.org_30
-  - hx1.ylks0033.dpdns.org_31
-  - CMCC-IPV6_20
-  - CMCC-IPV6_21
-  - hx1.ylks0033.dpdns.org_32
-  - 官方优选_4
-  - hx1.ylks0033.dpdns.org_33
-  - 官方优选_5
-  - CT_2
-  - 官方优选_6
-  - hx1.ylks0033.dpdns.org_34
-  - hx1.ylks0033.dpdns.org_35
-  - CMCC-IPV6_22
-  - hx1.ylks0033.dpdns.org_36
-  - CMCC-IPV6_23
-  - hx1.ylks0033.dpdns.org_37
-  - CT_3
-  - CT_4
-  - CMCC-IPV6_24
-  - hx1.ylks0033.dpdns.org_38
-  - hx1.ylks0033.dpdns.org_39
-  - hx1.ylks0033.dpdns.org_40
-  - 🇺🇸US_3
-  - CMCC-IPV6_25
-  - 官方优选_7
-  - CT_5
-  - CT_6
-  - hx1.ylks0033.dpdns.org_41
-  - hx1.ylks0033.dpdns.org_42
-  - hx1.ylks0033.dpdns.org_43
-  - hx1.ylks0033.dpdns.org_44
-  - 加入我的频道t.me/CMLiussss解锁更多优选节点
-  - hx1.ylks0033.dpdns.org_45
-  - hx1.ylks0033.dpdns.org_46
-  - CMCC-IPV6_26
-  - 官方优选_8
-  - IPV6_1
-  - CMCC-IPV6_27
-  - hx1.ylks0033.dpdns.org_47
-  - 官方优选_9
-  - CMCC-IPV6_28
   - 官方优选_10
-  - US_3
-  - CT_7
-  - 🇺🇸US_4
-  - hx1.ylks0033.dpdns.org_48
-  - CMCC-IPV6_29
-  - hx1.ylks0033.dpdns.org_49
-  - 官方优选_11
-  - 官方优选_12
-  - CMCC-IPV6_30
-  - hx1.ylks0033.dpdns.org_50
-  - 官方优选_13
-  - hx1.ylks0033.dpdns.org_51
-  - 官方优选_14
-  - 官方优选_15
-  - CMCC-IPV6_31
-  - CT_8
-  - CMCC-IPV6_32
-  - hx1.ylks0033.dpdns.org_52
-  - hx1.ylks0033.dpdns.org_53
-  - 官方优选_16
-  - hx1.ylks0033.dpdns.org_54
-  - 🇺🇸US_5
-  - hx1.ylks0033.dpdns.org_55
-  - 官方优选_17
-  - CMCC-IPV6_33
-  - 官方优选_18
-  - CT_9
-  - 官方优选_19
-  - CMCC-IPV6_34
-  - hx1.ylks0033.dpdns.org_56
-  - hx1.ylks0033.dpdns.org_57
-  - NL_1
-  - hx1.ylks0033.dpdns.org_58
-  - CMCC-IPV6_35
-  - hx1.ylks0033.dpdns.org_59
-  - NL_2
+  - HK_11
   - PL_1
-  - hx1.ylks0033.dpdns.org_60
-  - 官方优选_20
-  - US_4
-  - CA
-  - hx1.ylks0033.dpdns.org_61
+  - NL_7
+  - CMCC-IPV6_16
+  - NL_8
+  - GB_1
+  - CMCC-IPV6_17
+  - HK_12
+  - CMCC-IPV6_18
+  - FR_2
+  - TW_5
+  - HK_13
+  - CMCC-IPV6_19
+  - HK_14
+  - FR_3
+  - CMCC-IPV6_20
   - PL_2
-  - 🇺🇸US_6
-  - US_5
-  - US_6
-  - JP_2
-  - PL_3
-  - PL_4
-  - US_7
-  - IPV6_2
-  - US_8
-  - IPV6_3
-  - KR_5
+  - US_23
+  - DE_1
+  - HK_15
+  - CMCC-IPV6_21
+  - CMCC-IPV6_22
+  - CMCC-IPV6_23
+  - DE_2
+  - US_24
+  - US_25
+  - CMCC-IPV6_24
+  - DE_3
+  - DE_4
+  - GB_2
+  - DE_5
+  - DE_6
+  - DE_7
+  - FR_4
+  - DE_8
+  - CMCC-IPV6_25
+  - CN_1
+  - HK_16
+  - DE_9
+  - CMCC-IPV6_26
+  - CMCC-IPV6_27
+  - CN_2
+  - CMCC-IPV6_28
+  - CMCC-IPV6_29
+  - DE_10
+  - IN_1
+  - CMCC-IPV6_30
+  - CMCC-IPV6_31
+  - CMCC-IPV6_32
+  - IN_2
+  - HK_17
+  - HK_18
+  - HK_19
+  - HK_20
+  - US_26
+  - CMCC-IPV6_33
+  - CMCC-IPV6_34
   type: select
 - interval: 300
   name: ♻️ 自动选择
   proxies:
+  - HK_1
+  - SG_1
+  - HK_2
+  - US_1
+  - SG_2
+  - HK_3
+  - HK_4
+  - US_2
+  - HK_5
+  - JP_1
+  - HK_6
   - TW_1
-  - TW_2
+  - US_3
+  - US_4
   - KR_1
+  - US_5
+  - HK_7
   - KR_2
   - KR_3
-  - hx1.ylks0033.dpdns.org_1
-  - hx1.ylks0033.dpdns.org_2
-  - CMCC_1
   - KR_4
-  - 🇺🇸US_1
-  - CMCC_2
-  - CMCC_3
-  - hx1.ylks0033.dpdns.org_3
-  - CMCC_4
-  - 🇭🇰HK
-  - 🇺🇸US_2
-  - hx1.ylks0033.dpdns.org_4
-  - CMCC_5
-  - CMCC_6
-  - CMCC_7
-  - CMCC_8
-  - CMCC_9
-  - hx1.ylks0033.dpdns.org_5
-  - hx1.ylks0033.dpdns.org_6
-  - CMCC_10
-  - CMCC_11
-  - CMCC_12
-  - CMCC_13
+  - SG_3
+  - TW_2
+  - SG_4
+  - TW_3
+  - KR_5
+  - KR_6
+  - KR_7
+  - NL_1
+  - NL_2
+  - US_6
+  - US_7
+  - NL_3
+  - US_8
+  - NL_4
+  - US_9
+  - US_10
+  - US_11
+  - US_12
+  - JP_2
+  - US_13
+  - 64.49.46.181_1
+  - US_14
+  - US_15
+  - US_16
+  - 64.49.47.64_1
+  - 23.169.184.123_1
+  - HK_8
+  - JP_3
+  - JP_4
   - CMCC-IPV6_1
+  - HK_9
+  - 64.49.47.64_2
+  - 23.169.184.123_2
+  - JP_5
+  - US_17
+  - US_18
   - CMCC-IPV6_2
-  - hx1.ylks0033.dpdns.org_7
-  - hx1.ylks0033.dpdns.org_8
-  - hx1.ylks0033.dpdns.org_9
-  - hx1.ylks0033.dpdns.org_10
+  - 64.49.46.181_2
+  - 官方优选_1
+  - US_19
+  - 美国_1
   - CMCC-IPV6_3
+  - US_20
+  - 官方优选_2
+  - 官方优选_3
+  - US_21
+  - 美国_2
   - CMCC-IPV6_4
+  - TW_4
+  - 官方优选_4
+  - NL_5
   - CMCC-IPV6_5
   - CMCC-IPV6_6
-  - hx1.ylks0033.dpdns.org_11
-  - t.me/am_clubsTG群(加入解锁免费节点)
-  - US_1
   - CMCC-IPV6_7
+  - 官方优选_5
+  - HK_10
+  - 官方优选_6
+  - 官方优选_7
   - CMCC-IPV6_8
-  - CMCC_14
-  - hx1.ylks0033.dpdns.org_12
-  - JP_1
-  - 官方优选_1
+  - 官方优选_8
+  - US_22
+  - NL_6
+  - 官方优选_9
   - CMCC-IPV6_9
-  - hx1.ylks0033.dpdns.org_13
-  - hx1.ylks0033.dpdns.org_14
   - CMCC-IPV6_10
   - CMCC-IPV6_11
-  - hx1.ylks0033.dpdns.org_15
+  - FR_1
   - CMCC-IPV6_12
-  - hx1.ylks0033.dpdns.org_16
-  - hx1.ylks0033.dpdns.org_17
-  - 官方优选_2
   - CMCC-IPV6_13
   - CMCC-IPV6_14
   - CMCC-IPV6_15
-  - hx1.ylks0033.dpdns.org_18
-  - hx1.ylks0033.dpdns.org_19
-  - CMCC-IPV6_16
-  - hx1.ylks0033.dpdns.org_20
-  - US_2
-  - CT_1
-  - hx1.ylks0033.dpdns.org_21
-  - CMCC-IPV6_17
-  - hx1.ylks0033.dpdns.org_22
-  - CMCC-IPV6_18
-  - CMCC-IPV6_19
-  - hx1.ylks0033.dpdns.org_23
-  - hx1.ylks0033.dpdns.org_24
-  - hx1.ylks0033.dpdns.org_25
-  - hx1.ylks0033.dpdns.org_26
-  - 官方优选_3
-  - hx1.ylks0033.dpdns.org_27
-  - hx1.ylks0033.dpdns.org_28
-  - hx1.ylks0033.dpdns.org_29
-  - hx1.ylks0033.dpdns.org_30
-  - hx1.ylks0033.dpdns.org_31
-  - CMCC-IPV6_20
-  - CMCC-IPV6_21
-  - hx1.ylks0033.dpdns.org_32
-  - 官方优选_4
-  - hx1.ylks0033.dpdns.org_33
-  - 官方优选_5
-  - CT_2
-  - 官方优选_6
-  - hx1.ylks0033.dpdns.org_34
-  - hx1.ylks0033.dpdns.org_35
-  - CMCC-IPV6_22
-  - hx1.ylks0033.dpdns.org_36
-  - CMCC-IPV6_23
-  - hx1.ylks0033.dpdns.org_37
-  - CT_3
-  - CT_4
-  - CMCC-IPV6_24
-  - hx1.ylks0033.dpdns.org_38
-  - hx1.ylks0033.dpdns.org_39
-  - hx1.ylks0033.dpdns.org_40
-  - 🇺🇸US_3
-  - CMCC-IPV6_25
-  - 官方优选_7
-  - CT_5
-  - CT_6
-  - hx1.ylks0033.dpdns.org_41
-  - hx1.ylks0033.dpdns.org_42
-  - hx1.ylks0033.dpdns.org_43
-  - hx1.ylks0033.dpdns.org_44
-  - 加入我的频道t.me/CMLiussss解锁更多优选节点
-  - hx1.ylks0033.dpdns.org_45
-  - hx1.ylks0033.dpdns.org_46
-  - CMCC-IPV6_26
-  - 官方优选_8
-  - IPV6_1
-  - CMCC-IPV6_27
-  - hx1.ylks0033.dpdns.org_47
-  - 官方优选_9
-  - CMCC-IPV6_28
   - 官方优选_10
-  - US_3
-  - CT_7
-  - 🇺🇸US_4
-  - hx1.ylks0033.dpdns.org_48
-  - CMCC-IPV6_29
-  - hx1.ylks0033.dpdns.org_49
-  - 官方优选_11
-  - 官方优选_12
-  - CMCC-IPV6_30
-  - hx1.ylks0033.dpdns.org_50
-  - 官方优选_13
-  - hx1.ylks0033.dpdns.org_51
-  - 官方优选_14
-  - 官方优选_15
-  - CMCC-IPV6_31
-  - CT_8
-  - CMCC-IPV6_32
-  - hx1.ylks0033.dpdns.org_52
-  - hx1.ylks0033.dpdns.org_53
-  - 官方优选_16
-  - hx1.ylks0033.dpdns.org_54
-  - 🇺🇸US_5
-  - hx1.ylks0033.dpdns.org_55
-  - 官方优选_17
-  - CMCC-IPV6_33
-  - 官方优选_18
-  - CT_9
-  - 官方优选_19
-  - CMCC-IPV6_34
-  - hx1.ylks0033.dpdns.org_56
-  - hx1.ylks0033.dpdns.org_57
-  - NL_1
-  - hx1.ylks0033.dpdns.org_58
-  - CMCC-IPV6_35
-  - hx1.ylks0033.dpdns.org_59
-  - NL_2
+  - HK_11
   - PL_1
-  - hx1.ylks0033.dpdns.org_60
-  - 官方优选_20
-  - US_4
-  - CA
-  - hx1.ylks0033.dpdns.org_61
+  - NL_7
+  - CMCC-IPV6_16
+  - NL_8
+  - GB_1
+  - CMCC-IPV6_17
+  - HK_12
+  - CMCC-IPV6_18
+  - FR_2
+  - TW_5
+  - HK_13
+  - CMCC-IPV6_19
+  - HK_14
+  - FR_3
+  - CMCC-IPV6_20
   - PL_2
-  - 🇺🇸US_6
-  - US_5
-  - US_6
-  - JP_2
-  - PL_3
-  - PL_4
-  - US_7
-  - IPV6_2
-  - US_8
-  - IPV6_3
-  - KR_5
+  - US_23
+  - DE_1
+  - HK_15
+  - CMCC-IPV6_21
+  - CMCC-IPV6_22
+  - CMCC-IPV6_23
+  - DE_2
+  - US_24
+  - US_25
+  - CMCC-IPV6_24
+  - DE_3
+  - DE_4
+  - GB_2
+  - DE_5
+  - DE_6
+  - DE_7
+  - FR_4
+  - DE_8
+  - CMCC-IPV6_25
+  - CN_1
+  - HK_16
+  - DE_9
+  - CMCC-IPV6_26
+  - CMCC-IPV6_27
+  - CN_2
+  - CMCC-IPV6_28
+  - CMCC-IPV6_29
+  - DE_10
+  - IN_1
+  - CMCC-IPV6_30
+  - CMCC-IPV6_31
+  - CMCC-IPV6_32
+  - IN_2
+  - HK_17
+  - HK_18
+  - HK_19
+  - HK_20
+  - US_26
+  - CMCC-IPV6_33
+  - CMCC-IPV6_34
   tolerance: 50
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -2821,721 +2405,617 @@ proxy-groups:
   - 🚀 节点选择
   - ♻️ 自动选择
   - 🎯 全球直连
+  - HK_1
+  - SG_1
+  - HK_2
+  - US_1
+  - SG_2
+  - HK_3
+  - HK_4
+  - US_2
+  - HK_5
+  - JP_1
+  - HK_6
   - TW_1
-  - TW_2
+  - US_3
+  - US_4
   - KR_1
+  - US_5
+  - HK_7
   - KR_2
   - KR_3
-  - hx1.ylks0033.dpdns.org_1
-  - hx1.ylks0033.dpdns.org_2
-  - CMCC_1
   - KR_4
-  - 🇺🇸US_1
-  - CMCC_2
-  - CMCC_3
-  - hx1.ylks0033.dpdns.org_3
-  - CMCC_4
-  - 🇭🇰HK
-  - 🇺🇸US_2
-  - hx1.ylks0033.dpdns.org_4
-  - CMCC_5
-  - CMCC_6
-  - CMCC_7
-  - CMCC_8
-  - CMCC_9
-  - hx1.ylks0033.dpdns.org_5
-  - hx1.ylks0033.dpdns.org_6
-  - CMCC_10
-  - CMCC_11
-  - CMCC_12
-  - CMCC_13
+  - SG_3
+  - TW_2
+  - SG_4
+  - TW_3
+  - KR_5
+  - KR_6
+  - KR_7
+  - NL_1
+  - NL_2
+  - US_6
+  - US_7
+  - NL_3
+  - US_8
+  - NL_4
+  - US_9
+  - US_10
+  - US_11
+  - US_12
+  - JP_2
+  - US_13
+  - 64.49.46.181_1
+  - US_14
+  - US_15
+  - US_16
+  - 64.49.47.64_1
+  - 23.169.184.123_1
+  - HK_8
+  - JP_3
+  - JP_4
   - CMCC-IPV6_1
+  - HK_9
+  - 64.49.47.64_2
+  - 23.169.184.123_2
+  - JP_5
+  - US_17
+  - US_18
   - CMCC-IPV6_2
-  - hx1.ylks0033.dpdns.org_7
-  - hx1.ylks0033.dpdns.org_8
-  - hx1.ylks0033.dpdns.org_9
-  - hx1.ylks0033.dpdns.org_10
+  - 64.49.46.181_2
+  - 官方优选_1
+  - US_19
+  - 美国_1
   - CMCC-IPV6_3
+  - US_20
+  - 官方优选_2
+  - 官方优选_3
+  - US_21
+  - 美国_2
   - CMCC-IPV6_4
+  - TW_4
+  - 官方优选_4
+  - NL_5
   - CMCC-IPV6_5
   - CMCC-IPV6_6
-  - hx1.ylks0033.dpdns.org_11
-  - t.me/am_clubsTG群(加入解锁免费节点)
-  - US_1
   - CMCC-IPV6_7
+  - 官方优选_5
+  - HK_10
+  - 官方优选_6
+  - 官方优选_7
   - CMCC-IPV6_8
-  - CMCC_14
-  - hx1.ylks0033.dpdns.org_12
-  - JP_1
-  - 官方优选_1
+  - 官方优选_8
+  - US_22
+  - NL_6
+  - 官方优选_9
   - CMCC-IPV6_9
-  - hx1.ylks0033.dpdns.org_13
-  - hx1.ylks0033.dpdns.org_14
   - CMCC-IPV6_10
   - CMCC-IPV6_11
-  - hx1.ylks0033.dpdns.org_15
+  - FR_1
   - CMCC-IPV6_12
-  - hx1.ylks0033.dpdns.org_16
-  - hx1.ylks0033.dpdns.org_17
-  - 官方优选_2
   - CMCC-IPV6_13
   - CMCC-IPV6_14
   - CMCC-IPV6_15
-  - hx1.ylks0033.dpdns.org_18
-  - hx1.ylks0033.dpdns.org_19
-  - CMCC-IPV6_16
-  - hx1.ylks0033.dpdns.org_20
-  - US_2
-  - CT_1
-  - hx1.ylks0033.dpdns.org_21
-  - CMCC-IPV6_17
-  - hx1.ylks0033.dpdns.org_22
-  - CMCC-IPV6_18
-  - CMCC-IPV6_19
-  - hx1.ylks0033.dpdns.org_23
-  - hx1.ylks0033.dpdns.org_24
-  - hx1.ylks0033.dpdns.org_25
-  - hx1.ylks0033.dpdns.org_26
-  - 官方优选_3
-  - hx1.ylks0033.dpdns.org_27
-  - hx1.ylks0033.dpdns.org_28
-  - hx1.ylks0033.dpdns.org_29
-  - hx1.ylks0033.dpdns.org_30
-  - hx1.ylks0033.dpdns.org_31
-  - CMCC-IPV6_20
-  - CMCC-IPV6_21
-  - hx1.ylks0033.dpdns.org_32
-  - 官方优选_4
-  - hx1.ylks0033.dpdns.org_33
-  - 官方优选_5
-  - CT_2
-  - 官方优选_6
-  - hx1.ylks0033.dpdns.org_34
-  - hx1.ylks0033.dpdns.org_35
-  - CMCC-IPV6_22
-  - hx1.ylks0033.dpdns.org_36
-  - CMCC-IPV6_23
-  - hx1.ylks0033.dpdns.org_37
-  - CT_3
-  - CT_4
-  - CMCC-IPV6_24
-  - hx1.ylks0033.dpdns.org_38
-  - hx1.ylks0033.dpdns.org_39
-  - hx1.ylks0033.dpdns.org_40
-  - 🇺🇸US_3
-  - CMCC-IPV6_25
-  - 官方优选_7
-  - CT_5
-  - CT_6
-  - hx1.ylks0033.dpdns.org_41
-  - hx1.ylks0033.dpdns.org_42
-  - hx1.ylks0033.dpdns.org_43
-  - hx1.ylks0033.dpdns.org_44
-  - 加入我的频道t.me/CMLiussss解锁更多优选节点
-  - hx1.ylks0033.dpdns.org_45
-  - hx1.ylks0033.dpdns.org_46
-  - CMCC-IPV6_26
-  - 官方优选_8
-  - IPV6_1
-  - CMCC-IPV6_27
-  - hx1.ylks0033.dpdns.org_47
-  - 官方优选_9
-  - CMCC-IPV6_28
   - 官方优选_10
-  - US_3
-  - CT_7
-  - 🇺🇸US_4
-  - hx1.ylks0033.dpdns.org_48
-  - CMCC-IPV6_29
-  - hx1.ylks0033.dpdns.org_49
-  - 官方优选_11
-  - 官方优选_12
-  - CMCC-IPV6_30
-  - hx1.ylks0033.dpdns.org_50
-  - 官方优选_13
-  - hx1.ylks0033.dpdns.org_51
-  - 官方优选_14
-  - 官方优选_15
-  - CMCC-IPV6_31
-  - CT_8
-  - CMCC-IPV6_32
-  - hx1.ylks0033.dpdns.org_52
-  - hx1.ylks0033.dpdns.org_53
-  - 官方优选_16
-  - hx1.ylks0033.dpdns.org_54
-  - 🇺🇸US_5
-  - hx1.ylks0033.dpdns.org_55
-  - 官方优选_17
-  - CMCC-IPV6_33
-  - 官方优选_18
-  - CT_9
-  - 官方优选_19
-  - CMCC-IPV6_34
-  - hx1.ylks0033.dpdns.org_56
-  - hx1.ylks0033.dpdns.org_57
-  - NL_1
-  - hx1.ylks0033.dpdns.org_58
-  - CMCC-IPV6_35
-  - hx1.ylks0033.dpdns.org_59
-  - NL_2
+  - HK_11
   - PL_1
-  - hx1.ylks0033.dpdns.org_60
-  - 官方优选_20
-  - US_4
-  - CA
-  - hx1.ylks0033.dpdns.org_61
+  - NL_7
+  - CMCC-IPV6_16
+  - NL_8
+  - GB_1
+  - CMCC-IPV6_17
+  - HK_12
+  - CMCC-IPV6_18
+  - FR_2
+  - TW_5
+  - HK_13
+  - CMCC-IPV6_19
+  - HK_14
+  - FR_3
+  - CMCC-IPV6_20
   - PL_2
-  - 🇺🇸US_6
-  - US_5
-  - US_6
-  - JP_2
-  - PL_3
-  - PL_4
-  - US_7
-  - IPV6_2
-  - US_8
-  - IPV6_3
-  - KR_5
+  - US_23
+  - DE_1
+  - HK_15
+  - CMCC-IPV6_21
+  - CMCC-IPV6_22
+  - CMCC-IPV6_23
+  - DE_2
+  - US_24
+  - US_25
+  - CMCC-IPV6_24
+  - DE_3
+  - DE_4
+  - GB_2
+  - DE_5
+  - DE_6
+  - DE_7
+  - FR_4
+  - DE_8
+  - CMCC-IPV6_25
+  - CN_1
+  - HK_16
+  - DE_9
+  - CMCC-IPV6_26
+  - CMCC-IPV6_27
+  - CN_2
+  - CMCC-IPV6_28
+  - CMCC-IPV6_29
+  - DE_10
+  - IN_1
+  - CMCC-IPV6_30
+  - CMCC-IPV6_31
+  - CMCC-IPV6_32
+  - IN_2
+  - HK_17
+  - HK_18
+  - HK_19
+  - HK_20
+  - US_26
+  - CMCC-IPV6_33
+  - CMCC-IPV6_34
   type: select
 - name: 📲 电报信息
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
+  - HK_1
+  - SG_1
+  - HK_2
+  - US_1
+  - SG_2
+  - HK_3
+  - HK_4
+  - US_2
+  - HK_5
+  - JP_1
+  - HK_6
   - TW_1
-  - TW_2
+  - US_3
+  - US_4
   - KR_1
+  - US_5
+  - HK_7
   - KR_2
   - KR_3
-  - hx1.ylks0033.dpdns.org_1
-  - hx1.ylks0033.dpdns.org_2
-  - CMCC_1
   - KR_4
-  - 🇺🇸US_1
-  - CMCC_2
-  - CMCC_3
-  - hx1.ylks0033.dpdns.org_3
-  - CMCC_4
-  - 🇭🇰HK
-  - 🇺🇸US_2
-  - hx1.ylks0033.dpdns.org_4
-  - CMCC_5
-  - CMCC_6
-  - CMCC_7
-  - CMCC_8
-  - CMCC_9
-  - hx1.ylks0033.dpdns.org_5
-  - hx1.ylks0033.dpdns.org_6
-  - CMCC_10
-  - CMCC_11
-  - CMCC_12
-  - CMCC_13
+  - SG_3
+  - TW_2
+  - SG_4
+  - TW_3
+  - KR_5
+  - KR_6
+  - KR_7
+  - NL_1
+  - NL_2
+  - US_6
+  - US_7
+  - NL_3
+  - US_8
+  - NL_4
+  - US_9
+  - US_10
+  - US_11
+  - US_12
+  - JP_2
+  - US_13
+  - 64.49.46.181_1
+  - US_14
+  - US_15
+  - US_16
+  - 64.49.47.64_1
+  - 23.169.184.123_1
+  - HK_8
+  - JP_3
+  - JP_4
   - CMCC-IPV6_1
+  - HK_9
+  - 64.49.47.64_2
+  - 23.169.184.123_2
+  - JP_5
+  - US_17
+  - US_18
   - CMCC-IPV6_2
-  - hx1.ylks0033.dpdns.org_7
-  - hx1.ylks0033.dpdns.org_8
-  - hx1.ylks0033.dpdns.org_9
-  - hx1.ylks0033.dpdns.org_10
+  - 64.49.46.181_2
+  - 官方优选_1
+  - US_19
+  - 美国_1
   - CMCC-IPV6_3
+  - US_20
+  - 官方优选_2
+  - 官方优选_3
+  - US_21
+  - 美国_2
   - CMCC-IPV6_4
+  - TW_4
+  - 官方优选_4
+  - NL_5
   - CMCC-IPV6_5
   - CMCC-IPV6_6
-  - hx1.ylks0033.dpdns.org_11
-  - t.me/am_clubsTG群(加入解锁免费节点)
-  - US_1
   - CMCC-IPV6_7
+  - 官方优选_5
+  - HK_10
+  - 官方优选_6
+  - 官方优选_7
   - CMCC-IPV6_8
-  - CMCC_14
-  - hx1.ylks0033.dpdns.org_12
-  - JP_1
-  - 官方优选_1
+  - 官方优选_8
+  - US_22
+  - NL_6
+  - 官方优选_9
   - CMCC-IPV6_9
-  - hx1.ylks0033.dpdns.org_13
-  - hx1.ylks0033.dpdns.org_14
   - CMCC-IPV6_10
   - CMCC-IPV6_11
-  - hx1.ylks0033.dpdns.org_15
+  - FR_1
   - CMCC-IPV6_12
-  - hx1.ylks0033.dpdns.org_16
-  - hx1.ylks0033.dpdns.org_17
-  - 官方优选_2
   - CMCC-IPV6_13
   - CMCC-IPV6_14
   - CMCC-IPV6_15
-  - hx1.ylks0033.dpdns.org_18
-  - hx1.ylks0033.dpdns.org_19
-  - CMCC-IPV6_16
-  - hx1.ylks0033.dpdns.org_20
-  - US_2
-  - CT_1
-  - hx1.ylks0033.dpdns.org_21
-  - CMCC-IPV6_17
-  - hx1.ylks0033.dpdns.org_22
-  - CMCC-IPV6_18
-  - CMCC-IPV6_19
-  - hx1.ylks0033.dpdns.org_23
-  - hx1.ylks0033.dpdns.org_24
-  - hx1.ylks0033.dpdns.org_25
-  - hx1.ylks0033.dpdns.org_26
-  - 官方优选_3
-  - hx1.ylks0033.dpdns.org_27
-  - hx1.ylks0033.dpdns.org_28
-  - hx1.ylks0033.dpdns.org_29
-  - hx1.ylks0033.dpdns.org_30
-  - hx1.ylks0033.dpdns.org_31
-  - CMCC-IPV6_20
-  - CMCC-IPV6_21
-  - hx1.ylks0033.dpdns.org_32
-  - 官方优选_4
-  - hx1.ylks0033.dpdns.org_33
-  - 官方优选_5
-  - CT_2
-  - 官方优选_6
-  - hx1.ylks0033.dpdns.org_34
-  - hx1.ylks0033.dpdns.org_35
-  - CMCC-IPV6_22
-  - hx1.ylks0033.dpdns.org_36
-  - CMCC-IPV6_23
-  - hx1.ylks0033.dpdns.org_37
-  - CT_3
-  - CT_4
-  - CMCC-IPV6_24
-  - hx1.ylks0033.dpdns.org_38
-  - hx1.ylks0033.dpdns.org_39
-  - hx1.ylks0033.dpdns.org_40
-  - 🇺🇸US_3
-  - CMCC-IPV6_25
-  - 官方优选_7
-  - CT_5
-  - CT_6
-  - hx1.ylks0033.dpdns.org_41
-  - hx1.ylks0033.dpdns.org_42
-  - hx1.ylks0033.dpdns.org_43
-  - hx1.ylks0033.dpdns.org_44
-  - 加入我的频道t.me/CMLiussss解锁更多优选节点
-  - hx1.ylks0033.dpdns.org_45
-  - hx1.ylks0033.dpdns.org_46
-  - CMCC-IPV6_26
-  - 官方优选_8
-  - IPV6_1
-  - CMCC-IPV6_27
-  - hx1.ylks0033.dpdns.org_47
-  - 官方优选_9
-  - CMCC-IPV6_28
   - 官方优选_10
-  - US_3
-  - CT_7
-  - 🇺🇸US_4
-  - hx1.ylks0033.dpdns.org_48
-  - CMCC-IPV6_29
-  - hx1.ylks0033.dpdns.org_49
-  - 官方优选_11
-  - 官方优选_12
-  - CMCC-IPV6_30
-  - hx1.ylks0033.dpdns.org_50
-  - 官方优选_13
-  - hx1.ylks0033.dpdns.org_51
-  - 官方优选_14
-  - 官方优选_15
-  - CMCC-IPV6_31
-  - CT_8
-  - CMCC-IPV6_32
-  - hx1.ylks0033.dpdns.org_52
-  - hx1.ylks0033.dpdns.org_53
-  - 官方优选_16
-  - hx1.ylks0033.dpdns.org_54
-  - 🇺🇸US_5
-  - hx1.ylks0033.dpdns.org_55
-  - 官方优选_17
-  - CMCC-IPV6_33
-  - 官方优选_18
-  - CT_9
-  - 官方优选_19
-  - CMCC-IPV6_34
-  - hx1.ylks0033.dpdns.org_56
-  - hx1.ylks0033.dpdns.org_57
-  - NL_1
-  - hx1.ylks0033.dpdns.org_58
-  - CMCC-IPV6_35
-  - hx1.ylks0033.dpdns.org_59
-  - NL_2
+  - HK_11
   - PL_1
-  - hx1.ylks0033.dpdns.org_60
-  - 官方优选_20
-  - US_4
-  - CA
-  - hx1.ylks0033.dpdns.org_61
+  - NL_7
+  - CMCC-IPV6_16
+  - NL_8
+  - GB_1
+  - CMCC-IPV6_17
+  - HK_12
+  - CMCC-IPV6_18
+  - FR_2
+  - TW_5
+  - HK_13
+  - CMCC-IPV6_19
+  - HK_14
+  - FR_3
+  - CMCC-IPV6_20
   - PL_2
-  - 🇺🇸US_6
-  - US_5
-  - US_6
-  - JP_2
-  - PL_3
-  - PL_4
-  - US_7
-  - IPV6_2
-  - US_8
-  - IPV6_3
-  - KR_5
+  - US_23
+  - DE_1
+  - HK_15
+  - CMCC-IPV6_21
+  - CMCC-IPV6_22
+  - CMCC-IPV6_23
+  - DE_2
+  - US_24
+  - US_25
+  - CMCC-IPV6_24
+  - DE_3
+  - DE_4
+  - GB_2
+  - DE_5
+  - DE_6
+  - DE_7
+  - FR_4
+  - DE_8
+  - CMCC-IPV6_25
+  - CN_1
+  - HK_16
+  - DE_9
+  - CMCC-IPV6_26
+  - CMCC-IPV6_27
+  - CN_2
+  - CMCC-IPV6_28
+  - CMCC-IPV6_29
+  - DE_10
+  - IN_1
+  - CMCC-IPV6_30
+  - CMCC-IPV6_31
+  - CMCC-IPV6_32
+  - IN_2
+  - HK_17
+  - HK_18
+  - HK_19
+  - HK_20
+  - US_26
+  - CMCC-IPV6_33
+  - CMCC-IPV6_34
   type: select
 - name: Ⓜ️ 微软服务
   proxies:
   - 🎯 全球直连
   - 🚀 节点选择
+  - HK_1
+  - SG_1
+  - HK_2
+  - US_1
+  - SG_2
+  - HK_3
+  - HK_4
+  - US_2
+  - HK_5
+  - JP_1
+  - HK_6
   - TW_1
-  - TW_2
+  - US_3
+  - US_4
   - KR_1
+  - US_5
+  - HK_7
   - KR_2
   - KR_3
-  - hx1.ylks0033.dpdns.org_1
-  - hx1.ylks0033.dpdns.org_2
-  - CMCC_1
   - KR_4
-  - 🇺🇸US_1
-  - CMCC_2
-  - CMCC_3
-  - hx1.ylks0033.dpdns.org_3
-  - CMCC_4
-  - 🇭🇰HK
-  - 🇺🇸US_2
-  - hx1.ylks0033.dpdns.org_4
-  - CMCC_5
-  - CMCC_6
-  - CMCC_7
-  - CMCC_8
-  - CMCC_9
-  - hx1.ylks0033.dpdns.org_5
-  - hx1.ylks0033.dpdns.org_6
-  - CMCC_10
-  - CMCC_11
-  - CMCC_12
-  - CMCC_13
+  - SG_3
+  - TW_2
+  - SG_4
+  - TW_3
+  - KR_5
+  - KR_6
+  - KR_7
+  - NL_1
+  - NL_2
+  - US_6
+  - US_7
+  - NL_3
+  - US_8
+  - NL_4
+  - US_9
+  - US_10
+  - US_11
+  - US_12
+  - JP_2
+  - US_13
+  - 64.49.46.181_1
+  - US_14
+  - US_15
+  - US_16
+  - 64.49.47.64_1
+  - 23.169.184.123_1
+  - HK_8
+  - JP_3
+  - JP_4
   - CMCC-IPV6_1
+  - HK_9
+  - 64.49.47.64_2
+  - 23.169.184.123_2
+  - JP_5
+  - US_17
+  - US_18
   - CMCC-IPV6_2
-  - hx1.ylks0033.dpdns.org_7
-  - hx1.ylks0033.dpdns.org_8
-  - hx1.ylks0033.dpdns.org_9
-  - hx1.ylks0033.dpdns.org_10
+  - 64.49.46.181_2
+  - 官方优选_1
+  - US_19
+  - 美国_1
   - CMCC-IPV6_3
+  - US_20
+  - 官方优选_2
+  - 官方优选_3
+  - US_21
+  - 美国_2
   - CMCC-IPV6_4
+  - TW_4
+  - 官方优选_4
+  - NL_5
   - CMCC-IPV6_5
   - CMCC-IPV6_6
-  - hx1.ylks0033.dpdns.org_11
-  - t.me/am_clubsTG群(加入解锁免费节点)
-  - US_1
   - CMCC-IPV6_7
+  - 官方优选_5
+  - HK_10
+  - 官方优选_6
+  - 官方优选_7
   - CMCC-IPV6_8
-  - CMCC_14
-  - hx1.ylks0033.dpdns.org_12
-  - JP_1
-  - 官方优选_1
+  - 官方优选_8
+  - US_22
+  - NL_6
+  - 官方优选_9
   - CMCC-IPV6_9
-  - hx1.ylks0033.dpdns.org_13
-  - hx1.ylks0033.dpdns.org_14
   - CMCC-IPV6_10
   - CMCC-IPV6_11
-  - hx1.ylks0033.dpdns.org_15
+  - FR_1
   - CMCC-IPV6_12
-  - hx1.ylks0033.dpdns.org_16
-  - hx1.ylks0033.dpdns.org_17
-  - 官方优选_2
   - CMCC-IPV6_13
   - CMCC-IPV6_14
   - CMCC-IPV6_15
-  - hx1.ylks0033.dpdns.org_18
-  - hx1.ylks0033.dpdns.org_19
-  - CMCC-IPV6_16
-  - hx1.ylks0033.dpdns.org_20
-  - US_2
-  - CT_1
-  - hx1.ylks0033.dpdns.org_21
-  - CMCC-IPV6_17
-  - hx1.ylks0033.dpdns.org_22
-  - CMCC-IPV6_18
-  - CMCC-IPV6_19
-  - hx1.ylks0033.dpdns.org_23
-  - hx1.ylks0033.dpdns.org_24
-  - hx1.ylks0033.dpdns.org_25
-  - hx1.ylks0033.dpdns.org_26
-  - 官方优选_3
-  - hx1.ylks0033.dpdns.org_27
-  - hx1.ylks0033.dpdns.org_28
-  - hx1.ylks0033.dpdns.org_29
-  - hx1.ylks0033.dpdns.org_30
-  - hx1.ylks0033.dpdns.org_31
-  - CMCC-IPV6_20
-  - CMCC-IPV6_21
-  - hx1.ylks0033.dpdns.org_32
-  - 官方优选_4
-  - hx1.ylks0033.dpdns.org_33
-  - 官方优选_5
-  - CT_2
-  - 官方优选_6
-  - hx1.ylks0033.dpdns.org_34
-  - hx1.ylks0033.dpdns.org_35
-  - CMCC-IPV6_22
-  - hx1.ylks0033.dpdns.org_36
-  - CMCC-IPV6_23
-  - hx1.ylks0033.dpdns.org_37
-  - CT_3
-  - CT_4
-  - CMCC-IPV6_24
-  - hx1.ylks0033.dpdns.org_38
-  - hx1.ylks0033.dpdns.org_39
-  - hx1.ylks0033.dpdns.org_40
-  - 🇺🇸US_3
-  - CMCC-IPV6_25
-  - 官方优选_7
-  - CT_5
-  - CT_6
-  - hx1.ylks0033.dpdns.org_41
-  - hx1.ylks0033.dpdns.org_42
-  - hx1.ylks0033.dpdns.org_43
-  - hx1.ylks0033.dpdns.org_44
-  - 加入我的频道t.me/CMLiussss解锁更多优选节点
-  - hx1.ylks0033.dpdns.org_45
-  - hx1.ylks0033.dpdns.org_46
-  - CMCC-IPV6_26
-  - 官方优选_8
-  - IPV6_1
-  - CMCC-IPV6_27
-  - hx1.ylks0033.dpdns.org_47
-  - 官方优选_9
-  - CMCC-IPV6_28
   - 官方优选_10
-  - US_3
-  - CT_7
-  - 🇺🇸US_4
-  - hx1.ylks0033.dpdns.org_48
-  - CMCC-IPV6_29
-  - hx1.ylks0033.dpdns.org_49
-  - 官方优选_11
-  - 官方优选_12
-  - CMCC-IPV6_30
-  - hx1.ylks0033.dpdns.org_50
-  - 官方优选_13
-  - hx1.ylks0033.dpdns.org_51
-  - 官方优选_14
-  - 官方优选_15
-  - CMCC-IPV6_31
-  - CT_8
-  - CMCC-IPV6_32
-  - hx1.ylks0033.dpdns.org_52
-  - hx1.ylks0033.dpdns.org_53
-  - 官方优选_16
-  - hx1.ylks0033.dpdns.org_54
-  - 🇺🇸US_5
-  - hx1.ylks0033.dpdns.org_55
-  - 官方优选_17
-  - CMCC-IPV6_33
-  - 官方优选_18
-  - CT_9
-  - 官方优选_19
-  - CMCC-IPV6_34
-  - hx1.ylks0033.dpdns.org_56
-  - hx1.ylks0033.dpdns.org_57
-  - NL_1
-  - hx1.ylks0033.dpdns.org_58
-  - CMCC-IPV6_35
-  - hx1.ylks0033.dpdns.org_59
-  - NL_2
+  - HK_11
   - PL_1
-  - hx1.ylks0033.dpdns.org_60
-  - 官方优选_20
-  - US_4
-  - CA
-  - hx1.ylks0033.dpdns.org_61
+  - NL_7
+  - CMCC-IPV6_16
+  - NL_8
+  - GB_1
+  - CMCC-IPV6_17
+  - HK_12
+  - CMCC-IPV6_18
+  - FR_2
+  - TW_5
+  - HK_13
+  - CMCC-IPV6_19
+  - HK_14
+  - FR_3
+  - CMCC-IPV6_20
   - PL_2
-  - 🇺🇸US_6
-  - US_5
-  - US_6
-  - JP_2
-  - PL_3
-  - PL_4
-  - US_7
-  - IPV6_2
-  - US_8
-  - IPV6_3
-  - KR_5
+  - US_23
+  - DE_1
+  - HK_15
+  - CMCC-IPV6_21
+  - CMCC-IPV6_22
+  - CMCC-IPV6_23
+  - DE_2
+  - US_24
+  - US_25
+  - CMCC-IPV6_24
+  - DE_3
+  - DE_4
+  - GB_2
+  - DE_5
+  - DE_6
+  - DE_7
+  - FR_4
+  - DE_8
+  - CMCC-IPV6_25
+  - CN_1
+  - HK_16
+  - DE_9
+  - CMCC-IPV6_26
+  - CMCC-IPV6_27
+  - CN_2
+  - CMCC-IPV6_28
+  - CMCC-IPV6_29
+  - DE_10
+  - IN_1
+  - CMCC-IPV6_30
+  - CMCC-IPV6_31
+  - CMCC-IPV6_32
+  - IN_2
+  - HK_17
+  - HK_18
+  - HK_19
+  - HK_20
+  - US_26
+  - CMCC-IPV6_33
+  - CMCC-IPV6_34
   type: select
 - name: 🍎 苹果服务
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
+  - HK_1
+  - SG_1
+  - HK_2
+  - US_1
+  - SG_2
+  - HK_3
+  - HK_4
+  - US_2
+  - HK_5
+  - JP_1
+  - HK_6
   - TW_1
-  - TW_2
+  - US_3
+  - US_4
   - KR_1
+  - US_5
+  - HK_7
   - KR_2
   - KR_3
-  - hx1.ylks0033.dpdns.org_1
-  - hx1.ylks0033.dpdns.org_2
-  - CMCC_1
   - KR_4
-  - 🇺🇸US_1
-  - CMCC_2
-  - CMCC_3
-  - hx1.ylks0033.dpdns.org_3
-  - CMCC_4
-  - 🇭🇰HK
-  - 🇺🇸US_2
-  - hx1.ylks0033.dpdns.org_4
-  - CMCC_5
-  - CMCC_6
-  - CMCC_7
-  - CMCC_8
-  - CMCC_9
-  - hx1.ylks0033.dpdns.org_5
-  - hx1.ylks0033.dpdns.org_6
-  - CMCC_10
-  - CMCC_11
-  - CMCC_12
-  - CMCC_13
+  - SG_3
+  - TW_2
+  - SG_4
+  - TW_3
+  - KR_5
+  - KR_6
+  - KR_7
+  - NL_1
+  - NL_2
+  - US_6
+  - US_7
+  - NL_3
+  - US_8
+  - NL_4
+  - US_9
+  - US_10
+  - US_11
+  - US_12
+  - JP_2
+  - US_13
+  - 64.49.46.181_1
+  - US_14
+  - US_15
+  - US_16
+  - 64.49.47.64_1
+  - 23.169.184.123_1
+  - HK_8
+  - JP_3
+  - JP_4
   - CMCC-IPV6_1
+  - HK_9
+  - 64.49.47.64_2
+  - 23.169.184.123_2
+  - JP_5
+  - US_17
+  - US_18
   - CMCC-IPV6_2
-  - hx1.ylks0033.dpdns.org_7
-  - hx1.ylks0033.dpdns.org_8
-  - hx1.ylks0033.dpdns.org_9
-  - hx1.ylks0033.dpdns.org_10
+  - 64.49.46.181_2
+  - 官方优选_1
+  - US_19
+  - 美国_1
   - CMCC-IPV6_3
+  - US_20
+  - 官方优选_2
+  - 官方优选_3
+  - US_21
+  - 美国_2
   - CMCC-IPV6_4
+  - TW_4
+  - 官方优选_4
+  - NL_5
   - CMCC-IPV6_5
   - CMCC-IPV6_6
-  - hx1.ylks0033.dpdns.org_11
-  - t.me/am_clubsTG群(加入解锁免费节点)
-  - US_1
   - CMCC-IPV6_7
+  - 官方优选_5
+  - HK_10
+  - 官方优选_6
+  - 官方优选_7
   - CMCC-IPV6_8
-  - CMCC_14
-  - hx1.ylks0033.dpdns.org_12
-  - JP_1
-  - 官方优选_1
+  - 官方优选_8
+  - US_22
+  - NL_6
+  - 官方优选_9
   - CMCC-IPV6_9
-  - hx1.ylks0033.dpdns.org_13
-  - hx1.ylks0033.dpdns.org_14
   - CMCC-IPV6_10
   - CMCC-IPV6_11
-  - hx1.ylks0033.dpdns.org_15
+  - FR_1
   - CMCC-IPV6_12
-  - hx1.ylks0033.dpdns.org_16
-  - hx1.ylks0033.dpdns.org_17
-  - 官方优选_2
   - CMCC-IPV6_13
   - CMCC-IPV6_14
   - CMCC-IPV6_15
-  - hx1.ylks0033.dpdns.org_18
-  - hx1.ylks0033.dpdns.org_19
-  - CMCC-IPV6_16
-  - hx1.ylks0033.dpdns.org_20
-  - US_2
-  - CT_1
-  - hx1.ylks0033.dpdns.org_21
-  - CMCC-IPV6_17
-  - hx1.ylks0033.dpdns.org_22
-  - CMCC-IPV6_18
-  - CMCC-IPV6_19
-  - hx1.ylks0033.dpdns.org_23
-  - hx1.ylks0033.dpdns.org_24
-  - hx1.ylks0033.dpdns.org_25
-  - hx1.ylks0033.dpdns.org_26
-  - 官方优选_3
-  - hx1.ylks0033.dpdns.org_27
-  - hx1.ylks0033.dpdns.org_28
-  - hx1.ylks0033.dpdns.org_29
-  - hx1.ylks0033.dpdns.org_30
-  - hx1.ylks0033.dpdns.org_31
-  - CMCC-IPV6_20
-  - CMCC-IPV6_21
-  - hx1.ylks0033.dpdns.org_32
-  - 官方优选_4
-  - hx1.ylks0033.dpdns.org_33
-  - 官方优选_5
-  - CT_2
-  - 官方优选_6
-  - hx1.ylks0033.dpdns.org_34
-  - hx1.ylks0033.dpdns.org_35
-  - CMCC-IPV6_22
-  - hx1.ylks0033.dpdns.org_36
-  - CMCC-IPV6_23
-  - hx1.ylks0033.dpdns.org_37
-  - CT_3
-  - CT_4
-  - CMCC-IPV6_24
-  - hx1.ylks0033.dpdns.org_38
-  - hx1.ylks0033.dpdns.org_39
-  - hx1.ylks0033.dpdns.org_40
-  - 🇺🇸US_3
-  - CMCC-IPV6_25
-  - 官方优选_7
-  - CT_5
-  - CT_6
-  - hx1.ylks0033.dpdns.org_41
-  - hx1.ylks0033.dpdns.org_42
-  - hx1.ylks0033.dpdns.org_43
-  - hx1.ylks0033.dpdns.org_44
-  - 加入我的频道t.me/CMLiussss解锁更多优选节点
-  - hx1.ylks0033.dpdns.org_45
-  - hx1.ylks0033.dpdns.org_46
-  - CMCC-IPV6_26
-  - 官方优选_8
-  - IPV6_1
-  - CMCC-IPV6_27
-  - hx1.ylks0033.dpdns.org_47
-  - 官方优选_9
-  - CMCC-IPV6_28
   - 官方优选_10
-  - US_3
-  - CT_7
-  - 🇺🇸US_4
-  - hx1.ylks0033.dpdns.org_48
-  - CMCC-IPV6_29
-  - hx1.ylks0033.dpdns.org_49
-  - 官方优选_11
-  - 官方优选_12
-  - CMCC-IPV6_30
-  - hx1.ylks0033.dpdns.org_50
-  - 官方优选_13
-  - hx1.ylks0033.dpdns.org_51
-  - 官方优选_14
-  - 官方优选_15
-  - CMCC-IPV6_31
-  - CT_8
-  - CMCC-IPV6_32
-  - hx1.ylks0033.dpdns.org_52
-  - hx1.ylks0033.dpdns.org_53
-  - 官方优选_16
-  - hx1.ylks0033.dpdns.org_54
-  - 🇺🇸US_5
-  - hx1.ylks0033.dpdns.org_55
-  - 官方优选_17
-  - CMCC-IPV6_33
-  - 官方优选_18
-  - CT_9
-  - 官方优选_19
-  - CMCC-IPV6_34
-  - hx1.ylks0033.dpdns.org_56
-  - hx1.ylks0033.dpdns.org_57
-  - NL_1
-  - hx1.ylks0033.dpdns.org_58
-  - CMCC-IPV6_35
-  - hx1.ylks0033.dpdns.org_59
-  - NL_2
+  - HK_11
   - PL_1
-  - hx1.ylks0033.dpdns.org_60
-  - 官方优选_20
-  - US_4
-  - CA
-  - hx1.ylks0033.dpdns.org_61
+  - NL_7
+  - CMCC-IPV6_16
+  - NL_8
+  - GB_1
+  - CMCC-IPV6_17
+  - HK_12
+  - CMCC-IPV6_18
+  - FR_2
+  - TW_5
+  - HK_13
+  - CMCC-IPV6_19
+  - HK_14
+  - FR_3
+  - CMCC-IPV6_20
   - PL_2
-  - 🇺🇸US_6
-  - US_5
-  - US_6
-  - JP_2
-  - PL_3
-  - PL_4
-  - US_7
-  - IPV6_2
-  - US_8
-  - IPV6_3
-  - KR_5
+  - US_23
+  - DE_1
+  - HK_15
+  - CMCC-IPV6_21
+  - CMCC-IPV6_22
+  - CMCC-IPV6_23
+  - DE_2
+  - US_24
+  - US_25
+  - CMCC-IPV6_24
+  - DE_3
+  - DE_4
+  - GB_2
+  - DE_5
+  - DE_6
+  - DE_7
+  - FR_4
+  - DE_8
+  - CMCC-IPV6_25
+  - CN_1
+  - HK_16
+  - DE_9
+  - CMCC-IPV6_26
+  - CMCC-IPV6_27
+  - CN_2
+  - CMCC-IPV6_28
+  - CMCC-IPV6_29
+  - DE_10
+  - IN_1
+  - CMCC-IPV6_30
+  - CMCC-IPV6_31
+  - CMCC-IPV6_32
+  - IN_2
+  - HK_17
+  - HK_18
+  - HK_19
+  - HK_20
+  - US_26
+  - CMCC-IPV6_33
+  - CMCC-IPV6_34
   type: select
 - name: 🎯 全球直连
   proxies:
@@ -3558,181 +3038,155 @@ proxy-groups:
   - 🚀 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
+  - HK_1
+  - SG_1
+  - HK_2
+  - US_1
+  - SG_2
+  - HK_3
+  - HK_4
+  - US_2
+  - HK_5
+  - JP_1
+  - HK_6
   - TW_1
-  - TW_2
+  - US_3
+  - US_4
   - KR_1
+  - US_5
+  - HK_7
   - KR_2
   - KR_3
-  - hx1.ylks0033.dpdns.org_1
-  - hx1.ylks0033.dpdns.org_2
-  - CMCC_1
   - KR_4
-  - 🇺🇸US_1
-  - CMCC_2
-  - CMCC_3
-  - hx1.ylks0033.dpdns.org_3
-  - CMCC_4
-  - 🇭🇰HK
-  - 🇺🇸US_2
-  - hx1.ylks0033.dpdns.org_4
-  - CMCC_5
-  - CMCC_6
-  - CMCC_7
-  - CMCC_8
-  - CMCC_9
-  - hx1.ylks0033.dpdns.org_5
-  - hx1.ylks0033.dpdns.org_6
-  - CMCC_10
-  - CMCC_11
-  - CMCC_12
-  - CMCC_13
+  - SG_3
+  - TW_2
+  - SG_4
+  - TW_3
+  - KR_5
+  - KR_6
+  - KR_7
+  - NL_1
+  - NL_2
+  - US_6
+  - US_7
+  - NL_3
+  - US_8
+  - NL_4
+  - US_9
+  - US_10
+  - US_11
+  - US_12
+  - JP_2
+  - US_13
+  - 64.49.46.181_1
+  - US_14
+  - US_15
+  - US_16
+  - 64.49.47.64_1
+  - 23.169.184.123_1
+  - HK_8
+  - JP_3
+  - JP_4
   - CMCC-IPV6_1
+  - HK_9
+  - 64.49.47.64_2
+  - 23.169.184.123_2
+  - JP_5
+  - US_17
+  - US_18
   - CMCC-IPV6_2
-  - hx1.ylks0033.dpdns.org_7
-  - hx1.ylks0033.dpdns.org_8
-  - hx1.ylks0033.dpdns.org_9
-  - hx1.ylks0033.dpdns.org_10
+  - 64.49.46.181_2
+  - 官方优选_1
+  - US_19
+  - 美国_1
   - CMCC-IPV6_3
+  - US_20
+  - 官方优选_2
+  - 官方优选_3
+  - US_21
+  - 美国_2
   - CMCC-IPV6_4
+  - TW_4
+  - 官方优选_4
+  - NL_5
   - CMCC-IPV6_5
   - CMCC-IPV6_6
-  - hx1.ylks0033.dpdns.org_11
-  - t.me/am_clubsTG群(加入解锁免费节点)
-  - US_1
   - CMCC-IPV6_7
+  - 官方优选_5
+  - HK_10
+  - 官方优选_6
+  - 官方优选_7
   - CMCC-IPV6_8
-  - CMCC_14
-  - hx1.ylks0033.dpdns.org_12
-  - JP_1
-  - 官方优选_1
+  - 官方优选_8
+  - US_22
+  - NL_6
+  - 官方优选_9
   - CMCC-IPV6_9
-  - hx1.ylks0033.dpdns.org_13
-  - hx1.ylks0033.dpdns.org_14
   - CMCC-IPV6_10
   - CMCC-IPV6_11
-  - hx1.ylks0033.dpdns.org_15
+  - FR_1
   - CMCC-IPV6_12
-  - hx1.ylks0033.dpdns.org_16
-  - hx1.ylks0033.dpdns.org_17
-  - 官方优选_2
   - CMCC-IPV6_13
   - CMCC-IPV6_14
   - CMCC-IPV6_15
-  - hx1.ylks0033.dpdns.org_18
-  - hx1.ylks0033.dpdns.org_19
-  - CMCC-IPV6_16
-  - hx1.ylks0033.dpdns.org_20
-  - US_2
-  - CT_1
-  - hx1.ylks0033.dpdns.org_21
-  - CMCC-IPV6_17
-  - hx1.ylks0033.dpdns.org_22
-  - CMCC-IPV6_18
-  - CMCC-IPV6_19
-  - hx1.ylks0033.dpdns.org_23
-  - hx1.ylks0033.dpdns.org_24
-  - hx1.ylks0033.dpdns.org_25
-  - hx1.ylks0033.dpdns.org_26
-  - 官方优选_3
-  - hx1.ylks0033.dpdns.org_27
-  - hx1.ylks0033.dpdns.org_28
-  - hx1.ylks0033.dpdns.org_29
-  - hx1.ylks0033.dpdns.org_30
-  - hx1.ylks0033.dpdns.org_31
-  - CMCC-IPV6_20
-  - CMCC-IPV6_21
-  - hx1.ylks0033.dpdns.org_32
-  - 官方优选_4
-  - hx1.ylks0033.dpdns.org_33
-  - 官方优选_5
-  - CT_2
-  - 官方优选_6
-  - hx1.ylks0033.dpdns.org_34
-  - hx1.ylks0033.dpdns.org_35
-  - CMCC-IPV6_22
-  - hx1.ylks0033.dpdns.org_36
-  - CMCC-IPV6_23
-  - hx1.ylks0033.dpdns.org_37
-  - CT_3
-  - CT_4
-  - CMCC-IPV6_24
-  - hx1.ylks0033.dpdns.org_38
-  - hx1.ylks0033.dpdns.org_39
-  - hx1.ylks0033.dpdns.org_40
-  - 🇺🇸US_3
-  - CMCC-IPV6_25
-  - 官方优选_7
-  - CT_5
-  - CT_6
-  - hx1.ylks0033.dpdns.org_41
-  - hx1.ylks0033.dpdns.org_42
-  - hx1.ylks0033.dpdns.org_43
-  - hx1.ylks0033.dpdns.org_44
-  - 加入我的频道t.me/CMLiussss解锁更多优选节点
-  - hx1.ylks0033.dpdns.org_45
-  - hx1.ylks0033.dpdns.org_46
-  - CMCC-IPV6_26
-  - 官方优选_8
-  - IPV6_1
-  - CMCC-IPV6_27
-  - hx1.ylks0033.dpdns.org_47
-  - 官方优选_9
-  - CMCC-IPV6_28
   - 官方优选_10
-  - US_3
-  - CT_7
-  - 🇺🇸US_4
-  - hx1.ylks0033.dpdns.org_48
-  - CMCC-IPV6_29
-  - hx1.ylks0033.dpdns.org_49
-  - 官方优选_11
-  - 官方优选_12
-  - CMCC-IPV6_30
-  - hx1.ylks0033.dpdns.org_50
-  - 官方优选_13
-  - hx1.ylks0033.dpdns.org_51
-  - 官方优选_14
-  - 官方优选_15
-  - CMCC-IPV6_31
-  - CT_8
-  - CMCC-IPV6_32
-  - hx1.ylks0033.dpdns.org_52
-  - hx1.ylks0033.dpdns.org_53
-  - 官方优选_16
-  - hx1.ylks0033.dpdns.org_54
-  - 🇺🇸US_5
-  - hx1.ylks0033.dpdns.org_55
-  - 官方优选_17
-  - CMCC-IPV6_33
-  - 官方优选_18
-  - CT_9
-  - 官方优选_19
-  - CMCC-IPV6_34
-  - hx1.ylks0033.dpdns.org_56
-  - hx1.ylks0033.dpdns.org_57
-  - NL_1
-  - hx1.ylks0033.dpdns.org_58
-  - CMCC-IPV6_35
-  - hx1.ylks0033.dpdns.org_59
-  - NL_2
+  - HK_11
   - PL_1
-  - hx1.ylks0033.dpdns.org_60
-  - 官方优选_20
-  - US_4
-  - CA
-  - hx1.ylks0033.dpdns.org_61
+  - NL_7
+  - CMCC-IPV6_16
+  - NL_8
+  - GB_1
+  - CMCC-IPV6_17
+  - HK_12
+  - CMCC-IPV6_18
+  - FR_2
+  - TW_5
+  - HK_13
+  - CMCC-IPV6_19
+  - HK_14
+  - FR_3
+  - CMCC-IPV6_20
   - PL_2
-  - 🇺🇸US_6
-  - US_5
-  - US_6
-  - JP_2
-  - PL_3
-  - PL_4
-  - US_7
-  - IPV6_2
-  - US_8
-  - IPV6_3
-  - KR_5
+  - US_23
+  - DE_1
+  - HK_15
+  - CMCC-IPV6_21
+  - CMCC-IPV6_22
+  - CMCC-IPV6_23
+  - DE_2
+  - US_24
+  - US_25
+  - CMCC-IPV6_24
+  - DE_3
+  - DE_4
+  - GB_2
+  - DE_5
+  - DE_6
+  - DE_7
+  - FR_4
+  - DE_8
+  - CMCC-IPV6_25
+  - CN_1
+  - HK_16
+  - DE_9
+  - CMCC-IPV6_26
+  - CMCC-IPV6_27
+  - CN_2
+  - CMCC-IPV6_28
+  - CMCC-IPV6_29
+  - DE_10
+  - IN_1
+  - CMCC-IPV6_30
+  - CMCC-IPV6_31
+  - CMCC-IPV6_32
+  - IN_2
+  - HK_17
+  - HK_18
+  - HK_19
+  - HK_20
+  - US_26
+  - CMCC-IPV6_33
+  - CMCC-IPV6_34
   type: select
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
