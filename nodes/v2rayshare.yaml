@@ -32,13 +32,26 @@ log-level: info
 mixed-port: 7890
 mode: rule
 proxies:
-- name: 🇳🇱_NL_荷兰
-  password: LG7HKcZFIJ
-  port: 110
-  server: sws.ftpcomand.com
-  skip-cert-verify: false
-  sni: sws.ftpcomand.com
-  type: trojan
+- alterId: 2
+  cipher: auto
+  name: 🇨🇳_CN_中国_1
+  network: ws
+  port: 30837
+  server: v37.heduian.link
+  skip-cert-verify: true
+  sni: ''
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  ws-opts:
+    headers:
+      host: v37.heduian.link
+    path: /oooo
+- cipher: aes-128-gcm
+  name: 未知
+  password: 01721e43-5389-4f97-b21c-900abb2bda9e
+  port: 12024
+  server: awes35lesl.blhao0o.dpdns.org
+  type: ss
 - alterId: 2
   cipher: auto
   name: 🇨🇳_CN_中国->🇬🇧_GB_英国
@@ -51,6 +64,54 @@ proxies:
     headers:
       host: v36.heduian.link
     path: /oooo
+- cipher: aes-256-cfb
+  name: 🇮🇸_IS_冰岛
+  password: f8f7aCzcPKbsF8p3
+  port: 989
+  server: 37.235.49.168
+  type: ss
+- cipher: aes-256-cfb
+  name: 🇺🇸_US_美国_1
+  password: f8f7aCzcPKbsF8p3
+  port: 989
+  server: 38.165.233.93
+  type: ss
+- cipher: aes-256-cfb
+  name: 🇬🇧_GB_英国
+  password: f8f7aCzcPKbsF8p3
+  port: 989
+  server: 51.15.17.169
+  type: ss
+- cipher: aes-256-cfb
+  name: 🇺🇸_US_美国_2
+  password: f8f7aCzcPKbsF8p3
+  port: 989
+  server: 38.54.57.90
+  type: ss
+- cipher: aes-256-gcm
+  name: 🇺🇸_US_美国->🇨🇳_CN_中国
+  password: iUB0923RBA
+  port: 30067
+  server: 154.3.8.151
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 🇷🇺_RU_俄罗斯->🇲🇩_MD_摩尔多瓦
+  password: JTzjwNa8A8ajiqtD6sdytP
+  port: 443
+  server: 147.45.51.30
+  type: ss
+- cipher: rc4-md5
+  name: 🇩🇪_DE_德国
+  password: 14fFPrbezE3HDZzsMOr6
+  port: 8080
+  server: 193.108.119.230
+  type: ss
+- cipher: aes-256-cfb
+  name: 🇲🇩_MD_摩尔多瓦
+  password: f8f7aCzcPKbsF8p3
+  port: 989
+  server: 91.132.94.200
+  type: ss
 - alterId: 0
   cipher: auto
   name: 🇩🇰_DK_丹麦->🇺🇸_US_美国
@@ -63,53 +124,35 @@ proxies:
     headers:
       host: cdn-node-oss-99.paofu.de
     path: /profile/telegram@ssrsub
-- alterId: 2
-  cipher: auto
-  name: 🇨🇳_CN_中国->🇺🇸_US_美国_1
-  network: ws
-  port: 30833
-  server: v33.heduian.link
-  skip-cert-verify: true
-  sni: ''
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  ws-opts:
-    headers:
-      host: v33.heduian.link
-    path: /oooo
-- cipher: aes-128-gcm
-  name: 未知_1
-  password: 01721e43-5389-4f97-b21c-900abb2bda9e
-  port: 12028
-  server: awes35lesl.blhao0o.dpdns.org
-  type: ss
-- cipher: aes-128-gcm
-  name: 未知_2
-  password: 01721e43-5389-4f97-b21c-900abb2bda9e
-  port: 12024
-  server: awes35lesl.blhao0o.dpdns.org
+- cipher: chacha20-ietf-poly1305
+  name: 🇺🇸_US_美国->🇲🇩_MD_摩尔多瓦
+  password: f8f7aCzcPKbsF8p3
+  port: 990
+  server: 104.192.226.106
   type: ss
 - cipher: aes-256-cfb
-  name: 🇲🇩_MD_摩尔多瓦
+  name: 🇰🇷_KR_韩国
   password: f8f7aCzcPKbsF8p3
   port: 989
-  server: 185.153.197.5
+  server: 154.223.16.212
   type: ss
-- alterId: 0
-  cipher: auto
-  name: 🇺🇸_US_美国->🇪🇸_ES_西班牙
-  network: ws
-  port: 80
-  server: test3.flha.ru
-  type: vmess
-  uuid: 9a81340d-f81b-4c76-8abb-f4d305c535c0
-  ws-opts:
-    headers:
-      host: test3.flha.ru
-    path: /9a81340d-f81b-4c76-8abb-f4d305c535c0-vmess
+- cipher: aes-256-cfb
+  name: 🇷🇺_RU_俄罗斯
+  password: f8f7aCzcPKbsF8p3
+  port: 989
+  server: 185.231.233.112
+  type: ss
+- cipher: aes-128-cfb
+  name: 🇳🇱_NL_荷兰
+  obfs: http_post
+  password: $$Turb0VPN$$
+  port: 443
+  protocol: auth_aes128_md5
+  server: ssca.irundns.net
+  type: ssr
 - alterId: 2
   cipher: auto
-  name: 🇨🇳_CN_中国->🇺🇸_US_美国_2
+  name: 🇨🇳_CN_中国_2
   network: ws
   port: 30829
   server: v29.heduian.link
@@ -119,59 +162,59 @@ proxies:
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   ws-opts:
     headers:
-      host: ocbc.com
+      host: v29.heduian.link
     path: /oooo
 - cipher: aes-256-cfb
-  name: 🇰🇷_KR_韩国->🇯🇵_JP_日本
-  password: qwerREWQ@@
-  port: 15098
-  server: p222.panda001.net
+  name: 🇺🇸_US_美国_3
+  password: f8f7aCzcPKbsF8p3
+  port: 989
+  server: 104.192.226.106
   type: ss
-- alterId: 2
-  cipher: auto
-  name: 🇨🇳_CN_中国->🇺🇸_US_美国_3
-  network: ws
-  port: 30837
-  server: v37.heduian.link
-  skip-cert-verify: true
-  sni: ''
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  ws-opts:
-    headers:
-      host: v37.heduian.link
-    path: /oooo
 proxy-groups:
 - name: 🚀 节点选择
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - 🇳🇱_NL_荷兰
+  - 🇨🇳_CN_中国_1
+  - 未知
   - 🇨🇳_CN_中国->🇬🇧_GB_英国
-  - 🇩🇰_DK_丹麦->🇺🇸_US_美国
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_1
-  - 未知_1
-  - 未知_2
+  - 🇮🇸_IS_冰岛
+  - 🇺🇸_US_美国_1
+  - 🇬🇧_GB_英国
+  - 🇺🇸_US_美国_2
+  - 🇺🇸_US_美国->🇨🇳_CN_中国
+  - 🇷🇺_RU_俄罗斯->🇲🇩_MD_摩尔多瓦
+  - 🇩🇪_DE_德国
   - 🇲🇩_MD_摩尔多瓦
-  - 🇺🇸_US_美国->🇪🇸_ES_西班牙
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_2
-  - 🇰🇷_KR_韩国->🇯🇵_JP_日本
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_3
+  - 🇩🇰_DK_丹麦->🇺🇸_US_美国
+  - 🇺🇸_US_美国->🇲🇩_MD_摩尔多瓦
+  - 🇰🇷_KR_韩国
+  - 🇷🇺_RU_俄罗斯
+  - 🇳🇱_NL_荷兰
+  - 🇨🇳_CN_中国_2
+  - 🇺🇸_US_美国_3
   type: select
 - interval: 300
   name: ♻️ 自动选择
   proxies:
-  - 🇳🇱_NL_荷兰
+  - 🇨🇳_CN_中国_1
+  - 未知
   - 🇨🇳_CN_中国->🇬🇧_GB_英国
-  - 🇩🇰_DK_丹麦->🇺🇸_US_美国
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_1
-  - 未知_1
-  - 未知_2
+  - 🇮🇸_IS_冰岛
+  - 🇺🇸_US_美国_1
+  - 🇬🇧_GB_英国
+  - 🇺🇸_US_美国_2
+  - 🇺🇸_US_美国->🇨🇳_CN_中国
+  - 🇷🇺_RU_俄罗斯->🇲🇩_MD_摩尔多瓦
+  - 🇩🇪_DE_德国
   - 🇲🇩_MD_摩尔多瓦
-  - 🇺🇸_US_美国->🇪🇸_ES_西班牙
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_2
-  - 🇰🇷_KR_韩国->🇯🇵_JP_日本
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_3
+  - 🇩🇰_DK_丹麦->🇺🇸_US_美国
+  - 🇺🇸_US_美国->🇲🇩_MD_摩尔多瓦
+  - 🇰🇷_KR_韩国
+  - 🇷🇺_RU_俄罗斯
+  - 🇳🇱_NL_荷兰
+  - 🇨🇳_CN_中国_2
+  - 🇺🇸_US_美国_3
   tolerance: 5000
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -191,17 +234,24 @@ proxy-groups:
   - 🚀 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
-  - 🇳🇱_NL_荷兰
+  - 🇨🇳_CN_中国_1
+  - 未知
   - 🇨🇳_CN_中国->🇬🇧_GB_英国
-  - 🇩🇰_DK_丹麦->🇺🇸_US_美国
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_1
-  - 未知_1
-  - 未知_2
+  - 🇮🇸_IS_冰岛
+  - 🇺🇸_US_美国_1
+  - 🇬🇧_GB_英国
+  - 🇺🇸_US_美国_2
+  - 🇺🇸_US_美国->🇨🇳_CN_中国
+  - 🇷🇺_RU_俄罗斯->🇲🇩_MD_摩尔多瓦
+  - 🇩🇪_DE_德国
   - 🇲🇩_MD_摩尔多瓦
-  - 🇺🇸_US_美国->🇪🇸_ES_西班牙
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_2
-  - 🇰🇷_KR_韩国->🇯🇵_JP_日本
-  - 🇨🇳_CN_中国->🇺🇸_US_美国_3
+  - 🇩🇰_DK_丹麦->🇺🇸_US_美国
+  - 🇺🇸_US_美国->🇲🇩_MD_摩尔多瓦
+  - 🇰🇷_KR_韩国
+  - 🇷🇺_RU_俄罗斯
+  - 🇳🇱_NL_荷兰
+  - 🇨🇳_CN_中国_2
+  - 🇺🇸_US_美国_3
   type: select
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
