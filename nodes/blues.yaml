@@ -4,149 +4,11 @@ log-level: info
 mode: Rule
 port: 7890
 proxies:
-- name: HK_1
+- name: TW_1
   network: ws
-  port: 8443
-  server: 8.217.122.24
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: HK_2
-  network: ws
-  port: 443
-  server: 8.223.12.202
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: HK_3
-  network: ws
-  port: 4443
-  server: 101.32.209.46
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: HK_4
-  network: ws
-  port: 9443
-  server: 47.243.177.147
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: HK_5
-  network: ws
-  port: 2086
-  server: 149.104.30.232
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: FUK
-  network: ws
-  password: Aimer
-  port: 21268
-  server: 125.138.28.68
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: NRT
-  network: ws
-  password: Aimer
-  port: 443
-  server: 158.101.145.82
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: KR_1
-  network: ws
-  port: 21268
-  server: 125.138.28.68
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: JP_1
-  network: ws
-  port: 443
-  server: 138.3.222.33
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: HK_6
-  network: ws
-  port: 12902
-  server: 8.210.96.197
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: JP_2
-  network: ws
-  port: 12333
-  server: 121.80.244.179
-  servername: pv1.ylka.dpdns.org
+  port: 81
+  server: 210.61.97.241
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -154,692 +16,39 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: pv1.ylka.dpdns.org
-    path: /?ed=2560
-- name: HK_7
-  network: ws
-  port: 12902
-  server: 8.210.96.197
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: JP_3
-  network: ws
-  port: 443
-  server: 158.101.145.82
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: JP_4
-  network: ws
-  port: 443
-  server: 140.245.88.197
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SG_1
-  network: ws
-  port: 8081
-  server: 4.194.131.141
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: JP_5
-  network: ws
-  port: 443
-  server: 158.101.77.33
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: KR_2
-  network: ws
-  port: 12335
-  server: 121.170.103.94
-  servername: pv.ylka.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: pv.ylka.dpdns.org
-    path: /?ed=2560
-- name: SG_2
-  network: ws
-  port: 443
-  server: 8.222.237.72
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: JP_6
-  network: ws
-  port: 47001
-  server: 158.101.154.245
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SG_3
-  network: ws
-  port: 443
-  server: 20.195.15.202
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: KR_3
-  network: ws
-  port: 12335
-  server: 121.170.103.94
-  servername: pv1.ylka.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: pv1.ylka.dpdns.org
-    path: /?ed=2560
-- name: JP_7
-  network: ws
-  port: 443
-  server: 158.101.140.206
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: JP_8
-  network: ws
-  port: 443
-  server: 158.101.145.82
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: PL_1
-  network: ws
-  port: 443
-  server: 185.188.147.79
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: PL_2
-  network: ws
-  port: 443
-  server: 185.188.147.79
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: PL_3
-  network: ws
-  port: 443
-  server: 185.188.147.79
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: LAX
-  network: ws
-  password: Aimer
-  port: 443
-  server: 34.94.2.102
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: KR_4
-  network: ws
-  port: 12268
-  server: 14.39.43.121
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: PL_4
-  network: ws
-  port: 443
-  server: 217.30.10.55
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: ICN_1
-  network: ws
-  password: Aimer
-  port: 50001
-  server: 182.209.106.51
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: KR_5
-  network: ws
-  port: 50000
-  server: 220.73.250.40
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: ICN_2
-  network: ws
-  password: Aimer
-  port: 12268
-  server: 14.39.43.121
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: KR_6
-  network: ws
-  port: 50000
-  server: 14.55.223.70
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: KR_7
-  network: ws
-  port: 50001
-  server: 182.209.106.51
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: KR_8
-  network: ws
-  port: 50000
-  server: 221.161.207.216
-  servername: pv1.ylka.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: pv1.ylka.dpdns.org
-    path: /?ed=2560
-- name: KR_9
-  network: ws
-  port: 50001
-  server: 119.203.123.80
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: KR_10
-  network: ws
-  port: 50009
-  server: 222.114.29.162
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: KR_11
-  network: ws
-  port: 50000
-  server: 221.161.207.216
-  servername: pv.ylka.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: pv.ylka.dpdns.org
-    path: /?ed=2560
-- name: SJC_1
-  network: ws
-  password: Aimer
-  port: 42522
-  server: 107.174.192.67
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: KR_12
-  network: ws
-  port: 12270
-  server: 119.200.48.55
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: KR_13
-  network: ws
-  port: 50009
-  server: 222.114.29.162
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: KR_14
-  network: ws
-  port: 12536
-  server: 175.215.205.40
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: ICN_3
-  network: ws
-  password: Aimer
-  port: 50009
-  server: 222.114.29.162
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: KR_15
-  network: ws
-  port: 50000
-  server: 220.74.94.146
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: KR_16
-  network: ws
-  port: 50000
-  server: 119.193.54.164
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: KR_17
-  network: ws
-  port: 12536
-  server: 175.215.205.40
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: PL_5
-  network: ws
-  port: 443
-  server: 176.105.253.98
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: CMCC-IPV6_1
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: pv1.ylka.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: pv1.ylka.dpdns.org
-    path: /?ed=2560
-- name: PL_6
-  network: ws
-  port: 443
-  server: 176.105.253.98
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_1
-  network: ws
-  port: 443
-  server: thaddeus.ns.cloudflare.com
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: CMCC-IPV6_2
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: pv1.ylka.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: pv1.ylka.dpdns.org
-    path: /?ed=2560
-- name: 官方优选_2
-  network: ws
-  port: 443
-  server: arvind.ns.cloudflare.com
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_3
-  network: ws
-  password: Aimer
-  port: 443
-  server: kip.ns.cloudflare.com
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 64.49.46.181_1
-  network: ws
-  port: 443
-  server: 64.49.46.181
-  servername: pv1.ylka.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: pv1.ylka.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_3
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: pv.ylka.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: pv.ylka.dpdns.org
-    path: /?ed=2560
-- name: 官方优选_4
-  network: ws
-  port: 443
-  server: pranab.ns.cloudflare.com
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: CMCC-IPV6_4
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: pv1.ylka.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: pv1.ylka.dpdns.org
-    path: /?ed=2560
-- name: SJC_2
-  network: ws
-  password: Aimer
-  port: 8443
-  server: 104.129.167.255
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: CMCC-IPV6_5
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: pv1.ylka.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: pv1.ylka.dpdns.org
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
 - name: US_1
   network: ws
-  port: 50000
-  server: 38.148.253.172
-  servername: edgc.esslh.filegear-sg.me
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: 104.17.71.31
   skip-cert-verify: true
-  tls: true
-  type: vless
+  sni: ns.ylka.dpdns.org
+  type: trojan
   udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
   ws-opts:
     headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 美国_1
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: 🇺🇸US_1
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 2096
+  server: 104.17.128.1
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: CMCC_1
   network: ws
   port: 443
-  server: join.my.telegram.channel.cmliussss.to.unlock.more.premium.nodes.cf.090227.xyz
-  servername: pv1.ylka.dpdns.org
+  server: 104.19.150.163
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -847,82 +56,278 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: pv1.ylka.dpdns.org
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
-- name: us
+- name: CMCC_2
   network: ws
   port: 443
-  server: bestcf.030101.xyz
-  servername: edgc.esslh.filegear-sg.me
+  server: 104.18.83.92
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: US_2
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_3
   network: ws
   port: 443
-  server: 192.9.139.160
-  servername: edgc.esslh.filegear-sg.me
+  server: 104.16.246.132
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_3
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_4
   network: ws
-  password: Aimer
   port: 443
-  server: 176.124.223.92
+  server: 104.16.242.72
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_5
+  network: ws
+  port: 443
+  server: 104.19.144.212
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_6
+  network: ws
+  port: 443
+  server: 104.18.86.131
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_7
+  network: ws
+  port: 443
+  server: 104.19.150.163
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_8
+  network: ws
+  port: 443
+  server: 104.17.102.95
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_9
+  network: ws
+  port: 443
+  server: 104.17.219.208
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: 🇭🇰HK_1
+  network: ws
+  port: 443
+  server: 104.17.68.85
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: TW_2
+  network: ws
+  port: 81
+  server: 210.61.97.241
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_10
+  network: ws
+  port: 443
+  server: 104.17.101.175
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_11
+  network: ws
+  port: 443
+  server: 104.17.189.171
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: 🇭🇰HK_2
+  network: ws
+  port: 443
+  server: 104.17.71.31
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: 🇭🇰HK_3
+  network: ws
+  port: 443
+  server: 104.17.68.85
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: 🇭🇰HK_4
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: 104.17.68.85
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
   type: trojan
   udp: true
   ws-opts:
     headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: PL_7
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: CMCC_12
   network: ws
   port: 443
-  server: 45.144.48.48
-  servername: edgc.aimercc.dpdns.org
+  server: 104.16.246.173
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: US_3
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_13
   network: ws
   port: 443
-  server: bestcf.030101.xyz
-  servername: edgc.aimercc.dpdns.org
+  server: 104.17.219.208
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_14
+  network: ws
+  port: 443
+  server: 104.17.102.95
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_15
+  network: ws
+  port: 443
+  server: 104.18.86.131
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
 - name: NL_1
   network: ws
   port: 443
   server: 158.101.214.54
-  servername: pv.ylka.dpdns.org
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -930,39 +335,1015 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: pv.ylka.dpdns.org
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
-- name: SJC_4
+- name: NL_2
   network: ws
-  password: Aimer
   port: 443
-  server: 5.182.84.244
+  server: 158.101.214.54
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_16
+  network: ws
+  port: 443
+  server: 104.18.94.107
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_17
+  network: ws
+  port: 443
+  server: 104.19.144.212
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: 🇭🇰HK_5
+  network: ws
+  port: 443
+  server: 104.17.71.31
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: CMCC_18
+  network: ws
+  port: 443
+  server: 104.16.242.72
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_19
+  network: ws
+  port: 443
+  server: 104.17.100.185
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: CH_1
+  network: ws
+  port: 443
+  server: 140.238.212.95
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_20
+  network: ws
+  port: 443
+  server: 104.17.110.70
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_21
+  network: ws
+  port: 443
+  server: 104.18.94.107
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_22
+  network: ws
+  port: 443
+  server: 104.17.210.171
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_23
+  network: ws
+  port: 443
+  server: 104.17.101.175
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: 172.67.243.218_1
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: 172.67.243.218
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
   type: trojan
   udp: true
   ws-opts:
     headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_5
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: CMCC-IPV6_1
   network: ws
-  password: Aimer
-  port: 443
-  server: 154.219.5.55
+  port: 4700
+  server: '[2606'
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_24
+  network: ws
+  port: 443
+  server: 104.17.215.102
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: 🇭🇰HK_6
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: 104.17.68.85
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
   type: trojan
   udp: true
   ws-opts:
     headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: CMCC_25
+  network: ws
+  port: 443
+  server: 104.18.82.55
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: nikon.ns.cloudflare.com_1
+  network: ws
+  port: 443
+  server: nikon.ns.cloudflare.com
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: CMCC_26
+  network: ws
+  port: 443
+  server: 104.17.210.171
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_27
+  network: ws
+  port: 443
+  server: 104.17.215.102
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: nikon.ns.cloudflare.com_2
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: nikon.ns.cloudflare.com
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: ip.sb_1
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: ip.sb
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: nikon.ns.cloudflare.com_3
+  network: ws
+  port: 443
+  server: nikon.ns.cloudflare.com
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: ip.sb_2
+  network: ws
+  port: 443
+  server: ip.sb
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: shopify.com_1
+  network: ws
+  port: 443
+  server: shopify.com
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: sullivan.ns.cloudflare.com_1
+  network: ws
+  port: 443
+  server: sullivan.ns.cloudflare.com
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: 🇭🇰HK_7
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: 104.17.71.31
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: IPV6_1
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 4700
+  server: '[2606'
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: CT_1
+  network: ws
+  port: 443
+  server: 162.159.153.184
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: 🇺🇸US_2
+  network: ws
+  port: 2096
+  server: 104.17.128.1
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: CMCC-IPV6_2
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_28
+  network: ws
+  port: 443
+  server: 104.17.189.171
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: IPV6_2
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 4700
+  server: '[2606'
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: 162.159.36.104_1
+  network: ws
+  port: 443
+  server: 162.159.36.104
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: shopify.com_2
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: shopify.com
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: sullivan.ns.cloudflare.com_2
+  network: ws
+  port: 443
+  server: sullivan.ns.cloudflare.com
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: CMCC_29
+  network: ws
+  port: 443
+  server: 104.16.246.173
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: CT_2
+  network: ws
+  port: 443
+  server: 162.159.153.216
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: shopify.com_3
+  network: ws
+  port: 443
+  server: shopify.com
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: CT_3
+  network: ws
+  port: 443
+  server: 162.159.152.205
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: wilson.ns.cloudflare.com_1
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: wilson.ns.cloudflare.com
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: CT_4
+  network: ws
+  port: 443
+  server: 162.159.152.31
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: 🇺🇸US_3
+  network: ws
+  port: 8443
+  server: 162.159.129.67
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: shopify.com_4
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: shopify.com
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: nikon.ns.cloudflare.com_4
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: nikon.ns.cloudflare.com
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: ip.sb_3
+  network: ws
+  port: 443
+  server: ip.sb
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: sullivan.ns.cloudflare.com_3
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: sullivan.ns.cloudflare.com
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: 172.67.243.218_2
+  network: ws
+  port: 443
+  server: 172.67.243.218
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: US_2
+  network: ws
+  port: 443
+  server: time.is
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: otto.ns.cloudflare.com_1
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: otto.ns.cloudflare.com
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: 172.67.110.232_1
+  network: ws
+  port: 443
+  server: 172.67.110.232
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: CT_5
+  network: ws
+  port: 443
+  server: 162.159.153.209
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: icook.tw_1
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: icook.tw
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: US_3
+  network: ws
+  port: 443
+  server: time.is
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: wilson.ns.cloudflare.com_2
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: wilson.ns.cloudflare.com
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: CMCC_30
+  network: ws
+  port: 443
+  server: 104.17.110.70
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CT_6
+  network: ws
+  port: 443
+  server: 162.159.153.42
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: 172.67.110.232_2
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: 172.67.110.232
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: 🇭🇰HK_8
+  network: ws
+  port: 443
+  server: 103.160.204.59
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: CT_7
+  network: ws
+  port: 443
+  server: 162.159.153.209
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: CT_8
+  network: ws
+  port: 443
+  server: 162.159.152.155
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CT_9
+  network: ws
+  port: 443
+  server: 162.159.153.42
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: 🇺🇸US_4
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 8443
+  server: 162.159.129.67
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: US_4
+  network: ws
+  port: 443
+  server: join.my.telegram.channel.cmliussss.to.unlock.more.premium.nodes.cf.090227.xyz
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: otto.ns.cloudflare.com_2
+  network: ws
+  port: 443
+  server: otto.ns.cloudflare.com
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: 162.159.36.104_2
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: 162.159.36.104
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: ip.sb_4
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: ip.sb
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: CT_10
+  network: ws
+  port: 443
+  server: 162.159.153.184
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: 172.67.110.232_3
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: 172.67.110.232
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: CMCC-IPV6_3
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC-IPV6_4
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: CT_11
+  network: ws
+  port: 443
+  server: 162.159.153.156
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: icook.tw_2
+  network: ws
+  port: 443
+  server: icook.tw
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: CMCC-IPV6_5
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
 - name: CMCC-IPV6_6
   network: ws
   port: 4700
   server: '[2606'
-  servername: pv1.ylka.dpdns.org
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -970,41 +1351,109 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: pv1.ylka.dpdns.org
+      host: ns.ylka.dpdns.org
     path: /?ed=2560
-- name: PL_8
+- name: CT_12
   network: ws
   port: 443
-  server: 45.144.48.48
-  servername: edgc.esslh.filegear-sg.me
+  server: 162.159.152.205
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_5
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: 🇭🇰HK_9
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: 103.160.204.59
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: CT_13
   network: ws
   port: 443
-  server: pranab.ns.cloudflare.com
-  servername: edgc.aimercc.dpdns.org
+  server: 162.159.153.239
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_31
+  network: ws
+  port: 443
+  server: 104.18.83.92
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: otto.ns.cloudflare.com_3
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: otto.ns.cloudflare.com
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: whatismyipaddress.com_1
+  network: ws
+  port: 443
+  server: whatismyipaddress.com
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: CT_14
+  network: ws
+  port: 443
+  server: 162.159.153.144
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
 - name: CMCC-IPV6_7
   network: ws
   port: 4700
   server: '[2606'
-  servername: pv.ylka.dpdns.org
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -1012,13 +1461,40 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: pv.ylka.dpdns.org
+      host: ns.ylka.dpdns.org
     path: /?ed=2560
+- name: CT_15
+  network: ws
+  port: 443
+  server: 162.159.153.217
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: 🇭🇰HK_10
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: 103.160.204.59
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
 - name: CMCC-IPV6_8
   network: ws
   port: 4700
   server: '[2606'
-  servername: pv1.ylka.dpdns.org
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -1026,52 +1502,260 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: pv1.ylka.dpdns.org
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
-- name: ICN_4
+- name: bowen.ns.cloudflare.com_1
   network: ws
-  password: Aimer
-  port: 12536
-  server: 175.215.205.40
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_6
-  network: ws
-  password: Aimer
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   port: 443
-  server: sage.ns.cloudflare.com
+  server: bowen.ns.cloudflare.com
   skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
+  sni: nc.ylka.dpdns.org
   type: trojan
   udp: true
   ws-opts:
     headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: US_4
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: CT_16
   network: ws
-  password: Aimer
   port: 443
-  server: bestcf.030101.xyz
+  server: 162.159.153.217
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: 172.67.110.232_4
+  network: ws
+  port: 443
+  server: 172.67.110.232
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: 🇺🇸US_5
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 8443
+  server: 162.159.129.67
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
   type: trojan
   udp: true
   ws-opts:
     headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: whatismyipaddress.com_2
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: whatismyipaddress.com
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: wilson.ns.cloudflare.com_3
+  network: ws
+  port: 443
+  server: wilson.ns.cloudflare.com
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: IPV6_3
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: US_5
+  network: ws
+  port: 443
+  server: join.my.telegram.channel.cmliussss.to.unlock.more.premium.nodes.cf.090227.xyz
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: www.ddwhm.com_1
+  network: ws
+  port: 443
+  server: www.ddwhm.com
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: www.ddwhm.com_2
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: www.ddwhm.com
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: wilson.ns.cloudflare.com_4
+  network: ws
+  port: 443
+  server: wilson.ns.cloudflare.com
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: CT_17
+  network: ws
+  port: 443
+  server: 162.159.152.31
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: 162.159.36.104_3
+  network: ws
+  port: 443
+  server: 162.159.36.104
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: CT_18
+  network: ws
+  port: 443
+  server: 162.159.153.144
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: 🇺🇸US_6
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 2096
+  server: 104.17.128.1
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: whatismyipaddress.com_3
+  network: ws
+  port: 443
+  server: whatismyipaddress.com
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: 🇭🇰HK_11
+  network: ws
+  port: 443
+  server: 103.160.204.59
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: CT_19
+  network: ws
+  port: 443
+  server: 162.159.152.81
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
 - name: CMCC-IPV6_9
   network: ws
   port: 4700
   server: '[2606'
-  servername: pv1.ylka.dpdns.org
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -1079,40 +1763,27 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: pv1.ylka.dpdns.org
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
-- name: 官方优选_7
+- name: CT_20
   network: ws
   port: 443
-  server: kip.ns.cloudflare.com
-  servername: edgc.aimercc.dpdns.org
+  server: 162.159.153.72
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_6
-  network: ws
-  password: Aimer
-  port: 2083
-  server: 192.200.160.35
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
 - name: CMCC-IPV6_10
   network: ws
   port: 4700
   server: '[2606'
-  servername: pv.ylka.dpdns.org
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -1120,107 +1791,68 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: pv.ylka.dpdns.org
+      host: ns.ylka.dpdns.org
     path: /?ed=2560
-- name: 官方优选_8
+- name: otto.ns.cloudflare.com_4
   network: ws
   port: 443
-  server: ignacio.ns.cloudflare.com
-  servername: edgc.esslh.filegear-sg.me
+  server: otto.ns.cloudflare.com
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: TW
-  network: ws
-  port: 18333
-  server: 141.11.86.94
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_7
-  network: ws
-  password: Aimer
-  port: 8443
-  server: 188.164.159.74
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_8
-  network: ws
-  password: Aimer
-  port: 2083
-  server: 103.116.7.103
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: PL_9
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: 🇺🇸US_7
   network: ws
   port: 8443
-  server: 95.140.157.183
-  servername: edgc.esslh.filegear-sg.me
+  server: 162.159.129.67
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_9
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: 🇺🇸US_8
   network: ws
-  password: Aimer
   port: 2096
-  server: 108.165.152.36
+  server: 104.17.128.1
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
+  tls: true
+  type: vless
   udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_10
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: bowen.ns.cloudflare.com_2
   network: ws
-  password: Aimer
-  port: 2083
-  server: 192.0.54.221
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: bowen.ns.cloudflare.com
   skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
+  sni: ns.ylka.dpdns.org
   type: trojan
   udp: true
   ws-opts:
     headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
 - name: CMCC-IPV6_11
   network: ws
   port: 4700
   server: '[2606'
-  servername: pv.ylka.dpdns.org
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -1228,80 +1860,54 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: pv.ylka.dpdns.org
+      host: ns.ylka.dpdns.org
     path: /?ed=2560
-- name: SJC_11
+- name: CMCC_32
   network: ws
-  password: Aimer
   port: 443
-  server: 154.197.64.27
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_12
-  network: ws
-  password: Aimer
-  port: 2083
-  server: 66.81.247.88
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_9
-  network: ws
-  password: Aimer
-  port: 443
-  server: ignacio.ns.cloudflare.com
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: US_5
-  network: ws
-  port: 8443
-  server: 104.129.166.131
-  servername: edgc.aimercc.dpdns.org
+  server: 104.17.100.185
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: US_6
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: www.ddwhm.com_3
   network: ws
-  port: 2087
-  server: 167.68.5.248
-  servername: edgc.aimercc.dpdns.org
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: www.ddwhm.com
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: CT_21
+  network: ws
+  port: 443
+  server: 162.159.153.72
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
 - name: CMCC-IPV6_12
   network: ws
   port: 4700
   server: '[2606'
-  servername: pv.ylka.dpdns.org
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -1309,137 +1915,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: pv.ylka.dpdns.org
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
-- name: SG_4
-  network: ws
-  port: 2087
-  server: 27.50.48.18
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_10
-  network: ws
-  port: 443
-  server: thaddeus.ns.cloudflare.com
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_11
-  network: ws
-  port: 443
-  server: arvind.ns.cloudflare.com
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_12
-  network: ws
-  port: 443
-  server: theo.ns.cloudflare.com
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 电信🌐优选🌐群组™️™️™️：t.me/amber6hua
-  network: ws
-  port: 443
-  server: bestcf.030101.xyz
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_13
-  network: ws
-  password: Aimer
-  port: 443
-  server: thaddeus.ns.cloudflare.com
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: US_7
-  network: ws
-  port: 2083
-  server: 103.116.7.103
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_13
-  network: ws
-  password: Aimer
-  port: 2083
-  server: 135.84.74.254
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_14
-  network: ws
-  port: 443
-  server: arvind.ns.cloudflare.com
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
 - name: CMCC-IPV6_13
   network: ws
   port: 4700
   server: '[2606'
-  servername: pv1.ylka.dpdns.org
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -1447,226 +1929,55 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: pv1.ylka.dpdns.org
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
-- name: SEA
-  network: ws
-  password: Aimer
-  port: 443
-  server: 192.227.231.62
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_15
+- name: icook.tw_3
   network: ws
   port: 443
-  server: damien.ns.cloudflare.com
-  servername: edgc.esslh.filegear-sg.me
+  server: icook.tw
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_16
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: CT_22
   network: ws
   port: 443
-  server: sage.ns.cloudflare.com
-  servername: edgc.esslh.filegear-sg.me
+  server: 162.159.152.81
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: US_8
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CT_23
   network: ws
-  port: 2087
-  server: 167.68.5.248
-  servername: edgc.aimercc.dpdns.org
+  port: 443
+  server: 162.159.152.155
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_14
-  network: ws
-  password: Aimer
-  port: 2083
-  server: 155.46.213.38
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_15
-  network: ws
-  password: Aimer
-  port: 8443
-  server: 46.254.93.243
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_16
-  network: ws
-  password: Aimer
-  port: 443
-  server: 167.68.4.58
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_17
-  network: ws
-  password: Aimer
-  port: 2083
-  server: 108.165.152.80
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_18
-  network: ws
-  password: Aimer
-  port: 2096
-  server: 66.81.247.230
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_17
-  network: ws
-  port: 443
-  server: sage.ns.cloudflare.com
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_19
-  network: ws
-  password: Aimer
-  port: 2087
-  server: 199.34.228.164
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_18
-  network: ws
-  password: Aimer
-  port: 443
-  server: theo.ns.cloudflare.com
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_20
-  network: ws
-  password: Aimer
-  port: 2087
-  server: 63.141.128.66
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_21
-  network: ws
-  password: Aimer
-  port: 2087
-  server: 154.197.64.189
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_19
-  network: ws
-  password: Aimer
-  port: 443
-  server: pranab.ns.cloudflare.com
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_20
-  network: ws
-  port: 443
-  server: thaddeus.ns.cloudflare.com
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
 - name: CMCC-IPV6_14
   network: ws
   port: 4700
   server: '[2606'
-  servername: pv1.ylka.dpdns.org
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -1674,13 +1985,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: pv1.ylka.dpdns.org
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
 - name: CMCC-IPV6_15
   network: ws
   port: 4700
   server: '[2606'
-  servername: pv1.ylka.dpdns.org
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -1688,27 +1999,54 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: pv1.ylka.dpdns.org
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
-- name: SG_5
+- name: www.ddwhm.com_4
   network: ws
-  port: 8443
-  server: 92.243.74.3
-  servername: edgc.aimercc.dpdns.org
+  port: 443
+  server: www.ddwhm.com
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: bowen.ns.cloudflare.com_3
+  network: ws
+  port: 443
+  server: bowen.ns.cloudflare.com
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: 162.159.36.104_4
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: 162.159.36.104
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
 - name: CMCC-IPV6_16
   network: ws
   port: 4700
   server: '[2606'
-  servername: pv1.ylka.dpdns.org
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -1716,82 +2054,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: pv1.ylka.dpdns.org
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
-- name: 官方优选_21
-  network: ws
-  port: 443
-  server: sage.ns.cloudflare.com
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_22
-  network: ws
-  port: 443
-  server: kip.ns.cloudflare.com
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_22
-  network: ws
-  password: Aimer
-  port: 2096
-  server: 92.243.74.23
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 美国_2
-  network: ws
-  port: 443
-  server: join.my.telegram.channel.cmliussss.to.unlock.more.premium.nodes.cf.090227.xyz
-  servername: pv.ylka.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: pv.ylka.dpdns.org
-    path: /?ed=2560
-- name: SG_6
-  network: ws
-  port: 2096
-  server: 27.50.49.41
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
 - name: CMCC-IPV6_17
   network: ws
   port: 4700
   server: '[2606'
-  servername: pv.ylka.dpdns.org
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -1799,26 +2068,40 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: pv.ylka.dpdns.org
+      host: ns.ylka.dpdns.org
     path: /?ed=2560
-- name: SJC_23
+- name: US_6
   network: ws
-  password: Aimer
-  port: 2083
-  server: 130.250.137.63
+  port: 443
+  server: icook.hk
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: sullivan.ns.cloudflare.com_4
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: sullivan.ns.cloudflare.com
+  skip-cert-verify: true
+  sni: ns.ylka.dpdns.org
   type: trojan
   udp: true
   ws-opts:
     headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: CMCC-IPV6_18
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: CH_2
   network: ws
-  port: 4700
-  server: '[2606'
-  servername: pv.ylka.dpdns.org
+  port: 443
+  server: 140.238.212.95
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -1826,13 +2109,40 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: pv.ylka.dpdns.org
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: whatismyipaddress.com_4
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: whatismyipaddress.com
+  skip-cert-verify: true
+  sni: nc.ylka.dpdns.org
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: CMCC-IPV6_18
+  network: ws
+  port: 4700
+  server: '[2606'
+  servername: nc.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
 - name: CMCC-IPV6_19
   network: ws
   port: 4700
   server: '[2606'
-  servername: pv1.ylka.dpdns.org
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -1840,66 +2150,27 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: pv1.ylka.dpdns.org
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
-- name: SJC_24
+- name: CT_24
   network: ws
-  password: Aimer
-  port: 8443
-  server: 92.243.74.3
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_23
-  network: ws
-  password: Aimer
   port: 443
-  server: lynn.ns.cloudflare.com
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_25
-  network: ws
-  password: Aimer
-  port: 2083
-  server: 5.182.84.52
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SG_7
-  network: ws
-  port: 8443
-  server: 92.243.74.3
-  servername: edgc.aimercc.dpdns.org
+  server: 162.159.153.239
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
 - name: CMCC-IPV6_20
   network: ws
   port: 4700
   server: '[2606'
-  servername: pv.ylka.dpdns.org
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -1907,95 +2178,40 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: pv.ylka.dpdns.org
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
-- name: 官方优选_24
+- name: IPV6_4
   network: ws
+  port: 4700
+  server: '[2606'
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: icook.tw_4
+  network: ws
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   port: 443
-  server: duke.ns.cloudflare.com
-  servername: edgc.aimercc.dpdns.org
+  server: icook.tw
   skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: US_9
-  network: ws
-  port: 2083
-  server: 135.84.64.36
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SG_8
-  network: ws
-  port: 2087
-  server: 92.243.75.49
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_26
-  network: ws
-  password: Aimer
-  port: 2053
-  server: 77.232.140.114
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
+  sni: nc.ylka.dpdns.org
   type: trojan
   udp: true
   ws-opts:
     headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_25
-  network: ws
-  port: 443
-  server: ignacio.ns.cloudflare.com
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_27
-  network: ws
-  password: Aimer
-  port: 2083
-  server: 198.62.62.61
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
 - name: CMCC-IPV6_21
   network: ws
   port: 4700
   server: '[2606'
-  servername: pv.ylka.dpdns.org
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -2003,13 +2219,27 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: pv.ylka.dpdns.org
+      host: ns.ylka.dpdns.org
     path: /?ed=2560
+- name: US_7
+  network: ws
+  port: 443
+  server: icook.hk
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
 - name: CMCC-IPV6_22
   network: ws
   port: 4700
   server: '[2606'
-  servername: pv.ylka.dpdns.org
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -2017,215 +2247,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: pv.ylka.dpdns.org
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
-- name: US_10
-  network: ws
-  port: 2083
-  server: 103.116.7.103
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SG_9
-  network: ws
-  port: 2096
-  server: 27.50.49.41
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_28
-  network: ws
-  password: Aimer
-  port: 2087
-  server: 209.94.90.87
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_29
-  network: ws
-  password: Aimer
-  port: 2053
-  server: 167.68.5.85
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: US_11
-  network: ws
-  port: 2083
-  server: 103.116.7.103
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_26
+- name: bowen.ns.cloudflare.com_4
   network: ws
   port: 443
-  server: pranab.ns.cloudflare.com
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_30
-  network: ws
-  password: Aimer
-  port: 8443
-  server: 135.84.74.27
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SG_10
-  network: ws
-  port: 2087
-  server: 92.243.75.49
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: KR_18
-  network: ws
-  port: 21320
-  server: 211.228.64.93
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_27
-  network: ws
-  password: Aimer
-  port: 443
-  server: arvind.ns.cloudflare.com
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_28
-  network: ws
-  password: Aimer
-  port: 443
-  server: damien.ns.cloudflare.com
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_31
-  network: ws
-  password: Aimer
-  port: 2083
-  server: 108.165.152.91
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_32
-  network: ws
-  password: Aimer
-  port: 443
-  server: 103.116.7.189
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_33
-  network: ws
-  password: Aimer
-  port: 2096
-  server: 5.182.85.255
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SG_11
-  network: ws
-  port: 2096
-  server: 92.243.74.23
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 64.49.46.181_2
-  network: ws
-  port: 443
-  server: 64.49.46.181
-  servername: pv.ylka.dpdns.org
+  server: bowen.ns.cloudflare.com
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -2233,13 +2261,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: pv.ylka.dpdns.org
-    path: /?ed=2560
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
 - name: CMCC-IPV6_23
   network: ws
   port: 4700
   server: '[2606'
-  servername: pv1.ylka.dpdns.org
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -2247,80 +2275,55 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: pv1.ylka.dpdns.org
+      host: ns.ylka.dpdns.org
     path: /?ed=2560
-- name: 官方优选_29
+- name: US_8
   network: ws
   port: 443
-  server: theo.ns.cloudflare.com
-  servername: edgc.aimercc.dpdns.org
+  server: 129.213.130.70
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_30
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_33
   network: ws
   port: 443
-  server: theo.ns.cloudflare.com
-  servername: edgc.esslh.filegear-sg.me
+  server: 104.18.82.55
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_34
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: US_9
   network: ws
-  password: Aimer
   port: 443
-  server: 216.24.57.186
+  server: 129.213.130.70
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
+  tls: true
+  type: vless
   udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_35
-  network: ws
-  password: Aimer
-  port: 2053
-  server: 167.68.4.199
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_36
-  network: ws
-  password: Aimer
-  port: 2083
-  server: 213.241.198.56
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
 - name: CMCC-IPV6_24
   network: ws
   port: 4700
   server: '[2606'
-  servername: pv.ylka.dpdns.org
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -2328,68 +2331,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: pv.ylka.dpdns.org
+      host: ns.ylka.dpdns.org
     path: /?ed=2560
-- name: US_12
-  network: ws
-  port: 2087
-  server: 209.94.90.87
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: US_13
-  network: ws
-  port: 2087
-  server: 108.165.152.98
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_31
+- name: CT_25
   network: ws
   port: 443
-  server: lynn.ns.cloudflare.com
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_37
-  network: ws
-  password: Aimer
-  port: 2087
-  server: 5.182.84.9
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: CMCC-IPV6_25
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: pv.ylka.dpdns.org
+  server: 162.159.153.216
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -2397,121 +2345,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: pv.ylka.dpdns.org
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
-- name: US_14
-  network: ws
-  port: 2087
-  server: 209.94.90.87
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_38
-  network: ws
-  password: Aimer
-  port: 2087
-  server: 5.182.84.229
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_39
-  network: ws
-  password: Aimer
-  port: 2087
-  server: 167.68.5.248
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: US_15
-  network: ws
-  port: 8443
-  server: 104.129.166.131
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_40
-  network: ws
-  password: Aimer
-  port: 2087
-  server: 92.243.75.49
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_41
-  network: ws
-  password: Aimer
-  port: 443
-  server: 103.116.7.235
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: HK_8
-  network: ws
-  port: 12443
-  server: 43.132.239.42
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: HK_9
-  network: ws
-  port: 2083
-  server: 45.207.158.29
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: NL_2
+- name: CA_1
   network: ws
   port: 443
-  server: 158.101.214.54
-  servername: pv1.ylka.dpdns.org
+  server: 140.238.158.238
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -2519,67 +2359,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: pv1.ylka.dpdns.org
+      host: ns.ylka.dpdns.org
     path: /?ed=2560
-- name: 官方优选_32
+- name: CT_26
   network: ws
   port: 443
-  server: lynn.ns.cloudflare.com
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_33
-  network: ws
-  port: 443
-  server: duke.ns.cloudflare.com
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_42
-  network: ws
-  password: Aimer
-  port: 2083
-  server: 188.164.159.220
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_43
-  network: ws
-  password: Aimer
-  port: 443
-  server: 141.11.203.168
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 64.49.47.64_1
-  network: ws
-  port: 443
-  server: 64.49.47.64
-  servername: pv1.ylka.dpdns.org
+  server: 162.159.153.156
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -2587,13 +2373,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: pv1.ylka.dpdns.org
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
-- name: CMCC-IPV6_26
+- name: US_10
   network: ws
-  port: 4700
-  server: '[2606'
-  servername: pv.ylka.dpdns.org
+  port: 443
+  server: 150.136.87.192
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -2601,109 +2387,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: pv.ylka.dpdns.org
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
-- name: SJC_44
-  network: ws
-  password: Aimer
-  port: 2087
-  server: 103.116.7.100
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_34
-  network: ws
-  password: Aimer
-  port: 443
-  server: duke.ns.cloudflare.com
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_35
+- name: 172.67.243.218_3
   network: ws
   port: 443
-  server: damien.ns.cloudflare.com
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_36
-  network: ws
-  port: 443
-  server: damien.ns.cloudflare.com
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_37
-  network: ws
-  port: 443
-  server: ignacio.ns.cloudflare.com
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: US_16
-  network: ws
-  port: 8443
-  server: 167.68.4.131
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: 官方优选_38
-  network: ws
-  port: 443
-  server: lynn.ns.cloudflare.com
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: CMCC-IPV6_27
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: pv1.ylka.dpdns.org
+  server: 172.67.243.218
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -2711,194 +2401,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: pv1.ylka.dpdns.org
-    path: /?ed=2560
-- name: US_17
-  network: ws
-  port: 8443
-  server: 104.129.166.131
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SJC_45
-  network: ws
-  password: Aimer
-  port: 8443
-  server: 104.129.166.131
-  skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: SG_12
-  network: ws
-  port: 2096
-  server: 92.243.74.23
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: KR_19
-  network: ws
-  port: 30894
-  server: 59.3.161.120
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: HK_10
-  network: ws
-  port: 443
-  server: 1.65.209.123
-  servername: pv.ylka.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: pv.ylka.dpdns.org
-    path: /?ed=2560
-- name: 官方优选_39
-  network: ws
-  port: 443
-  server: kip.ns.cloudflare.com
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: CMCC-IPV6_28
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: pv1.ylka.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: pv1.ylka.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_29
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: pv.ylka.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: pv.ylka.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_30
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: pv1.ylka.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: pv1.ylka.dpdns.org
-    path: /?ed=2560
-- name: CMCC-IPV6_31
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: pv.ylka.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: pv.ylka.dpdns.org
-    path: /?ed=2560
-- name: PL_10
-  network: ws
-  port: 443
-  server: 176.105.253.98
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: CMCC-IPV6_32
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: pv.ylka.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: pv.ylka.dpdns.org
-    path: /?ed=2560
-- name: 64.49.47.64_2
-  network: ws
-  port: 443
-  server: 64.49.47.64
-  servername: pv.ylka.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: pv.ylka.dpdns.org
-    path: /?ed=2560
-- name: US_18
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=vless
+- name: US_11
   network: ws
   port: 443
   server: 129.213.136.180
-  servername: pv.ylka.dpdns.org
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -2906,41 +2415,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: pv.ylka.dpdns.org
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
-- name: CMCC-IPV6_33
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: pv1.ylka.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
-  ws-opts:
-    headers:
-      host: pv1.ylka.dpdns.org
-    path: /?ed=2560
-- name: 官方优选_40
+- name: US_12
   network: ws
   port: 443
-  server: duke.ns.cloudflare.com
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: CMCC-IPV6_34
-  network: ws
-  port: 4700
-  server: '[2606'
-  servername: pv.ylka.dpdns.org
+  server: 129.213.136.180
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -2948,54 +2429,40 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: pv.ylka.dpdns.org
+      host: ns.ylka.dpdns.org
     path: /?ed=2560
-- name: PL_11
+- name: CA_2
   network: ws
   port: 443
-  server: 45.144.48.48
-  servername: edgc.aimercc.dpdns.org
+  server: 140.238.158.238
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: CDG
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560
+- name: 172.67.243.218_4
   network: ws
-  password: Aimer
-  port: 80
-  server: 217.182.61.115
+  password: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  port: 443
+  server: 172.67.243.218
   skip-cert-verify: true
-  sni: epgc.aimercc.dpdns.org
+  sni: nc.ylka.dpdns.org
   type: trojan
   udp: true
   ws-opts:
     headers:
-      host: epgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: KR_20
+      host: nc.ylka.dpdns.org
+    path: /?ed=2560&PROT_TYPE=trojan
+- name: JP_1
   network: ws
-  port: 50001
-  server: 182.209.106.51
-  servername: edgc.aimercc.dpdns.org
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.aimercc.dpdns.org
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: HK_11
-  network: ws
-  port: 443
-  server: 219.76.13.169
-  servername: pv1.ylka.dpdns.org
+  port: 12333
+  server: 121.80.244.179
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -3003,27 +2470,13 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: pv1.ylka.dpdns.org
+      host: ns.ylka.dpdns.org
     path: /?ed=2560
-- name: HK_12
+- name: JP_2
   network: ws
-  port: 8443
-  server: 95.182.100.109
-  servername: edgc.esslh.filegear-sg.me
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
-  ws-opts:
-    headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
-- name: HK_13
-  network: ws
-  port: 443
-  server: 219.76.13.169
-  servername: pv.ylka.dpdns.org
+  port: 12333
+  server: 121.80.244.179
+  servername: nc.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
@@ -3031,475 +2484,409 @@ proxies:
   uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: pv.ylka.dpdns.org
+      host: nc.ylka.dpdns.org
     path: /?ed=2560
-- name: US_19
+- name: KR
   network: ws
   port: 443
-  server: 23.95.20.15
-  servername: edgc.esslh.filegear-sg.me
+  server: 131.186.17.132
+  servername: ns.ylka.dpdns.org
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: ee6774c0-9b19-4ff1-8b30-2da4b71977e2
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
   ws-opts:
     headers:
-      host: edgc.esslh.filegear-sg.me
-    path: /?ed=2560&proxyip=ts.hpc.tw
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
+- name: CMCC_34
+  network: ws
+  port: 443
+  server: 104.16.246.132
+  servername: ns.ylka.dpdns.org
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 06e4425e-a8cb-4b63-929f-2105604ab0a9
+  ws-opts:
+    headers:
+      host: ns.ylka.dpdns.org
+    path: /?ed=2560
 proxy-groups:
 - name: 🚀 节点选择
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - HK_1
-  - HK_2
-  - HK_3
-  - HK_4
-  - HK_5
-  - FUK
-  - NRT
-  - KR_1
-  - JP_1
-  - HK_6
-  - JP_2
-  - HK_7
-  - JP_3
-  - JP_4
-  - SG_1
-  - JP_5
-  - KR_2
-  - SG_2
-  - JP_6
-  - SG_3
-  - KR_3
-  - JP_7
-  - JP_8
-  - PL_1
-  - PL_2
-  - PL_3
-  - LAX
-  - KR_4
-  - PL_4
-  - ICN_1
-  - KR_5
-  - ICN_2
-  - KR_6
-  - KR_7
-  - KR_8
-  - KR_9
-  - KR_10
-  - KR_11
-  - SJC_1
-  - KR_12
-  - KR_13
-  - KR_14
-  - ICN_3
-  - KR_15
-  - KR_16
-  - KR_17
-  - PL_5
-  - CMCC-IPV6_1
-  - PL_6
-  - 官方优选_1
-  - CMCC-IPV6_2
-  - 官方优选_2
-  - 官方优选_3
-  - 64.49.46.181_1
-  - CMCC-IPV6_3
-  - 官方优选_4
-  - CMCC-IPV6_4
-  - SJC_2
-  - CMCC-IPV6_5
+  - TW_1
   - US_1
-  - 美国_1
-  - us
-  - US_2
-  - SJC_3
-  - PL_7
-  - US_3
+  - 🇺🇸US_1
+  - CMCC_1
+  - CMCC_2
+  - CMCC_3
+  - CMCC_4
+  - CMCC_5
+  - CMCC_6
+  - CMCC_7
+  - CMCC_8
+  - CMCC_9
+  - 🇭🇰HK_1
+  - TW_2
+  - CMCC_10
+  - CMCC_11
+  - 🇭🇰HK_2
+  - 🇭🇰HK_3
+  - 🇭🇰HK_4
+  - CMCC_12
+  - CMCC_13
+  - CMCC_14
+  - CMCC_15
   - NL_1
-  - SJC_4
-  - SJC_5
-  - CMCC-IPV6_6
-  - PL_8
-  - 官方优选_5
-  - CMCC-IPV6_7
-  - CMCC-IPV6_8
-  - ICN_4
-  - 官方优选_6
+  - NL_2
+  - CMCC_16
+  - CMCC_17
+  - 🇭🇰HK_5
+  - CMCC_18
+  - CMCC_19
+  - CH_1
+  - CMCC_20
+  - CMCC_21
+  - CMCC_22
+  - CMCC_23
+  - 172.67.243.218_1
+  - CMCC-IPV6_1
+  - CMCC_24
+  - 🇭🇰HK_6
+  - CMCC_25
+  - nikon.ns.cloudflare.com_1
+  - CMCC_26
+  - CMCC_27
+  - nikon.ns.cloudflare.com_2
+  - ip.sb_1
+  - nikon.ns.cloudflare.com_3
+  - ip.sb_2
+  - shopify.com_1
+  - sullivan.ns.cloudflare.com_1
+  - 🇭🇰HK_7
+  - IPV6_1
+  - CT_1
+  - 🇺🇸US_2
+  - CMCC-IPV6_2
+  - CMCC_28
+  - IPV6_2
+  - 162.159.36.104_1
+  - shopify.com_2
+  - sullivan.ns.cloudflare.com_2
+  - CMCC_29
+  - CT_2
+  - shopify.com_3
+  - CT_3
+  - wilson.ns.cloudflare.com_1
+  - CT_4
+  - 🇺🇸US_3
+  - shopify.com_4
+  - nikon.ns.cloudflare.com_4
+  - ip.sb_3
+  - sullivan.ns.cloudflare.com_3
+  - 172.67.243.218_2
+  - US_2
+  - otto.ns.cloudflare.com_1
+  - 172.67.110.232_1
+  - CT_5
+  - icook.tw_1
+  - US_3
+  - wilson.ns.cloudflare.com_2
+  - CMCC_30
+  - CT_6
+  - 172.67.110.232_2
+  - 🇭🇰HK_8
+  - CT_7
+  - CT_8
+  - CT_9
+  - 🇺🇸US_4
   - US_4
-  - CMCC-IPV6_9
-  - 官方优选_7
-  - SJC_6
-  - CMCC-IPV6_10
-  - 官方优选_8
-  - TW
-  - SJC_7
-  - SJC_8
-  - PL_9
-  - SJC_9
-  - SJC_10
-  - CMCC-IPV6_11
-  - SJC_11
-  - SJC_12
-  - 官方优选_9
+  - otto.ns.cloudflare.com_2
+  - 162.159.36.104_2
+  - ip.sb_4
+  - CT_10
+  - 172.67.110.232_3
+  - CMCC-IPV6_3
+  - CMCC-IPV6_4
+  - CT_11
+  - icook.tw_2
+  - CMCC-IPV6_5
+  - CMCC-IPV6_6
+  - CT_12
+  - 🇭🇰HK_9
+  - CT_13
+  - CMCC_31
+  - otto.ns.cloudflare.com_3
+  - whatismyipaddress.com_1
+  - CT_14
+  - CMCC-IPV6_7
+  - CT_15
+  - 🇭🇰HK_10
+  - CMCC-IPV6_8
+  - bowen.ns.cloudflare.com_1
+  - CT_16
+  - 172.67.110.232_4
+  - 🇺🇸US_5
+  - whatismyipaddress.com_2
+  - wilson.ns.cloudflare.com_3
+  - IPV6_3
   - US_5
-  - US_6
+  - www.ddwhm.com_1
+  - www.ddwhm.com_2
+  - wilson.ns.cloudflare.com_4
+  - CT_17
+  - 162.159.36.104_3
+  - CT_18
+  - 🇺🇸US_6
+  - whatismyipaddress.com_3
+  - 🇭🇰HK_11
+  - CT_19
+  - CMCC-IPV6_9
+  - CT_20
+  - CMCC-IPV6_10
+  - otto.ns.cloudflare.com_4
+  - 🇺🇸US_7
+  - 🇺🇸US_8
+  - bowen.ns.cloudflare.com_2
+  - CMCC-IPV6_11
+  - CMCC_32
+  - www.ddwhm.com_3
+  - CT_21
   - CMCC-IPV6_12
-  - SG_4
-  - 官方优选_10
-  - 官方优选_11
-  - 官方优选_12
-  - 电信🌐优选🌐群组™️™️™️：t.me/amber6hua
-  - 官方优选_13
-  - US_7
-  - SJC_13
-  - 官方优选_14
   - CMCC-IPV6_13
-  - SEA
-  - 官方优选_15
-  - 官方优选_16
-  - US_8
-  - SJC_14
-  - SJC_15
-  - SJC_16
-  - SJC_17
-  - SJC_18
-  - 官方优选_17
-  - SJC_19
-  - 官方优选_18
-  - SJC_20
-  - SJC_21
-  - 官方优选_19
-  - 官方优选_20
+  - icook.tw_3
+  - CT_22
+  - CT_23
   - CMCC-IPV6_14
   - CMCC-IPV6_15
-  - SG_5
+  - www.ddwhm.com_4
+  - bowen.ns.cloudflare.com_3
+  - 162.159.36.104_4
   - CMCC-IPV6_16
-  - 官方优选_21
-  - 官方优选_22
-  - SJC_22
-  - 美国_2
-  - SG_6
   - CMCC-IPV6_17
-  - SJC_23
+  - US_6
+  - sullivan.ns.cloudflare.com_4
+  - CH_2
+  - whatismyipaddress.com_4
   - CMCC-IPV6_18
   - CMCC-IPV6_19
-  - SJC_24
-  - 官方优选_23
-  - SJC_25
-  - SG_7
+  - CT_24
   - CMCC-IPV6_20
-  - 官方优选_24
-  - US_9
-  - SG_8
-  - SJC_26
-  - 官方优选_25
-  - SJC_27
+  - IPV6_4
+  - icook.tw_4
   - CMCC-IPV6_21
+  - US_7
   - CMCC-IPV6_22
-  - US_10
-  - SG_9
-  - SJC_28
-  - SJC_29
-  - US_11
-  - 官方优选_26
-  - SJC_30
-  - SG_10
-  - KR_18
-  - 官方优选_27
-  - 官方优选_28
-  - SJC_31
-  - SJC_32
-  - SJC_33
-  - SG_11
-  - 64.49.46.181_2
+  - bowen.ns.cloudflare.com_4
   - CMCC-IPV6_23
-  - 官方优选_29
-  - 官方优选_30
-  - SJC_34
-  - SJC_35
-  - SJC_36
+  - US_8
+  - CMCC_33
+  - US_9
   - CMCC-IPV6_24
+  - CT_25
+  - CA_1
+  - CT_26
+  - US_10
+  - 172.67.243.218_3
+  - US_11
   - US_12
-  - US_13
-  - 官方优选_31
-  - SJC_37
-  - CMCC-IPV6_25
-  - US_14
-  - SJC_38
-  - SJC_39
-  - US_15
-  - SJC_40
-  - SJC_41
-  - HK_8
-  - HK_9
-  - NL_2
-  - 官方优选_32
-  - 官方优选_33
-  - SJC_42
-  - SJC_43
-  - 64.49.47.64_1
-  - CMCC-IPV6_26
-  - SJC_44
-  - 官方优选_34
-  - 官方优选_35
-  - 官方优选_36
-  - 官方优选_37
-  - US_16
-  - 官方优选_38
-  - CMCC-IPV6_27
-  - US_17
-  - SJC_45
-  - SG_12
-  - KR_19
-  - HK_10
-  - 官方优选_39
-  - CMCC-IPV6_28
-  - CMCC-IPV6_29
-  - CMCC-IPV6_30
-  - CMCC-IPV6_31
-  - PL_10
-  - CMCC-IPV6_32
-  - 64.49.47.64_2
-  - US_18
-  - CMCC-IPV6_33
-  - 官方优选_40
-  - CMCC-IPV6_34
-  - PL_11
-  - CDG
-  - KR_20
-  - HK_11
-  - HK_12
-  - HK_13
-  - US_19
+  - CA_2
+  - 172.67.243.218_4
+  - JP_1
+  - JP_2
+  - KR
+  - CMCC_34
   type: select
 - interval: 300
   name: ♻️ 自动选择
   proxies:
-  - HK_1
-  - HK_2
-  - HK_3
-  - HK_4
-  - HK_5
-  - FUK
-  - NRT
-  - KR_1
-  - JP_1
-  - HK_6
-  - JP_2
-  - HK_7
-  - JP_3
-  - JP_4
-  - SG_1
-  - JP_5
-  - KR_2
-  - SG_2
-  - JP_6
-  - SG_3
-  - KR_3
-  - JP_7
-  - JP_8
-  - PL_1
-  - PL_2
-  - PL_3
-  - LAX
-  - KR_4
-  - PL_4
-  - ICN_1
-  - KR_5
-  - ICN_2
-  - KR_6
-  - KR_7
-  - KR_8
-  - KR_9
-  - KR_10
-  - KR_11
-  - SJC_1
-  - KR_12
-  - KR_13
-  - KR_14
-  - ICN_3
-  - KR_15
-  - KR_16
-  - KR_17
-  - PL_5
-  - CMCC-IPV6_1
-  - PL_6
-  - 官方优选_1
-  - CMCC-IPV6_2
-  - 官方优选_2
-  - 官方优选_3
-  - 64.49.46.181_1
-  - CMCC-IPV6_3
-  - 官方优选_4
-  - CMCC-IPV6_4
-  - SJC_2
-  - CMCC-IPV6_5
+  - TW_1
   - US_1
-  - 美国_1
-  - us
-  - US_2
-  - SJC_3
-  - PL_7
-  - US_3
+  - 🇺🇸US_1
+  - CMCC_1
+  - CMCC_2
+  - CMCC_3
+  - CMCC_4
+  - CMCC_5
+  - CMCC_6
+  - CMCC_7
+  - CMCC_8
+  - CMCC_9
+  - 🇭🇰HK_1
+  - TW_2
+  - CMCC_10
+  - CMCC_11
+  - 🇭🇰HK_2
+  - 🇭🇰HK_3
+  - 🇭🇰HK_4
+  - CMCC_12
+  - CMCC_13
+  - CMCC_14
+  - CMCC_15
   - NL_1
-  - SJC_4
-  - SJC_5
-  - CMCC-IPV6_6
-  - PL_8
-  - 官方优选_5
-  - CMCC-IPV6_7
-  - CMCC-IPV6_8
-  - ICN_4
-  - 官方优选_6
+  - NL_2
+  - CMCC_16
+  - CMCC_17
+  - 🇭🇰HK_5
+  - CMCC_18
+  - CMCC_19
+  - CH_1
+  - CMCC_20
+  - CMCC_21
+  - CMCC_22
+  - CMCC_23
+  - 172.67.243.218_1
+  - CMCC-IPV6_1
+  - CMCC_24
+  - 🇭🇰HK_6
+  - CMCC_25
+  - nikon.ns.cloudflare.com_1
+  - CMCC_26
+  - CMCC_27
+  - nikon.ns.cloudflare.com_2
+  - ip.sb_1
+  - nikon.ns.cloudflare.com_3
+  - ip.sb_2
+  - shopify.com_1
+  - sullivan.ns.cloudflare.com_1
+  - 🇭🇰HK_7
+  - IPV6_1
+  - CT_1
+  - 🇺🇸US_2
+  - CMCC-IPV6_2
+  - CMCC_28
+  - IPV6_2
+  - 162.159.36.104_1
+  - shopify.com_2
+  - sullivan.ns.cloudflare.com_2
+  - CMCC_29
+  - CT_2
+  - shopify.com_3
+  - CT_3
+  - wilson.ns.cloudflare.com_1
+  - CT_4
+  - 🇺🇸US_3
+  - shopify.com_4
+  - nikon.ns.cloudflare.com_4
+  - ip.sb_3
+  - sullivan.ns.cloudflare.com_3
+  - 172.67.243.218_2
+  - US_2
+  - otto.ns.cloudflare.com_1
+  - 172.67.110.232_1
+  - CT_5
+  - icook.tw_1
+  - US_3
+  - wilson.ns.cloudflare.com_2
+  - CMCC_30
+  - CT_6
+  - 172.67.110.232_2
+  - 🇭🇰HK_8
+  - CT_7
+  - CT_8
+  - CT_9
+  - 🇺🇸US_4
   - US_4
-  - CMCC-IPV6_9
-  - 官方优选_7
-  - SJC_6
-  - CMCC-IPV6_10
-  - 官方优选_8
-  - TW
-  - SJC_7
-  - SJC_8
-  - PL_9
-  - SJC_9
-  - SJC_10
-  - CMCC-IPV6_11
-  - SJC_11
-  - SJC_12
-  - 官方优选_9
+  - otto.ns.cloudflare.com_2
+  - 162.159.36.104_2
+  - ip.sb_4
+  - CT_10
+  - 172.67.110.232_3
+  - CMCC-IPV6_3
+  - CMCC-IPV6_4
+  - CT_11
+  - icook.tw_2
+  - CMCC-IPV6_5
+  - CMCC-IPV6_6
+  - CT_12
+  - 🇭🇰HK_9
+  - CT_13
+  - CMCC_31
+  - otto.ns.cloudflare.com_3
+  - whatismyipaddress.com_1
+  - CT_14
+  - CMCC-IPV6_7
+  - CT_15
+  - 🇭🇰HK_10
+  - CMCC-IPV6_8
+  - bowen.ns.cloudflare.com_1
+  - CT_16
+  - 172.67.110.232_4
+  - 🇺🇸US_5
+  - whatismyipaddress.com_2
+  - wilson.ns.cloudflare.com_3
+  - IPV6_3
   - US_5
-  - US_6
+  - www.ddwhm.com_1
+  - www.ddwhm.com_2
+  - wilson.ns.cloudflare.com_4
+  - CT_17
+  - 162.159.36.104_3
+  - CT_18
+  - 🇺🇸US_6
+  - whatismyipaddress.com_3
+  - 🇭🇰HK_11
+  - CT_19
+  - CMCC-IPV6_9
+  - CT_20
+  - CMCC-IPV6_10
+  - otto.ns.cloudflare.com_4
+  - 🇺🇸US_7
+  - 🇺🇸US_8
+  - bowen.ns.cloudflare.com_2
+  - CMCC-IPV6_11
+  - CMCC_32
+  - www.ddwhm.com_3
+  - CT_21
   - CMCC-IPV6_12
-  - SG_4
-  - 官方优选_10
-  - 官方优选_11
-  - 官方优选_12
-  - 电信🌐优选🌐群组™️™️™️：t.me/amber6hua
-  - 官方优选_13
-  - US_7
-  - SJC_13
-  - 官方优选_14
   - CMCC-IPV6_13
-  - SEA
-  - 官方优选_15
-  - 官方优选_16
-  - US_8
-  - SJC_14
-  - SJC_15
-  - SJC_16
-  - SJC_17
-  - SJC_18
-  - 官方优选_17
-  - SJC_19
-  - 官方优选_18
-  - SJC_20
-  - SJC_21
-  - 官方优选_19
-  - 官方优选_20
+  - icook.tw_3
+  - CT_22
+  - CT_23
   - CMCC-IPV6_14
   - CMCC-IPV6_15
-  - SG_5
+  - www.ddwhm.com_4
+  - bowen.ns.cloudflare.com_3
+  - 162.159.36.104_4
   - CMCC-IPV6_16
-  - 官方优选_21
-  - 官方优选_22
-  - SJC_22
-  - 美国_2
-  - SG_6
   - CMCC-IPV6_17
-  - SJC_23
+  - US_6
+  - sullivan.ns.cloudflare.com_4
+  - CH_2
+  - whatismyipaddress.com_4
   - CMCC-IPV6_18
   - CMCC-IPV6_19
-  - SJC_24
-  - 官方优选_23
-  - SJC_25
-  - SG_7
+  - CT_24
   - CMCC-IPV6_20
-  - 官方优选_24
-  - US_9
-  - SG_8
-  - SJC_26
-  - 官方优选_25
-  - SJC_27
+  - IPV6_4
+  - icook.tw_4
   - CMCC-IPV6_21
+  - US_7
   - CMCC-IPV6_22
-  - US_10
-  - SG_9
-  - SJC_28
-  - SJC_29
-  - US_11
-  - 官方优选_26
-  - SJC_30
-  - SG_10
-  - KR_18
-  - 官方优选_27
-  - 官方优选_28
-  - SJC_31
-  - SJC_32
-  - SJC_33
-  - SG_11
-  - 64.49.46.181_2
+  - bowen.ns.cloudflare.com_4
   - CMCC-IPV6_23
-  - 官方优选_29
-  - 官方优选_30
-  - SJC_34
-  - SJC_35
-  - SJC_36
+  - US_8
+  - CMCC_33
+  - US_9
   - CMCC-IPV6_24
+  - CT_25
+  - CA_1
+  - CT_26
+  - US_10
+  - 172.67.243.218_3
+  - US_11
   - US_12
-  - US_13
-  - 官方优选_31
-  - SJC_37
-  - CMCC-IPV6_25
-  - US_14
-  - SJC_38
-  - SJC_39
-  - US_15
-  - SJC_40
-  - SJC_41
-  - HK_8
-  - HK_9
-  - NL_2
-  - 官方优选_32
-  - 官方优选_33
-  - SJC_42
-  - SJC_43
-  - 64.49.47.64_1
-  - CMCC-IPV6_26
-  - SJC_44
-  - 官方优选_34
-  - 官方优选_35
-  - 官方优选_36
-  - 官方优选_37
-  - US_16
-  - 官方优选_38
-  - CMCC-IPV6_27
-  - US_17
-  - SJC_45
-  - SG_12
-  - KR_19
-  - HK_10
-  - 官方优选_39
-  - CMCC-IPV6_28
-  - CMCC-IPV6_29
-  - CMCC-IPV6_30
-  - CMCC-IPV6_31
-  - PL_10
-  - CMCC-IPV6_32
-  - 64.49.47.64_2
-  - US_18
-  - CMCC-IPV6_33
-  - 官方优选_40
-  - CMCC-IPV6_34
-  - PL_11
-  - CDG
-  - KR_20
-  - HK_11
-  - HK_12
-  - HK_13
-  - US_19
+  - CA_2
+  - 172.67.243.218_4
+  - JP_1
+  - JP_2
+  - KR
+  - CMCC_34
   tolerance: 50
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -3508,909 +2895,749 @@ proxy-groups:
   - 🚀 节点选择
   - ♻️ 自动选择
   - 🎯 全球直连
-  - HK_1
-  - HK_2
-  - HK_3
-  - HK_4
-  - HK_5
-  - FUK
-  - NRT
-  - KR_1
-  - JP_1
-  - HK_6
-  - JP_2
-  - HK_7
-  - JP_3
-  - JP_4
-  - SG_1
-  - JP_5
-  - KR_2
-  - SG_2
-  - JP_6
-  - SG_3
-  - KR_3
-  - JP_7
-  - JP_8
-  - PL_1
-  - PL_2
-  - PL_3
-  - LAX
-  - KR_4
-  - PL_4
-  - ICN_1
-  - KR_5
-  - ICN_2
-  - KR_6
-  - KR_7
-  - KR_8
-  - KR_9
-  - KR_10
-  - KR_11
-  - SJC_1
-  - KR_12
-  - KR_13
-  - KR_14
-  - ICN_3
-  - KR_15
-  - KR_16
-  - KR_17
-  - PL_5
-  - CMCC-IPV6_1
-  - PL_6
-  - 官方优选_1
-  - CMCC-IPV6_2
-  - 官方优选_2
-  - 官方优选_3
-  - 64.49.46.181_1
-  - CMCC-IPV6_3
-  - 官方优选_4
-  - CMCC-IPV6_4
-  - SJC_2
-  - CMCC-IPV6_5
+  - TW_1
   - US_1
-  - 美国_1
-  - us
-  - US_2
-  - SJC_3
-  - PL_7
-  - US_3
+  - 🇺🇸US_1
+  - CMCC_1
+  - CMCC_2
+  - CMCC_3
+  - CMCC_4
+  - CMCC_5
+  - CMCC_6
+  - CMCC_7
+  - CMCC_8
+  - CMCC_9
+  - 🇭🇰HK_1
+  - TW_2
+  - CMCC_10
+  - CMCC_11
+  - 🇭🇰HK_2
+  - 🇭🇰HK_3
+  - 🇭🇰HK_4
+  - CMCC_12
+  - CMCC_13
+  - CMCC_14
+  - CMCC_15
   - NL_1
-  - SJC_4
-  - SJC_5
-  - CMCC-IPV6_6
-  - PL_8
-  - 官方优选_5
-  - CMCC-IPV6_7
-  - CMCC-IPV6_8
-  - ICN_4
-  - 官方优选_6
+  - NL_2
+  - CMCC_16
+  - CMCC_17
+  - 🇭🇰HK_5
+  - CMCC_18
+  - CMCC_19
+  - CH_1
+  - CMCC_20
+  - CMCC_21
+  - CMCC_22
+  - CMCC_23
+  - 172.67.243.218_1
+  - CMCC-IPV6_1
+  - CMCC_24
+  - 🇭🇰HK_6
+  - CMCC_25
+  - nikon.ns.cloudflare.com_1
+  - CMCC_26
+  - CMCC_27
+  - nikon.ns.cloudflare.com_2
+  - ip.sb_1
+  - nikon.ns.cloudflare.com_3
+  - ip.sb_2
+  - shopify.com_1
+  - sullivan.ns.cloudflare.com_1
+  - 🇭🇰HK_7
+  - IPV6_1
+  - CT_1
+  - 🇺🇸US_2
+  - CMCC-IPV6_2
+  - CMCC_28
+  - IPV6_2
+  - 162.159.36.104_1
+  - shopify.com_2
+  - sullivan.ns.cloudflare.com_2
+  - CMCC_29
+  - CT_2
+  - shopify.com_3
+  - CT_3
+  - wilson.ns.cloudflare.com_1
+  - CT_4
+  - 🇺🇸US_3
+  - shopify.com_4
+  - nikon.ns.cloudflare.com_4
+  - ip.sb_3
+  - sullivan.ns.cloudflare.com_3
+  - 172.67.243.218_2
+  - US_2
+  - otto.ns.cloudflare.com_1
+  - 172.67.110.232_1
+  - CT_5
+  - icook.tw_1
+  - US_3
+  - wilson.ns.cloudflare.com_2
+  - CMCC_30
+  - CT_6
+  - 172.67.110.232_2
+  - 🇭🇰HK_8
+  - CT_7
+  - CT_8
+  - CT_9
+  - 🇺🇸US_4
   - US_4
-  - CMCC-IPV6_9
-  - 官方优选_7
-  - SJC_6
-  - CMCC-IPV6_10
-  - 官方优选_8
-  - TW
-  - SJC_7
-  - SJC_8
-  - PL_9
-  - SJC_9
-  - SJC_10
-  - CMCC-IPV6_11
-  - SJC_11
-  - SJC_12
-  - 官方优选_9
+  - otto.ns.cloudflare.com_2
+  - 162.159.36.104_2
+  - ip.sb_4
+  - CT_10
+  - 172.67.110.232_3
+  - CMCC-IPV6_3
+  - CMCC-IPV6_4
+  - CT_11
+  - icook.tw_2
+  - CMCC-IPV6_5
+  - CMCC-IPV6_6
+  - CT_12
+  - 🇭🇰HK_9
+  - CT_13
+  - CMCC_31
+  - otto.ns.cloudflare.com_3
+  - whatismyipaddress.com_1
+  - CT_14
+  - CMCC-IPV6_7
+  - CT_15
+  - 🇭🇰HK_10
+  - CMCC-IPV6_8
+  - bowen.ns.cloudflare.com_1
+  - CT_16
+  - 172.67.110.232_4
+  - 🇺🇸US_5
+  - whatismyipaddress.com_2
+  - wilson.ns.cloudflare.com_3
+  - IPV6_3
   - US_5
-  - US_6
+  - www.ddwhm.com_1
+  - www.ddwhm.com_2
+  - wilson.ns.cloudflare.com_4
+  - CT_17
+  - 162.159.36.104_3
+  - CT_18
+  - 🇺🇸US_6
+  - whatismyipaddress.com_3
+  - 🇭🇰HK_11
+  - CT_19
+  - CMCC-IPV6_9
+  - CT_20
+  - CMCC-IPV6_10
+  - otto.ns.cloudflare.com_4
+  - 🇺🇸US_7
+  - 🇺🇸US_8
+  - bowen.ns.cloudflare.com_2
+  - CMCC-IPV6_11
+  - CMCC_32
+  - www.ddwhm.com_3
+  - CT_21
   - CMCC-IPV6_12
-  - SG_4
-  - 官方优选_10
-  - 官方优选_11
-  - 官方优选_12
-  - 电信🌐优选🌐群组™️™️™️：t.me/amber6hua
-  - 官方优选_13
-  - US_7
-  - SJC_13
-  - 官方优选_14
   - CMCC-IPV6_13
-  - SEA
-  - 官方优选_15
-  - 官方优选_16
-  - US_8
-  - SJC_14
-  - SJC_15
-  - SJC_16
-  - SJC_17
-  - SJC_18
-  - 官方优选_17
-  - SJC_19
-  - 官方优选_18
-  - SJC_20
-  - SJC_21
-  - 官方优选_19
-  - 官方优选_20
+  - icook.tw_3
+  - CT_22
+  - CT_23
   - CMCC-IPV6_14
   - CMCC-IPV6_15
-  - SG_5
+  - www.ddwhm.com_4
+  - bowen.ns.cloudflare.com_3
+  - 162.159.36.104_4
   - CMCC-IPV6_16
-  - 官方优选_21
-  - 官方优选_22
-  - SJC_22
-  - 美国_2
-  - SG_6
   - CMCC-IPV6_17
-  - SJC_23
+  - US_6
+  - sullivan.ns.cloudflare.com_4
+  - CH_2
+  - whatismyipaddress.com_4
   - CMCC-IPV6_18
   - CMCC-IPV6_19
-  - SJC_24
-  - 官方优选_23
-  - SJC_25
-  - SG_7
+  - CT_24
   - CMCC-IPV6_20
-  - 官方优选_24
-  - US_9
-  - SG_8
-  - SJC_26
-  - 官方优选_25
-  - SJC_27
+  - IPV6_4
+  - icook.tw_4
   - CMCC-IPV6_21
+  - US_7
   - CMCC-IPV6_22
-  - US_10
-  - SG_9
-  - SJC_28
-  - SJC_29
-  - US_11
-  - 官方优选_26
-  - SJC_30
-  - SG_10
-  - KR_18
-  - 官方优选_27
-  - 官方优选_28
-  - SJC_31
-  - SJC_32
-  - SJC_33
-  - SG_11
-  - 64.49.46.181_2
+  - bowen.ns.cloudflare.com_4
   - CMCC-IPV6_23
-  - 官方优选_29
-  - 官方优选_30
-  - SJC_34
-  - SJC_35
-  - SJC_36
+  - US_8
+  - CMCC_33
+  - US_9
   - CMCC-IPV6_24
+  - CT_25
+  - CA_1
+  - CT_26
+  - US_10
+  - 172.67.243.218_3
+  - US_11
   - US_12
-  - US_13
-  - 官方优选_31
-  - SJC_37
-  - CMCC-IPV6_25
-  - US_14
-  - SJC_38
-  - SJC_39
-  - US_15
-  - SJC_40
-  - SJC_41
-  - HK_8
-  - HK_9
-  - NL_2
-  - 官方优选_32
-  - 官方优选_33
-  - SJC_42
-  - SJC_43
-  - 64.49.47.64_1
-  - CMCC-IPV6_26
-  - SJC_44
-  - 官方优选_34
-  - 官方优选_35
-  - 官方优选_36
-  - 官方优选_37
-  - US_16
-  - 官方优选_38
-  - CMCC-IPV6_27
-  - US_17
-  - SJC_45
-  - SG_12
-  - KR_19
-  - HK_10
-  - 官方优选_39
-  - CMCC-IPV6_28
-  - CMCC-IPV6_29
-  - CMCC-IPV6_30
-  - CMCC-IPV6_31
-  - PL_10
-  - CMCC-IPV6_32
-  - 64.49.47.64_2
-  - US_18
-  - CMCC-IPV6_33
-  - 官方优选_40
-  - CMCC-IPV6_34
-  - PL_11
-  - CDG
-  - KR_20
-  - HK_11
-  - HK_12
-  - HK_13
-  - US_19
+  - CA_2
+  - 172.67.243.218_4
+  - JP_1
+  - JP_2
+  - KR
+  - CMCC_34
   type: select
 - name: 📲 电报信息
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
-  - HK_1
-  - HK_2
-  - HK_3
-  - HK_4
-  - HK_5
-  - FUK
-  - NRT
-  - KR_1
-  - JP_1
-  - HK_6
-  - JP_2
-  - HK_7
-  - JP_3
-  - JP_4
-  - SG_1
-  - JP_5
-  - KR_2
-  - SG_2
-  - JP_6
-  - SG_3
-  - KR_3
-  - JP_7
-  - JP_8
-  - PL_1
-  - PL_2
-  - PL_3
-  - LAX
-  - KR_4
-  - PL_4
-  - ICN_1
-  - KR_5
-  - ICN_2
-  - KR_6
-  - KR_7
-  - KR_8
-  - KR_9
-  - KR_10
-  - KR_11
-  - SJC_1
-  - KR_12
-  - KR_13
-  - KR_14
-  - ICN_3
-  - KR_15
-  - KR_16
-  - KR_17
-  - PL_5
-  - CMCC-IPV6_1
-  - PL_6
-  - 官方优选_1
-  - CMCC-IPV6_2
-  - 官方优选_2
-  - 官方优选_3
-  - 64.49.46.181_1
-  - CMCC-IPV6_3
-  - 官方优选_4
-  - CMCC-IPV6_4
-  - SJC_2
-  - CMCC-IPV6_5
+  - TW_1
   - US_1
-  - 美国_1
-  - us
-  - US_2
-  - SJC_3
-  - PL_7
-  - US_3
+  - 🇺🇸US_1
+  - CMCC_1
+  - CMCC_2
+  - CMCC_3
+  - CMCC_4
+  - CMCC_5
+  - CMCC_6
+  - CMCC_7
+  - CMCC_8
+  - CMCC_9
+  - 🇭🇰HK_1
+  - TW_2
+  - CMCC_10
+  - CMCC_11
+  - 🇭🇰HK_2
+  - 🇭🇰HK_3
+  - 🇭🇰HK_4
+  - CMCC_12
+  - CMCC_13
+  - CMCC_14
+  - CMCC_15
   - NL_1
-  - SJC_4
-  - SJC_5
-  - CMCC-IPV6_6
-  - PL_8
-  - 官方优选_5
-  - CMCC-IPV6_7
-  - CMCC-IPV6_8
-  - ICN_4
-  - 官方优选_6
+  - NL_2
+  - CMCC_16
+  - CMCC_17
+  - 🇭🇰HK_5
+  - CMCC_18
+  - CMCC_19
+  - CH_1
+  - CMCC_20
+  - CMCC_21
+  - CMCC_22
+  - CMCC_23
+  - 172.67.243.218_1
+  - CMCC-IPV6_1
+  - CMCC_24
+  - 🇭🇰HK_6
+  - CMCC_25
+  - nikon.ns.cloudflare.com_1
+  - CMCC_26
+  - CMCC_27
+  - nikon.ns.cloudflare.com_2
+  - ip.sb_1
+  - nikon.ns.cloudflare.com_3
+  - ip.sb_2
+  - shopify.com_1
+  - sullivan.ns.cloudflare.com_1
+  - 🇭🇰HK_7
+  - IPV6_1
+  - CT_1
+  - 🇺🇸US_2
+  - CMCC-IPV6_2
+  - CMCC_28
+  - IPV6_2
+  - 162.159.36.104_1
+  - shopify.com_2
+  - sullivan.ns.cloudflare.com_2
+  - CMCC_29
+  - CT_2
+  - shopify.com_3
+  - CT_3
+  - wilson.ns.cloudflare.com_1
+  - CT_4
+  - 🇺🇸US_3
+  - shopify.com_4
+  - nikon.ns.cloudflare.com_4
+  - ip.sb_3
+  - sullivan.ns.cloudflare.com_3
+  - 172.67.243.218_2
+  - US_2
+  - otto.ns.cloudflare.com_1
+  - 172.67.110.232_1
+  - CT_5
+  - icook.tw_1
+  - US_3
+  - wilson.ns.cloudflare.com_2
+  - CMCC_30
+  - CT_6
+  - 172.67.110.232_2
+  - 🇭🇰HK_8
+  - CT_7
+  - CT_8
+  - CT_9
+  - 🇺🇸US_4
   - US_4
-  - CMCC-IPV6_9
-  - 官方优选_7
-  - SJC_6
-  - CMCC-IPV6_10
-  - 官方优选_8
-  - TW
-  - SJC_7
-  - SJC_8
-  - PL_9
-  - SJC_9
-  - SJC_10
-  - CMCC-IPV6_11
-  - SJC_11
-  - SJC_12
-  - 官方优选_9
+  - otto.ns.cloudflare.com_2
+  - 162.159.36.104_2
+  - ip.sb_4
+  - CT_10
+  - 172.67.110.232_3
+  - CMCC-IPV6_3
+  - CMCC-IPV6_4
+  - CT_11
+  - icook.tw_2
+  - CMCC-IPV6_5
+  - CMCC-IPV6_6
+  - CT_12
+  - 🇭🇰HK_9
+  - CT_13
+  - CMCC_31
+  - otto.ns.cloudflare.com_3
+  - whatismyipaddress.com_1
+  - CT_14
+  - CMCC-IPV6_7
+  - CT_15
+  - 🇭🇰HK_10
+  - CMCC-IPV6_8
+  - bowen.ns.cloudflare.com_1
+  - CT_16
+  - 172.67.110.232_4
+  - 🇺🇸US_5
+  - whatismyipaddress.com_2
+  - wilson.ns.cloudflare.com_3
+  - IPV6_3
   - US_5
-  - US_6
+  - www.ddwhm.com_1
+  - www.ddwhm.com_2
+  - wilson.ns.cloudflare.com_4
+  - CT_17
+  - 162.159.36.104_3
+  - CT_18
+  - 🇺🇸US_6
+  - whatismyipaddress.com_3
+  - 🇭🇰HK_11
+  - CT_19
+  - CMCC-IPV6_9
+  - CT_20
+  - CMCC-IPV6_10
+  - otto.ns.cloudflare.com_4
+  - 🇺🇸US_7
+  - 🇺🇸US_8
+  - bowen.ns.cloudflare.com_2
+  - CMCC-IPV6_11
+  - CMCC_32
+  - www.ddwhm.com_3
+  - CT_21
   - CMCC-IPV6_12
-  - SG_4
-  - 官方优选_10
-  - 官方优选_11
-  - 官方优选_12
-  - 电信🌐优选🌐群组™️™️™️：t.me/amber6hua
-  - 官方优选_13
-  - US_7
-  - SJC_13
-  - 官方优选_14
   - CMCC-IPV6_13
-  - SEA
-  - 官方优选_15
-  - 官方优选_16
-  - US_8
-  - SJC_14
-  - SJC_15
-  - SJC_16
-  - SJC_17
-  - SJC_18
-  - 官方优选_17
-  - SJC_19
-  - 官方优选_18
-  - SJC_20
-  - SJC_21
-  - 官方优选_19
-  - 官方优选_20
+  - icook.tw_3
+  - CT_22
+  - CT_23
   - CMCC-IPV6_14
   - CMCC-IPV6_15
-  - SG_5
+  - www.ddwhm.com_4
+  - bowen.ns.cloudflare.com_3
+  - 162.159.36.104_4
   - CMCC-IPV6_16
-  - 官方优选_21
-  - 官方优选_22
-  - SJC_22
-  - 美国_2
-  - SG_6
   - CMCC-IPV6_17
-  - SJC_23
+  - US_6
+  - sullivan.ns.cloudflare.com_4
+  - CH_2
+  - whatismyipaddress.com_4
   - CMCC-IPV6_18
   - CMCC-IPV6_19
-  - SJC_24
-  - 官方优选_23
-  - SJC_25
-  - SG_7
+  - CT_24
   - CMCC-IPV6_20
-  - 官方优选_24
-  - US_9
-  - SG_8
-  - SJC_26
-  - 官方优选_25
-  - SJC_27
+  - IPV6_4
+  - icook.tw_4
   - CMCC-IPV6_21
+  - US_7
   - CMCC-IPV6_22
-  - US_10
-  - SG_9
-  - SJC_28
-  - SJC_29
-  - US_11
-  - 官方优选_26
-  - SJC_30
-  - SG_10
-  - KR_18
-  - 官方优选_27
-  - 官方优选_28
-  - SJC_31
-  - SJC_32
-  - SJC_33
-  - SG_11
-  - 64.49.46.181_2
+  - bowen.ns.cloudflare.com_4
   - CMCC-IPV6_23
-  - 官方优选_29
-  - 官方优选_30
-  - SJC_34
-  - SJC_35
-  - SJC_36
+  - US_8
+  - CMCC_33
+  - US_9
   - CMCC-IPV6_24
+  - CT_25
+  - CA_1
+  - CT_26
+  - US_10
+  - 172.67.243.218_3
+  - US_11
   - US_12
-  - US_13
-  - 官方优选_31
-  - SJC_37
-  - CMCC-IPV6_25
-  - US_14
-  - SJC_38
-  - SJC_39
-  - US_15
-  - SJC_40
-  - SJC_41
-  - HK_8
-  - HK_9
-  - NL_2
-  - 官方优选_32
-  - 官方优选_33
-  - SJC_42
-  - SJC_43
-  - 64.49.47.64_1
-  - CMCC-IPV6_26
-  - SJC_44
-  - 官方优选_34
-  - 官方优选_35
-  - 官方优选_36
-  - 官方优选_37
-  - US_16
-  - 官方优选_38
-  - CMCC-IPV6_27
-  - US_17
-  - SJC_45
-  - SG_12
-  - KR_19
-  - HK_10
-  - 官方优选_39
-  - CMCC-IPV6_28
-  - CMCC-IPV6_29
-  - CMCC-IPV6_30
-  - CMCC-IPV6_31
-  - PL_10
-  - CMCC-IPV6_32
-  - 64.49.47.64_2
-  - US_18
-  - CMCC-IPV6_33
-  - 官方优选_40
-  - CMCC-IPV6_34
-  - PL_11
-  - CDG
-  - KR_20
-  - HK_11
-  - HK_12
-  - HK_13
-  - US_19
+  - CA_2
+  - 172.67.243.218_4
+  - JP_1
+  - JP_2
+  - KR
+  - CMCC_34
   type: select
 - name: Ⓜ️ 微软服务
   proxies:
   - 🎯 全球直连
   - 🚀 节点选择
-  - HK_1
-  - HK_2
-  - HK_3
-  - HK_4
-  - HK_5
-  - FUK
-  - NRT
-  - KR_1
-  - JP_1
-  - HK_6
-  - JP_2
-  - HK_7
-  - JP_3
-  - JP_4
-  - SG_1
-  - JP_5
-  - KR_2
-  - SG_2
-  - JP_6
-  - SG_3
-  - KR_3
-  - JP_7
-  - JP_8
-  - PL_1
-  - PL_2
-  - PL_3
-  - LAX
-  - KR_4
-  - PL_4
-  - ICN_1
-  - KR_5
-  - ICN_2
-  - KR_6
-  - KR_7
-  - KR_8
-  - KR_9
-  - KR_10
-  - KR_11
-  - SJC_1
-  - KR_12
-  - KR_13
-  - KR_14
-  - ICN_3
-  - KR_15
-  - KR_16
-  - KR_17
-  - PL_5
-  - CMCC-IPV6_1
-  - PL_6
-  - 官方优选_1
-  - CMCC-IPV6_2
-  - 官方优选_2
-  - 官方优选_3
-  - 64.49.46.181_1
-  - CMCC-IPV6_3
-  - 官方优选_4
-  - CMCC-IPV6_4
-  - SJC_2
-  - CMCC-IPV6_5
+  - TW_1
   - US_1
-  - 美国_1
-  - us
-  - US_2
-  - SJC_3
-  - PL_7
-  - US_3
+  - 🇺🇸US_1
+  - CMCC_1
+  - CMCC_2
+  - CMCC_3
+  - CMCC_4
+  - CMCC_5
+  - CMCC_6
+  - CMCC_7
+  - CMCC_8
+  - CMCC_9
+  - 🇭🇰HK_1
+  - TW_2
+  - CMCC_10
+  - CMCC_11
+  - 🇭🇰HK_2
+  - 🇭🇰HK_3
+  - 🇭🇰HK_4
+  - CMCC_12
+  - CMCC_13
+  - CMCC_14
+  - CMCC_15
   - NL_1
-  - SJC_4
-  - SJC_5
-  - CMCC-IPV6_6
-  - PL_8
-  - 官方优选_5
-  - CMCC-IPV6_7
-  - CMCC-IPV6_8
-  - ICN_4
-  - 官方优选_6
+  - NL_2
+  - CMCC_16
+  - CMCC_17
+  - 🇭🇰HK_5
+  - CMCC_18
+  - CMCC_19
+  - CH_1
+  - CMCC_20
+  - CMCC_21
+  - CMCC_22
+  - CMCC_23
+  - 172.67.243.218_1
+  - CMCC-IPV6_1
+  - CMCC_24
+  - 🇭🇰HK_6
+  - CMCC_25
+  - nikon.ns.cloudflare.com_1
+  - CMCC_26
+  - CMCC_27
+  - nikon.ns.cloudflare.com_2
+  - ip.sb_1
+  - nikon.ns.cloudflare.com_3
+  - ip.sb_2
+  - shopify.com_1
+  - sullivan.ns.cloudflare.com_1
+  - 🇭🇰HK_7
+  - IPV6_1
+  - CT_1
+  - 🇺🇸US_2
+  - CMCC-IPV6_2
+  - CMCC_28
+  - IPV6_2
+  - 162.159.36.104_1
+  - shopify.com_2
+  - sullivan.ns.cloudflare.com_2
+  - CMCC_29
+  - CT_2
+  - shopify.com_3
+  - CT_3
+  - wilson.ns.cloudflare.com_1
+  - CT_4
+  - 🇺🇸US_3
+  - shopify.com_4
+  - nikon.ns.cloudflare.com_4
+  - ip.sb_3
+  - sullivan.ns.cloudflare.com_3
+  - 172.67.243.218_2
+  - US_2
+  - otto.ns.cloudflare.com_1
+  - 172.67.110.232_1
+  - CT_5
+  - icook.tw_1
+  - US_3
+  - wilson.ns.cloudflare.com_2
+  - CMCC_30
+  - CT_6
+  - 172.67.110.232_2
+  - 🇭🇰HK_8
+  - CT_7
+  - CT_8
+  - CT_9
+  - 🇺🇸US_4
   - US_4
-  - CMCC-IPV6_9
-  - 官方优选_7
-  - SJC_6
-  - CMCC-IPV6_10
-  - 官方优选_8
-  - TW
-  - SJC_7
-  - SJC_8
-  - PL_9
-  - SJC_9
-  - SJC_10
-  - CMCC-IPV6_11
-  - SJC_11
-  - SJC_12
-  - 官方优选_9
+  - otto.ns.cloudflare.com_2
+  - 162.159.36.104_2
+  - ip.sb_4
+  - CT_10
+  - 172.67.110.232_3
+  - CMCC-IPV6_3
+  - CMCC-IPV6_4
+  - CT_11
+  - icook.tw_2
+  - CMCC-IPV6_5
+  - CMCC-IPV6_6
+  - CT_12
+  - 🇭🇰HK_9
+  - CT_13
+  - CMCC_31
+  - otto.ns.cloudflare.com_3
+  - whatismyipaddress.com_1
+  - CT_14
+  - CMCC-IPV6_7
+  - CT_15
+  - 🇭🇰HK_10
+  - CMCC-IPV6_8
+  - bowen.ns.cloudflare.com_1
+  - CT_16
+  - 172.67.110.232_4
+  - 🇺🇸US_5
+  - whatismyipaddress.com_2
+  - wilson.ns.cloudflare.com_3
+  - IPV6_3
   - US_5
-  - US_6
+  - www.ddwhm.com_1
+  - www.ddwhm.com_2
+  - wilson.ns.cloudflare.com_4
+  - CT_17
+  - 162.159.36.104_3
+  - CT_18
+  - 🇺🇸US_6
+  - whatismyipaddress.com_3
+  - 🇭🇰HK_11
+  - CT_19
+  - CMCC-IPV6_9
+  - CT_20
+  - CMCC-IPV6_10
+  - otto.ns.cloudflare.com_4
+  - 🇺🇸US_7
+  - 🇺🇸US_8
+  - bowen.ns.cloudflare.com_2
+  - CMCC-IPV6_11
+  - CMCC_32
+  - www.ddwhm.com_3
+  - CT_21
   - CMCC-IPV6_12
-  - SG_4
-  - 官方优选_10
-  - 官方优选_11
-  - 官方优选_12
-  - 电信🌐优选🌐群组™️™️™️：t.me/amber6hua
-  - 官方优选_13
-  - US_7
-  - SJC_13
-  - 官方优选_14
   - CMCC-IPV6_13
-  - SEA
-  - 官方优选_15
-  - 官方优选_16
-  - US_8
-  - SJC_14
-  - SJC_15
-  - SJC_16
-  - SJC_17
-  - SJC_18
-  - 官方优选_17
-  - SJC_19
-  - 官方优选_18
-  - SJC_20
-  - SJC_21
-  - 官方优选_19
-  - 官方优选_20
+  - icook.tw_3
+  - CT_22
+  - CT_23
   - CMCC-IPV6_14
   - CMCC-IPV6_15
-  - SG_5
+  - www.ddwhm.com_4
+  - bowen.ns.cloudflare.com_3
+  - 162.159.36.104_4
   - CMCC-IPV6_16
-  - 官方优选_21
-  - 官方优选_22
-  - SJC_22
-  - 美国_2
-  - SG_6
   - CMCC-IPV6_17
-  - SJC_23
+  - US_6
+  - sullivan.ns.cloudflare.com_4
+  - CH_2
+  - whatismyipaddress.com_4
   - CMCC-IPV6_18
   - CMCC-IPV6_19
-  - SJC_24
-  - 官方优选_23
-  - SJC_25
-  - SG_7
+  - CT_24
   - CMCC-IPV6_20
-  - 官方优选_24
-  - US_9
-  - SG_8
-  - SJC_26
-  - 官方优选_25
-  - SJC_27
+  - IPV6_4
+  - icook.tw_4
   - CMCC-IPV6_21
+  - US_7
   - CMCC-IPV6_22
-  - US_10
-  - SG_9
-  - SJC_28
-  - SJC_29
-  - US_11
-  - 官方优选_26
-  - SJC_30
-  - SG_10
-  - KR_18
-  - 官方优选_27
-  - 官方优选_28
-  - SJC_31
-  - SJC_32
-  - SJC_33
-  - SG_11
-  - 64.49.46.181_2
+  - bowen.ns.cloudflare.com_4
   - CMCC-IPV6_23
-  - 官方优选_29
-  - 官方优选_30
-  - SJC_34
-  - SJC_35
-  - SJC_36
+  - US_8
+  - CMCC_33
+  - US_9
   - CMCC-IPV6_24
+  - CT_25
+  - CA_1
+  - CT_26
+  - US_10
+  - 172.67.243.218_3
+  - US_11
   - US_12
-  - US_13
-  - 官方优选_31
-  - SJC_37
-  - CMCC-IPV6_25
-  - US_14
-  - SJC_38
-  - SJC_39
-  - US_15
-  - SJC_40
-  - SJC_41
-  - HK_8
-  - HK_9
-  - NL_2
-  - 官方优选_32
-  - 官方优选_33
-  - SJC_42
-  - SJC_43
-  - 64.49.47.64_1
-  - CMCC-IPV6_26
-  - SJC_44
-  - 官方优选_34
-  - 官方优选_35
-  - 官方优选_36
-  - 官方优选_37
-  - US_16
-  - 官方优选_38
-  - CMCC-IPV6_27
-  - US_17
-  - SJC_45
-  - SG_12
-  - KR_19
-  - HK_10
-  - 官方优选_39
-  - CMCC-IPV6_28
-  - CMCC-IPV6_29
-  - CMCC-IPV6_30
-  - CMCC-IPV6_31
-  - PL_10
-  - CMCC-IPV6_32
-  - 64.49.47.64_2
-  - US_18
-  - CMCC-IPV6_33
-  - 官方优选_40
-  - CMCC-IPV6_34
-  - PL_11
-  - CDG
-  - KR_20
-  - HK_11
-  - HK_12
-  - HK_13
-  - US_19
+  - CA_2
+  - 172.67.243.218_4
+  - JP_1
+  - JP_2
+  - KR
+  - CMCC_34
   type: select
 - name: 🍎 苹果服务
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
-  - HK_1
-  - HK_2
-  - HK_3
-  - HK_4
-  - HK_5
-  - FUK
-  - NRT
-  - KR_1
-  - JP_1
-  - HK_6
-  - JP_2
-  - HK_7
-  - JP_3
-  - JP_4
-  - SG_1
-  - JP_5
-  - KR_2
-  - SG_2
-  - JP_6
-  - SG_3
-  - KR_3
-  - JP_7
-  - JP_8
-  - PL_1
-  - PL_2
-  - PL_3
-  - LAX
-  - KR_4
-  - PL_4
-  - ICN_1
-  - KR_5
-  - ICN_2
-  - KR_6
-  - KR_7
-  - KR_8
-  - KR_9
-  - KR_10
-  - KR_11
-  - SJC_1
-  - KR_12
-  - KR_13
-  - KR_14
-  - ICN_3
-  - KR_15
-  - KR_16
-  - KR_17
-  - PL_5
-  - CMCC-IPV6_1
-  - PL_6
-  - 官方优选_1
-  - CMCC-IPV6_2
-  - 官方优选_2
-  - 官方优选_3
-  - 64.49.46.181_1
-  - CMCC-IPV6_3
-  - 官方优选_4
-  - CMCC-IPV6_4
-  - SJC_2
-  - CMCC-IPV6_5
+  - TW_1
   - US_1
-  - 美国_1
-  - us
-  - US_2
-  - SJC_3
-  - PL_7
-  - US_3
+  - 🇺🇸US_1
+  - CMCC_1
+  - CMCC_2
+  - CMCC_3
+  - CMCC_4
+  - CMCC_5
+  - CMCC_6
+  - CMCC_7
+  - CMCC_8
+  - CMCC_9
+  - 🇭🇰HK_1
+  - TW_2
+  - CMCC_10
+  - CMCC_11
+  - 🇭🇰HK_2
+  - 🇭🇰HK_3
+  - 🇭🇰HK_4
+  - CMCC_12
+  - CMCC_13
+  - CMCC_14
+  - CMCC_15
   - NL_1
-  - SJC_4
-  - SJC_5
-  - CMCC-IPV6_6
-  - PL_8
-  - 官方优选_5
-  - CMCC-IPV6_7
-  - CMCC-IPV6_8
-  - ICN_4
-  - 官方优选_6
+  - NL_2
+  - CMCC_16
+  - CMCC_17
+  - 🇭🇰HK_5
+  - CMCC_18
+  - CMCC_19
+  - CH_1
+  - CMCC_20
+  - CMCC_21
+  - CMCC_22
+  - CMCC_23
+  - 172.67.243.218_1
+  - CMCC-IPV6_1
+  - CMCC_24
+  - 🇭🇰HK_6
+  - CMCC_25
+  - nikon.ns.cloudflare.com_1
+  - CMCC_26
+  - CMCC_27
+  - nikon.ns.cloudflare.com_2
+  - ip.sb_1
+  - nikon.ns.cloudflare.com_3
+  - ip.sb_2
+  - shopify.com_1
+  - sullivan.ns.cloudflare.com_1
+  - 🇭🇰HK_7
+  - IPV6_1
+  - CT_1
+  - 🇺🇸US_2
+  - CMCC-IPV6_2
+  - CMCC_28
+  - IPV6_2
+  - 162.159.36.104_1
+  - shopify.com_2
+  - sullivan.ns.cloudflare.com_2
+  - CMCC_29
+  - CT_2
+  - shopify.com_3
+  - CT_3
+  - wilson.ns.cloudflare.com_1
+  - CT_4
+  - 🇺🇸US_3
+  - shopify.com_4
+  - nikon.ns.cloudflare.com_4
+  - ip.sb_3
+  - sullivan.ns.cloudflare.com_3
+  - 172.67.243.218_2
+  - US_2
+  - otto.ns.cloudflare.com_1
+  - 172.67.110.232_1
+  - CT_5
+  - icook.tw_1
+  - US_3
+  - wilson.ns.cloudflare.com_2
+  - CMCC_30
+  - CT_6
+  - 172.67.110.232_2
+  - 🇭🇰HK_8
+  - CT_7
+  - CT_8
+  - CT_9
+  - 🇺🇸US_4
   - US_4
-  - CMCC-IPV6_9
-  - 官方优选_7
-  - SJC_6
-  - CMCC-IPV6_10
-  - 官方优选_8
-  - TW
-  - SJC_7
-  - SJC_8
-  - PL_9
-  - SJC_9
-  - SJC_10
-  - CMCC-IPV6_11
-  - SJC_11
-  - SJC_12
-  - 官方优选_9
+  - otto.ns.cloudflare.com_2
+  - 162.159.36.104_2
+  - ip.sb_4
+  - CT_10
+  - 172.67.110.232_3
+  - CMCC-IPV6_3
+  - CMCC-IPV6_4
+  - CT_11
+  - icook.tw_2
+  - CMCC-IPV6_5
+  - CMCC-IPV6_6
+  - CT_12
+  - 🇭🇰HK_9
+  - CT_13
+  - CMCC_31
+  - otto.ns.cloudflare.com_3
+  - whatismyipaddress.com_1
+  - CT_14
+  - CMCC-IPV6_7
+  - CT_15
+  - 🇭🇰HK_10
+  - CMCC-IPV6_8
+  - bowen.ns.cloudflare.com_1
+  - CT_16
+  - 172.67.110.232_4
+  - 🇺🇸US_5
+  - whatismyipaddress.com_2
+  - wilson.ns.cloudflare.com_3
+  - IPV6_3
   - US_5
-  - US_6
+  - www.ddwhm.com_1
+  - www.ddwhm.com_2
+  - wilson.ns.cloudflare.com_4
+  - CT_17
+  - 162.159.36.104_3
+  - CT_18
+  - 🇺🇸US_6
+  - whatismyipaddress.com_3
+  - 🇭🇰HK_11
+  - CT_19
+  - CMCC-IPV6_9
+  - CT_20
+  - CMCC-IPV6_10
+  - otto.ns.cloudflare.com_4
+  - 🇺🇸US_7
+  - 🇺🇸US_8
+  - bowen.ns.cloudflare.com_2
+  - CMCC-IPV6_11
+  - CMCC_32
+  - www.ddwhm.com_3
+  - CT_21
   - CMCC-IPV6_12
-  - SG_4
-  - 官方优选_10
-  - 官方优选_11
-  - 官方优选_12
-  - 电信🌐优选🌐群组™️™️™️：t.me/amber6hua
-  - 官方优选_13
-  - US_7
-  - SJC_13
-  - 官方优选_14
   - CMCC-IPV6_13
-  - SEA
-  - 官方优选_15
-  - 官方优选_16
-  - US_8
-  - SJC_14
-  - SJC_15
-  - SJC_16
-  - SJC_17
-  - SJC_18
-  - 官方优选_17
-  - SJC_19
-  - 官方优选_18
-  - SJC_20
-  - SJC_21
-  - 官方优选_19
-  - 官方优选_20
+  - icook.tw_3
+  - CT_22
+  - CT_23
   - CMCC-IPV6_14
   - CMCC-IPV6_15
-  - SG_5
+  - www.ddwhm.com_4
+  - bowen.ns.cloudflare.com_3
+  - 162.159.36.104_4
   - CMCC-IPV6_16
-  - 官方优选_21
-  - 官方优选_22
-  - SJC_22
-  - 美国_2
-  - SG_6
   - CMCC-IPV6_17
-  - SJC_23
+  - US_6
+  - sullivan.ns.cloudflare.com_4
+  - CH_2
+  - whatismyipaddress.com_4
   - CMCC-IPV6_18
   - CMCC-IPV6_19
-  - SJC_24
-  - 官方优选_23
-  - SJC_25
-  - SG_7
+  - CT_24
   - CMCC-IPV6_20
-  - 官方优选_24
-  - US_9
-  - SG_8
-  - SJC_26
-  - 官方优选_25
-  - SJC_27
+  - IPV6_4
+  - icook.tw_4
   - CMCC-IPV6_21
+  - US_7
   - CMCC-IPV6_22
-  - US_10
-  - SG_9
-  - SJC_28
-  - SJC_29
-  - US_11
-  - 官方优选_26
-  - SJC_30
-  - SG_10
-  - KR_18
-  - 官方优选_27
-  - 官方优选_28
-  - SJC_31
-  - SJC_32
-  - SJC_33
-  - SG_11
-  - 64.49.46.181_2
+  - bowen.ns.cloudflare.com_4
   - CMCC-IPV6_23
-  - 官方优选_29
-  - 官方优选_30
-  - SJC_34
-  - SJC_35
-  - SJC_36
+  - US_8
+  - CMCC_33
+  - US_9
   - CMCC-IPV6_24
+  - CT_25
+  - CA_1
+  - CT_26
+  - US_10
+  - 172.67.243.218_3
+  - US_11
   - US_12
-  - US_13
-  - 官方优选_31
-  - SJC_37
-  - CMCC-IPV6_25
-  - US_14
-  - SJC_38
-  - SJC_39
-  - US_15
-  - SJC_40
-  - SJC_41
-  - HK_8
-  - HK_9
-  - NL_2
-  - 官方优选_32
-  - 官方优选_33
-  - SJC_42
-  - SJC_43
-  - 64.49.47.64_1
-  - CMCC-IPV6_26
-  - SJC_44
-  - 官方优选_34
-  - 官方优选_35
-  - 官方优选_36
-  - 官方优选_37
-  - US_16
-  - 官方优选_38
-  - CMCC-IPV6_27
-  - US_17
-  - SJC_45
-  - SG_12
-  - KR_19
-  - HK_10
-  - 官方优选_39
-  - CMCC-IPV6_28
-  - CMCC-IPV6_29
-  - CMCC-IPV6_30
-  - CMCC-IPV6_31
-  - PL_10
-  - CMCC-IPV6_32
-  - 64.49.47.64_2
-  - US_18
-  - CMCC-IPV6_33
-  - 官方优选_40
-  - CMCC-IPV6_34
-  - PL_11
-  - CDG
-  - KR_20
-  - HK_11
-  - HK_12
-  - HK_13
-  - US_19
+  - CA_2
+  - 172.67.243.218_4
+  - JP_1
+  - JP_2
+  - KR
+  - CMCC_34
   type: select
 - name: 🎯 全球直连
   proxies:
@@ -4433,228 +3660,188 @@ proxy-groups:
   - 🚀 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
-  - HK_1
-  - HK_2
-  - HK_3
-  - HK_4
-  - HK_5
-  - FUK
-  - NRT
-  - KR_1
-  - JP_1
-  - HK_6
-  - JP_2
-  - HK_7
-  - JP_3
-  - JP_4
-  - SG_1
-  - JP_5
-  - KR_2
-  - SG_2
-  - JP_6
-  - SG_3
-  - KR_3
-  - JP_7
-  - JP_8
-  - PL_1
-  - PL_2
-  - PL_3
-  - LAX
-  - KR_4
-  - PL_4
-  - ICN_1
-  - KR_5
-  - ICN_2
-  - KR_6
-  - KR_7
-  - KR_8
-  - KR_9
-  - KR_10
-  - KR_11
-  - SJC_1
-  - KR_12
-  - KR_13
-  - KR_14
-  - ICN_3
-  - KR_15
-  - KR_16
-  - KR_17
-  - PL_5
-  - CMCC-IPV6_1
-  - PL_6
-  - 官方优选_1
-  - CMCC-IPV6_2
-  - 官方优选_2
-  - 官方优选_3
-  - 64.49.46.181_1
-  - CMCC-IPV6_3
-  - 官方优选_4
-  - CMCC-IPV6_4
-  - SJC_2
-  - CMCC-IPV6_5
+  - TW_1
   - US_1
-  - 美国_1
-  - us
-  - US_2
-  - SJC_3
-  - PL_7
-  - US_3
+  - 🇺🇸US_1
+  - CMCC_1
+  - CMCC_2
+  - CMCC_3
+  - CMCC_4
+  - CMCC_5
+  - CMCC_6
+  - CMCC_7
+  - CMCC_8
+  - CMCC_9
+  - 🇭🇰HK_1
+  - TW_2
+  - CMCC_10
+  - CMCC_11
+  - 🇭🇰HK_2
+  - 🇭🇰HK_3
+  - 🇭🇰HK_4
+  - CMCC_12
+  - CMCC_13
+  - CMCC_14
+  - CMCC_15
   - NL_1
-  - SJC_4
-  - SJC_5
-  - CMCC-IPV6_6
-  - PL_8
-  - 官方优选_5
-  - CMCC-IPV6_7
-  - CMCC-IPV6_8
-  - ICN_4
-  - 官方优选_6
+  - NL_2
+  - CMCC_16
+  - CMCC_17
+  - 🇭🇰HK_5
+  - CMCC_18
+  - CMCC_19
+  - CH_1
+  - CMCC_20
+  - CMCC_21
+  - CMCC_22
+  - CMCC_23
+  - 172.67.243.218_1
+  - CMCC-IPV6_1
+  - CMCC_24
+  - 🇭🇰HK_6
+  - CMCC_25
+  - nikon.ns.cloudflare.com_1
+  - CMCC_26
+  - CMCC_27
+  - nikon.ns.cloudflare.com_2
+  - ip.sb_1
+  - nikon.ns.cloudflare.com_3
+  - ip.sb_2
+  - shopify.com_1
+  - sullivan.ns.cloudflare.com_1
+  - 🇭🇰HK_7
+  - IPV6_1
+  - CT_1
+  - 🇺🇸US_2
+  - CMCC-IPV6_2
+  - CMCC_28
+  - IPV6_2
+  - 162.159.36.104_1
+  - shopify.com_2
+  - sullivan.ns.cloudflare.com_2
+  - CMCC_29
+  - CT_2
+  - shopify.com_3
+  - CT_3
+  - wilson.ns.cloudflare.com_1
+  - CT_4
+  - 🇺🇸US_3
+  - shopify.com_4
+  - nikon.ns.cloudflare.com_4
+  - ip.sb_3
+  - sullivan.ns.cloudflare.com_3
+  - 172.67.243.218_2
+  - US_2
+  - otto.ns.cloudflare.com_1
+  - 172.67.110.232_1
+  - CT_5
+  - icook.tw_1
+  - US_3
+  - wilson.ns.cloudflare.com_2
+  - CMCC_30
+  - CT_6
+  - 172.67.110.232_2
+  - 🇭🇰HK_8
+  - CT_7
+  - CT_8
+  - CT_9
+  - 🇺🇸US_4
   - US_4
-  - CMCC-IPV6_9
-  - 官方优选_7
-  - SJC_6
-  - CMCC-IPV6_10
-  - 官方优选_8
-  - TW
-  - SJC_7
-  - SJC_8
-  - PL_9
-  - SJC_9
-  - SJC_10
-  - CMCC-IPV6_11
-  - SJC_11
-  - SJC_12
-  - 官方优选_9
+  - otto.ns.cloudflare.com_2
+  - 162.159.36.104_2
+  - ip.sb_4
+  - CT_10
+  - 172.67.110.232_3
+  - CMCC-IPV6_3
+  - CMCC-IPV6_4
+  - CT_11
+  - icook.tw_2
+  - CMCC-IPV6_5
+  - CMCC-IPV6_6
+  - CT_12
+  - 🇭🇰HK_9
+  - CT_13
+  - CMCC_31
+  - otto.ns.cloudflare.com_3
+  - whatismyipaddress.com_1
+  - CT_14
+  - CMCC-IPV6_7
+  - CT_15
+  - 🇭🇰HK_10
+  - CMCC-IPV6_8
+  - bowen.ns.cloudflare.com_1
+  - CT_16
+  - 172.67.110.232_4
+  - 🇺🇸US_5
+  - whatismyipaddress.com_2
+  - wilson.ns.cloudflare.com_3
+  - IPV6_3
   - US_5
-  - US_6
+  - www.ddwhm.com_1
+  - www.ddwhm.com_2
+  - wilson.ns.cloudflare.com_4
+  - CT_17
+  - 162.159.36.104_3
+  - CT_18
+  - 🇺🇸US_6
+  - whatismyipaddress.com_3
+  - 🇭🇰HK_11
+  - CT_19
+  - CMCC-IPV6_9
+  - CT_20
+  - CMCC-IPV6_10
+  - otto.ns.cloudflare.com_4
+  - 🇺🇸US_7
+  - 🇺🇸US_8
+  - bowen.ns.cloudflare.com_2
+  - CMCC-IPV6_11
+  - CMCC_32
+  - www.ddwhm.com_3
+  - CT_21
   - CMCC-IPV6_12
-  - SG_4
-  - 官方优选_10
-  - 官方优选_11
-  - 官方优选_12
-  - 电信🌐优选🌐群组™️™️™️：t.me/amber6hua
-  - 官方优选_13
-  - US_7
-  - SJC_13
-  - 官方优选_14
   - CMCC-IPV6_13
-  - SEA
-  - 官方优选_15
-  - 官方优选_16
-  - US_8
-  - SJC_14
-  - SJC_15
-  - SJC_16
-  - SJC_17
-  - SJC_18
-  - 官方优选_17
-  - SJC_19
-  - 官方优选_18
-  - SJC_20
-  - SJC_21
-  - 官方优选_19
-  - 官方优选_20
+  - icook.tw_3
+  - CT_22
+  - CT_23
   - CMCC-IPV6_14
   - CMCC-IPV6_15
-  - SG_5
+  - www.ddwhm.com_4
+  - bowen.ns.cloudflare.com_3
+  - 162.159.36.104_4
   - CMCC-IPV6_16
-  - 官方优选_21
-  - 官方优选_22
-  - SJC_22
-  - 美国_2
-  - SG_6
   - CMCC-IPV6_17
-  - SJC_23
+  - US_6
+  - sullivan.ns.cloudflare.com_4
+  - CH_2
+  - whatismyipaddress.com_4
   - CMCC-IPV6_18
   - CMCC-IPV6_19
-  - SJC_24
-  - 官方优选_23
-  - SJC_25
-  - SG_7
+  - CT_24
   - CMCC-IPV6_20
-  - 官方优选_24
-  - US_9
-  - SG_8
-  - SJC_26
-  - 官方优选_25
-  - SJC_27
+  - IPV6_4
+  - icook.tw_4
   - CMCC-IPV6_21
+  - US_7
   - CMCC-IPV6_22
-  - US_10
-  - SG_9
-  - SJC_28
-  - SJC_29
-  - US_11
-  - 官方优选_26
-  - SJC_30
-  - SG_10
-  - KR_18
-  - 官方优选_27
-  - 官方优选_28
-  - SJC_31
-  - SJC_32
-  - SJC_33
-  - SG_11
-  - 64.49.46.181_2
+  - bowen.ns.cloudflare.com_4
   - CMCC-IPV6_23
-  - 官方优选_29
-  - 官方优选_30
-  - SJC_34
-  - SJC_35
-  - SJC_36
+  - US_8
+  - CMCC_33
+  - US_9
   - CMCC-IPV6_24
+  - CT_25
+  - CA_1
+  - CT_26
+  - US_10
+  - 172.67.243.218_3
+  - US_11
   - US_12
-  - US_13
-  - 官方优选_31
-  - SJC_37
-  - CMCC-IPV6_25
-  - US_14
-  - SJC_38
-  - SJC_39
-  - US_15
-  - SJC_40
-  - SJC_41
-  - HK_8
-  - HK_9
-  - NL_2
-  - 官方优选_32
-  - 官方优选_33
-  - SJC_42
-  - SJC_43
-  - 64.49.47.64_1
-  - CMCC-IPV6_26
-  - SJC_44
-  - 官方优选_34
-  - 官方优选_35
-  - 官方优选_36
-  - 官方优选_37
-  - US_16
-  - 官方优选_38
-  - CMCC-IPV6_27
-  - US_17
-  - SJC_45
-  - SG_12
-  - KR_19
-  - HK_10
-  - 官方优选_39
-  - CMCC-IPV6_28
-  - CMCC-IPV6_29
-  - CMCC-IPV6_30
-  - CMCC-IPV6_31
-  - PL_10
-  - CMCC-IPV6_32
-  - 64.49.47.64_2
-  - US_18
-  - CMCC-IPV6_33
-  - 官方优选_40
-  - CMCC-IPV6_34
-  - PL_11
-  - CDG
-  - KR_20
-  - HK_11
-  - HK_12
-  - HK_13
-  - US_19
+  - CA_2
+  - 172.67.243.218_4
+  - JP_1
+  - JP_2
+  - KR
+  - CMCC_34
   type: select
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
