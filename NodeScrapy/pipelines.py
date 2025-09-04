@@ -33,7 +33,7 @@ class Pipeline:
         ext = item["ext"]
         body = item["body"]
         filename = f"{name}{ext}"
-        print(item["date"], body)
+        spider.logger.info(f"Pipeline got item {filename}")
 
         with open(os.path.join(self.folder, filename), "w", encoding="utf-8") as file:
             if ext == ".txt":

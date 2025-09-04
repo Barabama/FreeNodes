@@ -17,9 +17,13 @@ from utils.PwdFinder import PwdFinder, PwdGenerator
 class DecryptSpider(SimpleSpider):
     name = "decrypt"
     custom_settings = {"LOG_FILE": "scrapy.log",
+                    #    "LOG_FILE_APPEND": False,
                        "LOG_FILE_APPEND": True,
                        "LOG_LEVEL": "INFO"}
-    targets = ("yudou66", "blues")
+    targets = (
+        "yudou66", 
+        "blues",
+        )
     configs: dict[str, ConfigData]
     driver: webdriver.Chrome
 
