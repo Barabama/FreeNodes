@@ -21,9 +21,9 @@ class DecryptSpider(SimpleSpider):
                        "LOG_FILE_APPEND": True,
                        "LOG_LEVEL": "INFO"}
     targets = (
-        "yudou66", 
+        "yudou66",
         "blues",
-        )
+    )
     configs: dict[str, ConfigData]
     driver: webdriver.Chrome
 
@@ -74,20 +74,22 @@ class DecryptSpider(SimpleSpider):
 
         # If nothing yielded from super method, parse what needs to be decrypted.
         name = response.meta["name"]
-        yt_url = [url for url in response.css("a::attr(href)").getall()
-                  if "youtu.be" in url][CONFIG.get(name)["yt_idx"]]
-        self.logger.info(f"{name} found yt_url: {yt_url}")
 
-        # Get password from youtube video.
-        try:
-            pwdfinder = PwdFinder(name, self.logger, yt_url)
-            if pwdfinder.date != response.meta["date"]:
-                self.logger.error(f"{name} found yt_url mismatch the date, exiting")
-                return
-        # Need to brute force the password.
-        except Exception as e:
-            self.logger.error(f"{name} found yt_url error: {e}")
-            pwdfinder = PwdGenerator(name, self.logger)
+        # # Get password from youtube video.
+        # try:
+        #     yt_url = [url for url in response.css("a::attr(href)").getall()
+        #             if "youtu.be" in url][CONFIG.get(name)["yt_idx"]]
+        #     self.logger.info(f"{name} found yt_url: {yt_url}")
+        #     pwdfinder = PwdFinder(name, self.logger, yt_url)
+        #     if pwdfinder.date != response.meta["date"]:
+        #         self.logger.error(f"{name} found yt_url mismatch the date, exiting")
+        #         return
+        # # Need to brute force the password.
+        # except Exception as e:
+        #     self.logger.error(f"{name} found yt_url error: {e}")
+        #     pwdfinder = PwdGenerator(name, self.logger)
+
+        pwdfinder = PwdGenerator(name, self.logger)
 
         old_pwd = self.configs[name].get("password", "")
         method = {"script": self.configs[name].get("script", "")}
