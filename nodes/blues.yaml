@@ -4,15 +4,6 @@ log-level: info
 mode: Rule
 port: 7890
 proxies:
-- name: 中國_1
-  network: tcp
-  password: 2fd0d127-266d-4d0b-b453-f94659a132fc
-  port: 12000
-  server: 106.75.134.1
-  skip-cert-verify: true
-  sni: aliyun.com
-  type: trojan
-  udp: true
 - name: 中国
   network: tcp
   password: 2fd0d127-266d-4d0b-b453-f94659a132fc
@@ -22,15 +13,6 @@ proxies:
   sni: aliyun.com
   type: trojan
   udp: true
-- name: 中國_2
-  network: tcp
-  port: 8080
-  server: 183.240.179.94
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: b1e5c3d2-7a49-4f88-8c3d-5a1e9b7c4d20
 - name: 美国_1
   network: tcp
   port: 8080
@@ -40,20 +22,14 @@ proxies:
   type: vless
   udp: true
   uuid: b1e5c3d2-7a49-4f88-8c3d-5a1e9b7c4d20
-- name: 新加坡_1
-  port: 443
-  server: 92.112.22.117
-  skip-cert-verify: true
-  type: vless
-  uuid: 6337837a-2b47-4e0d-a695-75c5a4a8ad51
-- name: 新加坡_2
+- name: 新加坡
   port: 443
   server: 92.112.22.117
   skip-cert-verify: true
   type: vless
   uuid: 6337837a-2b47-4e0d-a695-75c5a4a8ad51
 - flow: xtls-rprx-vision
-  name: 墨西哥_1
+  name: 墨西哥
   network: tcp
   port: 443
   server: 178.20.215.2
@@ -63,41 +39,10 @@ proxies:
   type: vless
   udp: true
   uuid: 192ea2c7-d7d0-6676-2929-b04a072b387d
-- flow: xtls-rprx-vision
-  name: 墨西哥_2
-  network: tcp
-  port: 443
-  server: 178.20.215.2
-  servername: speed.cloudflare.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 192ea2c7-d7d0-6676-2929-b04a072b387d
-- name: 美国_2
+- name: 烏克蘭_1
   network: grpc
   port: 443
-  server: 104.129.167.161
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 俄羅斯_1
-  network: grpc
-  port: 443
-  server: 185.59.218.168
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 印度尼西亞
-  network: grpc
-  port: 443
-  server: 103.160.204.145
+  server: 31.43.179.38
   servername: pqh23v4.hiddendom.shop
   skip-cert-verify: true
   tls: true
@@ -107,16 +52,6 @@ proxies:
 - name: 荷蘭_1
   network: grpc
   port: 443
-  server: 45.131.7.127
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 美国_3
-  network: grpc
-  port: 443
   server: 45.159.218.165
   servername: pqh24v3.hiddendom.shop
   skip-cert-verify: true
@@ -124,20 +59,20 @@ proxies:
   type: vless
   udp: true
   uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 澳大利亞_1
+- name: 美国_2
   network: grpc
   port: 443
-  server: 103.133.1.227
-  servername: pqh24v3.hiddendom.shop
+  server: 154.83.2.167
+  servername: pqh23v4.hiddendom.shop
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
   uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 法國_1
+- name: 俄羅斯_1
   network: grpc
   port: 443
-  server: 94.140.0.141
+  server: 94.247.142.103
   servername: pqh23v4.hiddendom.shop
   skip-cert-verify: true
   tls: true
@@ -154,26 +89,6 @@ proxies:
   type: vless
   udp: true
   uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 荷蘭_2
-  network: grpc
-  port: 443
-  server: 45.8.211.86
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 斯洛文尼亞_1
-  network: grpc
-  port: 443
-  server: 92.53.188.36
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
 - name: 美國_2
   network: grpc
   port: 443
@@ -184,50 +99,41 @@ proxies:
   type: vless
   udp: true
   uuid: 401374e6-df77-41fb-f638-dad8184f175b
+- name: 印度
+  network: grpc
+  port: 443
+  server: 103.133.1.227
+  servername: pqh24v3.hiddendom.shop
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 401374e6-df77-41fb-f638-dad8184f175b
+- name: 印度尼西亞
+  network: grpc
+  port: 443
+  server: 103.160.204.145
+  servername: pqh23v4.hiddendom.shop
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 401374e6-df77-41fb-f638-dad8184f175b
+- flow: xtls-rprx-vision
+  name: 香港_1
+  network: tcp
+  port: 28888
+  server: hk01.youyacloud.me
+  servername: www.tvb.com
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: 8da7bd17-70ab-472d-a925-cc827857dc35
 - name: 俄羅斯_2
   network: grpc
   port: 443
   server: 94.247.142.103
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 南非_1
-  network: grpc
-  port: 443
-  server: 102.177.189.251
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 烏克蘭_1
-  network: grpc
-  port: 443
-  server: 31.43.179.38
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 立陶宛_1
-  network: grpc
-  port: 443
-  server: 89.116.180.248
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 美国_4
-  network: grpc
-  port: 443
-  server: 185.59.218.168
   servername: pqh23v4.hiddendom.shop
   skip-cert-verify: true
   tls: true
@@ -244,6 +150,146 @@ proxies:
   type: vless
   udp: true
   uuid: 401374e6-df77-41fb-f638-dad8184f175b
+- name: 俄羅斯_3
+  network: grpc
+  port: 443
+  server: 185.59.218.168
+  servername: pqh23v4.hiddendom.shop
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 401374e6-df77-41fb-f638-dad8184f175b
+- name: 美國_3
+  network: grpc
+  port: 443
+  server: 104.129.167.161
+  servername: pqh23v4.hiddendom.shop
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 401374e6-df77-41fb-f638-dad8184f175b
+- name: 烏克蘭_2
+  network: grpc
+  port: 443
+  server: 31.43.179.38
+  servername: pqh23v4.hiddendom.shop
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 401374e6-df77-41fb-f638-dad8184f175b
+- name: 美國_4
+  network: grpc
+  port: 443
+  server: 184.174.80.250
+  servername: pqh23v4.hiddendom.shop
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 401374e6-df77-41fb-f638-dad8184f175b
+- name: 法國
+  network: grpc
+  port: 443
+  server: 94.140.0.141
+  servername: pqh23v4.hiddendom.shop
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 401374e6-df77-41fb-f638-dad8184f175b
+- name: 英國_1
+  network: grpc
+  port: 443
+  server: 45.8.211.71
+  servername: pqh24v3.hiddendom.shop
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 401374e6-df77-41fb-f638-dad8184f175b
+- name: 烏克蘭_3
+  network: grpc
+  port: 443
+  server: 31.43.179.38
+  servername: pqh23v4.hiddendom.shop
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 401374e6-df77-41fb-f638-dad8184f175b
+- name: 美國_5
+  network: grpc
+  port: 443
+  server: 167.68.42.168
+  servername: pqh24v3.hiddendom.shop
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 401374e6-df77-41fb-f638-dad8184f175b
+- name: 荷蘭_2
+  network: grpc
+  port: 443
+  server: 45.159.218.165
+  servername: pqh24v3.hiddendom.shop
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 401374e6-df77-41fb-f638-dad8184f175b
+- name: 美國_6
+  network: grpc
+  port: 443
+  server: 104.129.167.161
+  servername: pqh23v4.hiddendom.shop
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 401374e6-df77-41fb-f638-dad8184f175b
+- name: 立陶宛_1
+  network: grpc
+  port: 443
+  server: 89.116.180.248
+  servername: pqh23v4.hiddendom.shop
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 401374e6-df77-41fb-f638-dad8184f175b
+- name: 斯洛維尼亞
+  network: grpc
+  port: 443
+  server: 92.53.188.36
+  servername: pqh23v4.hiddendom.shop
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 401374e6-df77-41fb-f638-dad8184f175b
+- name: 南非_1
+  network: grpc
+  port: 443
+  server: 102.177.189.251
+  servername: pqh23v4.hiddendom.shop
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 401374e6-df77-41fb-f638-dad8184f175b
+- name: 荷蘭_3
+  network: grpc
+  port: 443
+  server: 45.8.211.71
+  servername: pqh24v3.hiddendom.shop
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 401374e6-df77-41fb-f638-dad8184f175b
 - name: 日本_2
   network: grpc
   port: 443
@@ -254,10 +300,20 @@ proxies:
   type: vless
   udp: true
   uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 美國_3
+- name: 荷蘭_4
   network: grpc
   port: 443
-  server: 104.129.167.161
+  server: 45.131.7.127
+  servername: pqh23v4.hiddendom.shop
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 401374e6-df77-41fb-f638-dad8184f175b
+- name: 斯洛文尼亞
+  network: grpc
+  port: 443
+  server: 92.53.188.36
   servername: pqh23v4.hiddendom.shop
   skip-cert-verify: true
   tls: true
@@ -284,216 +340,11 @@ proxies:
   type: vless
   udp: true
   uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 南非_4
-  network: grpc
-  port: 443
-  server: 102.177.189.251
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 美国_5
-  network: grpc
-  port: 443
-  server: 102.177.189.251
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 日本_3
-  network: grpc
-  port: 443
-  server: 156.238.19.95
-  servername: pqh24v3.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 美国_6
+- name: 立陶宛_2
   network: grpc
   port: 443
   server: 89.116.180.248
   servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 英国_1
-  network: grpc
-  port: 443
-  server: 45.8.211.71
-  servername: pqh24v3.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 德国
-  network: grpc
-  port: 443
-  server: 185.135.9.223
-  servername: pqh24v3.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 美國_4
-  network: ws
-  port: 443
-  server: 172.67.131.76
-  servername: EEeE3.222767.xYz
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: afc9d688-520a-46fa-a98d-4511d1198cdd
-  ws-opts:
-    headers:
-      host: EEeE3.222767.xYz
-    path: /Bla4bwO5lnIT6TyxDFklcPSbclvX
-- name: 斯洛維尼亞
-  network: grpc
-  port: 443
-  server: 92.53.188.36
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 烏克蘭_2
-  network: grpc
-  port: 443
-  server: 31.43.179.38
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 烏克蘭_3
-  network: grpc
-  port: 443
-  server: 31.43.179.38
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 英國_1
-  network: grpc
-  port: 443
-  server: 45.8.211.86
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 新加坡_3
-  network: grpc
-  port: 443
-  server: 103.160.204.145
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 美國_5
-  network: grpc
-  port: 443
-  server: 167.68.42.168
-  servername: pqh24v3.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 英國_2
-  network: grpc
-  port: 443
-  server: 45.8.211.71
-  servername: pqh24v3.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 荷蘭_3
-  network: grpc
-  port: 443
-  server: 45.159.218.165
-  servername: pqh24v3.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 美國_6
-  network: grpc
-  port: 443
-  server: 167.68.42.168
-  servername: pqh24v3.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 英国_2
-  network: grpc
-  port: 443
-  server: 45.8.211.86
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 俄羅斯_3
-  network: grpc
-  port: 443
-  server: 185.59.218.168
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 德國_1
-  network: grpc
-  port: 443
-  server: 185.135.9.223
-  servername: pqh24v3.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 美国_7
-  network: ws
-  port: 59594
-  server: 46.62.156.154
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c5bcf3fb-eb77-4472-8750-55b56efef262
-  ws-opts:
-    path: /
-- name: 美国_8
-  network: grpc
-  port: 443
-  server: 167.68.42.168
-  servername: pqh24v3.hiddendom.shop
   skip-cert-verify: true
   tls: true
   type: vless
@@ -516,7 +367,37 @@ proxies:
 - name: 美國_8
   network: grpc
   port: 443
-  server: 184.174.80.250
+  server: 103.160.204.145
+  servername: pqh23v4.hiddendom.shop
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 401374e6-df77-41fb-f638-dad8184f175b
+- name: 英國_2
+  network: grpc
+  port: 443
+  server: 45.8.211.71
+  servername: pqh24v3.hiddendom.shop
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 401374e6-df77-41fb-f638-dad8184f175b
+- name: 俄羅斯_4
+  network: grpc
+  port: 443
+  server: 45.8.211.86
+  servername: pqh23v4.hiddendom.shop
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 401374e6-df77-41fb-f638-dad8184f175b
+- name: 法国
+  network: grpc
+  port: 443
+  server: 94.140.0.141
   servername: pqh23v4.hiddendom.shop
   skip-cert-verify: true
   tls: true
@@ -540,66 +421,6 @@ proxies:
 - name: 美國_10
   network: ws
   port: 443
-  server: 172.67.162.50
-  servername: eEedFR5.7777155.Xyz
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: e4cbe8b8-37db-4aaa-8469-b84f34c51ebc
-  ws-opts:
-    headers:
-      host: eEedFR5.7777155.Xyz
-    path: /6OWLjRc26b0nHYr5hYXD
-- name: 荷蘭_4
-  network: grpc
-  port: 443
-  server: 45.8.211.71
-  servername: pqh24v3.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- flow: xtls-rprx-vision
-  name: 美國_11
-  network: tcp
-  port: 44443
-  server: hybrid.arvancloud.online
-  servername: www.speedtest.net
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 53fff6cc-b4ec-43e8-ade5-e0c42972fc33
-- name: 伊朗
-  network: ws
-  port: 59594
-  server: 46.62.156.154
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: c5bcf3fb-eb77-4472-8750-55b56efef262
-  ws-opts:
-    path: /
-- name: 美國_12
-  network: ws
-  port: 443
-  server: 172.67.162.50
-  servername: eEedFR5.7777155.Xyz
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: e4cbe8b8-37db-4aaa-8469-b84f34c51ebc
-  ws-opts:
-    headers:
-      host: eEedFR5.7777155.Xyz
-    path: /6OWLjRc26b0nHYr5hYXD
-- name: 美國_13
-  network: ws
-  port: 443
   server: 104.21.9.71
   servername: ddDDdDDdDDF.777198.XyZ
   skip-cert-verify: true
@@ -611,431 +432,6 @@ proxies:
     headers:
       host: ddDDdDDdDDF.777198.XyZ
     path: /OjdW89Bpg4ykd4O
-- name: 美國_14
-  network: ws
-  port: 80
-  server: 50.62.172.96
-  servername: handsome-device.oneeat.co
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 2ad87f95-7a0b-4018-8497-5ecaac2f0ddf
-  ws-opts:
-    headers:
-      host: handsome-device.oneeat.co
-    path: /?ed=2560
-- name: 美國_15
-  network: ws
-  port: 80
-  server: 166.62.107.96
-  servername: handsome-device.oneeat.co
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 2ad87f95-7a0b-4018-8497-5ecaac2f0ddf
-  ws-opts:
-    headers:
-      host: handsome-device.oneeat.co
-    path: /?ed=2560
-- name: 美國_16
-  network: grpc
-  port: 443
-  server: 167.68.42.168
-  servername: pqh24v3.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 荷蘭_5
-  network: grpc
-  port: 443
-  server: 45.159.218.165
-  servername: pqh24v3.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 德國_2
-  network: grpc
-  port: 443
-  server: 185.135.9.223
-  servername: pqh24v3.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 美國_17
-  network: grpc
-  port: 443
-  server: 167.68.42.168
-  servername: pqh24v3.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 美國_18
-  network: grpc
-  port: 443
-  server: 147.185.161.234
-  servername: pqh24v3.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 美國_19
-  network: ws
-  port: 80
-  server: 192.169.223.96
-  servername: handsome-device.oneeat.co
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 2ad87f95-7a0b-4018-8497-5ecaac2f0ddf
-  ws-opts:
-    headers:
-      host: handsome-device.oneeat.co
-    path: /?ed=2560
-- name: 澳洲
-  network: grpc
-  port: 443
-  server: 103.133.1.227
-  servername: pqh24v3.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 美國_20
-  network: ws
-  port: 80
-  server: 45.40.155.96
-  servername: handsome-device.oneeat.co
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 2ad87f95-7a0b-4018-8497-5ecaac2f0ddf
-  ws-opts:
-    headers:
-      host: handsome-device.oneeat.co
-    path: /?ed=2560
-- name: 美國_21
-  network: ws
-  port: 80
-  server: 45.40.151.96
-  servername: handsome-device.oneeat.co
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 2ad87f95-7a0b-4018-8497-5ecaac2f0ddf
-  ws-opts:
-    headers:
-      host: handsome-device.oneeat.co
-    path: /?ed=2560
-- name: 日本_4
-  network: grpc
-  port: 443
-  server: 156.238.19.95
-  servername: pqh24v3.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 俄羅斯_4
-  network: grpc
-  port: 443
-  server: 45.8.211.86
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 荷蘭_6
-  network: grpc
-  port: 443
-  server: 45.8.211.71
-  servername: pqh24v3.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 美國_22
-  network: ws
-  port: 80
-  server: 198.71.191.96
-  servername: handsome-device.oneeat.co
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 2ad87f95-7a0b-4018-8497-5ecaac2f0ddf
-  ws-opts:
-    headers:
-      host: handsome-device.oneeat.co
-    path: /?ed=2560
-- name: 英國_3
-  network: grpc
-  port: 443
-  server: 45.8.211.71
-  servername: pqh24v3.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 德國_3
-  network: grpc
-  port: 443
-  server: 185.135.9.223
-  servername: pqh24v3.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 美國_23
-  network: ws
-  port: 80
-  server: 166.62.105.96
-  servername: handsome-device.oneeat.co
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 2ad87f95-7a0b-4018-8497-5ecaac2f0ddf
-  ws-opts:
-    headers:
-      host: handsome-device.oneeat.co
-    path: /?ed=2560
-- name: 印度
-  network: grpc
-  port: 443
-  server: 103.133.1.227
-  servername: pqh24v3.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 荷蘭_7
-  network: grpc
-  port: 443
-  server: 45.159.218.165
-  servername: pqh24v3.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 美國_24
-  network: ws
-  port: 80
-  server: 8.34.146.96
-  servername: handsome-device.oneeat.co
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 2ad87f95-7a0b-4018-8497-5ecaac2f0ddf
-  ws-opts:
-    headers:
-      host: handsome-device.oneeat.co
-    path: /?ed=2560
-- flow: xtls-rprx-vision
-  name: 香港_1
-  network: tcp
-  port: 28888
-  server: hk01.youyacloud.me
-  servername: www.tvb.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 8da7bd17-70ab-472d-a925-cc827857dc35
-- name: 美國_25
-  network: grpc
-  port: 443
-  server: 167.68.42.168
-  servername: pqh24v3.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 烏克蘭_4
-  network: grpc
-  port: 443
-  server: 31.43.179.38
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 美國_26
-  network: grpc
-  port: 443
-  server: 104.129.167.161
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 美國_27
-  network: grpc
-  port: 443
-  server: 154.83.2.167
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 法國_2
-  network: grpc
-  port: 443
-  server: 94.140.0.141
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 美國_28
-  port: 8443
-  server: 104.17.148.22
-  skip-cert-verify: true
-  type: vless
-  uuid: 655a6041-0ab8-4a92-ad79-f0dba34f5ace
-- name: 立陶宛_2
-  network: grpc
-  port: 443
-  server: 89.116.180.248
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 美国_9
-  network: grpc
-  port: 443
-  server: 184.174.80.250
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 美國_29
-  port: 8443
-  server: 104.17.148.22
-  skip-cert-verify: true
-  type: vless
-  uuid: 655a6041-0ab8-4a92-ad79-f0dba34f5ace
-- name: 美國_30
-  network: grpc
-  port: 443
-  server: 184.174.80.250
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 美國_31
-  network: grpc
-  port: 443
-  server: 184.174.80.250
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 斯洛文尼亞_2
-  network: grpc
-  port: 443
-  server: 92.53.188.36
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 澳大利亞_2
-  network: grpc
-  port: 443
-  server: 103.133.1.227
-  servername: pqh24v3.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 法国
-  network: grpc
-  port: 443
-  server: 94.140.0.141
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 南非_5
-  network: grpc
-  port: 443
-  server: 102.177.189.251
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 美国_10
-  network: grpc
-  port: 443
-  server: 31.43.179.38
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 美國_32
-  network: grpc
-  port: 443
-  server: 184.174.80.250
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 南非_6
-  network: grpc
-  port: 443
-  server: 102.177.189.251
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
 - name: 香港_2
   network: grpc
   port: 443
@@ -1046,47 +442,42 @@ proxies:
   type: vless
   udp: true
   uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 法國_3
+- name: 美國_11
+  network: ws
+  port: 443
+  server: 172.67.131.76
+  servername: EEeE3.222767.xYz
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: afc9d688-520a-46fa-a98d-4511d1198cdd
+  ws-opts:
+    headers:
+      host: EEeE3.222767.xYz
+    path: /Bla4bwO5lnIT6TyxDFklcPSbclvX
+- name: 美國_12
   network: grpc
   port: 443
-  server: 94.140.0.141
-  servername: pqh23v4.hiddendom.shop
+  server: 147.185.161.234
+  servername: pqh24v3.hiddendom.shop
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
   uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 美國_33
-  network: grpc
-  port: 443
-  server: 154.83.2.167
-  servername: pqh23v4.hiddendom.shop
+- flow: xtls-rprx-vision
+  name: 美國_13
+  network: tcp
+  port: 44443
+  server: hybrid.arvancloud.online
+  servername: www.speedtest.net
   skip-cert-verify: true
-  tls: true
+  tls: false
   type: vless
   udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 美國_34
-  network: grpc
-  port: 443
-  server: 103.160.204.145
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 美国_11
-  network: grpc
-  port: 443
-  server: 154.83.2.167
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 俄羅斯_5
+  uuid: 53fff6cc-b4ec-43e8-ade5-e0c42972fc33
+- name: 美国_3
   network: grpc
   port: 443
   server: 185.59.218.168
@@ -1096,286 +487,145 @@ proxies:
   type: vless
   udp: true
   uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 荷蘭_8
+- name: 中國
+  network: ws
+  port: 80
+  server: 154.198.173.96
+  servername: handsome-device.oneeat.co
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 2ad87f95-7a0b-4018-8497-5ecaac2f0ddf
+  ws-opts:
+    headers:
+      host: handsome-device.oneeat.co
+    path: /?ed=2560
+- name: 美國_14
+  port: 8443
+  server: 104.17.148.22
+  skip-cert-verify: true
+  type: vless
+  uuid: 655a6041-0ab8-4a92-ad79-f0dba34f5ace
+- name: 澳大利亞
   network: grpc
   port: 443
-  server: 45.131.7.127
-  servername: pqh23v4.hiddendom.shop
+  server: 103.133.1.227
+  servername: pqh24v3.hiddendom.shop
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
   uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 俄羅斯_6
-  network: grpc
-  port: 443
-  server: 94.247.142.103
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 烏克蘭_5
-  network: grpc
-  port: 443
-  server: 31.43.179.38
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- name: 美国_12
-  network: grpc
-  port: 443
-  server: 92.53.188.36
-  servername: pqh23v4.hiddendom.shop
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 401374e6-df77-41fb-f638-dad8184f175b
-- flow: xtls-rprx-vision
-  name: 香港_3
-  network: tcp
-  port: 28888
-  server: hk01.youyacloud.me
-  servername: www.tvb.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 8da7bd17-70ab-472d-a925-cc827857dc35
 proxy-groups:
 - name: 🚀 节点选择
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - 中國_1
   - 中国
-  - 中國_2
   - 美国_1
-  - 新加坡_1
-  - 新加坡_2
-  - 墨西哥_1
-  - 墨西哥_2
+  - 新加坡
+  - 墨西哥
+  - 烏克蘭_1
+  - 荷蘭_1
   - 美国_2
   - 俄羅斯_1
-  - 印度尼西亞
-  - 荷蘭_1
-  - 美国_3
-  - 澳大利亞_1
-  - 法國_1
   - 美國_1
-  - 荷蘭_2
-  - 斯洛文尼亞_1
   - 美國_2
+  - 印度
+  - 印度尼西亞
+  - 香港_1
   - 俄羅斯_2
-  - 南非_1
-  - 烏克蘭_1
-  - 立陶宛_1
-  - 美国_4
   - 日本_1
-  - 日本_2
+  - 俄羅斯_3
   - 美國_3
+  - 烏克蘭_2
+  - 美國_4
+  - 法國
+  - 英國_1
+  - 烏克蘭_3
+  - 美國_5
+  - 荷蘭_2
+  - 美國_6
+  - 立陶宛_1
+  - 斯洛維尼亞
+  - 南非_1
+  - 荷蘭_3
+  - 日本_2
+  - 荷蘭_4
+  - 斯洛文尼亞
   - 南非_2
   - 南非_3
-  - 南非_4
-  - 美国_5
-  - 日本_3
-  - 美国_6
-  - 英国_1
-  - 德国
-  - 美國_4
-  - 斯洛維尼亞
-  - 烏克蘭_2
-  - 烏克蘭_3
-  - 英國_1
-  - 新加坡_3
-  - 美國_5
-  - 英國_2
-  - 荷蘭_3
-  - 美國_6
-  - 英国_2
-  - 俄羅斯_3
-  - 德國_1
-  - 美国_7
-  - 美国_8
+  - 立陶宛_2
   - 美國_7
   - 美國_8
+  - 英國_2
+  - 俄羅斯_4
+  - 法国
   - 美國_9
   - 美國_10
-  - 荷蘭_4
+  - 香港_2
   - 美國_11
-  - 伊朗
   - 美國_12
   - 美國_13
+  - 美国_3
+  - 中國
   - 美國_14
-  - 美國_15
-  - 美國_16
-  - 荷蘭_5
-  - 德國_2
-  - 美國_17
-  - 美國_18
-  - 美國_19
-  - 澳洲
-  - 美國_20
-  - 美國_21
-  - 日本_4
-  - 俄羅斯_4
-  - 荷蘭_6
-  - 美國_22
-  - 英國_3
-  - 德國_3
-  - 美國_23
-  - 印度
-  - 荷蘭_7
-  - 美國_24
-  - 香港_1
-  - 美國_25
-  - 烏克蘭_4
-  - 美國_26
-  - 美國_27
-  - 法國_2
-  - 美國_28
-  - 立陶宛_2
-  - 美国_9
-  - 美國_29
-  - 美國_30
-  - 美國_31
-  - 斯洛文尼亞_2
-  - 澳大利亞_2
-  - 法国
-  - 南非_5
-  - 美国_10
-  - 美國_32
-  - 南非_6
-  - 香港_2
-  - 法國_3
-  - 美國_33
-  - 美國_34
-  - 美国_11
-  - 俄羅斯_5
-  - 荷蘭_8
-  - 俄羅斯_6
-  - 烏克蘭_5
-  - 美国_12
-  - 香港_3
+  - 澳大利亞
   type: select
 - interval: 300
   name: ♻️ 自动选择
   proxies:
-  - 中國_1
   - 中国
-  - 中國_2
   - 美国_1
-  - 新加坡_1
-  - 新加坡_2
-  - 墨西哥_1
-  - 墨西哥_2
+  - 新加坡
+  - 墨西哥
+  - 烏克蘭_1
+  - 荷蘭_1
   - 美国_2
   - 俄羅斯_1
-  - 印度尼西亞
-  - 荷蘭_1
-  - 美国_3
-  - 澳大利亞_1
-  - 法國_1
   - 美國_1
-  - 荷蘭_2
-  - 斯洛文尼亞_1
   - 美國_2
+  - 印度
+  - 印度尼西亞
+  - 香港_1
   - 俄羅斯_2
-  - 南非_1
-  - 烏克蘭_1
-  - 立陶宛_1
-  - 美国_4
   - 日本_1
-  - 日本_2
+  - 俄羅斯_3
   - 美國_3
+  - 烏克蘭_2
+  - 美國_4
+  - 法國
+  - 英國_1
+  - 烏克蘭_3
+  - 美國_5
+  - 荷蘭_2
+  - 美國_6
+  - 立陶宛_1
+  - 斯洛維尼亞
+  - 南非_1
+  - 荷蘭_3
+  - 日本_2
+  - 荷蘭_4
+  - 斯洛文尼亞
   - 南非_2
   - 南非_3
-  - 南非_4
-  - 美国_5
-  - 日本_3
-  - 美国_6
-  - 英国_1
-  - 德国
-  - 美國_4
-  - 斯洛維尼亞
-  - 烏克蘭_2
-  - 烏克蘭_3
-  - 英國_1
-  - 新加坡_3
-  - 美國_5
-  - 英國_2
-  - 荷蘭_3
-  - 美國_6
-  - 英国_2
-  - 俄羅斯_3
-  - 德國_1
-  - 美国_7
-  - 美国_8
+  - 立陶宛_2
   - 美國_7
   - 美國_8
+  - 英國_2
+  - 俄羅斯_4
+  - 法国
   - 美國_9
   - 美國_10
-  - 荷蘭_4
+  - 香港_2
   - 美國_11
-  - 伊朗
   - 美國_12
   - 美國_13
+  - 美国_3
+  - 中國
   - 美國_14
-  - 美國_15
-  - 美國_16
-  - 荷蘭_5
-  - 德國_2
-  - 美國_17
-  - 美國_18
-  - 美國_19
-  - 澳洲
-  - 美國_20
-  - 美國_21
-  - 日本_4
-  - 俄羅斯_4
-  - 荷蘭_6
-  - 美國_22
-  - 英國_3
-  - 德國_3
-  - 美國_23
-  - 印度
-  - 荷蘭_7
-  - 美國_24
-  - 香港_1
-  - 美國_25
-  - 烏克蘭_4
-  - 美國_26
-  - 美國_27
-  - 法國_2
-  - 美國_28
-  - 立陶宛_2
-  - 美国_9
-  - 美國_29
-  - 美國_30
-  - 美國_31
-  - 斯洛文尼亞_2
-  - 澳大利亞_2
-  - 法国
-  - 南非_5
-  - 美国_10
-  - 美國_32
-  - 南非_6
-  - 香港_2
-  - 法國_3
-  - 美國_33
-  - 美國_34
-  - 美国_11
-  - 俄羅斯_5
-  - 荷蘭_8
-  - 俄羅斯_6
-  - 烏克蘭_5
-  - 美国_12
-  - 香港_3
+  - 澳大利亞
   tolerance: 50
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -1384,461 +634,221 @@ proxy-groups:
   - 🚀 节点选择
   - ♻️ 自动选择
   - 🎯 全球直连
-  - 中國_1
   - 中国
-  - 中國_2
   - 美国_1
-  - 新加坡_1
-  - 新加坡_2
-  - 墨西哥_1
-  - 墨西哥_2
+  - 新加坡
+  - 墨西哥
+  - 烏克蘭_1
+  - 荷蘭_1
   - 美国_2
   - 俄羅斯_1
-  - 印度尼西亞
-  - 荷蘭_1
-  - 美国_3
-  - 澳大利亞_1
-  - 法國_1
   - 美國_1
-  - 荷蘭_2
-  - 斯洛文尼亞_1
   - 美國_2
+  - 印度
+  - 印度尼西亞
+  - 香港_1
   - 俄羅斯_2
-  - 南非_1
-  - 烏克蘭_1
-  - 立陶宛_1
-  - 美国_4
   - 日本_1
-  - 日本_2
+  - 俄羅斯_3
   - 美國_3
+  - 烏克蘭_2
+  - 美國_4
+  - 法國
+  - 英國_1
+  - 烏克蘭_3
+  - 美國_5
+  - 荷蘭_2
+  - 美國_6
+  - 立陶宛_1
+  - 斯洛維尼亞
+  - 南非_1
+  - 荷蘭_3
+  - 日本_2
+  - 荷蘭_4
+  - 斯洛文尼亞
   - 南非_2
   - 南非_3
-  - 南非_4
-  - 美国_5
-  - 日本_3
-  - 美国_6
-  - 英国_1
-  - 德国
-  - 美國_4
-  - 斯洛維尼亞
-  - 烏克蘭_2
-  - 烏克蘭_3
-  - 英國_1
-  - 新加坡_3
-  - 美國_5
-  - 英國_2
-  - 荷蘭_3
-  - 美國_6
-  - 英国_2
-  - 俄羅斯_3
-  - 德國_1
-  - 美国_7
-  - 美国_8
+  - 立陶宛_2
   - 美國_7
   - 美國_8
+  - 英國_2
+  - 俄羅斯_4
+  - 法国
   - 美國_9
   - 美國_10
-  - 荷蘭_4
+  - 香港_2
   - 美國_11
-  - 伊朗
   - 美國_12
   - 美國_13
+  - 美国_3
+  - 中國
   - 美國_14
-  - 美國_15
-  - 美國_16
-  - 荷蘭_5
-  - 德國_2
-  - 美國_17
-  - 美國_18
-  - 美國_19
-  - 澳洲
-  - 美國_20
-  - 美國_21
-  - 日本_4
-  - 俄羅斯_4
-  - 荷蘭_6
-  - 美國_22
-  - 英國_3
-  - 德國_3
-  - 美國_23
-  - 印度
-  - 荷蘭_7
-  - 美國_24
-  - 香港_1
-  - 美國_25
-  - 烏克蘭_4
-  - 美國_26
-  - 美國_27
-  - 法國_2
-  - 美國_28
-  - 立陶宛_2
-  - 美国_9
-  - 美國_29
-  - 美國_30
-  - 美國_31
-  - 斯洛文尼亞_2
-  - 澳大利亞_2
-  - 法国
-  - 南非_5
-  - 美国_10
-  - 美國_32
-  - 南非_6
-  - 香港_2
-  - 法國_3
-  - 美國_33
-  - 美國_34
-  - 美国_11
-  - 俄羅斯_5
-  - 荷蘭_8
-  - 俄羅斯_6
-  - 烏克蘭_5
-  - 美国_12
-  - 香港_3
+  - 澳大利亞
   type: select
 - name: 📲 电报信息
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
-  - 中國_1
   - 中国
-  - 中國_2
   - 美国_1
-  - 新加坡_1
-  - 新加坡_2
-  - 墨西哥_1
-  - 墨西哥_2
+  - 新加坡
+  - 墨西哥
+  - 烏克蘭_1
+  - 荷蘭_1
   - 美国_2
   - 俄羅斯_1
-  - 印度尼西亞
-  - 荷蘭_1
-  - 美国_3
-  - 澳大利亞_1
-  - 法國_1
   - 美國_1
-  - 荷蘭_2
-  - 斯洛文尼亞_1
   - 美國_2
+  - 印度
+  - 印度尼西亞
+  - 香港_1
   - 俄羅斯_2
-  - 南非_1
-  - 烏克蘭_1
-  - 立陶宛_1
-  - 美国_4
   - 日本_1
-  - 日本_2
+  - 俄羅斯_3
   - 美國_3
+  - 烏克蘭_2
+  - 美國_4
+  - 法國
+  - 英國_1
+  - 烏克蘭_3
+  - 美國_5
+  - 荷蘭_2
+  - 美國_6
+  - 立陶宛_1
+  - 斯洛維尼亞
+  - 南非_1
+  - 荷蘭_3
+  - 日本_2
+  - 荷蘭_4
+  - 斯洛文尼亞
   - 南非_2
   - 南非_3
-  - 南非_4
-  - 美国_5
-  - 日本_3
-  - 美国_6
-  - 英国_1
-  - 德国
-  - 美國_4
-  - 斯洛維尼亞
-  - 烏克蘭_2
-  - 烏克蘭_3
-  - 英國_1
-  - 新加坡_3
-  - 美國_5
-  - 英國_2
-  - 荷蘭_3
-  - 美國_6
-  - 英国_2
-  - 俄羅斯_3
-  - 德國_1
-  - 美国_7
-  - 美国_8
+  - 立陶宛_2
   - 美國_7
   - 美國_8
+  - 英國_2
+  - 俄羅斯_4
+  - 法国
   - 美國_9
   - 美國_10
-  - 荷蘭_4
+  - 香港_2
   - 美國_11
-  - 伊朗
   - 美國_12
   - 美國_13
+  - 美国_3
+  - 中國
   - 美國_14
-  - 美國_15
-  - 美國_16
-  - 荷蘭_5
-  - 德國_2
-  - 美國_17
-  - 美國_18
-  - 美國_19
-  - 澳洲
-  - 美國_20
-  - 美國_21
-  - 日本_4
-  - 俄羅斯_4
-  - 荷蘭_6
-  - 美國_22
-  - 英國_3
-  - 德國_3
-  - 美國_23
-  - 印度
-  - 荷蘭_7
-  - 美國_24
-  - 香港_1
-  - 美國_25
-  - 烏克蘭_4
-  - 美國_26
-  - 美國_27
-  - 法國_2
-  - 美國_28
-  - 立陶宛_2
-  - 美国_9
-  - 美國_29
-  - 美國_30
-  - 美國_31
-  - 斯洛文尼亞_2
-  - 澳大利亞_2
-  - 法国
-  - 南非_5
-  - 美国_10
-  - 美國_32
-  - 南非_6
-  - 香港_2
-  - 法國_3
-  - 美國_33
-  - 美國_34
-  - 美国_11
-  - 俄羅斯_5
-  - 荷蘭_8
-  - 俄羅斯_6
-  - 烏克蘭_5
-  - 美国_12
-  - 香港_3
+  - 澳大利亞
   type: select
 - name: Ⓜ️ 微软服务
   proxies:
   - 🎯 全球直连
   - 🚀 节点选择
-  - 中國_1
   - 中国
-  - 中國_2
   - 美国_1
-  - 新加坡_1
-  - 新加坡_2
-  - 墨西哥_1
-  - 墨西哥_2
+  - 新加坡
+  - 墨西哥
+  - 烏克蘭_1
+  - 荷蘭_1
   - 美国_2
   - 俄羅斯_1
-  - 印度尼西亞
-  - 荷蘭_1
-  - 美国_3
-  - 澳大利亞_1
-  - 法國_1
   - 美國_1
-  - 荷蘭_2
-  - 斯洛文尼亞_1
   - 美國_2
+  - 印度
+  - 印度尼西亞
+  - 香港_1
   - 俄羅斯_2
-  - 南非_1
-  - 烏克蘭_1
-  - 立陶宛_1
-  - 美国_4
   - 日本_1
-  - 日本_2
+  - 俄羅斯_3
   - 美國_3
+  - 烏克蘭_2
+  - 美國_4
+  - 法國
+  - 英國_1
+  - 烏克蘭_3
+  - 美國_5
+  - 荷蘭_2
+  - 美國_6
+  - 立陶宛_1
+  - 斯洛維尼亞
+  - 南非_1
+  - 荷蘭_3
+  - 日本_2
+  - 荷蘭_4
+  - 斯洛文尼亞
   - 南非_2
   - 南非_3
-  - 南非_4
-  - 美国_5
-  - 日本_3
-  - 美国_6
-  - 英国_1
-  - 德国
-  - 美國_4
-  - 斯洛維尼亞
-  - 烏克蘭_2
-  - 烏克蘭_3
-  - 英國_1
-  - 新加坡_3
-  - 美國_5
-  - 英國_2
-  - 荷蘭_3
-  - 美國_6
-  - 英国_2
-  - 俄羅斯_3
-  - 德國_1
-  - 美国_7
-  - 美国_8
+  - 立陶宛_2
   - 美國_7
   - 美國_8
+  - 英國_2
+  - 俄羅斯_4
+  - 法国
   - 美國_9
   - 美國_10
-  - 荷蘭_4
+  - 香港_2
   - 美國_11
-  - 伊朗
   - 美國_12
   - 美國_13
+  - 美国_3
+  - 中國
   - 美國_14
-  - 美國_15
-  - 美國_16
-  - 荷蘭_5
-  - 德國_2
-  - 美國_17
-  - 美國_18
-  - 美國_19
-  - 澳洲
-  - 美國_20
-  - 美國_21
-  - 日本_4
-  - 俄羅斯_4
-  - 荷蘭_6
-  - 美國_22
-  - 英國_3
-  - 德國_3
-  - 美國_23
-  - 印度
-  - 荷蘭_7
-  - 美國_24
-  - 香港_1
-  - 美國_25
-  - 烏克蘭_4
-  - 美國_26
-  - 美國_27
-  - 法國_2
-  - 美國_28
-  - 立陶宛_2
-  - 美国_9
-  - 美國_29
-  - 美國_30
-  - 美國_31
-  - 斯洛文尼亞_2
-  - 澳大利亞_2
-  - 法国
-  - 南非_5
-  - 美国_10
-  - 美國_32
-  - 南非_6
-  - 香港_2
-  - 法國_3
-  - 美國_33
-  - 美國_34
-  - 美国_11
-  - 俄羅斯_5
-  - 荷蘭_8
-  - 俄羅斯_6
-  - 烏克蘭_5
-  - 美国_12
-  - 香港_3
+  - 澳大利亞
   type: select
 - name: 🍎 苹果服务
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
-  - 中國_1
   - 中国
-  - 中國_2
   - 美国_1
-  - 新加坡_1
-  - 新加坡_2
-  - 墨西哥_1
-  - 墨西哥_2
+  - 新加坡
+  - 墨西哥
+  - 烏克蘭_1
+  - 荷蘭_1
   - 美国_2
   - 俄羅斯_1
-  - 印度尼西亞
-  - 荷蘭_1
-  - 美国_3
-  - 澳大利亞_1
-  - 法國_1
   - 美國_1
-  - 荷蘭_2
-  - 斯洛文尼亞_1
   - 美國_2
+  - 印度
+  - 印度尼西亞
+  - 香港_1
   - 俄羅斯_2
-  - 南非_1
-  - 烏克蘭_1
-  - 立陶宛_1
-  - 美国_4
   - 日本_1
-  - 日本_2
+  - 俄羅斯_3
   - 美國_3
+  - 烏克蘭_2
+  - 美國_4
+  - 法國
+  - 英國_1
+  - 烏克蘭_3
+  - 美國_5
+  - 荷蘭_2
+  - 美國_6
+  - 立陶宛_1
+  - 斯洛維尼亞
+  - 南非_1
+  - 荷蘭_3
+  - 日本_2
+  - 荷蘭_4
+  - 斯洛文尼亞
   - 南非_2
   - 南非_3
-  - 南非_4
-  - 美国_5
-  - 日本_3
-  - 美国_6
-  - 英国_1
-  - 德国
-  - 美國_4
-  - 斯洛維尼亞
-  - 烏克蘭_2
-  - 烏克蘭_3
-  - 英國_1
-  - 新加坡_3
-  - 美國_5
-  - 英國_2
-  - 荷蘭_3
-  - 美國_6
-  - 英国_2
-  - 俄羅斯_3
-  - 德國_1
-  - 美国_7
-  - 美国_8
+  - 立陶宛_2
   - 美國_7
   - 美國_8
+  - 英國_2
+  - 俄羅斯_4
+  - 法国
   - 美國_9
   - 美國_10
-  - 荷蘭_4
+  - 香港_2
   - 美國_11
-  - 伊朗
   - 美國_12
   - 美國_13
+  - 美国_3
+  - 中國
   - 美國_14
-  - 美國_15
-  - 美國_16
-  - 荷蘭_5
-  - 德國_2
-  - 美國_17
-  - 美國_18
-  - 美國_19
-  - 澳洲
-  - 美國_20
-  - 美國_21
-  - 日本_4
-  - 俄羅斯_4
-  - 荷蘭_6
-  - 美國_22
-  - 英國_3
-  - 德國_3
-  - 美國_23
-  - 印度
-  - 荷蘭_7
-  - 美國_24
-  - 香港_1
-  - 美國_25
-  - 烏克蘭_4
-  - 美國_26
-  - 美國_27
-  - 法國_2
-  - 美國_28
-  - 立陶宛_2
-  - 美国_9
-  - 美國_29
-  - 美國_30
-  - 美國_31
-  - 斯洛文尼亞_2
-  - 澳大利亞_2
-  - 法国
-  - 南非_5
-  - 美国_10
-  - 美國_32
-  - 南非_6
-  - 香港_2
-  - 法國_3
-  - 美國_33
-  - 美國_34
-  - 美国_11
-  - 俄羅斯_5
-  - 荷蘭_8
-  - 俄羅斯_6
-  - 烏克蘭_5
-  - 美国_12
-  - 香港_3
+  - 澳大利亞
   type: select
 - name: 🎯 全球直连
   proxies:
@@ -1861,116 +871,56 @@ proxy-groups:
   - 🚀 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
-  - 中國_1
   - 中国
-  - 中國_2
   - 美国_1
-  - 新加坡_1
-  - 新加坡_2
-  - 墨西哥_1
-  - 墨西哥_2
+  - 新加坡
+  - 墨西哥
+  - 烏克蘭_1
+  - 荷蘭_1
   - 美国_2
   - 俄羅斯_1
-  - 印度尼西亞
-  - 荷蘭_1
-  - 美国_3
-  - 澳大利亞_1
-  - 法國_1
   - 美國_1
-  - 荷蘭_2
-  - 斯洛文尼亞_1
   - 美國_2
+  - 印度
+  - 印度尼西亞
+  - 香港_1
   - 俄羅斯_2
-  - 南非_1
-  - 烏克蘭_1
-  - 立陶宛_1
-  - 美国_4
   - 日本_1
-  - 日本_2
+  - 俄羅斯_3
   - 美國_3
+  - 烏克蘭_2
+  - 美國_4
+  - 法國
+  - 英國_1
+  - 烏克蘭_3
+  - 美國_5
+  - 荷蘭_2
+  - 美國_6
+  - 立陶宛_1
+  - 斯洛維尼亞
+  - 南非_1
+  - 荷蘭_3
+  - 日本_2
+  - 荷蘭_4
+  - 斯洛文尼亞
   - 南非_2
   - 南非_3
-  - 南非_4
-  - 美国_5
-  - 日本_3
-  - 美国_6
-  - 英国_1
-  - 德国
-  - 美國_4
-  - 斯洛維尼亞
-  - 烏克蘭_2
-  - 烏克蘭_3
-  - 英國_1
-  - 新加坡_3
-  - 美國_5
-  - 英國_2
-  - 荷蘭_3
-  - 美國_6
-  - 英国_2
-  - 俄羅斯_3
-  - 德國_1
-  - 美国_7
-  - 美国_8
+  - 立陶宛_2
   - 美國_7
   - 美國_8
+  - 英國_2
+  - 俄羅斯_4
+  - 法国
   - 美國_9
   - 美國_10
-  - 荷蘭_4
+  - 香港_2
   - 美國_11
-  - 伊朗
   - 美國_12
   - 美國_13
+  - 美国_3
+  - 中國
   - 美國_14
-  - 美國_15
-  - 美國_16
-  - 荷蘭_5
-  - 德國_2
-  - 美國_17
-  - 美國_18
-  - 美國_19
-  - 澳洲
-  - 美國_20
-  - 美國_21
-  - 日本_4
-  - 俄羅斯_4
-  - 荷蘭_6
-  - 美國_22
-  - 英國_3
-  - 德國_3
-  - 美國_23
-  - 印度
-  - 荷蘭_7
-  - 美國_24
-  - 香港_1
-  - 美國_25
-  - 烏克蘭_4
-  - 美國_26
-  - 美國_27
-  - 法國_2
-  - 美國_28
-  - 立陶宛_2
-  - 美国_9
-  - 美國_29
-  - 美國_30
-  - 美國_31
-  - 斯洛文尼亞_2
-  - 澳大利亞_2
-  - 法国
-  - 南非_5
-  - 美国_10
-  - 美國_32
-  - 南非_6
-  - 香港_2
-  - 法國_3
-  - 美國_33
-  - 美國_34
-  - 美国_11
-  - 俄羅斯_5
-  - 荷蘭_8
-  - 俄羅斯_6
-  - 烏克蘭_5
-  - 美国_12
-  - 香港_3
+  - 澳大利亞
   type: select
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
