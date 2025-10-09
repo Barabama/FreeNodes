@@ -32,74 +32,202 @@ log-level: info
 mixed-port: 7890
 mode: rule
 proxies:
-- cipher: aes-256-gcm
+- alterId: 0
+  cipher: auto
   name: 美国_1
-  password: 14837141-5001-4d21-9a25-52feb9967302
-  port: 21004
-  server: iaplsg.91king.win
-  type: ss
-- cipher: chacha20-ietf-poly1305
+  network: tcp
+  port: 10002
+  server: 36.139.201.35
+  servername: ''
+  type: vmess
+  uuid: 8d717e5a-dab5-4b99-af4f-ea29ef8eebed
+- alterId: 0
+  cipher: auto
+  name: 法国_1
+  network: ws
+  port: 44579
+  server: 2001:bc8:32d7:302::10
+  servername: ''
+  type: vmess
+  uuid: 8e34e170-13ae-4892-9d20-05962acc9f84
+  ws-opts:
+    headers:
+      Host: ''
+    path: /
+- alterId: 0
+  cipher: auto
   name: 美国_2
+  network: ws
+  port: 8443
+  server: digitalocean.com
+  servername: bpca2.catimecsgo.xyz
+  tls: true
+  type: vmess
+  uuid: 621514d0-46de-47ea-9063-21eaea0999c7
+  ws-opts:
+    headers:
+      Host: bpca2.catimecsgo.xyz
+    path: /hkz7hea3xiaco2j/ca1
+- alterId: 0
+  cipher: auto
+  name: 美国_3
+  network: ws
+  port: 8443
+  server: 141.193.213.60
+  servername: bpca2.catimecsgo.xyz
+  tls: true
+  type: vmess
+  uuid: 621514d0-46de-47ea-9063-21eaea0999c7
+  ws-opts:
+    headers:
+      Host: bpca2.catimecsgo.xyz
+    path: /hkz7hea3xiaco2j/ca1
+- alterId: 0
+  cipher: auto
+  name: 美国_4
+  network: ws
+  port: 8443
+  server: 141.193.213.135
+  servername: bpca2.catimecsgo.xyz
+  tls: true
+  type: vmess
+  uuid: 621514d0-46de-47ea-9063-21eaea0999c7
+  ws-opts:
+    headers:
+      Host: bpca2.catimecsgo.xyz
+    path: /hkz7hea3xiaco2j/ca1
+- alterId: 0
+  cipher: auto
+  name: 美国_5
+  network: ws
+  port: 44579
+  server: 2001:bc8:32d7:302::10
+  servername: ''
+  type: vmess
+  uuid: 8e34e170-13ae-4892-9d20-05962acc9f84
+  ws-opts:
+    headers:
+      Host: ''
+    path: ''
+- alterId: 2
+  cipher: auto
+  name: 美国_6
+  network: ws
+  port: 30808
+  server: v8.heduian.link
+  servername: v8.heduian.link
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  ws-opts:
+    headers:
+      Host: v8.heduian.link
+    path: /oooo
+- alterId: 0
+  cipher: auto
+  name: 美国_7
+  network: ws
+  port: 443
+  server: digitalocean.com
+  servername: iicduazc1nh3jt0t.sgtimecsgo.xyz
+  tls: true
+  type: vmess
+  uuid: 621514d0-46de-47ea-9063-21eaea0999c7
+  ws-opts:
+    headers:
+      Host: iicduazc1nh3jt0t.sgtimecsgo.xyz
+    path: /bpjc/sg1
+- alterId: 0
+  cipher: auto
+  name: 美国_8
+  network: ws
+  port: 443
+  server: 141.193.213.107
+  servername: iicduazc1nh3jt0t.sgtimecsgo.xyz
+  tls: true
+  type: vmess
+  uuid: 621514d0-46de-47ea-9063-21eaea0999c7
+  ws-opts:
+    headers:
+      Host: iicduazc1nh3jt0t.sgtimecsgo.xyz
+    path: /bpjc/sg1
+- alterId: 0
+  cipher: auto
+  name: 美国_9
+  network: ws
+  port: 443
+  server: 141.193.213.199
+  servername: b3ho27p7k3fyzbym.uktimecsgo.xyz
+  tls: true
+  type: vmess
+  uuid: 621514d0-46de-47ea-9063-21eaea0999c7
+  ws-opts:
+    headers:
+      Host: b3ho27p7k3fyzbym.uktimecsgo.xyz
+    path: /bpjc/uk1
+- alterId: 0
+  cipher: auto
+  name: 加拿大
+  network: tcp
+  port: 27691
+  server: 74.48.194.7
+  servername: ''
+  type: vmess
+  uuid: 56520f0d-2bbc-4b8b-f438-82e151d66f96
+- alterId: 0
+  cipher: auto
+  name: 美国_10
+  network: ws
+  port: 40011
+  server: 2001:bc8:32d7:30b::201
+  servername: www.bing.com
+  type: vmess
+  uuid: bd7c5633-70df-4d6d-b104-a3e9580498f7
+  ws-opts:
+    headers:
+      Host: www.bing.com
+    path: /github.com/Alvin9999
+- alterId: 0
+  cipher: auto
+  name: 法国_2
+  network: ws
+  port: 40011
+  server: 2001:bc8:32d7:30b::201
+  servername: www.bing.com
+  type: vmess
+  uuid: bd7c5633-70df-4d6d-b104-a3e9580498f7
+  ws-opts:
+    headers:
+      Host: www.bing.com
+    path: /github.com/Alvin9999
+- cipher: chacha20-ietf-poly1305
+  name: 美国_11
   password: 9tqhMdIrTkgQ46PvhyAtMH
   port: 443
   server: switcher-nick-croquet.freesocks.work
   type: ss
 - cipher: chacha20-ietf-poly1305
-  name: 美国_3
+  name: 美国_12
   password: RFK38Cg7APneSB5cWDcpbm
   port: 443
   server: switcher-nick-croquet.freesocks.work
   type: ss
 - cipher: chacha20-ietf-poly1305
-  name: 美国_4
+  name: 美国_13
+  password: p78naCf2EfOlRSLTX0wFVx
+  port: 443
+  server: pupas-shirting-unsung.freesocks.work
+  type: ss
+- cipher: chacha20-ietf-poly1305
+  name: 美国_14
   password: p78naCf2EfOlRSLTX0wFVx
   port: 443
   server: pupas-shirting-unsung.freesocks.work
   type: ss
 - encryption: none
-  name: 美国_5
+  name: 美国_15
   network: ws
   port: 2096
-  server: 212.183.88.49
-  servername: getsub.saas.classelivre.eu.org
-  tls: true
-  type: vless
-  uuid: 12345678-1234-1234-1234-123456789123
-  ws-opts:
-    headers:
-      Host: getsub.saas.classelivre.eu.org
-    path: /snippets&freecodes@节点狂魔/?ed=2560
-- encryption: none
-  name: 美国_6
-  network: ws
-  port: 2096
-  server: 62.72.166.49
-  servername: getsub.saas.classelivre.eu.org
-  tls: true
-  type: vless
-  uuid: 12345678-1234-1234-1234-123456789123
-  ws-opts:
-    headers:
-      Host: getsub.saas.classelivre.eu.org
-    path: /snippets&freecodes@节点狂魔/?ed=2560
-- encryption: none
-  name: 英国_1
-  network: ws
-  port: 2096
-  server: 185.156.19.49
-  servername: getsub.saas.classelivre.eu.org
-  tls: true
-  type: vless
-  uuid: 12345678-1234-1234-1234-123456789123
-  ws-opts:
-    headers:
-      Host: getsub.saas.classelivre.eu.org
-    path: /snippets&freecodes@节点狂魔/?ed=2560
-- encryption: none
-  name: 美国_7
-  network: ws
-  port: 2096
-  server: 199.68.156.32
+  server: 155.46.213.32
   servername: kejiland.freewarp.eu.org
   tls: true
   type: vless
@@ -107,38 +235,532 @@ proxies:
   ws-opts:
     headers:
       Host: kejiland.freewarp.eu.org
+    path: /snippets
+- encryption: none
+  name: 美国_16
+  network: ws
+  port: 2096
+  server: 89.116.180.61
+  servername: vless.hubp.de
+  tls: true
+  type: vless
+  uuid: 12345678-1234-1234-1234-123456789123
+  ws-opts:
+    headers:
+      Host: vless.hubp.de
+    path: /snippets
+- encryption: none
+  name: 日本_1
+  network: ws
+  port: 2096
+  server: 103.245.228.32
+  servername: kejiland.freewarp.eu.org
+  tls: true
+  type: vless
+  uuid: b65f4df7-f6af-42b2-877a-cef33f21675e
+  ws-opts:
+    headers:
+      Host: kejiland.freewarp.eu.org
+    path: /snippets
+- encryption: none
+  name: 英国_1
+  network: ws
+  port: 2096
+  server: 141.11.203.32
+  servername: kejiland.freewarp.eu.org
+  tls: true
+  type: vless
+  uuid: b65f4df7-f6af-42b2-877a-cef33f21675e
+  ws-opts:
+    headers:
+      Host: kejiland.freewarp.eu.org
+    path: /snippets
+- encryption: none
+  name: 美国_17
+  network: ws
+  port: 2096
+  server: 185.162.231.61
+  servername: vless.hubp.de
+  tls: true
+  type: vless
+  uuid: 12345678-1234-1234-1234-123456789123
+  ws-opts:
+    headers:
+      Host: vless.hubp.de
+    path: /snippets
+- encryption: none
+  name: 德国_1
+  network: ws
+  port: 2096
+  server: 5.10.214.44
+  servername: kejiland.freewarp.eu.org
+  tls: true
+  type: vless
+  uuid: 12345678-1234-1234-1234-123456789123
+  ws-opts:
+    headers:
+      Host: kejiland.freewarp.eu.org
+    path: /snippets
+- encryption: none
+  name: 美国_18
+  network: ws
+  port: 2096
+  server: 185.159.247.61
+  servername: vless.hubp.de
+  tls: true
+  type: vless
+  uuid: 12345678-1234-1234-1234-123456789123
+  ws-opts:
+    headers:
+      Host: vless.hubp.de
+    path: /snippets
+- encryption: none
+  name: 日本_2
+  network: ws
+  port: 2096
+  server: 103.245.229.61
+  servername: vless.hubp.de
+  tls: true
+  type: vless
+  uuid: 12345678-1234-1234-1234-123456789123
+  ws-opts:
+    headers:
+      Host: vless.hubp.de
+    path: /snippets
+- encryption: none
+  name: 美国_19
+  network: ws
+  port: 2096
+  server: 198.202.211.61
+  servername: vless.hubp.de
+  tls: true
+  type: vless
+  uuid: 12345678-1234-1234-1234-123456789123
+  ws-opts:
+    headers:
+      Host: vless.hubp.de
+    path: /snippets
+- encryption: none
+  name: 法国_3
+  network: ws
+  port: 2096
+  server: 141.11.202.61
+  servername: vless.hubp.de
+  tls: true
+  type: vless
+  uuid: 12345678-1234-1234-1234-123456789123
+  ws-opts:
+    headers:
+      Host: vless.hubp.de
+    path: /snippets
+- encryption: none
+  name: 美国_20
+  network: ws
+  port: 2096
+  server: 194.53.53.61
+  servername: vless.hubp.de
+  tls: true
+  type: vless
+  uuid: 12345678-1234-1234-1234-123456789123
+  ws-opts:
+    headers:
+      Host: vless.hubp.de
+    path: /snippets
+- encryption: none
+  name: 美国_21
+  network: ws
+  port: 2096
+  server: 155.46.167.43
+  servername: kejiland.freewarp.eu.org
+  tls: true
+  type: vless
+  uuid: 01997b9d-a1f7-e188-981a-c665b723cfef
+  ws-opts:
+    headers:
+      Host: kejiland.freewarp.eu.org
+    path: /snippets
+- encryption: none
+  name: 美国_22
+  network: ws
+  port: 2096
+  server: 155.46.167.61
+  servername: vless.hubp.de
+  tls: true
+  type: vless
+  uuid: 12345678-1234-1234-1234-123456789123
+  ws-opts:
+    headers:
+      Host: vless.hubp.de
+    path: /snippets
+- encryption: none
+  name: 美国_23
+  network: ws
+  port: 2096
+  server: 193.227.99.61
+  servername: vless.hubp.de
+  tls: true
+  type: vless
+  uuid: 12345678-1234-1234-1234-123456789123
+  ws-opts:
+    headers:
+      Host: vless.hubp.de
+    path: /snippets
+- encryption: none
+  name: 美国_24
+  network: ws
+  port: 2096
+  server: 216.24.57.61
+  servername: vless.hubp.de
+  tls: true
+  type: vless
+  uuid: 12345678-1234-1234-1234-123456789123
+  ws-opts:
+    headers:
+      Host: vless.hubp.de
+    path: /snippets
+- encryption: none
+  name: 美国_25
+  network: ws
+  port: 2096
+  server: 154.194.0.61
+  servername: vless.hubp.de
+  tls: true
+  type: vless
+  uuid: 12345678-1234-1234-1234-123456789123
+  ws-opts:
+    headers:
+      Host: vless.hubp.de
+    path: /snippets
+- encryption: none
+  name: 美国_26
+  network: ws
+  port: 2096
+  server: 195.85.23.61
+  servername: vless.hubp.de
+  tls: true
+  type: vless
+  uuid: 12345678-1234-1234-1234-123456789123
+  ws-opts:
+    headers:
+      Host: vless.hubp.de
+    path: /snippets
+- encryption: none
+  name: 美国_27
+  network: ws
+  port: 2096
+  server: 192.169.220.61
+  servername: vless.hubp.de
+  tls: true
+  type: vless
+  uuid: 12345678-1234-1234-1234-123456789123
+  ws-opts:
+    headers:
+      Host: vless.hubp.de
+    path: /snippets
+- encryption: none
+  name: 美国_28
+  network: ws
+  port: 2096
+  server: 192.169.221.61
+  servername: vless.hubp.de
+  tls: true
+  type: vless
+  uuid: 12345678-1234-1234-1234-123456789123
+  ws-opts:
+    headers:
+      Host: vless.hubp.de
+    path: /snippets
+- encryption: none
+  name: 美国_29
+  network: ws
+  port: 2096
+  server: 160.153.1.61
+  servername: vless.hubp.de
+  tls: true
+  type: vless
+  uuid: 12345678-1234-1234-1234-123456789123
+  ws-opts:
+    headers:
+      Host: vless.hubp.de
+    path: /snippets
+- encryption: none
+  name: 美国_30
+  network: ws
+  port: 2096
+  server: 154.197.64.61
+  servername: vless.hubp.de
+  tls: true
+  type: vless
+  uuid: 12345678-1234-1234-1234-123456789123
+  ws-opts:
+    headers:
+      Host: vless.hubp.de
+    path: /snippets
+- encryption: none
+  name: 美国_31
+  network: ws
+  port: 2096
+  server: 135.84.76.61
+  servername: vless.hubp.de
+  tls: true
+  type: vless
+  uuid: 12345678-1234-1234-1234-123456789123
+  ws-opts:
+    headers:
+      Host: vless.hubp.de
+    path: /snippets
+- encryption: none
+  name: 美国_32
+  network: ws
+  port: 443
+  server: nrtcfdns.zone.id
+  servername: 2.294294.xyz
+  tls: true
+  type: vless
+  uuid: dea991b4-696f-4e9e-9761-1e1b31bb02de
+  ws-opts:
+    headers:
+      Host: 2.294294.xyz
+    path: /snippets
+- encryption: none
+  name: 日本_3
+  network: ws
+  port: 2096
+  server: 103.116.7.61
+  servername: vless.hubp.de
+  tls: true
+  type: vless
+  uuid: 12345678-1234-1234-1234-123456789123
+  ws-opts:
+    headers:
+      Host: vless.hubp.de
+    path: /snippets
+- encryption: none
+  name: 美国_33
+  network: ws
+  port: 2096
+  server: 190.93.245.61
+  servername: vless.hubp.de
+  tls: true
+  type: vless
+  uuid: 12345678-1234-1234-1234-123456789123
+  ws-opts:
+    headers:
+      Host: vless.hubp.de
+    path: /snippets
+- encryption: none
+  name: 美国_34
+  network: ws
+  port: 2096
+  server: 92.53.191.61
+  servername: vless.hubp.de
+  tls: true
+  type: vless
+  uuid: 12345678-1234-1234-1234-123456789123
+  ws-opts:
+    headers:
+      Host: vless.hubp.de
+    path: /snippets
+- encryption: none
+  name: 美国_35
+  network: ws
+  port: 2096
+  server: 104.129.166.61
+  servername: vless.hubp.de
+  tls: true
+  type: vless
+  uuid: 12345678-1234-1234-1234-123456789123
+  ws-opts:
+    headers:
+      Host: vless.hubp.de
+    path: /snippets
+- encryption: none
+  name: 美国_36
+  network: ws
+  port: 443
+  server: xn--ktff-jt6hr36l.tencentapp.cn
+  servername: 2.294294.xyz
+  tls: true
+  type: vless
+  uuid: dea991b4-696f-4e9e-9761-1e1b31bb02de
+  ws-opts:
+    headers:
+      Host: 2.294294.xyz
+    path: /snippets
+- encryption: none
+  name: 美国_37
+  network: ws
+  port: 443
+  server: www.shopify.com
+  servername: 2.294294.xyz
+  tls: true
+  type: vless
+  uuid: dea991b4-696f-4e9e-9761-1e1b31bb02de
+  ws-opts:
+    headers:
+      Host: 2.294294.xyz
+    path: /snippets
+- encryption: none
+  name: 美国_38
+  network: ws
+  port: 443
+  server: cdn.2020111.xyz
+  servername: 2.294294.xyz
+  tls: true
+  type: vless
+  uuid: dea991b4-696f-4e9e-9761-1e1b31bb02de
+  ws-opts:
+    headers:
+      Host: 2.294294.xyz
+    path: /snippets
+- encryption: none
+  name: 美国_39
+  network: ws
+  port: 443
+  server: cf.877774.xyz
+  servername: 2.294294.xyz
+  tls: true
+  type: vless
+  uuid: dea991b4-696f-4e9e-9761-1e1b31bb02de
+  ws-opts:
+    headers:
+      Host: 2.294294.xyz
+    path: /snippets
+- encryption: none
+  name: 法国_4
+  network: ws
+  port: 2096
+  server: 141.11.203.61
+  servername: vless.hubp.de
+  tls: true
+  type: vless
+  uuid: 12345678-1234-1234-1234-123456789123
+  ws-opts:
+    headers:
+      Host: vless.hubp.de
+    path: /snippets
+- encryption: none
+  name: 澳洲
+  network: ws
+  port: 2096
+  server: 192.65.217.61
+  servername: vless.hubp.de
+  tls: true
+  type: vless
+  uuid: 12345678-1234-1234-1234-123456789123
+  ws-opts:
+    headers:
+      Host: vless.hubp.de
+    path: /snippets
+- encryption: none
+  name: 美国_40
+  network: ws
+  port: 2096
+  server: 198.71.191.61
+  servername: vless.hubp.de
+  tls: true
+  type: vless
+  uuid: 12345678-1234-1234-1234-123456789123
+  ws-opts:
+    headers:
+      Host: vless.hubp.de
+    path: /snippets
+- encryption: none
+  name: 美国_41
+  network: ws
+  port: 2096
+  server: 198.12.144.61
+  servername: vless.hubp.de
+  tls: true
+  type: vless
+  uuid: 12345678-1234-1234-1234-123456789123
+  ws-opts:
+    headers:
+      Host: vless.hubp.de
+    path: /snippets
+- encryption: none
+  name: 美国_42
+  network: ws
+  port: 2096
+  server: 198.12.145.61
+  servername: vless.hubp.de
+  tls: true
+  type: vless
+  uuid: 12345678-1234-1234-1234-123456789123
+  ws-opts:
+    headers:
+      Host: vless.hubp.de
+    path: /snippets
+- encryption: none
+  name: 美国_43
+  network: ws
+  port: 2096
+  server: 198.71.190.61
+  servername: vless.hubp.de
+  tls: true
+  type: vless
+  uuid: 12345678-1234-1234-1234-123456789123
+  ws-opts:
+    headers:
+      Host: vless.hubp.de
     path: /snippets
 - encryption: none
   name: 英国_2
   network: ws
   port: 2096
-  server: 195.26.229.41
-  servername: vless.keepfuck.me
+  server: 109.176.239.32
+  servername: kejiland.freewarp.eu.org
   tls: true
   type: vless
-  uuid: 563608cd-f135-4e64-938d-d9eb3be1ba77
+  uuid: b65f4df7-f6af-42b2-877a-cef33f21675e
   ws-opts:
     headers:
-      Host: vless.keepfuck.me
+      Host: kejiland.freewarp.eu.org
     path: /snippets
 - encryption: none
-  name: 澳洲_1
+  name: 美国_44
   network: ws
   port: 2096
-  server: 185.207.196.44
+  server: 199.181.197.32
   servername: kejiland.freewarp.eu.org
+  tls: true
+  type: vless
+  uuid: b65f4df7-f6af-42b2-877a-cef33f21675e
+  ws-opts:
+    headers:
+      Host: kejiland.freewarp.eu.org
+    path: /snippets
+- encryption: none
+  name: 美国_45
+  network: ws
+  port: 2096
+  server: 92.53.188.61
+  servername: vless.hubp.de
   tls: true
   type: vless
   uuid: 12345678-1234-1234-1234-123456789123
   ws-opts:
     headers:
-      Host: kejiland.freewarp.eu.org
+      Host: vless.hubp.de
     path: /snippets
 - encryption: none
   name: 英国_3
   network: ws
   port: 2096
-  server: 109.176.239.43
+  server: 185.156.19.61
+  servername: vless.hubp.de
+  tls: true
+  type: vless
+  uuid: 12345678-1234-1234-1234-123456789123
+  ws-opts:
+    headers:
+      Host: vless.hubp.de
+    path: /snippets
+- encryption: none
+  name: 德国_2
+  network: ws
+  port: 2096
+  server: 5.175.141.43
   servername: kejiland.freewarp.eu.org
   tls: true
   type: vless
@@ -147,232 +769,133 @@ proxies:
     headers:
       Host: kejiland.freewarp.eu.org
     path: /snippets
-- encryption: none
-  name: 美国_8
-  network: ws
-  port: 2096
-  server: 204.93.210.49
-  servername: getsub.saas.classelivre.eu.org
-  tls: true
-  type: vless
-  uuid: 12345678-1234-1234-1234-123456789123
-  ws-opts:
-    headers:
-      Host: getsub.saas.classelivre.eu.org
-    path: /snippets&freecodes@节点狂魔/?ed=2560
-- encryption: none
-  name: 澳洲_2
-  network: ws
-  port: 2096
-  server: 192.200.160.43
-  servername: kejiland.freewarp.eu.org
-  tls: true
-  type: vless
-  uuid: 01997b9d-a1f7-e188-981a-c665b723cfef
-  ws-opts:
-    headers:
-      Host: kejiland.freewarp.eu.org
-    path: /snippets&freecodes@节点狂魔/?ed=2560
-- encryption: none
-  name: 美国_9
-  network: ws
-  port: 2096
-  server: 166.62.111.32
-  servername: kejiland.freewarp.eu.org
-  tls: true
-  type: vless
-  uuid: b65f4df7-f6af-42b2-877a-cef33f21675e
-  ws-opts:
-    headers:
-      Host: kejiland.freewarp.eu.org
-    path: /snippets
-- encryption: none
-  name: 美国_10
-  network: ws
-  port: 2096
-  server: 160.153.168.41
-  servername: vless.keepfuck.me
-  tls: true
-  type: vless
-  uuid: 563608cd-f135-4e64-938d-d9eb3be1ba77
-  ws-opts:
-    headers:
-      Host: vless.keepfuck.me
-    path: /snippets
-- encryption: none
-  name: 香港
-  network: ws
-  port: 2096
-  server: 154.206.12.49
-  servername: getsub.saas.classelivre.eu.org
-  tls: true
-  type: vless
-  uuid: 12345678-1234-1234-1234-123456789123
-  ws-opts:
-    headers:
-      Host: getsub.saas.classelivre.eu.org
-    path: /snippets&freecodes@节点狂魔/?ed=2560
-- encryption: none
-  name: 美国_11
-  network: ws
-  port: 2096
-  server: 45.67.215.49
-  servername: getsub.saas.classelivre.eu.org
-  tls: true
-  type: vless
-  uuid: 12345678-1234-1234-1234-123456789123
-  ws-opts:
-    headers:
-      Host: getsub.saas.classelivre.eu.org
-    path: /snippets&freecodes@节点狂魔/?ed=2560
-- encryption: none
-  name: 德国
-  network: ws
-  port: 2096
-  server: 185.16.110.49
-  servername: getsub.saas.classelivre.eu.org
-  tls: true
-  type: vless
-  uuid: 12345678-1234-1234-1234-123456789123
-  ws-opts:
-    headers:
-      Host: getsub.saas.classelivre.eu.org
-    path: /snippets&freecodes@节点狂魔/?ed=2560
-- encryption: none
-  name: 美国_12
-  network: ws
-  port: 2096
-  server: 45.149.12.49
-  servername: getsub.saas.classelivre.eu.org
-  tls: true
-  type: vless
-  uuid: 12345678-1234-1234-1234-123456789123
-  ws-opts:
-    headers:
-      Host: getsub.saas.classelivre.eu.org
-    path: /snippets&freecodes@节点狂魔/?ed=2560
-- encryption: none
-  name: 美国_13
-  network: ws
-  port: 2096
-  server: 166.62.111.49
-  servername: getsub.saas.classelivre.eu.org
-  tls: true
-  type: vless
-  uuid: 12345678-1234-1234-1234-123456789123
-  ws-opts:
-    headers:
-      Host: getsub.saas.classelivre.eu.org
-    path: /snippets&freecodes@节点狂魔/?ed=2560
-- encryption: none
-  name: 法国
-  network: ws
-  port: 2096
-  server: 185.7.240.32
-  servername: kejiland.freewarp.eu.org
-  tls: true
-  type: vless
-  uuid: b65f4df7-f6af-42b2-877a-cef33f21675e
-  ws-opts:
-    headers:
-      Host: kejiland.freewarp.eu.org
-    path: /snippets
-- encryption: none
-  name: 美国_14
-  network: ws
-  port: 2096
-  server: 135.84.76.43
-  servername: kejiland.freewarp.eu.org
-  tls: true
-  type: vless
-  uuid: 01997b9d-a1f7-e188-981a-c665b723cfef
-  ws-opts:
-    headers:
-      Host: kejiland.freewarp.eu.org
-    path: /snippets&freecodes@节点狂魔/?ed=2560
-- encryption: none
-  name: 美国_15
-  network: ws
-  port: 2096
-  server: 192.200.160.49
-  servername: getsub.saas.classelivre.eu.org
-  tls: true
-  type: vless
-  uuid: 12345678-1234-1234-1234-123456789123
-  ws-opts:
-    headers:
-      Host: getsub.saas.classelivre.eu.org
-    path: /snippets&freecodes@节点狂魔/?ed=2560
-- encryption: none
-  name: 英国_4
-  network: ws
-  port: 2096
-  server: 141.11.203.49
-  servername: getsub.saas.classelivre.eu.org
-  tls: true
-  type: vless
-  uuid: 12345678-1234-1234-1234-123456789123
-  ws-opts:
-    headers:
-      Host: getsub.saas.classelivre.eu.org
-    path: /snippets&freecodes@节点狂魔/?ed=2560
 proxy-groups:
 - name: 🚀 节点选择
   proxies:
   - ♻️ 自动选择
   - DIRECT
   - 美国_1
+  - 法国_1
   - 美国_2
   - 美国_3
   - 美国_4
   - 美国_5
   - 美国_6
-  - 英国_1
   - 美国_7
-  - 英国_2
-  - 澳洲_1
-  - 英国_3
   - 美国_8
-  - 澳洲_2
   - 美国_9
+  - 加拿大
   - 美国_10
-  - 香港
+  - 法国_2
   - 美国_11
-  - 德国
   - 美国_12
   - 美国_13
-  - 法国
   - 美国_14
   - 美国_15
-  - 英国_4
+  - 美国_16
+  - 日本_1
+  - 英国_1
+  - 美国_17
+  - 德国_1
+  - 美国_18
+  - 日本_2
+  - 美国_19
+  - 法国_3
+  - 美国_20
+  - 美国_21
+  - 美国_22
+  - 美国_23
+  - 美国_24
+  - 美国_25
+  - 美国_26
+  - 美国_27
+  - 美国_28
+  - 美国_29
+  - 美国_30
+  - 美国_31
+  - 美国_32
+  - 日本_3
+  - 美国_33
+  - 美国_34
+  - 美国_35
+  - 美国_36
+  - 美国_37
+  - 美国_38
+  - 美国_39
+  - 法国_4
+  - 澳洲
+  - 美国_40
+  - 美国_41
+  - 美国_42
+  - 美国_43
+  - 英国_2
+  - 美国_44
+  - 美国_45
+  - 英国_3
+  - 德国_2
   type: select
 - interval: 300
   name: ♻️ 自动选择
   proxies:
   - 美国_1
+  - 法国_1
   - 美国_2
   - 美国_3
   - 美国_4
   - 美国_5
   - 美国_6
-  - 英国_1
   - 美国_7
-  - 英国_2
-  - 澳洲_1
-  - 英国_3
   - 美国_8
-  - 澳洲_2
   - 美国_9
+  - 加拿大
   - 美国_10
-  - 香港
+  - 法国_2
   - 美国_11
-  - 德国
   - 美国_12
   - 美国_13
-  - 法国
   - 美国_14
   - 美国_15
-  - 英国_4
+  - 美国_16
+  - 日本_1
+  - 英国_1
+  - 美国_17
+  - 德国_1
+  - 美国_18
+  - 日本_2
+  - 美国_19
+  - 法国_3
+  - 美国_20
+  - 美国_21
+  - 美国_22
+  - 美国_23
+  - 美国_24
+  - 美国_25
+  - 美国_26
+  - 美国_27
+  - 美国_28
+  - 美国_29
+  - 美国_30
+  - 美国_31
+  - 美国_32
+  - 日本_3
+  - 美国_33
+  - 美国_34
+  - 美国_35
+  - 美国_36
+  - 美国_37
+  - 美国_38
+  - 美国_39
+  - 法国_4
+  - 澳洲
+  - 美国_40
+  - 美国_41
+  - 美国_42
+  - 美国_43
+  - 英国_2
+  - 美国_44
+  - 美国_45
+  - 英国_3
+  - 德国_2
   tolerance: 5000
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -393,29 +916,64 @@ proxy-groups:
   - 🎯 全球直连
   - ♻️ 自动选择
   - 美国_1
+  - 法国_1
   - 美国_2
   - 美国_3
   - 美国_4
   - 美国_5
   - 美国_6
-  - 英国_1
   - 美国_7
-  - 英国_2
-  - 澳洲_1
-  - 英国_3
   - 美国_8
-  - 澳洲_2
   - 美国_9
+  - 加拿大
   - 美国_10
-  - 香港
+  - 法国_2
   - 美国_11
-  - 德国
   - 美国_12
   - 美国_13
-  - 法国
   - 美国_14
   - 美国_15
-  - 英国_4
+  - 美国_16
+  - 日本_1
+  - 英国_1
+  - 美国_17
+  - 德国_1
+  - 美国_18
+  - 日本_2
+  - 美国_19
+  - 法国_3
+  - 美国_20
+  - 美国_21
+  - 美国_22
+  - 美国_23
+  - 美国_24
+  - 美国_25
+  - 美国_26
+  - 美国_27
+  - 美国_28
+  - 美国_29
+  - 美国_30
+  - 美国_31
+  - 美国_32
+  - 日本_3
+  - 美国_33
+  - 美国_34
+  - 美国_35
+  - 美国_36
+  - 美国_37
+  - 美国_38
+  - 美国_39
+  - 法国_4
+  - 澳洲
+  - 美国_40
+  - 美国_41
+  - 美国_42
+  - 美国_43
+  - 英国_2
+  - 美国_44
+  - 美国_45
+  - 英国_3
+  - 德国_2
   type: select
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
