@@ -2,11 +2,11 @@ name: Regular Update
 
 on:
   schedule:
-    - cron: "0 2-14/6 * * *" # Run everyday at 10am, 4pm, 10pm, 4am
+    - cron: "0 4 * * *" # Run everyday at 12am in Beijing time
 
 jobs:
   update:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -14,7 +14,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: 3.11
+          python-version: 3.12
 
       - name: Install dependencies
         run: |
