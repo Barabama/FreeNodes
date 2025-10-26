@@ -53,18 +53,32 @@ proxies:
   server: switcher-nick-croquet.freesocks.work
   type: ss
   udp: true
-- cipher: chacha20-ietf-poly1305
+- alterId: 0
+  cipher: auto
   name: 美国(yudou678.top 玉豆免费节点) 2
-  password: 9tqhMdIrTkgQ46PvhyAtMH
-  port: 443
-  server: switcher-nick-croquet.freesocks.work
-  type: ss
+  network: ws
+  port: 80
+  server: bestcdn1.868863.xyz
+  skip-cert-verify: true
+  tls: false
+  type: vmess
   udp: true
+  uuid: f6eacf4f-1c3b-4423-be54-ff0e66a11bf1
+  ws-headers:
+    Host: vn-c5.no.168382.xyz
+  ws-path: /htehehehn
 - cipher: chacha20-ietf-poly1305
   name: 美国(yudou678.top 玉豆免费节点) 3
   password: Nk9asglDzHzjktVzTkvhaA
   port: 443
   server: arxfw2b78fi2q9hzylhn.freesocks.work
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: 美国(yudou678.top 玉豆免费节点) 4
+  password: 9tqhMdIrTkgQ46PvhyAtMH
+  port: 443
+  server: switcher-nick-croquet.freesocks.work
   type: ss
   udp: true
 proxy-groups:
@@ -78,6 +92,7 @@ proxy-groups:
   - 美国(yudou678.top 玉豆免费节点)
   - 美国(yudou678.top 玉豆免费节点) 2
   - 美国(yudou678.top 玉豆免费节点) 3
+  - 美国(yudou678.top 玉豆免费节点) 4
   type: select
 - interval: 300
   name: ♻️ 自动选择
@@ -88,6 +103,7 @@ proxy-groups:
   - 美国(yudou678.top 玉豆免费节点)
   - 美国(yudou678.top 玉豆免费节点) 2
   - 美国(yudou678.top 玉豆免费节点) 3
+  - 美国(yudou678.top 玉豆免费节点) 4
   type: url-test
   url: http://www.gstatic.com/generate_204
 - name: 🎥 NETFLIX
@@ -101,6 +117,7 @@ proxy-groups:
   - 美国(yudou678.top 玉豆免费节点)
   - 美国(yudou678.top 玉豆免费节点) 2
   - 美国(yudou678.top 玉豆免费节点) 3
+  - 美国(yudou678.top 玉豆免费节点) 4
   type: select
 - name: ⛔️ 广告拦截
   proxies:
@@ -125,6 +142,7 @@ proxy-groups:
   - 美国(yudou678.top 玉豆免费节点)
   - 美国(yudou678.top 玉豆免费节点) 2
   - 美国(yudou678.top 玉豆免费节点) 3
+  - 美国(yudou678.top 玉豆免费节点) 4
   type: select
 - name: 🌏 国内媒体
   proxies:
@@ -141,6 +159,7 @@ proxy-groups:
   - 美国(yudou678.top 玉豆免费节点)
   - 美国(yudou678.top 玉豆免费节点) 2
   - 美国(yudou678.top 玉豆免费节点) 3
+  - 美国(yudou678.top 玉豆免费节点) 4
   type: select
 - name: 📲 电报信息
   proxies:
@@ -152,6 +171,7 @@ proxy-groups:
   - 美国(yudou678.top 玉豆免费节点)
   - 美国(yudou678.top 玉豆免费节点) 2
   - 美国(yudou678.top 玉豆免费节点) 3
+  - 美国(yudou678.top 玉豆免费节点) 4
   type: select
 - name: 🍎 苹果服务
   proxies:
@@ -164,6 +184,7 @@ proxy-groups:
   - 美国(yudou678.top 玉豆免费节点)
   - 美国(yudou678.top 玉豆免费节点) 2
   - 美国(yudou678.top 玉豆免费节点) 3
+  - 美国(yudou678.top 玉豆免费节点) 4
   type: select
 - name: 🎯 全球直连
   proxies:
@@ -185,6 +206,7 @@ proxy-groups:
   - 美国(yudou678.top 玉豆免费节点)
   - 美国(yudou678.top 玉豆免费节点) 2
   - 美国(yudou678.top 玉豆免费节点) 3
+  - 美国(yudou678.top 玉豆免费节点) 4
   type: select
 rules:
 - DOMAIN-SUFFIX,local,🎯 全球直连
