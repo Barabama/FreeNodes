@@ -32,88 +32,107 @@ log-level: info
 mixed-port: 7890
 mode: rule
 proxies:
-- cipher: chacha20-ietf-poly1305
-  name: 美国_29
-  password: RFK38Cg7APneSB5cWDcpbm
-  port: 443
-  server: switcher-nick-croquet.freesocks.work
-  type: ss
-- cipher: chacha20-ietf-poly1305
-  name: 美国_30
-  password: Nk9asglDzHzjktVzTkvhaA
-  port: 443
-  server: arxfw2b78fi2q9hzylhn.freesocks.work
-  type: ss
-- cipher: chacha20-ietf-poly1305
-  name: 美国_31
-  password: 9tqhMdIrTkgQ46PvhyAtMH
-  port: 443
-  server: switcher-nick-croquet.freesocks.work
-  type: ss
-- alterId: 0
-  cipher: auto
-  name: 法国
+- name: 🇺🇸_US_美国
   network: ws
-  port: 44579
-  server: 2001:bc8:32d7:302::10
-  type: vmess
-  uuid: 8e34e170-13ae-4892-9d20-05962acc9f84
+  password: trojan
+  port: 8443
+  server: www.visa.com.sg
+  sni: pangpi.pages.dev
+  tls: true
+  type: trojan
   ws-opts:
     path: /
-- alterId: 0
-  cipher: auto
-  name: 法国_1
+- name: 🇨🇳_CN_中国
+  network: tcp
+  password: BxceQaOe
+  port: 2088
+  server: 36.150.215.197
+  skip-cert-verify: true
+  type: trojan
+- name: 🇺🇸_US_美国_5
   network: ws
-  port: 44579
-  server: 2001:bc8:32d7:302::10
-  type: vmess
-  uuid: 8e34e170-13ae-4892-9d20-05962acc9f84
+  password: trojan
+  port: 8443
+  server: ip.sb
+  sni: fofang.pages.dev
+  tls: true
+  type: trojan
   ws-opts:
-    path: /?ed=2048HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN
-- alterId: 0
-  cipher: auto
-  name: 法国_2
+    path: /?ed=2560
+- name: 🇺🇸_US_美国_7
   network: ws
-  port: 44579
-  server: 2001:bc8:32d7:302::10
-  type: vmess
-  uuid: 8e34e170-13ae-4892-9d20-05962acc9f84
-- alterId: 0
-  cipher: auto
-  name: 美国_32
-  network: ws
-  port: 80
-  server: bestcdn1.868863.xyz
-  servername: vn-c5.no.168382.xyz
-  type: vmess
-  uuid: f6eacf4f-1c3b-4423-be54-ff0e66a11bf1
+  password: trojan
+  port: 8443
+  server: 104.26.12.31
+  sni: fofang.pages.dev
+  tls: true
+  type: trojan
   ws-opts:
     headers:
-      Host: vn-c5.no.168382.xyz
-    path: /htehehehn
+      Host: fofang.pages.dev
+    path: /
+- name: 🇺🇸_US_美国_11
+  network: ws
+  password: d0298536-d670-4045-bbb1-ddd5ea68683e
+  port: 2087
+  server: 104.25.254.4
+  sni: azadnet-bdr.pages.dev
+  tls: true
+  type: trojan
+  ws-opts:
+    headers:
+      Host: azadnet-bdr.pages.dev
+    path: /azadnet-bdr.pages.dev/?ed=2560&PROT_TYPE=trojan
+- fingerprint: chrome
+  name: 🇺🇸_US_美国_17
+  network: ws
+  password: er668
+  port: 443
+  server: kfjdi.pages.dev
+  tls: true
+  type: trojan
+  ws-opts:
+    path: /?ed=2048@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN--@HiByeVPNN
+- name: 🇨🇳_CN_中国_1
+  network: tcp
+  password: BxceQaOe
+  port: 194
+  server: 36.156.102.72
+  skip-cert-verify: true
+  type: trojan
+- alterId: 0
+  cipher: auto
+  name: '@V2rayNG3 19'
+  network: tcp
+  port: 30000
+  server: 37.27.249.93
+  type: vmess
+  uuid: 31af18ca-127a-4b04-9cfb-c4616d6ada60
 proxy-groups:
 - name: 🚀 节点选择
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - 美国_29
-  - 美国_30
-  - 美国_31
-  - 法国
-  - 法国_1
-  - 法国_2
-  - 美国_32
+  - 🇺🇸_US_美国
+  - 🇨🇳_CN_中国
+  - 🇺🇸_US_美国_5
+  - 🇺🇸_US_美国_7
+  - 🇺🇸_US_美国_11
+  - 🇺🇸_US_美国_17
+  - 🇨🇳_CN_中国_1
+  - '@V2rayNG3 19'
   type: select
 - interval: 300
   name: ♻️ 自动选择
   proxies:
-  - 美国_29
-  - 美国_30
-  - 美国_31
-  - 法国
-  - 法国_1
-  - 法国_2
-  - 美国_32
+  - 🇺🇸_US_美国
+  - 🇨🇳_CN_中国
+  - 🇺🇸_US_美国_5
+  - 🇺🇸_US_美国_7
+  - 🇺🇸_US_美国_11
+  - 🇺🇸_US_美国_17
+  - 🇨🇳_CN_中国_1
+  - '@V2rayNG3 19'
   type: url-test
   url: http://www.gstatic.com/generate_204
 - name: 🎯 全球直连
@@ -132,14 +151,89 @@ proxy-groups:
   - 🚀 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
-  - 美国_29
-  - 美国_30
-  - 美国_31
-  - 法国
-  - 法国_1
-  - 法国_2
-  - 美国_32
+  - 🇺🇸_US_美国
+  - 🇨🇳_CN_中国
+  - 🇺🇸_US_美国_5
+  - 🇺🇸_US_美国_7
+  - 🇺🇸_US_美国_11
+  - 🇺🇸_US_美国_17
+  - 🇨🇳_CN_中国_1
+  - '@V2rayNG3 19'
   type: select
+rule-providers:
+  BanAD:
+    behavior: classical
+    interval: 86400
+    path: ./rules/providers/BanAD.list
+    type: http
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
+  BanProgramAD:
+    behavior: classical
+    interval: 86400
+    path: ./rules/providers/BanProgramAD.list
+    type: http
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
+  ChinaCompanyIp:
+    behavior: classical
+    interval: 86400
+    path: ./rules/providers/ChinaCompanyIp.list
+    type: http
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
+  ChinaDomain:
+    behavior: classical
+    interval: 86400
+    path: ./rules/providers/ChinaDomain.list
+    type: http
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+  GoogleCN:
+    behavior: classical
+    interval: 86400
+    path: ./rules/providers/GoogleCN.list
+    type: http
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
+  LocalAreaNetwork:
+    behavior: classical
+    interval: 86400
+    path: ./rules/providers/LocalAreaNetwork.list
+    type: http
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+  ProxyLite:
+    behavior: classical
+    interval: 86400
+    path: ./rules/providers/ProxyLite.list
+    type: http
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list
+  ProxyMedia:
+    behavior: classical
+    interval: 86400
+    path: ./rules/providers/ProxyMedia.list
+    type: http
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
+  SteamCN:
+    behavior: classical
+    interval: 86400
+    path: ./rules/providers/SteamCN.list
+    type: http
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/SteamCN.list
+  Telegram:
+    behavior: classical
+    interval: 86400
+    path: ./rules/providers/Telegram.list
+    type: http
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
+rules:
+- RULE-SET,LocalAreaNetwork,🎯 全球直连
+- RULE-SET,BanAD,🛑 全球拦截
+- RULE-SET,BanProgramAD,🛑 全球拦截
+- RULE-SET,GoogleCN,🎯 全球直连
+- RULE-SET,SteamCN,🎯 全球直连
+- RULE-SET,Telegram,🚀 节点选择
+- RULE-SET,ProxyMedia,🚀 节点选择
+- RULE-SET,ProxyLite,🚀 节点选择
+- RULE-SET,ChinaDomain,🎯 全球直连
+- RULE-SET,ChinaCompanyIp,🎯 全球直连
+- GEOIP,CN,🎯 全球直连
+- MATCH,🐟 漏网之鱼
 tun:
   auto-detect-interface: true
   auto-route: true
