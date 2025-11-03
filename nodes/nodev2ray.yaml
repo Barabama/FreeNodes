@@ -57,29 +57,29 @@ proxies:
 - client-fingerprint: chrome
   name: 🇭🇰 香港3|@stairnode
   password: bca467b8c15211d189008a93c7519d3b
-  port: 22581
-  server: 221.128.195.9
+  port: 443
+  server: 58.152.53.42
   skip-cert-verify: false
   sni: www.nintendogames.net
   type: trojan
 - client-fingerprint: chrome
   name: 🇭🇰 香港4|@stairnode
   password: BxceQaOe
-  port: 4861
-  server: 36.156.102.74
+  port: 4556
+  server: 36.151.192.242
   skip-cert-verify: true
   type: trojan
 - client-fingerprint: chrome
   name: 🇭🇰 香港5|@stairnode
   password: BxceQaOe
-  port: 194
-  server: 36.151.192.242
+  port: 443
+  server: 203.198.122.129
   skip-cert-verify: true
   type: trojan
 - client-fingerprint: chrome
   name: 🇯🇵 日本|@stairnode
   password: BxceQaOe
-  port: 487
+  port: 4492
   server: 36.150.215.236
   skip-cert-verify: true
   type: trojan
@@ -97,23 +97,35 @@ proxies:
 - client-fingerprint: chrome
   name: 🇯🇵 日本2|@stairnode
   password: bca467b8c15211d189008a93c7519d3b
-  port: 4452
-  server: 160.16.236.32
-  skip-cert-verify: true
-  sni: www.baidu.com
+  port: 1332
+  server: 117.172.176.24
+  skip-cert-verify: false
+  sni: www.nintendogames.net
   type: trojan
 - client-fingerprint: chrome
   name: 🇯🇵 日本3|@stairnode
   password: bca467b8c15211d189008a93c7519d3b
   port: 3161
-  server: 160.16.236.32
-  skip-cert-verify: true
-  sni: www.baidu.com
+  server: 117.172.176.24
+  skip-cert-verify: false
+  sni: www.nintendogames.net
   type: trojan
+- cipher: chacha20-ietf-poly1305
+  client-fingerprint: chrome
+  name: 🇯🇵 日本4|@stairnode
+  password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
+  plugin: obfs
+  plugin-opts:
+    host: (TG @stairnode)e9e4816:99990
+    mode: tls
+  port: 2377
+  server: 54.64.148.82
+  tfo: false
+  type: ss
 - client-fingerprint: chrome
   name: 🇸🇬 新加坡|@stairnode
   password: bca467b8c15211d189008a93c7519d3b
-  port: 5041
+  port: 2283
   server: 117.172.176.24
   skip-cert-verify: false
   sni: www.nintendogames.net
@@ -121,15 +133,15 @@ proxies:
 - client-fingerprint: chrome
   name: 🇸🇬 新加坡2|@stairnode
   password: bca467b8c15211d189008a93c7519d3b
-  port: 5321
-  server: 117.172.176.24
+  port: 5048
+  server: 160.16.107.37
   skip-cert-verify: false
   sni: www.nintendogames.net
   type: trojan
 - client-fingerprint: chrome
   name: 🇸🇬 新加坡3|@stairnode
   password: BxceQaOe
-  port: 9713
+  port: 51825
   server: 36.150.215.197
   skip-cert-verify: true
   type: trojan
@@ -152,8 +164,8 @@ proxies:
 - client-fingerprint: chrome
   name: 🇺🇸 美国3|@stairnode
   password: BxceQaOe
-  port: 43567
-  server: 36.156.102.74
+  port: 53743
+  server: 36.151.251.47
   skip-cert-verify: true
   type: trojan
 proxy-groups:
@@ -171,6 +183,7 @@ proxy-groups:
   - 🇭🇰 香港6|@stairnode
   - 🇯🇵 日本2|@stairnode
   - 🇯🇵 日本3|@stairnode
+  - 🇯🇵 日本4|@stairnode
   - 🇸🇬 新加坡|@stairnode
   - 🇸🇬 新加坡2|@stairnode
   - 🇸🇬 新加坡3|@stairnode
@@ -191,6 +204,7 @@ proxy-groups:
   - 🇭🇰 香港6|@stairnode
   - 🇯🇵 日本2|@stairnode
   - 🇯🇵 日本3|@stairnode
+  - 🇯🇵 日本4|@stairnode
   - 🇸🇬 新加坡|@stairnode
   - 🇸🇬 新加坡2|@stairnode
   - 🇸🇬 新加坡3|@stairnode
@@ -215,6 +229,7 @@ proxy-groups:
   - 🇭🇰 香港6|@stairnode
   - 🇯🇵 日本2|@stairnode
   - 🇯🇵 日本3|@stairnode
+  - 🇯🇵 日本4|@stairnode
   - 🇸🇬 新加坡|@stairnode
   - 🇸🇬 新加坡2|@stairnode
   - 🇸🇬 新加坡3|@stairnode
@@ -236,6 +251,7 @@ proxy-groups:
   - 🇭🇰 香港6|@stairnode
   - 🇯🇵 日本2|@stairnode
   - 🇯🇵 日本3|@stairnode
+  - 🇯🇵 日本4|@stairnode
   - 🇸🇬 新加坡|@stairnode
   - 🇸🇬 新加坡2|@stairnode
   - 🇸🇬 新加坡3|@stairnode
@@ -257,6 +273,7 @@ proxy-groups:
   - 🇭🇰 香港6|@stairnode
   - 🇯🇵 日本2|@stairnode
   - 🇯🇵 日本3|@stairnode
+  - 🇯🇵 日本4|@stairnode
   - 🇸🇬 新加坡|@stairnode
   - 🇸🇬 新加坡2|@stairnode
   - 🇸🇬 新加坡3|@stairnode
@@ -278,6 +295,7 @@ proxy-groups:
   - 🇭🇰 香港6|@stairnode
   - 🇯🇵 日本2|@stairnode
   - 🇯🇵 日本3|@stairnode
+  - 🇯🇵 日本4|@stairnode
   - 🇸🇬 新加坡|@stairnode
   - 🇸🇬 新加坡2|@stairnode
   - 🇸🇬 新加坡3|@stairnode
@@ -300,6 +318,7 @@ proxy-groups:
   - 🇭🇰 香港6|@stairnode
   - 🇯🇵 日本2|@stairnode
   - 🇯🇵 日本3|@stairnode
+  - 🇯🇵 日本4|@stairnode
   - 🇸🇬 新加坡|@stairnode
   - 🇸🇬 新加坡2|@stairnode
   - 🇸🇬 新加坡3|@stairnode
@@ -338,6 +357,7 @@ proxy-groups:
   - 🇭🇰 香港6|@stairnode
   - 🇯🇵 日本2|@stairnode
   - 🇯🇵 日本3|@stairnode
+  - 🇯🇵 日本4|@stairnode
   - 🇸🇬 新加坡|@stairnode
   - 🇸🇬 新加坡2|@stairnode
   - 🇸🇬 新加坡3|@stairnode
