@@ -5,33 +5,11 @@ mode: Rule
 port: 7890
 proxies:
 - flow: xtls-rprx-vision
-  name: 🇸🇬SG_2|⬇️3.4MB/s
-  network: tcp
-  port: 10001
-  server: 154.204.183.68
-  servername: www.icloud.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 9c79aceb-4649-44ea-9698-b5e9ecf6d6da
-- flow: xtls-rprx-vision
   name: 🇸🇬新加坡_1
   network: tcp
   port: 31064
   server: aws-linksg64.eovay.com
   servername: www.lamer.com.sg
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 6c0472bc-82df-449e-90bd-2f91c6a46402
-- flow: xtls-rprx-vision
-  name: 🇨🇦加拿大
-  network: tcp
-  port: 53311
-  server: aws-linkca11.eovay.com
-  servername: www.apple.com
   skip-cert-verify: true
   tls: false
   type: vless
@@ -104,17 +82,6 @@ proxies:
   udp: true
   uuid: 6c0472bc-82df-449e-90bd-2f91c6a46402
 - flow: xtls-rprx-vision
-  name: 韩国
-  network: tcp
-  port: 40033
-  server: aws-linkjp33.eovay.com
-  servername: gghouse.co.jp
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 6c0472bc-82df-449e-90bd-2f91c6a46402
-- flow: xtls-rprx-vision
   name: 日本_2
   network: tcp
   port: 40055
@@ -125,113 +92,43 @@ proxies:
   type: vless
   udp: true
   uuid: 6c0472bc-82df-449e-90bd-2f91c6a46402
-- name: 德国_1
+- name: 🇩🇪德國80
+  port: 443
+  server: wangcai80.000444.cn
+  skip-cert-verify: true
+  type: vless
+  uuid: 9d847ad3-1896-48f9-b89c-13fe345e2bff
+- flow: xtls-rprx-vision
+  name: JP
   network: tcp
-  port: 52361
-  server: ger.4uvpn1.us
+  port: 40033
+  server: aws-linkjp33.eovay.com
+  servername: gghouse.co.jp
   skip-cert-verify: true
   tls: false
   type: vless
   udp: true
-  uuid: 0078d912-bca4-4898-a414-2514233c008a
-- flow: xtls-rprx-vision
-  name: US_1
+  uuid: 6c0472bc-82df-449e-90bd-2f91c6a46402
+- name: 🇩🇪_DE_德国
   network: tcp
   port: 443
-  server: 62.60.148.21
-  servername: st.ozone.ru
+  server: vp9.myphotomoments.ir
   skip-cert-verify: true
   tls: false
   type: vless
   udp: true
-  uuid: 39e5cc2f-1294-4a42-bb58-306a8be785e1
-- name: US_2
-  network: grpc
-  port: 8880
-  server: 45.12.150.156
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: df0680ca-e43c-498d-ed86-8e196eedd012
-- name: US_3
-  network: grpc
-  port: 8880
-  server: 45.12.150.144
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: df0680ca-e43c-498d-ed86-8e196eedd012
-- name: US_4
-  network: ws
-  port: 443
-  server: fl-3-direct.djarbnet.ru
-  servername: fl-3-direct.djarbnet.ru
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc67ca7f-064e-4117-ac31-a66d5728a11c
-  ws-opts:
-    headers:
-      host: fl-3-direct.djarbnet.ru
-    path: /getupdates
-- name: US_5
-  network: grpc
-  port: 8880
-  server: 45.140.167.200
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: df0680ca-e43c-498d-ed86-8e196eedd012
-- name: US_6
-  network: grpc
-  port: 8880
-  server: 45.12.133.176
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: df0680ca-e43c-498d-ed86-8e196eedd012
-- flow: xtls-rprx-vision
-  name: 英国_1
+  uuid: Warpi-Free-Vpn-In-GooglePlay
+- name: 美国_1
   network: tcp
-  port: 32876
-  server: london.fonixapp.org
-  servername: smallpdf.com
+  port: 51529
+  server: 210.0.244.136
+  servername: www.speedtest.org
   skip-cert-verify: true
   tls: false
   type: vless
   udp: true
-  uuid: 867b5935-5109-4bae-aa38-52d02323f1a8
-- flow: xtls-rprx-vision
-  name: 意大利_1
-  network: tcp
-  port: 10007
-  server: cdn.cloudconvert.top
-  servername: cdn.cloudconvert.top
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 258a5f07-d07e-4de4-90b6-69a0ca34bab7
+  uuid: a5c97932-a045-403b-e174-2779d75130c9
 - name: 伊朗_1
-  network: ws
-  port: 890
-  server: ir11.drinfoo.com
-  servername: speedtest.net
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 8cfd1eb5-81ab-41d7-9b63-191af959344e
-  ws-opts:
-    headers:
-      host: speedtest.net
-    path: /
-- name: 伊朗_2
   network: ws
   port: 895
   server: ir16.drinfoo.com
@@ -245,58 +142,118 @@ proxies:
     headers:
       host: speedtest.net
     path: /
-- flow: xtls-rprx-vision
-  name: 匈牙利
-  network: tcp
-  port: 443
-  server: 92.61.70.41
-  servername: www.microsoft.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: cb8174ba-6305-472b-a8f2-7514576646d9
-- flow: xtls-rprx-vision
-  name: 香港_1
-  network: tcp
-  port: 28888
-  server: hk01.youyacloud.me
-  servername: www.tvb.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 8da7bd17-70ab-472d-a925-cc827857dc35
-- name: 台湾
-  network: tcp
-  port: 2096
-  server: 103.61.139.122
-  servername: downloads.dc.siemens.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 2a27156d-f499-4608-a1f1-852bd2a09f27
-- flow: xtls-rprx-vision
-  name: 美国_1
-  network: tcp
-  port: 443
-  server: 77.110.119.225
-  servername: st.ozone.ru
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 4819860c-0e62-4804-9c59-967e5c2bed7a
-- name: 美国_2
-  network: grpc
-  port: 8880
-  server: 185.138.164.67
+- name: 伊朗_2
+  network: ws
+  port: 890
+  server: ir11.drinfoo.com
+  servername: speedtest.net
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: df0680ca-e43c-498d-ed86-8e196eedd012
+  uuid: 8cfd1eb5-81ab-41d7-9b63-191af959344e
+  ws-opts:
+    headers:
+      host: speedtest.net
+    path: /
+- name: 香港_1
+  network: tcp
+  port: 443
+  server: 47.245.38.111
+  servername: www.autodesk.com
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: 86b414b6-966e-4f6d-ab16-32049ef732d3
+- name: 土耳其
+  network: tcp
+  port: 40721
+  server: 188.253.21.154
+  servername: yahoo.com
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: bf3e8944-8d26-47de-8748-b9aa74cce974
+- name: 美国_2
+  network: ws
+  port: 443
+  server: 172.82.67.156.sslip.io
+  servername: 172.82.67.156.sslip.io
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 55821780-6970-49df-8a23-800c2c9b7d3a
+  ws-opts:
+    headers:
+      host: 172.82.67.156.sslip.io
+    path: /4kMdPPOPDnAtNtvgyaVXm
+- name: 美国_3
+  port: 443
+  server: 435f-8550-7b7588cc4678.008880888.xyz
+  skip-cert-verify: true
+  type: vless
+  uuid: 55821780-6970-49df-8a23-800c2c9b7d3a
+- name: 美国_4
+  network: ws
+  port: 443
+  server: 435f-8550-7b7588cc4678.008880888.xyz
+  servername: 435f-8550-7b7588cc4678.008880888.XyZ
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 55821780-6970-49df-8a23-800c2c9b7d3a
+  ws-opts:
+    headers:
+      host: 435f-8550-7b7588cc4678.008880888.XyZ
+    path: /4kMdPPOPDnAtNtvgyaVXm
+- name: 美国_5
+  network: ws
+  port: 443
+  server: 172.82.67.156.sslip.io
+  servername: 172.82.67.156.sslip.io
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 55821780-6970-49df-8a23-800c2c9b7d3a
+  ws-opts:
+    headers:
+      host: 172.82.67.156.sslip.io
+    path: /4kMdPPOPDnAtNtvgyaVXm
+- name: 美国_6
+  port: 443
+  server: 4fa4-adf4-61413791f133.445.pp.ua
+  skip-cert-verify: true
+  type: vless
+  uuid: 55821780-6970-49df-8a23-800c2c9b7d3a
+- name: 美国_7
+  port: 80
+  server: 188.114.98.224
+  skip-cert-verify: true
+  type: vless
+  uuid: 84c33c10-ae6e-4fa3-a2e7-5e6995141117
+- name: 美国_8
+  port: 80
+  server: 104.21.2.155
+  skip-cert-verify: true
+  type: vless
+  uuid: 84c33c10-ae6e-4fa3-a2e7-5e6995141117
+- name: 美国_9
+  port: 80
+  server: www.speedtest.net
+  skip-cert-verify: true
+  type: vless
+  uuid: 84c33c10-ae6e-4fa3-a2e7-5e6995141117
+- name: 美国_10
+  port: 80
+  server: 172.67.223.232
+  skip-cert-verify: true
+  type: vless
+  uuid: 84c33c10-ae6e-4fa3-a2e7-5e6995141117
 - flow: xtls-rprx-vision
   name: 罗马尼亚
   network: tcp
@@ -308,51 +265,7 @@ proxies:
   type: vless
   udp: true
   uuid: b41bfc57-24af-42c7-a791-89e7099958c5
-- flow: xtls-rprx-vision
-  name: 荷兰_1
-  network: tcp
-  port: 443
-  server: nls.jykvpn.com
-  servername: cdnjs.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 56718b04-3fe6-4ef3-a61f-cd9b3b5f64f1
-- flow: xtls-rprx-vision
-  name: 荷兰_2
-  network: tcp
-  port: 8443
-  server: 146.103.106.128
-  servername: sun6-22.userapi.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: d48ea965-c07f-4689-aa6a-3bbe2084c00a
-- flow: xtls-rprx-vision
-  name: 荷兰_3
-  network: tcp
-  port: 29300
-  server: amsterdam.fonixapp.org
-  servername: canva.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 7843d0a1-be6f-4b7f-92e2-8040711b434c
-- flow: xtls-rprx-vision
-  name: 哈萨克斯坦_1
-  network: tcp
-  port: 10012
-  server: cdn.cloudconvert.top
-  servername: cdn.cloudconvert.top
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 258a5f07-d07e-4de4-90b6-69a0ca34bab7
-- name: 哈萨克斯坦_2
+- name: 哈萨克斯坦
   network: tcp
   port: 35728
   server: 178.236.16.98
@@ -363,313 +276,65 @@ proxies:
   udp: true
   uuid: a00d89f6-ab7e-4e30-a5e5-54c701d62c93
 - flow: xtls-rprx-vision
-  name: 芬兰_1
+  name: 俄罗斯_1
   network: tcp
-  port: 54978
-  server: helsinki.fonixapp.org
-  servername: study.com
+  port: 443
+  server: 77.110.119.225
+  servername: st.ozone.ru
   skip-cert-verify: true
   tls: false
   type: vless
   udp: true
-  uuid: a79d31ed-99d6-4116-8f50-fa46957ac6a0
-- name: 芬兰_2
-  network: tcp
-  port: 2087
-  server: free.best-antiaging-reviews.com
-  servername: yahoo.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: e808b6fb-a99a-409c-99c9-d43d3208e9f9
-- name: 芬兰_3
-  network: ws
-  port: 443
-  server: fl-3-direct.djarbnet.ru
-  servername: fl-3-direct.djarbnet.ru
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc67ca7f-064e-4117-ac31-a66d5728a11c
-  ws-opts:
-    headers:
-      host: fl-3-direct.djarbnet.ru
-    path: /getupdates
-- name: 芬兰_4
-  network: ws
-  port: 443
-  server: fl-3-direct.djarbnet.ru
-  servername: fl-3-direct.djarbnet.ru
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc67ca7f-064e-4117-ac31-a66d5728a11c
-  ws-opts:
-    headers:
-      host: fl-3-direct.djarbnet.ru
-    path: /getupdates
-- name: 芬兰_5
-  network: tcp
-  port: 58871
-  server: 81.177.214.214
-  servername: yandex.ru
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 74973884-76d6-4e51-a20f-c15b0acaf1d3
-- name: 俄罗斯_1
-  network: ws
-  port: 443
-  server: fl-3-direct.djarbnet.ru
-  servername: fl-3-direct.djarbnet.ru
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc67ca7f-064e-4117-ac31-a66d5728a11c
-  ws-opts:
-    headers:
-      host: fl-3-direct.djarbnet.ru
-    path: /getupdates
-- name: 俄罗斯_2
-  network: ws
-  port: 443
-  server: 45.144.52.23
-  servername: fl-3-direct.djarbnet.ru
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc67ca7f-064e-4117-ac31-a66d5728a11c
-  ws-opts:
-    headers:
-      host: fl-3-direct.djarbnet.ru
-    path: /getupdates
-- name: 俄罗斯_3
-  network: ws
-  port: 443
-  server: 45.144.52.23
-  servername: fl-3-direct.djarbnet.ru
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: cc67ca7f-064e-4117-ac31-a66d5728a11c
-  ws-opts:
-    headers:
-      host: fl-3-direct.djarbnet.ru
-    path: /getupdates
+  uuid: 4819860c-0e62-4804-9c59-967e5c2bed7a
 - flow: xtls-rprx-vision
-  name: 德国_2
+  name: 俄罗斯_2
   network: tcp
-  port: 13718
-  server: darkterror.fonixapp.org
-  servername: eightsleep.com
+  port: 443
+  server: 77.110.119.225
+  servername: st.ozone.ru
   skip-cert-verify: true
   tls: false
   type: vless
   udp: true
-  uuid: 6beb5e1f-566d-4d84-878e-9f0a49283696
-- flow: xtls-rprx-vision
-  name: 德国_3
+  uuid: 4819860c-0e62-4804-9c59-967e5c2bed7a
+- name: 德国_1
+  network: grpc
+  port: 8880
+  server: 94.131.110.115
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: df0680ca-e43c-498d-ed86-8e196eedd012
+- name: 德国_2
   network: tcp
-  port: 17715
-  server: ezalor.fonixapp.org
-  servername: ilovepdf.com
+  port: 7079
+  server: sk3.node.ibst.me
   skip-cert-verify: true
   tls: false
   type: vless
   udp: true
-  uuid: 9627bc06-1a36-4674-aeb8-4e863b8bd979
+  uuid: a54c3b5a-5f44-4411-8c1e-7bf52a567d7f
+- name: 德国_3
+  network: grpc
+  port: 8880
+  server: 89.221.224.225
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: df0680ca-e43c-498d-ed86-8e196eedd012
 - flow: xtls-rprx-vision
   name: 德国_4
   network: tcp
-  port: 16360
-  server: antimage.fonixapp.org
-  servername: study.com
+  port: 8443
+  server: de.monkeyisland.life
+  servername: de.monkeyisland.life
   skip-cert-verify: true
   tls: false
   type: vless
   udp: true
-  uuid: dce7fc0d-e845-46fe-a86a-7bd9cd155127
-- flow: xtls-rprx-vision
-  name: 德国_5
-  network: tcp
-  port: 45714
-  server: zeusolympus.fonixapp.org
-  servername: ilovepdf.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 00077dbc-4430-4c2d-baa7-878720254c97
-- flow: xtls-rprx-vision
-  name: 德国_6
-  network: tcp
-  port: 10668
-  server: sandking.fonixapp.org
-  servername: ilovepdf.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 53e91da4-f382-4b8e-890a-2499bc877554
-- name: 德国_7
-  network: tcp
-  port: 52361
-  server: ger.4uvpn1.us
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 0078d912-bca4-4898-a414-2514233c008a
-- flow: xtls-rprx-vision
-  name: 德国_8
-  network: tcp
-  port: 41235
-  server: traxex.fonixapp.org
-  servername: ilovepdf.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 2a8eb726-671b-4702-9559-326560c9ba87
-- flow: xtls-rprx-vision
-  name: 德国_9
-  network: tcp
-  port: 48983
-  server: graygoat.fonixapp.org
-  servername: smallpdf.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 75c18b2c-9f28-44e5-9fde-02c00b6d30a0
-- flow: xtls-rprx-vision
-  name: 德国_10
-  network: tcp
-  port: 11995
-  server: invoker.fonixapp.org
-  servername: ilovepdf.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: c38e6f7f-7332-425e-85c3-3564f2f0185f
-- flow: xtls-rprx-vision
-  name: 德国_11
-  network: tcp
-  port: 19737
-  server: dl.darkterror.fonixapp.org
-  servername: ilovepdf.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: b3ed90bf-5d36-4661-982a-cda4255dcda8
-- flow: xtls-rprx-vision
-  name: 奥地利_1
-  network: tcp
-  port: 13484
-  server: dl.huskar.fonixapp.org
-  servername: ilovepdf.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: ae9e793d-16a0-4fe2-9db5-ed120b6a80d2
-- flow: xtls-rprx-vision
-  name: 奥地利_2
-  network: tcp
-  port: 29980
-  server: magnataur.fonixapp.org
-  servername: merriam-webster.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: c9a206b9-8038-4703-b273-cc3f2d6c7b5c
-- flow: xtls-rprx-vision
-  name: 奥地利_3
-  network: tcp
-  port: 53365
-  server: huskar.fonixapp.org
-  servername: ilovepdf.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: cf2ff9bc-6c6f-483e-8ec3-b00a938cf1d0
-- flow: xtls-rprx-vision
-  name: 奥地利_4
-  network: tcp
-  port: 30482
-  server: bloodseeker.fonixapp.org
-  servername: eightsleep.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: e9c6031f-eec7-48ec-9495-8a86339939a6
-- flow: xtls-rprx-vision
-  name: 奥地利_5
-  network: tcp
-  port: 30725
-  server: silverzebra.fonixapp.org
-  servername: smallpdf.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: eb1f6159-8828-49db-a96b-681fa0e6eb4e
-- flow: xtls-rprx-vision
-  name: 奥地利_6
-  network: tcp
-  port: 54663
-  server: elementalss.fonixapp.org
-  servername: stackoverflow.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: c088d5a0-cdc3-4880-8bd7-44ecef474ba2
-- flow: xtls-rprx-vision
-  name: 奥地利_7
-  network: tcp
-  port: 35580
-  server: drow-ranger.fonixapp.org
-  servername: expedia.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: d511b732-ade2-43dd-b2b9-76b215782326
-- flow: xtls-rprx-vision
-  name: 奥地利_8
-  network: tcp
-  port: 42318
-  server: windrunner.fonixapp.org
-  servername: ilovepdf.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: d91f1c5d-dfa0-4300-8f0e-e6750e5a2ff6
-- flow: xtls-rprx-vision
-  name: 奥地利_9
-  network: tcp
-  port: 38051
-  server: arcwarden.fonixapp.org
-  servername: smallpdf.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 5a307d78-bc1a-4bc2-83f7-c4dd9c7a0161
+  uuid: df5fc3f7-6b01-489a-a73c-e1297b14a3dd
 - name: 🇩🇪德國99
   port: 443
   server: wangcai99.cloudflare.182682.xyz
@@ -787,12 +452,6 @@ proxies:
 - name: 🇩🇪德國81
   port: 443
   server: wangcai81.cloudflare.182682.xyz
-  skip-cert-verify: true
-  type: vless
-  uuid: 9d847ad3-1896-48f9-b89c-13fe345e2bff
-- name: 🇩🇪德國80
-  port: 443
-  server: wangcai80.000444.cn
   skip-cert-verify: true
   type: vless
   uuid: 9d847ad3-1896-48f9-b89c-13fe345e2bff
@@ -1690,12 +1349,6 @@ proxies:
   skip-cert-verify: true
   type: vless
   uuid: 9d847ad3-1896-48f9-b89c-13fe345e2bff
-- name: 🇩🇪德國172
-  port: 443
-  server: wangcai172.000444.cn
-  skip-cert-verify: true
-  type: vless
-  uuid: 9d847ad3-1896-48f9-b89c-13fe345e2bff
 - name: 🇩🇪德國171
   port: 443
   server: wangcai171.cloudflare.182682.xyz
@@ -2098,12 +1751,6 @@ proxies:
   skip-cert-verify: true
   type: vless
   uuid: 9d847ad3-1896-48f9-b89c-13fe345e2bff
-- name: 🇩🇪德國11
-  port: 443
-  server: wangcai11.cloudflare.182682.xyz
-  skip-cert-verify: true
-  type: vless
-  uuid: 9d847ad3-1896-48f9-b89c-13fe345e2bff
 - name: 🇩🇪德國109
   port: 443
   server: wangcai109.cloudflare.182682.xyz
@@ -2158,711 +1805,187 @@ proxies:
   skip-cert-verify: true
   type: vless
   uuid: 9d847ad3-1896-48f9-b89c-13fe345e2bff
-- name: US_7
-  network: ws
-  port: 80
-  server: 51.195.92.49
-  servername: lunavow5d444ef.global.ssl.fastly.net
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 2a2d95c5-56f0-455b-a80a-4b920842d886
-  ws-opts:
-    headers:
-      host: lunavow5d444ef.global.ssl.fastly.net
-    path: /
-- flow: xtls-rprx-vision
-  name: US_8
-  network: tcp
-  port: 44393
-  server: 152.53.145.221
-  servername: lowes.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 0eaab689-82c5-4678-8ac6-d58ef4357dbe
-- name: US_9
-  network: grpc
-  port: 8880
-  server: 185.138.164.186
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: df0680ca-e43c-498d-ed86-8e196eedd012
-- flow: xtls-rprx-vision
-  name: US_10
-  network: tcp
-  port: 20579
-  server: 152.53.84.101
-  servername: ilovepdf.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 93cd7e0f-8a81-4076-be8b-6d3bf3f8f810
-- flow: xtls-rprx-vision
-  name: US_11
-  network: tcp
-  port: 37876
-  server: 152.53.147.191
-  servername: yelp.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 29397c5b-be3b-41d9-8a49-21575668e915
-- flow: xtls-rprx-vision
-  name: US_12
-  network: tcp
-  port: 22925
-  server: 152.53.147.69
-  servername: ilovepdf.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 0226ef52-e556-4f36-ab0f-6c9f5414942a
-- flow: xtls-rprx-vision
-  name: US_13
-  network: tcp
-  port: 37876
-  server: 152.53.133.12
-  servername: yelp.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 29397c5b-be3b-41d9-8a49-21575668e915
-- flow: xtls-rprx-vision
-  name: US_14
-  network: tcp
-  port: 33009
-  server: 195.154.42.111
-  servername: www.yahoo.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 77a33d77-7af9-4c33-9556-d6711becca04
-- name: US_15
-  network: grpc
-  port: 8880
-  server: 638985047311782755.abadan-drcn-aaaai.info
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 15d114ee-c814-47c7-bd12-fab0c7a0128e
-- flow: xtls-rprx-vision
-  name: US_16
-  network: tcp
-  port: 44393
-  server: 152.53.133.132
-  servername: lowes.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 0eaab689-82c5-4678-8ac6-d58ef4357dbe
-- name: 🇺🇸_US_美国
-  network: ws
-  password: trojan
-  port: 8443
-  server: 104.26.12.31
-  skip-cert-verify: true
-  sni: fofang.pages.dev
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: fofang.pages.dev
-    path: /
-- name: 中国
-  network: tcp
-  password: 2274c52572e721086f8bd8f88984643c
-  port: 4054
-  server: 117.172.176.25
-  skip-cert-verify: true
-  sni: www.nintendogames.net
-  type: trojan
-  udp: true
-- name: 英国_2
-  network: ws
-  password: 6b5b50ff-7798-40dc-9888-b4dd581e5435
-  port: 44004
-  server: 51.89.128.93
-  skip-cert-verify: true
-  sni: joss.dus.biz.id
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: joss.dus.biz.id
-    path: /Free-VPN-CF-Geo-Project/51.89.128.93=44004
-- name: 英国_3
-  network: ws
-  password: 6b5b50ff-7798-40dc-9888-b4dd581e5435
-  port: 44004
-  server: 51.89.128.93
-  skip-cert-verify: true
-  sni: joss.dus.biz.id
-  type: trojan
-  udp: true
-  ws-opts:
-    path: /Free-VPN-CF-Geo-Project/51.89.128.93=44004
-- name: 英国_4
-  network: ws
-  password: 4ae2d16f-8b88-4b0e-a9c5-e6e574267904
-  port: 12122
-  server: 51.89.148.203
-  skip-cert-verify: true
-  sni: joss.dus.biz.id
-  type: trojan
-  udp: true
-  ws-opts:
-    path: /Free-VPN-CF-Geo-Project/51.89.148.203=12122
-- name: 意大利_2
-  network: ws
-  password: d5a49621-b25c-4684-aea8-8389f3a8afaf
-  port: 8443
-  server: 94.177.199.119
-  skip-cert-verify: true
-  sni: joss.dus.biz.id
-  type: trojan
-  udp: true
-  ws-opts:
-    path: /Free-VPN-CF-Geo-Project/94.177.199.119=8443
-- name: 意大利_3
-  network: ws
-  password: d5a49621-b25c-4684-aea8-8389f3a8afaf
-  port: 8443
-  server: 94.177.199.119
-  skip-cert-verify: true
-  sni: joss.dus.biz.id
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: joss.dus.biz.id
-    path: /Free-VPN-CF-Geo-Project/94.177.199.119=8443
-- name: 以色列_1
-  network: ws
-  password: a5a3350e-6ea2-4e12-ae84-20db849ce1fc
-  port: 81
-  server: 94.131.114.50
-  skip-cert-verify: true
-  sni: joss.dus.biz.id
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: joss.dus.biz.id
-    path: /Free-VPN-CF-Geo-Project/94.131.114.50=81
-- name: 以色列_2
-  network: ws
-  password: a5a3350e-6ea2-4e12-ae84-20db849ce1fc
-  port: 81
-  server: 94.131.114.50
-  skip-cert-verify: true
-  sni: joss.dus.biz.id
-  type: trojan
-  udp: true
-  ws-opts:
-    path: /Free-VPN-CF-Geo-Project/94.131.114.50=81
-- name: 伊朗_3
-  network: tcp
-  password: c2e3cdc0-bc72-3505-b2a9-ea5ed7bfa23f
-  port: 3443
-  server: 151.242.164.127
-  skip-cert-verify: true
-  sni: steampipe.akamaized.net
-  type: trojan
-  udp: true
-- name: 伊朗_4
-  network: tcp
-  password: c2e3cdc0-bc72-3505-b2a9-ea5ed7bfa23f
+- name: 🇩🇪德國_1
   port: 443
-  server: 151.242.164.25
+  server: 4cc8-a2d8-a34a20d2e7e5.457.pp.ua
   skip-cert-verify: true
-  sni: origin-a.akamaihd.net
-  type: trojan
-  udp: true
-- name: 伊朗_5
-  network: tcp
-  password: c2e3cdc0-bc72-3505-b2a9-ea5ed7bfa23f
-  port: 3443
-  server: 151.242.165.233
+  type: vless
+  uuid: 75b55ef6-7a78-4020-8540-df4e1a533895
+- name: 🇩🇪德國_2
+  port: 443
+  server: ge1-raiv2mmr-free.koyeb.app
   skip-cert-verify: true
-  sni: origin-a.akamaihd.net
-  type: trojan
-  udp: true
+  type: vless
+  uuid: 5c9b6087-f955-4506-9c1d-67a5aae44bc9
+- name: 🇩🇪德國_3
+  port: 443
+  server: 4cc8-a2d8-a34a20d2e7e5.457.pp.ua
+  skip-cert-verify: true
+  type: vless
+  uuid: a1d2e3cd-297e-4753-8e7a-6d9fb0f4aac1
+- name: 🇩🇪德國_4
+  port: 443
+  server: wangcai172.000444.cn
+  skip-cert-verify: true
+  type: vless
+  uuid: 9d847ad3-1896-48f9-b89c-13fe345e2bff
+- name: 🇩🇪德國_5
+  port: 443
+  server: 104.21.48.1
+  skip-cert-verify: true
+  type: vless
+  uuid: 9d847ad3-1896-48f9-b89c-13fe345e2bff
+- name: 🇩🇪德國_6
+  port: 443
+  server: 44ce-8817-7d9a13aa9eb0.457.pp.ua
+  skip-cert-verify: true
+  type: vless
+  uuid: a1d2e3cd-297e-4753-8e7a-6d9fb0f4aac1
 - name: 香港_2
   network: tcp
   password: BxceQaOe
   port: 443
-  server: 203.198.122.97
+  server: 58.152.26.173
   skip-cert-verify: true
+  sni: t.me/ripaojiedian
   type: trojan
   udp: true
 - name: 香港_3
   network: tcp
   password: BxceQaOe
   port: 443
-  server: 203.198.122.97
+  server: 219.79.165.55
   skip-cert-verify: true
   sni: t.me/ripaojiedian
   type: trojan
   udp: true
-- name: 香港_4
+- name: 美国_11
   network: tcp
-  password: BxceQaOe
-  port: 443
-  server: 58.152.46.98
-  skip-cert-verify: true
-  sni: 58.152.46.98
-  type: trojan
-  udp: true
-- name: 香港_5
-  network: tcp
-  password: BxceQaOe
-  port: 443
-  server: 58.152.46.98
+  password: fg20mtCFHy
+  port: 5669
+  server: uatwq.zippydeal.xyz
   skip-cert-verify: true
   type: trojan
   udp: true
-- name: 香港_6
-  network: tcp
-  password: BxceQaOe
-  port: 443
-  server: 219.77.239.35
+- name: 加拿大
+  network: grpc
+  password: D3OJA7xY5U
+  port: 10785
+  server: 209.200.246.53
   skip-cert-verify: true
-  sni: t.me/ripaojiedian
+  sni: cloudflare.com
   type: trojan
   udp: true
-- name: 香港_7
-  network: tcp
-  password: BxceQaOe
-  port: 443
-  server: 203.198.122.97
-  skip-cert-verify: true
-  sni: t.me/ripaojiedian
-  type: trojan
-  udp: true
-- name: 香港_8
-  network: tcp
-  password: BxceQaOe
-  port: 443
-  server: 219.77.239.35
-  skip-cert-verify: true
-  type: trojan
-  udp: true
-- name: 香港_9
-  network: tcp
-  password: 2274c52572e721086f8bd8f88984643c
-  port: 443
-  server: 58.152.110.9
-  skip-cert-verify: true
-  sni: www.nintendogames.net
-  type: trojan
-  udp: true
-- name: 香港_10
-  network: tcp
-  password: BxceQaOe
-  port: 443
-  server: 58.152.46.98
-  skip-cert-verify: true
-  sni: 58.152.46.98
-  type: trojan
-  udp: true
-- name: 香港_11
-  network: tcp
-  password: BxceQaOe
-  port: 4569
-  server: 116.49.237.130
-  skip-cert-verify: true
-  sni: t.me/ripaojiedian
-  type: trojan
-  udp: true
-- name: 香港_12
-  network: tcp
-  password: BxceQaOe
-  port: 4569
-  server: 116.49.237.130
-  skip-cert-verify: true
-  type: trojan
-  udp: true
-- name: 香港_13
-  network: tcp
-  password: BxceQaOe
-  port: 518
-  server: 116.49.237.130
-  skip-cert-verify: true
-  type: trojan
-  udp: true
-- name: 香港_14
-  network: tcp
-  password: BxceQaOe
-  port: 518
-  server: 116.49.237.130
-  skip-cert-verify: true
-  sni: t.me/ripaojiedian
-  type: trojan
-  udp: true
-- name: 瑞士
+- name: 荷兰_1
   network: ws
-  password: 2b1487cd-e56b-4c62-b1e9-8beb686e002c
+  password: fa115af5-0647-4549-acd9-5166695ea2de
   port: 2053
-  server: 45.95.232.18
+  server: 185.114.72.31
   skip-cert-verify: true
-  sni: joss.dus.biz.id
+  sni: joss.gpj.web.id
   type: trojan
   udp: true
   ws-opts:
-    path: /Free-VPN-CF-Geo-Project/45.95.232.18=2053
-- name: 瑞典_1
+    headers:
+      host: joss.gpj.web.id
+    path: /Free-VPN-CF-Geo-Project/185.114.72.31=2053
+- name: 荷兰_2
   network: ws
-  password: 0c7edd8f-96d8-4227-b086-1ffc3aeecc96
+  password: 3ea503c7-2e03-424a-812d-6f0d803e73dc
+  port: 443
+  server: 138.124.15.75
+  skip-cert-verify: true
+  sni: joss.gpj.web.id
+  type: trojan
+  udp: true
+  ws-opts:
+    path: /Free-VPN-CF-Geo-Project/138.124.15.75=443
+- name: 俄罗斯_3
+  network: ws
+  password: 3b38715b-f08a-46dd-9904-7531ca4bb6e8
+  port: 2053
+  server: 95.182.120.208
+  skip-cert-verify: true
+  sni: joss.gpj.web.id
+  type: trojan
+  udp: true
+  ws-opts:
+    path: /Free-VPN-CF-Geo-Project/95.182.120.208=2053
+- name: 波兰
+  network: ws
+  password: 823f57d2-d271-48a6-859e-d041179e1c6b
   port: 8443
-  server: 193.233.115.79
+  server: 145.239.88.255
   skip-cert-verify: true
-  sni: joss.dus.biz.id
-  type: trojan
-  udp: true
-  ws-opts:
-    path: /Free-VPN-CF-Geo-Project/193.233.115.79=8443
-- name: 瑞典_2
-  network: ws
-  password: 0c7edd8f-96d8-4227-b086-1ffc3aeecc96
-  port: 8443
-  server: 193.233.115.79
-  skip-cert-verify: true
-  sni: joss.dus.biz.id
+  sni: joss.gpj.web.id
   type: trojan
   udp: true
   ws-opts:
     headers:
-      host: joss.dus.biz.id
-    path: /Free-VPN-CF-Geo-Project/193.233.115.79=8443
-- name: 美国_3
+      host: joss.gpj.web.id
+    path: /Free-VPN-CF-Geo-Project/145.239.88.255=8443
+- name: 比利时_1
   network: ws
-  password: 55d19115-ec40-407b-a674-74e6a948347a
-  port: 2053
-  server: 45.144.48.55
+  password: ff022848-4fb7-465a-9e6f-756d3dfc2c6a
+  port: 443
+  server: 45.83.20.29
   skip-cert-verify: true
-  sni: joss.dus.biz.id
-  type: trojan
-  udp: true
-  ws-opts:
-    path: /Free-VPN-CF-Geo-Project/45.144.48.55=2053
-- name: 美国_4
-  network: ws
-  password: 7d82af32-915f-4619-aa9c-7d3b612d33ff
-  port: 2053
-  server: 65.109.227.138
-  skip-cert-verify: true
-  sni: joss.dus.biz.id
-  type: trojan
-  udp: true
-  ws-opts:
-    path: /Free-VPN-CF-Geo-Project/65.109.227.138=2053
-- name: 美国_5
-  network: ws
-  password: 19f8e29a-3f0b-448c-92e8-ae035ea5f9ba
-  port: 81
-  server: 45.159.251.8
-  skip-cert-verify: true
-  sni: joss.dus.biz.id
+  sni: joss.gpj.web.id
   type: trojan
   udp: true
   ws-opts:
     headers:
-      host: joss.dus.biz.id
-    path: /Free-VPN-CF-Geo-Project/45.159.251.8=81
-- name: 美国_6
+      host: joss.gpj.web.id
+    path: /Free-VPN-CF-Geo-Project/45.83.20.29=443
+- name: 比利时_2
   network: ws
-  password: 19f8e29a-3f0b-448c-92e8-ae035ea5f9ba
-  port: 81
-  server: 45.159.251.8
-  skip-cert-verify: true
-  sni: joss.dus.biz.id
-  type: trojan
-  udp: true
-  ws-opts:
-    path: /Free-VPN-CF-Geo-Project/45.159.251.8=81
-- name: 荷兰_4
-  network: ws
-  password: c2d6a850-7e35-44f5-ab9f-8299f6f8c72b
+  password: ff022848-4fb7-465a-9e6f-756d3dfc2c6a
   port: 443
-  server: 194.147.115.149
+  server: 45.83.20.29
   skip-cert-verify: true
-  sni: joss.dus.biz.id
+  sni: joss.gpj.web.id
   type: trojan
   udp: true
   ws-opts:
-    headers:
-      host: joss.dus.biz.id
-    path: /Free-VPN-CF-Geo-Project/194.147.115.149=443
-- name: 荷兰_5
-  network: ws
-  password: c2d6a850-7e35-44f5-ab9f-8299f6f8c72b
-  port: 443
-  server: 194.147.115.149
-  skip-cert-verify: true
-  sni: joss.dus.biz.id
-  type: trojan
-  udp: true
-  ws-opts:
-    path: /Free-VPN-CF-Geo-Project/194.147.115.149=443
-- name: 荷兰_6
-  network: ws
-  password: 5ad5fe82-6b60-4f59-977b-93910ef7a9ca
-  port: 443
-  server: 86.107.197.239
-  skip-cert-verify: true
-  sni: joss.dus.biz.id
-  type: trojan
-  udp: true
-  ws-opts:
-    path: /Free-VPN-CF-Geo-Project/86.107.197.239=443
-- name: 荷兰_7
-  network: ws
-  password: 1b197915-23a1-4031-9614-2182b3b57705
-  port: 443
-  server: 95.164.62.196
-  skip-cert-verify: true
-  sni: joss.dus.biz.id
-  type: trojan
-  udp: true
-  ws-opts:
-    path: /Free-VPN-CF-Geo-Project/95.164.62.196=443
-- name: 芬兰_6
-  network: ws
-  password: 76ed5507-80e9-4549-877c-f74c174c26b4
-  port: 443
-  server: 95.214.9.72
-  skip-cert-verify: true
-  sni: joss.dus.biz.id
-  type: trojan
-  udp: true
-  ws-opts:
-    path: /Free-VPN-CF-Geo-Project/95.214.9.72=443
-- name: 法国_1
-  network: ws
-  password: 88701884-7690-4b79-ac5d-36d299e05e83
-  port: 443
-  server: 34.22.190.30
-  skip-cert-verify: true
-  sni: joss.dus.biz.id
-  type: trojan
-  udp: true
-  ws-opts:
-    path: /Free-VPN-CF-Geo-Project/34.22.190.30=443
-- name: 法国_2
-  network: ws
-  password: 8bf6e7d7-23e8-4655-8f07-c3827e2d6ebf
-  port: 2053
-  server: 51.38.226.4
-  skip-cert-verify: true
-  sni: joss.dus.biz.id
-  type: trojan
-  udp: true
-  ws-opts:
-    path: /Free-VPN-CF-Geo-Project/51.38.226.4=2053
-- name: 法国_3
-  network: ws
-  password: 8bf6e7d7-23e8-4655-8f07-c3827e2d6ebf
-  port: 2053
-  server: 51.38.226.4
-  skip-cert-verify: true
-  sni: joss.dus.biz.id
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: joss.dus.biz.id
-    path: /Free-VPN-CF-Geo-Project/51.38.226.4=2053
-- name: 俄罗斯_4
-  network: ws
-  password: 14d6efcf-b0d3-4054-9d4e-e1347e3ceaa2
-  port: 2053
-  server: 213.159.208.88
-  skip-cert-verify: true
-  sni: joss.dus.biz.id
-  type: trojan
-  udp: true
-  ws-opts:
-    path: /Free-VPN-CF-Geo-Project/213.159.208.88=2053
-- name: 俄罗斯_5
-  network: tcp
-  password: 3ef03de40a234d209bb2d3807ca0d643
-  port: 443
-  server: 46.29.161.237
-  skip-cert-verify: true
-  sni: 46.29.161.237
-  type: trojan
-  udp: true
-- name: 俄罗斯_6
-  network: ws
-  password: 14d6efcf-b0d3-4054-9d4e-e1347e3ceaa2
-  port: 2053
-  server: 213.159.208.88
-  skip-cert-verify: true
-  sni: joss.dus.biz.id
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: joss.dus.biz.id
-    path: /Free-VPN-CF-Geo-Project/213.159.208.88=2053
-- name: 德国_12
-  network: ws
-  password: edeff73d-065d-4b0a-b848-aad9d3380223
-  port: 443
-  server: 77.221.141.207
-  skip-cert-verify: true
-  sni: joss.dus.biz.id
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: joss.dus.biz.id
-    path: /Free-VPN-CF-Geo-Project/77.221.141.207=443
-- name: 德国_13
-  network: ws
-  password: edeff73d-065d-4b0a-b848-aad9d3380223
-  port: 443
-  server: 77.221.141.207
-  skip-cert-verify: true
-  sni: joss.dus.biz.id
-  type: trojan
-  udp: true
-  ws-opts:
-    path: /Free-VPN-CF-Geo-Project/77.221.141.207=443
-- name: 丹麦_1
-  network: ws
-  password: 63b8ce6d-9a30-4122-a00f-fd47f020dc27
-  port: 443
-  server: 89.28.236.243
-  skip-cert-verify: true
-  sni: joss.dus.biz.id
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: joss.dus.biz.id
-    path: /Free-VPN-CF-Geo-Project/89.28.236.243=443
-- name: 丹麦_2
-  network: ws
-  password: 63b8ce6d-9a30-4122-a00f-fd47f020dc27
-  port: 443
-  server: 89.28.236.243
-  skip-cert-verify: true
-  sni: joss.dus.biz.id
-  type: trojan
-  udp: true
-  ws-opts:
-    path: /Free-VPN-CF-Geo-Project/89.28.236.243=443
-- name: 波兰_1
-  network: ws
-  password: 49d416e1-4cec-41e1-bff6-3748c466f275
-  port: 8443
-  server: 45.144.48.158
-  skip-cert-verify: true
-  sni: joss.dus.biz.id
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: joss.dus.biz.id
-    path: /Free-VPN-CF-Geo-Project/45.144.48.158=8443
-- name: 波兰_2
-  network: ws
-  password: 49d416e1-4cec-41e1-bff6-3748c466f275
-  port: 8443
-  server: 45.144.48.158
-  skip-cert-verify: true
-  sni: joss.dus.biz.id
-  type: trojan
-  udp: true
-  ws-opts:
-    path: /Free-VPN-CF-Geo-Project/45.144.48.158=8443
-- name: US_17
-  network: tcp
-  password: BxceQaOe
-  port: 518
-  server: 116.49.237.130
-  skip-cert-verify: true
-  sni: '������ [By EbraSha] b2n.ir/v2ray-configs | 816 '
-  type: trojan
-  udp: true
+    path: /Free-VPN-CF-Geo-Project/45.83.20.29=443
 proxy-groups:
 - name: 🚀 节点选择
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - 🇸🇬SG_2|⬇️3.4MB/s
   - 🇸🇬新加坡_1
-  - 🇨🇦加拿大
   - 🇦🇺澳大利亚_1
   - 🇦🇺澳大利亚_2
   - 🇦🇺澳大利亚_3
   - 🇰🇷韩国
   - 🇸🇬新加坡_2
   - 日本_1
-  - 韩国
   - 日本_2
-  - 德国_1
-  - US_1
-  - US_2
-  - US_3
-  - US_4
-  - US_5
-  - US_6
-  - 英国_1
-  - 意大利_1
+  - 🇩🇪德國80
+  - JP
+  - 🇩🇪_DE_德国
+  - 美国_1
   - 伊朗_1
   - 伊朗_2
-  - 匈牙利
   - 香港_1
-  - 台湾
-  - 美国_1
+  - 土耳其
   - 美国_2
+  - 美国_3
+  - 美国_4
+  - 美国_5
+  - 美国_6
+  - 美国_7
+  - 美国_8
+  - 美国_9
+  - 美国_10
   - 罗马尼亚
-  - 荷兰_1
-  - 荷兰_2
-  - 荷兰_3
-  - 哈萨克斯坦_1
-  - 哈萨克斯坦_2
-  - 芬兰_1
-  - 芬兰_2
-  - 芬兰_3
-  - 芬兰_4
-  - 芬兰_5
+  - 哈萨克斯坦
   - 俄罗斯_1
   - 俄罗斯_2
-  - 俄罗斯_3
+  - 德国_1
   - 德国_2
   - 德国_3
   - 德国_4
-  - 德国_5
-  - 德国_6
-  - 德国_7
-  - 德国_8
-  - 德国_9
-  - 德国_10
-  - 德国_11
-  - 奥地利_1
-  - 奥地利_2
-  - 奥地利_3
-  - 奥地利_4
-  - 奥地利_5
-  - 奥地利_6
-  - 奥地利_7
-  - 奥地利_8
-  - 奥地利_9
   - 🇩🇪德國99
   - 🇩🇪德國98
   - 🇩🇪德國97
@@ -2883,7 +2006,6 @@ proxy-groups:
   - 🇩🇪德國83
   - 🇩🇪德國82
   - 🇩🇪德國81
-  - 🇩🇪德國80
   - 🇩🇪德國8
   - 🇩🇪德國79
   - 🇩🇪德國78
@@ -3033,7 +2155,6 @@ proxy-groups:
   - 🇩🇪德國175
   - 🇩🇪德國174
   - 🇩🇪德國173
-  - 🇩🇪德國172
   - 🇩🇪德國171
   - 🇩🇪德國170
   - 🇩🇪德國17
@@ -3101,7 +2222,6 @@ proxy-groups:
   - 🇩🇪德國112
   - 🇩🇪德國111
   - 🇩🇪德國110
-  - 🇩🇪德國11
   - 🇩🇪德國109
   - 🇩🇪德國108
   - 🇩🇪德國106
@@ -3111,130 +2231,59 @@ proxy-groups:
   - 🇩🇪德國100
   - 🇩🇪德國10
   - 🇩🇪德國0
-  - US_7
-  - US_8
-  - US_9
-  - US_10
-  - US_11
-  - US_12
-  - US_13
-  - US_14
-  - US_15
-  - US_16
-  - 🇺🇸_US_美国
-  - 中国
-  - 英国_2
-  - 英国_3
-  - 英国_4
-  - 意大利_2
-  - 意大利_3
-  - 以色列_1
-  - 以色列_2
-  - 伊朗_3
-  - 伊朗_4
-  - 伊朗_5
+  - 🇩🇪德國_1
+  - 🇩🇪德國_2
+  - 🇩🇪德國_3
+  - 🇩🇪德國_4
+  - 🇩🇪德國_5
+  - 🇩🇪德國_6
   - 香港_2
   - 香港_3
-  - 香港_4
-  - 香港_5
-  - 香港_6
-  - 香港_7
-  - 香港_8
-  - 香港_9
-  - 香港_10
-  - 香港_11
-  - 香港_12
-  - 香港_13
-  - 香港_14
-  - 瑞士
-  - 瑞典_1
-  - 瑞典_2
-  - 美国_3
-  - 美国_4
-  - 美国_5
-  - 美国_6
-  - 荷兰_4
-  - 荷兰_5
-  - 荷兰_6
-  - 荷兰_7
-  - 芬兰_6
-  - 法国_1
-  - 法国_2
-  - 法国_3
-  - 俄罗斯_4
-  - 俄罗斯_5
-  - 俄罗斯_6
-  - 德国_12
-  - 德国_13
-  - 丹麦_1
-  - 丹麦_2
-  - 波兰_1
-  - 波兰_2
-  - US_17
+  - 美国_11
+  - 加拿大
+  - 荷兰_1
+  - 荷兰_2
+  - 俄罗斯_3
+  - 波兰
+  - 比利时_1
+  - 比利时_2
   type: select
 - interval: 300
   name: ♻️ 自动选择
   proxies:
-  - 🇸🇬SG_2|⬇️3.4MB/s
   - 🇸🇬新加坡_1
-  - 🇨🇦加拿大
   - 🇦🇺澳大利亚_1
   - 🇦🇺澳大利亚_2
   - 🇦🇺澳大利亚_3
   - 🇰🇷韩国
   - 🇸🇬新加坡_2
   - 日本_1
-  - 韩国
   - 日本_2
-  - 德国_1
-  - US_1
-  - US_2
-  - US_3
-  - US_4
-  - US_5
-  - US_6
-  - 英国_1
-  - 意大利_1
+  - 🇩🇪德國80
+  - JP
+  - 🇩🇪_DE_德国
+  - 美国_1
   - 伊朗_1
   - 伊朗_2
-  - 匈牙利
   - 香港_1
-  - 台湾
-  - 美国_1
+  - 土耳其
   - 美国_2
+  - 美国_3
+  - 美国_4
+  - 美国_5
+  - 美国_6
+  - 美国_7
+  - 美国_8
+  - 美国_9
+  - 美国_10
   - 罗马尼亚
-  - 荷兰_1
-  - 荷兰_2
-  - 荷兰_3
-  - 哈萨克斯坦_1
-  - 哈萨克斯坦_2
-  - 芬兰_1
-  - 芬兰_2
-  - 芬兰_3
-  - 芬兰_4
-  - 芬兰_5
+  - 哈萨克斯坦
   - 俄罗斯_1
   - 俄罗斯_2
-  - 俄罗斯_3
+  - 德国_1
   - 德国_2
   - 德国_3
   - 德国_4
-  - 德国_5
-  - 德国_6
-  - 德国_7
-  - 德国_8
-  - 德国_9
-  - 德国_10
-  - 德国_11
-  - 奥地利_1
-  - 奥地利_2
-  - 奥地利_3
-  - 奥地利_4
-  - 奥地利_5
-  - 奥地利_6
-  - 奥地利_7
-  - 奥地利_8
-  - 奥地利_9
   - 🇩🇪德國99
   - 🇩🇪德國98
   - 🇩🇪德國97
@@ -3255,7 +2304,6 @@ proxy-groups:
   - 🇩🇪德國83
   - 🇩🇪德國82
   - 🇩🇪德國81
-  - 🇩🇪德國80
   - 🇩🇪德國8
   - 🇩🇪德國79
   - 🇩🇪德國78
@@ -3405,7 +2453,6 @@ proxy-groups:
   - 🇩🇪德國175
   - 🇩🇪德國174
   - 🇩🇪德國173
-  - 🇩🇪德國172
   - 🇩🇪德國171
   - 🇩🇪德國170
   - 🇩🇪德國17
@@ -3473,7 +2520,6 @@ proxy-groups:
   - 🇩🇪德國112
   - 🇩🇪德國111
   - 🇩🇪德國110
-  - 🇩🇪德國11
   - 🇩🇪德國109
   - 🇩🇪德國108
   - 🇩🇪德國106
@@ -3483,66 +2529,22 @@ proxy-groups:
   - 🇩🇪德國100
   - 🇩🇪德國10
   - 🇩🇪德國0
-  - US_7
-  - US_8
-  - US_9
-  - US_10
-  - US_11
-  - US_12
-  - US_13
-  - US_14
-  - US_15
-  - US_16
-  - 🇺🇸_US_美国
-  - 中国
-  - 英国_2
-  - 英国_3
-  - 英国_4
-  - 意大利_2
-  - 意大利_3
-  - 以色列_1
-  - 以色列_2
-  - 伊朗_3
-  - 伊朗_4
-  - 伊朗_5
+  - 🇩🇪德國_1
+  - 🇩🇪德國_2
+  - 🇩🇪德國_3
+  - 🇩🇪德國_4
+  - 🇩🇪德國_5
+  - 🇩🇪德國_6
   - 香港_2
   - 香港_3
-  - 香港_4
-  - 香港_5
-  - 香港_6
-  - 香港_7
-  - 香港_8
-  - 香港_9
-  - 香港_10
-  - 香港_11
-  - 香港_12
-  - 香港_13
-  - 香港_14
-  - 瑞士
-  - 瑞典_1
-  - 瑞典_2
-  - 美国_3
-  - 美国_4
-  - 美国_5
-  - 美国_6
-  - 荷兰_4
-  - 荷兰_5
-  - 荷兰_6
-  - 荷兰_7
-  - 芬兰_6
-  - 法国_1
-  - 法国_2
-  - 法国_3
-  - 俄罗斯_4
-  - 俄罗斯_5
-  - 俄罗斯_6
-  - 德国_12
-  - 德国_13
-  - 丹麦_1
-  - 丹麦_2
-  - 波兰_1
-  - 波兰_2
-  - US_17
+  - 美国_11
+  - 加拿大
+  - 荷兰_1
+  - 荷兰_2
+  - 俄罗斯_3
+  - 波兰
+  - 比利时_1
+  - 比利时_2
   tolerance: 50
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -3551,66 +2553,39 @@ proxy-groups:
   - 🚀 节点选择
   - ♻️ 自动选择
   - 🎯 全球直连
-  - 🇸🇬SG_2|⬇️3.4MB/s
   - 🇸🇬新加坡_1
-  - 🇨🇦加拿大
   - 🇦🇺澳大利亚_1
   - 🇦🇺澳大利亚_2
   - 🇦🇺澳大利亚_3
   - 🇰🇷韩国
   - 🇸🇬新加坡_2
   - 日本_1
-  - 韩国
   - 日本_2
-  - 德国_1
-  - US_1
-  - US_2
-  - US_3
-  - US_4
-  - US_5
-  - US_6
-  - 英国_1
-  - 意大利_1
+  - 🇩🇪德國80
+  - JP
+  - 🇩🇪_DE_德国
+  - 美国_1
   - 伊朗_1
   - 伊朗_2
-  - 匈牙利
   - 香港_1
-  - 台湾
-  - 美国_1
+  - 土耳其
   - 美国_2
+  - 美国_3
+  - 美国_4
+  - 美国_5
+  - 美国_6
+  - 美国_7
+  - 美国_8
+  - 美国_9
+  - 美国_10
   - 罗马尼亚
-  - 荷兰_1
-  - 荷兰_2
-  - 荷兰_3
-  - 哈萨克斯坦_1
-  - 哈萨克斯坦_2
-  - 芬兰_1
-  - 芬兰_2
-  - 芬兰_3
-  - 芬兰_4
-  - 芬兰_5
+  - 哈萨克斯坦
   - 俄罗斯_1
   - 俄罗斯_2
-  - 俄罗斯_3
+  - 德国_1
   - 德国_2
   - 德国_3
   - 德国_4
-  - 德国_5
-  - 德国_6
-  - 德国_7
-  - 德国_8
-  - 德国_9
-  - 德国_10
-  - 德国_11
-  - 奥地利_1
-  - 奥地利_2
-  - 奥地利_3
-  - 奥地利_4
-  - 奥地利_5
-  - 奥地利_6
-  - 奥地利_7
-  - 奥地利_8
-  - 奥地利_9
   - 🇩🇪德國99
   - 🇩🇪德國98
   - 🇩🇪德國97
@@ -3631,7 +2606,6 @@ proxy-groups:
   - 🇩🇪德國83
   - 🇩🇪德國82
   - 🇩🇪德國81
-  - 🇩🇪德國80
   - 🇩🇪德國8
   - 🇩🇪德國79
   - 🇩🇪德國78
@@ -3781,7 +2755,6 @@ proxy-groups:
   - 🇩🇪德國175
   - 🇩🇪德國174
   - 🇩🇪德國173
-  - 🇩🇪德國172
   - 🇩🇪德國171
   - 🇩🇪德國170
   - 🇩🇪德國17
@@ -3849,7 +2822,6 @@ proxy-groups:
   - 🇩🇪德國112
   - 🇩🇪德國111
   - 🇩🇪德國110
-  - 🇩🇪德國11
   - 🇩🇪德國109
   - 🇩🇪德國108
   - 🇩🇪德國106
@@ -3859,131 +2831,60 @@ proxy-groups:
   - 🇩🇪德國100
   - 🇩🇪德國10
   - 🇩🇪德國0
-  - US_7
-  - US_8
-  - US_9
-  - US_10
-  - US_11
-  - US_12
-  - US_13
-  - US_14
-  - US_15
-  - US_16
-  - 🇺🇸_US_美国
-  - 中国
-  - 英国_2
-  - 英国_3
-  - 英国_4
-  - 意大利_2
-  - 意大利_3
-  - 以色列_1
-  - 以色列_2
-  - 伊朗_3
-  - 伊朗_4
-  - 伊朗_5
+  - 🇩🇪德國_1
+  - 🇩🇪德國_2
+  - 🇩🇪德國_3
+  - 🇩🇪德國_4
+  - 🇩🇪德國_5
+  - 🇩🇪德國_6
   - 香港_2
   - 香港_3
-  - 香港_4
-  - 香港_5
-  - 香港_6
-  - 香港_7
-  - 香港_8
-  - 香港_9
-  - 香港_10
-  - 香港_11
-  - 香港_12
-  - 香港_13
-  - 香港_14
-  - 瑞士
-  - 瑞典_1
-  - 瑞典_2
-  - 美国_3
-  - 美国_4
-  - 美国_5
-  - 美国_6
-  - 荷兰_4
-  - 荷兰_5
-  - 荷兰_6
-  - 荷兰_7
-  - 芬兰_6
-  - 法国_1
-  - 法国_2
-  - 法国_3
-  - 俄罗斯_4
-  - 俄罗斯_5
-  - 俄罗斯_6
-  - 德国_12
-  - 德国_13
-  - 丹麦_1
-  - 丹麦_2
-  - 波兰_1
-  - 波兰_2
-  - US_17
+  - 美国_11
+  - 加拿大
+  - 荷兰_1
+  - 荷兰_2
+  - 俄罗斯_3
+  - 波兰
+  - 比利时_1
+  - 比利时_2
   type: select
 - name: 📲 电报信息
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
-  - 🇸🇬SG_2|⬇️3.4MB/s
   - 🇸🇬新加坡_1
-  - 🇨🇦加拿大
   - 🇦🇺澳大利亚_1
   - 🇦🇺澳大利亚_2
   - 🇦🇺澳大利亚_3
   - 🇰🇷韩国
   - 🇸🇬新加坡_2
   - 日本_1
-  - 韩国
   - 日本_2
-  - 德国_1
-  - US_1
-  - US_2
-  - US_3
-  - US_4
-  - US_5
-  - US_6
-  - 英国_1
-  - 意大利_1
+  - 🇩🇪德國80
+  - JP
+  - 🇩🇪_DE_德国
+  - 美国_1
   - 伊朗_1
   - 伊朗_2
-  - 匈牙利
   - 香港_1
-  - 台湾
-  - 美国_1
+  - 土耳其
   - 美国_2
+  - 美国_3
+  - 美国_4
+  - 美国_5
+  - 美国_6
+  - 美国_7
+  - 美国_8
+  - 美国_9
+  - 美国_10
   - 罗马尼亚
-  - 荷兰_1
-  - 荷兰_2
-  - 荷兰_3
-  - 哈萨克斯坦_1
-  - 哈萨克斯坦_2
-  - 芬兰_1
-  - 芬兰_2
-  - 芬兰_3
-  - 芬兰_4
-  - 芬兰_5
+  - 哈萨克斯坦
   - 俄罗斯_1
   - 俄罗斯_2
-  - 俄罗斯_3
+  - 德国_1
   - 德国_2
   - 德国_3
   - 德国_4
-  - 德国_5
-  - 德国_6
-  - 德国_7
-  - 德国_8
-  - 德国_9
-  - 德国_10
-  - 德国_11
-  - 奥地利_1
-  - 奥地利_2
-  - 奥地利_3
-  - 奥地利_4
-  - 奥地利_5
-  - 奥地利_6
-  - 奥地利_7
-  - 奥地利_8
-  - 奥地利_9
   - 🇩🇪德國99
   - 🇩🇪德國98
   - 🇩🇪德國97
@@ -4004,7 +2905,6 @@ proxy-groups:
   - 🇩🇪德國83
   - 🇩🇪德國82
   - 🇩🇪德國81
-  - 🇩🇪德國80
   - 🇩🇪德國8
   - 🇩🇪德國79
   - 🇩🇪德國78
@@ -4154,7 +3054,6 @@ proxy-groups:
   - 🇩🇪德國175
   - 🇩🇪德國174
   - 🇩🇪德國173
-  - 🇩🇪德國172
   - 🇩🇪德國171
   - 🇩🇪德國170
   - 🇩🇪德國17
@@ -4222,7 +3121,6 @@ proxy-groups:
   - 🇩🇪德國112
   - 🇩🇪德國111
   - 🇩🇪德國110
-  - 🇩🇪德國11
   - 🇩🇪德國109
   - 🇩🇪德國108
   - 🇩🇪德國106
@@ -4232,131 +3130,60 @@ proxy-groups:
   - 🇩🇪德國100
   - 🇩🇪德國10
   - 🇩🇪德國0
-  - US_7
-  - US_8
-  - US_9
-  - US_10
-  - US_11
-  - US_12
-  - US_13
-  - US_14
-  - US_15
-  - US_16
-  - 🇺🇸_US_美国
-  - 中国
-  - 英国_2
-  - 英国_3
-  - 英国_4
-  - 意大利_2
-  - 意大利_3
-  - 以色列_1
-  - 以色列_2
-  - 伊朗_3
-  - 伊朗_4
-  - 伊朗_5
+  - 🇩🇪德國_1
+  - 🇩🇪德國_2
+  - 🇩🇪德國_3
+  - 🇩🇪德國_4
+  - 🇩🇪德國_5
+  - 🇩🇪德國_6
   - 香港_2
   - 香港_3
-  - 香港_4
-  - 香港_5
-  - 香港_6
-  - 香港_7
-  - 香港_8
-  - 香港_9
-  - 香港_10
-  - 香港_11
-  - 香港_12
-  - 香港_13
-  - 香港_14
-  - 瑞士
-  - 瑞典_1
-  - 瑞典_2
-  - 美国_3
-  - 美国_4
-  - 美国_5
-  - 美国_6
-  - 荷兰_4
-  - 荷兰_5
-  - 荷兰_6
-  - 荷兰_7
-  - 芬兰_6
-  - 法国_1
-  - 法国_2
-  - 法国_3
-  - 俄罗斯_4
-  - 俄罗斯_5
-  - 俄罗斯_6
-  - 德国_12
-  - 德国_13
-  - 丹麦_1
-  - 丹麦_2
-  - 波兰_1
-  - 波兰_2
-  - US_17
+  - 美国_11
+  - 加拿大
+  - 荷兰_1
+  - 荷兰_2
+  - 俄罗斯_3
+  - 波兰
+  - 比利时_1
+  - 比利时_2
   type: select
 - name: Ⓜ️ 微软服务
   proxies:
   - 🎯 全球直连
   - 🚀 节点选择
-  - 🇸🇬SG_2|⬇️3.4MB/s
   - 🇸🇬新加坡_1
-  - 🇨🇦加拿大
   - 🇦🇺澳大利亚_1
   - 🇦🇺澳大利亚_2
   - 🇦🇺澳大利亚_3
   - 🇰🇷韩国
   - 🇸🇬新加坡_2
   - 日本_1
-  - 韩国
   - 日本_2
-  - 德国_1
-  - US_1
-  - US_2
-  - US_3
-  - US_4
-  - US_5
-  - US_6
-  - 英国_1
-  - 意大利_1
+  - 🇩🇪德國80
+  - JP
+  - 🇩🇪_DE_德国
+  - 美国_1
   - 伊朗_1
   - 伊朗_2
-  - 匈牙利
   - 香港_1
-  - 台湾
-  - 美国_1
+  - 土耳其
   - 美国_2
+  - 美国_3
+  - 美国_4
+  - 美国_5
+  - 美国_6
+  - 美国_7
+  - 美国_8
+  - 美国_9
+  - 美国_10
   - 罗马尼亚
-  - 荷兰_1
-  - 荷兰_2
-  - 荷兰_3
-  - 哈萨克斯坦_1
-  - 哈萨克斯坦_2
-  - 芬兰_1
-  - 芬兰_2
-  - 芬兰_3
-  - 芬兰_4
-  - 芬兰_5
+  - 哈萨克斯坦
   - 俄罗斯_1
   - 俄罗斯_2
-  - 俄罗斯_3
+  - 德国_1
   - 德国_2
   - 德国_3
   - 德国_4
-  - 德国_5
-  - 德国_6
-  - 德国_7
-  - 德国_8
-  - 德国_9
-  - 德国_10
-  - 德国_11
-  - 奥地利_1
-  - 奥地利_2
-  - 奥地利_3
-  - 奥地利_4
-  - 奥地利_5
-  - 奥地利_6
-  - 奥地利_7
-  - 奥地利_8
-  - 奥地利_9
   - 🇩🇪德國99
   - 🇩🇪德國98
   - 🇩🇪德國97
@@ -4377,7 +3204,6 @@ proxy-groups:
   - 🇩🇪德國83
   - 🇩🇪德國82
   - 🇩🇪德國81
-  - 🇩🇪德國80
   - 🇩🇪德國8
   - 🇩🇪德國79
   - 🇩🇪德國78
@@ -4527,7 +3353,6 @@ proxy-groups:
   - 🇩🇪德國175
   - 🇩🇪德國174
   - 🇩🇪德國173
-  - 🇩🇪德國172
   - 🇩🇪德國171
   - 🇩🇪德國170
   - 🇩🇪德國17
@@ -4595,7 +3420,6 @@ proxy-groups:
   - 🇩🇪德國112
   - 🇩🇪德國111
   - 🇩🇪德國110
-  - 🇩🇪德國11
   - 🇩🇪德國109
   - 🇩🇪德國108
   - 🇩🇪德國106
@@ -4605,131 +3429,60 @@ proxy-groups:
   - 🇩🇪德國100
   - 🇩🇪德國10
   - 🇩🇪德國0
-  - US_7
-  - US_8
-  - US_9
-  - US_10
-  - US_11
-  - US_12
-  - US_13
-  - US_14
-  - US_15
-  - US_16
-  - 🇺🇸_US_美国
-  - 中国
-  - 英国_2
-  - 英国_3
-  - 英国_4
-  - 意大利_2
-  - 意大利_3
-  - 以色列_1
-  - 以色列_2
-  - 伊朗_3
-  - 伊朗_4
-  - 伊朗_5
+  - 🇩🇪德國_1
+  - 🇩🇪德國_2
+  - 🇩🇪德國_3
+  - 🇩🇪德國_4
+  - 🇩🇪德國_5
+  - 🇩🇪德國_6
   - 香港_2
   - 香港_3
-  - 香港_4
-  - 香港_5
-  - 香港_6
-  - 香港_7
-  - 香港_8
-  - 香港_9
-  - 香港_10
-  - 香港_11
-  - 香港_12
-  - 香港_13
-  - 香港_14
-  - 瑞士
-  - 瑞典_1
-  - 瑞典_2
-  - 美国_3
-  - 美国_4
-  - 美国_5
-  - 美国_6
-  - 荷兰_4
-  - 荷兰_5
-  - 荷兰_6
-  - 荷兰_7
-  - 芬兰_6
-  - 法国_1
-  - 法国_2
-  - 法国_3
-  - 俄罗斯_4
-  - 俄罗斯_5
-  - 俄罗斯_6
-  - 德国_12
-  - 德国_13
-  - 丹麦_1
-  - 丹麦_2
-  - 波兰_1
-  - 波兰_2
-  - US_17
+  - 美国_11
+  - 加拿大
+  - 荷兰_1
+  - 荷兰_2
+  - 俄罗斯_3
+  - 波兰
+  - 比利时_1
+  - 比利时_2
   type: select
 - name: 🍎 苹果服务
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
-  - 🇸🇬SG_2|⬇️3.4MB/s
   - 🇸🇬新加坡_1
-  - 🇨🇦加拿大
   - 🇦🇺澳大利亚_1
   - 🇦🇺澳大利亚_2
   - 🇦🇺澳大利亚_3
   - 🇰🇷韩国
   - 🇸🇬新加坡_2
   - 日本_1
-  - 韩国
   - 日本_2
-  - 德国_1
-  - US_1
-  - US_2
-  - US_3
-  - US_4
-  - US_5
-  - US_6
-  - 英国_1
-  - 意大利_1
+  - 🇩🇪德國80
+  - JP
+  - 🇩🇪_DE_德国
+  - 美国_1
   - 伊朗_1
   - 伊朗_2
-  - 匈牙利
   - 香港_1
-  - 台湾
-  - 美国_1
+  - 土耳其
   - 美国_2
+  - 美国_3
+  - 美国_4
+  - 美国_5
+  - 美国_6
+  - 美国_7
+  - 美国_8
+  - 美国_9
+  - 美国_10
   - 罗马尼亚
-  - 荷兰_1
-  - 荷兰_2
-  - 荷兰_3
-  - 哈萨克斯坦_1
-  - 哈萨克斯坦_2
-  - 芬兰_1
-  - 芬兰_2
-  - 芬兰_3
-  - 芬兰_4
-  - 芬兰_5
+  - 哈萨克斯坦
   - 俄罗斯_1
   - 俄罗斯_2
-  - 俄罗斯_3
+  - 德国_1
   - 德国_2
   - 德国_3
   - 德国_4
-  - 德国_5
-  - 德国_6
-  - 德国_7
-  - 德国_8
-  - 德国_9
-  - 德国_10
-  - 德国_11
-  - 奥地利_1
-  - 奥地利_2
-  - 奥地利_3
-  - 奥地利_4
-  - 奥地利_5
-  - 奥地利_6
-  - 奥地利_7
-  - 奥地利_8
-  - 奥地利_9
   - 🇩🇪德國99
   - 🇩🇪德國98
   - 🇩🇪德國97
@@ -4750,7 +3503,6 @@ proxy-groups:
   - 🇩🇪德國83
   - 🇩🇪德國82
   - 🇩🇪德國81
-  - 🇩🇪德國80
   - 🇩🇪德國8
   - 🇩🇪德國79
   - 🇩🇪德國78
@@ -4900,7 +3652,6 @@ proxy-groups:
   - 🇩🇪德國175
   - 🇩🇪德國174
   - 🇩🇪德國173
-  - 🇩🇪德國172
   - 🇩🇪德國171
   - 🇩🇪德國170
   - 🇩🇪德國17
@@ -4968,7 +3719,6 @@ proxy-groups:
   - 🇩🇪德國112
   - 🇩🇪德國111
   - 🇩🇪德國110
-  - 🇩🇪德國11
   - 🇩🇪德國109
   - 🇩🇪德國108
   - 🇩🇪德國106
@@ -4978,66 +3728,22 @@ proxy-groups:
   - 🇩🇪德國100
   - 🇩🇪德國10
   - 🇩🇪德國0
-  - US_7
-  - US_8
-  - US_9
-  - US_10
-  - US_11
-  - US_12
-  - US_13
-  - US_14
-  - US_15
-  - US_16
-  - 🇺🇸_US_美国
-  - 中国
-  - 英国_2
-  - 英国_3
-  - 英国_4
-  - 意大利_2
-  - 意大利_3
-  - 以色列_1
-  - 以色列_2
-  - 伊朗_3
-  - 伊朗_4
-  - 伊朗_5
+  - 🇩🇪德國_1
+  - 🇩🇪德國_2
+  - 🇩🇪德國_3
+  - 🇩🇪德國_4
+  - 🇩🇪德國_5
+  - 🇩🇪德國_6
   - 香港_2
   - 香港_3
-  - 香港_4
-  - 香港_5
-  - 香港_6
-  - 香港_7
-  - 香港_8
-  - 香港_9
-  - 香港_10
-  - 香港_11
-  - 香港_12
-  - 香港_13
-  - 香港_14
-  - 瑞士
-  - 瑞典_1
-  - 瑞典_2
-  - 美国_3
-  - 美国_4
-  - 美国_5
-  - 美国_6
-  - 荷兰_4
-  - 荷兰_5
-  - 荷兰_6
-  - 荷兰_7
-  - 芬兰_6
-  - 法国_1
-  - 法国_2
-  - 法国_3
-  - 俄罗斯_4
-  - 俄罗斯_5
-  - 俄罗斯_6
-  - 德国_12
-  - 德国_13
-  - 丹麦_1
-  - 丹麦_2
-  - 波兰_1
-  - 波兰_2
-  - US_17
+  - 美国_11
+  - 加拿大
+  - 荷兰_1
+  - 荷兰_2
+  - 俄罗斯_3
+  - 波兰
+  - 比利时_1
+  - 比利时_2
   type: select
 - name: 🎯 全球直连
   proxies:
@@ -5060,66 +3766,39 @@ proxy-groups:
   - 🚀 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
-  - 🇸🇬SG_2|⬇️3.4MB/s
   - 🇸🇬新加坡_1
-  - 🇨🇦加拿大
   - 🇦🇺澳大利亚_1
   - 🇦🇺澳大利亚_2
   - 🇦🇺澳大利亚_3
   - 🇰🇷韩国
   - 🇸🇬新加坡_2
   - 日本_1
-  - 韩国
   - 日本_2
-  - 德国_1
-  - US_1
-  - US_2
-  - US_3
-  - US_4
-  - US_5
-  - US_6
-  - 英国_1
-  - 意大利_1
+  - 🇩🇪德國80
+  - JP
+  - 🇩🇪_DE_德国
+  - 美国_1
   - 伊朗_1
   - 伊朗_2
-  - 匈牙利
   - 香港_1
-  - 台湾
-  - 美国_1
+  - 土耳其
   - 美国_2
+  - 美国_3
+  - 美国_4
+  - 美国_5
+  - 美国_6
+  - 美国_7
+  - 美国_8
+  - 美国_9
+  - 美国_10
   - 罗马尼亚
-  - 荷兰_1
-  - 荷兰_2
-  - 荷兰_3
-  - 哈萨克斯坦_1
-  - 哈萨克斯坦_2
-  - 芬兰_1
-  - 芬兰_2
-  - 芬兰_3
-  - 芬兰_4
-  - 芬兰_5
+  - 哈萨克斯坦
   - 俄罗斯_1
   - 俄罗斯_2
-  - 俄罗斯_3
+  - 德国_1
   - 德国_2
   - 德国_3
   - 德国_4
-  - 德国_5
-  - 德国_6
-  - 德国_7
-  - 德国_8
-  - 德国_9
-  - 德国_10
-  - 德国_11
-  - 奥地利_1
-  - 奥地利_2
-  - 奥地利_3
-  - 奥地利_4
-  - 奥地利_5
-  - 奥地利_6
-  - 奥地利_7
-  - 奥地利_8
-  - 奥地利_9
   - 🇩🇪德國99
   - 🇩🇪德國98
   - 🇩🇪德國97
@@ -5140,7 +3819,6 @@ proxy-groups:
   - 🇩🇪德國83
   - 🇩🇪德國82
   - 🇩🇪德國81
-  - 🇩🇪德國80
   - 🇩🇪德國8
   - 🇩🇪德國79
   - 🇩🇪德國78
@@ -5290,7 +3968,6 @@ proxy-groups:
   - 🇩🇪德國175
   - 🇩🇪德國174
   - 🇩🇪德國173
-  - 🇩🇪德國172
   - 🇩🇪德國171
   - 🇩🇪德國170
   - 🇩🇪德國17
@@ -5358,7 +4035,6 @@ proxy-groups:
   - 🇩🇪德國112
   - 🇩🇪德國111
   - 🇩🇪德國110
-  - 🇩🇪德國11
   - 🇩🇪德國109
   - 🇩🇪德國108
   - 🇩🇪德國106
@@ -5368,66 +4044,22 @@ proxy-groups:
   - 🇩🇪德國100
   - 🇩🇪德國10
   - 🇩🇪德國0
-  - US_7
-  - US_8
-  - US_9
-  - US_10
-  - US_11
-  - US_12
-  - US_13
-  - US_14
-  - US_15
-  - US_16
-  - 🇺🇸_US_美国
-  - 中国
-  - 英国_2
-  - 英国_3
-  - 英国_4
-  - 意大利_2
-  - 意大利_3
-  - 以色列_1
-  - 以色列_2
-  - 伊朗_3
-  - 伊朗_4
-  - 伊朗_5
+  - 🇩🇪德國_1
+  - 🇩🇪德國_2
+  - 🇩🇪德國_3
+  - 🇩🇪德國_4
+  - 🇩🇪德國_5
+  - 🇩🇪德國_6
   - 香港_2
   - 香港_3
-  - 香港_4
-  - 香港_5
-  - 香港_6
-  - 香港_7
-  - 香港_8
-  - 香港_9
-  - 香港_10
-  - 香港_11
-  - 香港_12
-  - 香港_13
-  - 香港_14
-  - 瑞士
-  - 瑞典_1
-  - 瑞典_2
-  - 美国_3
-  - 美国_4
-  - 美国_5
-  - 美国_6
-  - 荷兰_4
-  - 荷兰_5
-  - 荷兰_6
-  - 荷兰_7
-  - 芬兰_6
-  - 法国_1
-  - 法国_2
-  - 法国_3
-  - 俄罗斯_4
-  - 俄罗斯_5
-  - 俄罗斯_6
-  - 德国_12
-  - 德国_13
-  - 丹麦_1
-  - 丹麦_2
-  - 波兰_1
-  - 波兰_2
-  - US_17
+  - 美国_11
+  - 加拿大
+  - 荷兰_1
+  - 荷兰_2
+  - 俄罗斯_3
+  - 波兰
+  - 比利时_1
+  - 比利时_2
   type: select
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
