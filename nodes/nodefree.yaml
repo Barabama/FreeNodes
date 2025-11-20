@@ -32,158 +32,187 @@ log-level: info
 mixed-port: 7890
 mode: rule
 proxies:
-- alterId: 0
-  cipher: auto
-  name: 🇺🇸US²_2|0.6MB/s|18%|GPT|YT-CN|TK|NF|X|KeepHistory
-  network: tcp
-  port: 25024
-  server: onecat-us.03ezhg0qsa.download
-  type: vmess
-  uuid: 69749298-6821-3358-b6d3-1d18d8642cba
 - name: 🇨🇳_CN_中国
   network: tcp
-  password: BxceQaOe
-  port: 518
-  server: 116.49.237.130
-  skip-cert-verify: true
-  sni: t.me/ripaojiedian
-  type: trojan
-- name: 🇨🇳_CN_中国_1
-  network: tcp
-  password: BxceQaOe
-  port: 4094
-  server: 116.49.237.130
-  skip-cert-verify: true
-  sni: t.me/ripaojiedian
-  type: trojan
-- alterId: 0
-  cipher: auto
-  name: 🇯🇵 日本4|@ripaojiedian
-  network: tcp
-  port: 47083
-  server: 114.98.183.61
-  type: vmess
-  uuid: b3fa070f-5511-48be-934b-f632f6b8a7c7
-- name: 🇺🇸_US_美国_1
-  network: ws
-  password: 7d82af32-915f-4619-aa9c-7d3b612d33ff
-  port: 2053
-  server: 65.109.227.138
-  sni: joss.dus.biz.id
-  tls: true
-  type: trojan
-  ws-opts:
-    headers:
-      Host: joss.dus.biz.id
-    path: /Free-VPN-CF-Geo-Project/65.109.227.138=2053
-- fingerprint: chrome
-  name: 🇳🇱_NL_荷兰_1
-  network: ws
-  password: 55d19115-ec40-407b-a674-74e6a948347a
-  port: 2053
-  server: 45.144.48.55
-  sni: joss.dus.biz.id
-  tls: true
-  type: trojan
-  ws-opts:
-    headers:
-      Host: joss.dus.biz.id
-    path: /Free-VPN-CF-Geo-Project/45.144.48.55=2053
-- alterId: 2
-  cipher: auto
-  name: 🇨🇳CN-144.48.180.186-7884
-  network: ws
-  port: 30812
-  server: v12.heduian.link
-  servername: ocbc.com
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  ws-opts:
-    headers:
-      Host: ocbc.com
-    path: /oooo
-- name: 🇨🇳_CN_中国_2
-  network: tcp
-  password: 2274c52572e721086f8bd8f88984643c
+  password: dd2f25b4c70689de8bc0f7fa9d6591cb
   port: 443
-  server: 58.152.110.9
+  server: 58.152.110.206
   sni: www.nintendogames.net
   type: trojan
-- name: 🇳🇱_NL_荷兰_2
+- alpn:
+  - http/1.1
+  fingerprint: chrome
+  name: 🇺🇸_US_美国
   network: ws
-  password: 5ad5fe82-6b60-4f59-977b-93910ef7a9ca
+  password: 0507fbcd-b983-43a7-8e1d-2c561960ad4f
   port: 443
-  server: 86.107.197.239
-  sni: joss.dus.biz.id
+  server: 54d-bd0d-c3f111d0b879.664.qzz.io
+  sni: 54D-bD0D-c3F111D0b879.664.Qzz.Io
   tls: true
   type: trojan
   ws-opts:
     headers:
-      Host: joss.dus.biz.id
-    path: /Free-VPN-CF-Geo-Project/86.107.197.239=443
-- fingerprint: randomized
-  name: 🇸🇪_SE_瑞典
+      Host: 54d-Bd0d-c3f111d0b879.664.QZZ.iO
+    path: /E2JXJM5geneWfr9noOhn
+- alpn:
+  - http/1.1
+  fingerprint: chrome
+  name: 🇺🇸_US_美国_3
   network: ws
-  password: 72a9357f-8841-4229-ad79-c3fdee0aae51
+  password: 0507fbcd-b983-43a7-8e1d-2c561960ad4f
   port: 443
-  server: 193.180.211.52
-  sni: joss.dus.biz.id
+  server: a76-4179-8a78-c8b78b3c00cb.664.qzz.io
+  sni: A76-4179-8a78-c8B78B3C00Cb.664.QZz.iO
+  tls: true
   type: trojan
   ws-opts:
-    path: /Free-VPN-CF-Geo-Project/193.180.211.52=443
-- cipher: chacha20-ietf-poly1305
-  name: 🇺🇸_US_美国_8
-  password: NDRySIABARbErNIVsCNVkyYAHiBzhveT
+    headers:
+      Host: a76-4179-8a78-c8B78B3C00cB.664.qzz.Io
+    path: /E2JXJM5geneWfr9noOhn
+- cipher: aes-256-cfb
+  name: 🇬🇧_GB_英国
+  password: amazonskr05
   port: 443
-  server: 23.95.75.146
+  server: 18.133.239.161
   type: ss
-- cipher: chacha20-ietf-poly1305
-  name: 🇷🇺_RU_俄罗斯
-  password: 17ZDORWIliQHuO6WRGHChXYMzdRtAYVP
+- name: 🇺🇸_US_美国_4
+  network: ws
+  password: trojan
   port: 443
-  server: 45.14.245.2
+  server: 104.24.57.5
+  sni: azadnet2-dl4.pages.dev
+  tls: true
+  type: trojan
+  ws-opts:
+    headers:
+      Host: azadnet2-dl4.pages.dev
+    path: /?ed=2560
+- cipher: aes-256-cfb
+  name: 🇺🇸_US_美国_5
+  password: amazonskr05
+  port: 443
+  server: 63.180.254.10
   type: ss
 - cipher: aes-256-cfb
-  name: 🇰🇷_KR_韩国
-  password: qwerREWQ@@
-  port: 37008
-  server: 221.139.79.57
+  name: 🇺🇸_US_美国_6
+  password: amazonskr05
+  port: 443
+  server: 3.22.241.41
+  type: ss
+- alterId: 0
+  cipher: auto
+  name: 🐲84@oneclickvpnkeys
+  network: ws
+  port: 80
+  server: 4bb6-B667-f88608d19Fd5.664.QZz.iO
+  servername: 4Bb6-B667-f88608D19Fd5.664.QzZ.Io
+  type: vmess
+  uuid: 0507fbcd-b983-43a7-8e1d-2c561960ad4f
+  ws-opts:
+    headers:
+      Host: 4Bb6-B667-f88608D19Fd5.664.QzZ.Io
+    path: /pyyY4ZVTyJV3vr9noOhn
+- cipher: aes-256-cfb
+  name: 🇺🇸_US_美国_7
+  password: amazonskr05
+  port: 443
+  server: 13.40.106.210
+  type: ss
+- cipher: aes-256-cfb
+  name: 🇺🇸_US_美国_8
+  password: amazonskr05
+  port: 443
+  server: 63.180.174.194
+  type: ss
+- cipher: aes-256-cfb
+  name: 🇮🇪_IE_爱尔兰
+  password: amazonskr05
+  port: 443
+  server: 54.247.223.103
+  type: ss
+- cipher: aes-256-cfb
+  name: 🇩🇪_DE_德国
+  password: amazonskr05
+  port: 443
+  server: 18.197.20.26
+  type: ss
+- cipher: aes-256-cfb
+  name: 🇺🇸_US_美国_11
+  password: amazonskr05
+  port: 443
+  server: 34.227.207.241
+  type: ss
+- cipher: aes-256-cfb
+  name: 🇮🇪_IE_爱尔兰_1
+  password: amazonskr05
+  port: 443
+  server: 54.77.192.158
+  type: ss
+- alterId: 0
+  cipher: auto
+  name: 美国 V2CROSS.COM
+  network: none
+  port: 57283
+  server: 216.238.89.53
+  type: vmess
+  uuid: 1a5aafc0-6482-451d-fe76-6875b7818579
+- name: 🇯🇵_JP_日本
+  network: tcp
+  password: fg20mtCFHy
+  port: 5517
+  server: tksjx.zippydeal.xyz
+  skip-cert-verify: true
+  sni: tksjx.zippydeal.xyz
+  type: trojan
+- cipher: aes-256-cfb
+  name: 🇮🇪_IE_爱尔兰_2
+  password: amazonskr05
+  port: 443
+  server: 54.217.49.39
   type: ss
 proxy-groups:
 - name: 🚀 节点选择
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - 🇺🇸US²_2|0.6MB/s|18%|GPT|YT-CN|TK|NF|X|KeepHistory
   - 🇨🇳_CN_中国
-  - 🇨🇳_CN_中国_1
-  - 🇯🇵 日本4|@ripaojiedian
-  - 🇺🇸_US_美国_1
-  - 🇳🇱_NL_荷兰_1
-  - 🇨🇳CN-144.48.180.186-7884
-  - 🇨🇳_CN_中国_2
-  - 🇳🇱_NL_荷兰_2
-  - 🇸🇪_SE_瑞典
+  - 🇺🇸_US_美国
+  - 🇺🇸_US_美国_3
+  - 🇬🇧_GB_英国
+  - 🇺🇸_US_美国_4
+  - 🇺🇸_US_美国_5
+  - 🇺🇸_US_美国_6
+  - 🐲84@oneclickvpnkeys
+  - 🇺🇸_US_美国_7
   - 🇺🇸_US_美国_8
-  - 🇷🇺_RU_俄罗斯
-  - 🇰🇷_KR_韩国
+  - 🇮🇪_IE_爱尔兰
+  - 🇩🇪_DE_德国
+  - 🇺🇸_US_美国_11
+  - 🇮🇪_IE_爱尔兰_1
+  - 美国 V2CROSS.COM
+  - 🇯🇵_JP_日本
+  - 🇮🇪_IE_爱尔兰_2
   type: select
 - interval: 300
   name: ♻️ 自动选择
   proxies:
-  - 🇺🇸US²_2|0.6MB/s|18%|GPT|YT-CN|TK|NF|X|KeepHistory
   - 🇨🇳_CN_中国
-  - 🇨🇳_CN_中国_1
-  - 🇯🇵 日本4|@ripaojiedian
-  - 🇺🇸_US_美国_1
-  - 🇳🇱_NL_荷兰_1
-  - 🇨🇳CN-144.48.180.186-7884
-  - 🇨🇳_CN_中国_2
-  - 🇳🇱_NL_荷兰_2
-  - 🇸🇪_SE_瑞典
+  - 🇺🇸_US_美国
+  - 🇺🇸_US_美国_3
+  - 🇬🇧_GB_英国
+  - 🇺🇸_US_美国_4
+  - 🇺🇸_US_美国_5
+  - 🇺🇸_US_美国_6
+  - 🐲84@oneclickvpnkeys
+  - 🇺🇸_US_美国_7
   - 🇺🇸_US_美国_8
-  - 🇷🇺_RU_俄罗斯
-  - 🇰🇷_KR_韩国
+  - 🇮🇪_IE_爱尔兰
+  - 🇩🇪_DE_德国
+  - 🇺🇸_US_美国_11
+  - 🇮🇪_IE_爱尔兰_1
+  - 美国 V2CROSS.COM
+  - 🇯🇵_JP_日本
+  - 🇮🇪_IE_爱尔兰_2
   type: url-test
   url: http://www.gstatic.com/generate_204
 - name: 🎯 全球直连
@@ -202,19 +231,23 @@ proxy-groups:
   - 🚀 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
-  - 🇺🇸US²_2|0.6MB/s|18%|GPT|YT-CN|TK|NF|X|KeepHistory
   - 🇨🇳_CN_中国
-  - 🇨🇳_CN_中国_1
-  - 🇯🇵 日本4|@ripaojiedian
-  - 🇺🇸_US_美国_1
-  - 🇳🇱_NL_荷兰_1
-  - 🇨🇳CN-144.48.180.186-7884
-  - 🇨🇳_CN_中国_2
-  - 🇳🇱_NL_荷兰_2
-  - 🇸🇪_SE_瑞典
+  - 🇺🇸_US_美国
+  - 🇺🇸_US_美国_3
+  - 🇬🇧_GB_英国
+  - 🇺🇸_US_美国_4
+  - 🇺🇸_US_美国_5
+  - 🇺🇸_US_美国_6
+  - 🐲84@oneclickvpnkeys
+  - 🇺🇸_US_美国_7
   - 🇺🇸_US_美国_8
-  - 🇷🇺_RU_俄罗斯
-  - 🇰🇷_KR_韩国
+  - 🇮🇪_IE_爱尔兰
+  - 🇩🇪_DE_德国
+  - 🇺🇸_US_美国_11
+  - 🇮🇪_IE_爱尔兰_1
+  - 美国 V2CROSS.COM
+  - 🇯🇵_JP_日本
+  - 🇮🇪_IE_爱尔兰_2
   type: select
 tun:
   auto-detect-interface: true
