@@ -45,7 +45,7 @@ proxies:
   server: 103.103.245.158
   type: ss
 - name: 🇭🇰 香港3|@stairnode
-  password: 79314e99f0a473fe86efc7827942ad00
+  password: 76d630f2af6619c4a5de0ef953df3c6a
   port: 443
   server: 58.152.110.154
   skip-cert-verify: false
@@ -68,21 +68,21 @@ proxies:
 - name: 🇯🇵 日本|@stairnode
   password: BxceQaOe
   port: 4012
-  server: jp.baidu.com
+  server: 52.68.48.114
   skip-cert-verify: true
   sni: t.me%2Fripaojiedian
   type: trojan
 - name: 🇯🇵 日本2|@stairnode
-  password: 79314e99f0a473fe86efc7827942ad00
-  port: 3169
-  server: 160.16.87.174
+  password: 76d630f2af6619c4a5de0ef953df3c6a
+  port: 1331
+  server: 13.231.156.35
   skip-cert-verify: false
   sni: www.nintendogames.net
   type: trojan
 - name: 🇯🇵 日本3|@stairnode
-  password: 79314e99f0a473fe86efc7827942ad00
+  password: 76d630f2af6619c4a5de0ef953df3c6a
   port: 3093
-  server: 160.16.72.33
+  server: 160.16.117.182
   skip-cert-verify: false
   sni: www.nintendogames.net
   type: trojan
@@ -91,50 +91,50 @@ proxies:
   password: t0srmdxrm3xyjnvqz9ewlxb2myq7rjuv
   plugin: obfs
   plugin-opts:
-    host: a4ebd80:164401
+    host: ed92259:137548
     mode: tls
   port: 2377
   server: 172.237.6.53
   type: ss
 - name: 🇸🇬 新加坡|@stairnode
-  password: 79314e99f0a473fe86efc7827942ad00
-  port: 507
-  server: 153.121.44.99
+  password: 76d630f2af6619c4a5de0ef953df3c6a
+  port: 2760
+  server: 202.181.103.246
   skip-cert-verify: false
   sni: www.nintendogames.net
   type: trojan
 - name: 🇸🇬 新加坡2|@stairnode
-  password: 79314e99f0a473fe86efc7827942ad00
+  password: 76d630f2af6619c4a5de0ef953df3c6a
   port: 507
-  server: 160.16.107.37
+  server: 160.16.233.76
   skip-cert-verify: false
   sni: www.nintendogames.net
   type: trojan
 - name: 🇸🇬 新加坡3|@stairnode
   password: BxceQaOe
-  port: 3579
-  server: 54.199.213.179
+  port: 804
+  server: 3.112.225.115
   skip-cert-verify: true
   sni: t.me%2Fripaojiedian
   type: trojan
 - name: 🇺🇸 美国|@stairnode
-  password: 79314e99f0a473fe86efc7827942ad00
+  password: 76d630f2af6619c4a5de0ef953df3c6a
   port: 4054
-  server: 153.121.39.240
+  server: 160.16.136.130
   skip-cert-verify: false
   sni: www.nintendogames.net
   type: trojan
 - name: 🇺🇸 美国2|@stairnode
-  password: 79314e99f0a473fe86efc7827942ad00
+  password: 76d630f2af6619c4a5de0ef953df3c6a
   port: 2890
-  server: 160.16.116.227
+  server: 160.16.196.59
   skip-cert-verify: false
   sni: www.nintendogames.net
   type: trojan
 - name: 🇺🇸 美国3|@stairnode
   password: BxceQaOe
-  port: 1112
-  server: 18.163.210.14
+  port: 968
+  server: 13.231.156.35
   skip-cert-verify: true
   sni: t.me%2Fripaojiedian
   type: trojan
@@ -142,7 +142,7 @@ proxies:
   name: 🇻🇳 越南|@stairnode
   password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
   port: 38388
-  server: 103.186.155.138
+  server: 103.186.155.2
   type: ss
 proxy-groups:
 - name: 🚀 节点选择
@@ -345,6 +345,7 @@ rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
 - DOMAIN-SUFFIX,ip6-loopback,🎯 全球直连
+- DOMAIN-SUFFIX,internal,🎯 全球直连
 - DOMAIN-SUFFIX,lan,🎯 全球直连
 - DOMAIN-SUFFIX,local,🎯 全球直连
 - DOMAIN-SUFFIX,localhost,🎯 全球直连
@@ -352,6 +353,7 @@ rules:
 - IP-CIDR,10.0.0.0/8,🎯 全球直连,no-resolve
 - IP-CIDR,100.64.0.0/10,🎯 全球直连,no-resolve
 - IP-CIDR,127.0.0.0/8,🎯 全球直连,no-resolve
+- IP-CIDR,169.254.0.0/16,🎯 全球直连,no-resolve
 - IP-CIDR,172.16.0.0/12,🎯 全球直连,no-resolve
 - IP-CIDR,192.168.0.0/16,🎯 全球直连,no-resolve
 - IP-CIDR,198.18.0.0/16,🎯 全球直连,no-resolve
@@ -725,7 +727,6 @@ rules:
 - DOMAIN-SUFFIX,scupio.com,🛑 全球拦截
 - DOMAIN-SUFFIX,shuiguo.com,🛑 全球拦截
 - DOMAIN-SUFFIX,shuzilm.cn,🛑 全球拦截
-- DOMAIN-SUFFIX,similarweb.com,🛑 全球拦截
 - DOMAIN-SUFFIX,sitemeter.com,🛑 全球拦截
 - DOMAIN-SUFFIX,sitescout.com,🛑 全球拦截
 - DOMAIN-SUFFIX,sitetag.us,🛑 全球拦截
@@ -1577,9 +1578,7 @@ rules:
 - DOMAIN-SUFFIX,log.mix.sina.com.cn,🍃 应用净化
 - DOMAIN-SUFFIX,mobileads.dx.cn,🍃 应用净化
 - DOMAIN-SUFFIX,newspush.sinajs.cn,🍃 应用净化
-- DOMAIN-SUFFIX,pay.mobile.sina.cn,🍃 应用净化
 - DOMAIN-SUFFIX,sax.mobile.sina.cn,🍃 应用净化
-- DOMAIN-SUFFIX,sax.sina.com.cn,🍃 应用净化
 - DOMAIN-SUFFIX,saxd.sina.com.cn,🍃 应用净化
 - DOMAIN-SUFFIX,sdkapp.mobile.sina.cn,🍃 应用净化
 - DOMAIN-SUFFIX,sdkapp.uve.weibo.com,🍃 应用净化
@@ -1980,7 +1979,6 @@ rules:
 - DOMAIN-SUFFIX,dol.tianyaui.cn,🍃 应用净化
 - DOMAIN-SUFFIX,dw.xcar.com.cn,🍃 应用净化
 - DOMAIN-SUFFIX,e.nexac.com,🍃 应用净化
-- DOMAIN-SUFFIX,eq.10jqka.com.cn,🍃 应用净化
 - DOMAIN-SUFFIX,exp.17wo.cn,🍃 应用净化
 - DOMAIN-SUFFIX,game.51yund.com,🍃 应用净化
 - DOMAIN-SUFFIX,ganjituiguang.ganji.com,🍃 应用净化
@@ -1997,7 +1995,6 @@ rules:
 - DOMAIN-SUFFIX,mobileads.msn.com,🍃 应用净化
 - DOMAIN-SUFFIX,n.cosbot.cn,🍃 应用净化
 - DOMAIN-SUFFIX,newton-api.ele.me,🍃 应用净化
-- DOMAIN-SUFFIX,ozone.10jqka.com.cn,🍃 应用净化
 - DOMAIN-SUFFIX,pdl.gionee.com,🍃 应用净化
 - DOMAIN-SUFFIX,pica-juicy.picacomic.com,🍃 应用净化
 - DOMAIN-SUFFIX,pixel.wp.com,🍃 应用净化
@@ -2010,7 +2007,6 @@ rules:
 - DOMAIN-SUFFIX,res.gwifi.com.cn,🍃 应用净化
 - DOMAIN-SUFFIX,ssp.kssws.ks-cdn.com,🍃 应用净化
 - DOMAIN-SUFFIX,sta.ganji.com,🍃 应用净化
-- DOMAIN-SUFFIX,stat.10jqka.com.cn,🍃 应用净化
 - DOMAIN-SUFFIX,stat.it168.com,🍃 应用净化
 - DOMAIN-SUFFIX,stats.chinaz.com,🍃 应用净化
 - DOMAIN-SUFFIX,stats.developingperspective.com,🍃 应用净化
@@ -2018,7 +2014,6 @@ rules:
 - DOMAIN-SUFFIX,tracker.yhd.com,🍃 应用净化
 - DOMAIN-SUFFIX,tralog.ganji.com,🍃 应用净化
 - DOMAIN-SUFFIX,up.qingdaonews.com,🍃 应用净化
-- DOMAIN-SUFFIX,vaserviece.10jqka.com.cn,🍃 应用净化
 - DOMAIN,alt1-mtalk.google.com,📢 谷歌FCM
 - DOMAIN,alt2-mtalk.google.com,📢 谷歌FCM
 - DOMAIN,alt3-mtalk.google.com,📢 谷歌FCM
@@ -2235,6 +2230,7 @@ rules:
 - DOMAIN,copilot-proxy.githubusercontent.com,🌍 国外媒体
 - DOMAIN,gemini.google.com,🌍 国外媒体
 - DOMAIN,generativelanguage.googleapis.com,🌍 国外媒体
+- DOMAIN,notebooklm.google.com,🌍 国外媒体
 - DOMAIN,sydney.bing.com,🌍 国外媒体
 - DOMAIN-SUFFIX,ai.azure.com,🌍 国外媒体
 - DOMAIN-SUFFIX,anthropic.com,🌍 国外媒体
@@ -2242,6 +2238,7 @@ rules:
 - DOMAIN-SUFFIX,bard.google.com,🌍 国外媒体
 - DOMAIN-SUFFIX,chatgpt.com,🌍 国外媒体
 - DOMAIN-SUFFIX,claude.ai,🌍 国外媒体
+- DOMAIN-SUFFIX,claude.com,🌍 国外媒体
 - DOMAIN-SUFFIX,claudeusercontent.com,🌍 国外媒体
 - DOMAIN-SUFFIX,client-api.arkoselabs.com,🌍 国外媒体
 - DOMAIN-SUFFIX,copilot.cloud.microsoft,🌍 国外媒体
@@ -2256,6 +2253,7 @@ rules:
 - DOMAIN-SUFFIX,identrust.com,🌍 国外媒体
 - DOMAIN-SUFFIX,intercom.io,🌍 国外媒体
 - DOMAIN-SUFFIX,intercomcdn.com,🌍 国外媒体
+- DOMAIN-SUFFIX,jetbrains.ai,🌍 国外媒体
 - DOMAIN-SUFFIX,makersuite.google.com,🌍 国外媒体
 - DOMAIN-SUFFIX,meta.ai,🌍 国外媒体
 - DOMAIN-SUFFIX,mistral.ai,🌍 国外媒体
@@ -2265,6 +2263,7 @@ rules:
 - DOMAIN-SUFFIX,openaiapi-site.azureedge.net,🌍 国外媒体
 - DOMAIN-SUFFIX,perplexity.ai,🌍 国外媒体
 - DOMAIN-SUFFIX,sora.com,🌍 国外媒体
+- DOMAIN-SUFFIX,x.ai,🌍 国外媒体
 - DOMAIN-KEYWORD,abematv.akamaized.net,🌍 国外媒体
 - DOMAIN-SUFFIX,abema.io,🌍 国外媒体
 - DOMAIN-SUFFIX,abema.tv,🌍 国外媒体
@@ -2827,6 +2826,7 @@ rules:
 - DOMAIN-SUFFIX,1e100.net,🚀 节点选择
 - DOMAIN-SUFFIX,2mdn.net,🚀 节点选择
 - DOMAIN-SUFFIX,app-measurement.net,🚀 节点选择
+- DOMAIN-SUFFIX,c.gle,🚀 节点选择
 - DOMAIN-SUFFIX,g.co,🚀 节点选择
 - DOMAIN-SUFFIX,ggpht.com,🚀 节点选择
 - DOMAIN-SUFFIX,goo.gl,🚀 节点选择
@@ -2906,6 +2906,7 @@ rules:
 - DOMAIN-SUFFIX,spoprod-a.akamaihd.net,🚀 节点选择
 - DOMAIN-SUFFIX,storage.live.com,🚀 节点选择
 - DOMAIN-SUFFIX,storage.msn.com,🚀 节点选择
+- DOMAIN-SUFFIX,microsoftpersonalcontent.com,🚀 节点选择
 - DOMAIN-KEYWORD,porn,🚀 节点选择
 - DOMAIN-SUFFIX,8teenxxx.com,🚀 节点选择
 - DOMAIN-SUFFIX,ahcdn.com,🚀 节点选择
@@ -3069,6 +3070,7 @@ rules:
 - DOMAIN-SUFFIX,aliapp.org,🎯 全球直连
 - DOMAIN-SUFFIX,alibaba.com,🎯 全球直连
 - DOMAIN-SUFFIX,alibabacloud.com,🎯 全球直连
+- DOMAIN-SUFFIX,alibabachengdun.com,🎯 全球直连
 - DOMAIN-SUFFIX,alibabausercontent.com,🎯 全球直连
 - DOMAIN-SUFFIX,alicdn.com,🎯 全球直连
 - DOMAIN-SUFFIX,alicloudccp.com,🎯 全球直连
@@ -3087,6 +3089,7 @@ rules:
 - DOMAIN-SUFFIX,autonavi.com,🎯 全球直连
 - DOMAIN-SUFFIX,dingtalk.com,🎯 全球直连
 - DOMAIN-SUFFIX,ele.me,🎯 全球直连
+- DOMAIN-SUFFIX,elemecdn.com,🎯 全球直连
 - DOMAIN-SUFFIX,hichina.com,🎯 全球直连
 - DOMAIN-SUFFIX,mmstat.com,🎯 全球直连
 - DOMAIN-SUFFIX,mxhichina.com,🎯 全球直连
@@ -3094,6 +3097,7 @@ rules:
 - DOMAIN-SUFFIX,taobao.com,🎯 全球直连
 - DOMAIN-SUFFIX,taobaocdn.com,🎯 全球直连
 - DOMAIN-SUFFIX,tbcache.com,🎯 全球直连
+- DOMAIN-SUFFIX,tbcdn.cn,🎯 全球直连
 - DOMAIN-SUFFIX,tbcdn.com,🎯 全球直连
 - DOMAIN-SUFFIX,tmall.com,🎯 全球直连
 - DOMAIN-SUFFIX,tmall.hk,🎯 全球直连
@@ -3423,6 +3427,7 @@ rules:
 - DOMAIN-SUFFIX,air-matters.io,🎯 全球直连
 - DOMAIN-SUFFIX,aixifan.com,🎯 全球直连
 - DOMAIN-SUFFIX,algocasts.io,🎯 全球直连
+- DOMAIN-SUFFIX,asklink.com,🎯 全球直连
 - DOMAIN-SUFFIX,babytree.com,🎯 全球直连
 - DOMAIN-SUFFIX,babytreeimg.com,🎯 全球直连
 - DOMAIN-SUFFIX,baicizhan.com,🎯 全球直连
