@@ -32,153 +32,35 @@ log-level: info
 mixed-port: 7890
 mode: rule
 proxies:
-- alterId: 2
-  cipher: auto
-  name: HK_102
-  network: ws
-  port: 80
-  server: 486a4149-t0bog0-t14dgl-duku.hk3.p5pv.com
-  servername: broadcastlv.chat.bilibili.com
-  type: vmess
-  uuid: 8e0f8ef2-5fe3-11ec-a8bf-f23c91cfbbc9
-  ws-opts:
-    headers:
-      Host: broadcastlv.chat.bilibili.com
-    path: /
-- cipher: aes-256-cfb
-  name: 🇰🇷_KR_韩国
-  password: qwerREWQ@@
-  port: 4652
-  server: 218.237.185.230
-  type: ss
-- cipher: aes-256-cfb
-  name: 🇰🇷_KR_韩国_1
-  password: qwerREWQ@@
-  port: 4652
-  server: p141.panda001.net
-  type: ss
-- alterId: 2
-  cipher: auto
-  name: 🇭🇰 HK_168
-  network: ws
-  port: 80
-  server: 2e617951-sv2sg0-taj9mo-1tco3.hk3.p5pv.com
-  servername: broadcastlv.chat.bilibili.com
-  type: vmess
-  uuid: e29de954-ea01-11ef-a271-f23c91cfbbc9
-  ws-opts:
-    headers:
-      Host: broadcastlv.chat.bilibili.com
-    path: /
-- alterId: 2
-  cipher: auto
-  name: HK_134
-  network: ws
-  port: 80
-  server: 418446e2-sv2sg0-t2nkut-jx5r.hk3.p5pv.com
-  servername: broadcastlv.chat.bilibili.com
-  type: vmess
-  uuid: 73bfcc1c-5814-5f2a-b43a-3ef6af011db8
-  ws-opts:
-    headers:
-      Host: broadcastlv.chat.bilibili.com
-    path: /
-- alterId: 2
-  cipher: auto
-  name: 🇭🇰HK²_28|2.9MB/s|0%|NF|X
-  network: ws
-  port: 80
-  server: eb328762-t6ngg0-t85e8f-141tv.hk3.p5pv.com
-  servername: broadcastlv.chat.bilibili.com
-  type: vmess
-  uuid: bd77bfe8-e0f3-11ec-bd7c-f23c913c8d2b
-  ws-opts:
-    headers:
-      Host: broadcastlv.chat.bilibili.com
-    path: /
-- alterId: 2
-  cipher: auto
-  name: 🇭🇰 HK_177
-  network: ws
-  port: 80
-  server: fdda39f3-sv4n40-tasors-1tdqt.hk3.p5pv.com
-  servername: broadcastlv.chat.bilibili.com
-  type: vmess
-  uuid: 167db97c-ee01-11ef-b737-f23c91cfbbc9
-  ws-opts:
-    headers:
-      Host: broadcastlv.chat.bilibili.com
-    path: /
-- alterId: 2
-  cipher: auto
-  name: 🇭🇰 HK_102
-  network: ws
-  port: 80
-  server: 5f0f42e9-sv4n40-t7udc0-1pqhp.hk3.p5pv.com
-  servername: broadcastlv.chat.bilibili.com
-  type: vmess
-  uuid: b02327ac-a49a-11ef-a673-f23c913c8d2b
-  ws-opts:
-    headers:
-      Host: broadcastlv.chat.bilibili.com
-    path: /
-- alterId: 2
-  cipher: auto
-  name: 🇭🇰 HK_173
-  network: ws
-  port: 80
-  server: cf9c1166-sv2sg0-tcp4th-1c4g6.hk3.p5pv.com
-  servername: broadcastlv.chat.bilibili.com
-  type: vmess
-  uuid: 676c67c6-5e73-11ee-9a79-f23c9164ca5d
-  ws-opts:
-    headers:
-      Host: broadcastlv.chat.bilibili.com
-    path: /
-- alterId: 2
-  cipher: auto
-  name: HK_135
-  network: ws
-  port: 80
-  server: 04165a49-sv2sg0-t5cryd-4w8.hk3.p5pv.com
-  servername: broadcastlv.chat.bilibili.com
-  type: vmess
-  uuid: ba7a37e3-033a-e1ab-06f6-9027aa4630f5
-  ws-opts:
-    headers:
-      Host: broadcastlv.chat.bilibili.com
-    path: /
-- alterId: 2
-  cipher: auto
-  name: 🇭🇰 HK-1.36.223.11-4974
-  network: ws
-  port: 80
-  server: 80f0806d-szg740-t41p4y-1hpo0.hk3.p5pv.com
-  servername: 80f0806d-szg740-t41p4y-1hpo0.hk3.p5pv.com
-  type: vmess
-  uuid: c3dc8d26-ab2b-11ec-a8bf-f23c91cfbbc9
-  ws-opts:
-    headers:
-      Host: 80f0806d-szg740-t41p4y-1hpo0.hk3.p5pv.com
-    path: /
-- alterId: 2
-  cipher: auto
-  name: 🇭🇰 HK_172
-  network: ws
-  port: 80
-  server: 04e4679b-sv2sg0-swfla6-1rdqg.hk3.p5pv.com
-  servername: broadcastlv.chat.bilibili.com
-  type: vmess
-  uuid: 2b57ec48-0da4-11ef-8f35-f23c913c8d2b
-  ws-opts:
-    headers:
-      Host: broadcastlv.chat.bilibili.com
-    path: /
 - alpn:
   - h3
   auth-str: dongtaiwang.com
   down: 55 Mbps
   name: 🇫🇷_FR_法国
+  port: 26691
+  protocol: udp
+  server: 62.210.196.68
+  skip-cert-verify: true
+  sni: apple.com
+  type: hysteria
+  up: 11 Mbps
+- alpn:
+  - h3
+  auth-str: dongtaiwang.com
+  down: '55'
+  name: 🇫🇷_FR_法国_1
+  port: 35511
+  protocol: udp
+  server: 62.210.10.186
+  skip-cert-verify: true
+  sni: apple.com
+  type: hysteria
+  up: '11'
+- alpn:
+  - h3
+  auth-str: dongtaiwang.com
+  down: 55 Mbps
+  name: 🇫🇷_FR_法国_2
   port: 50011
   protocol: udp
   server: 62.210.10.186
@@ -186,296 +68,311 @@ proxies:
   sni: apple.com
   type: hysteria
   up: 11 Mbps
+- client-fingerprint: qq
+  encryption: none
+  flow: xtls-rprx-vision
+  name: 🇬🇧_GB_英国
+  network: tcp
+  port: 443
+  reality-opts:
+    public-key: r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs
+    short-id: 65c7748be8
+  server: 51.250.10.228
+  servername: sun6-21.userapi.com
+  tls: true
+  type: vless
+  uuid: fd4b0117-d752-46fd-9a94-21a21e360fdb
+- client-fingerprint: chrome
+  encryption: none
+  flow: xtls-rprx-vision
+  name: 🇷🇺_RU_俄罗斯
+  network: tcp
+  port: 443
+  reality-opts:
+    public-key: r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs
+    short-id: 672ff0
+  server: 178.154.205.131
+  servername: ads.x5.ru
+  tls: true
+  type: vless
+  uuid: fd4b0117-d752-46fd-9a94-21a21e360fdb
+- client-fingerprint: chrome
+  encryption: none
+  flow: xtls-rprx-vision
+  name: 🇺🇸_US_美国
+  network: tcp
+  port: 443
+  reality-opts:
+    public-key: YVDo7U4O-AT2fa5H9E7hyYHKgfZd1vB6UdbAf2ggWQE
+    short-id: 55e6af1a35e64a98
+  server: ilta-wzxrxkdhbjpnprhkkpplsjwawhssvollvxzdhqshiqckwdgrdm.orbnet.xyz
+  servername: i2pd.website
+  tls: true
+  type: vless
+  uuid: 0e8a6896-ad90-4a3b-89a3-77d64aa409e2
+- cipher: chacha20-ietf-poly1305
+  name: 🇩🇪_DE_德国
+  password: k1dBOmOB4oqi7Ump37a1bQ
+  port: 8080
+  server: 45.87.175.174
+  type: ss
+- client-fingerprint: chrome
+  encryption: none
+  name: 🇵🇱_PL_波兰
+  network: tcp
+  port: 24170
+  reality-opts:
+    public-key: VsmNi1ZMXVOwhCWpbCp51w-D_DzrxWX4jgfpcU0S9G4
+    short-id: 2fb2106a629b
+    spider-x: /
+  server: 185.136.132.171
+  servername: speedtest.net
+  tls: true
+  type: vless
+  uuid: fe21e399-ec6f-4cb5-8441-e911178665b1
 - alterId: 2
   cipher: auto
-  name: 🇭🇰 HK_187
-  network: ws
-  port: 80
-  server: 266007c7-sv4n40-syu0n5-1hd7v.hk3.p5pv.com
-  servername: broadcastlv.chat.bilibili.com
+  name: 🇫🇷 法国 09
+  network: tcp
+  port: 30835
+  server: v35.hdacd.com
+  servername: v35.hdacd.com
   type: vmess
-  uuid: f73c64bc-9e8c-11ec-bd7c-f23c913c8d2b
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+- cipher: chacha20-ietf-poly1305
+  name: 🇳🇱_NL_荷兰
+  password: uo7EbtqIwgZXXHmMv5LbLcOxptyPlNkh
+  port: 443
+  server: 178.23.190.238
+  type: ss
+- cipher: aes-128-gcm
+  name: 🇺🇸_US_美国_1
+  password: shadowsocks
+  port: 443
+  server: 173.244.56.6
+  type: ss
+- name: 🇨🇳_CN_中国
+  network: tcp
+  password: BxceQaOe
+  port: 443
+  server: 219.79.214.159
+  skip-cert-verify: true
+  sni: t.me/ripaojiedian
+  type: trojan
+- client-fingerprint: chrome
+  encryption: none
+  flow: xtls-rprx-vision
+  name: 🇨🇳_CN_中国_1
+  network: tcp
+  port: 443
+  reality-opts:
+    public-key: BkAG_uWeUj7BCHqYjrz1JyH0TMvO_KywubV7WJN17ho
+    short-id: ee6f3e8f44b1f0b6
+  server: 62.60.148.21
+  servername: st.ozone.ru
+  tls: true
+  type: vless
+  uuid: 39e5cc2f-1294-4a42-bb58-306a8be785e1
+- client-fingerprint: chrome
+  encryption: none
+  flow: xtls-rprx-vision
+  name: 🇨🇦_CA_加拿大
+  network: tcp
+  port: 8443
+  reality-opts:
+    public-key: 8W9r2aXGhKNtvPxnL6EiPpQuSm9OJT17x2xyxwxIo30
+    short-id: 84f70f1177981563
+  server: 167.17.70.16
+  servername: www.microsoft.com
+  tls: true
+  type: vless
+  uuid: 55975415-43c0-461c-8752-d5b8013364e3
+- client-fingerprint: chrome
+  encryption: none
+  grpc-opts:
+    grpc-service-name: ecb7f0f50489f81cd1983a56
+  name: 🇺🇸_US_美国_2
+  network: grpc
+  port: 443
+  reality-opts:
+    public-key: vMBfs89AZ02R1ggA45SqOFLfe6rJQ0_mLBpsV97k3zA
+    short-id: 9c8d68d581a08ea5
+  server: 208.69.78.5
+  servername: www.microsoft.com
+  tls: true
+  type: vless
+  uuid: 0a21d713-6e6f-4274-8b84-464019325513
+- client-fingerprint: firefox
+  flow: xtls-rprx-vision
+  name: 🇧🇬_BG_保加利亚
+  network: tcp
+  port: 56482
+  reality-opts:
+    public-key: W9BjX6YmCIVsjhKMlz233Yoe0xcf0SVHfvPKqbf3vCg
+  server: 178.239.124.30
+  servername: cloudcircus.jp
+  tls: true
+  type: vless
+  uuid: 2c487d9d-25a1-4b79-aed1-086b8c3082ca
+- cipher: chacha20-ietf-poly1305
+  name: 🇷🇺_RU_俄罗斯_1
+  password: HaNqw9pIE4jcx98sg7UQgHeGNTM4R2pk
+  port: 443
+  server: 194.246.114.101
+  type: ss
+- client-fingerprint: chrome
+  encryption: none
+  name: 🇬🇧_GB_英国_1
+  network: tcp
+  port: 443
+  reality-opts:
+    public-key: Ajk0QudeMVQocN88OG14PpsxparFuRJlvqzXDlW-gyQ
+    short-id: aba7bc9a
+  server: 157.173.127.224
+  servername: analytics.google.com
+  tls: true
+  type: vless
+  uuid: bec44ac3-a662-4179-a9dd-2aa881706dde
+- cipher: chacha20-ietf-poly1305
+  name: 🇮🇷_IR_伊朗
+  password: 0eC4ZBvStOgQEzTpCYjWN5
+  port: 443
+  server: 217.60.249.112
+  type: ss
+- cipher: aes-256-cfb
+  name: 🇲🇩_MD_摩尔多瓦
+  password: f8f7aCzcPKbsF8p3
+  port: 989
+  server: 185.153.197.5
+  type: ss
+- client-fingerprint: chrome
+  encryption: none
+  name: 🇺🇸_US_美国_3
+  network: ws
+  port: 443
+  server: 104.26.1.221
+  servername: dabaius2.sylu.net
+  tls: true
+  type: vless
+  uuid: 3f9c8463-8610-3ed8-86c8-a26713067825
   ws-opts:
     headers:
-      Host: broadcastlv.chat.bilibili.com
-    path: /
-- alterId: 2
+      Host: dabaius2.sylu.net
+    path: /db10240eb751d6ab
+- cipher: chacha20-ietf-poly1305
+  name: 🇺🇸_US_美国_4
+  password: f8f7aCzcPKbsF8p3
+  port: 990
+  server: 185.47.255.22
+  type: ss
+- alterId: 0
   cipher: auto
-  name: HK_139
-  network: ws
-  port: 80
-  server: 0f64e685-sv0xs0-svwnuh-1t4wg.hk3.p5pv.com
-  servername: broadcastlv.chat.bilibili.com
+  name: 🇺🇸 US_188
+  network: none
+  port: 27502
+  server: 216.238.87.47
   type: vmess
-  uuid: 1b13e20c-e778-11ef-907f-f23c913c8d2b
+  uuid: b8155ce4-7e08-4c40-800f-8671312b7124
+- cipher: chacha20-ietf
+  name: 🇨🇳_CN_中国_2
+  password: asd123456
+  port: 8388
+  server: 103.149.183.80
+  type: ss
+- client-fingerprint: chrome
+  name: defaultName
+  network: ws
+  port: 8080
+  server: www.gov.ua
+  servername: feng.ipy29c99.workers.dev
+  type: vless
+  uuid: 046da250-d5ef-4867-9095-302477d54d20
   ws-opts:
     headers:
-      Host: broadcastlv.chat.bilibili.com
+      Host: feng.ipy29c99.workers.dev
     path: /
-- alterId: 2
-  cipher: auto
-  name: 🇭🇰 HK_100
+- client-fingerprint: chrome
+  name: defaultName_1
   network: ws
-  port: 80
-  server: da79f07b-sv0xs0-t7hu58-1q1la.hk3.p5pv.com
-  servername: broadcastlv.chat.bilibili.com
-  type: vmess
-  uuid: 25b46954-9a33-11ee-8b86-f23c91cfbbc9
+  port: 8080
+  server: ip.sb
+  servername: feng.ipy29c99.workers.dev
+  type: vless
+  uuid: 046da250-d5ef-4867-9095-302477d54d20
   ws-opts:
     headers:
-      Host: broadcastlv.chat.bilibili.com
+      Host: feng.ipy29c99.workers.dev
     path: /
-- alterId: 2
-  cipher: auto
-  name: _15
-  network: ws
-  port: 80
-  server: 5b2c09e0-suvds0-t2oosc-xm0q.hk3.p5pv.com
-  servername: 5b2c09e0-suvds0-t2oosc-xm0q.hk3.p5pv.com
-  type: vmess
-  uuid: 3437f34e-1b77-11eb-8684-f23c913c8d2b
-  ws-opts:
-    headers:
-      Host: 5b2c09e0-suvds0-t2oosc-xm0q.hk3.p5pv.com
-    path: /
-- alterId: 2
-  cipher: auto
-  name: 🇭🇰 HK_77
-  network: ws
-  port: 80
-  server: 3a0b963a-t02f40-tiuovf-v3c2.hk3.p5pv.com
-  servername: broadcastlv.chat.bilibili.com
-  type: vmess
-  uuid: 5f091cbe-fb34-11ea-9777-f23c9164ca5d
-  ws-opts:
-    headers:
-      Host: broadcastlv.chat.bilibili.com
-    path: /
-- alterId: 2
-  cipher: auto
-  name: 🇭🇰HK²_55|1.5MB/s|YT|NF|X
-  network: ws
-  port: 80
-  server: 73256a3a-t53wg0-teivih-1rz31.hk3.p5pv.com
-  servername: 73256a3a-t53wg0-teivih-1rz31.hk3.p5pv.com
-  type: vmess
-  uuid: 7699767c-44ae-11ef-80c7-f23c91cfbbc9
-  ws-opts:
-    headers:
-      Host: 73256a3a-t53wg0-teivih-1rz31.hk3.p5pv.com
-    path: /
-- alterId: 2
-  cipher: auto
-  name: 🇭🇰 HK_116
-  network: ws
-  port: 80
-  server: 3f54bee7-sv4n40-tbpu76-1thmd.hk3.p5pv.com
-  servername: broadcastlv.chat.bilibili.com
-  type: vmess
-  uuid: 2d8c38cc-fc12-11ef-94aa-f23c913c8d2b
-  ws-opts:
-    headers:
-      Host: broadcastlv.chat.bilibili.com
-    path: /
-- alterId: 2
-  cipher: auto
-  name: 🇭🇰 HK-1.36.223.11-5391
-  network: ws
-  port: 80
-  server: 5e4f31de-sv0xs0-sv0wpw-17xo8.hk3.p5pv.com
-  servername: 5e4f31de-sv0xs0-sv0wpw-17xo8.hk3.p5pv.com
-  type: vmess
-  uuid: b4e40aa2-74a1-11ed-b0b5-f23c9164ca5d
-  ws-opts:
-    headers:
-      Host: 5e4f31de-sv0xs0-sv0wpw-17xo8.hk3.p5pv.com
-    path: /
-- alterId: 2
-  cipher: auto
-  name: 🇭🇰 HK_160
-  network: ws
-  port: 80
-  server: 272ffc58-sv2sg0-t4v3jz-1k8ga.hk3.p5pv.com
-  servername: broadcastlv.chat.bilibili.com
-  type: vmess
-  uuid: f860f2da-5035-11ed-bb74-f23c9164ca5d
-  ws-opts:
-    headers:
-      Host: broadcastlv.chat.bilibili.com
-    path: /
-- alterId: 2
-  cipher: auto
-  name: 🇭🇰 HK_124
-  network: ws
-  port: 80
-  server: a0ae8f27-sv4n40-sw5wi7-ufc0.hk3.p5pv.com
-  servername: broadcastlv.chat.bilibili.com
-  type: vmess
-  uuid: 22308988-8548-11ea-a22e-f23c91cfbbc9
-  ws-opts:
-    headers:
-      Host: broadcastlv.chat.bilibili.com
-    path: /
-- alterId: 2
-  cipher: auto
-  name: 🇭🇰 HK_171
-  network: ws
-  port: 80
-  server: 6bbeaaf6-sv4n40-t8tsp0-1szmi.hk3.p5pv.com
-  servername: broadcastlv.chat.bilibili.com
-  type: vmess
-  uuid: ba151628-b3a2-11ef-bdb9-f23c91cfbbc9
-  ws-opts:
-    headers:
-      Host: broadcastlv.chat.bilibili.com
-    path: /
-- alterId: 2
-  cipher: auto
-  name: 🇭🇰HK²_24|1.8MB/s|2%|YT|X
-  network: ws
-  port: 80
-  server: 6bbacbda-t1ekg0-t2uo6p-yjq0.hk3.p5pv.com
-  servername: 6bbacbda-t1ekg0-t2uo6p-yjq0.hk3.p5pv.com
-  type: vmess
-  uuid: 25b2699a-e18e-11ec-8e69-f23c91cfbbc9
-  ws-opts:
-    headers:
-      Host: 6bbacbda-t1ekg0-t2uo6p-yjq0.hk3.p5pv.com
-    path: /
-- alterId: 2
-  cipher: auto
-  name: 🇭🇰 HK_103
-  network: ws
-  port: 80
-  server: 2bc8c2b4-sv0xs0-tcr97d-2b2n.hk3.p5pv.com
-  servername: broadcastlv.chat.bilibili.com
-  type: vmess
-  uuid: fcd39788-ca23-11ed-86e2-f23c913c8d2b
-  ws-opts:
-    headers:
-      Host: broadcastlv.chat.bilibili.com
-    path: /
-- alterId: 2
-  cipher: auto
-  name: 🇭🇰 HK_104
-  network: ws
-  port: 80
-  server: 10cd2f16-sv2sg0-t7hu58-1q1la.hk3.p5pv.com
-  servername: broadcastlv.chat.bilibili.com
-  type: vmess
-  uuid: 25b46954-9a33-11ee-8b86-f23c91cfbbc9
-  ws-opts:
-    headers:
-      Host: broadcastlv.chat.bilibili.com
-    path: /
-- alterId: 2
-  cipher: auto
-  name: 🇭🇰 HK_179
-  network: ws
-  port: 80
-  server: 1dd7778a-sv4n40-szxh9w-46gc.hk3.p5pv.com
-  servername: broadcastlv.chat.bilibili.com
-  type: vmess
-  uuid: 225d1cca-d744-11ef-b790-f23c91cfbbc9
-  ws-opts:
-    headers:
-      Host: broadcastlv.chat.bilibili.com
-    path: /
-- alterId: 2
-  cipher: auto
-  name: 🇭🇰 HK_64
-  network: ws
-  port: 80
-  server: 4cdbea97-t53wg0-to8xn3-l4nv.hk3.p5pv.com
-  servername: broadcastlv.chat.bilibili.com
-  type: vmess
-  uuid: 1469e09e-027c-11ec-a0fc-f23c913c8d2b
-  ws-opts:
-    headers:
-      Host: broadcastlv.chat.bilibili.com
-    path: /
-- alterId: 2
-  cipher: auto
-  name: 🇭🇰 HK_66
-  network: ws
-  port: 80
-  server: dfed4efb-t4n8g0-t636g9-luwe.hk3.p5pv.com
-  servername: broadcastlv.chat.bilibili.com
-  type: vmess
-  uuid: a2b0fd2b-716f-0df8-d4e2-03a1c00e5f1a
-  ws-opts:
-    headers:
-      Host: broadcastlv.chat.bilibili.com
-    path: /
+- encryption: none
+  name: 🇷🇺_RU_俄罗斯_2
+  network: tcp
+  port: 58349
+  server: 31.44.0.63
+  type: vless
+  uuid: 48a8cab5-ce75-4c8a-90f5-dcd020c89b4b
 proxy-groups:
 - name: 🚀 节点选择
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - HK_102
-  - 🇰🇷_KR_韩国
-  - 🇰🇷_KR_韩国_1
-  - 🇭🇰 HK_168
-  - HK_134
-  - 🇭🇰HK²_28|2.9MB/s|0%|NF|X
-  - 🇭🇰 HK_177
-  - 🇭🇰 HK_102
-  - 🇭🇰 HK_173
-  - HK_135
-  - 🇭🇰 HK-1.36.223.11-4974
-  - 🇭🇰 HK_172
   - 🇫🇷_FR_法国
-  - 🇭🇰 HK_187
-  - HK_139
-  - 🇭🇰 HK_100
-  - _15
-  - 🇭🇰 HK_77
-  - 🇭🇰HK²_55|1.5MB/s|YT|NF|X
-  - 🇭🇰 HK_116
-  - 🇭🇰 HK-1.36.223.11-5391
-  - 🇭🇰 HK_160
-  - 🇭🇰 HK_124
-  - 🇭🇰 HK_171
-  - 🇭🇰HK²_24|1.8MB/s|2%|YT|X
-  - 🇭🇰 HK_103
-  - 🇭🇰 HK_104
-  - 🇭🇰 HK_179
-  - 🇭🇰 HK_64
-  - 🇭🇰 HK_66
+  - 🇫🇷_FR_法国_1
+  - 🇫🇷_FR_法国_2
+  - 🇬🇧_GB_英国
+  - 🇷🇺_RU_俄罗斯
+  - 🇺🇸_US_美国
+  - 🇩🇪_DE_德国
+  - 🇵🇱_PL_波兰
+  - 🇫🇷 法国 09
+  - 🇳🇱_NL_荷兰
+  - 🇺🇸_US_美国_1
+  - 🇨🇳_CN_中国
+  - 🇨🇳_CN_中国_1
+  - 🇨🇦_CA_加拿大
+  - 🇺🇸_US_美国_2
+  - 🇧🇬_BG_保加利亚
+  - 🇷🇺_RU_俄罗斯_1
+  - 🇬🇧_GB_英国_1
+  - 🇮🇷_IR_伊朗
+  - 🇲🇩_MD_摩尔多瓦
+  - 🇺🇸_US_美国_3
+  - 🇺🇸_US_美国_4
+  - 🇺🇸 US_188
+  - 🇨🇳_CN_中国_2
+  - defaultName
+  - defaultName_1
+  - 🇷🇺_RU_俄罗斯_2
   type: select
 - interval: 300
   name: ♻️ 自动选择
   proxies:
-  - HK_102
-  - 🇰🇷_KR_韩国
-  - 🇰🇷_KR_韩国_1
-  - 🇭🇰 HK_168
-  - HK_134
-  - 🇭🇰HK²_28|2.9MB/s|0%|NF|X
-  - 🇭🇰 HK_177
-  - 🇭🇰 HK_102
-  - 🇭🇰 HK_173
-  - HK_135
-  - 🇭🇰 HK-1.36.223.11-4974
-  - 🇭🇰 HK_172
   - 🇫🇷_FR_法国
-  - 🇭🇰 HK_187
-  - HK_139
-  - 🇭🇰 HK_100
-  - _15
-  - 🇭🇰 HK_77
-  - 🇭🇰HK²_55|1.5MB/s|YT|NF|X
-  - 🇭🇰 HK_116
-  - 🇭🇰 HK-1.36.223.11-5391
-  - 🇭🇰 HK_160
-  - 🇭🇰 HK_124
-  - 🇭🇰 HK_171
-  - 🇭🇰HK²_24|1.8MB/s|2%|YT|X
-  - 🇭🇰 HK_103
-  - 🇭🇰 HK_104
-  - 🇭🇰 HK_179
-  - 🇭🇰 HK_64
-  - 🇭🇰 HK_66
+  - 🇫🇷_FR_法国_1
+  - 🇫🇷_FR_法国_2
+  - 🇬🇧_GB_英国
+  - 🇷🇺_RU_俄罗斯
+  - 🇺🇸_US_美国
+  - 🇩🇪_DE_德国
+  - 🇵🇱_PL_波兰
+  - 🇫🇷 法国 09
+  - 🇳🇱_NL_荷兰
+  - 🇺🇸_US_美国_1
+  - 🇨🇳_CN_中国
+  - 🇨🇳_CN_中国_1
+  - 🇨🇦_CA_加拿大
+  - 🇺🇸_US_美国_2
+  - 🇧🇬_BG_保加利亚
+  - 🇷🇺_RU_俄罗斯_1
+  - 🇬🇧_GB_英国_1
+  - 🇮🇷_IR_伊朗
+  - 🇲🇩_MD_摩尔多瓦
+  - 🇺🇸_US_美国_3
+  - 🇺🇸_US_美国_4
+  - 🇺🇸 US_188
+  - 🇨🇳_CN_中国_2
+  - defaultName
+  - defaultName_1
+  - 🇷🇺_RU_俄罗斯_2
   type: url-test
   url: http://www.gstatic.com/generate_204
 - name: 🎯 全球直连
@@ -494,37 +391,108 @@ proxy-groups:
   - 🚀 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
-  - HK_102
-  - 🇰🇷_KR_韩国
-  - 🇰🇷_KR_韩国_1
-  - 🇭🇰 HK_168
-  - HK_134
-  - 🇭🇰HK²_28|2.9MB/s|0%|NF|X
-  - 🇭🇰 HK_177
-  - 🇭🇰 HK_102
-  - 🇭🇰 HK_173
-  - HK_135
-  - 🇭🇰 HK-1.36.223.11-4974
-  - 🇭🇰 HK_172
   - 🇫🇷_FR_法国
-  - 🇭🇰 HK_187
-  - HK_139
-  - 🇭🇰 HK_100
-  - _15
-  - 🇭🇰 HK_77
-  - 🇭🇰HK²_55|1.5MB/s|YT|NF|X
-  - 🇭🇰 HK_116
-  - 🇭🇰 HK-1.36.223.11-5391
-  - 🇭🇰 HK_160
-  - 🇭🇰 HK_124
-  - 🇭🇰 HK_171
-  - 🇭🇰HK²_24|1.8MB/s|2%|YT|X
-  - 🇭🇰 HK_103
-  - 🇭🇰 HK_104
-  - 🇭🇰 HK_179
-  - 🇭🇰 HK_64
-  - 🇭🇰 HK_66
+  - 🇫🇷_FR_法国_1
+  - 🇫🇷_FR_法国_2
+  - 🇬🇧_GB_英国
+  - 🇷🇺_RU_俄罗斯
+  - 🇺🇸_US_美国
+  - 🇩🇪_DE_德国
+  - 🇵🇱_PL_波兰
+  - 🇫🇷 法国 09
+  - 🇳🇱_NL_荷兰
+  - 🇺🇸_US_美国_1
+  - 🇨🇳_CN_中国
+  - 🇨🇳_CN_中国_1
+  - 🇨🇦_CA_加拿大
+  - 🇺🇸_US_美国_2
+  - 🇧🇬_BG_保加利亚
+  - 🇷🇺_RU_俄罗斯_1
+  - 🇬🇧_GB_英国_1
+  - 🇮🇷_IR_伊朗
+  - 🇲🇩_MD_摩尔多瓦
+  - 🇺🇸_US_美国_3
+  - 🇺🇸_US_美国_4
+  - 🇺🇸 US_188
+  - 🇨🇳_CN_中国_2
+  - defaultName
+  - defaultName_1
+  - 🇷🇺_RU_俄罗斯_2
   type: select
+rule-providers:
+  BanAD:
+    behavior: classical
+    interval: 86400
+    path: ./rules/providers/BanAD.list
+    type: http
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
+  BanProgramAD:
+    behavior: classical
+    interval: 86400
+    path: ./rules/providers/BanProgramAD.list
+    type: http
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
+  ChinaCompanyIp:
+    behavior: classical
+    interval: 86400
+    path: ./rules/providers/ChinaCompanyIp.list
+    type: http
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
+  ChinaDomain:
+    behavior: classical
+    interval: 86400
+    path: ./rules/providers/ChinaDomain.list
+    type: http
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+  GoogleCN:
+    behavior: classical
+    interval: 86400
+    path: ./rules/providers/GoogleCN.list
+    type: http
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
+  LocalAreaNetwork:
+    behavior: classical
+    interval: 86400
+    path: ./rules/providers/LocalAreaNetwork.list
+    type: http
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+  ProxyLite:
+    behavior: classical
+    interval: 86400
+    path: ./rules/providers/ProxyLite.list
+    type: http
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list
+  ProxyMedia:
+    behavior: classical
+    interval: 86400
+    path: ./rules/providers/ProxyMedia.list
+    type: http
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
+  SteamCN:
+    behavior: classical
+    interval: 86400
+    path: ./rules/providers/SteamCN.list
+    type: http
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/SteamCN.list
+  Telegram:
+    behavior: classical
+    interval: 86400
+    path: ./rules/providers/Telegram.list
+    type: http
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
+rules:
+- RULE-SET,LocalAreaNetwork,🎯 全球直连
+- RULE-SET,BanAD,🛑 全球拦截
+- RULE-SET,BanProgramAD,🛑 全球拦截
+- RULE-SET,GoogleCN,🎯 全球直连
+- RULE-SET,SteamCN,🎯 全球直连
+- RULE-SET,Telegram,🚀 节点选择
+- RULE-SET,ProxyMedia,🚀 节点选择
+- RULE-SET,ProxyLite,🚀 节点选择
+- RULE-SET,ChinaDomain,🎯 全球直连
+- RULE-SET,ChinaCompanyIp,🎯 全球直连
+- GEOIP,CN,🎯 全球直连
+- MATCH,🐟 漏网之鱼
 tun:
   auto-detect-interface: true
   auto-route: true
