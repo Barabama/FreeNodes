@@ -5,29 +5,6 @@ mode: Rule
 port: 7890
 proxies:
 - flow: xtls-rprx-vision
-  name: 🇨🇭CH²_1|3.2MB/s|0%|GPT|X|[广播|机房]
-  network: tcp
-  port: 443
-  server: 138.124.79.4
-  servername: sun6-21.userapi.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: d6b1327d-2bec-4366-a3a1-9b1284f95841
-- grpc-opts:
-    grpc-service-name: grpc
-  name: US
-  network: grpc
-  port: 22955
-  server: 152.53.51.24
-  servername: one-piece.com
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 63f92f3c-447c-4283-80b9-0af8e164cdad
-- flow: xtls-rprx-vision
   name: 丹麥
   network: tcp
   port: 443
@@ -40,164 +17,7 @@ proxies:
   uuid: 84f66368-8a37-468e-ae95-5622255fd4db
 - grpc-opts:
     grpc-service-name: grpc
-  name: 奧地利
-  network: grpc
-  port: 22955
-  server: 152.53.48.224
-  servername: one-piece.com
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 63f92f3c-447c-4283-80b9-0af8e164cdad
-- flow: xtls-rprx-vision
   name: 德國_1
-  network: tcp
-  port: 443
-  server: 159.195.26.28
-  servername: live.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 84f66368-8a37-468e-ae95-5622255fd4db
-- flow: xtls-rprx-vision
-  name: 俄羅斯_1
-  network: tcp
-  port: 443
-  server: 176.125.240.166
-  servername: apple.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 002accb526534fcab24a72b0ea1cff59
-- grpc-opts:
-    grpc-service-name: grpc
-  name: 🇦🇹AT_2|⬇️4.4MB/s
-  network: grpc
-  port: 22955
-  server: 152.53.48.237
-  servername: one-piece.com
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 63f92f3c-447c-4283-80b9-0af8e164cdad
-- flow: xtls-rprx-vision
-  name: 🇸🇪SE_1|⬇️2.7MB/s
-  network: tcp
-  port: 443
-  server: 176.125.240.166
-  servername: apple.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 002accb526534fcab24a72b0ea1cff59
-- flow: xtls-rprx-vision
-  name: 芬蘭_1
-  network: tcp
-  port: 8443
-  server: 78.153.139.68
-  servername: images.apple.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: fd8972d7-cf5e-11f0-9970-45e1d80c4039
-- name: 美國_1
-  network: tcp
-  port: 33093
-  server: m1.melalgame.com
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 2c2143d5-5d80-4a76-8094-88f1e47251ca
-- flow: xtls-rprx-vision
-  name: 芬蘭_2
-  network: tcp
-  port: 443
-  server: 135.181.155.97
-  servername: www.cloudflare.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 309fa273-6579-4cb2-9143-7cad50401eba
-- flow: xtls-rprx-vision
-  name: 芬蘭_3
-  network: tcp
-  port: 8443
-  server: 78.153.139.68
-  servername: images.apple.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: fd8972d7-cf5e-11f0-9970-45e1d80c4039
-- grpc-opts:
-    grpc-service-name: grpc
-  name: 德國_2
-  network: grpc
-  port: 22955
-  server: dfg.octopusss.net
-  servername: one-piece.com
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 63f92f3c-447c-4283-80b9-0af8e164cdad
-- flow: xtls-rprx-vision
-  name: 荷蘭_1
-  network: tcp
-  port: 443
-  server: 94.228.213.219
-  servername: hls-svod.itunes.apple.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 45e3b7ad-03b6-42fc-b616-1e92bdd0a5b3
-- flow: xtls-rprx-vision
-  name: 🇷🇺RU_1|⬇️3.5MB/s
-  network: tcp
-  port: 443
-  server: 217.12.40.76
-  servername: sun9-38.userapi.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: c38e6142-9223-47ef-84ce-2a84a308cafb
-- name: 俄羅斯_2
-  network: tcp
-  port: 47539
-  server: 178.17.53.28
-  servername: yandex.ru
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 447c45cd-ade0-4bfe-90a0-3e581829f741
-- name: 美國_2
-  network: ws
-  port: 2053
-  server: xhero.kharabetam.de
-  servername: mrx.xher0.de
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 33a57acf-163f-4cdd-8b23-cc52a58f2362
-  ws-opts:
-    headers:
-      host: mrx.xher0.de
-    path: /IfUknowThenUKnow
-- grpc-opts:
-    grpc-service-name: grpc
-  name: 德國_3
   network: grpc
   port: 22955
   server: 5.45.109.158
@@ -207,42 +27,9 @@ proxies:
   type: vless
   udp: true
   uuid: 63f92f3c-447c-4283-80b9-0af8e164cdad
-- flow: xtls-rprx-vision
-  name: 日本_1
-  network: tcp
-  port: 26978
-  server: sakura.bunnywaffle.org
-  servername: tesla.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 9042affd-0ad3-4014-adbc-e52f00891ea2
-- flow: xtls-rprx-vision
-  name: 美国_1
-  network: tcp
-  port: 22231
-  server: u1.mizulina.top
-  servername: u1.mizulina.top
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 2ad04efa-d18a-442b-875f-48d12e11d822
-- flow: xtls-rprx-vision
-  name: 荷蘭_2
-  network: tcp
-  port: 22231
-  server: u1.mizulina.top
-  servername: u1.mizulina.top
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 2ad04efa-d18a-442b-875f-48d12e11d822
 - grpc-opts:
     grpc-service-name: grpc
-  name: 德國_4
+  name: 德國_2
   network: grpc
   port: 22955
   server: 152.53.51.24
@@ -252,263 +39,6 @@ proxies:
   type: vless
   udp: true
   uuid: 63f92f3c-447c-4283-80b9-0af8e164cdad
-- grpc-opts:
-    grpc-service-name: grpc
-  name: 德國_5
-  network: grpc
-  port: 22955
-  server: 152.53.50.126
-  servername: one-piece.com
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 63f92f3c-447c-4283-80b9-0af8e164cdad
-- flow: xtls-rprx-vision
-  name: 德國_6
-  network: tcp
-  port: 8443
-  server: 78.153.139.68
-  servername: images.apple.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: fd8972d7-cf5e-11f0-9970-45e1d80c4039
-- flow: xtls-rprx-vision
-  name: 法國
-  network: tcp
-  port: 443
-  server: 138.124.79.4
-  servername: sun6-21.userapi.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: d6b1327d-2bec-4366-a3a1-9b1284f95841
-- flow: xtls-rprx-vision
-  name: 德國_7
-  network: tcp
-  port: 443
-  server: 94.228.213.219
-  servername: hls-svod.itunes.apple.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 45e3b7ad-03b6-42fc-b616-1e92bdd0a5b3
-- name: 德國_8
-  network: tcp
-  port: 47539
-  server: 178.17.53.28
-  servername: yandex.ru
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 447c45cd-ade0-4bfe-90a0-3e581829f741
-- flow: xtls-rprx-vision
-  name: 日本_2
-  network: tcp
-  port: 443
-  server: ilta-wzxrxkdhbjpnprhkkpplsjwawhssvollvxzdhqshiqckwdgrdm.orbnet.xyz
-  servername: i2pd.website
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 0e8a6896-ad90-4a3b-89a3-77d64aa409e2
-- flow: xtls-rprx-vision-udp443
-  name: 荷蘭_3
-  network: tcp
-  port: 22231
-  server: u1.mizulina.top
-  servername: u1.mizulina.top
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 2ad04efa-d18a-442b-875f-48d12e11d822
-- flow: xtls-rprx-vision
-  name: 荷蘭_4
-  network: tcp
-  port: 443
-  server: 185.28.119.14
-  servername: sberbank.ru
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 5dd5d72b-1965-44f3-b342-5e96bcb921cb
-- flow: xtls-rprx-vision
-  name: 美國_3
-  network: tcp
-  port: 26978
-  server: sakura.bunnywaffle.org
-  servername: tesla.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 9042affd-0ad3-4014-adbc-e52f00891ea2
-- name: 德國_9
-  network: ws
-  port: 2053
-  server: xhero.kharabetam.de
-  servername: mrx.xher0.de
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 33a57acf-163f-4cdd-8b23-cc52a58f2362
-  ws-opts:
-    headers:
-      host: mrx.xher0.de
-    path: /IfUknowThenUKnow
-- name: 美国_2
-  network: tcp
-  port: 33093
-  server: m1.melalgame.com
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 2c2143d5-5d80-4a76-8094-88f1e47251ca
-- grpc-opts:
-    grpc-service-name: grpc
-  name: 德國_10
-  network: grpc
-  port: 22955
-  server: 152.53.48.237
-  servername: one-piece.com
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 63f92f3c-447c-4283-80b9-0af8e164cdad
-- grpc-opts:
-    grpc-service-name: grpc
-  name: 德國_11
-  network: grpc
-  port: 22955
-  server: 152.53.48.224
-  servername: one-piece.com
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 63f92f3c-447c-4283-80b9-0af8e164cdad
-- name: 未知VLESS-99|free-nodes
-  network: tcp
-  port: 443
-  server: neth.pingxbaz.com
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: b3176e0b-ffaf-4e1b-fd8a-c073bcc4272d
-- name: 未知VLESS-76|free-nodes
-  network: ws
-  port: 443
-  server: dns.turboo-server.space
-  servername: serverpro.turbooo-server.com
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 60a2998c-cd85-562e-a3fd-396e4925dd3a
-  ws-opts:
-    headers:
-      host: serverpro.turbooo-server.com
-    path: /turboo-server
-- name: DEVLESS-52|free-nodes
-  network: ws
-  port: 443
-  server: 172.64.152.23
-  servername: ch1.sooot.ir
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 1b9d8449-479f-40a0-a326-1a5ea3481c42
-  ws-opts:
-    headers:
-      host: ch1.sooot.ir
-    path: /
-- name: DEVLESS-95|free-nodes
-  network: ws
-  port: 8443
-  server: 172.64.152.23
-  servername: chat.tk-panshop.top.
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 97c9ede9-bab1-45a5-a309-4f74715da80c
-  ws-opts:
-    headers:
-      host: chat.tk-panshop.top.
-    path: /
-- name: DEVLESS-60|free-nodes
-  network: ws
-  port: 2053
-  server: xhero.kharabetam.de
-  servername: mrx.xher0.de
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 33a57acf-163f-4cdd-8b23-cc52a58f2362
-  ws-opts:
-    headers:
-      host: mrx.xher0.de
-    path: /IfUknowThenUKnow
-- grpc-opts:
-    grpc-service-name: downloads.3cx.com
-  name: 未知VLESS-120|free-nodes
-  network: grpc
-  port: 5001
-  server: lv.fastdbn.com
-  servername: services.3cx.com
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: ec7f2b6a-d627-40ea-a017-36052c4ba426
-- flow: xtls-rprx-vision
-  name: 未知VLESS-48|free-nodes
-  network: tcp
-  port: 443
-  server: ilta-wzxrxkdhbjpnprhkkpplsjwawhssvollvxzdhqshiqckwdgrdm.orbnet.xyz
-  servername: i2pd.website
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 0e8a6896-ad90-4a3b-89a3-77d64aa409e2
-- grpc-opts:
-    grpc-service-name: grpc
-  name: DEVLESS-79|free-nodes
-  network: grpc
-  port: 22955
-  server: dfg.octopusss.net
-  servername: one-piece.com
-  skip-cert-verify: true
-  tls: true
-  type: vless
-  udp: true
-  uuid: 63f92f3c-447c-4283-80b9-0af8e164cdad
-- flow: xtls-rprx-vision
-  name: USVLESS-75|free-nodes
-  network: tcp
-  port: 443
-  server: 185.28.119.14
-  servername: sberbank.ru
-  skip-cert-verify: true
-  tls: false
-  type: vless
-  udp: true
-  uuid: 5dd5d72b-1965-44f3-b342-5e96bcb921cb
 - grpc-opts:
     grpc-service-name: grpc
   name: 未知VLESS-78|free-nodes
@@ -521,90 +51,481 @@ proxies:
   type: vless
   udp: true
   uuid: 63f92f3c-447c-4283-80b9-0af8e164cdad
-- flow: xtls-rprx-vision-udp443
-  name: 未知VLESS-57|free-nodes
+- flow: xtls-rprx-vision
+  name: 🇳🇱NL_1|⬇️4.1MB/s
   network: tcp
-  port: 22231
-  server: u1.mizulina.top
-  servername: u1.mizulina.top
+  port: 443
+  server: nl2.miyazono-kaori.com
+  servername: www.philips.com
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: 937f8940-ad8a-409f-93c3-4d6249af628f
+- flow: xtls-rprx-vision
+  name: 🇺🇸US_51|⬇️5.4MB/s
+  network: tcp
+  port: 44513
+  server: mbqg940.26l6c42.rkzn8ni.vm331.cn
+  servername: www.discoverasr.com
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: ca2da009-aa7f-46f2-9ca4-c88594ebab9e
+- name: 🇨🇭CH_1|⬇️2.8MB/s
+  network: ws
+  port: 8443
+  server: v2.dabache.top
+  servername: ir.irannet.shop
   skip-cert-verify: true
   tls: true
   type: vless
   udp: true
-  uuid: 2ad04efa-d18a-442b-875f-48d12e11d822
-- name: 🇭🇰HK_33|⬇️7.4MB/s
+  uuid: 96863176-edbb-47dd-9b56-1d4582a6f9c0
+  ws-opts:
+    headers:
+      host: ir.irannet.shop
+    path: /hshsHhdsgj54645sgsSdc
+- flow: xtls-rprx-vision
+  name: 🇬🇧GB_5|⬇️4.6MB/s
   network: tcp
-  password: 869e9086806483ca4744a4cb0f3d6e16
+  port: 55543
+  server: mbqg940.26l6c42.rkzn8ni.vm331.cn
+  servername: www.discoverasr.com
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: ca2da009-aa7f-46f2-9ca4-c88594ebab9e
+- flow: xtls-rprx-vision
+  name: 🇳🇱NL_5|⬇️2.3MB/s
+  network: tcp
   port: 443
-  server: 58.152.110.210
+  server: 94.228.213.201
+  servername: hls-svod.itunes.apple.com
   skip-cert-verify: true
-  sni: www.nintendogames.net
-  type: trojan
+  tls: false
+  type: vless
   udp: true
-- name: 美國_4
-  network: grpc
-  password: iWnFtzMiac
-  port: 19258
-  server: 205.185.115.223
-  skip-cert-verify: true
-  sni: cloudflare.com
-  type: trojan
-  udp: true
-- name: 英國_1
+  uuid: 45e3b7ad-03b6-42fc-b616-1e92bdd0a5b3
+- flow: xtls-rprx-vision
+  name: 🇳🇱NL_4|⬇️2.9MB/s
   network: tcp
-  password: d598140e-ce53-489d-9769-fb4944f8472d
-  port: 41274
-  server: xiaozhu1.kkieo555.cn
+  port: 443
+  server: 94.228.215.12
+  servername: hls-svod.itunes.apple.com
   skip-cert-verify: true
-  sni: douyin.com
-  type: trojan
+  tls: false
+  type: vless
   udp: true
-- name: 英國_2
+  uuid: 45e3b7ad-03b6-42fc-b616-1e92bdd0a5b3
+- flow: xtls-rprx-vision
+  name: US_1
   network: tcp
-  password: b6e7df8e-00af-4981-aaa8-7f25a963d8f0
-  port: 41274
-  server: xiaozhu1.kkieo555.cn
+  port: 443
+  server: nl1.miyazono-kaori.com
+  servername: www.philips.com
   skip-cert-verify: true
-  sni: douyin.com
-  type: trojan
+  tls: false
+  type: vless
   udp: true
-- name: 英國_3
+  uuid: 937f8940-ad8a-409f-93c3-4d6249af628f
+- flow: xtls-rprx-vision
+  name: 🇷🇺RU_3|⬇️2.9MB/s
   network: tcp
-  password: 6628478a-87a4-49f0-83f6-071d3a19b6a8
-  port: 41274
-  server: xiaozhu1.kkieo555.cn
+  port: 443
+  server: 185.234.59.173
+  servername: hls-svod.itunes.apple.com
   skip-cert-verify: true
-  sni: douyin.com
-  type: trojan
+  tls: false
+  type: vless
   udp: true
-- name: 英國_4
+  uuid: 45e3b7ad-03b6-42fc-b616-1e92bdd0a5b3
+- flow: xtls-rprx-vision
+  name: 🇬🇧GB_1|⬇️3.8MB/s
   network: tcp
-  password: 0d6c17ce-b1e1-4d2a-b5d4-eda00f983106
-  port: 41274
-  server: xiaozhu1.kkieo555.cn
+  port: 443
+  server: uk1.miyazono-kaori.com
+  servername: www.bp.com
   skip-cert-verify: true
-  sni: douyin.com
-  type: trojan
+  tls: false
+  type: vless
   udp: true
-- name: 英國_5
+  uuid: 937f8940-ad8a-409f-93c3-4d6249af628f
+- flow: xtls-rprx-vision
+  name: 🇬🇧GB_2|⬇️3.0MB/s
   network: tcp
-  password: cd60dc54-250d-4205-ad0c-64ac85999663
-  port: 41274
-  server: xiaozhu1.kkieo555.cn
+  port: 443
+  server: uk2.miyazono-kaori.com
+  servername: www.bp.com
   skip-cert-verify: true
-  sni: douyin.com
-  type: trojan
+  tls: false
+  type: vless
   udp: true
-- name: 英國_6
+  uuid: 937f8940-ad8a-409f-93c3-4d6249af628f
+- flow: xtls-rprx-vision
+  name: 🇷🇺RU_2|⬇️3.8MB/s
   network: tcp
-  password: 43874c51-a12c-4708-aefa-468958c4831c
-  port: 41274
-  server: xiaozhu1.kkieo555.cn
+  port: 443
+  server: 185.234.59.174
+  servername: hls-svod.itunes.apple.com
   skip-cert-verify: true
-  sni: douyin.com
+  tls: false
+  type: vless
+  udp: true
+  uuid: 45e3b7ad-03b6-42fc-b616-1e92bdd0a5b3
+- flow: xtls-rprx-vision
+  name: 🇺🇸US_18|⬇️4.7MB/s
+  network: tcp
+  port: 443
+  server: us2.miyazono-kaori.com
+  servername: download-porter.hoyoverse.com
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: 937f8940-ad8a-409f-93c3-4d6249af628f
+- flow: xtls-rprx-vision
+  name: 🇯🇵JP_5|⬇️8.9MB/s
+  network: tcp
+  port: 58494
+  server: mbqg940.26l6c42.rkzn8ni.vm331.cn
+  servername: www.discoverasr.com
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: ca2da009-aa7f-46f2-9ca4-c88594ebab9e
+- flow: xtls-rprx-vision
+  name: US_2
+  network: tcp
+  port: 443
+  server: 2026.01.1.hk.aimirror.top
+  servername: www.icloud.com
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: eeaa07ca-2693-42f8-e544-a16521d8e922
+- flow: xtls-rprx-vision
+  name: US_3
+  network: tcp
+  port: 58473
+  server: mbqg940.26l6c42.rkzn8ni.vm331.cn
+  servername: www.discoverasr.com
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: ca2da009-aa7f-46f2-9ca4-c88594ebab9e
+- flow: xtls-rprx-vision
+  name: 台灣
+  network: tcp
+  port: 20280
+  server: hinet4.gzcloud.shop
+  servername: buylite.music.apple.com
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: a2d12dc9-c111-45ac-b803-87e48f3484d8
+- flow: xtls-rprx-vision
+  name: 德國_3
+  network: tcp
+  port: 443
+  server: 159.195.26.28
+  servername: live.com
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: 84f66368-8a37-468e-ae95-5622255fd4db
+- flow: xtls-rprx-vision
+  name: 德國_4
+  network: tcp
+  port: 35888
+  server: free2.lulu.autos
+  servername: swdist.apple.com
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: 670f73dc-2598-4995-b3fb-e9875fb479c5
+- flow: xtls-rprx-vision
+  name: 瑞典
+  network: tcp
+  port: 443
+  server: 176.125.240.166
+  servername: apple.com
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: 002accb526534fcab24a72b0ea1cff59
+- flow: xtls-rprx-vision
+  name: 德國_5
+  network: tcp
+  port: 35888
+  server: free2.lulu.autos
+  servername: swdist.apple.com
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: 7d1ae5d1-97bd-491f-b5a5-7ed6ca5e8b48
+- flow: xtls-rprx-vision
+  name: 芬蘭
+  network: tcp
+  port: 8443
+  server: 78.153.139.68
+  servername: images.apple.com
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: fd8972d7-cf5e-11f0-9970-45e1d80c4039
+- flow: xtls-rprx-vision
+  name: 德國_6
+  network: tcp
+  port: 8443
+  server: 78.153.139.68
+  servername: images.apple.com
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: fd8972d7-cf5e-11f0-9970-45e1d80c4039
+- flow: xtls-rprx-vision
+  name: 俄羅斯_1
+  network: tcp
+  port: 443
+  server: 176.125.240.166
+  servername: apple.com
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: 002accb526534fcab24a72b0ea1cff59
+- flow: xtls-rprx-vision
+  name: 拉脫維亞_1
+  network: tcp
+  port: 443
+  server: 188.253.16.31
+  servername: yahoo.com
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: 43135731-165e-4064-872e-7e9447fbebfb
+- flow: xtls-rprx-vision
+  name: 拉脫維亞_2
+  network: tcp
+  port: 443
+  server: 188.253.16.31
+  servername: yahoo.com
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: a8c099ce-04d8-43d2-8100-34e72f7beba4
+- name: 美国_1
+  network: tcp
+  port: 33093
+  server: m1.melalgame.com
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: 2c2143d5-5d80-4a76-8094-88f1e47251ca
+- flow: xtls-rprx-vision
+  name: 巴西
+  network: tcp
+  port: 443
+  server: 138.124.79.4
+  servername: sun6-21.userapi.com
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: d6b1327d-2bec-4366-a3a1-9b1284f95841
+- flow: xtls-rprx-vision
+  name: 拉脫維亞_3
+  network: tcp
+  port: 443
+  server: 188.253.16.31
+  servername: yahoo.com
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: b79ba265-aff0-4d16-9322-7b124465dc38
+- flow: xtls-rprx-vision
+  name: 美國_1
+  network: tcp
+  port: 26978
+  server: sakura.bunnywaffle.org
+  servername: tesla.com
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: 9042affd-0ad3-4014-adbc-e52f00891ea2
+- name: 美国_2
+  network: ws
+  port: 443
+  server: vip2.kaixincloud.top
+  servername: SplDu7h.dARktWonEWly.InFo
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: adaa4ecc-6d82-49c6-9b01-14f6f8e00e08
+  ws-opts:
+    headers:
+      host: SplDu7h.dARktWonEWly.InFo
+    path: /
+- name: 瑞士
+  network: ws
+  port: 8880
+  server: 195.15.240.204
+  skip-cert-verify: true
+  tls: true
+  type: vless
+  udp: true
+  uuid: fc872856-d6fb-486e-8388-1082f7cdb469
+  ws-opts:
+    path: /
+- name: 德國_7
+  network: tcp
+  port: 47539
+  server: 178.17.53.28
+  servername: yandex.ru
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: 447c45cd-ade0-4bfe-90a0-3e581829f741
+- flow: xtls-rprx-vision
+  name: 香港
+  network: tcp
+  port: 10001
+  server: 156.224.78.8
+  servername: www.icloud.com
+  skip-cert-verify: true
+  tls: false
+  type: vless
+  udp: true
+  uuid: 9c79aceb-4649-44ea-9698-b5e9ecf6d6da
+- name: 🇿🇦ZA_1|⬇️1.4MB/s
+  network: tcp
+  password: 2f0e3d6c-87b2-49a6-8091-99373bf39ab5
+  port: 53759
+  server: mofahx2.til69.com
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
   type: trojan
   udp: true
-- name: 荷蘭_5
+- name: 🇦🇺AU_2|⬇️4.0MB/s
+  network: tcp
+  password: 2f0e3d6c-87b2-49a6-8091-99373bf39ab5
+  port: 50757
+  server: mofahx2.til69.com
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  type: trojan
+  udp: true
+- name: 🇳🇬NG_1|⬇️3.4MB/s
+  network: tcp
+  password: 2f0e3d6c-87b2-49a6-8091-99373bf39ab5
+  port: 34183
+  server: mofahx2.til69.com
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  type: trojan
+  udp: true
+- name: 🇫🇷FR_3|⬇️7.7MB/s
+  network: tcp
+  password: 2f0e3d6c-87b2-49a6-8091-99373bf39ab5
+  port: 14651
+  server: mofahx2.til69.com
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  type: trojan
+  udp: true
+- name: 🇪🇸ES_2|⬇️2.7MB/s
+  network: tcp
+  password: 2f0e3d6c-87b2-49a6-8091-99373bf39ab5
+  port: 34249
+  server: mofahx2.til69.com
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  type: trojan
+  udp: true
+- name: 🇸🇦SA_1|⬇️1.1MB/s
+  network: tcp
+  password: 2f0e3d6c-87b2-49a6-8091-99373bf39ab5
+  port: 59137
+  server: mofahx2.til69.com
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  type: trojan
+  udp: true
+- name: 🇲🇲MM_1|⬇️4.1MB/s
+  network: tcp
+  password: 2f0e3d6c-87b2-49a6-8091-99373bf39ab5
+  port: 19797
+  server: mofahx2.til69.com
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  type: trojan
+  udp: true
+- name: US_4
+  network: tcp
+  password: 2f0e3d6c-87b2-49a6-8091-99373bf39ab5
+  port: 42765
+  server: mofahx1.til69.com
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  type: trojan
+  udp: true
+- name: 🇮🇳IN_1|⬇️12.3MB/s
+  network: tcp
+  password: 2f0e3d6c-87b2-49a6-8091-99373bf39ab5
+  port: 33243
+  server: mofahx2.til69.com
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  type: trojan
+  udp: true
+- name: 🇮🇳印度|IND8
+  network: tcp
+  password: 2f0e3d6c-87b2-49a6-8091-99373bf39ab5
+  port: 33243
+  server: mofahx2.til69.com
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  type: trojan
+  udp: true
+- name: 🇮🇩印度尼西亚01
+  network: tcp
+  password: 2f0e3d6c-87b2-49a6-8091-99373bf39ab5
+  port: 40391
+  server: mofahx2.til69.com
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  type: trojan
+  udp: true
+- name: 🇹🇼台湾12
+  network: tcp
+  password: 2f0e3d6c-87b2-49a6-8091-99373bf39ab5
+  port: 42765
+  server: mofahx1.til69.com
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  type: trojan
+  udp: true
+- name: 荷蘭_1
   network: ws
   password: 42bbf526-5530-470a-aeec-3b919b21c58d
   port: 443
@@ -617,20 +538,7 @@ proxies:
     headers:
       host: 0000.hkvip.ip-ddns.com
     path: /?ed=2560
-- name: 荷蘭_6
-  network: ws
-  password: 42bbf526-5530-470a-aeec-3b919b21c58d
-  port: 443
-  server: 2.59.183.219
-  skip-cert-verify: true
-  sni: 0000.hkvip.ip-ddns.com
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: 0000.hkvip.ip-ddns.com
-    path: /?ed=2560
-- name: 荷蘭_7
+- name: 荷蘭_2
   network: ws
   password: 42bbf526-5530-470a-aeec-3b919b21c58d
   port: 443
@@ -643,16 +551,42 @@ proxies:
     headers:
       host: 0000.hkvip.ip-ddns.com
     path: /?ed=2560
-- name: 英國_7
-  network: tcp
-  password: 4020ead7-68cd-4f03-8053-06458289e168
-  port: 41273
-  server: xiaozhu1.kkieo555.cn
+- name: 美國_2
+  network: ws
+  password: 42bbf526-5530-470a-aeec-3b919b21c58d
+  port: 54443
+  server: 173.249.201.109
   skip-cert-verify: true
-  sni: douyin.com
+  sni: 0000.hkvip.ip-ddns.com
   type: trojan
   udp: true
-- name: 荷蘭_8
+  ws-opts:
+    headers:
+      host: 0000.hkvip.ip-ddns.com
+    path: /?ed=2560
+- name: 新加坡
+  network: ws
+  password: 42bbf526-5530-470a-aeec-3b919b21c58d
+  port: 443
+  server: saas.sin.fan
+  skip-cert-verify: true
+  sni: 0000.hkvip.ip-ddns.com
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: 0000.hkvip.ip-ddns.com
+    path: /?ed=2560
+- name: 美國_3
+  network: grpc
+  password: iWnFtzMiac
+  port: 19258
+  server: 205.185.115.223
+  skip-cert-verify: true
+  sni: cloudflare.com
+  type: trojan
+  udp: true
+- name: 荷蘭_3
   network: ws
   password: 42bbf526-5530-470a-aeec-3b919b21c58d
   port: 444
@@ -665,31 +599,11 @@ proxies:
     headers:
       host: 0000.hkvip.ip-ddns.com
     path: /?ed=2560
-- name: 英國_8
-  network: tcp
-  password: 441a61b9-d30d-4d28-8d60-622c8520565f
-  port: 41273
-  server: xiaozhu1.kkieo555.cn
-  skip-cert-verify: true
-  sni: douyin.com
-  type: trojan
-  udp: true
-- name: 美國_5
-  network: ws
-  password: 2238e2f3-1a01-485e-8c22-24b65764c68b
-  port: 443
-  server: 208.103.161.231
-  skip-cert-verify: true
-  sni: gzjx.dpdns.org
-  type: trojan
-  udp: true
-  ws-opts:
-    path: /51.91.253.83=8443
 - name: 波蘭_1
   network: ws
   password: 42bbf526-5530-470a-aeec-3b919b21c58d
-  port: 8443
-  server: 176.105.253.102
+  port: 2053
+  server: 31.133.0.167
   skip-cert-verify: true
   sni: 0000.hkvip.ip-ddns.com
   type: trojan
@@ -698,16 +612,33 @@ proxies:
     headers:
       host: 0000.hkvip.ip-ddns.com
     path: /?ed=2560
-- name: 美國_6
-  network: tcp
-  password: d51abb35-94a4-4529-9244-2808beaa4624
-  port: 27638
-  server: vn.yiciyuanquicken.online
+- name: 荷蘭_4
+  network: ws
+  password: 42bbf526-5530-470a-aeec-3b919b21c58d
+  port: 443
+  server: 2.59.183.219
   skip-cert-verify: true
-  sni: vn.yiciyuanquicken.online
+  sni: 0000.hkvip.ip-ddns.com
   type: trojan
   udp: true
-- name: 英國_9
+  ws-opts:
+    headers:
+      host: 0000.hkvip.ip-ddns.com
+    path: /?ed=2560
+- name: 俄羅斯_2
+  network: ws
+  password: 42bbf526-5530-470a-aeec-3b919b21c58d
+  port: 8443
+  server: 176.109.106.61
+  skip-cert-verify: true
+  sni: 0000.hkvip.ip-ddns.com
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: 0000.hkvip.ip-ddns.com
+    path: /?ed=2560
+- name: 英國
   network: ws
   password: 42bbf526-5530-470a-aeec-3b919b21c58d
   port: 31687
@@ -720,15 +651,58 @@ proxies:
     headers:
       host: 0000.hkvip.ip-ddns.com
     path: /?ed=2560
-- name: 美國_7
-  network: grpc
-  password: iWnFtzMiac
-  port: 19258
-  server: 205.185.115.223
+- name: 美國_4
+  network: ws
+  password: 42bbf526-5530-470a-aeec-3b919b21c58d
+  port: 8443
+  server: 176.105.253.102
   skip-cert-verify: true
-  sni: cloudflare.com
+  sni: 0000.hkvip.ip-ddns.com
   type: trojan
   udp: true
+  ws-opts:
+    headers:
+      host: 0000.hkvip.ip-ddns.com
+    path: /?ed=2560
+- name: 波蘭_2
+  network: ws
+  password: 42bbf526-5530-470a-aeec-3b919b21c58d
+  port: 2053
+  server: 31.133.0.159
+  skip-cert-verify: true
+  sni: 0000.hkvip.ip-ddns.com
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: 0000.hkvip.ip-ddns.com
+    path: /?ed=2560
+- name: 荷蘭_5
+  network: ws
+  password: 42bbf526-5530-470a-aeec-3b919b21c58d
+  port: 443
+  server: 2.59.183.181
+  skip-cert-verify: true
+  sni: 0000.hkvip.ip-ddns.com
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: 0000.hkvip.ip-ddns.com
+    path: /?ed=2560
+- name: 德國_8
+  network: ws
+  password: 42bbf526-5530-470a-aeec-3b919b21c58d
+  port: 443
+  server: 5.39.249.146
+  skip-cert-verify: true
+  sni: 0000.hkvip.ip-ddns.com
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: 0000.hkvip.ip-ddns.com
+    path: /?ed=2560
 - name: 俄羅斯_3
   network: ws
   password: 42bbf526-5530-470a-aeec-3b919b21c58d
@@ -742,116 +716,37 @@ proxies:
     headers:
       host: 0000.hkvip.ip-ddns.com
     path: /?ed=2560
-- name: 英國_10
-  network: tcp
-  password: 52faad89-bef2-468a-9fed-2e203b3b9817
-  port: 41275
-  server: xiaozhu1.kkieo555.cn
-  skip-cert-verify: true
-  sni: douyin.com
-  type: trojan
-  udp: true
-- name: 英國_11
-  network: tcp
-  password: 88c03e37-4c72-4536-be0c-1f171c4627fa
-  port: 41275
-  server: xiaozhu1.kkieo555.cn
-  skip-cert-verify: true
-  sni: douyin.com
-  type: trojan
-  udp: true
-- name: 荷蘭_9
-  network: ws
-  password: 42bbf526-5530-470a-aeec-3b919b21c58d
-  port: 443
-  server: 2.59.183.181
-  skip-cert-verify: true
-  sni: 0000.hkvip.ip-ddns.com
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: 0000.hkvip.ip-ddns.com
-    path: /?ed=2560
-- name: 俄羅斯_4
-  network: ws
-  password: 42bbf526-5530-470a-aeec-3b919b21c58d
-  port: 8443
-  server: 176.109.106.61
-  skip-cert-verify: true
-  sni: 0000.hkvip.ip-ddns.com
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: 0000.hkvip.ip-ddns.com
-    path: /?ed=2560
-- name: 德國_12
-  network: ws
-  password: 42bbf526-5530-470a-aeec-3b919b21c58d
-  port: 54443
-  server: 173.249.201.109
-  skip-cert-verify: true
-  sni: 0000.hkvip.ip-ddns.com
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: 0000.hkvip.ip-ddns.com
-    path: /?ed=2560
-- name: 波蘭_2
-  network: ws
-  password: 42bbf526-5530-470a-aeec-3b919b21c58d
-  port: 2053
-  server: 31.133.0.167
-  skip-cert-verify: true
-  sni: 0000.hkvip.ip-ddns.com
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: 0000.hkvip.ip-ddns.com
-    path: /?ed=2560
-- name: 英國_12
-  network: tcp
-  password: 26b1e416-40d3-4a66-9db5-d0b3d235b868
-  port: 41275
-  server: xiaozhu1.kkieo555.cn
-  skip-cert-verify: true
-  sni: douyin.com
-  type: trojan
-  udp: true
-- name: 波蘭_3
-  network: ws
-  password: 42bbf526-5530-470a-aeec-3b919b21c58d
-  port: 2053
-  server: 31.133.0.159
-  skip-cert-verify: true
-  sni: 0000.hkvip.ip-ddns.com
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: 0000.hkvip.ip-ddns.com
-    path: /?ed=2560
-- name: 拉脫維亞
-  network: ws
-  password: 42bbf526-5530-470a-aeec-3b919b21c58d
-  port: 443
-  server: 195.135.253.29
-  skip-cert-verify: true
-  sni: 0000.hkvip.ip-ddns.com
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: 0000.hkvip.ip-ddns.com
-    path: /?ed=2560
-- name: 德國_13
+- name: 德國_9
   network: ws
   password: 42bbf526-5530-470a-aeec-3b919b21c58d
   port: 443
   server: 194.58.33.218
+  skip-cert-verify: true
+  sni: 0000.hkvip.ip-ddns.com
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: 0000.hkvip.ip-ddns.com
+    path: /?ed=2560
+- name: 烏克蘭
+  network: ws
+  password: 42bbf526-5530-470a-aeec-3b919b21c58d
+  port: 2053
+  server: 80.66.85.115
+  skip-cert-verify: true
+  sni: 0000.hkvip.ip-ddns.com
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: 0000.hkvip.ip-ddns.com
+    path: /?ed=2560
+- name: 拉脫維亞_4
+  network: ws
+  password: 42bbf526-5530-470a-aeec-3b919b21c58d
+  port: 2053
+  server: 5.34.209.139
   skip-cert-verify: true
   sni: 0000.hkvip.ip-ddns.com
   type: trojan
@@ -873,7 +768,7 @@ proxies:
     headers:
       host: 0000.hkvip.ip-ddns.com
     path: /?ed=2560
-- name: 西班牙
+- name: 美國_5
   network: ws
   password: 42bbf526-5530-470a-aeec-3b919b21c58d
   port: 8443
@@ -886,16 +781,33 @@ proxies:
     headers:
       host: 0000.hkvip.ip-ddns.com
     path: /?ed=2560
-- name: 香港_1
-  network: tcp
-  password: 869e9086806483ca4744a4cb0f3d6e16
-  port: 443
-  server: 58.152.110.210
+- name: 西班牙
+  network: ws
+  password: 42bbf526-5530-470a-aeec-3b919b21c58d
+  port: 2053
+  server: 193.17.183.157
   skip-cert-verify: true
-  sni: www.nintendogames.net
+  sni: 0000.hkvip.ip-ddns.com
   type: trojan
   udp: true
-- name: 荷蘭_10
+  ws-opts:
+    headers:
+      host: 0000.hkvip.ip-ddns.com
+    path: /?ed=2560
+- name: 拉脫維亞_5
+  network: ws
+  password: 42bbf526-5530-470a-aeec-3b919b21c58d
+  port: 443
+  server: 195.135.253.29
+  skip-cert-verify: true
+  sni: 0000.hkvip.ip-ddns.com
+  type: trojan
+  udp: true
+  ws-opts:
+    headers:
+      host: 0000.hkvip.ip-ddns.com
+    path: /?ed=2560
+- name: 俄羅斯_4
   network: ws
   password: 42bbf526-5530-470a-aeec-3b919b21c58d
   port: 443
@@ -908,255 +820,159 @@ proxies:
     headers:
       host: 0000.hkvip.ip-ddns.com
     path: /?ed=2560
-- name: 德國_14
-  network: ws
-  password: 42bbf526-5530-470a-aeec-3b919b21c58d
-  port: 2053
-  server: 80.66.85.115
-  skip-cert-verify: true
-  sni: 0000.hkvip.ip-ddns.com
-  type: trojan
-  udp: true
-  ws-opts:
-    headers:
-      host: 0000.hkvip.ip-ddns.com
-    path: /?ed=2560
-- name: 加拿大
-  network: tcp
-  password: 30077070-596e-48ea-9400-14c8ed07bd97
-  port: 443
-  server: tuntro006.instconn.com
-  skip-cert-verify: true
-  sni: torontorm1.686911.xyz
-  type: trojan
-  udp: true
-- name: 香港_2
-  network: tcp
-  password: BxceQaOe
-  port: 443
-  server: 219.76.135.98
-  skip-cert-verify: true
-  type: trojan
-  udp: true
-- name: 英國_13
-  network: tcp
-  password: 2dbd7d94-7cb5-4cb1-8b46-e8318a9c8bfe
-  port: 41275
-  server: xiaozhu1.kkieo555.cn
-  skip-cert-verify: true
-  sni: douyin.com
-  type: trojan
-  udp: true
-- name: 英國_14
-  network: tcp
-  password: 62a5411e-6c5b-4e71-a481-eeabcdedb974
-  port: 41274
-  server: xiaozhu1.kkieo555.cn
-  skip-cert-verify: true
-  sni: douyin.com
-  type: trojan
-  udp: true
-- name: HKTROJAN-36|free-nodes
-  network: tcp
-  password: 869e9086806483ca4744a4cb0f3d6e16
-  port: 443
-  server: 58.152.110.210
-  skip-cert-verify: true
-  sni: www.nintendogames.net
-  type: trojan
-  udp: true
-- name: HKTROJAN-38|free-nodes
-  network: tcp
-  password: BxceQaOe
-  port: 443
-  server: 58.152.53.45
-  skip-cert-verify: true
-  sni: t.me/ripaojiedian
-  type: trojan
-  udp: true
 proxy-groups:
 - name: 🚀 节点选择
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - 🇨🇭CH²_1|3.2MB/s|0%|GPT|X|[广播|机房]
-  - US
   - 丹麥
-  - 奧地利
   - 德國_1
-  - 俄羅斯_1
-  - 🇦🇹AT_2|⬇️4.4MB/s
-  - 🇸🇪SE_1|⬇️2.7MB/s
-  - 芬蘭_1
-  - 美國_1
-  - 芬蘭_2
-  - 芬蘭_3
   - 德國_2
-  - 荷蘭_1
-  - 🇷🇺RU_1|⬇️3.5MB/s
-  - 俄羅斯_2
-  - 美國_2
-  - 德國_3
-  - 日本_1
-  - 美国_1
-  - 荷蘭_2
-  - 德國_4
-  - 德國_5
-  - 德國_6
-  - 法國
-  - 德國_7
-  - 德國_8
-  - 日本_2
-  - 荷蘭_3
-  - 荷蘭_4
-  - 美國_3
-  - 德國_9
-  - 美国_2
-  - 德國_10
-  - 德國_11
-  - 未知VLESS-99|free-nodes
-  - 未知VLESS-76|free-nodes
-  - DEVLESS-52|free-nodes
-  - DEVLESS-95|free-nodes
-  - DEVLESS-60|free-nodes
-  - 未知VLESS-120|free-nodes
-  - 未知VLESS-48|free-nodes
-  - DEVLESS-79|free-nodes
-  - USVLESS-75|free-nodes
   - 未知VLESS-78|free-nodes
-  - 未知VLESS-57|free-nodes
-  - 🇭🇰HK_33|⬇️7.4MB/s
-  - 美國_4
-  - 英國_1
-  - 英國_2
-  - 英國_3
-  - 英國_4
-  - 英國_5
-  - 英國_6
-  - 荷蘭_5
-  - 荷蘭_6
-  - 荷蘭_7
-  - 英國_7
-  - 荷蘭_8
-  - 英國_8
-  - 美國_5
+  - 🇳🇱NL_1|⬇️4.1MB/s
+  - 🇺🇸US_51|⬇️5.4MB/s
+  - 🇨🇭CH_1|⬇️2.8MB/s
+  - 🇬🇧GB_5|⬇️4.6MB/s
+  - 🇳🇱NL_5|⬇️2.3MB/s
+  - 🇳🇱NL_4|⬇️2.9MB/s
+  - US_1
+  - 🇷🇺RU_3|⬇️2.9MB/s
+  - 🇬🇧GB_1|⬇️3.8MB/s
+  - 🇬🇧GB_2|⬇️3.0MB/s
+  - 🇷🇺RU_2|⬇️3.8MB/s
+  - 🇺🇸US_18|⬇️4.7MB/s
+  - 🇯🇵JP_5|⬇️8.9MB/s
+  - US_2
+  - US_3
+  - 台灣
+  - 德國_3
+  - 德國_4
+  - 瑞典
+  - 德國_5
+  - 芬蘭
+  - 德國_6
+  - 俄羅斯_1
+  - 拉脫維亞_1
+  - 拉脫維亞_2
+  - 美国_1
+  - 巴西
+  - 拉脫維亞_3
+  - 美國_1
+  - 美国_2
+  - 瑞士
+  - 德國_7
+  - 香港
+  - 🇿🇦ZA_1|⬇️1.4MB/s
+  - 🇦🇺AU_2|⬇️4.0MB/s
+  - 🇳🇬NG_1|⬇️3.4MB/s
+  - 🇫🇷FR_3|⬇️7.7MB/s
+  - 🇪🇸ES_2|⬇️2.7MB/s
+  - 🇸🇦SA_1|⬇️1.1MB/s
+  - 🇲🇲MM_1|⬇️4.1MB/s
+  - US_4
+  - 🇮🇳IN_1|⬇️12.3MB/s
+  - 🇮🇳印度|IND8
+  - 🇮🇩印度尼西亚01
+  - 🇹🇼台湾12
+  - 荷蘭_1
+  - 荷蘭_2
+  - 美國_2
+  - 新加坡
+  - 美國_3
+  - 荷蘭_3
   - 波蘭_1
-  - 美國_6
-  - 英國_9
-  - 美國_7
-  - 俄羅斯_3
-  - 英國_10
-  - 英國_11
-  - 荷蘭_9
-  - 俄羅斯_4
-  - 德國_12
+  - 荷蘭_4
+  - 俄羅斯_2
+  - 英國
+  - 美國_4
   - 波蘭_2
-  - 英國_12
-  - 波蘭_3
-  - 拉脫維亞
-  - 德國_13
+  - 荷蘭_5
+  - 德國_8
+  - 俄羅斯_3
+  - 德國_9
+  - 烏克蘭
+  - 拉脫維亞_4
   - 亞美尼亞
+  - 美國_5
   - 西班牙
-  - 香港_1
-  - 荷蘭_10
-  - 德國_14
-  - 加拿大
-  - 香港_2
-  - 英國_13
-  - 英國_14
-  - HKTROJAN-36|free-nodes
-  - HKTROJAN-38|free-nodes
+  - 拉脫維亞_5
+  - 俄羅斯_4
   type: select
 - interval: 300
   name: ♻️ 自动选择
   proxies:
-  - 🇨🇭CH²_1|3.2MB/s|0%|GPT|X|[广播|机房]
-  - US
   - 丹麥
-  - 奧地利
   - 德國_1
-  - 俄羅斯_1
-  - 🇦🇹AT_2|⬇️4.4MB/s
-  - 🇸🇪SE_1|⬇️2.7MB/s
-  - 芬蘭_1
-  - 美國_1
-  - 芬蘭_2
-  - 芬蘭_3
   - 德國_2
-  - 荷蘭_1
-  - 🇷🇺RU_1|⬇️3.5MB/s
-  - 俄羅斯_2
-  - 美國_2
-  - 德國_3
-  - 日本_1
-  - 美国_1
-  - 荷蘭_2
-  - 德國_4
-  - 德國_5
-  - 德國_6
-  - 法國
-  - 德國_7
-  - 德國_8
-  - 日本_2
-  - 荷蘭_3
-  - 荷蘭_4
-  - 美國_3
-  - 德國_9
-  - 美国_2
-  - 德國_10
-  - 德國_11
-  - 未知VLESS-99|free-nodes
-  - 未知VLESS-76|free-nodes
-  - DEVLESS-52|free-nodes
-  - DEVLESS-95|free-nodes
-  - DEVLESS-60|free-nodes
-  - 未知VLESS-120|free-nodes
-  - 未知VLESS-48|free-nodes
-  - DEVLESS-79|free-nodes
-  - USVLESS-75|free-nodes
   - 未知VLESS-78|free-nodes
-  - 未知VLESS-57|free-nodes
-  - 🇭🇰HK_33|⬇️7.4MB/s
-  - 美國_4
-  - 英國_1
-  - 英國_2
-  - 英國_3
-  - 英國_4
-  - 英國_5
-  - 英國_6
-  - 荷蘭_5
-  - 荷蘭_6
-  - 荷蘭_7
-  - 英國_7
-  - 荷蘭_8
-  - 英國_8
-  - 美國_5
+  - 🇳🇱NL_1|⬇️4.1MB/s
+  - 🇺🇸US_51|⬇️5.4MB/s
+  - 🇨🇭CH_1|⬇️2.8MB/s
+  - 🇬🇧GB_5|⬇️4.6MB/s
+  - 🇳🇱NL_5|⬇️2.3MB/s
+  - 🇳🇱NL_4|⬇️2.9MB/s
+  - US_1
+  - 🇷🇺RU_3|⬇️2.9MB/s
+  - 🇬🇧GB_1|⬇️3.8MB/s
+  - 🇬🇧GB_2|⬇️3.0MB/s
+  - 🇷🇺RU_2|⬇️3.8MB/s
+  - 🇺🇸US_18|⬇️4.7MB/s
+  - 🇯🇵JP_5|⬇️8.9MB/s
+  - US_2
+  - US_3
+  - 台灣
+  - 德國_3
+  - 德國_4
+  - 瑞典
+  - 德國_5
+  - 芬蘭
+  - 德國_6
+  - 俄羅斯_1
+  - 拉脫維亞_1
+  - 拉脫維亞_2
+  - 美国_1
+  - 巴西
+  - 拉脫維亞_3
+  - 美國_1
+  - 美国_2
+  - 瑞士
+  - 德國_7
+  - 香港
+  - 🇿🇦ZA_1|⬇️1.4MB/s
+  - 🇦🇺AU_2|⬇️4.0MB/s
+  - 🇳🇬NG_1|⬇️3.4MB/s
+  - 🇫🇷FR_3|⬇️7.7MB/s
+  - 🇪🇸ES_2|⬇️2.7MB/s
+  - 🇸🇦SA_1|⬇️1.1MB/s
+  - 🇲🇲MM_1|⬇️4.1MB/s
+  - US_4
+  - 🇮🇳IN_1|⬇️12.3MB/s
+  - 🇮🇳印度|IND8
+  - 🇮🇩印度尼西亚01
+  - 🇹🇼台湾12
+  - 荷蘭_1
+  - 荷蘭_2
+  - 美國_2
+  - 新加坡
+  - 美國_3
+  - 荷蘭_3
   - 波蘭_1
-  - 美國_6
-  - 英國_9
-  - 美國_7
-  - 俄羅斯_3
-  - 英國_10
-  - 英國_11
-  - 荷蘭_9
-  - 俄羅斯_4
-  - 德國_12
+  - 荷蘭_4
+  - 俄羅斯_2
+  - 英國
+  - 美國_4
   - 波蘭_2
-  - 英國_12
-  - 波蘭_3
-  - 拉脫維亞
-  - 德國_13
+  - 荷蘭_5
+  - 德國_8
+  - 俄羅斯_3
+  - 德國_9
+  - 烏克蘭
+  - 拉脫維亞_4
   - 亞美尼亞
+  - 美國_5
   - 西班牙
-  - 香港_1
-  - 荷蘭_10
-  - 德國_14
-  - 加拿大
-  - 香港_2
-  - 英國_13
-  - 英國_14
-  - HKTROJAN-36|free-nodes
-  - HKTROJAN-38|free-nodes
+  - 拉脫維亞_5
+  - 俄羅斯_4
   tolerance: 50
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -1165,369 +981,309 @@ proxy-groups:
   - 🚀 节点选择
   - ♻️ 自动选择
   - 🎯 全球直连
-  - 🇨🇭CH²_1|3.2MB/s|0%|GPT|X|[广播|机房]
-  - US
   - 丹麥
-  - 奧地利
   - 德國_1
-  - 俄羅斯_1
-  - 🇦🇹AT_2|⬇️4.4MB/s
-  - 🇸🇪SE_1|⬇️2.7MB/s
-  - 芬蘭_1
-  - 美國_1
-  - 芬蘭_2
-  - 芬蘭_3
   - 德國_2
-  - 荷蘭_1
-  - 🇷🇺RU_1|⬇️3.5MB/s
-  - 俄羅斯_2
-  - 美國_2
-  - 德國_3
-  - 日本_1
-  - 美国_1
-  - 荷蘭_2
-  - 德國_4
-  - 德國_5
-  - 德國_6
-  - 法國
-  - 德國_7
-  - 德國_8
-  - 日本_2
-  - 荷蘭_3
-  - 荷蘭_4
-  - 美國_3
-  - 德國_9
-  - 美国_2
-  - 德國_10
-  - 德國_11
-  - 未知VLESS-99|free-nodes
-  - 未知VLESS-76|free-nodes
-  - DEVLESS-52|free-nodes
-  - DEVLESS-95|free-nodes
-  - DEVLESS-60|free-nodes
-  - 未知VLESS-120|free-nodes
-  - 未知VLESS-48|free-nodes
-  - DEVLESS-79|free-nodes
-  - USVLESS-75|free-nodes
   - 未知VLESS-78|free-nodes
-  - 未知VLESS-57|free-nodes
-  - 🇭🇰HK_33|⬇️7.4MB/s
-  - 美國_4
-  - 英國_1
-  - 英國_2
-  - 英國_3
-  - 英國_4
-  - 英國_5
-  - 英國_6
-  - 荷蘭_5
-  - 荷蘭_6
-  - 荷蘭_7
-  - 英國_7
-  - 荷蘭_8
-  - 英國_8
-  - 美國_5
+  - 🇳🇱NL_1|⬇️4.1MB/s
+  - 🇺🇸US_51|⬇️5.4MB/s
+  - 🇨🇭CH_1|⬇️2.8MB/s
+  - 🇬🇧GB_5|⬇️4.6MB/s
+  - 🇳🇱NL_5|⬇️2.3MB/s
+  - 🇳🇱NL_4|⬇️2.9MB/s
+  - US_1
+  - 🇷🇺RU_3|⬇️2.9MB/s
+  - 🇬🇧GB_1|⬇️3.8MB/s
+  - 🇬🇧GB_2|⬇️3.0MB/s
+  - 🇷🇺RU_2|⬇️3.8MB/s
+  - 🇺🇸US_18|⬇️4.7MB/s
+  - 🇯🇵JP_5|⬇️8.9MB/s
+  - US_2
+  - US_3
+  - 台灣
+  - 德國_3
+  - 德國_4
+  - 瑞典
+  - 德國_5
+  - 芬蘭
+  - 德國_6
+  - 俄羅斯_1
+  - 拉脫維亞_1
+  - 拉脫維亞_2
+  - 美国_1
+  - 巴西
+  - 拉脫維亞_3
+  - 美國_1
+  - 美国_2
+  - 瑞士
+  - 德國_7
+  - 香港
+  - 🇿🇦ZA_1|⬇️1.4MB/s
+  - 🇦🇺AU_2|⬇️4.0MB/s
+  - 🇳🇬NG_1|⬇️3.4MB/s
+  - 🇫🇷FR_3|⬇️7.7MB/s
+  - 🇪🇸ES_2|⬇️2.7MB/s
+  - 🇸🇦SA_1|⬇️1.1MB/s
+  - 🇲🇲MM_1|⬇️4.1MB/s
+  - US_4
+  - 🇮🇳IN_1|⬇️12.3MB/s
+  - 🇮🇳印度|IND8
+  - 🇮🇩印度尼西亚01
+  - 🇹🇼台湾12
+  - 荷蘭_1
+  - 荷蘭_2
+  - 美國_2
+  - 新加坡
+  - 美國_3
+  - 荷蘭_3
   - 波蘭_1
-  - 美國_6
-  - 英國_9
-  - 美國_7
-  - 俄羅斯_3
-  - 英國_10
-  - 英國_11
-  - 荷蘭_9
-  - 俄羅斯_4
-  - 德國_12
+  - 荷蘭_4
+  - 俄羅斯_2
+  - 英國
+  - 美國_4
   - 波蘭_2
-  - 英國_12
-  - 波蘭_3
-  - 拉脫維亞
-  - 德國_13
+  - 荷蘭_5
+  - 德國_8
+  - 俄羅斯_3
+  - 德國_9
+  - 烏克蘭
+  - 拉脫維亞_4
   - 亞美尼亞
+  - 美國_5
   - 西班牙
-  - 香港_1
-  - 荷蘭_10
-  - 德國_14
-  - 加拿大
-  - 香港_2
-  - 英國_13
-  - 英國_14
-  - HKTROJAN-36|free-nodes
-  - HKTROJAN-38|free-nodes
+  - 拉脫維亞_5
+  - 俄羅斯_4
   type: select
 - name: 📲 电报信息
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
-  - 🇨🇭CH²_1|3.2MB/s|0%|GPT|X|[广播|机房]
-  - US
   - 丹麥
-  - 奧地利
   - 德國_1
-  - 俄羅斯_1
-  - 🇦🇹AT_2|⬇️4.4MB/s
-  - 🇸🇪SE_1|⬇️2.7MB/s
-  - 芬蘭_1
-  - 美國_1
-  - 芬蘭_2
-  - 芬蘭_3
   - 德國_2
-  - 荷蘭_1
-  - 🇷🇺RU_1|⬇️3.5MB/s
-  - 俄羅斯_2
-  - 美國_2
-  - 德國_3
-  - 日本_1
-  - 美国_1
-  - 荷蘭_2
-  - 德國_4
-  - 德國_5
-  - 德國_6
-  - 法國
-  - 德國_7
-  - 德國_8
-  - 日本_2
-  - 荷蘭_3
-  - 荷蘭_4
-  - 美國_3
-  - 德國_9
-  - 美国_2
-  - 德國_10
-  - 德國_11
-  - 未知VLESS-99|free-nodes
-  - 未知VLESS-76|free-nodes
-  - DEVLESS-52|free-nodes
-  - DEVLESS-95|free-nodes
-  - DEVLESS-60|free-nodes
-  - 未知VLESS-120|free-nodes
-  - 未知VLESS-48|free-nodes
-  - DEVLESS-79|free-nodes
-  - USVLESS-75|free-nodes
   - 未知VLESS-78|free-nodes
-  - 未知VLESS-57|free-nodes
-  - 🇭🇰HK_33|⬇️7.4MB/s
-  - 美國_4
-  - 英國_1
-  - 英國_2
-  - 英國_3
-  - 英國_4
-  - 英國_5
-  - 英國_6
-  - 荷蘭_5
-  - 荷蘭_6
-  - 荷蘭_7
-  - 英國_7
-  - 荷蘭_8
-  - 英國_8
-  - 美國_5
+  - 🇳🇱NL_1|⬇️4.1MB/s
+  - 🇺🇸US_51|⬇️5.4MB/s
+  - 🇨🇭CH_1|⬇️2.8MB/s
+  - 🇬🇧GB_5|⬇️4.6MB/s
+  - 🇳🇱NL_5|⬇️2.3MB/s
+  - 🇳🇱NL_4|⬇️2.9MB/s
+  - US_1
+  - 🇷🇺RU_3|⬇️2.9MB/s
+  - 🇬🇧GB_1|⬇️3.8MB/s
+  - 🇬🇧GB_2|⬇️3.0MB/s
+  - 🇷🇺RU_2|⬇️3.8MB/s
+  - 🇺🇸US_18|⬇️4.7MB/s
+  - 🇯🇵JP_5|⬇️8.9MB/s
+  - US_2
+  - US_3
+  - 台灣
+  - 德國_3
+  - 德國_4
+  - 瑞典
+  - 德國_5
+  - 芬蘭
+  - 德國_6
+  - 俄羅斯_1
+  - 拉脫維亞_1
+  - 拉脫維亞_2
+  - 美国_1
+  - 巴西
+  - 拉脫維亞_3
+  - 美國_1
+  - 美国_2
+  - 瑞士
+  - 德國_7
+  - 香港
+  - 🇿🇦ZA_1|⬇️1.4MB/s
+  - 🇦🇺AU_2|⬇️4.0MB/s
+  - 🇳🇬NG_1|⬇️3.4MB/s
+  - 🇫🇷FR_3|⬇️7.7MB/s
+  - 🇪🇸ES_2|⬇️2.7MB/s
+  - 🇸🇦SA_1|⬇️1.1MB/s
+  - 🇲🇲MM_1|⬇️4.1MB/s
+  - US_4
+  - 🇮🇳IN_1|⬇️12.3MB/s
+  - 🇮🇳印度|IND8
+  - 🇮🇩印度尼西亚01
+  - 🇹🇼台湾12
+  - 荷蘭_1
+  - 荷蘭_2
+  - 美國_2
+  - 新加坡
+  - 美國_3
+  - 荷蘭_3
   - 波蘭_1
-  - 美國_6
-  - 英國_9
-  - 美國_7
-  - 俄羅斯_3
-  - 英國_10
-  - 英國_11
-  - 荷蘭_9
-  - 俄羅斯_4
-  - 德國_12
+  - 荷蘭_4
+  - 俄羅斯_2
+  - 英國
+  - 美國_4
   - 波蘭_2
-  - 英國_12
-  - 波蘭_3
-  - 拉脫維亞
-  - 德國_13
+  - 荷蘭_5
+  - 德國_8
+  - 俄羅斯_3
+  - 德國_9
+  - 烏克蘭
+  - 拉脫維亞_4
   - 亞美尼亞
+  - 美國_5
   - 西班牙
-  - 香港_1
-  - 荷蘭_10
-  - 德國_14
-  - 加拿大
-  - 香港_2
-  - 英國_13
-  - 英國_14
-  - HKTROJAN-36|free-nodes
-  - HKTROJAN-38|free-nodes
+  - 拉脫維亞_5
+  - 俄羅斯_4
   type: select
 - name: Ⓜ️ 微软服务
   proxies:
   - 🎯 全球直连
   - 🚀 节点选择
-  - 🇨🇭CH²_1|3.2MB/s|0%|GPT|X|[广播|机房]
-  - US
   - 丹麥
-  - 奧地利
   - 德國_1
-  - 俄羅斯_1
-  - 🇦🇹AT_2|⬇️4.4MB/s
-  - 🇸🇪SE_1|⬇️2.7MB/s
-  - 芬蘭_1
-  - 美國_1
-  - 芬蘭_2
-  - 芬蘭_3
   - 德國_2
-  - 荷蘭_1
-  - 🇷🇺RU_1|⬇️3.5MB/s
-  - 俄羅斯_2
-  - 美國_2
-  - 德國_3
-  - 日本_1
-  - 美国_1
-  - 荷蘭_2
-  - 德國_4
-  - 德國_5
-  - 德國_6
-  - 法國
-  - 德國_7
-  - 德國_8
-  - 日本_2
-  - 荷蘭_3
-  - 荷蘭_4
-  - 美國_3
-  - 德國_9
-  - 美国_2
-  - 德國_10
-  - 德國_11
-  - 未知VLESS-99|free-nodes
-  - 未知VLESS-76|free-nodes
-  - DEVLESS-52|free-nodes
-  - DEVLESS-95|free-nodes
-  - DEVLESS-60|free-nodes
-  - 未知VLESS-120|free-nodes
-  - 未知VLESS-48|free-nodes
-  - DEVLESS-79|free-nodes
-  - USVLESS-75|free-nodes
   - 未知VLESS-78|free-nodes
-  - 未知VLESS-57|free-nodes
-  - 🇭🇰HK_33|⬇️7.4MB/s
-  - 美國_4
-  - 英國_1
-  - 英國_2
-  - 英國_3
-  - 英國_4
-  - 英國_5
-  - 英國_6
-  - 荷蘭_5
-  - 荷蘭_6
-  - 荷蘭_7
-  - 英國_7
-  - 荷蘭_8
-  - 英國_8
-  - 美國_5
+  - 🇳🇱NL_1|⬇️4.1MB/s
+  - 🇺🇸US_51|⬇️5.4MB/s
+  - 🇨🇭CH_1|⬇️2.8MB/s
+  - 🇬🇧GB_5|⬇️4.6MB/s
+  - 🇳🇱NL_5|⬇️2.3MB/s
+  - 🇳🇱NL_4|⬇️2.9MB/s
+  - US_1
+  - 🇷🇺RU_3|⬇️2.9MB/s
+  - 🇬🇧GB_1|⬇️3.8MB/s
+  - 🇬🇧GB_2|⬇️3.0MB/s
+  - 🇷🇺RU_2|⬇️3.8MB/s
+  - 🇺🇸US_18|⬇️4.7MB/s
+  - 🇯🇵JP_5|⬇️8.9MB/s
+  - US_2
+  - US_3
+  - 台灣
+  - 德國_3
+  - 德國_4
+  - 瑞典
+  - 德國_5
+  - 芬蘭
+  - 德國_6
+  - 俄羅斯_1
+  - 拉脫維亞_1
+  - 拉脫維亞_2
+  - 美国_1
+  - 巴西
+  - 拉脫維亞_3
+  - 美國_1
+  - 美国_2
+  - 瑞士
+  - 德國_7
+  - 香港
+  - 🇿🇦ZA_1|⬇️1.4MB/s
+  - 🇦🇺AU_2|⬇️4.0MB/s
+  - 🇳🇬NG_1|⬇️3.4MB/s
+  - 🇫🇷FR_3|⬇️7.7MB/s
+  - 🇪🇸ES_2|⬇️2.7MB/s
+  - 🇸🇦SA_1|⬇️1.1MB/s
+  - 🇲🇲MM_1|⬇️4.1MB/s
+  - US_4
+  - 🇮🇳IN_1|⬇️12.3MB/s
+  - 🇮🇳印度|IND8
+  - 🇮🇩印度尼西亚01
+  - 🇹🇼台湾12
+  - 荷蘭_1
+  - 荷蘭_2
+  - 美國_2
+  - 新加坡
+  - 美國_3
+  - 荷蘭_3
   - 波蘭_1
-  - 美國_6
-  - 英國_9
-  - 美國_7
-  - 俄羅斯_3
-  - 英國_10
-  - 英國_11
-  - 荷蘭_9
-  - 俄羅斯_4
-  - 德國_12
+  - 荷蘭_4
+  - 俄羅斯_2
+  - 英國
+  - 美國_4
   - 波蘭_2
-  - 英國_12
-  - 波蘭_3
-  - 拉脫維亞
-  - 德國_13
+  - 荷蘭_5
+  - 德國_8
+  - 俄羅斯_3
+  - 德國_9
+  - 烏克蘭
+  - 拉脫維亞_4
   - 亞美尼亞
+  - 美國_5
   - 西班牙
-  - 香港_1
-  - 荷蘭_10
-  - 德國_14
-  - 加拿大
-  - 香港_2
-  - 英國_13
-  - 英國_14
-  - HKTROJAN-36|free-nodes
-  - HKTROJAN-38|free-nodes
+  - 拉脫維亞_5
+  - 俄羅斯_4
   type: select
 - name: 🍎 苹果服务
   proxies:
   - 🚀 节点选择
   - 🎯 全球直连
-  - 🇨🇭CH²_1|3.2MB/s|0%|GPT|X|[广播|机房]
-  - US
   - 丹麥
-  - 奧地利
   - 德國_1
-  - 俄羅斯_1
-  - 🇦🇹AT_2|⬇️4.4MB/s
-  - 🇸🇪SE_1|⬇️2.7MB/s
-  - 芬蘭_1
-  - 美國_1
-  - 芬蘭_2
-  - 芬蘭_3
   - 德國_2
-  - 荷蘭_1
-  - 🇷🇺RU_1|⬇️3.5MB/s
-  - 俄羅斯_2
-  - 美國_2
-  - 德國_3
-  - 日本_1
-  - 美国_1
-  - 荷蘭_2
-  - 德國_4
-  - 德國_5
-  - 德國_6
-  - 法國
-  - 德國_7
-  - 德國_8
-  - 日本_2
-  - 荷蘭_3
-  - 荷蘭_4
-  - 美國_3
-  - 德國_9
-  - 美国_2
-  - 德國_10
-  - 德國_11
-  - 未知VLESS-99|free-nodes
-  - 未知VLESS-76|free-nodes
-  - DEVLESS-52|free-nodes
-  - DEVLESS-95|free-nodes
-  - DEVLESS-60|free-nodes
-  - 未知VLESS-120|free-nodes
-  - 未知VLESS-48|free-nodes
-  - DEVLESS-79|free-nodes
-  - USVLESS-75|free-nodes
   - 未知VLESS-78|free-nodes
-  - 未知VLESS-57|free-nodes
-  - 🇭🇰HK_33|⬇️7.4MB/s
-  - 美國_4
-  - 英國_1
-  - 英國_2
-  - 英國_3
-  - 英國_4
-  - 英國_5
-  - 英國_6
-  - 荷蘭_5
-  - 荷蘭_6
-  - 荷蘭_7
-  - 英國_7
-  - 荷蘭_8
-  - 英國_8
-  - 美國_5
+  - 🇳🇱NL_1|⬇️4.1MB/s
+  - 🇺🇸US_51|⬇️5.4MB/s
+  - 🇨🇭CH_1|⬇️2.8MB/s
+  - 🇬🇧GB_5|⬇️4.6MB/s
+  - 🇳🇱NL_5|⬇️2.3MB/s
+  - 🇳🇱NL_4|⬇️2.9MB/s
+  - US_1
+  - 🇷🇺RU_3|⬇️2.9MB/s
+  - 🇬🇧GB_1|⬇️3.8MB/s
+  - 🇬🇧GB_2|⬇️3.0MB/s
+  - 🇷🇺RU_2|⬇️3.8MB/s
+  - 🇺🇸US_18|⬇️4.7MB/s
+  - 🇯🇵JP_5|⬇️8.9MB/s
+  - US_2
+  - US_3
+  - 台灣
+  - 德國_3
+  - 德國_4
+  - 瑞典
+  - 德國_5
+  - 芬蘭
+  - 德國_6
+  - 俄羅斯_1
+  - 拉脫維亞_1
+  - 拉脫維亞_2
+  - 美国_1
+  - 巴西
+  - 拉脫維亞_3
+  - 美國_1
+  - 美国_2
+  - 瑞士
+  - 德國_7
+  - 香港
+  - 🇿🇦ZA_1|⬇️1.4MB/s
+  - 🇦🇺AU_2|⬇️4.0MB/s
+  - 🇳🇬NG_1|⬇️3.4MB/s
+  - 🇫🇷FR_3|⬇️7.7MB/s
+  - 🇪🇸ES_2|⬇️2.7MB/s
+  - 🇸🇦SA_1|⬇️1.1MB/s
+  - 🇲🇲MM_1|⬇️4.1MB/s
+  - US_4
+  - 🇮🇳IN_1|⬇️12.3MB/s
+  - 🇮🇳印度|IND8
+  - 🇮🇩印度尼西亚01
+  - 🇹🇼台湾12
+  - 荷蘭_1
+  - 荷蘭_2
+  - 美國_2
+  - 新加坡
+  - 美國_3
+  - 荷蘭_3
   - 波蘭_1
-  - 美國_6
-  - 英國_9
-  - 美國_7
-  - 俄羅斯_3
-  - 英國_10
-  - 英國_11
-  - 荷蘭_9
-  - 俄羅斯_4
-  - 德國_12
+  - 荷蘭_4
+  - 俄羅斯_2
+  - 英國
+  - 美國_4
   - 波蘭_2
-  - 英國_12
-  - 波蘭_3
-  - 拉脫維亞
-  - 德國_13
+  - 荷蘭_5
+  - 德國_8
+  - 俄羅斯_3
+  - 德國_9
+  - 烏克蘭
+  - 拉脫維亞_4
   - 亞美尼亞
+  - 美國_5
   - 西班牙
-  - 香港_1
-  - 荷蘭_10
-  - 德國_14
-  - 加拿大
-  - 香港_2
-  - 英國_13
-  - 英國_14
-  - HKTROJAN-36|free-nodes
-  - HKTROJAN-38|free-nodes
+  - 拉脫維亞_5
+  - 俄羅斯_4
   type: select
 - name: 🎯 全球直连
   proxies:
@@ -1550,93 +1306,78 @@ proxy-groups:
   - 🚀 节点选择
   - 🎯 全球直连
   - ♻️ 自动选择
-  - 🇨🇭CH²_1|3.2MB/s|0%|GPT|X|[广播|机房]
-  - US
   - 丹麥
-  - 奧地利
   - 德國_1
-  - 俄羅斯_1
-  - 🇦🇹AT_2|⬇️4.4MB/s
-  - 🇸🇪SE_1|⬇️2.7MB/s
-  - 芬蘭_1
-  - 美國_1
-  - 芬蘭_2
-  - 芬蘭_3
   - 德國_2
-  - 荷蘭_1
-  - 🇷🇺RU_1|⬇️3.5MB/s
-  - 俄羅斯_2
-  - 美國_2
-  - 德國_3
-  - 日本_1
-  - 美国_1
-  - 荷蘭_2
-  - 德國_4
-  - 德國_5
-  - 德國_6
-  - 法國
-  - 德國_7
-  - 德國_8
-  - 日本_2
-  - 荷蘭_3
-  - 荷蘭_4
-  - 美國_3
-  - 德國_9
-  - 美国_2
-  - 德國_10
-  - 德國_11
-  - 未知VLESS-99|free-nodes
-  - 未知VLESS-76|free-nodes
-  - DEVLESS-52|free-nodes
-  - DEVLESS-95|free-nodes
-  - DEVLESS-60|free-nodes
-  - 未知VLESS-120|free-nodes
-  - 未知VLESS-48|free-nodes
-  - DEVLESS-79|free-nodes
-  - USVLESS-75|free-nodes
   - 未知VLESS-78|free-nodes
-  - 未知VLESS-57|free-nodes
-  - 🇭🇰HK_33|⬇️7.4MB/s
-  - 美國_4
-  - 英國_1
-  - 英國_2
-  - 英國_3
-  - 英國_4
-  - 英國_5
-  - 英國_6
-  - 荷蘭_5
-  - 荷蘭_6
-  - 荷蘭_7
-  - 英國_7
-  - 荷蘭_8
-  - 英國_8
-  - 美國_5
+  - 🇳🇱NL_1|⬇️4.1MB/s
+  - 🇺🇸US_51|⬇️5.4MB/s
+  - 🇨🇭CH_1|⬇️2.8MB/s
+  - 🇬🇧GB_5|⬇️4.6MB/s
+  - 🇳🇱NL_5|⬇️2.3MB/s
+  - 🇳🇱NL_4|⬇️2.9MB/s
+  - US_1
+  - 🇷🇺RU_3|⬇️2.9MB/s
+  - 🇬🇧GB_1|⬇️3.8MB/s
+  - 🇬🇧GB_2|⬇️3.0MB/s
+  - 🇷🇺RU_2|⬇️3.8MB/s
+  - 🇺🇸US_18|⬇️4.7MB/s
+  - 🇯🇵JP_5|⬇️8.9MB/s
+  - US_2
+  - US_3
+  - 台灣
+  - 德國_3
+  - 德國_4
+  - 瑞典
+  - 德國_5
+  - 芬蘭
+  - 德國_6
+  - 俄羅斯_1
+  - 拉脫維亞_1
+  - 拉脫維亞_2
+  - 美国_1
+  - 巴西
+  - 拉脫維亞_3
+  - 美國_1
+  - 美国_2
+  - 瑞士
+  - 德國_7
+  - 香港
+  - 🇿🇦ZA_1|⬇️1.4MB/s
+  - 🇦🇺AU_2|⬇️4.0MB/s
+  - 🇳🇬NG_1|⬇️3.4MB/s
+  - 🇫🇷FR_3|⬇️7.7MB/s
+  - 🇪🇸ES_2|⬇️2.7MB/s
+  - 🇸🇦SA_1|⬇️1.1MB/s
+  - 🇲🇲MM_1|⬇️4.1MB/s
+  - US_4
+  - 🇮🇳IN_1|⬇️12.3MB/s
+  - 🇮🇳印度|IND8
+  - 🇮🇩印度尼西亚01
+  - 🇹🇼台湾12
+  - 荷蘭_1
+  - 荷蘭_2
+  - 美國_2
+  - 新加坡
+  - 美國_3
+  - 荷蘭_3
   - 波蘭_1
-  - 美國_6
-  - 英國_9
-  - 美國_7
-  - 俄羅斯_3
-  - 英國_10
-  - 英國_11
-  - 荷蘭_9
-  - 俄羅斯_4
-  - 德國_12
+  - 荷蘭_4
+  - 俄羅斯_2
+  - 英國
+  - 美國_4
   - 波蘭_2
-  - 英國_12
-  - 波蘭_3
-  - 拉脫維亞
-  - 德國_13
+  - 荷蘭_5
+  - 德國_8
+  - 俄羅斯_3
+  - 德國_9
+  - 烏克蘭
+  - 拉脫維亞_4
   - 亞美尼亞
+  - 美國_5
   - 西班牙
-  - 香港_1
-  - 荷蘭_10
-  - 德國_14
-  - 加拿大
-  - 香港_2
-  - 英國_13
-  - 英國_14
-  - HKTROJAN-36|free-nodes
-  - HKTROJAN-38|free-nodes
+  - 拉脫維亞_5
+  - 俄羅斯_4
   type: select
 rules:
 - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
