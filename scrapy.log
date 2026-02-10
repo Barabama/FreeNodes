@@ -1,4 +1,4 @@
-2026-02-09 05:40:20 [scrapy.middleware] INFO: Enabled downloader middlewares:
+2026-02-10 05:40:22 [scrapy.middleware] INFO: Enabled downloader middlewares:
 ['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
  'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
  'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
@@ -12,371 +12,271 @@
  'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
  'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
  'scrapy.downloadermiddlewares.stats.DownloaderStats']
-2026-02-09 05:40:20 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages/scrapy/core/downloader/middleware.py:44: ScrapyDeprecationWarning: RandomUserAgentMiddleware.process_request() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+2026-02-10 05:40:22 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages/scrapy/core/downloader/middleware.py:44: ScrapyDeprecationWarning: RandomUserAgentMiddleware.process_request() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
   self._check_mw_method_spider_arg(mw.process_request)
 
-2026-02-09 05:40:20 [scrapy.middleware] INFO: Enabled spider middlewares:
+2026-02-10 05:40:22 [scrapy.middleware] INFO: Enabled spider middlewares:
 ['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
  'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
  'scrapy.spidermiddlewares.referer.RefererMiddleware',
  'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
  'scrapy.spidermiddlewares.depth.DepthMiddleware']
-2026-02-09 05:40:20 [scrapy.middleware] INFO: Enabled item pipelines:
+2026-02-10 05:40:22 [scrapy.middleware] INFO: Enabled item pipelines:
 ['NodeScrapy.pipelines.Pipeline']
-2026-02-09 05:40:20 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages/scrapy/pipelines/__init__.py:41: ScrapyDeprecationWarning: Pipeline.open_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+2026-02-10 05:40:22 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages/scrapy/pipelines/__init__.py:41: ScrapyDeprecationWarning: Pipeline.open_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
   self._check_mw_method_spider_arg(pipe.open_spider)
 
-2026-02-09 05:40:20 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages/scrapy/pipelines/__init__.py:44: ScrapyDeprecationWarning: Pipeline.close_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+2026-02-10 05:40:22 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages/scrapy/pipelines/__init__.py:44: ScrapyDeprecationWarning: Pipeline.close_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
   self._check_mw_method_spider_arg(pipe.close_spider)
 
-2026-02-09 05:40:20 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages/scrapy/pipelines/__init__.py:47: ScrapyDeprecationWarning: Pipeline.process_item() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+2026-02-10 05:40:22 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages/scrapy/pipelines/__init__.py:47: ScrapyDeprecationWarning: Pipeline.process_item() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
   self._check_mw_method_spider_arg(pipe.process_item)
 
-2026-02-09 05:40:20 [scrapy.core.engine] INFO: Spider opened
-2026-02-09 05:40:20 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages/scrapy/core/spidermw.py:490: ScrapyDeprecationWarning: NodeScrapy.spiders.SimpleSpider.SimpleSpider defines the deprecated start_requests() method. start_requests() has been deprecated in favor of a new method, start(), to support asynchronous code execution. start_requests() will stop being called in a future version of Scrapy. If you use Scrapy 2.13 or higher only, replace start_requests() with start(); note that start() is a coroutine (async def). If you need to maintain compatibility with lower Scrapy versions, when overriding start_requests() in a spider class, override start() as well; you can use super() to reuse the inherited start() implementation without copy-pasting. See the release notes of Scrapy 2.13 for details: https://docs.scrapy.org/en/2.13/news.html
+2026-02-10 05:40:22 [scrapy.core.engine] INFO: Spider opened
+2026-02-10 05:40:22 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages/scrapy/core/spidermw.py:490: ScrapyDeprecationWarning: NodeScrapy.spiders.SimpleSpider.SimpleSpider defines the deprecated start_requests() method. start_requests() has been deprecated in favor of a new method, start(), to support asynchronous code execution. start_requests() will stop being called in a future version of Scrapy. If you use Scrapy 2.13 or higher only, replace start_requests() with start(); note that start() is a coroutine (async def). If you need to maintain compatibility with lower Scrapy versions, when overriding start_requests() in a spider class, override start() as well; you can use super() to reuse the inherited start() implementation without copy-pasting. See the release notes of Scrapy 2.13 for details: https://docs.scrapy.org/en/2.13/news.html
   warn(
 
-2026-02-09 05:40:20 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
-2026-02-09 05:40:20 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
-2026-02-09 05:40:20 [simple] INFO: clashmeta start
-2026-02-09 05:40:20 [simple] INFO: ndnode start
-2026-02-09 05:40:20 [simple] INFO: nodev2ray start
-2026-02-09 05:40:20 [simple] INFO: nodefree start
-2026-02-09 05:40:20 [simple] INFO: v2rayshare start
-2026-02-09 05:40:20 [simple] INFO: wenode start
-2026-02-09 05:40:20 [simple] INFO: clashmeta found /free-nodes/2026-2-5-free-node-subscribe-links.htm on 2026-02-05
-2026-02-09 05:40:20 [simple] INFO: clashmeta found /free-nodes/2026-2-5-free-node-subscribe-links.htm on 2026-02-05
-2026-02-09 05:40:20 [simple] INFO: clashmeta found /free-nodes/2026-2-4-latest-clash-meta-node.htm on 2026-02-04
-2026-02-09 05:40:20 [simple] INFO: clashmeta found /free-nodes/2026-2-4-latest-clash-meta-node.htm on 2026-02-04
-2026-02-09 05:40:20 [simple] INFO: clashmeta found /free-nodes/2026-2-3-clash-meta-node-github.htm on 2026-02-03
-2026-02-09 05:40:20 [simple] INFO: clashmeta found /free-nodes/2026-2-3-clash-meta-node-github.htm on 2026-02-03
-2026-02-09 05:40:20 [simple] INFO: clashmeta found /free-nodes/2026-2-2-free-clash-meta-node.htm on 2026-02-02
-2026-02-09 05:40:20 [simple] INFO: clashmeta found /free-nodes/2026-2-2-free-clash-meta-node.htm on 2026-02-02
-2026-02-09 05:40:20 [simple] INFO: clashmeta found /free-nodes/2026-2-1-free-node-subscribe.htm on 2026-02-01
-2026-02-09 05:40:20 [simple] INFO: clashmeta found /free-nodes/2026-2-1-free-node-subscribe.htm on 2026-02-01
-2026-02-09 05:40:20 [simple] INFO: clashmeta found /free-nodes/2026-1-31-free-high-speed-nodes.htm on 2026-01-31
-2026-02-09 05:40:20 [simple] INFO: clashmeta found /free-nodes/2026-1-31-free-high-speed-nodes.htm on 2026-01-31
-2026-02-09 05:40:20 [simple] INFO: clashmeta found /free-nodes/2026-1-30-node-share.htm on 2026-01-30
-2026-02-09 05:40:20 [simple] INFO: clashmeta found /free-nodes/2026-1-30-node-share.htm on 2026-01-30
-2026-02-09 05:40:20 [simple] INFO: clashmeta found /free-nodes/2026-1-29-clash-meta-node-share.htm on 2026-01-29
-2026-02-09 05:40:20 [simple] INFO: clashmeta found /free-nodes/2026-1-29-clash-meta-node-share.htm on 2026-01-29
-2026-02-09 05:40:20 [simple] INFO: clashmeta found /free-nodes/2026-1-28-free-node-subscribe.htm on 2026-01-28
-2026-02-09 05:40:20 [simple] INFO: clashmeta found /free-nodes/2026-1-28-free-node-subscribe.htm on 2026-01-28
-2026-02-09 05:40:20 [simple] INFO: clashmeta found /free-nodes/2026-1-27-free-clash-meta-node.htm on 2026-01-27
-2026-02-09 05:40:20 [simple] INFO: clashmeta found /free-nodes/2026-1-27-free-clash-meta-node.htm on 2026-01-27
-2026-02-09 05:40:20 [simple] INFO: clashmeta needs update, accessing https://clash-meta.github.io/free-nodes/2026-2-5-free-node-subscribe-links.htm
-2026-02-09 05:40:20 [simple] INFO: clashmeta needs update, accessing https://clash-meta.github.io/free-nodes/2026-2-5-free-node-subscribe-links.htm
-2026-02-09 05:40:20 [simple] INFO: clashmeta needs update, accessing https://clash-meta.github.io/free-nodes/2026-2-4-latest-clash-meta-node.htm
-2026-02-09 05:40:21 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5283.html on 2026-02-09
-2026-02-09 05:40:21 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5284.html on 2026-02-08
-2026-02-09 05:40:21 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5285.html on 2026-02-07
-2026-02-09 05:40:21 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5286.html on 2026-02-06
-2026-02-09 05:40:21 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5287.html on 2026-02-05
-2026-02-09 05:40:21 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5288.html on 2026-02-04
-2026-02-09 05:40:21 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5289.html on 2026-02-03
-2026-02-09 05:40:21 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5290.html on 2026-02-02
-2026-02-09 05:40:21 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5291.html on 2026-02-01
-2026-02-09 05:40:21 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5292.html on 2026-01-31
-2026-02-09 05:40:21 [simple] INFO: v2rayshare needs update, accessing https://v2rayshare.net/p/5283.html
-2026-02-09 05:40:21 [simple] INFO: v2rayshare needs update, accessing https://v2rayshare.net/p/5284.html
-2026-02-09 05:40:21 [simple] INFO: v2rayshare needs update, accessing https://v2rayshare.net/p/5285.html
-2026-02-09 05:40:21 [simple] INFO: nodev2ray found /free-node/2026-2-9-free-node-subscribe.htm on 2026-02-09
-2026-02-09 05:40:21 [simple] INFO: nodev2ray found /free-node/2026-2-8-free-clash-subscribe.htm on 2026-02-08
-2026-02-09 05:40:21 [simple] INFO: nodev2ray found /free-node/2026-2-7-v2ray-windows.htm on 2026-02-07
-2026-02-09 05:40:21 [simple] INFO: nodev2ray found /free-node/2026-2-6-v2ray-windows.htm on 2026-02-06
-2026-02-09 05:40:21 [simple] INFO: nodev2ray found /free-node/2026-2-5-v2ray-node-daily-updates.htm on 2026-02-05
-2026-02-09 05:40:21 [simple] INFO: nodev2ray found /free-node/2026-2-4-node-share.htm on 2026-02-04
-2026-02-09 05:40:21 [simple] INFO: nodev2ray found /free-node/2026-2-3-free-ssr-node.htm on 2026-02-03
-2026-02-09 05:40:21 [simple] INFO: nodev2ray found /free-node/2026-2-2-shadowrocket-node.htm on 2026-02-02
-2026-02-09 05:40:21 [simple] INFO: nodev2ray found /free-node/2026-2-1-free-shadowrocket-node.htm on 2026-02-01
-2026-02-09 05:40:21 [simple] INFO: nodev2ray found /free-node/2026-1-31-free-clash-subscribe.htm on 2026-01-31
-2026-02-09 05:40:21 [simple] INFO: nodev2ray needs update, accessing https://nodev2ray.com/free-node/2026-2-9-free-node-subscribe.htm
-2026-02-09 05:40:21 [simple] INFO: nodev2ray is up to date, exiting
-2026-02-09 05:40:21 [simple] INFO: nodev2ray is up to date, exiting
-2026-02-09 05:40:21 [simple] INFO: nodefree found https://nodefree.me/p/3880.html on 2026-02-09
-2026-02-09 05:40:21 [simple] INFO: nodefree found https://nodefree.me/p/3881.html on 2026-02-08
-2026-02-09 05:40:21 [simple] INFO: nodefree found https://nodefree.me/p/3882.html on 2026-02-07
-2026-02-09 05:40:21 [simple] INFO: nodefree found https://nodefree.me/p/3883.html on 2026-02-06
-2026-02-09 05:40:21 [simple] INFO: nodefree found https://nodefree.me/p/3884.html on 2026-02-05
-2026-02-09 05:40:21 [simple] INFO: nodefree found https://nodefree.me/p/3885.html on 2026-02-04
-2026-02-09 05:40:21 [simple] INFO: nodefree found https://nodefree.me/p/3886.html on 2026-02-03
-2026-02-09 05:40:21 [simple] INFO: nodefree found https://nodefree.me/p/3887.html on 2026-02-02
-2026-02-09 05:40:21 [simple] INFO: nodefree found https://nodefree.me/p/3888.html on 2026-02-01
-2026-02-09 05:40:21 [simple] INFO: nodefree found https://nodefree.me/p/3889.html on 2026-01-31
-2026-02-09 05:40:21 [simple] INFO: nodefree needs update, accessing https://nodefree.me/p/3880.html
-2026-02-09 05:40:21 [simple] INFO: nodefree needs update, accessing https://nodefree.me/p/3881.html
-2026-02-09 05:40:21 [simple] INFO: nodefree needs update, accessing https://nodefree.me/p/3882.html
-2026-02-09 05:40:21 [simple] INFO: wenode found https://oneclash.cc/a/3512.html on 2026-02-09
-2026-02-09 05:40:21 [simple] INFO: wenode found https://oneclash.cc/a/3513.html on 2026-02-08
-2026-02-09 05:40:21 [simple] INFO: wenode found https://oneclash.cc/a/3514.html on 2026-02-07
-2026-02-09 05:40:21 [simple] INFO: wenode found https://oneclash.cc/a/3515.html on 2026-02-06
-2026-02-09 05:40:21 [simple] INFO: wenode found https://oneclash.cc/a/3516.html on 2026-02-05
-2026-02-09 05:40:21 [simple] INFO: wenode found https://oneclash.cc/a/3517.html on 2026-02-04
-2026-02-09 05:40:21 [simple] INFO: wenode found https://oneclash.cc/a/3518.html on 2026-02-03
-2026-02-09 05:40:21 [simple] INFO: wenode found https://oneclash.cc/a/3519.html on 2026-02-02
-2026-02-09 05:40:21 [simple] INFO: wenode found https://oneclash.cc/a/3520.html on 2026-02-01
-2026-02-09 05:40:21 [simple] INFO: wenode found https://oneclash.cc/a/3521.html on 2026-01-31
-2026-02-09 05:40:21 [simple] INFO: wenode needs update, accessing https://oneclash.cc/a/3512.html
-2026-02-09 05:40:21 [simple] INFO: wenode needs update, accessing https://oneclash.cc/a/3513.html
-2026-02-09 05:40:21 [simple] INFO: wenode needs update, accessing https://oneclash.cc/a/3514.html
-2026-02-09 05:40:21 [simple] INFO: nodev2ray found https://node.nodev2ray.com/uploads/2026/02/0-20260209.txt
-2026-02-09 05:40:21 [simple] INFO: nodev2ray found https://node.nodev2ray.com/uploads/2026/02/2-20260209.txt
-2026-02-09 05:40:21 [simple] INFO: nodev2ray found https://node.nodev2ray.com/uploads/2026/02/3-20260209.txt
-2026-02-09 05:40:21 [simple] INFO: nodev2ray found https://node.nodev2ray.com/uploads/2026/02/4-20260209.txt
-2026-02-09 05:40:21 [simple] INFO: nodev2ray found https://node.nodev2ray.com/uploads/2026/02/0-20260209.yaml
-2026-02-09 05:40:21 [simple] INFO: nodev2ray found https://node.nodev2ray.com/uploads/2026/02/1-20260209.yaml
-2026-02-09 05:40:21 [simple] INFO: nodev2ray found https://node.nodev2ray.com/uploads/2026/02/2-20260209.yaml
-2026-02-09 05:40:21 [simple] INFO: nodev2ray found https://node.nodev2ray.com/uploads/2026/02/3-20260209.yaml
-2026-02-09 05:40:21 [simple] INFO: nodev2ray found https://node.nodev2ray.com/uploads/2026/02/4-20260209.yaml
-2026-02-09 05:40:21 [simple] WARNING: nodev2ray could not parse https://node.nodev2ray.com/uploads/2026/02/20260209.json, skipping
-2026-02-09 05:40:21 [simple] INFO: ndnode found https://www.naidounode.com/n/3551.html on 2026-02-09
-2026-02-09 05:40:21 [simple] INFO: ndnode found https://www.naidounode.com/n/3549.html on 2026-02-08
-2026-02-09 05:40:21 [simple] INFO: ndnode found https://www.naidounode.com/n/3547.html on 2026-02-07
-2026-02-09 05:40:21 [simple] INFO: ndnode found https://www.naidounode.com/n/3545.html on 2026-02-06
-2026-02-09 05:40:21 [simple] INFO: ndnode found https://www.naidounode.com/n/3543.html on 2026-02-05
-2026-02-09 05:40:21 [simple] INFO: ndnode found https://www.naidounode.com/n/3541.html on 2026-02-04
-2026-02-09 05:40:21 [simple] INFO: ndnode found https://www.naidounode.com/n/3539.html on 2026-02-03
-2026-02-09 05:40:21 [simple] INFO: ndnode found https://www.naidounode.com/n/3537.html on 2026-02-02
-2026-02-09 05:40:21 [simple] INFO: ndnode found https://www.naidounode.com/n/3535.html on 2026-02-01
-2026-02-09 05:40:21 [simple] INFO: ndnode found https://www.naidounode.com/n/3533.html on 2026-01-31
-2026-02-09 05:40:21 [simple] INFO: ndnode needs update, accessing https://www.naidounode.com/n/3551.html
-2026-02-09 05:40:21 [simple] INFO: ndnode is up to date, exiting
-2026-02-09 05:40:21 [simple] INFO: ndnode is up to date, exiting
-2026-02-09 05:40:22 [simple] INFO: ndnode found http://naidounode.cczzuu.top/node/20260209-v2ray.txt
-2026-02-09 05:40:22 [simple] INFO: ndnode found http://naidounode.cczzuu.top/node/20260209-clash.yaml
-2026-02-09 05:40:22 [simple] INFO: Pipeline got item nodev2ray.yaml
-2026-02-09 05:40:22 [simple] INFO: Pipeline processed nodev2ray.yaml
-2026-02-09 05:40:22 [simple] INFO: Pipeline got item nodev2ray.txt
-2026-02-09 05:40:22 [simple] INFO: Pipeline processed nodev2ray.txt
-2026-02-09 05:40:22 [simple] INFO: Pipeline got item nodev2ray.txt
-2026-02-09 05:40:22 [simple] INFO: Pipeline processed nodev2ray.txt
-2026-02-09 05:40:22 [simple] INFO: Pipeline got item nodev2ray.txt
-2026-02-09 05:40:22 [simple] INFO: Pipeline processed nodev2ray.txt
-2026-02-09 05:40:22 [simple] INFO: Pipeline got item nodev2ray.yaml
-2026-02-09 05:40:22 [simple] INFO: Pipeline processed nodev2ray.yaml
-2026-02-09 05:40:22 [simple] INFO: Pipeline got item nodev2ray.txt
-2026-02-09 05:40:22 [simple] INFO: Pipeline processed nodev2ray.txt
-2026-02-09 05:40:22 [simple] INFO: Pipeline got item nodev2ray.yaml
-2026-02-09 05:40:22 [simple] INFO: Pipeline processed nodev2ray.yaml
-2026-02-09 05:40:22 [simple] INFO: Pipeline got item nodev2ray.yaml
-2026-02-09 05:40:23 [scrapy.core.scraper] ERROR: Error processing {'body': 'port: 7890\n'
+2026-02-10 05:40:22 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-02-10 05:40:22 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-02-10 05:40:22 [simple] INFO: clashmeta start
+2026-02-10 05:40:22 [simple] INFO: ndnode start
+2026-02-10 05:40:22 [simple] INFO: nodev2ray start
+2026-02-10 05:40:22 [simple] INFO: nodefree start
+2026-02-10 05:40:22 [simple] INFO: v2rayshare start
+2026-02-10 05:40:22 [simple] INFO: wenode start
+2026-02-10 05:40:22 [simple] INFO: clashmeta found /free-nodes/2026-2-5-free-node-subscribe-links.htm on 2026-02-05
+2026-02-10 05:40:22 [simple] INFO: clashmeta found /free-nodes/2026-2-5-free-node-subscribe-links.htm on 2026-02-05
+2026-02-10 05:40:22 [simple] INFO: clashmeta found /free-nodes/2026-2-4-latest-clash-meta-node.htm on 2026-02-04
+2026-02-10 05:40:22 [simple] INFO: clashmeta found /free-nodes/2026-2-4-latest-clash-meta-node.htm on 2026-02-04
+2026-02-10 05:40:22 [simple] INFO: clashmeta found /free-nodes/2026-2-3-clash-meta-node-github.htm on 2026-02-03
+2026-02-10 05:40:22 [simple] INFO: clashmeta found /free-nodes/2026-2-3-clash-meta-node-github.htm on 2026-02-03
+2026-02-10 05:40:22 [simple] INFO: clashmeta found /free-nodes/2026-2-2-free-clash-meta-node.htm on 2026-02-02
+2026-02-10 05:40:22 [simple] INFO: clashmeta found /free-nodes/2026-2-2-free-clash-meta-node.htm on 2026-02-02
+2026-02-10 05:40:22 [simple] INFO: clashmeta found /free-nodes/2026-2-1-free-node-subscribe.htm on 2026-02-01
+2026-02-10 05:40:22 [simple] INFO: clashmeta found /free-nodes/2026-2-1-free-node-subscribe.htm on 2026-02-01
+2026-02-10 05:40:22 [simple] INFO: clashmeta found /free-nodes/2026-1-31-free-high-speed-nodes.htm on 2026-01-31
+2026-02-10 05:40:22 [simple] INFO: clashmeta found /free-nodes/2026-1-31-free-high-speed-nodes.htm on 2026-01-31
+2026-02-10 05:40:22 [simple] INFO: clashmeta found /free-nodes/2026-1-30-node-share.htm on 2026-01-30
+2026-02-10 05:40:22 [simple] INFO: clashmeta found /free-nodes/2026-1-30-node-share.htm on 2026-01-30
+2026-02-10 05:40:22 [simple] INFO: clashmeta found /free-nodes/2026-1-29-clash-meta-node-share.htm on 2026-01-29
+2026-02-10 05:40:22 [simple] INFO: clashmeta found /free-nodes/2026-1-29-clash-meta-node-share.htm on 2026-01-29
+2026-02-10 05:40:22 [simple] INFO: clashmeta found /free-nodes/2026-1-28-free-node-subscribe.htm on 2026-01-28
+2026-02-10 05:40:22 [simple] INFO: clashmeta found /free-nodes/2026-1-28-free-node-subscribe.htm on 2026-01-28
+2026-02-10 05:40:22 [simple] INFO: clashmeta found /free-nodes/2026-1-27-free-clash-meta-node.htm on 2026-01-27
+2026-02-10 05:40:22 [simple] INFO: clashmeta found /free-nodes/2026-1-27-free-clash-meta-node.htm on 2026-01-27
+2026-02-10 05:40:22 [simple] INFO: clashmeta needs update, accessing https://clash-meta.github.io/free-nodes/2026-2-5-free-node-subscribe-links.htm
+2026-02-10 05:40:22 [simple] INFO: clashmeta needs update, accessing https://clash-meta.github.io/free-nodes/2026-2-5-free-node-subscribe-links.htm
+2026-02-10 05:40:22 [simple] INFO: clashmeta needs update, accessing https://clash-meta.github.io/free-nodes/2026-2-4-latest-clash-meta-node.htm
+2026-02-10 05:40:22 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5282.html on 2026-02-10
+2026-02-10 05:40:22 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5283.html on 2026-02-09
+2026-02-10 05:40:22 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5284.html on 2026-02-08
+2026-02-10 05:40:22 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5285.html on 2026-02-07
+2026-02-10 05:40:22 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5286.html on 2026-02-06
+2026-02-10 05:40:22 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5287.html on 2026-02-05
+2026-02-10 05:40:22 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5288.html on 2026-02-04
+2026-02-10 05:40:22 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5289.html on 2026-02-03
+2026-02-10 05:40:22 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5290.html on 2026-02-02
+2026-02-10 05:40:22 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5291.html on 2026-02-01
+2026-02-10 05:40:22 [simple] INFO: v2rayshare needs update, accessing https://v2rayshare.net/p/5282.html
+2026-02-10 05:40:22 [simple] INFO: v2rayshare needs update, accessing https://v2rayshare.net/p/5283.html
+2026-02-10 05:40:22 [simple] INFO: v2rayshare needs update, accessing https://v2rayshare.net/p/5284.html
+2026-02-10 05:40:22 [simple] INFO: nodefree found https://nodefree.me/p/3879.html on 2026-02-10
+2026-02-10 05:40:22 [simple] INFO: nodefree found https://nodefree.me/p/3880.html on 2026-02-09
+2026-02-10 05:40:22 [simple] INFO: nodefree found https://nodefree.me/p/3881.html on 2026-02-08
+2026-02-10 05:40:22 [simple] INFO: nodefree found https://nodefree.me/p/3882.html on 2026-02-07
+2026-02-10 05:40:22 [simple] INFO: nodefree found https://nodefree.me/p/3883.html on 2026-02-06
+2026-02-10 05:40:22 [simple] INFO: nodefree found https://nodefree.me/p/3884.html on 2026-02-05
+2026-02-10 05:40:22 [simple] INFO: nodefree found https://nodefree.me/p/3885.html on 2026-02-04
+2026-02-10 05:40:22 [simple] INFO: nodefree found https://nodefree.me/p/3886.html on 2026-02-03
+2026-02-10 05:40:22 [simple] INFO: nodefree found https://nodefree.me/p/3887.html on 2026-02-02
+2026-02-10 05:40:22 [simple] INFO: nodefree found https://nodefree.me/p/3888.html on 2026-02-01
+2026-02-10 05:40:22 [simple] INFO: nodefree needs update, accessing https://nodefree.me/p/3879.html
+2026-02-10 05:40:22 [simple] INFO: nodefree needs update, accessing https://nodefree.me/p/3880.html
+2026-02-10 05:40:22 [simple] INFO: nodefree needs update, accessing https://nodefree.me/p/3881.html
+2026-02-10 05:40:22 [simple] INFO: nodev2ray found /free-node/2026-2-10-v2ray-node.htm on 2026-02-10
+2026-02-10 05:40:22 [simple] INFO: nodev2ray found /free-node/2026-2-9-free-node-subscribe.htm on 2026-02-09
+2026-02-10 05:40:22 [simple] INFO: nodev2ray found /free-node/2026-2-8-free-clash-subscribe.htm on 2026-02-08
+2026-02-10 05:40:22 [simple] INFO: nodev2ray found /free-node/2026-2-7-v2ray-windows.htm on 2026-02-07
+2026-02-10 05:40:22 [simple] INFO: nodev2ray found /free-node/2026-2-6-v2ray-windows.htm on 2026-02-06
+2026-02-10 05:40:22 [simple] INFO: nodev2ray found /free-node/2026-2-5-v2ray-node-daily-updates.htm on 2026-02-05
+2026-02-10 05:40:22 [simple] INFO: nodev2ray found /free-node/2026-2-4-node-share.htm on 2026-02-04
+2026-02-10 05:40:22 [simple] INFO: nodev2ray found /free-node/2026-2-3-free-ssr-node.htm on 2026-02-03
+2026-02-10 05:40:22 [simple] INFO: nodev2ray found /free-node/2026-2-2-shadowrocket-node.htm on 2026-02-02
+2026-02-10 05:40:22 [simple] INFO: nodev2ray found /free-node/2026-2-1-free-shadowrocket-node.htm on 2026-02-01
+2026-02-10 05:40:22 [simple] INFO: nodev2ray needs update, accessing https://nodev2ray.com/free-node/2026-2-10-v2ray-node.htm
+2026-02-10 05:40:22 [simple] INFO: nodev2ray is up to date, exiting
+2026-02-10 05:40:22 [simple] INFO: nodev2ray is up to date, exiting
+2026-02-10 05:40:23 [simple] INFO: wenode found https://oneclash.cc/a/3511.html on 2026-02-10
+2026-02-10 05:40:23 [simple] INFO: wenode found https://oneclash.cc/a/3512.html on 2026-02-09
+2026-02-10 05:40:23 [simple] INFO: wenode found https://oneclash.cc/a/3513.html on 2026-02-08
+2026-02-10 05:40:23 [simple] INFO: wenode found https://oneclash.cc/a/3514.html on 2026-02-07
+2026-02-10 05:40:23 [simple] INFO: wenode found https://oneclash.cc/a/3515.html on 2026-02-06
+2026-02-10 05:40:23 [simple] INFO: wenode found https://oneclash.cc/a/3516.html on 2026-02-05
+2026-02-10 05:40:23 [simple] INFO: wenode found https://oneclash.cc/a/3517.html on 2026-02-04
+2026-02-10 05:40:23 [simple] INFO: wenode found https://oneclash.cc/a/3518.html on 2026-02-03
+2026-02-10 05:40:23 [simple] INFO: wenode found https://oneclash.cc/a/3519.html on 2026-02-02
+2026-02-10 05:40:23 [simple] INFO: wenode found https://oneclash.cc/a/3520.html on 2026-02-01
+2026-02-10 05:40:23 [simple] INFO: wenode needs update, accessing https://oneclash.cc/a/3511.html
+2026-02-10 05:40:23 [simple] INFO: wenode needs update, accessing https://oneclash.cc/a/3512.html
+2026-02-10 05:40:23 [simple] INFO: wenode needs update, accessing https://oneclash.cc/a/3513.html
+2026-02-10 05:40:23 [simple] INFO: nodev2ray found https://node.nodev2ray.com/uploads/2026/02/1-20260210.txt
+2026-02-10 05:40:23 [simple] INFO: nodev2ray found https://node.nodev2ray.com/uploads/2026/02/2-20260210.txt
+2026-02-10 05:40:23 [simple] INFO: nodev2ray found https://node.nodev2ray.com/uploads/2026/02/3-20260210.txt
+2026-02-10 05:40:23 [simple] INFO: nodev2ray found https://node.nodev2ray.com/uploads/2026/02/0-20260210.yaml
+2026-02-10 05:40:23 [simple] INFO: nodev2ray found https://node.nodev2ray.com/uploads/2026/02/1-20260210.yaml
+2026-02-10 05:40:23 [simple] INFO: nodev2ray found https://node.nodev2ray.com/uploads/2026/02/3-20260210.yaml
+2026-02-10 05:40:23 [simple] INFO: nodev2ray found https://node.nodev2ray.com/uploads/2026/02/4-20260210.yaml
+2026-02-10 05:40:23 [simple] WARNING: nodev2ray could not parse https://node.nodev2ray.com/uploads/2026/02/20260210.json, skipping
+2026-02-10 05:40:23 [simple] INFO: ndnode found https://www.naidounode.com/n/3553.html on 2026-02-10
+2026-02-10 05:40:23 [simple] INFO: ndnode found https://www.naidounode.com/n/3551.html on 2026-02-09
+2026-02-10 05:40:23 [simple] INFO: ndnode found https://www.naidounode.com/n/3549.html on 2026-02-08
+2026-02-10 05:40:23 [simple] INFO: ndnode found https://www.naidounode.com/n/3547.html on 2026-02-07
+2026-02-10 05:40:23 [simple] INFO: ndnode found https://www.naidounode.com/n/3545.html on 2026-02-06
+2026-02-10 05:40:23 [simple] INFO: ndnode found https://www.naidounode.com/n/3543.html on 2026-02-05
+2026-02-10 05:40:23 [simple] INFO: ndnode found https://www.naidounode.com/n/3541.html on 2026-02-04
+2026-02-10 05:40:23 [simple] INFO: ndnode found https://www.naidounode.com/n/3539.html on 2026-02-03
+2026-02-10 05:40:23 [simple] INFO: ndnode found https://www.naidounode.com/n/3537.html on 2026-02-02
+2026-02-10 05:40:23 [simple] INFO: ndnode found https://www.naidounode.com/n/3535.html on 2026-02-01
+2026-02-10 05:40:23 [simple] INFO: ndnode needs update, accessing https://www.naidounode.com/n/3553.html
+2026-02-10 05:40:23 [simple] INFO: ndnode is up to date, exiting
+2026-02-10 05:40:23 [simple] INFO: ndnode is up to date, exiting
+2026-02-10 05:40:23 [simple] INFO: Pipeline got item nodev2ray.txt
+2026-02-10 05:40:23 [simple] INFO: Pipeline processed nodev2ray.txt
+2026-02-10 05:40:23 [simple] INFO: Pipeline got item nodev2ray.yaml
+2026-02-10 05:40:23 [simple] INFO: Pipeline processed nodev2ray.yaml
+2026-02-10 05:40:23 [simple] INFO: Pipeline got item nodev2ray.txt
+2026-02-10 05:40:23 [simple] INFO: Pipeline processed nodev2ray.txt
+2026-02-10 05:40:23 [simple] INFO: ndnode found http://naidounode.cczzuu.top/node/20260210-v2ray.txt
+2026-02-10 05:40:23 [simple] INFO: ndnode found http://naidounode.cczzuu.top/node/20260210-clash.yaml
+2026-02-10 05:40:23 [simple] INFO: Pipeline got item nodev2ray.yaml
+2026-02-10 05:40:23 [simple] INFO: Pipeline processed nodev2ray.yaml
+2026-02-10 05:40:23 [simple] INFO: Pipeline got item nodev2ray.txt
+2026-02-10 05:40:23 [simple] INFO: Pipeline processed nodev2ray.txt
+2026-02-10 05:40:23 [simple] INFO: Pipeline got item nodev2ray.yaml
+2026-02-10 05:40:24 [scrapy.core.scraper] ERROR: Error processing {'body': 'port: 7890\n'
          'socks-port: 7891\n'
          'allow-lan: true\n'
          'mode: Rule\n'
          'log-level: info\n'
          'external-controller: :9090\n'
          'proxies:\n'
-         '  - {name: US美国(mibei77.com 米贝节点分享), server: 2001:bc8:32d7:302::17, '
+         '  - {name: US美国(mibei77.com 米贝节点分享), server: 2001:bc8:32d7:302::11, '
          'port: 44579, type: vmess, uuid: '
          '8e34e170-13ae-4892-9d20-05962acc9f84, alterId: 0, cipher: auto, tls: '
          'false, skip-cert-verify: true, network: ws, ws-path: '
-         '"/?BIA_TELEGRAM@AZARBAYJAB1_AZARBAYJAB1_AZARBAYJAB1_AZARBAYJAB1", '
+         '"/?BIA_TELEGRAM@AZARBAYJAB1_AZARBAYJAB1_AZARBAYJAB1_AZARBAYJAB1?ed=2560", '
+         'ws-headers: {Host: TABRIZ.NET}, udp: true}\n'
+         '  - {name: US美国(mibei77.com 米贝节点分享) 2, server: v1.dabache.top, port: '
+         '8443, type: trojan, password: T9BpZIVMNv, sni: v1.dabache.top, '
+         'skip-cert-verify: true, udp: true}\n'
+         '  - {name: US美国(mibei77.com 米贝节点分享) 3, server: mko.859886.xyz, port: '
+         '443, type: vmess, uuid: b020865b-7404-4894-ba65-a7414b10cda3, '
+         'alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, '
+         'network: ws, ws-path: /boWUVaU0sxrNtFSdOPjqSc7fzeJr, ws-headers: '
+         '{Host: mko.859886.xyz}, udp: true}\n'
+         '  - {name: US美国(mibei77.com 米贝节点分享) 4, server: tttyu.2030.pp.ua, '
+         'port: 443, type: vmess, uuid: fc3704d6-8e5e-443a-bd5b-20ec7cfbe990, '
+         'alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, '
+         'network: ws, ws-path: /eszjp4nTT8TxDHFepMpfNkCk8, ws-headers: {Host: '
+         'tttyu.2030.pp.ua}, udp: true}\n'
+         '  - {name: US美国(mibei77.com 米贝节点分享) 5, server: gbnh.7777112.xyz, '
+         'port: 443, type: trojan, password: '
+         '2bfe58f7-da1d-45df-ab43-7c665b20ee29, sni: gbnh.7777112.xyz, '
+         'skip-cert-verify: true, udp: true}\n'
+         '  - {name: GB英国(mibei77.com 米贝节点分享), server: 82.198.246.97, port: '
+         '180, type: vmess, uuid: d13fc2f5-3e05-4795-81eb-44143a09e552, '
+         'alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: '
+         'true}\n'
+         '  - {name: US美国(mibei77.com 米贝节点分享) 6, server: mkouy.99890604.xyz, '
+         'port: 443, type: trojan, password: '
+         '5196aae7-1479-4f3c-978b-68e74977b509, sni: mkouy.99890604.xyz, '
+         'skip-cert-verify: true, udp: true}\n'
+         '  - {name: CA加拿大(mibei77.com 米贝节点分享), server: vip2.kaixincloud.top, '
+         'port: 8443, type: trojan, password: T9BpZIVMNv, sni: '
+         'vip2.kaixincloud.top, skip-cert-verify: true, udp: true}\n'
+         '  - {name: US美国(mibei77.com 米贝节点分享) 7, server: '
+         '2001:bc8:32d7:302::10, port: 44579, type: vmess, uuid: '
+         '8e34e170-13ae-4892-9d20-05962acc9f84, alterId: 0, cipher: auto, tls: '
+         'false, skip-cert-verify: true, network: ws, ws-path: '
+         '"/?BIA_TELEGRAM@AZARBAYJAB1_AZARBAYJAB1_AZARBAYJAB1_AZARBAYJAB1?ed=2560", '
          'ws-headers: {Host: AZERB.NET}, udp: true}\n'
-         '  - {name: US美国(mibei77.com 米贝节点分享) 2, server: '
-         '2001:bc8:32d7:302::10, port: 44579, type: vmess, uuid: '
-         '8e34e170-13ae-4892-9d20-05962acc9f84, alterId: 0, cipher: auto, tls: '
-         'false, skip-cert-verify: true, network: ws, ws-path: '
-         '"/?ed=2048@V2Ray_hiddify10--https://t.me/V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--https://t.me/V2Ray_hiddify10", '
-         'ws-headers: {Host: 2001:bc8:32d7:302::10}, udp: true}\n'
-         '  - {name: US美国(mibei77.com 米贝节点分享) 3, server: '
-         '2001:bc8:32d7:302::10, port: 44579, type: vmess, uuid: '
-         '8e34e170-13ae-4892-9d20-05962acc9f84, alterId: 0, cipher: auto, tls: '
-         'false, skip-cert-verify: true, network: ws, ws-path: '
-         '"/?ed=2048@V2Ray_hiddify10--https://t.me/V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--V2Ray_hiddify10--https://t.me/V2Ray_hiddify10", '
-         'ws-headers: {Host: 2001:bc8:32d7:302::10}, udp: true}\n'
-         '  - {name: US美国(mibei77.com 米贝节点分享) 4, server: '
+         '  - {name: US美国(mibei77.com 米贝节点分享) 8, server: mmki9.kk1.ccwu.cc, '
+         'port: 443, type: vmess, uuid: 9d24b07c-71f4-4aa5-95ac-3307c6995619, '
+         'alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, '
+         'network: ws, ws-path: /FlydU79Rnu0lNhu1YZc7zZ, ws-headers: {Host: '
+         'mmki9.kk1.ccwu.cc}, udp: true}\n'
+         '  - {name: US美国(mibei77.com 米贝节点分享) 9, server: v2.dabache.top, port: '
+         '2083, type: vmess, uuid: 698ba3c2-e501-42c3-8dc4-2d44e7099454, '
+         'alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, '
+         'network: ws, ws-path: /ws, ws-headers: {Host: blog.dezh.store}, udp: '
+         'true}\n'
+         '  - {name: CA加拿大(mibei77.com 米贝节点分享) 2, server: '
          '2001:bc8:32d7:302::10, port: 44579, type: vmess, uuid: '
          '8e34e170-13ae-4892-9d20-05962acc9f84, alterId: 0, cipher: auto, tls: '
          'false, skip-cert-verify: true, network: ws, ws-path: '
          '"/?ed=2048HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN", '
          'ws-headers: {Host: 2001:bc8:32d7:302::10}, udp: true}\n'
-         '  - {name: US美国(mibei77.com 米贝节点分享) 5, server: fffffg.890602.pp.ua, '
-         'port: 80, type: vmess, uuid: 4a7baca1-8048-4a91-8316-595b36657a54, '
-         'alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, '
-         'network: ws, ws-path: /TaBvkrUbsyvsvinsGGg, ws-headers: {Host: '
-         'fffffg.890602.pp.ua}, udp: true}\n'
-         '  - {name: US美国(mibei77.com 米贝节点分享) 6, server: 90.890624.xyz, port: '
-         '80, type: vmess, uuid: b020865b-7404-4894-ba65-a7414b10cda3, '
-         'alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, '
-         'network: ws, ws-path: /boWUVaU0sxrNtFSdOPjqSc7fzeJr, ws-headers: '
-         '{Host: 90.890624.xyz}, udp: true}\n'
-         '  - {name: US美国(mibei77.com 米贝节点分享) 7, server: '
+         '  - {name: US美国(mibei77.com 米贝节点分享) 10, server: '
          '2001:bc8:32d7:302::10, port: 44579, type: vmess, uuid: '
          '8e34e170-13ae-4892-9d20-05962acc9f84, alterId: 0, cipher: auto, tls: '
-         'false, skip-cert-verify: true, network: ws, ws-path: /, ws-headers: '
-         '{Host: 2001:bc8:32d7:302::10}, udp: true}\n'
-         '  - {name: GB英国(mibei77.com 米贝节点分享), server: '
-         'mmkk.www890604.dpdns.org, port: 443, type: trojan, password: '
-         '5cccb4da-8aee-4b01-be84-2056265e52dc, sni: mmkk.www890604.dpdns.org, '
-         'skip-cert-verify: true, udp: true}\n'
-         '  - {name: GB英国(mibei77.com 米贝节点分享) 2, server: 82.198.246.97, port: '
-         '180, type: vmess, uuid: d13fc2f5-3e05-4795-81eb-44143a09e552, '
-         'alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: '
-         'true}\n'
-         '  - {name: US美国(mibei77.com 米贝节点分享) 8, server: 82.198.246.97, port: '
-         '180, type: vmess, uuid: d13fc2f5-3e05-4795-81eb-44143a09e552, '
-         'alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: '
-         'true}\n'
-         '  - {name: US美国(mibei77.com 米贝节点分享) 9, server: mmmki.890634.xYZ, '
-         'port: 80, type: vmess, uuid: 5cccb4da-8aee-4b01-be84-2056265e52dc, '
+         'false, skip-cert-verify: true, network: ws, ws-path: '
+         '"/?BIA_TELEGRAM@AZARBAYJAB1_AZARBAYJAB1_AZARBAYJAB1_AZARBAYJAB1", '
+         'ws-headers: {Host: AZERB.NET}, udp: true}\n'
+         '  - {name: US美国(mibei77.com 米贝节点分享) 11, server: nju.bb4.indevs.in, '
+         'port: 80, type: vmess, uuid: b020865b-7404-4894-ba65-a7414b10cda3, '
          'alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, '
-         'network: ws, ws-path: /AwUJyGh9Ym6vVzg35A6ueyyZnWd, ws-headers: '
-         '{Host: Mmmki.890634.XYz}, udp: true}\n'
-         '  - {name: GB英国(mibei77.com 米贝节点分享) 3, server: 82.198.246.97, port: '
-         '180, type: vmess, uuid: d13fc2f5-3e05-4795-81eb-44143a09e552, '
-         'alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: '
-         'true}\n'
-         '  - {name: US美国(mibei77.com 米贝节点分享) 10, server: 82.198.246.97, port: '
-         '180, type: vmess, uuid: d13fc2f5-3e05-4795-81eb-44143a09e552, '
-         'alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: '
-         'true}\n'
-         '  - {name: GB英国(mibei77.com 米贝节点分享) 4, server: nextmi.hajmyab.ir, '
-         'port: 2053, type: vmess, uuid: 9585636a-54bc-419a-90a1-76c5c6ec74df, '
-         'alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, '
-         'network: ws, ws-path: /, ws-headers: {Host: app.hajmyab.ir}, udp: '
-         'true}\n'
-         '  - {name: US美国(mibei77.com 米贝节点分享) 11, server: v12.hdacd.com, port: '
-         '30812, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, '
-         'alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: '
-         'true}\n'
-         '  - {name: US美国(mibei77.com 米贝节点分享) 12, server: '
-         'blackshadow.dpdns.org, port: 443, type: trojan, password: '
-         '2bcfbfba-b446-4ad5-93ad-72af9e008f61, sni: blackshadow.dpdns.org, '
-         'skip-cert-verify: true, udp: true}\n'
-         '  - {name: HK香港(mibei77.com 米贝节点分享), server: '
+         'network: ws, ws-path: /boWUVaU0sxrNtFSdOPjqSc7fzeJr, ws-headers: '
+         '{Host: nju.bb4.indevs.in}, udp: true}\n'
+         '  - {name: US美国(mibei77.com 米贝节点分享) 12, server: nju.bb4.indevs.in, '
+         'port: 80, type: vmess, uuid: b020865b-7404-4894-ba65-a7414b10cda3, '
+         'alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, '
+         'network: ws, ws-path: /boWUVaU0sxrNtFSdOPjqSc7fzeJr, ws-headers: '
+         '{Host: nju.bb4.indevs.in}, udp: true}\n'
+         '  - {name: US美国(mibei77.com 米贝节点分享) 13, server: '
          'join.my.telegram.channel.cmliussss.to.unlock.more.premium.nodes.cf.090227.xyz, '
          'port: 443, type: trojan, password: '
          '87d1bfd4-574e-4c96-ad42-0426f27461ff, sni: '
          'join.my.telegram.channel.cmliussss.to.unlock.more.premium.nodes.cf.090227.xyz, '
          'skip-cert-verify: true, udp: true}\n'
-         '  - {name: GB英国(mibei77.com 米贝节点分享) 5, server: 167.68.4.199, port: '
+         '  - {name: US美国(mibei77.com 米贝节点分享) 14, server: '
+         'blackshadow.dpdns.org, port: 443, type: trojan, password: '
+         '2bcfbfba-b446-4ad5-93ad-72af9e008f61, sni: blackshadow.dpdns.org, '
+         'skip-cert-verify: true, udp: true}\n'
+         '  - {name: GB英国(mibei77.com 米贝节点分享) 2, server: 167.68.4.199, port: '
          '2053, type: trojan, password: Aimer, skip-cert-verify: true, udp: '
          'true}\n'
-         '  - {name: US美国(mibei77.com 米贝节点分享) 13, server: v1.dabache.top, '
-         'port: 8443, type: trojan, password: T9BpZIVMNv, sni: v1.dabache.top, '
-         'skip-cert-verify: true, udp: true}\n'
-         '  - {name: US美国(mibei77.com 米贝节点分享) 14, server: CCCVFffF.191288.Xyz, '
-         'port: 80, type: vmess, uuid: 4a7baca1-8048-4a91-8316-595b36657a54, '
-         'alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, '
-         'network: ws, ws-path: /TaBvkrUbsyvsvinsGGg, ws-headers: {Host: '
-         'cCCVfffF.191288.xyZ}, udp: true}\n'
-         '  - {name: US美国(mibei77.com 米贝节点分享) 15, server: '
-         'mmkk.www890604.dpdns.org, port: 443, type: trojan, password: '
-         '5cccb4da-8aee-4b01-be84-2056265e52dc, sni: mmkk.www890604.dpdns.org, '
-         'skip-cert-verify: true, udp: true}\n'
-         '  - {name: US美国(mibei77.com 米贝节点分享) 16, server: mmk.890601.xyz, '
-         'port: 80, type: vmess, uuid: b020865b-7404-4894-ba65-a7414b10cda3, '
-         'alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, '
-         'network: ws, ws-path: /boWUVaU0sxrNtFSdOPjqSc7fzeJr, ws-headers: '
-         '{Host: mmk.890601.xyz}, udp: true}\n'
-         '  - {name: US美国(mibei77.com 米贝节点分享) 17, server: mmk.890601.xyz, '
-         'port: 80, type: vmess, uuid: b020865b-7404-4894-ba65-a7414b10cda3, '
-         'alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, '
-         'network: ws, ws-path: /boWUVaU0sxrNtFSdOPjqSc7fzeJr, ws-headers: '
-         '{Host: mmk.890601.xyz}, udp: true}\n'
-         '  - {name: GB英国(mibei77.com 米贝节点分享) 6, server: op.857657.xyz, port: '
-         '80, type: vmess, uuid: b020865b-7404-4894-ba65-a7414b10cda3, '
-         'alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, '
-         'network: ws, ws-path: /boWUVaU0sxrNtFSdOPjqSc7fzeJr, ws-headers: '
-         '{Host: op.857657.xyz}, udp: true}\n'
-         '  - {name: US美国(mibei77.com 米贝节点分享) 18, server: vVVbNHj.191288.xYz, '
-         'port: 80, type: vmess, uuid: 5cccb4da-8aee-4b01-be84-2056265e52dc, '
-         'alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, '
-         'network: ws, ws-path: /AwUJyGh9Ym6vVzg35A6ueyyZnWd, ws-headers: '
-         '{Host: VvVBnHj.191288.XYZ}, udp: true}\n'
-         '  - {name: DE德国(mibei77.com 米贝节点分享), server: '
-         'BBBbBb.tAiWAn2028.IndEvs.In, port: 443, type: vmess, uuid: '
-         '5cccb4da-8aee-4b01-be84-2056265e52dc, alterId: 0, cipher: auto, tls: '
-         'true, skip-cert-verify: true, network: ws, ws-path: '
-         '/AwUJyGh9Ym6vVzg35A6ueyyZnWd, ws-headers: {Host: '
-         'BbBbBB.taIwAN2028.InDeVs.iN}, udp: true}\n'
-         '  - {name: HK香港(mibei77.com 米贝节点分享) 2, server: '
-         '2001:bc8:32d7:302::10, port: 44579, type: vmess, uuid: '
-         '8e34e170-13ae-4892-9d20-05962acc9f84, alterId: 0, cipher: auto, tls: '
-         'false, skip-cert-verify: true, network: ws, ws-path: "/?ed=2048", '
-         'ws-headers: {Host: 2001:bc8:32d7:302::10}, udp: true}\n'
-         '  - {name: US美国(mibei77.com 米贝节点分享) 19, server: mmmk.288288.shop, '
-         'port: 443, type: trojan, password: '
-         '5cccb4da-8aee-4b01-be84-2056265e52dc, sni: mmmk.288288.shop, '
-         'skip-cert-verify: true, udp: true}\n'
-         '  - {name: DE德国(mibei77.com 米贝节点分享) 2, server: sy4.620720.xyz, port: '
-         '443, type: vmess, uuid: 516d8a7a-3f0b-41d3-bad0-246116381516, '
+         '  - {name: US美国(mibei77.com 米贝节点分享) 15, server: nextmi.hajmyab.ir, '
+         'port: 2053, type: vmess, uuid: 9585636a-54bc-419a-90a1-76c5c6ec74df, '
          'alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, '
-         'network: ws, ws-path: /, ws-headers: {Host: sy4.620720.xyz}, udp: '
+         'network: ws, ws-path: /, ws-headers: {Host: app.hajmyab.ir}, udp: '
          'true}\n'
-         '  - {name: US美国(mibei77.com 米贝节点分享) 20, server: '
-         'vvvbbbnhj.taipei102.indevs.in, port: 443, type: trojan, password: '
-         '2bfe58f7-da1d-45df-ab43-7c665b20ee29, sni: '
-         'vvvbbbnhj.taipei102.indevs.in, skip-cert-verify: true, udp: true}\n'
-         '  - {name: US美国(mibei77.com 米贝节点分享) 21, server: v12.hdacd.com, port: '
-         '30812, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, '
-         'alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: '
-         'true}\n'
-         '  - {name: US美国(mibei77.com 米贝节点分享) 22, server: rrrgt.2030.pp.ua, '
-         'port: 80, type: vmess, uuid: fc3704d6-8e5e-443a-bd5b-20ec7cfbe990, '
-         'alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, '
-         'network: ws, ws-path: /eszjp4nTT8TxDHFepMpfNkCk8, ws-headers: {Host: '
-         'rrrgt.2030.pp.ua}, udp: true}\n'
-         '  - {name: US美国(mibei77.com 米贝节点分享) 23, server: '
-         'chengbai02.ascwt179.com, port: 13223, type: ss, cipher: aes-128-gcm, '
-         'password: JVrsLLN1tkN8oXZO, udp: true}\n'
-         '  - {name: US美国(mibei77.com 米贝节点分享) 24, server: '
-         'vip3.kaixincloud.top, port: 8443, type: trojan, password: '
-         'T9BpZIVMNv, sni: vip3.kaixincloud.top, skip-cert-verify: true, udp: '
-         'true}\n'
-         '  - {name: HK香港(mibei77.com 米贝节点分享) 3, server: '
-         '2001:bc8:32d7:302::10, port: 44579, type: vmess, uuid: '
-         '8e34e170-13ae-4892-9d20-05962acc9f84, alterId: 0, cipher: auto, tls: '
-         'false, skip-cert-verify: true, network: ws, ws-path: "/?ed=2048", '
-         'ws-headers: {Host: 2001:bc8:32d7:302::10}, udp: true}\n'
-         '  - {name: US美国(mibei77.com 米贝节点分享) 25, server: '
-         '2001:bc8:32d7:302::10, port: 44579, type: vmess, uuid: '
-         '8e34e170-13ae-4892-9d20-05962acc9f84, alterId: 0, cipher: auto, tls: '
-         'false, skip-cert-verify: true, network: ws, ws-path: "?ed=2048", '
-         'ws-headers: {Host: 2001:bc8:32d7:302::10}, udp: true}\n'
-         '  - {name: CA加拿大(mibei77.com 米贝节点分享), server: '
-         'bbbnmkl.taiwan2028.indevs.in, port: 443, type: trojan, password: '
-         '5cccb4da-8aee-4b01-be84-2056265e52dc, sni: '
-         'bbbnmkl.taiwan2028.indevs.in, skip-cert-verify: true, udp: true}\n'
-         '  - {name: US美国(mibei77.com 米贝节点分享) 26, server: '
-         'vip1.kaixincloud.top, port: 8443, type: trojan, password: '
-         'T9BpZIVMNv, sni: vip1.kaixincloud.top, skip-cert-verify: true, udp: '
-         'true}\n'
-         '  - {name: US美国(mibei77.com 米贝节点分享) 27, server: v12.hdacd.com, port: '
-         '30812, type: vmess, uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484, '
-         'alterId: 0, cipher: auto, tls: false, skip-cert-verify: true, udp: '
-         'true}\n'
-         '  - {name: HK香港(mibei77.com 米贝节点分享) 4, server: '
-         '2001:bc8:32d7:302::10, port: 44579, type: vmess, uuid: '
-         '8e34e170-13ae-4892-9d20-05962acc9f84, alterId: 0, cipher: auto, tls: '
-         'false, skip-cert-verify: true, network: ws, ws-path: /, ws-headers: '
-         '{Host: 2001:bc8:32d7:302::10}, udp: true}\n'
-         '  - {name: US美国(mibei77.com 米贝节点分享) 28, server: bpbg.anguswen.top, '
-         'port: 8443, type: trojan, password: !<str> 123456, sni: '
-         'bpbg.anguswen.top, skip-cert-verify: true, udp: true}\n'
-         '  - {name: GB英国(mibei77.com 米贝节点分享) 7, server: '
-         '2001:bc8:32d7:302::14, port: 44579, type: vmess, uuid: '
+         '  - {name: US美国(mibei77.com 米贝节点分享) 16, server: '
+         '2001:bc8:32d7:302::15, port: 44579, type: vmess, uuid: '
          '8e34e170-13ae-4892-9d20-05962acc9f84, alterId: 0, cipher: auto, tls: '
          'false, skip-cert-verify: true, network: ws, ws-path: '
-         '"/?BIA_TELEGRAM@AZARBAYJAB1_AZARBAYJAB1_AZARBAYJAB1_AZARBAYJAB1?ed=2560", '
-         'ws-headers: {Host: TABRIZ.NET}, udp: true}\n'
-         '  - {name: US美国(mibei77.com 米贝节点分享) 29, server: '
-         '2001:bc8:32d7:302::11, port: 44579, type: vmess, uuid: '
-         '8e34e170-13ae-4892-9d20-05962acc9f84, alterId: 0, cipher: auto, tls: '
-         'false, skip-cert-verify: true, network: ws, ws-path: '
-         '"/?BIA_TELEGRAM@AZARBAYJAB1_AZARBAYJAB1_AZARBAYJAB1_AZARBAYJAB1?ed=2560", '
-         'ws-headers: {Host: Azerb.NET}, udp: true}\n'
-         '  - {name: FR法国(mibei77.com 米贝节点分享), server: 2001:bc8:32d7:302::10, '
-         'port: 44579, type: vmess, uuid: '
-         '8e34e170-13ae-4892-9d20-05962acc9f84, alterId: 0, cipher: auto, tls: '
-         'false, skip-cert-verify: true, network: ws, ws-path: /, ws-headers: '
-         '{Host: 2001:bc8:32d7:302::10}, udp: true}\n'
-         '  - {name: FR法国(mibei77.com 米贝节点分享) 2, server: '
+         '"/?BIA_TELEGRAM@AZARBAYJAB1_AZARBAYJAB1_AZARBAYJAB1_AZARBAYJAB1", '
+         'ws-headers: {Host: TURK.NET}, udp: true}\n'
+         '  - {name: US美国(mibei77.com 米贝节点分享) 17, server: '
          '2001:bc8:32d7:302::10, port: 44579, type: vmess, uuid: '
          '8e34e170-13ae-4892-9d20-05962acc9f84, alterId: 0, cipher: auto, tls: '
          'false, skip-cert-verify: true, network: ws, ws-path: '
          '"/?ed=2048HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN--HiByeVPNN", '
          'ws-headers: {Host: 2001:bc8:32d7:302::10}, udp: true}\n'
+         '  - {name: US美国(mibei77.com 米贝节点分享) 18, server: '
+         '2001:bc8:32d7:302::11, port: 44579, type: vmess, uuid: '
+         '8e34e170-13ae-4892-9d20-05962acc9f84, alterId: 0, cipher: auto, tls: '
+         'false, skip-cert-verify: true, network: ws, ws-path: '
+         '"/?BIA_TELEGRAM@AZARBAYJAB1_AZARBAYJAB1_AZARBAYJAB1_AZARBAYJAB1?ed=2560", '
+         'ws-headers: {Host: Azerb.NET}, udp: true}\n'
+         '  - {name: US美国(mibei77.com 米贝节点分享) 19, server: bpbg.anguswen.top, '
+         'port: 8443, type: trojan, password: !<str> 123456, sni: '
+         'bpbg.anguswen.top, skip-cert-verify: true, udp: true}\n'
+         '  - {name: GB英国(mibei77.com 米贝节点分享) 3, server: '
+         '2001:bc8:32d7:302::14, port: 44579, type: vmess, uuid: '
+         '8e34e170-13ae-4892-9d20-05962acc9f84, alterId: 0, cipher: auto, tls: '
+         'false, skip-cert-verify: true, network: ws, ws-path: '
+         '"/?BIA_TELEGRAM@AZARBAYJAB1_AZARBAYJAB1_AZARBAYJAB1_AZARBAYJAB1?ed=2560", '
+         'ws-headers: {Host: TABRIZ.NET}, udp: true}\n'
          'proxy-groups:\n'
          '  - name: 🔰 节点选择\n'
          '    type: select\n'
@@ -388,46 +288,25 @@
          '      - US美国(mibei77.com 米贝节点分享) 3\n'
          '      - US美国(mibei77.com 米贝节点分享) 4\n'
          '      - US美国(mibei77.com 米贝节点分享) 5\n'
-         '      - US美国(mibei77.com 米贝节点分享) 6\n'
-         '      - US美国(mibei77.com 米贝节点分享) 7\n'
          '      - GB英国(mibei77.com 米贝节点分享)\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 2\n'
+         '      - US美国(mibei77.com 米贝节点分享) 6\n'
+         '      - CA加拿大(mibei77.com 米贝节点分享)\n'
+         '      - US美国(mibei77.com 米贝节点分享) 7\n'
          '      - US美国(mibei77.com 米贝节点分享) 8\n'
          '      - US美国(mibei77.com 米贝节点分享) 9\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 3\n'
+         '      - CA加拿大(mibei77.com 米贝节点分享) 2\n'
          '      - US美国(mibei77.com 米贝节点分享) 10\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 4\n'
          '      - US美国(mibei77.com 米贝节点分享) 11\n'
          '      - US美国(mibei77.com 米贝节点分享) 12\n'
-         '      - HK香港(mibei77.com 米贝节点分享)\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 5\n'
          '      - US美国(mibei77.com 米贝节点分享) 13\n'
          '      - US美国(mibei77.com 米贝节点分享) 14\n'
+         '      - GB英国(mibei77.com 米贝节点分享) 2\n'
          '      - US美国(mibei77.com 米贝节点分享) 15\n'
          '      - US美国(mibei77.com 米贝节点分享) 16\n'
          '      - US美国(mibei77.com 米贝节点分享) 17\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 6\n'
          '      - US美国(mibei77.com 米贝节点分享) 18\n'
-         '      - DE德国(mibei77.com 米贝节点分享)\n'
-         '      - HK香港(mibei77.com 米贝节点分享) 2\n'
          '      - US美国(mibei77.com 米贝节点分享) 19\n'
-         '      - DE德国(mibei77.com 米贝节点分享) 2\n'
-         '      - US美国(mibei77.com 米贝节点分享) 20\n'
-         '      - US美国(mibei77.com 米贝节点分享) 21\n'
-         '      - US美国(mibei77.com 米贝节点分享) 22\n'
-         '      - US美国(mibei77.com 米贝节点分享) 23\n'
-         '      - US美国(mibei77.com 米贝节点分享) 24\n'
-         '      - HK香港(mibei77.com 米贝节点分享) 3\n'
-         '      - US美国(mibei77.com 米贝节点分享) 25\n'
-         '      - CA加拿大(mibei77.com 米贝节点分享)\n'
-         '      - US美国(mibei77.com 米贝节点分享) 26\n'
-         '      - US美国(mibei77.com 米贝节点分享) 27\n'
-         '      - HK香港(mibei77.com 米贝节点分享) 4\n'
-         '      - US美国(mibei77.com 米贝节点分享) 28\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 7\n'
-         '      - US美国(mibei77.com 米贝节点分享) 29\n'
-         '      - FR法国(mibei77.com 米贝节点分享)\n'
-         '      - FR法国(mibei77.com 米贝节点分享) 2\n'
+         '      - GB英国(mibei77.com 米贝节点分享) 3\n'
          '  - name: ♻️ 自动选择\n'
          '    type: url-test\n'
          '    url: http://www.gstatic.com/generate_204\n'
@@ -438,46 +317,25 @@
          '      - US美国(mibei77.com 米贝节点分享) 3\n'
          '      - US美国(mibei77.com 米贝节点分享) 4\n'
          '      - US美国(mibei77.com 米贝节点分享) 5\n'
-         '      - US美国(mibei77.com 米贝节点分享) 6\n'
-         '      - US美国(mibei77.com 米贝节点分享) 7\n'
          '      - GB英国(mibei77.com 米贝节点分享)\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 2\n'
+         '      - US美国(mibei77.com 米贝节点分享) 6\n'
+         '      - CA加拿大(mibei77.com 米贝节点分享)\n'
+         '      - US美国(mibei77.com 米贝节点分享) 7\n'
          '      - US美国(mibei77.com 米贝节点分享) 8\n'
          '      - US美国(mibei77.com 米贝节点分享) 9\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 3\n'
+         '      - CA加拿大(mibei77.com 米贝节点分享) 2\n'
          '      - US美国(mibei77.com 米贝节点分享) 10\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 4\n'
          '      - US美国(mibei77.com 米贝节点分享) 11\n'
          '      - US美国(mibei77.com 米贝节点分享) 12\n'
-         '      - HK香港(mibei77.com 米贝节点分享)\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 5\n'
          '      - US美国(mibei77.com 米贝节点分享) 13\n'
          '      - US美国(mibei77.com 米贝节点分享) 14\n'
+         '      - GB英国(mibei77.com 米贝节点分享) 2\n'
          '      - US美国(mibei77.com 米贝节点分享) 15\n'
          '      - US美国(mibei77.com 米贝节点分享) 16\n'
          '      - US美国(mibei77.com 米贝节点分享) 17\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 6\n'
          '      - US美国(mibei77.com 米贝节点分享) 18\n'
-         '      - DE德国(mibei77.com 米贝节点分享)\n'
-         '      - HK香港(mibei77.com 米贝节点分享) 2\n'
          '      - US美国(mibei77.com 米贝节点分享) 19\n'
-         '      - DE德国(mibei77.com 米贝节点分享) 2\n'
-         '      - US美国(mibei77.com 米贝节点分享) 20\n'
-         '      - US美国(mibei77.com 米贝节点分享) 21\n'
-         '      - US美国(mibei77.com 米贝节点分享) 22\n'
-         '      - US美国(mibei77.com 米贝节点分享) 23\n'
-         '      - US美国(mibei77.com 米贝节点分享) 24\n'
-         '      - HK香港(mibei77.com 米贝节点分享) 3\n'
-         '      - US美国(mibei77.com 米贝节点分享) 25\n'
-         '      - CA加拿大(mibei77.com 米贝节点分享)\n'
-         '      - US美国(mibei77.com 米贝节点分享) 26\n'
-         '      - US美国(mibei77.com 米贝节点分享) 27\n'
-         '      - HK香港(mibei77.com 米贝节点分享) 4\n'
-         '      - US美国(mibei77.com 米贝节点分享) 28\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 7\n'
-         '      - US美国(mibei77.com 米贝节点分享) 29\n'
-         '      - FR法国(mibei77.com 米贝节点分享)\n'
-         '      - FR法国(mibei77.com 米贝节点分享) 2\n'
+         '      - GB英国(mibei77.com 米贝节点分享) 3\n'
          '  - name: 🎥 NETFLIX\n'
          '    type: select\n'
          '    proxies:\n'
@@ -489,46 +347,25 @@
          '      - US美国(mibei77.com 米贝节点分享) 3\n'
          '      - US美国(mibei77.com 米贝节点分享) 4\n'
          '      - US美国(mibei77.com 米贝节点分享) 5\n'
-         '      - US美国(mibei77.com 米贝节点分享) 6\n'
-         '      - US美国(mibei77.com 米贝节点分享) 7\n'
          '      - GB英国(mibei77.com 米贝节点分享)\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 2\n'
+         '      - US美国(mibei77.com 米贝节点分享) 6\n'
+         '      - CA加拿大(mibei77.com 米贝节点分享)\n'
+         '      - US美国(mibei77.com 米贝节点分享) 7\n'
          '      - US美国(mibei77.com 米贝节点分享) 8\n'
          '      - US美国(mibei77.com 米贝节点分享) 9\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 3\n'
+         '      - CA加拿大(mibei77.com 米贝节点分享) 2\n'
          '      - US美国(mibei77.com 米贝节点分享) 10\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 4\n'
          '      - US美国(mibei77.com 米贝节点分享) 11\n'
          '      - US美国(mibei77.com 米贝节点分享) 12\n'
-         '      - HK香港(mibei77.com 米贝节点分享)\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 5\n'
          '      - US美国(mibei77.com 米贝节点分享) 13\n'
          '      - US美国(mibei77.com 米贝节点分享) 14\n'
+         '      - GB英国(mibei77.com 米贝节点分享) 2\n'
          '      - US美国(mibei77.com 米贝节点分享) 15\n'
          '      - US美国(mibei77.com 米贝节点分享) 16\n'
          '      - US美国(mibei77.com 米贝节点分享) 17\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 6\n'
          '      - US美国(mibei77.com 米贝节点分享) 18\n'
-         '      - DE德国(mibei77.com 米贝节点分享)\n'
-         '      - HK香港(mibei77.com 米贝节点分享) 2\n'
          '      - US美国(mibei77.com 米贝节点分享) 19\n'
-         '      - DE德国(mibei77.com 米贝节点分享) 2\n'
-         '      - US美国(mibei77.com 米贝节点分享) 20\n'
-         '      - US美国(mibei77.com 米贝节点分享) 21\n'
-         '      - US美国(mibei77.com 米贝节点分享) 22\n'
-         '      - US美国(mibei77.com 米贝节点分享) 23\n'
-         '      - US美国(mibei77.com 米贝节点分享) 24\n'
-         '      - HK香港(mibei77.com 米贝节点分享) 3\n'
-         '      - US美国(mibei77.com 米贝节点分享) 25\n'
-         '      - CA加拿大(mibei77.com 米贝节点分享)\n'
-         '      - US美国(mibei77.com 米贝节点分享) 26\n'
-         '      - US美国(mibei77.com 米贝节点分享) 27\n'
-         '      - HK香港(mibei77.com 米贝节点分享) 4\n'
-         '      - US美国(mibei77.com 米贝节点分享) 28\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 7\n'
-         '      - US美国(mibei77.com 米贝节点分享) 29\n'
-         '      - FR法国(mibei77.com 米贝节点分享)\n'
-         '      - FR法国(mibei77.com 米贝节点分享) 2\n'
+         '      - GB英国(mibei77.com 米贝节点分享) 3\n'
          '  - name: ⛔️ 广告拦截\n'
          '    type: select\n'
          '    proxies:\n'
@@ -552,54 +389,29 @@
          '      - US美国(mibei77.com 米贝节点分享) 3\n'
          '      - US美国(mibei77.com 米贝节点分享) 4\n'
          '      - US美国(mibei77.com 米贝节点分享) 5\n'
-         '      - US美国(mibei77.com 米贝节点分享) 6\n'
-         '      - US美国(mibei77.com 米贝节点分享) 7\n'
          '      - GB英国(mibei77.com 米贝节点分享)\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 2\n'
+         '      - US美国(mibei77.com 米贝节点分享) 6\n'
+         '      - CA加拿大(mibei77.com 米贝节点分享)\n'
+         '      - US美国(mibei77.com 米贝节点分享) 7\n'
          '      - US美国(mibei77.com 米贝节点分享) 8\n'
          '      - US美国(mibei77.com 米贝节点分享) 9\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 3\n'
+         '      - CA加拿大(mibei77.com 米贝节点分享) 2\n'
          '      - US美国(mibei77.com 米贝节点分享) 10\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 4\n'
          '      - US美国(mibei77.com 米贝节点分享) 11\n'
          '      - US美国(mibei77.com 米贝节点分享) 12\n'
-         '      - HK香港(mibei77.com 米贝节点分享)\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 5\n'
          '      - US美国(mibei77.com 米贝节点分享) 13\n'
          '      - US美国(mibei77.com 米贝节点分享) 14\n'
+         '      - GB英国(mibei77.com 米贝节点分享) 2\n'
          '      - US美国(mibei77.com 米贝节点分享) 15\n'
          '      - US美国(mibei77.com 米贝节点分享) 16\n'
          '      - US美国(mibei77.com 米贝节点分享) 17\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 6\n'
          '      - US美国(mibei77.com 米贝节点分享) 18\n'
-         '      - DE德国(mibei77.com 米贝节点分享)\n'
-         '      - HK香港(mibei77.com 米贝节点分享) 2\n'
          '      - US美国(mibei77.com 米贝节点分享) 19\n'
-         '      - DE德国(mibei77.com 米贝节点分享) 2\n'
-         '      - US美国(mibei77.com 米贝节点分享) 20\n'
-         '      - US美国(mibei77.com 米贝节点分享) 21\n'
-         '      - US美国(mibei77.com 米贝节点分享) 22\n'
-         '      - US美国(mibei77.com 米贝节点分享) 23\n'
-         '      - US美国(mibei77.com 米贝节点分享) 24\n'
-         '      - HK香港(mibei77.com 米贝节点分享) 3\n'
-         '      - US美国(mibei77.com 米贝节点分享) 25\n'
-         '      - CA加拿大(mibei77.com 米贝节点分享)\n'
-         '      - US美国(mibei77.com 米贝节点分享) 26\n'
-         '      - US美国(mibei77.com 米贝节点分享) 27\n'
-         '      - HK香港(mibei77.com 米贝节点分享) 4\n'
-         '      - US美国(mibei77.com 米贝节点分享) 28\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 7\n'
-         '      - US美国(mibei77.com 米贝节点分享) 29\n'
-         '      - FR法国(mibei77.com 米贝节点分享)\n'
-         '      - FR法国(mibei77.com 米贝节点分享) 2\n'
+         '      - GB英国(mibei77.com 米贝节点分享) 3\n'
          '  - name: 🌏 国内媒体\n'
          '    type: select\n'
          '    proxies:\n'
          '      - 🎯 全球直连\n'
-         '      - HK香港(mibei77.com 米贝节点分享)\n'
-         '      - HK香港(mibei77.com 米贝节点分享) 2\n'
-         '      - HK香港(mibei77.com 米贝节点分享) 3\n'
-         '      - HK香港(mibei77.com 米贝节点分享) 4\n'
          '      - 🔰 节点选择\n'
          '  - name: Ⓜ️ 微软服务\n'
          '    type: select\n'
@@ -611,46 +423,25 @@
          '      - US美国(mibei77.com 米贝节点分享) 3\n'
          '      - US美国(mibei77.com 米贝节点分享) 4\n'
          '      - US美国(mibei77.com 米贝节点分享) 5\n'
-         '      - US美国(mibei77.com 米贝节点分享) 6\n'
-         '      - US美国(mibei77.com 米贝节点分享) 7\n'
          '      - GB英国(mibei77.com 米贝节点分享)\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 2\n'
+         '      - US美国(mibei77.com 米贝节点分享) 6\n'
+         '      - CA加拿大(mibei77.com 米贝节点分享)\n'
+         '      - US美国(mibei77.com 米贝节点分享) 7\n'
          '      - US美国(mibei77.com 米贝节点分享) 8\n'
          '      - US美国(mibei77.com 米贝节点分享) 9\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 3\n'
+         '      - CA加拿大(mibei77.com 米贝节点分享) 2\n'
          '      - US美国(mibei77.com 米贝节点分享) 10\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 4\n'
          '      - US美国(mibei77.com 米贝节点分享) 11\n'
          '      - US美国(mibei77.com 米贝节点分享) 12\n'
-         '      - HK香港(mibei77.com 米贝节点分享)\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 5\n'
          '      - US美国(mibei77.com 米贝节点分享) 13\n'
          '      - US美国(mibei77.com 米贝节点分享) 14\n'
+         '      - GB英国(mibei77.com 米贝节点分享) 2\n'
          '      - US美国(mibei77.com 米贝节点分享) 15\n'
          '      - US美国(mibei77.com 米贝节点分享) 16\n'
          '      - US美国(mibei77.com 米贝节点分享) 17\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 6\n'
          '      - US美国(mibei77.com 米贝节点分享) 18\n'
-         '      - DE德国(mibei77.com 米贝节点分享)\n'
-         '      - HK香港(mibei77.com 米贝节点分享) 2\n'
          '      - US美国(mibei77.com 米贝节点分享) 19\n'
-         '      - DE德国(mibei77.com 米贝节点分享) 2\n'
-         '      - US美国(mibei77.com 米贝节点分享) 20\n'
-         '      - US美国(mibei77.com 米贝节点分享) 21\n'
-         '      - US美国(mibei77.com 米贝节点分享) 22\n'
-         '      - US美国(mibei77.com 米贝节点分享) 23\n'
-         '      - US美国(mibei77.com 米贝节点分享) 24\n'
-         '      - HK香港(mibei77.com 米贝节点分享) 3\n'
-         '      - US美国(mibei77.com 米贝节点分享) 25\n'
-         '      - CA加拿大(mibei77.com 米贝节点分享)\n'
-         '      - US美国(mibei77.com 米贝节点分享) 26\n'
-         '      - US美国(mibei77.com 米贝节点分享) 27\n'
-         '      - HK香港(mibei77.com 米贝节点分享) 4\n'
-         '      - US美国(mibei77.com 米贝节点分享) 28\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 7\n'
-         '      - US美国(mibei77.com 米贝节点分享) 29\n'
-         '      - FR法国(mibei77.com 米贝节点分享)\n'
-         '      - FR法国(mibei77.com 米贝节点分享) 2\n'
+         '      - GB英国(mibei77.com 米贝节点分享) 3\n'
          '  - name: 📲 电报信息\n'
          '    type: select\n'
          '    proxies:\n'
@@ -661,46 +452,25 @@
          '      - US美国(mibei77.com 米贝节点分享) 3\n'
          '      - US美国(mibei77.com 米贝节点分享) 4\n'
          '      - US美国(mibei77.com 米贝节点分享) 5\n'
-         '      - US美国(mibei77.com 米贝节点分享) 6\n'
-         '      - US美国(mibei77.com 米贝节点分享) 7\n'
          '      - GB英国(mibei77.com 米贝节点分享)\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 2\n'
+         '      - US美国(mibei77.com 米贝节点分享) 6\n'
+         '      - CA加拿大(mibei77.com 米贝节点分享)\n'
+         '      - US美国(mibei77.com 米贝节点分享) 7\n'
          '      - US美国(mibei77.com 米贝节点分享) 8\n'
          '      - US美国(mibei77.com 米贝节点分享) 9\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 3\n'
+         '      - CA加拿大(mibei77.com 米贝节点分享) 2\n'
          '      - US美国(mibei77.com 米贝节点分享) 10\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 4\n'
          '      - US美国(mibei77.com 米贝节点分享) 11\n'
          '      - US美国(mibei77.com 米贝节点分享) 12\n'
-         '      - HK香港(mibei77.com 米贝节点分享)\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 5\n'
          '      - US美国(mibei77.com 米贝节点分享) 13\n'
          '      - US美国(mibei77.com 米贝节点分享) 14\n'
+         '      - GB英国(mibei77.com 米贝节点分享) 2\n'
          '      - US美国(mibei77.com 米贝节点分享) 15\n'
          '      - US美国(mibei77.com 米贝节点分享) 16\n'
          '      - US美国(mibei77.com 米贝节点分享) 17\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 6\n'
          '      - US美国(mibei77.com 米贝节点分享) 18\n'
-         '      - DE德国(mibei77.com 米贝节点分享)\n'
-         '      - HK香港(mibei77.com 米贝节点分享) 2\n'
          '      - US美国(mibei77.com 米贝节点分享) 19\n'
-         '      - DE德国(mibei77.com 米贝节点分享) 2\n'
-         '      - US美国(mibei77.com 米贝节点分享) 20\n'
-         '      - US美国(mibei77.com 米贝节点分享) 21\n'
-         '      - US美国(mibei77.com 米贝节点分享) 22\n'
-         '      - US美国(mibei77.com 米贝节点分享) 23\n'
-         '      - US美国(mibei77.com 米贝节点分享) 24\n'
-         '      - HK香港(mibei77.com 米贝节点分享) 3\n'
-         '      - US美国(mibei77.com 米贝节点分享) 25\n'
-         '      - CA加拿大(mibei77.com 米贝节点分享)\n'
-         '      - US美国(mibei77.com 米贝节点分享) 26\n'
-         '      - US美国(mibei77.com 米贝节点分享) 27\n'
-         '      - HK香港(mibei77.com 米贝节点分享) 4\n'
-         '      - US美国(mibei77.com 米贝节点分享) 28\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 7\n'
-         '      - US美国(mibei77.com 米贝节点分享) 29\n'
-         '      - FR法国(mibei77.com 米贝节点分享)\n'
-         '      - FR法国(mibei77.com 米贝节点分享) 2\n'
+         '      - GB英国(mibei77.com 米贝节点分享) 3\n'
          '  - name: 🍎 苹果服务\n'
          '    type: select\n'
          '    proxies:\n'
@@ -712,46 +482,25 @@
          '      - US美国(mibei77.com 米贝节点分享) 3\n'
          '      - US美国(mibei77.com 米贝节点分享) 4\n'
          '      - US美国(mibei77.com 米贝节点分享) 5\n'
-         '      - US美国(mibei77.com 米贝节点分享) 6\n'
-         '      - US美国(mibei77.com 米贝节点分享) 7\n'
          '      - GB英国(mibei77.com 米贝节点分享)\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 2\n'
+         '      - US美国(mibei77.com 米贝节点分享) 6\n'
+         '      - CA加拿大(mibei77.com 米贝节点分享)\n'
+         '      - US美国(mibei77.com 米贝节点分享) 7\n'
          '      - US美国(mibei77.com 米贝节点分享) 8\n'
          '      - US美国(mibei77.com 米贝节点分享) 9\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 3\n'
+         '      - CA加拿大(mibei77.com 米贝节点分享) 2\n'
          '      - US美国(mibei77.com 米贝节点分享) 10\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 4\n'
          '      - US美国(mibei77.com 米贝节点分享) 11\n'
          '      - US美国(mibei77.com 米贝节点分享) 12\n'
-         '      - HK香港(mibei77.com 米贝节点分享)\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 5\n'
          '      - US美国(mibei77.com 米贝节点分享) 13\n'
          '      - US美国(mibei77.com 米贝节点分享) 14\n'
+         '      - GB英国(mibei77.com 米贝节点分享) 2\n'
          '      - US美国(mibei77.com 米贝节点分享) 15\n'
          '      - US美国(mibei77.com 米贝节点分享) 16\n'
          '      - US美国(mibei77.com 米贝节点分享) 17\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 6\n'
          '      - US美国(mibei77.com 米贝节点分享) 18\n'
-         '      - DE德国(mibei77.com 米贝节点分享)\n'
-         '      - HK香港(mibei77.com 米贝节点分享) 2\n'
          '      - US美国(mibei77.com 米贝节点分享) 19\n'
-         '      - DE德国(mibei77.com 米贝节点分享) 2\n'
-         '      - US美国(mibei77.com 米贝节点分享) 20\n'
-         '      - US美国(mibei77.com 米贝节点分享) 21\n'
-         '      - US美国(mibei77.com 米贝节点分享) 22\n'
-         '      - US美国(mibei77.com 米贝节点分享) 23\n'
-         '      - US美国(mibei77.com 米贝节点分享) 24\n'
-         '      - HK香港(mibei77.com 米贝节点分享) 3\n'
-         '      - US美国(mibei77.com 米贝节点分享) 25\n'
-         '      - CA加拿大(mibei77.com 米贝节点分享)\n'
-         '      - US美国(mibei77.com 米贝节点分享) 26\n'
-         '      - US美国(mibei77.com 米贝节点分享) 27\n'
-         '      - HK香港(mibei77.com 米贝节点分享) 4\n'
-         '      - US美国(mibei77.com 米贝节点分享) 28\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 7\n'
-         '      - US美国(mibei77.com 米贝节点分享) 29\n'
-         '      - FR法国(mibei77.com 米贝节点分享)\n'
-         '      - FR法国(mibei77.com 米贝节点分享) 2\n'
+         '      - GB英国(mibei77.com 米贝节点分享) 3\n'
          '  - name: 🎯 全球直连\n'
          '    type: select\n'
          '    proxies:\n'
@@ -772,46 +521,25 @@
          '      - US美国(mibei77.com 米贝节点分享) 3\n'
          '      - US美国(mibei77.com 米贝节点分享) 4\n'
          '      - US美国(mibei77.com 米贝节点分享) 5\n'
-         '      - US美国(mibei77.com 米贝节点分享) 6\n'
-         '      - US美国(mibei77.com 米贝节点分享) 7\n'
          '      - GB英国(mibei77.com 米贝节点分享)\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 2\n'
+         '      - US美国(mibei77.com 米贝节点分享) 6\n'
+         '      - CA加拿大(mibei77.com 米贝节点分享)\n'
+         '      - US美国(mibei77.com 米贝节点分享) 7\n'
          '      - US美国(mibei77.com 米贝节点分享) 8\n'
          '      - US美国(mibei77.com 米贝节点分享) 9\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 3\n'
+         '      - CA加拿大(mibei77.com 米贝节点分享) 2\n'
          '      - US美国(mibei77.com 米贝节点分享) 10\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 4\n'
          '      - US美国(mibei77.com 米贝节点分享) 11\n'
          '      - US美国(mibei77.com 米贝节点分享) 12\n'
-         '      - HK香港(mibei77.com 米贝节点分享)\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 5\n'
          '      - US美国(mibei77.com 米贝节点分享) 13\n'
          '      - US美国(mibei77.com 米贝节点分享) 14\n'
+         '      - GB英国(mibei77.com 米贝节点分享) 2\n'
          '      - US美国(mibei77.com 米贝节点分享) 15\n'
          '      - US美国(mibei77.com 米贝节点分享) 16\n'
          '      - US美国(mibei77.com 米贝节点分享) 17\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 6\n'
          '      - US美国(mibei77.com 米贝节点分享) 18\n'
-         '      - DE德国(mibei77.com 米贝节点分享)\n'
-         '      - HK香港(mibei77.com 米贝节点分享) 2\n'
          '      - US美国(mibei77.com 米贝节点分享) 19\n'
-         '      - DE德国(mibei77.com 米贝节点分享) 2\n'
-         '      - US美国(mibei77.com 米贝节点分享) 20\n'
-         '      - US美国(mibei77.com 米贝节点分享) 21\n'
-         '      - US美国(mibei77.com 米贝节点分享) 22\n'
-         '      - US美国(mibei77.com 米贝节点分享) 23\n'
-         '      - US美国(mibei77.com 米贝节点分享) 24\n'
-         '      - HK香港(mibei77.com 米贝节点分享) 3\n'
-         '      - US美国(mibei77.com 米贝节点分享) 25\n'
-         '      - CA加拿大(mibei77.com 米贝节点分享)\n'
-         '      - US美国(mibei77.com 米贝节点分享) 26\n'
-         '      - US美国(mibei77.com 米贝节点分享) 27\n'
-         '      - HK香港(mibei77.com 米贝节点分享) 4\n'
-         '      - US美国(mibei77.com 米贝节点分享) 28\n'
-         '      - GB英国(mibei77.com 米贝节点分享) 7\n'
-         '      - US美国(mibei77.com 米贝节点分享) 29\n'
-         '      - FR法国(mibei77.com 米贝节点分享)\n'
-         '      - FR法国(mibei77.com 米贝节点分享) 2\n'
+         '      - GB英国(mibei77.com 米贝节点分享) 3\n'
          'rules:\n'
          ' - DOMAIN-SUFFIX,local,🎯 全球直连\n'
          ' - IP-CIDR,192.168.0.0/16,🎯 全球直连,no-resolve\n'
@@ -11018,7 +10746,7 @@
          ' - DOMAIN-KEYWORD,XLLiveUD,🎯 全球直连\n'
          ' - GEOIP,CN,🎯 全球直连\n'
          ' - MATCH,🐟 漏网之鱼\n',
- 'date': '2026-02-09',
+ 'date': '2026-02-10',
  'ext': '.yaml',
  'name': 'nodev2ray'}
 Traceback (most recent call last):
@@ -11061,63 +10789,63 @@ Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages/yaml/constructor.py", line 427, in construct_undefined
     raise ConstructorError(None, None,
 yaml.constructor.ConstructorError: could not determine a constructor for the tag 'str'
-  in "<unicode string>", line 48, column 104:
+  in "<unicode string>", line 30, column 104:
      ... : 8443, type: trojan, password: !<str> 123456, sni: bpbg.anguswe ... 
                                          ^
-2026-02-09 05:40:23 [simple] INFO: Pipeline got item nodev2ray.yaml
-2026-02-09 05:40:23 [simple] INFO: Pipeline processed nodev2ray.yaml
-2026-02-09 05:40:24 [simple] INFO: Pipeline got item ndnode.txt
-2026-02-09 05:40:24 [simple] INFO: Pipeline processed ndnode.txt
-2026-02-09 05:40:24 [simple] INFO: Pipeline got item ndnode.yaml
-2026-02-09 05:40:24 [simple] INFO: Pipeline processed ndnode.yaml
-2026-02-09 05:40:24 [scrapy.core.engine] INFO: Closing spider (finished)
-2026-02-09 05:40:24 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
-{'downloader/request_bytes': 12545,
- 'downloader/request_count': 33,
- 'downloader/request_method_count/GET': 33,
- 'downloader/response_bytes': 1641468,
- 'downloader/response_count': 33,
- 'downloader/response_status_count/200': 30,
+2026-02-10 05:40:24 [simple] INFO: Pipeline got item nodev2ray.yaml
+2026-02-10 05:40:24 [simple] INFO: Pipeline processed nodev2ray.yaml
+2026-02-10 05:40:25 [simple] INFO: Pipeline got item ndnode.txt
+2026-02-10 05:40:25 [simple] INFO: Pipeline processed ndnode.txt
+2026-02-10 05:40:25 [simple] INFO: Pipeline got item ndnode.yaml
+2026-02-10 05:40:25 [simple] INFO: Pipeline processed ndnode.yaml
+2026-02-10 05:40:25 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-02-10 05:40:25 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 11559,
+ 'downloader/request_count': 31,
+ 'downloader/request_method_count/GET': 31,
+ 'downloader/response_bytes': 1420174,
+ 'downloader/response_count': 31,
+ 'downloader/response_status_count/200': 28,
  'downloader/response_status_count/301': 3,
  'dupefilter/filtered': 1,
- 'elapsed_time_seconds': 4.153208,
+ 'elapsed_time_seconds': 3.242173,
  'finish_reason': 'finished',
- 'finish_time': datetime.datetime(2026, 2, 9, 5, 40, 24, 825468, tzinfo=datetime.timezone.utc),
- 'httpcompression/response_bytes': 914122,
- 'httpcompression/response_count': 24,
- 'item_scraped_count': 10,
- 'items_per_minute': 150.0,
+ 'finish_time': datetime.datetime(2026, 2, 10, 5, 40, 25, 731606, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 908229,
+ 'httpcompression/response_count': 23,
+ 'item_scraped_count': 8,
+ 'items_per_minute': 160.0,
  'log_count/ERROR': 1,
- 'log_count/INFO': 129,
+ 'log_count/INFO': 123,
  'log_count/WARNING': 1,
- 'memusage/max': 181039104,
- 'memusage/startup': 181039104,
+ 'memusage/max': 181211136,
+ 'memusage/startup': 181211136,
  'request_depth_max': 2,
- 'response_received_count': 30,
- 'responses_per_minute': 450.0,
- 'scheduler/dequeued': 33,
- 'scheduler/dequeued/memory': 33,
- 'scheduler/enqueued': 33,
- 'scheduler/enqueued/memory': 33,
- 'start_time': datetime.datetime(2026, 2, 9, 5, 40, 20, 672260, tzinfo=datetime.timezone.utc)}
-2026-02-09 05:40:24 [scrapy.core.engine] INFO: Spider closed (finished)
-2026-02-09 05:40:33 [scrapy.addons] INFO: Enabled addons:
+ 'response_received_count': 28,
+ 'responses_per_minute': 560.0,
+ 'scheduler/dequeued': 31,
+ 'scheduler/dequeued/memory': 31,
+ 'scheduler/enqueued': 31,
+ 'scheduler/enqueued/memory': 31,
+ 'start_time': datetime.datetime(2026, 2, 10, 5, 40, 22, 489433, tzinfo=datetime.timezone.utc)}
+2026-02-10 05:40:25 [scrapy.core.engine] INFO: Spider closed (finished)
+2026-02-10 05:40:30 [scrapy.addons] INFO: Enabled addons:
 []
-2026-02-09 05:40:33 [scrapy.extensions.telnet] INFO: Telnet Password: 58c0fc19a108388f
-2026-02-09 05:40:33 [scrapy.middleware] INFO: Enabled extensions:
+2026-02-10 05:40:30 [scrapy.extensions.telnet] INFO: Telnet Password: 37a48be8659e9e1f
+2026-02-10 05:40:30 [scrapy.middleware] INFO: Enabled extensions:
 ['scrapy.extensions.corestats.CoreStats',
  'scrapy.extensions.logcount.LogCount',
  'scrapy.extensions.telnet.TelnetConsole',
  'scrapy.extensions.memusage.MemoryUsage',
  'scrapy.extensions.logstats.LogStats']
-2026-02-09 05:40:33 [scrapy.crawler] INFO: Overridden settings:
+2026-02-10 05:40:30 [scrapy.crawler] INFO: Overridden settings:
 {'BOT_NAME': 'NodeScrapy',
  'FEED_EXPORT_ENCODING': 'utf-8',
  'LOG_FILE': 'scrapy.log',
  'LOG_LEVEL': 'INFO',
  'NEWSPIDER_MODULE': 'NodeScrapy.spiders',
  'SPIDER_MODULES': ['NodeScrapy.spiders']}
-2026-02-09 05:40:34 [scrapy.middleware] INFO: Enabled downloader middlewares:
+2026-02-10 05:40:30 [scrapy.middleware] INFO: Enabled downloader middlewares:
 ['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
  'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
  'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
@@ -11131,91 +10859,83 @@ yaml.constructor.ConstructorError: could not determine a constructor for the tag
  'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
  'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
  'scrapy.downloadermiddlewares.stats.DownloaderStats']
-2026-02-09 05:40:34 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages/scrapy/core/downloader/middleware.py:44: ScrapyDeprecationWarning: RandomUserAgentMiddleware.process_request() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+2026-02-10 05:40:30 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages/scrapy/core/downloader/middleware.py:44: ScrapyDeprecationWarning: RandomUserAgentMiddleware.process_request() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
   self._check_mw_method_spider_arg(mw.process_request)
 
-2026-02-09 05:40:34 [scrapy.middleware] INFO: Enabled spider middlewares:
+2026-02-10 05:40:30 [scrapy.middleware] INFO: Enabled spider middlewares:
 ['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
  'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
  'scrapy.spidermiddlewares.referer.RefererMiddleware',
  'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
  'scrapy.spidermiddlewares.depth.DepthMiddleware']
-2026-02-09 05:40:34 [scrapy.middleware] INFO: Enabled item pipelines:
+2026-02-10 05:40:30 [scrapy.middleware] INFO: Enabled item pipelines:
 ['NodeScrapy.pipelines.Pipeline']
-2026-02-09 05:40:34 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages/scrapy/pipelines/__init__.py:41: ScrapyDeprecationWarning: Pipeline.open_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+2026-02-10 05:40:30 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages/scrapy/pipelines/__init__.py:41: ScrapyDeprecationWarning: Pipeline.open_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
   self._check_mw_method_spider_arg(pipe.open_spider)
 
-2026-02-09 05:40:34 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages/scrapy/pipelines/__init__.py:44: ScrapyDeprecationWarning: Pipeline.close_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+2026-02-10 05:40:30 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages/scrapy/pipelines/__init__.py:44: ScrapyDeprecationWarning: Pipeline.close_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
   self._check_mw_method_spider_arg(pipe.close_spider)
 
-2026-02-09 05:40:34 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages/scrapy/pipelines/__init__.py:47: ScrapyDeprecationWarning: Pipeline.process_item() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+2026-02-10 05:40:30 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages/scrapy/pipelines/__init__.py:47: ScrapyDeprecationWarning: Pipeline.process_item() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
   self._check_mw_method_spider_arg(pipe.process_item)
 
-2026-02-09 05:40:34 [scrapy.core.engine] INFO: Spider opened
-2026-02-09 05:40:34 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages/scrapy/core/spidermw.py:490: ScrapyDeprecationWarning: NodeScrapy.spiders.SimpleSpider.SimpleSpider (inherited by NodeScrapy.spiders.DecryptSpider.DecryptSpider) defines the deprecated start_requests() method. start_requests() has been deprecated in favor of a new method, start(), to support asynchronous code execution. start_requests() will stop being called in a future version of Scrapy. If you use Scrapy 2.13 or higher only, replace start_requests() with start(); note that start() is a coroutine (async def). If you need to maintain compatibility with lower Scrapy versions, when overriding start_requests() in a spider class, override start() as well; you can use super() to reuse the inherited start() implementation without copy-pasting. See the release notes of Scrapy 2.13 for details: https://docs.scrapy.org/en/2.13/news.html
+2026-02-10 05:40:30 [scrapy.core.engine] INFO: Spider opened
+2026-02-10 05:40:30 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages/scrapy/core/spidermw.py:490: ScrapyDeprecationWarning: NodeScrapy.spiders.SimpleSpider.SimpleSpider (inherited by NodeScrapy.spiders.DecryptSpider.DecryptSpider) defines the deprecated start_requests() method. start_requests() has been deprecated in favor of a new method, start(), to support asynchronous code execution. start_requests() will stop being called in a future version of Scrapy. If you use Scrapy 2.13 or higher only, replace start_requests() with start(); note that start() is a coroutine (async def). If you need to maintain compatibility with lower Scrapy versions, when overriding start_requests() in a spider class, override start() as well; you can use super() to reuse the inherited start() implementation without copy-pasting. See the release notes of Scrapy 2.13 for details: https://docs.scrapy.org/en/2.13/news.html
   warn(
 
-2026-02-09 05:40:34 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
-2026-02-09 05:40:34 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
-2026-02-09 05:40:34 [decrypt] INFO: yudou66 start
-2026-02-09 05:40:34 [decrypt] INFO: blues start
-2026-02-09 05:40:34 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/02/2026234kchatgpt4k8kclashv2ray.html on 2026-02-03
-2026-02-09 05:40:34 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/2026224kchatgpt4k8kclashv2ray.html on 2026-02-02
-2026-02-09 05:40:34 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/20261314kchatgpt4k8kclashv2ray.html on 2026-02-01
-2026-02-09 05:40:34 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/20261314kchatgpt4k8kclashv2ray_30.html on 2026-01-31
-2026-02-09 05:40:34 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/20261304kchatgpt4k8kclashv2ray.html on 2026-01-30
-2026-02-09 05:40:34 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/20261284kchatgpt4k8kclashv2ray.html on 2026-01-28
-2026-02-09 05:40:34 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/20261294kchatgpt4k8kclashv2ray.html on 2026-01-29
-2026-02-09 05:40:34 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/20261274kchatgpt4k8kclashv2ray.html on 2026-01-27
-2026-02-09 05:40:34 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/20261254kchatgpt4k8kclashv2ray.html on 2026-01-25
-2026-02-09 05:40:34 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/20261244kchatgpt4k8kclashv2ray.html on 2026-01-24
-2026-02-09 05:40:34 [decrypt] INFO: blues is up to date, exiting
-2026-02-09 05:40:34 [decrypt] INFO: blues is up to date, exiting
-2026-02-09 05:40:34 [decrypt] INFO: blues is up to date, exiting
-2026-02-09 05:40:36 [decrypt] INFO: yudou66 found https://www.yudou789.top/382.html on 2026-02-09
-2026-02-09 05:40:36 [decrypt] INFO: yudou66 found https://www.yudou789.top/377.html on 2026-02-08
-2026-02-09 05:40:36 [decrypt] INFO: yudou66 found https://www.yudou789.top/372.html on 2026-02-07
-2026-02-09 05:40:36 [decrypt] INFO: yudou66 found https://www.yudou789.top/367.html on 2026-02-06
-2026-02-09 05:40:36 [decrypt] INFO: yudou66 found https://www.yudou789.top/361.html on 2026-02-05
-2026-02-09 05:40:36 [decrypt] INFO: yudou66 found https://www.yudou789.top/356.html on 2026-02-04
-2026-02-09 05:40:36 [decrypt] INFO: yudou66 found https://www.yudou789.top/351.html on 2026-02-03
-2026-02-09 05:40:36 [decrypt] INFO: yudou66 found https://www.yudou789.top/345.html on 2026-02-02
-2026-02-09 05:40:36 [decrypt] INFO: yudou66 found https://www.yudou789.top/340.html on 2026-02-01
-2026-02-09 05:40:36 [decrypt] INFO: yudou66 found https://www.yudou789.top/334.html on 2026-01-31
-2026-02-09 05:40:36 [decrypt] INFO: yudou66 needs update, accessing https://www.yudou789.top/382.html
-2026-02-09 05:40:36 [decrypt] INFO: yudou66 needs update, accessing https://www.yudou789.top/377.html
-2026-02-09 05:40:36 [decrypt] INFO: yudou66 needs update, accessing https://www.yudou789.top/372.html
-2026-02-09 05:41:34 [scrapy.extensions.logstats] INFO: Crawled 4 pages (at 4 pages/min), scraped 0 items (at 0 items/min)
-2026-02-09 05:42:34 [scrapy.extensions.logstats] INFO: Crawled 4 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
-2026-02-09 05:43:34 [scrapy.extensions.logstats] INFO: Crawled 4 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
-2026-02-09 05:43:42 [scrapy.core.engine] INFO: Closing spider (finished)
-2026-02-09 05:43:42 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
-{'downloader/exception_count': 1,
- 'downloader/exception_type_count/twisted.internet.error.TimeoutError': 1,
- 'downloader/request_bytes': 2495,
- 'downloader/request_count': 7,
- 'downloader/request_method_count/GET': 7,
- 'downloader/response_bytes': 105236,
- 'downloader/response_count': 6,
+2026-02-10 05:40:30 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-02-10 05:40:30 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-02-10 05:40:30 [decrypt] INFO: yudou66 start
+2026-02-10 05:40:30 [decrypt] INFO: blues start
+2026-02-10 05:40:30 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/02/2026234kchatgpt4k8kclashv2ray.html on 2026-02-03
+2026-02-10 05:40:30 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/2026224kchatgpt4k8kclashv2ray.html on 2026-02-02
+2026-02-10 05:40:30 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/20261314kchatgpt4k8kclashv2ray.html on 2026-02-01
+2026-02-10 05:40:30 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/20261314kchatgpt4k8kclashv2ray_30.html on 2026-01-31
+2026-02-10 05:40:30 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/20261304kchatgpt4k8kclashv2ray.html on 2026-01-30
+2026-02-10 05:40:30 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/20261284kchatgpt4k8kclashv2ray.html on 2026-01-28
+2026-02-10 05:40:30 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/20261294kchatgpt4k8kclashv2ray.html on 2026-01-29
+2026-02-10 05:40:30 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/20261274kchatgpt4k8kclashv2ray.html on 2026-01-27
+2026-02-10 05:40:30 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/20261254kchatgpt4k8kclashv2ray.html on 2026-01-25
+2026-02-10 05:40:30 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/20261244kchatgpt4k8kclashv2ray.html on 2026-01-24
+2026-02-10 05:40:30 [decrypt] INFO: blues is up to date, exiting
+2026-02-10 05:40:30 [decrypt] INFO: blues is up to date, exiting
+2026-02-10 05:40:30 [decrypt] INFO: blues is up to date, exiting
+2026-02-10 05:40:31 [decrypt] INFO: yudou66 found https://www.yudou789.top/387.html on 2026-02-10
+2026-02-10 05:40:31 [decrypt] INFO: yudou66 found https://www.yudou789.top/382.html on 2026-02-09
+2026-02-10 05:40:31 [decrypt] INFO: yudou66 found https://www.yudou789.top/377.html on 2026-02-08
+2026-02-10 05:40:31 [decrypt] INFO: yudou66 found https://www.yudou789.top/372.html on 2026-02-07
+2026-02-10 05:40:31 [decrypt] INFO: yudou66 found https://www.yudou789.top/367.html on 2026-02-06
+2026-02-10 05:40:31 [decrypt] INFO: yudou66 found https://www.yudou789.top/361.html on 2026-02-05
+2026-02-10 05:40:31 [decrypt] INFO: yudou66 found https://www.yudou789.top/356.html on 2026-02-04
+2026-02-10 05:40:31 [decrypt] INFO: yudou66 found https://www.yudou789.top/351.html on 2026-02-03
+2026-02-10 05:40:31 [decrypt] INFO: yudou66 found https://www.yudou789.top/345.html on 2026-02-02
+2026-02-10 05:40:31 [decrypt] INFO: yudou66 found https://www.yudou789.top/340.html on 2026-02-01
+2026-02-10 05:40:31 [decrypt] INFO: yudou66 needs update, accessing https://www.yudou789.top/387.html
+2026-02-10 05:40:31 [decrypt] INFO: yudou66 needs update, accessing https://www.yudou789.top/382.html
+2026-02-10 05:40:31 [decrypt] INFO: yudou66 needs update, accessing https://www.yudou789.top/377.html
+2026-02-10 05:40:43 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-02-10 05:40:43 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 1807,
+ 'downloader/request_count': 5,
+ 'downloader/request_method_count/GET': 5,
+ 'downloader/response_bytes': 104079,
+ 'downloader/response_count': 5,
  'downloader/response_status_count/200': 5,
- 'downloader/response_status_count/302': 1,
- 'elapsed_time_seconds': 188.742703,
+ 'elapsed_time_seconds': 13.556199,
  'finish_reason': 'finished',
- 'finish_time': datetime.datetime(2026, 2, 9, 5, 43, 42, 776557, tzinfo=datetime.timezone.utc),
- 'httpcompression/response_bytes': 558174,
+ 'finish_time': datetime.datetime(2026, 2, 10, 5, 40, 43, 744377, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 554637,
  'httpcompression/response_count': 5,
  'items_per_minute': 0.0,
- 'log_count/INFO': 34,
- 'memusage/max': 191205376,
- 'memusage/startup': 182882304,
+ 'log_count/INFO': 31,
+ 'memusage/max': 182616064,
+ 'memusage/startup': 182616064,
  'request_depth_max': 1,
  'response_received_count': 5,
- 'responses_per_minute': 1.5957446808510638,
- 'retry/count': 1,
- 'retry/reason_count/twisted.internet.error.TimeoutError': 1,
- 'scheduler/dequeued': 7,
- 'scheduler/dequeued/memory': 7,
- 'scheduler/enqueued': 7,
- 'scheduler/enqueued/memory': 7,
- 'start_time': datetime.datetime(2026, 2, 9, 5, 40, 34, 33854, tzinfo=datetime.timezone.utc)}
-2026-02-09 05:43:42 [scrapy.core.engine] INFO: Spider closed (finished)
+ 'responses_per_minute': 23.076923076923077,
+ 'scheduler/dequeued': 5,
+ 'scheduler/dequeued/memory': 5,
+ 'scheduler/enqueued': 5,
+ 'scheduler/enqueued/memory': 5,
+ 'start_time': datetime.datetime(2026, 2, 10, 5, 40, 30, 188178, tzinfo=datetime.timezone.utc)}
+2026-02-10 05:40:43 [scrapy.core.engine] INFO: Spider closed (finished)
