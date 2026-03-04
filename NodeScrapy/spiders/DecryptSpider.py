@@ -16,10 +16,12 @@ from utils.PwdFinder import PwdFinder, PwdGenerator
 
 class DecryptSpider(SimpleSpider):
     name = "decrypt"
-    custom_settings = {"LOG_FILE": "scrapy.log",
-                    #    "LOG_FILE_APPEND": False,
-                       "LOG_FILE_APPEND": True,
-                       "LOG_LEVEL": "INFO"}
+    custom_settings = {
+        "LOG_FILE": "scrapy.log",
+        # "LOG_FILE_APPEND": False,
+        "LOG_FILE_APPEND": True,
+        "LOG_LEVEL": "INFO",
+    }
     targets = (
         "yudou66",
         "blues",
@@ -47,7 +49,8 @@ class DecryptSpider(SimpleSpider):
         wait = WebDriverWait(self.driver, 10)
         wait.until(EC.presence_of_all_elements_located((By.TAG_NAME, "input")))
         wait.until(EC.presence_of_all_elements_located((By.TAG_NAME, "button")))
-        if "script" in method:
+        self.logger.info(f"Decrypting {url} with method {method} and password {pwd}")
+        if "script" in method and method["script"]:
             self.driver.execute_script(method["script"], pwd)
         else:
             textbox = self.driver.find_element(*method["textbox"])
@@ -92,18 +95,24 @@ class DecryptSpider(SimpleSpider):
         pwdfinder = PwdGenerator(name, self.logger)
 
         old_pwd = self.configs[name].get("password", "")
-        method = {"script": self.configs[name].get("script", "")}
+        old_date = datetime.datetime.strptime(self.configs[name].get("up_date", ""), "%Y-%m-%d")
+        web_date = datetime.datetime.strptime(response.meta["date"], "%Y-%m-%d")
+        method = {k: self.configs[name].get(k, "") for k in ["script", "textbox", "button"]}
+        passwd = ""
         for pwd in itertools.chain(iter([old_pwd]), pwdfinder.password_iter()):
             ok, msg = self._decrypt(response.url, method, pwd)
             if not ok:
                 self.logger.warning(f"{name} {pwd} got {msg}")
                 continue
 
+            self.logger.info(f"{name} {pwd} decrypted successfully")
             for link, ext in super()._find_link(name, msg):
                 response.meta["ext"] = ext
                 yield response.follow(link, self.parse_link, meta=response.meta)
 
-            if old_pwd != pwd:
-                CONFIG.set(name, {"password": pwd})
-                self.logger.info(f"{name} saved new password {pwd}")
+            passwd = pwd
             break
+
+        if old_pwd != pwd and web_date > old_date:
+            CONFIG.set(name, {"password": pwd})
+            self.logger.info(f"{name} saved new password {pwd}")

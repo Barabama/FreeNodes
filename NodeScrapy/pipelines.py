@@ -76,7 +76,9 @@ class GeoLocPipeline:
             os.mkdir(self.res_folder)
 
         for filename in os.listdir(self.orig_folder):
-            self.files[filename] = open(os.path.join(self.res_folder, filename), "w", encoding="utf-8")
+            self.files[filename] = open(
+                os.path.join(self.res_folder, filename), "w", encoding="utf-8"
+            )
 
     def close_spider(self, spider):
         for file in self.files.values():
@@ -105,9 +107,12 @@ class GeoLocPipeline:
                     proxy["name"] = geoloc
 
             for group in data["proxy-groups"]:
-                group["proxies"] = [geoloc if proxy == orig_name else proxy
-                                    for proxy in group["proxies"]]
+                group["proxies"] = [
+                    geoloc if proxy == orig_name else proxy for proxy in group["proxies"]
+                ]
 
-            yaml.safe_dump(data, self.files[filename], default_flow_style=False, allow_unicode=True)
+            yaml.safe_dump(
+                data, self.files[filename], default_flow_style=False, allow_unicode=True
+            )
 
         return item

@@ -14,9 +14,11 @@ from utils.Config import CONFIG, ConfigData
 
 class SimpleSpider(scrapy.Spider):
     name = "simple"
-    custom_settings = {"LOG_FILE": "scrapy.log",
-                       "LOG_FILE_APPEND": False,
-                       "LOG_LEVEL": "INFO"}
+    custom_settings = {
+        "LOG_FILE": "scrapy.log",
+        "LOG_FILE_APPEND": False,
+        "LOG_LEVEL": "INFO",
+    }
     targets = (
         "clashmeta",
         "ndnode",
