@@ -29,6 +29,9 @@ jobs:
       - name: Run DecryptScraper
         run: scrapy crawl decrypt -s FORCE=True
 
+      - name: Merge configs
+        run: python utils/merge_configs.py
+
       - name: Git commit and push
         uses: GuillaumeFalourd/git-commit-push@v1
         with:
