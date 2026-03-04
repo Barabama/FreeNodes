@@ -1,18 +1,57 @@
 allow-lan: true
+cfw-conn-break-strategy: true
+cfw-latency-timeout: 5000
+cfw-latency-type: 1
+cfw-latency-url: https://connectivitycheck.gstatic.com/generate_204
+clash-for-android:
+  append-system-dns: false
+  ui-subtitle-pattern: '[一-龥]{2,4}'
 dns:
+  default-nameserver:
+  - 119.28.28.28
+  - 119.29.29.29
+  - 223.5.5.5
+  - 223.6.6.6
   enable: true
+  enhanced-mode: fake-ip
+  fake-ip-filter:
+  - '*.lan'
+  - '*.localdomain'
+  - '*.example'
+  - '*.invalid'
+  - '*.localhost'
+  - '*.test'
+  - '*.local'
+  fake-ip-range: 198.18.0.1/15
   fallback:
-  - 8.8.8.8
-  - 8.8.4.4
-  - 1.1.1.1
-  - tls://1.0.0.1:853
-  - tls://dns.google:853
+  - https://dns.cloudflare.com/dns-query
+  - https://doh.dns.sb/dns-query
+  - tls://8.8.4.4:853
+  fallback-filter:
+    geoip: true
+    ipcidr:
+    - 240.0.0.0/4
+    - 0.0.0.0/32
+  ipv6: false
+  listen: 0.0.0.0:1053
   nameserver:
   - 119.29.29.29
   - 223.5.5.5
-external-controller: :9090
+  - tls://dot.pub:853
+  - tls://dns.alidns.com:853
+  - https://doh.pub:443/dns-query
+  - https://dns.alidns.com:443/dns-query
+  prefer-h3: true
+  use-hosts: false
+experimental:
+  ignore-resolve-fail: true
+external-controller: 127.0.0.1:6170
+global-client-fingerprint: chrome
+hosts:
+  mtalk.google.com: 108.177.125.188
+ipv6: true
 log-level: info
-mode: Rule
+mode: rule
 port: 7890
 proxies:
 - cipher: aes-256-cfb
@@ -20,6 +59,7 @@ proxies:
   password: amazonskr05
   port: 443
   server: 63.180.254.10
+  tfo: false
   type: ss
 - alterId: 2
   cipher: auto
@@ -27,92 +67,105 @@ proxies:
   port: 30807
   server: v10.hdacd.com
   skip-cert-verify: false
+  tfo: false
   tls: false
   type: vmess
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
 - name: 🇭🇰 香港3|@stairnode
   password: f7dbed8b1ca85124e793ba6c0bcfd0db
   port: 331
-  server: 18.183.167.108
+  server: 13.192.169.190
   skip-cert-verify: false
   sni: www.nintendogames.net
+  tfo: false
   type: trojan
 - name: 🇭🇰 香港4|@stairnode
   password: BxceQaOe
-  port: 388
-  server: 18.183.175.225
-  skip-cert-verify: true
+  port: 1359
+  server: 3.112.227.13
+  skip-cert-verify: false
   sni: t.me%2Fripaojiedian
+  tfo: true
   type: trojan
 - name: 🇭🇰 香港5|@stairnode
   password: BxceQaOe
-  port: 2826
-  server: 54.46.49.176
-  skip-cert-verify: true
+  port: 1359
+  server: 43.206.218.105
+  skip-cert-verify: false
   sni: t.me%2Fripaojiedian
+  tfo: true
   type: trojan
 - name: 🇯🇵 日本|@stairnode
   password: BxceQaOe
-  port: 21508
-  server: 54.95.23.13
-  skip-cert-verify: true
+  port: 16919
+  server: 52.195.2.120
+  skip-cert-verify: false
   sni: t.me%252Fripaojiedian
+  tfo: true
   type: trojan
 - name: 🇯🇵 日本2|@stairnode
   password: f7dbed8b1ca85124e793ba6c0bcfd0db
-  port: 34818
-  server: 52.68.27.2
-  skip-cert-verify: false
-  sni: www.nintendogames.net
-  type: trojan
-- name: 🇯🇵 日本3|@stairnode
-  password: f7dbed8b1ca85124e793ba6c0bcfd0db
-  port: 2001
-  server: 160.16.214.104
-  skip-cert-verify: false
-  sni: www.nintendogames.net
-  type: trojan
-- name: 🇸🇬 新加坡|@stairnode
-  password: f7dbed8b1ca85124e793ba6c0bcfd0db
-  port: 3419
-  server: 52.68.27.2
-  skip-cert-verify: false
-  sni: www.nintendogames.net
-  type: trojan
-- name: 🇸🇬 新加坡2|@stairnode
-  password: f7dbed8b1ca85124e793ba6c0bcfd0db
-  port: 3419
+  port: 4937
   server: 57.180.36.84
   skip-cert-verify: false
   sni: www.nintendogames.net
+  tfo: false
+  type: trojan
+- name: 🇯🇵 日本3|@stairnode
+  password: f7dbed8b1ca85124e793ba6c0bcfd0db
+  port: 34818
+  server: 13.115.155.105
+  skip-cert-verify: false
+  sni: www.nintendogames.net
+  tfo: false
+  type: trojan
+- name: 🇸🇬 新加坡|@stairnode
+  password: f7dbed8b1ca85124e793ba6c0bcfd0db
+  port: 4674
+  server: 153.121.45.139
+  skip-cert-verify: false
+  sni: www.nintendogames.net
+  tfo: false
+  type: trojan
+- name: 🇸🇬 新加坡2|@stairnode
+  password: f7dbed8b1ca85124e793ba6c0bcfd0db
+  port: 4674
+  server: 13.115.155.105
+  skip-cert-verify: false
+  sni: www.nintendogames.net
+  tfo: false
   type: trojan
 - name: 🇸🇬 新加坡3|@stairnode
   password: BxceQaOe
   port: 25343
-  server: 18.162.41.211
-  skip-cert-verify: true
+  server: 43.199.64.100
+  skip-cert-verify: false
   sni: t.me%252Fripaojiedian
+  tfo: true
   type: trojan
 - name: 🇺🇸 美国|@stairnode
   password: f7dbed8b1ca85124e793ba6c0bcfd0db
-  port: 4920
-  server: 52.68.27.2
+  port: 4019
+  server: 54.178.70.68
   skip-cert-verify: false
   sni: www.nintendogames.net
+  tfo: false
   type: trojan
 - name: 🇺🇸 美国2|@stairnode
   password: f7dbed8b1ca85124e793ba6c0bcfd0db
   port: 4920
-  server: 13.115.210.7
+  server: 153.121.45.139
   skip-cert-verify: false
   sni: www.nintendogames.net
+  tfo: false
   type: trojan
 - name: 🇺🇸 美国3|@stairnode
   password: BxceQaOe
-  port: 45947
-  server: 18.162.42.52
-  skip-cert-verify: true
+  port: 4864
+  server: 18.166.249.43
+  skip-cert-verify: false
   sni: t.me%2Fripaojiedian
+  tfo: true
   type: trojan
 proxy-groups:
 - name: 🚀 节点选择
@@ -3807,4 +3860,31 @@ rules:
 - IP-CIDR,101.199.196.0/22,🎯 全球直连,no-resolve
 - GEOIP,CN,🎯 全球直连
 - MATCH,🐟 漏网之鱼
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  override-destination: true
+  parse-pure-ip: false
+  skip-domain:
+  - Mijia Cloud
+  - dlg.io.mi.com
+  - +.push.apple.com
+  sniff:
+    HTTP:
+      override-destination: true
+      ports:
+      - 1-65535
+    QUIC:
+      override-destination: true
+      ports:
+      - 1-65535
+    TLS:
+      override-destination: true
+      ports:
+      - 1-65535
 socks-port: 7891
+tcp-concurrent: true
+unified-delay: false
+url-rewrite:
+- ^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
+- ^https?:\/\/(ditu|maps).google\.cn https://maps.google.com 302
