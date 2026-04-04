@@ -1,4 +1,4 @@
-2026-04-03 05:44:38 [scrapy.middleware] INFO: Enabled downloader middlewares:
+2026-04-04 05:23:48 [scrapy.middleware] INFO: Enabled downloader middlewares:
 ['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
  'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
  'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
@@ -12,269 +12,275 @@
  'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
  'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
  'scrapy.downloadermiddlewares.stats.DownloaderStats']
-2026-04-03 05:44:38 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/scrapy/core/downloader/middleware.py:44: ScrapyDeprecationWarning: RandomUserAgentMiddleware.process_request() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+2026-04-04 05:23:48 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/scrapy/core/downloader/middleware.py:44: ScrapyDeprecationWarning: RandomUserAgentMiddleware.process_request() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
   self._check_mw_method_spider_arg(mw.process_request)
 
-2026-04-03 05:44:38 [scrapy.middleware] INFO: Enabled spider middlewares:
+2026-04-04 05:23:48 [scrapy.middleware] INFO: Enabled spider middlewares:
 ['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
  'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
  'scrapy.spidermiddlewares.referer.RefererMiddleware',
  'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
  'scrapy.spidermiddlewares.depth.DepthMiddleware']
-2026-04-03 05:44:38 [scrapy.middleware] INFO: Enabled item pipelines:
+2026-04-04 05:23:48 [scrapy.middleware] INFO: Enabled item pipelines:
 ['NodeScrapy.pipelines.Pipeline']
-2026-04-03 05:44:38 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/scrapy/pipelines/__init__.py:41: ScrapyDeprecationWarning: Pipeline.open_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+2026-04-04 05:23:48 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/scrapy/pipelines/__init__.py:41: ScrapyDeprecationWarning: Pipeline.open_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
   self._check_mw_method_spider_arg(pipe.open_spider)
 
-2026-04-03 05:44:38 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/scrapy/pipelines/__init__.py:44: ScrapyDeprecationWarning: Pipeline.close_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+2026-04-04 05:23:48 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/scrapy/pipelines/__init__.py:44: ScrapyDeprecationWarning: Pipeline.close_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
   self._check_mw_method_spider_arg(pipe.close_spider)
 
-2026-04-03 05:44:38 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/scrapy/pipelines/__init__.py:47: ScrapyDeprecationWarning: Pipeline.process_item() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+2026-04-04 05:23:48 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/scrapy/pipelines/__init__.py:47: ScrapyDeprecationWarning: Pipeline.process_item() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
   self._check_mw_method_spider_arg(pipe.process_item)
 
-2026-04-03 05:44:38 [scrapy.core.engine] INFO: Spider opened
-2026-04-03 05:44:38 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/scrapy/core/spidermw.py:490: ScrapyDeprecationWarning: NodeScrapy.spiders.SimpleSpider.SimpleSpider defines the deprecated start_requests() method. start_requests() has been deprecated in favor of a new method, start(), to support asynchronous code execution. start_requests() will stop being called in a future version of Scrapy. If you use Scrapy 2.13 or higher only, replace start_requests() with start(); note that start() is a coroutine (async def). If you need to maintain compatibility with lower Scrapy versions, when overriding start_requests() in a spider class, override start() as well; you can use super() to reuse the inherited start() implementation without copy-pasting. See the release notes of Scrapy 2.13 for details: https://docs.scrapy.org/en/2.13/news.html
+2026-04-04 05:23:48 [scrapy.core.engine] INFO: Spider opened
+2026-04-04 05:23:48 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/scrapy/core/spidermw.py:490: ScrapyDeprecationWarning: NodeScrapy.spiders.SimpleSpider.SimpleSpider defines the deprecated start_requests() method. start_requests() has been deprecated in favor of a new method, start(), to support asynchronous code execution. start_requests() will stop being called in a future version of Scrapy. If you use Scrapy 2.13 or higher only, replace start_requests() with start(); note that start() is a coroutine (async def). If you need to maintain compatibility with lower Scrapy versions, when overriding start_requests() in a spider class, override start() as well; you can use super() to reuse the inherited start() implementation without copy-pasting. See the release notes of Scrapy 2.13 for details: https://docs.scrapy.org/en/2.13/news.html
   warn(
 
-2026-04-03 05:44:38 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
-2026-04-03 05:44:38 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
-2026-04-03 05:44:38 [simple] INFO: clashmeta start
-2026-04-03 05:44:38 [simple] INFO: ndnode start
-2026-04-03 05:44:38 [simple] INFO: nodev2ray start
-2026-04-03 05:44:38 [simple] INFO: nodefree start
-2026-04-03 05:44:38 [simple] INFO: v2rayshare start
-2026-04-03 05:44:38 [simple] INFO: wenode start
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-4-2-clash-meta-node-share.htm on 2026-04-02
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-4-2-clash-meta-node-share.htm on 2026-04-02
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-30-today-clash-meta-node.htm on 2026-03-30
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-30-today-clash-meta-node.htm on 2026-03-30
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-29-free-clash-meta-node.htm on 2026-03-29
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-29-free-clash-meta-node.htm on 2026-03-29
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-28-clash-meta-github.htm on 2026-03-28
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-28-clash-meta-github.htm on 2026-03-28
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-27-clash-meta-node.htm on 2026-03-27
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-27-clash-meta-node.htm on 2026-03-27
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-26-free-clash-meta-node.htm on 2026-03-26
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-26-free-clash-meta-node.htm on 2026-03-26
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-25-today-clash-meta-node.htm on 2026-03-25
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-25-today-clash-meta-node.htm on 2026-03-25
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-23-today-clash-meta-node.htm on 2026-03-23
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-23-today-clash-meta-node.htm on 2026-03-23
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-22-latest-clash-meta-node.htm on 2026-03-22
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-22-latest-clash-meta-node.htm on 2026-03-22
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-21-free-node-subscribe-links.htm on 2026-03-21
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-21-free-node-subscribe-links.htm on 2026-03-21
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-20-latest-clash-meta-node.htm on 2026-03-20
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-20-latest-clash-meta-node.htm on 2026-03-20
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-19-free-clash-meta-node.htm on 2026-03-19
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-19-free-clash-meta-node.htm on 2026-03-19
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-18-free-high-speed-nodes.htm on 2026-03-18
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-18-free-high-speed-nodes.htm on 2026-03-18
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-17-free-clash-meta-node.htm on 2026-03-17
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-17-free-clash-meta-node.htm on 2026-03-17
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-16-clash-meta-node-share.htm on 2026-03-16
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-16-clash-meta-node-share.htm on 2026-03-16
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-15-clash-meta-node.htm on 2026-03-15
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-15-clash-meta-node.htm on 2026-03-15
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-14-node-share.htm on 2026-03-14
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-14-node-share.htm on 2026-03-14
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-13-free-clash-meta-node.htm on 2026-03-13
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-13-free-clash-meta-node.htm on 2026-03-13
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-12-free-clash-meta-node.htm on 2026-03-12
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-12-free-clash-meta-node.htm on 2026-03-12
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-11-free-clash-meta-node.htm on 2026-03-11
-2026-04-03 05:44:39 [simple] INFO: clashmeta found /free-nodes/2026-3-11-free-clash-meta-node.htm on 2026-03-11
-2026-04-03 05:44:39 [simple] INFO: clashmeta needs update, accessing https://clash-meta.github.io/free-nodes/2026-4-2-clash-meta-node-share.htm
-2026-04-03 05:44:39 [simple] INFO: clashmeta needs update, accessing https://clash-meta.github.io/free-nodes/2026-4-2-clash-meta-node-share.htm
-2026-04-03 05:44:39 [simple] INFO: clashmeta needs update, accessing https://clash-meta.github.io/free-nodes/2026-3-30-today-clash-meta-node.htm
-2026-04-03 05:44:39 [simple] INFO: nodefree found https://nodefree.me/p/3827.html on 2026-04-03
-2026-04-03 05:44:39 [simple] INFO: nodefree found https://nodefree.me/p/3828.html on 2026-04-02
-2026-04-03 05:44:39 [simple] INFO: nodefree found https://nodefree.me/p/3829.html on 2026-04-01
-2026-04-03 05:44:39 [simple] INFO: nodefree found https://nodefree.me/p/3830.html on 2026-03-31
-2026-04-03 05:44:39 [simple] INFO: nodefree found https://nodefree.me/p/3831.html on 2026-03-30
-2026-04-03 05:44:39 [simple] INFO: nodefree found https://nodefree.me/p/3832.html on 2026-03-29
-2026-04-03 05:44:39 [simple] INFO: nodefree found https://nodefree.me/p/3833.html on 2026-03-28
-2026-04-03 05:44:39 [simple] INFO: nodefree found https://nodefree.me/p/3834.html on 2026-03-27
-2026-04-03 05:44:39 [simple] INFO: nodefree found https://nodefree.me/p/3835.html on 2026-03-26
-2026-04-03 05:44:39 [simple] INFO: nodefree found https://nodefree.me/p/3836.html on 2026-03-25
-2026-04-03 05:44:39 [simple] INFO: nodefree needs update, accessing https://nodefree.me/p/3827.html
-2026-04-03 05:44:39 [simple] INFO: nodefree is up to date, exiting
-2026-04-03 05:44:39 [simple] INFO: nodefree is up to date, exiting
-2026-04-03 05:44:39 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5230.html on 2026-04-03
-2026-04-03 05:44:39 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5231.html on 2026-04-02
-2026-04-03 05:44:39 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5232.html on 2026-04-01
-2026-04-03 05:44:39 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5233.html on 2026-03-31
-2026-04-03 05:44:39 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5234.html on 2026-03-30
-2026-04-03 05:44:39 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5235.html on 2026-03-29
-2026-04-03 05:44:39 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5236.html on 2026-03-28
-2026-04-03 05:44:39 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5237.html on 2026-03-27
-2026-04-03 05:44:39 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5238.html on 2026-03-26
-2026-04-03 05:44:39 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5239.html on 2026-03-25
-2026-04-03 05:44:39 [simple] INFO: v2rayshare needs update, accessing https://v2rayshare.net/p/5230.html
-2026-04-03 05:44:39 [simple] INFO: v2rayshare is up to date, exiting
-2026-04-03 05:44:39 [simple] INFO: v2rayshare is up to date, exiting
-2026-04-03 05:44:39 [simple] INFO: nodefree found https://node.nodefree.me/2026/04/20260403.txt
-2026-04-03 05:44:39 [simple] INFO: nodefree found https://node.nodefree.me/2026/04/20260403.yaml
-2026-04-03 05:44:39 [simple] INFO: nodefree found https://node.nodefree.me/2026/04/m20260403.yaml
-2026-04-03 05:44:39 [simple] INFO: wenode found https://oneclash.cc/a/3459.html on 2026-04-03
-2026-04-03 05:44:39 [simple] INFO: wenode found https://oneclash.cc/a/3460.html on 2026-04-02
-2026-04-03 05:44:39 [simple] INFO: wenode found https://oneclash.cc/a/3461.html on 2026-04-01
-2026-04-03 05:44:39 [simple] INFO: wenode found https://oneclash.cc/a/3462.html on 2026-03-31
-2026-04-03 05:44:39 [simple] INFO: wenode found https://oneclash.cc/a/3463.html on 2026-03-30
-2026-04-03 05:44:39 [simple] INFO: wenode found https://oneclash.cc/a/3464.html on 2026-03-29
-2026-04-03 05:44:39 [simple] INFO: wenode found https://oneclash.cc/a/3465.html on 2026-03-28
-2026-04-03 05:44:39 [simple] INFO: wenode found https://oneclash.cc/a/3466.html on 2026-03-27
-2026-04-03 05:44:39 [simple] INFO: wenode found https://oneclash.cc/a/3467.html on 2026-03-26
-2026-04-03 05:44:39 [simple] INFO: wenode found https://oneclash.cc/a/3468.html on 2026-03-25
-2026-04-03 05:44:39 [simple] INFO: wenode needs update, accessing https://oneclash.cc/a/3459.html
-2026-04-03 05:44:39 [simple] INFO: wenode needs update, accessing https://oneclash.cc/a/3460.html
-2026-04-03 05:44:39 [simple] INFO: wenode is up to date, exiting
-2026-04-03 05:44:39 [simple] INFO: ndnode found https://www.naidounode.com/n/3641.html on 2026-04-03
-2026-04-03 05:44:39 [simple] INFO: ndnode found https://www.naidounode.com/n/3639.html on 2026-04-02
-2026-04-03 05:44:39 [simple] INFO: ndnode found https://www.naidounode.com/n/3637.html on 2026-04-01
-2026-04-03 05:44:39 [simple] INFO: ndnode found https://www.naidounode.com/n/3635.html on 2026-03-31
-2026-04-03 05:44:39 [simple] INFO: ndnode found https://www.naidounode.com/n/3633.html on 2026-03-30
-2026-04-03 05:44:39 [simple] INFO: ndnode found https://www.naidounode.com/n/3631.html on 2026-03-29
-2026-04-03 05:44:39 [simple] INFO: ndnode found https://www.naidounode.com/n/3629.html on 2026-03-28
-2026-04-03 05:44:39 [simple] INFO: ndnode found https://www.naidounode.com/n/3627.html on 2026-03-27
-2026-04-03 05:44:39 [simple] INFO: ndnode found https://www.naidounode.com/n/3625.html on 2026-03-26
-2026-04-03 05:44:39 [simple] INFO: ndnode found https://www.naidounode.com/n/3623.html on 2026-03-18
-2026-04-03 05:44:39 [simple] INFO: ndnode needs update, accessing https://www.naidounode.com/n/3641.html
-2026-04-03 05:44:39 [simple] INFO: ndnode is up to date, exiting
-2026-04-03 05:44:39 [simple] INFO: ndnode is up to date, exiting
-2026-04-03 05:44:39 [simple] INFO: v2rayshare found https://static.v2rayshare.net/2026/04/20260403.txt
-2026-04-03 05:44:39 [simple] INFO: v2rayshare found https://static.v2rayshare.net/2026/04/20260403.yaml
-2026-04-03 05:44:39 [simple] INFO: v2rayshare found https://static.v2rayshare.net/2026/04/m20260403.yaml
-2026-04-03 05:44:39 [simple] WARNING: wenode could not parse https://oss.oneclash.cc/2026/04/20260403.txt c..."/, skipping
-2026-04-03 05:44:39 [simple] INFO: wenode found https://oss.oneclash.cc/2026/04/20260403.txt
-2026-04-03 05:44:39 [simple] INFO: wenode found https://oss.oneclash.cc/2026/04/20260403.yaml
-2026-04-03 05:44:39 [simple] INFO: wenode found https://oss.oneclash.cc/2026/04/m20260403.yaml
-2026-04-03 05:44:39 [simple] INFO: ndnode found http://naidounode.cczzuu.top/node/20260403-v2ray.txt
-2026-04-03 05:44:39 [simple] INFO: ndnode found http://naidounode.cczzuu.top/node/20260403-clash.yaml
-2026-04-03 05:44:39 [simple] WARNING: wenode could not parse https://oss.oneclash.cc/2026/04/20260402.txt ..."/, skipping
-2026-04-03 05:44:39 [simple] INFO: wenode found https://oss.oneclash.cc/2026/04/20260402.txt
-2026-04-03 05:44:39 [simple] INFO: wenode found https://oss.oneclash.cc/2026/04/20260402.yaml
-2026-04-03 05:44:39 [simple] INFO: wenode found https://oss.oneclash.cc/2026/04/m20260402.yaml
-2026-04-03 05:44:39 [simple] INFO: nodev2ray found /free-node/2026-4-3-node-share.htm on 2026-04-03
-2026-04-03 05:44:39 [simple] INFO: nodev2ray found /free-node/2026-4-2-free-ssr-subscribe.htm on 2026-04-02
-2026-04-03 05:44:39 [simple] INFO: nodev2ray found /free-node/2026-4-1-free-ssr-subscribe.htm on 2026-04-01
-2026-04-03 05:44:39 [simple] INFO: nodev2ray found /free-node/2026-3-31-free-subscribe-node.htm on 2026-03-31
-2026-04-03 05:44:39 [simple] INFO: nodev2ray found /free-node/2026-3-30-v2ray-node.htm on 2026-03-30
-2026-04-03 05:44:39 [simple] INFO: nodev2ray found /free-node/2026-3-29-node-share.htm on 2026-03-29
-2026-04-03 05:44:39 [simple] INFO: nodev2ray found /free-node/2026-3-28-v2ray-node-daily-updates.htm on 2026-03-28
-2026-04-03 05:44:39 [simple] INFO: nodev2ray found /free-node/2026-3-27-free-clash-subscribe.htm on 2026-03-27
-2026-04-03 05:44:39 [simple] INFO: nodev2ray found /free-node/2026-3-26-free-clash-subscribe.htm on 2026-03-26
-2026-04-03 05:44:39 [simple] INFO: nodev2ray found /free-node/2026-3-25-v2ray-node.htm on 2026-03-25
-2026-04-03 05:44:39 [simple] INFO: nodev2ray found /free-node/2026-3-24-free-clash-subscribe.htm on 2026-03-24
-2026-04-03 05:44:39 [simple] INFO: nodev2ray found /free-node/2026-3-23-free-subscribe-node.htm on 2026-03-23
-2026-04-03 05:44:39 [simple] INFO: nodev2ray found /free-node/2026-3-22-free-clash-subscribe.htm on 2026-03-22
-2026-04-03 05:44:39 [simple] INFO: nodev2ray found /free-node/2026-3-21-free-ssr-node.htm on 2026-03-21
-2026-04-03 05:44:39 [simple] INFO: nodev2ray found /free-node/2026-3-20-v2ray-windows.htm on 2026-03-20
-2026-04-03 05:44:39 [simple] INFO: nodev2ray found /free-node/2026-3-19-free-ssr-subscribe.htm on 2026-03-19
-2026-04-03 05:44:39 [simple] INFO: nodev2ray found /free-node/2026-3-18-shadowrocket-node.htm on 2026-03-18
-2026-04-03 05:44:39 [simple] INFO: nodev2ray found /free-node/2026-3-17-free-ssr-node.htm on 2026-03-17
-2026-04-03 05:44:39 [simple] INFO: nodev2ray found /free-node/2026-3-16-free-ssr-node.htm on 2026-03-16
-2026-04-03 05:44:39 [simple] INFO: nodev2ray found /free-node/2026-3-15-free-high-speed-nodes.htm on 2026-03-15
-2026-04-03 05:44:39 [simple] INFO: nodev2ray needs update, accessing https://nodev2ray.com/free-node/2026-4-3-node-share.htm
-2026-04-03 05:44:39 [simple] INFO: nodev2ray is up to date, exiting
-2026-04-03 05:44:39 [simple] INFO: nodev2ray is up to date, exiting
-2026-04-03 05:44:39 [simple] INFO: Pipeline got item nodefree.txt
-2026-04-03 05:44:39 [simple] INFO: Pipeline processed nodefree.txt
-2026-04-03 05:44:39 [simple] INFO: Pipeline got item nodefree.yaml
-2026-04-03 05:44:39 [simple] INFO: Pipeline processed nodefree.yaml
-2026-04-03 05:44:39 [simple] INFO: Pipeline got item nodefree.yaml
-2026-04-03 05:44:39 [simple] INFO: Pipeline processed nodefree.yaml
-2026-04-03 05:44:39 [simple] INFO: Pipeline got item v2rayshare.yaml
-2026-04-03 05:44:39 [simple] INFO: Pipeline processed v2rayshare.yaml
-2026-04-03 05:44:39 [simple] INFO: Pipeline got item v2rayshare.yaml
-2026-04-03 05:44:39 [simple] INFO: Pipeline processed v2rayshare.yaml
-2026-04-03 05:44:39 [simple] INFO: Pipeline got item v2rayshare.txt
-2026-04-03 05:44:39 [simple] INFO: Pipeline processed v2rayshare.txt
-2026-04-03 05:44:39 [simple] INFO: Pipeline got item wenode.yaml
-2026-04-03 05:44:39 [simple] INFO: Pipeline processed wenode.yaml
-2026-04-03 05:44:39 [simple] INFO: Pipeline got item wenode.txt
-2026-04-03 05:44:39 [simple] INFO: Pipeline processed wenode.txt
-2026-04-03 05:44:39 [simple] INFO: Pipeline got item wenode.yaml
-2026-04-03 05:44:39 [simple] INFO: Pipeline processed wenode.yaml
-2026-04-03 05:44:39 [simple] INFO: Pipeline got item wenode.yaml
-2026-04-03 05:44:39 [simple] INFO: Pipeline processed wenode.yaml
-2026-04-03 05:44:40 [simple] INFO: Pipeline got item wenode.txt
-2026-04-03 05:44:40 [simple] INFO: Pipeline processed wenode.txt
-2026-04-03 05:44:40 [simple] INFO: Pipeline got item wenode.yaml
-2026-04-03 05:44:40 [simple] INFO: Pipeline processed wenode.yaml
-2026-04-03 05:44:40 [simple] INFO: Pipeline got item ndnode.txt
-2026-04-03 05:44:40 [simple] INFO: Pipeline processed ndnode.txt
-2026-04-03 05:44:40 [simple] INFO: Pipeline got item ndnode.yaml
-2026-04-03 05:44:40 [simple] INFO: Pipeline processed ndnode.yaml
-2026-04-03 05:44:40 [simple] INFO: nodev2ray found https://node.nodev2ray.com/uploads/2026/04/0-20260403.txt
-2026-04-03 05:44:40 [simple] INFO: nodev2ray found https://node.nodev2ray.com/uploads/2026/04/1-20260403.txt
-2026-04-03 05:44:40 [simple] INFO: nodev2ray found https://node.nodev2ray.com/uploads/2026/04/2-20260403.txt
-2026-04-03 05:44:40 [simple] INFO: nodev2ray found https://node.nodev2ray.com/uploads/2026/04/4-20260403.txt
-2026-04-03 05:44:40 [simple] INFO: nodev2ray found https://node.nodev2ray.com/uploads/2026/04/0-20260403.yaml
-2026-04-03 05:44:40 [simple] INFO: nodev2ray found https://node.nodev2ray.com/uploads/2026/04/2-20260403.yaml
-2026-04-03 05:44:40 [simple] INFO: nodev2ray found https://node.nodev2ray.com/uploads/2026/04/4-20260403.yaml
-2026-04-03 05:44:40 [simple] WARNING: nodev2ray could not parse https://node.nodev2ray.com/uploads/2026/04/20260403.json, skipping
-2026-04-03 05:44:41 [simple] INFO: Pipeline got item nodev2ray.txt
-2026-04-03 05:44:41 [simple] INFO: Pipeline processed nodev2ray.txt
-2026-04-03 05:44:41 [simple] INFO: Pipeline got item nodev2ray.yaml
-2026-04-03 05:44:41 [simple] INFO: Pipeline processed nodev2ray.yaml
-2026-04-03 05:44:41 [simple] INFO: Pipeline got item nodev2ray.txt
-2026-04-03 05:44:41 [simple] INFO: Pipeline processed nodev2ray.txt
-2026-04-03 05:44:41 [simple] INFO: Pipeline got item nodev2ray.txt
-2026-04-03 05:44:41 [simple] INFO: Pipeline processed nodev2ray.txt
-2026-04-03 05:44:41 [simple] INFO: Pipeline got item nodev2ray.txt
-2026-04-03 05:44:41 [simple] INFO: Pipeline processed nodev2ray.txt
-2026-04-03 05:44:41 [simple] INFO: Pipeline got item nodev2ray.yaml
-2026-04-03 05:44:41 [simple] INFO: Pipeline processed nodev2ray.yaml
-2026-04-03 05:44:41 [simple] INFO: Pipeline got item nodev2ray.yaml
-2026-04-03 05:44:41 [simple] INFO: Pipeline processed nodev2ray.yaml
-2026-04-03 05:44:41 [scrapy.core.engine] INFO: Closing spider (finished)
-2026-04-03 05:44:41 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
-{'downloader/request_bytes': 13493,
- 'downloader/request_count': 36,
- 'downloader/request_method_count/GET': 36,
- 'downloader/response_bytes': 803973,
- 'downloader/response_count': 36,
- 'downloader/response_status_count/200': 35,
+2026-04-04 05:23:48 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-04-04 05:23:48 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-04-04 05:23:48 [simple] INFO: clashmeta start
+2026-04-04 05:23:48 [simple] INFO: ndnode start
+2026-04-04 05:23:48 [simple] INFO: nodev2ray start
+2026-04-04 05:23:48 [simple] INFO: nodefree start
+2026-04-04 05:23:48 [simple] INFO: v2rayshare start
+2026-04-04 05:23:48 [simple] INFO: wenode start
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-4-2-clash-meta-node-share.htm on 2026-04-02
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-4-2-clash-meta-node-share.htm on 2026-04-02
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-30-today-clash-meta-node.htm on 2026-03-30
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-30-today-clash-meta-node.htm on 2026-03-30
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-29-free-clash-meta-node.htm on 2026-03-29
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-29-free-clash-meta-node.htm on 2026-03-29
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-28-clash-meta-github.htm on 2026-03-28
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-28-clash-meta-github.htm on 2026-03-28
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-27-clash-meta-node.htm on 2026-03-27
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-27-clash-meta-node.htm on 2026-03-27
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-26-free-clash-meta-node.htm on 2026-03-26
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-26-free-clash-meta-node.htm on 2026-03-26
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-25-today-clash-meta-node.htm on 2026-03-25
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-25-today-clash-meta-node.htm on 2026-03-25
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-23-today-clash-meta-node.htm on 2026-03-23
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-23-today-clash-meta-node.htm on 2026-03-23
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-22-latest-clash-meta-node.htm on 2026-03-22
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-22-latest-clash-meta-node.htm on 2026-03-22
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-21-free-node-subscribe-links.htm on 2026-03-21
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-21-free-node-subscribe-links.htm on 2026-03-21
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-20-latest-clash-meta-node.htm on 2026-03-20
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-20-latest-clash-meta-node.htm on 2026-03-20
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-19-free-clash-meta-node.htm on 2026-03-19
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-19-free-clash-meta-node.htm on 2026-03-19
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-18-free-high-speed-nodes.htm on 2026-03-18
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-18-free-high-speed-nodes.htm on 2026-03-18
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-17-free-clash-meta-node.htm on 2026-03-17
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-17-free-clash-meta-node.htm on 2026-03-17
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-16-clash-meta-node-share.htm on 2026-03-16
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-16-clash-meta-node-share.htm on 2026-03-16
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-15-clash-meta-node.htm on 2026-03-15
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-15-clash-meta-node.htm on 2026-03-15
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-14-node-share.htm on 2026-03-14
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-14-node-share.htm on 2026-03-14
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-13-free-clash-meta-node.htm on 2026-03-13
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-13-free-clash-meta-node.htm on 2026-03-13
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-12-free-clash-meta-node.htm on 2026-03-12
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-12-free-clash-meta-node.htm on 2026-03-12
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-11-free-clash-meta-node.htm on 2026-03-11
+2026-04-04 05:23:48 [simple] INFO: clashmeta found /free-nodes/2026-3-11-free-clash-meta-node.htm on 2026-03-11
+2026-04-04 05:23:48 [simple] INFO: clashmeta needs update, accessing https://clash-meta.github.io/free-nodes/2026-4-2-clash-meta-node-share.htm
+2026-04-04 05:23:48 [simple] INFO: clashmeta needs update, accessing https://clash-meta.github.io/free-nodes/2026-4-2-clash-meta-node-share.htm
+2026-04-04 05:23:48 [simple] INFO: clashmeta needs update, accessing https://clash-meta.github.io/free-nodes/2026-3-30-today-clash-meta-node.htm
+2026-04-04 05:23:48 [simple] INFO: nodefree found https://nodefree.me/p/3826.html on 2026-04-04
+2026-04-04 05:23:48 [simple] INFO: nodefree found https://nodefree.me/p/3827.html on 2026-04-03
+2026-04-04 05:23:48 [simple] INFO: nodefree found https://nodefree.me/p/3828.html on 2026-04-02
+2026-04-04 05:23:48 [simple] INFO: nodefree found https://nodefree.me/p/3829.html on 2026-04-01
+2026-04-04 05:23:48 [simple] INFO: nodefree found https://nodefree.me/p/3830.html on 2026-03-31
+2026-04-04 05:23:48 [simple] INFO: nodefree found https://nodefree.me/p/3831.html on 2026-03-30
+2026-04-04 05:23:48 [simple] INFO: nodefree found https://nodefree.me/p/3832.html on 2026-03-29
+2026-04-04 05:23:48 [simple] INFO: nodefree found https://nodefree.me/p/3833.html on 2026-03-28
+2026-04-04 05:23:48 [simple] INFO: nodefree found https://nodefree.me/p/3834.html on 2026-03-27
+2026-04-04 05:23:48 [simple] INFO: nodefree found https://nodefree.me/p/3835.html on 2026-03-26
+2026-04-04 05:23:48 [simple] INFO: nodefree needs update, accessing https://nodefree.me/p/3826.html
+2026-04-04 05:23:48 [simple] INFO: nodefree is up to date, exiting
+2026-04-04 05:23:48 [simple] INFO: nodefree is up to date, exiting
+2026-04-04 05:23:48 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5229.html on 2026-04-04
+2026-04-04 05:23:48 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5230.html on 2026-04-03
+2026-04-04 05:23:48 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5231.html on 2026-04-02
+2026-04-04 05:23:48 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5232.html on 2026-04-01
+2026-04-04 05:23:48 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5233.html on 2026-03-31
+2026-04-04 05:23:48 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5234.html on 2026-03-30
+2026-04-04 05:23:48 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5235.html on 2026-03-29
+2026-04-04 05:23:48 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5236.html on 2026-03-28
+2026-04-04 05:23:48 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5237.html on 2026-03-27
+2026-04-04 05:23:48 [simple] INFO: v2rayshare found https://v2rayshare.net/p/5238.html on 2026-03-26
+2026-04-04 05:23:48 [simple] INFO: v2rayshare needs update, accessing https://v2rayshare.net/p/5229.html
+2026-04-04 05:23:48 [simple] INFO: v2rayshare is up to date, exiting
+2026-04-04 05:23:48 [simple] INFO: v2rayshare is up to date, exiting
+2026-04-04 05:23:48 [simple] INFO: ndnode found https://www.naidounode.com/n/3643.html on 2026-04-04
+2026-04-04 05:23:48 [simple] INFO: ndnode found https://www.naidounode.com/n/3641.html on 2026-04-03
+2026-04-04 05:23:48 [simple] INFO: ndnode found https://www.naidounode.com/n/3639.html on 2026-04-02
+2026-04-04 05:23:48 [simple] INFO: ndnode found https://www.naidounode.com/n/3637.html on 2026-04-01
+2026-04-04 05:23:48 [simple] INFO: ndnode found https://www.naidounode.com/n/3635.html on 2026-03-31
+2026-04-04 05:23:48 [simple] INFO: ndnode found https://www.naidounode.com/n/3633.html on 2026-03-30
+2026-04-04 05:23:48 [simple] INFO: ndnode found https://www.naidounode.com/n/3631.html on 2026-03-29
+2026-04-04 05:23:48 [simple] INFO: ndnode found https://www.naidounode.com/n/3629.html on 2026-03-28
+2026-04-04 05:23:48 [simple] INFO: ndnode found https://www.naidounode.com/n/3627.html on 2026-03-27
+2026-04-04 05:23:48 [simple] INFO: ndnode found https://www.naidounode.com/n/3625.html on 2026-03-26
+2026-04-04 05:23:48 [simple] INFO: ndnode needs update, accessing https://www.naidounode.com/n/3643.html
+2026-04-04 05:23:48 [simple] INFO: ndnode is up to date, exiting
+2026-04-04 05:23:48 [simple] INFO: ndnode is up to date, exiting
+2026-04-04 05:23:48 [simple] INFO: nodev2ray found /free-node/2026-4-4-node-share-links.htm on 2026-04-04
+2026-04-04 05:23:48 [simple] INFO: nodev2ray found /free-node/2026-4-3-node-share.htm on 2026-04-03
+2026-04-04 05:23:48 [simple] INFO: nodev2ray found /free-node/2026-4-2-free-ssr-subscribe.htm on 2026-04-02
+2026-04-04 05:23:48 [simple] INFO: nodev2ray found /free-node/2026-4-1-free-ssr-subscribe.htm on 2026-04-01
+2026-04-04 05:23:48 [simple] INFO: nodev2ray found /free-node/2026-3-31-free-subscribe-node.htm on 2026-03-31
+2026-04-04 05:23:48 [simple] INFO: nodev2ray found /free-node/2026-3-30-v2ray-node.htm on 2026-03-30
+2026-04-04 05:23:48 [simple] INFO: nodev2ray found /free-node/2026-3-29-node-share.htm on 2026-03-29
+2026-04-04 05:23:48 [simple] INFO: nodev2ray found /free-node/2026-3-28-v2ray-node-daily-updates.htm on 2026-03-28
+2026-04-04 05:23:48 [simple] INFO: nodev2ray found /free-node/2026-3-27-free-clash-subscribe.htm on 2026-03-27
+2026-04-04 05:23:48 [simple] INFO: nodev2ray found /free-node/2026-3-26-free-clash-subscribe.htm on 2026-03-26
+2026-04-04 05:23:48 [simple] INFO: nodev2ray found /free-node/2026-3-25-v2ray-node.htm on 2026-03-25
+2026-04-04 05:23:48 [simple] INFO: nodev2ray found /free-node/2026-3-24-free-clash-subscribe.htm on 2026-03-24
+2026-04-04 05:23:48 [simple] INFO: nodev2ray found /free-node/2026-3-23-free-subscribe-node.htm on 2026-03-23
+2026-04-04 05:23:48 [simple] INFO: nodev2ray found /free-node/2026-3-22-free-clash-subscribe.htm on 2026-03-22
+2026-04-04 05:23:48 [simple] INFO: nodev2ray found /free-node/2026-3-21-free-ssr-node.htm on 2026-03-21
+2026-04-04 05:23:48 [simple] INFO: nodev2ray found /free-node/2026-3-20-v2ray-windows.htm on 2026-03-20
+2026-04-04 05:23:48 [simple] INFO: nodev2ray found /free-node/2026-3-19-free-ssr-subscribe.htm on 2026-03-19
+2026-04-04 05:23:48 [simple] INFO: nodev2ray found /free-node/2026-3-18-shadowrocket-node.htm on 2026-03-18
+2026-04-04 05:23:48 [simple] INFO: nodev2ray found /free-node/2026-3-17-free-ssr-node.htm on 2026-03-17
+2026-04-04 05:23:48 [simple] INFO: nodev2ray found /free-node/2026-3-16-free-ssr-node.htm on 2026-03-16
+2026-04-04 05:23:48 [simple] INFO: nodev2ray needs update, accessing https://nodev2ray.com/free-node/2026-4-4-node-share-links.htm
+2026-04-04 05:23:48 [simple] INFO: nodev2ray is up to date, exiting
+2026-04-04 05:23:48 [simple] INFO: nodev2ray is up to date, exiting
+2026-04-04 05:23:48 [simple] INFO: v2rayshare found https://static.v2rayshare.net/2026/04/20260404.txt
+2026-04-04 05:23:48 [simple] INFO: v2rayshare found https://static.v2rayshare.net/2026/04/20260404.yaml
+2026-04-04 05:23:48 [simple] INFO: v2rayshare found https://static.v2rayshare.net/2026/04/m20260404.yaml
+2026-04-04 05:23:48 [simple] INFO: wenode found https://oneclash.cc/a/3458.html on 2026-04-04
+2026-04-04 05:23:48 [simple] INFO: wenode found https://oneclash.cc/a/3459.html on 2026-04-03
+2026-04-04 05:23:48 [simple] INFO: wenode found https://oneclash.cc/a/3460.html on 2026-04-02
+2026-04-04 05:23:48 [simple] INFO: wenode found https://oneclash.cc/a/3461.html on 2026-04-01
+2026-04-04 05:23:48 [simple] INFO: wenode found https://oneclash.cc/a/3462.html on 2026-03-31
+2026-04-04 05:23:48 [simple] INFO: wenode found https://oneclash.cc/a/3463.html on 2026-03-30
+2026-04-04 05:23:48 [simple] INFO: wenode found https://oneclash.cc/a/3464.html on 2026-03-29
+2026-04-04 05:23:48 [simple] INFO: wenode found https://oneclash.cc/a/3465.html on 2026-03-28
+2026-04-04 05:23:48 [simple] INFO: wenode found https://oneclash.cc/a/3466.html on 2026-03-27
+2026-04-04 05:23:48 [simple] INFO: wenode found https://oneclash.cc/a/3467.html on 2026-03-26
+2026-04-04 05:23:48 [simple] INFO: wenode needs update, accessing https://oneclash.cc/a/3458.html
+2026-04-04 05:23:48 [simple] INFO: wenode needs update, accessing https://oneclash.cc/a/3459.html
+2026-04-04 05:23:48 [simple] INFO: wenode is up to date, exiting
+2026-04-04 05:23:48 [simple] INFO: nodefree found https://node.nodefree.me/2026/04/20260404.txt
+2026-04-04 05:23:48 [simple] INFO: nodefree found https://node.nodefree.me/2026/04/20260404.yaml
+2026-04-04 05:23:48 [simple] INFO: nodefree found https://node.nodefree.me/2026/04/m20260404.yaml
+2026-04-04 05:23:49 [simple] INFO: ndnode found http://naidounode.cczzuu.top/node/20260404-v2ray.txt
+2026-04-04 05:23:49 [simple] INFO: ndnode found http://naidounode.cczzuu.top/node/20260404-clash.yaml
+2026-04-04 05:23:49 [simple] WARNING: wenode could not parse https://oss.oneclash.cc/2026/04/20260404.txt ..."/, skipping
+2026-04-04 05:23:49 [simple] INFO: wenode found https://oss.oneclash.cc/2026/04/20260404.txt
+2026-04-04 05:23:49 [simple] INFO: wenode found https://oss.oneclash.cc/2026/04/20260404.yaml
+2026-04-04 05:23:49 [simple] INFO: wenode found https://oss.oneclash.cc/2026/04/m20260404.yaml
+2026-04-04 05:23:49 [simple] WARNING: wenode could not parse https://oss.oneclash.cc/2026/04/20260403.txt c..."/, skipping
+2026-04-04 05:23:49 [simple] INFO: wenode found https://oss.oneclash.cc/2026/04/20260403.txt
+2026-04-04 05:23:49 [simple] INFO: wenode found https://oss.oneclash.cc/2026/04/20260403.yaml
+2026-04-04 05:23:49 [simple] INFO: wenode found https://oss.oneclash.cc/2026/04/m20260403.yaml
+2026-04-04 05:23:49 [simple] INFO: nodev2ray found https://node.nodev2ray.com/uploads/2026/04/0-20260404.txt
+2026-04-04 05:23:49 [simple] INFO: nodev2ray found https://node.nodev2ray.com/uploads/2026/04/1-20260404.txt
+2026-04-04 05:23:49 [simple] INFO: nodev2ray found https://node.nodev2ray.com/uploads/2026/04/2-20260404.txt
+2026-04-04 05:23:49 [simple] INFO: nodev2ray found https://node.nodev2ray.com/uploads/2026/04/3-20260404.txt
+2026-04-04 05:23:49 [simple] INFO: nodev2ray found https://node.nodev2ray.com/uploads/2026/04/4-20260404.txt
+2026-04-04 05:23:49 [simple] INFO: nodev2ray found https://node.nodev2ray.com/uploads/2026/04/0-20260404.yaml
+2026-04-04 05:23:49 [simple] INFO: nodev2ray found https://node.nodev2ray.com/uploads/2026/04/1-20260404.yaml
+2026-04-04 05:23:49 [simple] INFO: nodev2ray found https://node.nodev2ray.com/uploads/2026/04/2-20260404.yaml
+2026-04-04 05:23:49 [simple] INFO: nodev2ray found https://node.nodev2ray.com/uploads/2026/04/4-20260404.yaml
+2026-04-04 05:23:49 [simple] WARNING: nodev2ray could not parse https://node.nodev2ray.com/uploads/2026/04/20260404.json, skipping
+2026-04-04 05:23:49 [simple] INFO: Pipeline got item v2rayshare.txt
+2026-04-04 05:23:49 [simple] INFO: Pipeline processed v2rayshare.txt
+2026-04-04 05:23:49 [simple] INFO: Pipeline got item v2rayshare.yaml
+2026-04-04 05:23:49 [simple] INFO: Pipeline processed v2rayshare.yaml
+2026-04-04 05:23:49 [simple] INFO: Pipeline got item nodefree.txt
+2026-04-04 05:23:49 [simple] INFO: Pipeline processed nodefree.txt
+2026-04-04 05:23:49 [simple] INFO: Pipeline got item v2rayshare.yaml
+2026-04-04 05:23:49 [simple] INFO: Pipeline processed v2rayshare.yaml
+2026-04-04 05:23:49 [simple] INFO: Pipeline got item nodefree.yaml
+2026-04-04 05:23:49 [simple] INFO: Pipeline processed nodefree.yaml
+2026-04-04 05:23:49 [simple] INFO: Pipeline got item nodefree.yaml
+2026-04-04 05:23:49 [simple] INFO: Pipeline processed nodefree.yaml
+2026-04-04 05:23:49 [simple] INFO: Pipeline got item ndnode.txt
+2026-04-04 05:23:49 [simple] INFO: Pipeline processed ndnode.txt
+2026-04-04 05:23:49 [simple] INFO: Pipeline got item wenode.txt
+2026-04-04 05:23:49 [simple] INFO: Pipeline processed wenode.txt
+2026-04-04 05:23:49 [simple] INFO: Pipeline got item wenode.yaml
+2026-04-04 05:23:49 [simple] INFO: Pipeline processed wenode.yaml
+2026-04-04 05:23:49 [simple] INFO: Pipeline got item wenode.txt
+2026-04-04 05:23:49 [simple] INFO: Pipeline processed wenode.txt
+2026-04-04 05:23:49 [simple] INFO: Pipeline got item wenode.yaml
+2026-04-04 05:23:49 [simple] INFO: Pipeline processed wenode.yaml
+2026-04-04 05:23:49 [simple] INFO: Pipeline got item wenode.yaml
+2026-04-04 05:23:49 [simple] INFO: Pipeline processed wenode.yaml
+2026-04-04 05:23:49 [simple] INFO: Pipeline got item nodev2ray.txt
+2026-04-04 05:23:49 [simple] INFO: Pipeline processed nodev2ray.txt
+2026-04-04 05:23:49 [simple] INFO: Pipeline got item nodev2ray.txt
+2026-04-04 05:23:49 [simple] INFO: Pipeline processed nodev2ray.txt
+2026-04-04 05:23:49 [simple] INFO: Pipeline got item nodev2ray.txt
+2026-04-04 05:23:49 [simple] INFO: Pipeline processed nodev2ray.txt
+2026-04-04 05:23:49 [simple] INFO: Pipeline got item nodev2ray.txt
+2026-04-04 05:23:49 [simple] INFO: Pipeline processed nodev2ray.txt
+2026-04-04 05:23:49 [simple] INFO: Pipeline got item nodev2ray.txt
+2026-04-04 05:23:49 [simple] INFO: Pipeline processed nodev2ray.txt
+2026-04-04 05:23:49 [simple] INFO: Pipeline got item nodev2ray.yaml
+2026-04-04 05:23:50 [simple] INFO: Pipeline processed nodev2ray.yaml
+2026-04-04 05:23:50 [simple] INFO: Pipeline got item nodev2ray.yaml
+2026-04-04 05:23:50 [simple] INFO: Pipeline processed nodev2ray.yaml
+2026-04-04 05:23:50 [simple] INFO: Pipeline got item nodev2ray.yaml
+2026-04-04 05:23:50 [simple] INFO: Pipeline processed nodev2ray.yaml
+2026-04-04 05:23:50 [simple] INFO: Pipeline got item nodev2ray.yaml
+2026-04-04 05:23:50 [simple] INFO: Pipeline processed nodev2ray.yaml
+2026-04-04 05:23:50 [simple] INFO: Pipeline got item ndnode.yaml
+2026-04-04 05:23:51 [simple] INFO: Pipeline processed ndnode.yaml
+2026-04-04 05:23:51 [simple] INFO: Pipeline got item wenode.yaml
+2026-04-04 05:23:51 [simple] INFO: Pipeline processed wenode.yaml
+2026-04-04 05:23:51 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-04-04 05:23:51 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 14378,
+ 'downloader/request_count': 38,
+ 'downloader/request_method_count/GET': 38,
+ 'downloader/response_bytes': 946348,
+ 'downloader/response_count': 38,
+ 'downloader/response_status_count/200': 37,
  'downloader/response_status_count/301': 1,
  'dupefilter/filtered': 1,
- 'elapsed_time_seconds': 2.787659,
+ 'elapsed_time_seconds': 2.758762,
  'finish_reason': 'finished',
- 'finish_time': datetime.datetime(2026, 4, 3, 5, 44, 41, 633243, tzinfo=datetime.timezone.utc),
- 'httpcompression/response_bytes': 1137616,
- 'httpcompression/response_count': 23,
- 'item_scraped_count': 21,
- 'items_per_minute': 630.0,
- 'log_count/INFO': 190,
+ 'finish_time': datetime.datetime(2026, 4, 4, 5, 23, 51, 176135, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 1154288,
+ 'httpcompression/response_count': 24,
+ 'item_scraped_count': 23,
+ 'items_per_minute': 690.0,
+ 'log_count/INFO': 196,
  'log_count/WARNING': 3,
- 'memusage/max': 183762944,
- 'memusage/startup': 183762944,
+ 'memusage/max': 183865344,
+ 'memusage/startup': 183865344,
  'request_depth_max': 2,
- 'response_received_count': 35,
- 'responses_per_minute': 1050.0,
- 'scheduler/dequeued': 36,
- 'scheduler/dequeued/memory': 36,
- 'scheduler/enqueued': 36,
- 'scheduler/enqueued/memory': 36,
- 'start_time': datetime.datetime(2026, 4, 3, 5, 44, 38, 845584, tzinfo=datetime.timezone.utc)}
-2026-04-03 05:44:41 [scrapy.core.engine] INFO: Spider closed (finished)
-2026-04-03 05:44:50 [scrapy.addons] INFO: Enabled addons:
+ 'response_received_count': 37,
+ 'responses_per_minute': 1110.0,
+ 'scheduler/dequeued': 38,
+ 'scheduler/dequeued/memory': 38,
+ 'scheduler/enqueued': 38,
+ 'scheduler/enqueued/memory': 38,
+ 'start_time': datetime.datetime(2026, 4, 4, 5, 23, 48, 417373, tzinfo=datetime.timezone.utc)}
+2026-04-04 05:23:51 [scrapy.core.engine] INFO: Spider closed (finished)
+2026-04-04 05:23:59 [scrapy.addons] INFO: Enabled addons:
 []
-2026-04-03 05:44:50 [scrapy.extensions.telnet] INFO: Telnet Password: 3a2c9addc5ecb330
-2026-04-03 05:44:50 [scrapy.middleware] INFO: Enabled extensions:
+2026-04-04 05:23:59 [scrapy.extensions.telnet] INFO: Telnet Password: 4078c9b7a0b26b85
+2026-04-04 05:23:59 [scrapy.middleware] INFO: Enabled extensions:
 ['scrapy.extensions.corestats.CoreStats',
  'scrapy.extensions.logcount.LogCount',
  'scrapy.extensions.telnet.TelnetConsole',
  'scrapy.extensions.memusage.MemoryUsage',
  'scrapy.extensions.logstats.LogStats']
-2026-04-03 05:44:50 [scrapy.crawler] INFO: Overridden settings:
+2026-04-04 05:23:59 [scrapy.crawler] INFO: Overridden settings:
 {'BOT_NAME': 'NodeScrapy',
  'FEED_EXPORT_ENCODING': 'utf-8',
  'LOG_FILE': 'scrapy.log',
  'LOG_LEVEL': 'INFO',
  'NEWSPIDER_MODULE': 'NodeScrapy.spiders',
  'SPIDER_MODULES': ['NodeScrapy.spiders']}
-2026-04-03 05:44:50 [scrapy.middleware] INFO: Enabled downloader middlewares:
+2026-04-04 05:23:59 [scrapy.middleware] INFO: Enabled downloader middlewares:
 ['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
  'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
  'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
@@ -288,84 +294,86 @@
  'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
  'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
  'scrapy.downloadermiddlewares.stats.DownloaderStats']
-2026-04-03 05:44:50 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/scrapy/core/downloader/middleware.py:44: ScrapyDeprecationWarning: RandomUserAgentMiddleware.process_request() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+2026-04-04 05:23:59 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/scrapy/core/downloader/middleware.py:44: ScrapyDeprecationWarning: RandomUserAgentMiddleware.process_request() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
   self._check_mw_method_spider_arg(mw.process_request)
 
-2026-04-03 05:44:50 [scrapy.middleware] INFO: Enabled spider middlewares:
+2026-04-04 05:23:59 [scrapy.middleware] INFO: Enabled spider middlewares:
 ['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
  'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
  'scrapy.spidermiddlewares.referer.RefererMiddleware',
  'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
  'scrapy.spidermiddlewares.depth.DepthMiddleware']
-2026-04-03 05:44:50 [scrapy.middleware] INFO: Enabled item pipelines:
+2026-04-04 05:23:59 [scrapy.middleware] INFO: Enabled item pipelines:
 ['NodeScrapy.pipelines.Pipeline']
-2026-04-03 05:44:50 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/scrapy/pipelines/__init__.py:41: ScrapyDeprecationWarning: Pipeline.open_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+2026-04-04 05:23:59 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/scrapy/pipelines/__init__.py:41: ScrapyDeprecationWarning: Pipeline.open_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
   self._check_mw_method_spider_arg(pipe.open_spider)
 
-2026-04-03 05:44:50 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/scrapy/pipelines/__init__.py:44: ScrapyDeprecationWarning: Pipeline.close_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+2026-04-04 05:23:59 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/scrapy/pipelines/__init__.py:44: ScrapyDeprecationWarning: Pipeline.close_spider() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
   self._check_mw_method_spider_arg(pipe.close_spider)
 
-2026-04-03 05:44:50 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/scrapy/pipelines/__init__.py:47: ScrapyDeprecationWarning: Pipeline.process_item() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
+2026-04-04 05:23:59 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/scrapy/pipelines/__init__.py:47: ScrapyDeprecationWarning: Pipeline.process_item() requires a spider argument, this is deprecated and the argument will not be passed in future Scrapy versions. If you need to access the spider instance you can save the crawler instance passed to from_crawler() and use its spider attribute.
   self._check_mw_method_spider_arg(pipe.process_item)
 
-2026-04-03 05:44:50 [scrapy.core.engine] INFO: Spider opened
-2026-04-03 05:44:50 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/scrapy/core/spidermw.py:490: ScrapyDeprecationWarning: NodeScrapy.spiders.SimpleSpider.SimpleSpider (inherited by NodeScrapy.spiders.DecryptSpider.DecryptSpider) defines the deprecated start_requests() method. start_requests() has been deprecated in favor of a new method, start(), to support asynchronous code execution. start_requests() will stop being called in a future version of Scrapy. If you use Scrapy 2.13 or higher only, replace start_requests() with start(); note that start() is a coroutine (async def). If you need to maintain compatibility with lower Scrapy versions, when overriding start_requests() in a spider class, override start() as well; you can use super() to reuse the inherited start() implementation without copy-pasting. See the release notes of Scrapy 2.13 for details: https://docs.scrapy.org/en/2.13/news.html
+2026-04-04 05:23:59 [scrapy.core.engine] INFO: Spider opened
+2026-04-04 05:23:59 [py.warnings] WARNING: /opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/site-packages/scrapy/core/spidermw.py:490: ScrapyDeprecationWarning: NodeScrapy.spiders.SimpleSpider.SimpleSpider (inherited by NodeScrapy.spiders.DecryptSpider.DecryptSpider) defines the deprecated start_requests() method. start_requests() has been deprecated in favor of a new method, start(), to support asynchronous code execution. start_requests() will stop being called in a future version of Scrapy. If you use Scrapy 2.13 or higher only, replace start_requests() with start(); note that start() is a coroutine (async def). If you need to maintain compatibility with lower Scrapy versions, when overriding start_requests() in a spider class, override start() as well; you can use super() to reuse the inherited start() implementation without copy-pasting. See the release notes of Scrapy 2.13 for details: https://docs.scrapy.org/en/2.13/news.html
   warn(
 
-2026-04-03 05:44:50 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
-2026-04-03 05:44:50 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
-2026-04-03 05:44:50 [decrypt] INFO: yudou66 start
-2026-04-03 05:44:50 [decrypt] INFO: blues start
-2026-04-03 05:44:51 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/02/2026234kchatgpt4k8kclashv2ray.html on 2026-02-03
-2026-04-03 05:44:51 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/2026224kchatgpt4k8kclashv2ray.html on 2026-02-02
-2026-04-03 05:44:51 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/20261314kchatgpt4k8kclashv2ray.html on 2026-02-01
-2026-04-03 05:44:51 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/20261314kchatgpt4k8kclashv2ray_30.html on 2026-01-31
-2026-04-03 05:44:51 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/20261304kchatgpt4k8kclashv2ray.html on 2026-01-30
-2026-04-03 05:44:51 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/20261284kchatgpt4k8kclashv2ray.html on 2026-01-28
-2026-04-03 05:44:51 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/20261294kchatgpt4k8kclashv2ray.html on 2026-01-29
-2026-04-03 05:44:51 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/20261274kchatgpt4k8kclashv2ray.html on 2026-01-27
-2026-04-03 05:44:51 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/20261254kchatgpt4k8kclashv2ray.html on 2026-01-25
-2026-04-03 05:44:51 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/20261244kchatgpt4k8kclashv2ray.html on 2026-01-24
-2026-04-03 05:44:51 [decrypt] INFO: blues is up to date, exiting
-2026-04-03 05:44:51 [decrypt] INFO: blues is up to date, exiting
-2026-04-03 05:44:51 [decrypt] INFO: blues is up to date, exiting
-2026-04-03 05:44:52 [decrypt] INFO: yudou66 found https://www.yudou789.top/662.html on 2026-04-03
-2026-04-03 05:44:52 [decrypt] INFO: yudou66 found https://www.yudou789.top/650.html on 2026-04-02
-2026-04-03 05:44:52 [decrypt] INFO: yudou66 found https://www.yudou789.top/645.html on 2026-04-01
-2026-04-03 05:44:52 [decrypt] INFO: yudou66 found https://www.yudou789.top/640.html on 2026-03-31
-2026-04-03 05:44:52 [decrypt] INFO: yudou66 needs update, accessing https://www.yudou789.top/662.html
-2026-04-03 05:44:52 [decrypt] INFO: yudou66 is up to date, exiting
-2026-04-03 05:44:52 [decrypt] INFO: yudou66 is up to date, exiting
-2026-04-03 05:44:52 [decrypt] INFO: yudou66 found https://hh.yudou226.top/202604/20260403baf3se.txt
-2026-04-03 05:44:52 [decrypt] INFO: yudou66 found https://hh.yudou226.top/202604/20260403meh3ta.yaml
-2026-04-03 05:44:54 [decrypt] INFO: Pipeline got item yudou66.txt
-2026-04-03 05:44:54 [decrypt] INFO: Pipeline processed yudou66.txt
-2026-04-03 05:44:54 [decrypt] INFO: Pipeline got item yudou66.yaml
-2026-04-03 05:44:55 [decrypt] INFO: Pipeline processed yudou66.yaml
-2026-04-03 05:44:55 [scrapy.core.engine] INFO: Closing spider (finished)
-2026-04-03 05:44:55 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
-{'downloader/request_bytes': 1719,
- 'downloader/request_count': 5,
- 'downloader/request_method_count/GET': 5,
- 'downloader/response_bytes': 238913,
- 'downloader/response_count': 5,
+2026-04-04 05:23:59 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-04-04 05:23:59 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-04-04 05:23:59 [decrypt] INFO: yudou66 start
+2026-04-04 05:23:59 [decrypt] INFO: blues start
+2026-04-04 05:23:59 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/02/2026234kchatgpt4k8kclashv2ray.html on 2026-02-03
+2026-04-04 05:23:59 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/2026224kchatgpt4k8kclashv2ray.html on 2026-02-02
+2026-04-04 05:23:59 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/20261314kchatgpt4k8kclashv2ray.html on 2026-02-01
+2026-04-04 05:23:59 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/20261314kchatgpt4k8kclashv2ray_30.html on 2026-01-31
+2026-04-04 05:23:59 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/20261304kchatgpt4k8kclashv2ray.html on 2026-01-30
+2026-04-04 05:23:59 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/20261284kchatgpt4k8kclashv2ray.html on 2026-01-28
+2026-04-04 05:23:59 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/20261294kchatgpt4k8kclashv2ray.html on 2026-01-29
+2026-04-04 05:23:59 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/20261274kchatgpt4k8kclashv2ray.html on 2026-01-27
+2026-04-04 05:23:59 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/20261254kchatgpt4k8kclashv2ray.html on 2026-01-25
+2026-04-04 05:23:59 [decrypt] INFO: blues found https://blues2022.blogspot.com/2026/01/20261244kchatgpt4k8kclashv2ray.html on 2026-01-24
+2026-04-04 05:23:59 [decrypt] INFO: blues is up to date, exiting
+2026-04-04 05:23:59 [decrypt] INFO: blues is up to date, exiting
+2026-04-04 05:23:59 [decrypt] INFO: blues is up to date, exiting
+2026-04-04 05:24:00 [decrypt] INFO: yudou66 found https://www.yudou789.top/667.html on 2026-04-04
+2026-04-04 05:24:00 [decrypt] INFO: yudou66 found https://www.yudou789.top/662.html on 2026-04-03
+2026-04-04 05:24:00 [decrypt] INFO: yudou66 found https://www.yudou789.top/650.html on 2026-04-02
+2026-04-04 05:24:00 [decrypt] INFO: yudou66 found https://www.yudou789.top/645.html on 2026-04-01
+2026-04-04 05:24:00 [decrypt] INFO: yudou66 found https://www.yudou789.top/640.html on 2026-03-31
+2026-04-04 05:24:00 [decrypt] INFO: yudou66 needs update, accessing https://www.yudou789.top/667.html
+2026-04-04 05:24:00 [decrypt] INFO: yudou66 is up to date, exiting
+2026-04-04 05:24:00 [decrypt] INFO: yudou66 is up to date, exiting
+2026-04-04 05:24:01 [decrypt] INFO: yudou66 found https://hh.yudou226.top/202604/20260404bh3ase.txt
+2026-04-04 05:24:01 [decrypt] INFO: yudou66 found https://hh.yudou226.top/202604/20260404metj5a.yaml
+2026-04-04 05:24:02 [decrypt] INFO: Pipeline got item yudou66.txt
+2026-04-04 05:24:02 [decrypt] INFO: Pipeline processed yudou66.txt
+2026-04-04 05:24:03 [decrypt] INFO: Pipeline got item yudou66.yaml
+2026-04-04 05:24:03 [decrypt] INFO: Pipeline processed yudou66.yaml
+2026-04-04 05:24:03 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-04-04 05:24:03 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 2138,
+ 'downloader/request_count': 6,
+ 'downloader/request_method_count/GET': 6,
+ 'downloader/response_bytes': 241122,
+ 'downloader/response_count': 6,
  'downloader/response_status_count/200': 5,
- 'elapsed_time_seconds': 4.33396,
+ 'downloader/response_status_count/302': 1,
+ 'elapsed_time_seconds': 4.564168,
  'finish_reason': 'finished',
- 'finish_time': datetime.datetime(2026, 4, 3, 5, 44, 55, 191394, tzinfo=datetime.timezone.utc),
- 'httpcompression/response_bytes': 521664,
+ 'finish_time': datetime.datetime(2026, 4, 4, 5, 24, 3, 980642, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 524653,
  'httpcompression/response_count': 4,
  'item_scraped_count': 2,
  'items_per_minute': 30.0,
- 'log_count/INFO': 31,
- 'memusage/max': 183525376,
- 'memusage/startup': 183525376,
+ 'log_count/INFO': 32,
+ 'memusage/max': 183635968,
+ 'memusage/startup': 183635968,
  'request_depth_max': 2,
  'response_received_count': 5,
  'responses_per_minute': 75.0,
- 'scheduler/dequeued': 5,
- 'scheduler/dequeued/memory': 5,
- 'scheduler/enqueued': 5,
- 'scheduler/enqueued/memory': 5,
- 'start_time': datetime.datetime(2026, 4, 3, 5, 44, 50, 857434, tzinfo=datetime.timezone.utc)}
-2026-04-03 05:44:55 [scrapy.core.engine] INFO: Spider closed (finished)
+ 'scheduler/dequeued': 6,
+ 'scheduler/dequeued/memory': 6,
+ 'scheduler/enqueued': 6,
+ 'scheduler/enqueued/memory': 6,
+ 'start_time': datetime.datetime(2026, 4, 4, 5, 23, 59, 416474, tzinfo=datetime.timezone.utc)}
+2026-04-04 05:24:03 [scrapy.core.engine] INFO: Spider closed (finished)
