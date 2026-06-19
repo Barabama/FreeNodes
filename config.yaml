@@ -1,0 +1,10 @@
+crawl:
+  max_articles: 3
+  timeout: 30
+output:
+  dir: nodes
+sites:
+- description: 博客站点，文章标题含日期(月日格式)，每篇文章内直接提供订阅链接
+  link_pattern: https://node\.freeclashnode\.com/uploads/\d{4}/\d{2}/[0-4]-\d{8}\.(?:txt|yaml)
+  name: clashmeta
+  start_url: https://clash-meta.github.io/free-nodes/
