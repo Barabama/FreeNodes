@@ -5,6 +5,7 @@ import logging
 from src.config import Config, SiteConfig
 from src.llm_router import LLMRouter
 from src.site_processor import SiteProcessor, SiteResult
+from src.merger import Merger
 
 logger = logging.getLogger(__name__)
 
@@ -60,6 +61,18 @@ class Scheduler:
                 final.append(result)
 
         self._print_summary(final)
+
+        # Run merger after all sites processed
+        if not target:
+            out_dir = self.config.output.get("dir", "nodes")
+            merger = Merger(nodes_dir=out_dir)
+            merge_result = merger.run()
+            print(f"\n  merge: {merge_result.total_nodes} total nodes across "
+                  f"{merge_result.txt_sources} txt + {merge_result.yaml_sources} yaml sources")
+            print(f"  files: {merge_result.merged_txt or '(skip)'}, "
+                  f"{merge_result.merged_yaml or '(skip)'}, "
+                  f"{merge_result.provider_yaml or '(skip)'}")
+
         return final
 
     def _resolve_sites(self, target: str | None) -> list[SiteConfig]:
