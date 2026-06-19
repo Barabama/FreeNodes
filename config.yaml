@@ -1,46 +1,76 @@
 crawl:
+  concurrency: 2
   max_articles: 3
   timeout: 30
-  concurrency: 3
-
-output:
-  dir: nodes
-
-sites:
-  - name: clashmeta
-    start_url: https://clash-meta.github.io/free-nodes/
-    description: "blog site, article titles contain dates (month-day format), each article provides subscription links directly"
-    link_pattern: null
-
 llm:
   providers:
-    - name: openrouter
-      base_url: https://openrouter.ai/api/v1
-      api_key_env: OPENROUTER_API_KEY
-      models: [openrouter/free]
-      is_reasoning_model: false
-      default_weight: 50
-
-    - name: cerebras
-      base_url: https://api.cerebras.ai/v1
-      api_key_env: CEREBRAS_API_KEY
-      models: [zai-glm-4.7, gpt-oss-120b]
-      is_reasoning_model: true
-      default_weight: 30
-
-    - name: opencode
-      base_url: https://opencode.ai/zen/v1
-      api_key_env: OPENCODE_API_KEY
-      models: [deepseek-v4-flash-free]
-      is_reasoning_model: false
-      default_weight: 20
-
+  - api_key_env: OPENROUTER_API_KEY
+    base_url: https://openrouter.ai/api/v1
+    default_weight: 50
+    is_reasoning_model: false
+    models:
+    - openrouter/free
+    name: openrouter
+  - api_key_env: CEREBRAS_API_KEY
+    base_url: https://api.cerebras.ai/v1
+    default_weight: 30
+    is_reasoning_model: true
+    models:
+    - zai-glm-4.7
+    - gpt-oss-120b
+    name: cerebras
+  - api_key_env: OPENCODE_API_KEY
+    base_url: https://opencode.ai/zen/v1
+    default_weight: 20
+    is_reasoning_model: false
+    models:
+    - deepseek-v4-flash-free
+    name: opencode
   task_routing:
     extract_links:
-      openrouter: 60
       cerebras: 30
       opencode: 10
+      openrouter: 60
     generate_pattern:
-      openrouter: 70
       cerebras: 30
       opencode: 0
+      openrouter: 70
+output:
+  dir: nodes
+sites:
+- description: blog site, article titles contain dates (month-day format), each article
+    provides subscription links directly
+  name: clashmeta
+  start_url: https://clash-meta.github.io/free-nodes/
+- description: blog listing articles with date in title like '6月19日|...', each article
+    contains clash/v2ray txt/yaml subscription links
+  name: nodev2ray
+  start_url: https://nodev2ray.com/free-node/
+- description: blog with dated articles (URLs contain YYYY-M-D), each article lists
+    clash/v2ray/sing-box subscription file links
+  name: freeclashnode
+  start_url: https://www.freeclashnode.com/free-node/
+- description: blog listing articles with date in title and URL, each provides clash/v2ray
+    txt/yaml subscription links
+  name: clashnode
+  start_url: https://clashnode.cc/free-node/
+- description: blog with article titles containing dates (month-day format), articles
+    contain clash/v2ray subscription links
+  name: oneclash
+  start_url: https://oneclash.cc/freenode/
+- description: blogger blog, article dates in title as 'YYYY年MM月DD日', each post contains
+    subscription links
+  name: cfmem
+  start_url: https://www.cfmem.com/
+- description: blog with dated articles (title format '2026-06-19'), each article
+    lists free subscription links
+  name: jichangx
+  start_url: https://jichangx.com/free-subscription/
+- description: blog listing articles with date in title like '2026/6/19' or '6月19日',
+    each contains SSR/V2Ray/Clash links
+  name: clashstair
+  start_url: https://clashstair.com/category/freenode/
+- description: blog with dates in both title ('YYYY年MM月DD日') and URL (/post/YYYYMMDD/),
+    each post has subscription links
+  name: datiya
+  start_url: https://free.datiya.com/

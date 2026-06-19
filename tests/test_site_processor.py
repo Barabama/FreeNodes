@@ -96,7 +96,34 @@ class TestExtractByPattern:
 
 
 # ═══════════════════════════════════════════════════════════════
-# _pick_articles
+# _parse_article_date
+# ═══════════════════════════════════════════════════════════════
+
+class TestParseArticleDate:
+
+    def test_chinese_month_day(self):
+        assert SiteProcessor._parse_article_date("6月18日更新", "") == "2026-06-18"
+
+    def test_chinese_full_date(self):
+        assert SiteProcessor._parse_article_date("2026年06月19日 更新", "") == "2026-06-19"
+
+    def test_slash_date_in_text(self):
+        assert SiteProcessor._parse_article_date("2026/6/19", "") == "2026-06-19"
+
+    def test_hyphen_date_in_url(self):
+        assert SiteProcessor._parse_article_date("", "/free-nodes/2026-6-18-post.htm") == "2026-06-18"
+
+    def test_compact_date_in_url(self):
+        assert SiteProcessor._parse_article_date("", "/post/20260619/") == "2026-06-19"
+
+    def test_compact_date_in_url_with_filename(self):
+        assert SiteProcessor._parse_article_date("", "/2026/06/20260619-title.html") == "2026-06-19"
+
+    def test_no_date_returns_none(self):
+        assert SiteProcessor._parse_article_date("Home page", "/") is None
+
+    def test_prefers_title_over_url(self):
+        assert SiteProcessor._parse_article_date("6月18日文章", "/post/20260619/") == "2026-06-18"
 # ═══════════════════════════════════════════════════════════════
 
 class TestPickArticles:

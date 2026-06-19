@@ -144,22 +144,15 @@ class SiteProcessor:
     def _pick_articles(self, blog: Page) -> list[dict]:
         """Select the *max_articles* newest articles from a blog listing page.
 
-        Rule-only: extracts dates from Chinese title text (``X月X日``) or URL paths.
+        Rule-only: tries several date formats found across different blog sites.
         """
         articles: list[dict] = []
         for link in blog.links:
             text = link.get("text", "")
             href = link.get("href", "")
-
-            m = re.search(r"(\d{1,2})月(\d{1,2})日", text)
-            if m:
-                d = f"{date.today().year}-{int(m.group(1)):02d}-{int(m.group(2)):02d}"
-            else:
-                m = re.search(r"(\d{4})-(\d{1,2})-(\d{1,2})", href)
-                if m:
-                    d = f"{m.group(1)}-{int(m.group(2)):02d}-{int(m.group(3)):02d}"
-                else:
-                    continue
+            d = self._parse_article_date(text, href)
+            if d is None:
+                continue
 
             if href in ("/free-nodes/", "/", "") or "category" in href or "page-" in href:
                 continue
@@ -224,6 +217,35 @@ class SiteProcessor:
             return all_links, False
 
     # ── Helpers ──
+
+    @staticmethod
+    def _parse_article_date(text: str, href: str) -> str | None:
+        """Extract date from article title text or URL href.
+
+        Tries these patterns in order:
+          1. ``X月X日`` in title text                    → 2026-06-18
+          2. ``YYYY年MM月DD日`` in title text              → 2026-06-18
+          3. ``YYYY/MM/DD`` in title text                 → 2026-06-18
+          4. ``YYYY-MM-DD`` in href URL                   → 2026-06-18
+          5. ``YYYYMMDD`` (8-digit) in href URL            → 2026-06-18
+        """
+        m = re.search(r"(\d{1,2})月(\d{1,2})日", text)
+        if m:
+            return f"{date.today().year}-{int(m.group(1)):02d}-{int(m.group(2)):02d}"
+        m = re.search(r"(\d{4})年(\d{1,2})月(\d{1,2})日", text)
+        if m:
+            return f"{m.group(1)}-{int(m.group(2)):02d}-{int(m.group(3)):02d}"
+        m = re.search(r"(\d{4})/(\d{1,2})/(\d{1,2})", text)
+        if m:
+            return f"{m.group(1)}-{int(m.group(2)):02d}-{int(m.group(3)):02d}"
+        m = re.search(r"(\d{4})-(\d{1,2})-(\d{1,2})", href)
+        if m:
+            return f"{m.group(1)}-{int(m.group(2)):02d}-{int(m.group(3)):02d}"
+        m = re.search(r"/(\d{8})[/-]", href)
+        if m:
+            raw = m.group(1)
+            return f"{raw[:4]}-{raw[4:6]}-{raw[6:]}"
+        return None
 
     @staticmethod
     def _extract_by_pattern(html: str, pattern: str) -> list[str]:
