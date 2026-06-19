@@ -189,6 +189,24 @@ class SiteProcessor:
 
         # Step 2: LLM fallback
         llm_result = self.llm.extract_links(page.markdown)
+        all_links = (
+            llm_result.get("txt", [])
+            + llm_result.get("yaml", [])
+            + llm_result.get("other", [])
+        )
+        inline_links = llm_result.get("inline", [])
+        if inline_links:
+            print(f"    inline nodes found: {len(inline_links)} (protocol links)")
+        if not all_links:
+            if not inline_links:
+                print("    LLM also found nothing, giving up")
+                return [], False
+            # Some sites only serve inline ss:// vmess:// nodes.
+            # That content was already rendered in markdown — try to save
+            # the raw page as pseudo-txt for pipeline processing.
+            # This is a best-effort: the pipeline will base64 decode if needed.
+            all_links = inline_links[:1]  # take one as sentinel
+            llm_result["_inline_only"] = True
         all_links = llm_result.get("txt", []) + llm_result.get("yaml", [])
         if not all_links:
             print("    LLM also found nothing, giving up")

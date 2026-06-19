@@ -345,11 +345,11 @@ class TestLLMRouter:
 
     def test_parse_json_invalid_returns_empty(self):
         result = LLMRouter._parse_json("not json at all")
-        assert result == {"txt": [], "yaml": []}
+        assert result == {"txt": [], "yaml": [], "other": [], "inline": []}
 
     def test_parse_json_empty_string(self):
         result = LLMRouter._parse_json("")
-        assert result == {"txt": [], "yaml": []}
+        assert result == {"txt": [], "yaml": [], "other": [], "inline": []}
 
     # ── extract_links ──
 
@@ -380,7 +380,43 @@ class TestLLMRouter:
 
 
 # ═══════════════════════════════════════════════════════════════
-# Config integration
+# _extract_regex
+# ═══════════════════════════════════════════════════════════════
+
+class TestExtractRegex:
+
+    def test_extracts_from_code_fence(self):
+        text = "Here is the regex:\n```\nhttps://node\\.example\\.com/[^\\s]+\n```"
+        assert LLMRouter._extract_regex(text) == r"https://node\.example\.com/[^\s]+"
+
+    def test_extracts_from_code_fence_with_lang(self):
+        text = "```regex\nhttps://x\\.com/[a-z]+\\.(txt|yaml)\n```"
+        assert LLMRouter._extract_regex(text) == r"https://x\.com/[a-z]+\.(txt|yaml)"
+
+    def test_extracts_from_analysis_line(self):
+        """Handles reasoning model output with analysis text."""
+        text = (
+            "1. Analyze the Request:\n"
+            "The user wants a regex matching these URLs.\n"
+            "2. Pattern:\n"
+            r"https://node\.example\.com/\d{4}/\d{2}/\d+-\d{8}\.(?:txt|yaml)"
+        )
+        result = LLMRouter._extract_regex(text)
+        assert result is not None
+        assert r"node\.example\.com" in result
+
+    def test_extracts_from_last_line(self):
+        text = "The regex is:\nhttps://x\\.com/[^\\s]+\\.(txt|yaml)\n"
+        assert LLMRouter._extract_regex(text) == r"https://x\.com/[^\s]+\.(txt|yaml)"
+
+    def test_returns_none_on_garbage(self):
+        assert LLMRouter._extract_regex("I have no idea what regex to use") is None
+
+    def test_extracts_regex_with_escaped_chars(self):
+        text = "Consider the URL pattern...\nhttps://node\\.test\\.com/\\d+/file\\.(txt|yaml)"
+        result = LLMRouter._extract_regex(text)
+        assert result is not None
+        assert r"node\.test\.com" in result
 # ═══════════════════════════════════════════════════════════════
 
 class TestConfigIntegration:

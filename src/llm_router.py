@@ -22,12 +22,8 @@ class WeightedSelector:
     """Pick a provider by weighted random selection, excluding unhealthy ones."""
 
     @staticmethod
-    def pick(weights: dict[str, int], is_healthy: callable, exclude: set[str] | None = None) -> str | None:
-        """Select a provider from *weights* where *is_healthy(name)* returns True.
-
-        Providers in *exclude* are skipped (already tried this round).
-        Returns *None* when no candidate remains.
-        """
+    def pick(weights: dict[str, int], is_healthy: callable,
+             exclude: set[str] | None = None) -> str | None:
         exclude = exclude or set()
         candidates = {
             name: w for name, w in weights.items()
@@ -35,11 +31,9 @@ class WeightedSelector:
         }
         if not candidates:
             return None
-
         total = sum(candidates.values())
         if total == 0:
             return None
-
         r = random.uniform(0, total)
         cumulative = 0
         for name, w in candidates.items():
@@ -76,7 +70,6 @@ class HealthTracker:
         return False
 
     def health_report(self) -> dict[str, dict]:
-        """Return a snapshot of current failure counts and health status."""
         return {
             name: {"failures": count, "healthy": self.is_healthy(name)}
             for name, count in self._failures.items()
@@ -84,21 +77,12 @@ class HealthTracker:
 
 
 class LLMRouter:
-    """Unified LLM interface with weighted routing, fallback, and health tracking.
-
-    Usage:
-        config = load_config()
-        router = LLMRouter(config)
-        text = router.ask("extract links", task_type="extract_links")
-        links = router.extract_links(page.markdown)
-    """
+    """Unified LLM interface with weighted routing, fallback, and health tracking."""
 
     def __init__(self, config: Config, timeout_s: int = 20):
         self._timeout_s = timeout_s
         self._health = HealthTracker()
         self._selector = WeightedSelector()
-
-        # Build lookup: name -> ProviderConfig
         self._providers: dict[str, ProviderConfig] = {
             p.name: p for p in config.llm.providers
         }
@@ -109,15 +93,11 @@ class LLMRouter:
 
     # ── Public API ──
 
-    def ask(self, prompt: str, task_type: str = "default", max_tokens: int = 1024) -> str:
-        """Send *prompt* through weighted routing.
-
-        Picks a healthy provider by weight, calls it, falls back on failure.
-        Returns empty string when all providers fail (never raises).
-        """
+    def ask(self, prompt: str, task_type: str = "default",
+            max_tokens: int = 1024) -> str:
+        """Send *prompt* through weighted routing. Returns empty when all fail."""
         weights = self._task_routing.get(task_type, self._default_weights)
         tried: set[str] = set()
-
         for _ in range(len(self._providers)):
             name = self._selector.pick(weights, self._health.is_healthy, tried)
             if name is None:
@@ -126,58 +106,67 @@ class LLMRouter:
             provider = self._providers.get(name)
             if provider is None:
                 continue
-
             result = self._try_provider(provider, prompt, max_tokens)
             if result is not None:
                 self._health.record_success(name)
                 return result
             self._health.record_failure(name)
-
         return ""
 
     def extract_links(self, markdown: str) -> dict[str, list[str]]:
-        """Extract subscription links (.txt / .yaml URLs) from page markdown."""
+        """Extract subscription links from page markdown.
+
+        Looks for downloadable subscription files (.txt/.yaml URLs),
+        subscription service URLs, and inline protocol links (ss://, vmess://).
+        """
         prompt = (
-            "Extract all subscription links (URLs ending in .txt or .yaml) "
-            "from the following web page content.\n"
-            "Return JSON: {\"txt\": [\"url1\", ...], \"yaml\": [\"url1\", ...]}\n"
-            "Return nothing except the JSON. Empty arrays if none found.\n\n"
+            "Extract ALL subscription links and node links from the following "
+            "web page content.\n"
+            "Categories:\n"
+            '  "txt": URLs ending in .txt (V2Ray subscription files)\n'
+            '  "yaml": URLs ending in .yaml (Clash subscription files)\n'
+            '  "other": other subscription URLs (nodebuf.com, '
+            "custom paths, etc.)\n"
+            '  "inline": protocol links like vmess://, vless://, ss://, '
+            "trojan://, ssr:// (one per line)\n"
+            "Return JSON with ONLY the arrays that have items. "
+            "Omit empty arrays.\n"
+            "Return nothing except the JSON.\n\n"
             f"Content:\n{markdown[:8000]}"
         )
         text = self.ask(prompt, task_type="extract_links", max_tokens=1024)
         return self._parse_json(text)
 
     def generate_pattern(self, known_links: list[str], html: str) -> str | None:
-        """Ask LLM to produce a regex for the site's known subscription links."""
+        """Ask LLM to produce a regex matching the site's subscription links.
+
+        Returns a regex string or None. Post-processes the response to
+        extract the regex even when reasoning models add analysis text.
+        """
         prompt = (
-            f"The following subscription links were found on this page:\n"
+            f"Links found on the page:\n"
             f"{chr(10).join(known_links[:10])}\n\n"
-            "Observe the URL pattern and write a single Python regex that "
-            "matches every one of them (and their future variants on the same site).\n"
-            "Requirements:\n"
-            "- Must be generic enough to match other dates on the same site\n"
-            "- Must be precise: no navigation links, ads, or JS URLs\n"
-            "- Return ONLY the regex, no quotes, no explanation\n\n"
+            "Write a Python regex that matches these and similar URLs "
+            "on the same site.\n"
+            "RULES (obey strictly):\n"
+            "- Output ONE LINE: the raw regex only\n"
+            "- No numbers, no bullets, no analysis, no code fences\n"
+            "- No explanations — not even a single word outside the regex\n"
             "Regex:"
         )
         text = self.ask(prompt, task_type="generate_pattern", max_tokens=256)
         if not text:
             return None
-        pattern = text.strip()
-        if "```" in pattern:
-            pattern = re.sub(r"```\w*|```", "", pattern).strip()
-        return pattern if pattern else None
+        return self._extract_regex(text)
 
     @staticmethod
-    def verify_pattern(pattern: str, known_links: list[str], html: str) -> bool:
+    def verify_pattern(pattern: str, known_links: list[str],
+                        html: str) -> bool:
         """Three-layer verification: syntax, recall, precision."""
-        # Layer 1: syntax
         try:
             compiled = re.compile(pattern, re.IGNORECASE)
         except re.error:
             return False
-
-        # Layer 2: recall — pattern must cover all known links
         matches = compiled.findall(html)
         match_urls: set[str] = set()
         if isinstance(matches, list):
@@ -190,8 +179,6 @@ class LLMRouter:
             clean = re.sub(r'[),;.\'"]+$', "", link)
             if clean not in match_urls:
                 return False
-
-        # Layer 3: precision — no more than 20% false positives
         false_count = 0
         for m in matches:
             if isinstance(m, tuple):
@@ -199,21 +186,22 @@ class LLMRouter:
             if isinstance(m, str):
                 if not m.startswith("http"):
                     false_count += 1
-                elif any(n in m.lower() for n in ("javascript:", "#", "xmlrpc", "favicon")):
+                elif any(n in m.lower()
+                         for n in ("javascript:", "#", "xmlrpc", "favicon")):
                     false_count += 1
         if matches and false_count / len(matches) > 0.2:
             return False
-
         return True
 
     # ── Internals ──
 
-    def _try_provider(self, cfg: ProviderConfig, prompt: str, max_tokens: int) -> str | None:
-        """Try all models for *cfg* until one returns content. Returns None on total failure."""
+    def _try_provider(self, cfg: ProviderConfig, prompt: str,
+                      max_tokens: int) -> str | None:
         api_key = os.getenv(cfg.api_key_env, "")
         if not api_key:
             return None
-        client = OpenAI(base_url=cfg.base_url, api_key=api_key, timeout=self._timeout_s)
+        client = OpenAI(base_url=cfg.base_url, api_key=api_key,
+                        timeout=self._timeout_s)
         for model in cfg.models:
             try:
                 resp = client.chat.completions.create(
@@ -231,13 +219,58 @@ class LLMRouter:
 
     @staticmethod
     def _response_text(resp, is_reasoning: bool) -> str:
-        """Extract text from chat completion, handling reasoning models (Cerebras)."""
         msg = resp.choices[0].message
         if msg.content:
             return msg.content
         if is_reasoning and msg.reasoning:
             return msg.reasoning
         return ""
+
+    @staticmethod
+    def _extract_regex(text: str) -> str | None:
+        """Extract a regex pattern from LLM output that may contain analysis text.
+
+        Tries:
+          1. Content inside backtick code fences
+          2. Lines that match common regex syntax
+          3. The last line (models often put regex at the end)
+        """
+        # Strategy 1: content inside backtick fences
+        m = re.search(r"```(?:regex)?\s*\n?(.*?)```", text, re.DOTALL)
+        if m:
+            candidate = m.group(1).strip()
+            if candidate:
+                return candidate
+
+        # Strategy 2: find lines that look like regex
+        # (contain escaped chars, slashes, and no natural language words)
+        lines = text.strip().splitlines()
+        for line in lines:
+            line = line.strip()
+            if not line or line.startswith(("#", "1.", "2.", "3.", "4.", "5.",
+                                            "-", "*", "```")):
+                continue
+            # Filter out lines that are clearly natural language
+            # (more than 3 words without regex metacharacters)
+            word_count = len(line.split())
+            has_escape = "\\" in line
+            has_dot = "." in line and "://" in line
+            has_wildcard = "*" in line or "+" in line or "?" in line
+            if has_escape and (has_dot or has_wildcard):
+                return line
+
+        # Strategy 3: last line containing regex metacharacters
+        for line in reversed(lines):
+            line = line.strip()
+            if not line:
+                continue
+            # Must contain at least one regex metacharacter to be valid
+            has_meta = "\\" in line or "." in line or "*" in line or "+" in line
+            has_dot_slash = "/" in line  # URL paths
+            if has_meta and has_dot_slash:
+                return line
+
+        return None
 
     @staticmethod
     def _parse_json(raw: str) -> dict[str, list[str]]:
@@ -249,4 +282,4 @@ class LLMRouter:
         try:
             return json.loads(raw)
         except json.JSONDecodeError:
-            return {"txt": [], "yaml": []}
+            return {"txt": [], "yaml": [], "other": [], "inline": []}
