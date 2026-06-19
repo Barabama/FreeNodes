@@ -108,8 +108,10 @@ async def extract_with_fallback(page, site_cfg) -> tuple[list[str], bool]:
         site_cfg.failed_count += 1
 
     # ── Step 2: LLM 兜底 ──
-    from src.llm import LLM
-    llm = LLM()
+    from src.llm_router import LLMRouter
+    from src.config import load_config as _load_cfg
+    llm_cfg = _load_cfg()
+    llm = LLMRouter(llm_cfg)
 
     llm_result = llm.extract_links(page.markdown)
     all_links = llm_result.get("txt", []) + llm_result.get("yaml", [])

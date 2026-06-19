@@ -2,16 +2,13 @@ crawl:
   max_articles: 3
   timeout: 30
   concurrency: 3
-
 output:
   dir: nodes
-
 sites:
   - name: clashmeta
     start_url: https://clash-meta.github.io/free-nodes/
-    description: "blog site, article titles contain dates (month-day format), each article provides subscription links directly"
+    description: "blog with subscription links"
     link_pattern: null
-
 llm:
   providers:
     - name: openrouter
@@ -20,21 +17,18 @@ llm:
       models: [openrouter/free]
       is_reasoning_model: false
       default_weight: 50
-
     - name: cerebras
       base_url: https://api.cerebras.ai/v1
       api_key_env: CEREBRAS_API_KEY
       models: [zai-glm-4.7, gpt-oss-120b]
       is_reasoning_model: true
       default_weight: 30
-
     - name: opencode
       base_url: https://opencode.ai/zen/v1
       api_key_env: OPENCODE_API_KEY
       models: [deepseek-v4-flash-free]
       is_reasoning_model: false
       default_weight: 20
-
   task_routing:
     extract_links:
       openrouter: 60
