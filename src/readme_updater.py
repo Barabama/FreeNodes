@@ -5,8 +5,8 @@ from pathlib import Path
 from src.config import Config
 
 
-GITHUB_RAW = "https://raw.githubusercontent.com/Barabama/FreeNodes/main"
-GITHUB_PROXY = "https://gh-proxy.com/raw.githubusercontent.com/Barabama/FreeNodes/main"
+GITHUB_BASE = "https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads"
+GITHUB_PROXY = "https://gh-proxy.com/raw.githubusercontent.com/Barabama/FreeNodes/refs/heads"
 BRANCH = "feat/ai-crawler-v2"
 
 
@@ -47,12 +47,12 @@ def build_readme(config: Config) -> str:
         mirror_links = []
 
         if txt_path.exists():
-            raw = f"{GITHUB_RAW}/{BRANCH}/nodes/{name}.txt"
+            raw = f"{GITHUB_BASE}/{BRANCH}/nodes/{name}.txt"
             mirror = f"{GITHUB_PROXY}/{BRANCH}/nodes/{name}.txt"
             links.append(f"[{name}.txt]({raw})")
             mirror_links.append(f"[镜像]({mirror})")
         if yaml_path.exists():
-            raw = f"{GITHUB_RAW}/{BRANCH}/nodes/{name}.yaml"
+            raw = f"{GITHUB_BASE}/{BRANCH}/nodes/{name}.yaml"
             mirror = f"{GITHUB_PROXY}/{BRANCH}/nodes/{name}.yaml"
             links.append(f"[{name}.yaml]({raw})")
             mirror_links.append(f"[镜像]({mirror})")
@@ -71,7 +71,7 @@ def build_readme(config: Config) -> str:
     for fname in ("merged.txt", "merged.yaml", "provider.yaml"):
         fpath = Path(f"nodes/{fname}")
         if fpath.exists():
-            raw = f"{GITHUB_RAW}/{BRANCH}/nodes/{fname}"
+            raw = f"{GITHUB_BASE}/{BRANCH}/nodes/{fname}"
             mirror = f"{GITHUB_PROXY}/{BRANCH}/nodes/{fname}"
             merged_links.append(f"[{fname}]({raw})")
             merged_mirror.append(f"[镜像]({mirror})")
