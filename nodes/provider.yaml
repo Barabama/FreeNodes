@@ -1,5 +1,5 @@
 # FreeNodeSpider - Proxy-provider based config (for Clash Meta / Mihomo)
-# Generated: 2026-06-21 20:48:32
+# Generated: 2026-06-21 16:00:32
 # Docs: https://github.com/FreeNodeSpider
 # ------------------------------------------------------------
 allow-lan: true
@@ -25,7 +25,9 @@ proxy-groups:
   use: &id001
   - clashmeta
   - clashnode
+  - clashstair
   - datiya
+  - freeclashnode
   - nodev2ray
   - oneclash
 - include: (德国|DE|Germany|Frankfurt|FRA)
@@ -95,7 +97,9 @@ proxy-groups:
   use:
   - clashmeta
   - clashnode
+  - clashstair
   - datiya
+  - freeclashnode
   - nodev2ray
   - oneclash
 - name: 🌍 手动选择
@@ -128,12 +132,26 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
     path: ./nodes/clashnode.yaml
     type: file
+  clashstair:
+    health-check:
+      enable: true
+      interval: 300
+      url: http://www.gstatic.com/generate_204
+    path: ./nodes/clashstair.yaml
+    type: file
   datiya:
     health-check:
       enable: true
       interval: 300
       url: http://www.gstatic.com/generate_204
     path: ./nodes/datiya.yaml
+    type: file
+  freeclashnode:
+    health-check:
+      enable: true
+      interval: 300
+      url: http://www.gstatic.com/generate_204
+    path: ./nodes/freeclashnode.yaml
     type: file
   nodev2ray:
     health-check:
