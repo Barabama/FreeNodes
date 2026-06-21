@@ -1,0 +1,42 @@
+name: AI Crawl Daily Update
+
+on:
+  schedule:
+    - cron: "0 4 * * *"   # daily at 12:00 Beijing time (UTC 04:00)
+  workflow_dispatch:       # manual trigger
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: feat/ai-crawler-v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install crawl4ai openai httpx pyyaml python-dotenv
+          pip install playwright
+          playwright install --with-deps chromium
+
+      - name: Run crawler
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+          OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
+        run: python main.py
+
+      - name: Commit output
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "auto: daily crawl update"
+          file_pattern: "nodes/* config.yaml"
+          branch: feat/ai-crawler-v2
+          commit_user_name: "github-actions[bot]"
+          commit_user_email: "github-actions[bot]@users.noreply.github.com"
