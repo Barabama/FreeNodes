@@ -33,10 +33,15 @@ jobs:
         run: python main.py
 
       - name: Commit output
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "auto: daily crawl update"
-          file_pattern: "nodes/* config.yaml README.md"
-          branch: feat/ai-crawler-v2
-          commit_user_name: "github-actions[bot]"
-          commit_user_email: "github-actions[bot]@users.noreply.github.com"
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # Force-add files that may be gitignored (nodes/) or newly generated
+          git add --force nodes/*.txt nodes/*.yaml config.yaml README.md
+          # Only commit if there are changes
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "auto: daily crawl update"
+            git push
+          fi
