@@ -5,17 +5,20 @@ Priority: weighted random (not sequential), task-aware, auto-recovery.
 Provider chain:
   OpenRouter (weight 50) → Cerebras (weight 30) → Opencode (weight 20)
 """
+import logging
 import os
 import re
 import json
 import random
 import time
-from openai import OpenAI
+from openai import AsyncOpenAI
 from dotenv import load_dotenv
 
 from src.config import Config, ProviderConfig
 
 load_dotenv()
+
+logger = logging.getLogger(__name__)
 
 
 class WeightedSelector:
@@ -77,7 +80,10 @@ class HealthTracker:
 
 
 class LLMRouter:
-    """Unified LLM interface with weighted routing, fallback, and health tracking."""
+    """Unified LLM interface with weighted routing, fallback, and health tracking.
+
+    Uses ``AsyncOpenAI`` to avoid blocking the asyncio event loop during LLM calls.
+    """
 
     def __init__(self, config: Config, timeout_s: int = 20):
         self._timeout_s = timeout_s
@@ -91,10 +97,10 @@ class LLMRouter:
         }
         self._task_routing: dict[str, dict[str, int]] = config.llm.task_routing
 
-    # ── Public API ──
+    # ── Public API (all async) ──
 
-    def ask(self, prompt: str, task_type: str = "default",
-            max_tokens: int = 1024) -> str:
+    async def ask(self, prompt: str, task_type: str = "default",
+                  max_tokens: int = 1024) -> str:
         """Send *prompt* through weighted routing. Returns empty when all fail."""
         weights = self._task_routing.get(task_type, self._default_weights)
         tried: set[str] = set()
@@ -106,14 +112,14 @@ class LLMRouter:
             provider = self._providers.get(name)
             if provider is None:
                 continue
-            result = self._try_provider(provider, prompt, max_tokens)
+            result = await self._try_provider(provider, prompt, max_tokens)
             if result is not None:
                 self._health.record_success(name)
                 return result
             self._health.record_failure(name)
         return ""
 
-    def extract_links(self, markdown: str) -> dict[str, list[str]]:
+    async def extract_links(self, markdown: str) -> dict[str, list[str]]:
         """Extract subscription links from page markdown.
 
         Looks for downloadable subscription files (.txt/.yaml URLs),
@@ -134,10 +140,10 @@ class LLMRouter:
             "Return nothing except the JSON.\n\n"
             f"Content:\n{markdown[:8000]}"
         )
-        text = self.ask(prompt, task_type="extract_links", max_tokens=1024)
+        text = await self.ask(prompt, task_type="extract_links", max_tokens=1024)
         return self._parse_json(text)
 
-    def generate_pattern(self, known_links: list[str], html: str) -> str | None:
+    async def generate_pattern(self, known_links: list[str], html: str) -> str | None:
         """Ask LLM to produce a regex matching the site's subscription links.
 
         Returns a regex string or None. Post-processes the response to
@@ -154,7 +160,7 @@ class LLMRouter:
             "- No explanations — not even a single word outside the regex\n"
             "Regex:"
         )
-        text = self.ask(prompt, task_type="generate_pattern", max_tokens=256)
+        text = await self.ask(prompt, task_type="generate_pattern", max_tokens=256)
         if not text:
             return None
         return self._extract_regex(text)
@@ -195,16 +201,17 @@ class LLMRouter:
 
     # ── Internals ──
 
-    def _try_provider(self, cfg: ProviderConfig, prompt: str,
-                      max_tokens: int) -> str | None:
+    async def _try_provider(self, cfg: ProviderConfig, prompt: str,
+                            max_tokens: int) -> str | None:
         api_key = os.getenv(cfg.api_key_env, "")
         if not api_key:
+            logger.warning("No API key for %s (env: %s)", cfg.name, cfg.api_key_env)
             return None
-        client = OpenAI(base_url=cfg.base_url, api_key=api_key,
-                        timeout=self._timeout_s)
+        client = AsyncOpenAI(base_url=cfg.base_url, api_key=api_key,
+                             timeout=self._timeout_s)
         for model in cfg.models:
             try:
-                resp = client.chat.completions.create(
+                resp = await client.chat.completions.create(
                     model=model,
                     messages=[{"role": "user", "content": prompt}],
                     temperature=0.1,
@@ -213,7 +220,8 @@ class LLMRouter:
                 text = self._response_text(resp, cfg.is_reasoning_model)
                 if text:
                     return text
-            except Exception:
+            except Exception as e:
+                logger.warning("LLM call failed [%s/%s]: %s", cfg.name, model, e)
                 continue
         return None
 
@@ -232,8 +240,7 @@ class LLMRouter:
 
         Tries:
           1. Content inside backtick code fences
-          2. Lines that match common regex syntax
-          3. The last line (models often put regex at the end)
+          2. Last line containing regex metacharacters
         """
         # Strategy 1: content inside backtick fences
         m = re.search(r"```(?:regex)?\s*\n?(.*?)```", text, re.DOTALL)
@@ -242,31 +249,14 @@ class LLMRouter:
             if candidate:
                 return candidate
 
-        # Strategy 2: find lines that look like regex
-        # (contain escaped chars, slashes, and no natural language words)
+        # Strategy 2: last line containing regex metacharacters
         lines = text.strip().splitlines()
-        for line in lines:
-            line = line.strip()
-            if not line or line.startswith(("#", "1.", "2.", "3.", "4.", "5.",
-                                            "-", "*", "```")):
-                continue
-            # Filter out lines that are clearly natural language
-            # (more than 3 words without regex metacharacters)
-            word_count = len(line.split())
-            has_escape = "\\" in line
-            has_dot = "." in line and "://" in line
-            has_wildcard = "*" in line or "+" in line or "?" in line
-            if has_escape and (has_dot or has_wildcard):
-                return line
-
-        # Strategy 3: last line containing regex metacharacters
         for line in reversed(lines):
             line = line.strip()
             if not line:
                 continue
-            # Must contain at least one regex metacharacter to be valid
             has_meta = "\\" in line or "." in line or "*" in line or "+" in line
-            has_dot_slash = "/" in line  # URL paths
+            has_dot_slash = "/" in line
             if has_meta and has_dot_slash:
                 return line
 

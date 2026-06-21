@@ -8,6 +8,8 @@ from pathlib import Path
 
 import pytest
 
+pytestmark = pytest.mark.asyncio
+
 from src.llm_router import WeightedSelector, HealthTracker, LLMRouter
 from src.config import ProviderConfig, Config, LLMConfig, CrawlConfig, SiteConfig
 
@@ -229,7 +231,7 @@ def _make_router(config: Config | None = None, providers: dict[str, list[str | N
 
 class TestLLMRouter:
 
-    def test_ask_returns_empty_when_no_providers(self):
+    async def test_ask_returns_empty_when_no_providers(self):
         """Router with empty provider list returns empty string."""
         config = Config(
             sites=[SiteConfig(name="t", start_url="http://x")],
@@ -238,12 +240,11 @@ class TestLLMRouter:
             llm=LLMConfig(),
         )
         router = LLMRouter(config)
-        result = router.ask("hi")
+        result = await router.ask("hi")
         assert result == ""
 
-    def test_ask_returns_text_on_first_success(self, monkeypatch):
+    async def test_ask_returns_text_on_first_success(self, monkeypatch):
         """When the first provider succeeds, return its text immediately."""
-        responses = iter([FakeResponse("ok")])
         monkeypatch.setattr(
             "src.llm_router.os.getenv",
             lambda key, default="": "some-key",
@@ -263,13 +264,14 @@ class TestLLMRouter:
         )
         router = LLMRouter(config, timeout_s=5)
 
-        def fake_try(cfg, prompt, mt):
+        async def fake_try(cfg, prompt, mt):
             return "ok-from-p1"
 
         router._try_provider = fake_try
-        assert router.ask("hi") == "ok-from-p1"
+        result = await router.ask("hi")
+        assert result == "ok-from-p1"
 
-    def test_ask_falls_back_on_failure(self):
+    async def test_ask_falls_back_on_failure(self):
         """Both providers tried when first fails; second succeeds."""
         config = Config(
             sites=[SiteConfig(name="t", start_url="http://x")],
@@ -288,23 +290,23 @@ class TestLLMRouter:
         router = LLMRouter(config, timeout_s=5)
         calls: list[str] = []
 
-        def fake_try(cfg, prompt, mt):
+        async def fake_try(cfg, prompt, mt):
             calls.append(cfg.name)
             if cfg.name == "p1":
                 return None  # p1 fails
             return "ok-from-p2"
 
         router._try_provider = fake_try
-        result = router.ask("hi")
+        result = await router.ask("hi")
         assert result == "ok-from-p2"
-        # Either p1 was tried first and failed, or p2 was tried first and succeeded.
-        # Both are valid; the important thing is we got the fallback result.
 
-    def test_ask_returns_empty_when_all_fail(self):
+    async def test_ask_returns_empty_when_all_fail(self):
         """When every provider fails, return empty string (never raise)."""
         router = _make_router()
-        router._try_provider = lambda cfg, p, mt: None
-        assert router.ask("hi") == ""
+        async def always_fail(cfg, prompt, mt): return None
+        router._try_provider = always_fail
+        result = await router.ask("hi")
+        assert result == ""
 
     # ── _response_text ──
 
@@ -353,29 +355,30 @@ class TestLLMRouter:
 
     # ── extract_links ──
 
-    def test_extract_links_calls_ask(self, monkeypatch):
+    async def test_extract_links_calls_ask(self):
         """Ensure extract_links flows through ask()."""
-        config = _make_router()._providers  # not needed here
         router = _make_router()
         called = False
 
-        def fake_ask(prompt, task_type="default", max_tokens=1024):
+        async def fake_ask(prompt, task_type="default", max_tokens=1024):
             nonlocal called
             called = True
             assert task_type == "extract_links"
             return '{"txt":["https://x.com/a.txt"],"yaml":[]}'
 
         router.ask = fake_ask
-        result = router.extract_links("some markdown")
+        result = await router.extract_links("some markdown")
         assert called
         assert result["txt"] == ["https://x.com/a.txt"]
 
     # ── generate_pattern ──
 
-    def test_generate_pattern_returns_none_on_empty(self):
+    async def test_generate_pattern_returns_none_on_empty(self):
         router = _make_router()
-        router.ask = lambda p, task_type="default", max_tokens=256: ""
-        result = router.generate_pattern(["http://x.com/a.yaml"], "<p>link</p>")
+        async def empty_ask(p, task_type="default", max_tokens=256):
+            return ""
+        router.ask = empty_ask
+        result = await router.generate_pattern(["http://x.com/a.yaml"], "<p>link</p>")
         assert result is None
 
 

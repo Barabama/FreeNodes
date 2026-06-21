@@ -188,7 +188,7 @@ class SiteProcessor:
             print(f"    regex miss (failed_count={self.site.failed_count}), falling back to LLM")
 
         # Step 2: LLM fallback
-        llm_result = self.llm.extract_links(page.markdown)
+        llm_result = await self.llm.extract_links(page.markdown)
         all_links = (
             llm_result.get("txt", [])
             + llm_result.get("yaml", [])
@@ -197,17 +197,13 @@ class SiteProcessor:
         inline_links = llm_result.get("inline", [])
         if inline_links:
             print(f"    inline nodes found: {len(inline_links)} (protocol links)")
-        if not all_links:
-            if not inline_links:
-                print("    LLM also found nothing, giving up")
-                return [], False
-            # Some sites only serve inline ss:// vmess:// nodes.
-            # That content was already rendered in markdown — try to save
-            # the raw page as pseudo-txt for pipeline processing.
-            # This is a best-effort: the pipeline will base64 decode if needed.
-            all_links = inline_links[:1]  # take one as sentinel
-            llm_result["_inline_only"] = True
-        all_links = llm_result.get("txt", []) + llm_result.get("yaml", [])
+
+        # If no downloadable links, try saving inline protocol links as pseudo-txt
+        if not all_links and inline_links:
+            combined = "\n".join(inline_links)
+            print(f"    no files, saving {len(inline_links)} inline protocol links")
+            return [combined], False
+
         if not all_links:
             print("    LLM also found nothing, giving up")
             return [], False
@@ -217,7 +213,7 @@ class SiteProcessor:
             print(f"       {link}")
 
         # Step 3: generate pattern
-        new_pattern = self.llm.generate_pattern(all_links, html)
+        new_pattern = await self.llm.generate_pattern(all_links, html)
         if not new_pattern:
             print("    LLM could not generate pattern, skipping self-heal")
             return all_links, False
@@ -249,7 +245,15 @@ class SiteProcessor:
         """
         m = re.search(r"(\d{1,2})月(\d{1,2})日", text)
         if m:
-            return f"{date.today().year}-{int(m.group(1)):02d}-{int(m.group(2)):02d}"
+            month, day = int(m.group(1)), int(m.group(2))
+            today = date.today()
+            parsed = date(today.year, month, day)
+            # Cross-year boundary: if parsed date is > 1 month in the future,
+            # it's likely from last year (e.g. "12月30日" seen on Jan 1st)
+            diff_days = (parsed - today).days
+            if diff_days > 30:
+                parsed = parsed.replace(year=today.year - 1)
+            return parsed.isoformat()
         m = re.search(r"(\d{4})年(\d{1,2})月(\d{1,2})日", text)
         if m:
             return f"{m.group(1)}-{int(m.group(2)):02d}-{int(m.group(3)):02d}"

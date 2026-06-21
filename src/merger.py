@@ -180,7 +180,8 @@ class Merger:
                     if isinstance(doc, dict):
                         for p in doc.get("proxies", []):
                             all_names.append(p.get("name", ""))
-            except Exception:
+            except Exception as e:
+                print(f"  [merger] warning: {f.name} parse skipped ({e})")
                 continue
 
         regions = self._detect_regions(all_names)

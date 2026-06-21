@@ -216,7 +216,7 @@ class TestExtractLinks:
 
         router = LLMRouter(config_with_llm, timeout_s=5)
 
-        def fake_ask(prompt, task_type="default", max_tokens=1024):
+        async def fake_ask(prompt, task_type="default", max_tokens=1024):
             return '{"txt": ["https://x.com/b.txt"], "yaml": ["https://x.com/a.yaml"]}'
 
         router.ask = fake_ask
@@ -239,11 +239,14 @@ class TestExtractLinks:
 
         router = LLMRouter(config_with_llm, timeout_s=5)
 
-        # extract_links internally calls self.ask → route to JSON
-        router.ask = lambda p, task_type="default", max_tokens=1024: (
-            '{"txt":["https://x.com/b.txt"],"yaml":["https://x.com/a.yaml"]}'
-        )
-        router.generate_pattern = lambda links, html: r"https://x\.com/[a-z]+\."
+        async def fake_ask(prompt, task_type="default", max_tokens=1024):
+            return '{"txt":["https://x.com/b.txt"],"yaml":["https://x.com/a.yaml"]}'
+
+        async def fake_gen(links, html):
+            return r"https://x\.com/[a-z]+\."
+
+        router.ask = fake_ask
+        router.generate_pattern = fake_gen
 
         processor = SiteProcessor(site_cfg, config_with_llm, router)
         links, saved = await processor._extract_links(page)
