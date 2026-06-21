@@ -96,6 +96,19 @@ class LLMRouter:
             p.name: p.default_weight for p in config.llm.providers
         }
         self._task_routing: dict[str, dict[str, int]] = config.llm.task_routing
+        self._validate_routing()
+
+    def _validate_routing(self):
+        """Warn if task_routing references provider names not in the provider list."""
+        known = set(self._providers.keys())
+        for task, weights in self._task_routing.items():
+            for name in weights:
+                if name not in known:
+                    logger.warning(
+                        "LLM routing config: provider '%s' in task_routing['%s'] "
+                        "is not defined in providers list. Available: %s",
+                        name, task, sorted(known),
+                    )
 
     # ── Public API (all async) ──
 

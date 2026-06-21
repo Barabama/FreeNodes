@@ -123,22 +123,7 @@ class Merger:
         proxy_names = [p["name"] for p in proxies]
         groups = self._build_default_groups(proxy_names)
 
-        output = {
-            "mixed-port": 7890,
-            "allow-lan": True,
-            "mode": "rule",
-            "log-level": "info",
-            "ipv6": True,
-            "dns": {
-                "enable": True,
-                "listen": "0.0.0.0:53",
-                "default-nameserver": ["223.5.5.5", "114.114.114.114"],
-                "nameserver": ["https://doh.pub/dns-query", "https://dns.alidns.com/dns-query"],
-            },
-            "proxies": proxies,
-            "proxy-groups": groups,
-            "rules": ["MATCH,🌍 手动选择"],
-        }
+        output = self._base_clash_config(proxies=proxies, groups=groups)
 
         yaml_text = yaml.safe_dump(output, allow_unicode=True, default_flow_style=False)
         out = self.nodes_dir / "merged.yaml"
@@ -222,22 +207,7 @@ class Merger:
             "proxies": select_entries,
         })
 
-        output = {
-            "mixed-port": 7890,
-            "allow-lan": True,
-            "mode": "rule",
-            "log-level": "info",
-            "ipv6": True,
-            "dns": {
-                "enable": True,
-                "listen": "0.0.0.0:53",
-                "default-nameserver": ["223.5.5.5", "114.114.114.114"],
-                "nameserver": ["https://doh.pub/dns-query", "https://dns.alidns.com/dns-query"],
-            },
-            "proxy-providers": providers,
-            "proxy-groups": groups,
-            "rules": ["MATCH,🌍 手动选择"],
-        }
+        output = self._base_clash_config(groups=groups, providers=providers)
 
         yaml_text = yaml.safe_dump(output, allow_unicode=True, default_flow_style=False)
         out = self.nodes_dir / "provider.yaml"
@@ -322,6 +292,34 @@ class Merger:
             f"# Docs: https://github.com/FreeNodeSpider\n"
             f"# {'-'*60}\n"
         )
+
+    @staticmethod
+    def _base_clash_config(groups: list[dict], proxies: list[dict] | None = None,
+                           providers: dict | None = None) -> dict:
+        """Return shared Clash base config dict.
+
+        Used by both ``_merge_yaml`` and ``_build_provider``.
+        """
+        config = {
+            "mixed-port": 7890,
+            "allow-lan": True,
+            "mode": "rule",
+            "log-level": "info",
+            "ipv6": True,
+            "dns": {
+                "enable": True,
+                "listen": "0.0.0.0:53",
+                "default-nameserver": ["223.5.5.5", "114.114.114.114"],
+                "nameserver": ["https://doh.pub/dns-query", "https://dns.alidns.com/dns-query"],
+            },
+            "proxy-groups": groups,
+            "rules": ["MATCH,🌍 手动选择"],
+        }
+        if proxies is not None:
+            config["proxies"] = proxies
+        if providers is not None:
+            config["proxy-providers"] = providers
+        return config
 
     @staticmethod
     def _print_summary(result: MergeResult):

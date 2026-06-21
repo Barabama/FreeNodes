@@ -225,6 +225,27 @@ class TestExtractLinks:
         assert len(links) == 2
         assert "a.yaml" in links[0] or "a.yaml" in links[1]
 
+    async def test_pattern_resets_after_5_failures(self, site_cfg, config_with_llm):
+        """When pattern fails >=5 times, link_pattern gets reset to None."""
+        site_cfg.link_pattern = r"https://nonexistent\.com/[^\s]+"
+        site_cfg.failed_count = 5
+        html = '<p>https://x.com/a.yaml</p>'
+        page = make_page(html=html, markdown="test")
+
+        from src.llm_router import LLMRouter
+        router = LLMRouter(config_with_llm, timeout_s=5)
+        async def fake_ask(p, task_type="default", max_tokens=1024):
+            return '{"yaml":["https://x.com/a.yaml"]}'
+        async def fake_gen(links, html):
+            return None  # no pattern → don't overwrite link_pattern
+        router.ask = fake_ask
+        router.generate_pattern = fake_gen
+
+        processor = SiteProcessor(site_cfg, config_with_llm, router)
+        links, saved = await processor._extract_links(page)
+        assert site_cfg.link_pattern is None, "pattern should reset after 5 failures"
+        assert len(links) > 0
+
     async def test_pattern_self_heal(self, site_cfg, config_with_llm, monkeypatch):
         """LLM generates valid pattern → saved to config."""
         site_cfg.link_pattern = None

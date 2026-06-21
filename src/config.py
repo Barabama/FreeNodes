@@ -10,6 +10,7 @@ class SiteConfig:
     description: str = ""
     link_pattern: str | None = None
     failed_count: int = 0
+    exclude_patterns: list[str] | None = None  # href substrings to skip in article listing
 
 
 @dataclass
@@ -70,6 +71,10 @@ def save_config(config: Config, path: str = "config.yaml"):
         }
         if s.link_pattern:
             entry["link_pattern"] = s.link_pattern
+        if s.exclude_patterns:
+            entry["exclude_patterns"] = s.exclude_patterns
+        if s.failed_count:
+            entry["failed_count"] = s.failed_count
         raw_sites.append(entry)
 
     raw_llm = {

@@ -154,7 +154,11 @@ class SiteProcessor:
             if d is None:
                 continue
 
-            if href in ("/free-nodes/", "/", "") or "category" in href or "page-" in href:
+            # Exclude non-article links: exact matches + configurable substring patterns
+            if href in ("/free-nodes/", "/", ""):
+                continue
+            exclusions = self.site.exclude_patterns or ["category", "page-"]
+            if any(pat in href for pat in exclusions if isinstance(pat, str)):
                 continue
 
             full = urljoin(self._base, href)
@@ -179,13 +183,19 @@ class SiteProcessor:
 
         # Step 1: rule-first
         if self.site.link_pattern:
-            result = self._extract_by_pattern(html, self.site.link_pattern)
-            if result:
-                print(f"    regex hit: {len(result)} links (0 LLM)")
-                return result, False
+            # If pattern failed too many times, reset it so LLM gets retried
+            if self.site.failed_count >= 5:
+                print(f"    pattern failed {self.site.failed_count}x, resetting to null")
+                self.site.link_pattern = None
+            else:
+                result = self._extract_by_pattern(html, self.site.link_pattern)
+                if result:
+                    print(f"    regex hit: {len(result)} links (0 LLM)")
+                    self.site.failed_count = 0
+                    return result, False
 
-            self.site.failed_count += 1
-            print(f"    regex miss (failed_count={self.site.failed_count}), falling back to LLM")
+                self.site.failed_count += 1
+                print(f"    regex miss (failed_count={self.site.failed_count}), falling back to LLM")
 
         # Step 2: LLM fallback
         llm_result = await self.llm.extract_links(page.markdown)
