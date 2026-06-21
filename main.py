@@ -38,10 +38,8 @@ async def main():
     scheduler = Scheduler(config)
     results = await scheduler.run(target=args.target)
 
-    # Persist config only when self-healed patterns were saved
-    patterns_changed = any(r.pattern_saved for r in results)
-    if patterns_changed:
-        save_config(config)
+    # Persist up_date + self-healed patterns
+    save_config(config)
 
     # Exit code: 0 if all succeeded, 1 if any errors
     errors = [r for r in results if r.errors]

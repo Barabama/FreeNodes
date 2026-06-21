@@ -131,6 +131,10 @@ class SiteProcessor:
         if yaml_contents:
             save(self.site.name, ".yaml", "\n---\n".join(yaml_contents), self.output_dir)
 
+        # Update crawl metadata
+        self.site.up_date = date.today().isoformat()
+        self.site.node_count = result.txt_count + result.yaml_count
+
         print(f"\n{'='*60}")
         print(f"DONE: {self.site.name} — {result.txt_count} txt + {result.yaml_count} yaml ({result.total_bytes}B)")
         if pattern_saved:

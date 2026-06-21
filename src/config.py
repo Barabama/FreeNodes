@@ -10,7 +10,9 @@ class SiteConfig:
     description: str = ""
     link_pattern: str | None = None
     failed_count: int = 0
-    exclude_patterns: list[str] | None = None  # href substrings to skip in article listing
+    up_date: str = ""                           # last crawl date, YYYY-MM-DD
+    node_count: int = 0                         # proxies found in last crawl
+    exclude_patterns: list[str] | None = None   # href substrings to skip in article listing
 
 
 @dataclass
@@ -71,6 +73,10 @@ def save_config(config: Config, path: str = "config.yaml"):
         }
         if s.link_pattern:
             entry["link_pattern"] = s.link_pattern
+        if s.up_date:
+            entry["up_date"] = s.up_date
+        if s.node_count:
+            entry["node_count"] = s.node_count
         if s.exclude_patterns:
             entry["exclude_patterns"] = s.exclude_patterns
         if s.failed_count:

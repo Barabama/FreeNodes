@@ -19,9 +19,9 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install dependencies
+      - name: Install project
         run: |
-          pip install crawl4ai openai httpx pyyaml python-dotenv
+          pip install -e .
           pip install playwright
           playwright install --with-deps chromium
 
@@ -36,7 +36,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "auto: daily crawl update"
-          file_pattern: "nodes/* config.yaml"
+          file_pattern: "nodes/* config.yaml README.md"
           branch: feat/ai-crawler-v2
           commit_user_name: "github-actions[bot]"
           commit_user_email: "github-actions[bot]@users.noreply.github.com"

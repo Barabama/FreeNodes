@@ -6,6 +6,7 @@ from src.config import Config, SiteConfig
 from src.llm_router import LLMRouter
 from src.site_processor import SiteProcessor, SiteResult
 from src.merger import Merger
+from src.readme_updater import write_readme
 
 logger = logging.getLogger(__name__)
 
@@ -62,7 +63,7 @@ class Scheduler:
 
         self._print_summary(final)
 
-        # Run merger after all sites processed
+        # Run merger + readme after all sites processed
         if not target:
             out_dir = self.config.output.get("dir", "nodes")
             merger = Merger(nodes_dir=out_dir)
@@ -72,6 +73,9 @@ class Scheduler:
             print(f"  files: {merge_result.merged_txt or '(skip)'}, "
                   f"{merge_result.merged_yaml or '(skip)'}, "
                   f"{merge_result.provider_yaml or '(skip)'}")
+
+            # Update README with latest dates
+            write_readme(self.config)
 
         return final
 
