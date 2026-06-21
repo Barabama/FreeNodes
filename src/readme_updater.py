@@ -65,8 +65,7 @@ def build_readme(config: Config) -> str:
             f"| {up_date} |"
         )
 
-    # Merged files row
-    lines.append("")
+    # Merged files row (no blank line before — would break the table)
     merged_links = []
     merged_mirror = []
     for fname in ("merged.txt", "merged.yaml", "provider.yaml"):
@@ -78,7 +77,7 @@ def build_readme(config: Config) -> str:
             merged_mirror.append(f"[镜像]({mirror})")
     if merged_links:
         lines.append(
-            f"| [merged]({config.sites[0].start_url if config.sites else ''}) "
+            f"| [merged](https://github.com/Barabama/FreeNodes/tree/{BRANCH}) "
             f"| {'<br>'.join(merged_links)} "
             f"| {'<br>'.join(merged_mirror)} "
             f"| {today} |"
