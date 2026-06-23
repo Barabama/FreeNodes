@@ -39,9 +39,6 @@ def build_readme(config: Config) -> str:
         # Build file links — one row per available file
         txt_path = Path(f"nodes/{name}.txt")
         yaml_path = Path(f"nodes/{name}.yaml")
-        merged_txt = Path("nodes/merged.txt")
-        merged_yaml = Path("nodes/merged.yaml")
-        provider_yaml = Path("nodes/provider.yaml")
 
         links = []
         mirror_links = []

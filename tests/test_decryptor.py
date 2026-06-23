@@ -5,8 +5,8 @@ Run: pytest tests/test_decryptor.py -v
 from src.decryptor import (
     generate_password_candidates,
     detect_protection,
-    _has_subscription_content,
 )
+from src.utils import has_subscription_content
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -90,33 +90,33 @@ class TestDetectProtection:
 class TestHasSubscriptionContent:
 
     def test_txt_link(self):
-        assert _has_subscription_content("", "https://example.com/node.txt") is True
+        assert has_subscription_content("", "https://example.com/node.txt") is True
 
     def test_yaml_link(self):
-        assert _has_subscription_content("", "https://example.com/config.yaml") is True
+        assert has_subscription_content("", "https://example.com/config.yaml") is True
 
     def test_vmess_link(self):
-        assert _has_subscription_content("vmess://eyJ2IjoiMiI6ICJhYmNk...", "") is True
+        assert has_subscription_content("vmess://eyJ2IjoiMiI6ICJhYmNk...", "") is True
 
     def test_vless_link(self):
-        assert _has_subscription_content("vless://abc@1.2.3.4:443", "") is True
+        assert has_subscription_content("vless://abc@1.2.3.4:443", "") is True
 
     def test_trojan_link(self):
-        assert _has_subscription_content("trojan://pass@1.2.3.4:443", "") is True
+        assert has_subscription_content("trojan://pass@1.2.3.4:443", "") is True
 
     def test_ss_link(self):
-        assert _has_subscription_content("ss://YWVzLTI1Ni1nY206d2MvZXFSUHJZ", "") is True
+        assert has_subscription_content("ss://YWVzLTI1Ni1nY206d2MvZXFSUHJZ", "") is True
 
     def test_chinese_keyword_in_text(self):
         """'订阅链接' text alone should NOT trigger (no actual URL)."""
-        assert _has_subscription_content("订阅链接地址：https://example.com/sub.txt", "") is True
+        assert has_subscription_content("订阅链接地址：https://example.com/sub.txt", "") is True
 
     def test_clash_keyword_in_text(self):
         """'Clash' text alone should NOT trigger (too broad)."""
-        assert _has_subscription_content("Clash 订阅配置文件", "") is False
+        assert has_subscription_content("Clash 订阅配置文件", "") is False
 
     def test_no_content(self):
-        assert _has_subscription_content("", "<html>普通网页内容</html>") is False
+        assert has_subscription_content("", "<html>普通网页内容</html>") is False
 
     def test_empty(self):
-        assert _has_subscription_content("", "") is False
+        assert has_subscription_content("", "") is False

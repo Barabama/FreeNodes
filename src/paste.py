@@ -10,6 +10,7 @@ import re
 from urllib.parse import unquote
 
 from src.crawler import Page
+from src.utils import has_subscription_content
 
 logger = logging.getLogger(__name__)
 
@@ -100,7 +101,7 @@ async def decrypt_paste(
         content = result.markdown.raw_markdown if result.markdown and hasattr(result.markdown, "raw_markdown") else ""
         html = result.html or ""
 
-        if _has_subscription_content(content, html):
+        if has_subscription_content(content, html):
             return Page(
                 url=url,
                 markdown=content,
@@ -115,16 +116,6 @@ async def decrypt_paste(
     except Exception as e:
         logger.warning("Paste decrypt error: %s", str(e)[:100])
         return None
-
-
-def _has_subscription_content(text: str, html: str) -> bool:
-    """Check for subscription URLs or protocol URIs in content."""
-    combined = text + html
-    patterns = [
-        r'https?://[^"\'<\s]+\.(txt|yaml)',
-        r'(vmess|vless|trojan|ss|ssr)://[a-zA-Z0-9+/=:@.#-]+',
-    ]
-    return any(re.search(p, combined, re.IGNORECASE) for p in patterns)
 
 
 def _extract_links_from_paste(text: str) -> list[dict]:

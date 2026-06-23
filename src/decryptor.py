@@ -10,6 +10,7 @@ from dataclasses import dataclass
 from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, CacheMode
 
 from src.crawler import Page
+from src.utils import has_subscription_content
 
 logger = logging.getLogger(__name__)
 
@@ -123,7 +124,7 @@ async def try_decrypt(
         html = result.html or ""
 
         # Check if decryption was successful (content should have subscription links)
-        if _has_subscription_content(content, html):
+        if has_subscription_content(content, html):
             return DecryptResult(success=True, password=password, content=content)
         else:
             return DecryptResult(success=False, password=password,
@@ -205,22 +206,12 @@ async def _try_password_with_crawler(
         content = result.markdown.raw_markdown if result.markdown and hasattr(result.markdown, "raw_markdown") else ""
         html = result.html or ""
 
-        if _has_subscription_content(content, html):
+        if has_subscription_content(content, html):
             return DecryptResult(success=True, password=password, content=content)
         return DecryptResult(success=False, password=password)
     except Exception as e:
         return DecryptResult(success=False, password=password, error=str(e)[:100])
 
 
-def _has_subscription_content(text: str, html: str) -> bool:
-    """Check if page content contains subscription links or protocol URIs.
-
-    Only matches actual subscription URLs and protocol links, not generic
-    keywords like "clash" or "v2ray" which appear in ads and navigation.
-    """
-    combined = text + html
-    patterns = [
-        r'https?://[^"\'<\s]+\.(txt|yaml)',
-        r'(vmess|vless|trojan|ss|ssr)://[a-zA-Z0-9+/=:@.#-]+',
-    ]
-    return any(re.search(p, combined, re.IGNORECASE) for p in patterns)
+# Legacy alias for test compatibility
+_has_subscription_content = has_subscription_content

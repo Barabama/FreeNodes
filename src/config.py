@@ -83,6 +83,10 @@ def save_config(config: Config, path: str = "config.yaml"):
             entry["node_count"] = s.node_count
         if s.exclude_patterns:
             entry["exclude_patterns"] = s.exclude_patterns
+        if s.pwd_hint:
+            entry["pwd_hint"] = s.pwd_hint
+        if s.yt_hint:
+            entry["yt_hint"] = s.yt_hint
         if s.failed_count:
             entry["failed_count"] = s.failed_count
         raw_sites.append(entry)

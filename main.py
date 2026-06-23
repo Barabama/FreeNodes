@@ -41,9 +41,9 @@ async def main():
     # Persist up_date + self-healed patterns
     save_config(config)
 
-    # Exit 0 even when some sites have errors (CDN 403s, timeouts are expected).
-    # Errors are visible in the summary log.
-    sys.exit(0)
+    # Exit 1 only when ALL sites failed (some errors like CDN 403 are expected)
+    all_failed = all(r.errors and r.articles_processed == 0 for r in results)
+    sys.exit(1 if all_failed else 0)
 
 
 if __name__ == "__main__":

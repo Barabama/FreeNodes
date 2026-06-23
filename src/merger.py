@@ -240,8 +240,7 @@ class Merger:
             else:
                 seen_name.add(name)
 
-            p["name"] = name
-            result.append(p)
+            result.append({**p, "name": name})
 
         return result
 
