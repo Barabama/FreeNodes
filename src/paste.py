@@ -7,10 +7,9 @@ URL (with fragment) from the video description first.
 """
 import logging
 import re
-from urllib.parse import unquote, urlparse, parse_qs
+from urllib.parse import unquote
 
 from src.crawler import Page
-from src.decryptor import try_decrypt, _has_subscription_content
 
 logger = logging.getLogger(__name__)
 
@@ -21,7 +20,6 @@ def extract_paste_url(text: str) -> str | None:
     Handles YouTube redirect URLs that embed the real URL in ?q= parameter.
     Preserves URL fragment (#key) which is critical for client-side decryption.
     """
-    # Match paste.to and similar PrivateBin URLs (must preserve fragment)
     paste_patterns = [
         r'(https?://paste\.to/\?[a-zA-Z0-9_=-]+#[a-zA-Z0-9_-]+)',
         r'(https?://(?:dpaste|hastebin|privatebin)\.[a-zA-Z.]+/[^\s<>"\')\]]+#[a-zA-Z0-9_-]+)',
@@ -31,14 +29,13 @@ def extract_paste_url(text: str) -> str | None:
         if m:
             return m.group(1)
 
-    # Try YouTube redirect URLs — extract real URL from ?q= parameter
+    # YouTube redirect URLs — extract real URL from ?q= parameter
     yt_redirect = re.search(
         r'https?://(?:www\.)?youtube\.com/redirect\?[^"\'>\s]*',
         text,
     )
     if yt_redirect:
         redirect_url = yt_redirect.group(0)
-        # Parse q= parameter
         m = re.search(r'[&?]q=([^&]+)', redirect_url)
         if m:
             real_url = unquote(m.group(1))
@@ -62,20 +59,15 @@ async def decrypt_paste(
 
     Returns Page with decrypted content, or None on failure.
     """
-    # For paste.to, we need to navigate with the full URL (including fragment)
-    # and then fill the password dialog
     js_code = f"""
     (async () => {{
-        // Wait for page to load and decrypt content
         await new Promise(r => setTimeout(r, 3000));
 
-        // Check if password dialog appeared
         const pwdInput = document.querySelector('{password_selector}');
         if (pwdInput) {{
             pwdInput.value = '{password}';
             pwdInput.dispatchEvent(new Event('input', {{ bubbles: true }}));
 
-            // Find and click decrypt button
             const btns = document.querySelectorAll('button');
             for (const btn of btns) {{
                 if (btn.textContent.trim().includes('{button_text}')) {{
@@ -86,7 +78,6 @@ async def decrypt_paste(
             await new Promise(r => setTimeout(r, 5000));
         }}
 
-        // Return decrypted content
         const textEl = document.querySelector('#cleartext, .highlight, pre, code, article');
         return textEl ? textEl.textContent : document.body.innerText;
     }})()
@@ -126,6 +117,16 @@ async def decrypt_paste(
         return None
 
 
+def _has_subscription_content(text: str, html: str) -> bool:
+    """Check for subscription URLs or protocol URIs in content."""
+    combined = text + html
+    patterns = [
+        r'https?://[^"\'<\s]+\.(txt|yaml)',
+        r'(vmess|vless|trojan|ss|ssr)://[a-zA-Z0-9+/=:@.#-]+',
+    ]
+    return any(re.search(p, combined, re.IGNORECASE) for p in patterns)
+
+
 def _extract_links_from_paste(text: str) -> list[dict]:
     """Extract subscription links from decrypted paste content."""
     links: list[dict] = []
@@ -134,7 +135,7 @@ def _extract_links_from_paste(text: str) -> list[dict]:
         href = m.group(0).rstrip('.,;)')
         if href.endswith(('.txt', '.yaml', '.yml', '.json', '.conf')):
             links.append({"href": href, "text": href})
-        # Also capture .jpg "fake" subscription links (OneDrive trick)
+        # Capture .jpg "fake" subscription links (OneDrive trick)
         elif href.endswith('.jpg') and ('dlink' in href or '1drv' in href or 'onedrive' in href):
             links.append({"href": href, "text": href})
     return links

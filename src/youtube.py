@@ -3,10 +3,10 @@
 Replaces the old pytubefix-based PwdFinder with a more stable implementation.
 yt-dlp handles anti-bot measures better and requires no OAuth.
 """
+import asyncio
 import json
 import logging
 import re
-import subprocess
 import tempfile
 from dataclasses import dataclass
 from pathlib import Path
@@ -44,16 +44,20 @@ async def list_channel_videos(channel_url: str, limit: int = 10) -> list[YouTube
         channel_url,
     ]
     try:
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
-        if result.returncode != 0:
-            logger.warning("yt-dlp list_channel failed: %s", result.stderr[:200])
-            return []
-    except subprocess.TimeoutExpired:
+        proc = await asyncio.create_subprocess_exec(
+            *cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE,
+        )
+        stdout, stderr = await asyncio.wait_for(proc.communicate(), timeout=60)
+    except asyncio.TimeoutError:
         logger.warning("yt-dlp list_channel timed out for %s", channel_url)
         return []
 
+    if proc.returncode != 0:
+        logger.warning("yt-dlp list_channel failed: %s", stderr.decode()[:200])
+        return []
+
     videos: list[YouTubeVideo] = []
-    for line in result.stdout.strip().splitlines():
+    for line in stdout.decode().strip().splitlines():
         try:
             data = json.loads(line)
         except json.JSONDecodeError:
@@ -61,7 +65,6 @@ async def list_channel_videos(channel_url: str, limit: int = 10) -> list[YouTube
 
         video_id = data.get("id", "")
         url = data.get("url", f"https://www.youtube.com/watch?v={video_id}")
-        # Normalize URL
         if not url.startswith("http"):
             url = f"https://www.youtube.com/watch?v={url}"
 
@@ -93,19 +96,29 @@ async def get_video_metadata(video_url: str) -> YouTubeVideo:
     # Step 1: Get metadata JSON
     cmd = ["yt-dlp", "--dump-json", "--skip-download", video_url]
     try:
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
-        if result.returncode != 0:
-            return YouTubeVideo(url=video_url, video_id=video_id, title="",
-                                description="", upload_date="", subtitles_text="",
-                                channel="", error=result.stderr[:200])
-        data = json.loads(result.stdout)
-    except (subprocess.TimeoutExpired, json.JSONDecodeError) as e:
+        proc = await asyncio.create_subprocess_exec(
+            *cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE,
+        )
+        stdout, stderr = await asyncio.wait_for(proc.communicate(), timeout=60)
+    except asyncio.TimeoutError:
         return YouTubeVideo(url=video_url, video_id=video_id, title="",
                             description="", upload_date="", subtitles_text="",
-                            channel="", error=str(e)[:200])
+                            channel="", error="yt-dlp timed out")
+
+    if proc.returncode != 0:
+        return YouTubeVideo(url=video_url, video_id=video_id, title="",
+                            description="", upload_date="", subtitles_text="",
+                            channel="", error=stderr.decode()[:200])
+
+    try:
+        data = json.loads(stdout.decode())
+    except (json.JSONDecodeError, UnicodeDecodeError):
+        return YouTubeVideo(url=video_url, video_id=video_id, title="",
+                            description="", upload_date="", subtitles_text="",
+                            channel="", error="Failed to parse yt-dlp JSON")
 
     # Step 2: Download subtitles
-    subtitles = _download_subtitles(video_url)
+    subtitles = await _download_subtitles(video_url)
 
     return YouTubeVideo(
         url=video_url,
@@ -137,7 +150,6 @@ def extract_password_from_text(text: str) -> list[str]:
             if pwd not in candidates:
                 candidates.append(pwd)
 
-    # Sort by pattern preference: AABB > ABAB > other
     def _priority(pwd: str) -> int:
         a, b, c, d = pwd[0], pwd[1], pwd[2], pwd[3]
         if a == b and c == d:    # AABB
@@ -155,14 +167,11 @@ def extract_external_links(description: str) -> list[str]:
 
     Preserves URL fragments (#key) which are critical for paste.to decryption.
     """
-    # Match URLs, preserving fragment
     url_pattern = r'https?://[^\s<>"\')\]]+'
     links = re.findall(url_pattern, description)
 
-    # Also match YouTube redirect URLs to extract the real target
     real_links: list[str] = []
     for link in links:
-        # YouTube redirect → extract real URL from q= parameter
         if "youtube.com/redirect" in link:
             m = re.search(r'[&?]q=([^&]+)', link)
             if m:
@@ -196,22 +205,18 @@ def extract_date_from_title(title: str) -> str | None:
       - [Daily Update] 270 Free Nodes (06/16/2026)
       - 2026年06月22日
     """
-    # YYYY/M/D or YYYY-MM-DD
     m = re.search(r'(\d{4})[/-](\d{1,2})[/-](\d{1,2})', title)
     if m:
         return f"{m.group(1)}-{int(m.group(2)):02d}-{int(m.group(3)):02d}"
 
-    # MM/DD/YYYY
     m = re.search(r'(\d{1,2})/(\d{1,2})/(\d{4})', title)
     if m:
         return f"{m.group(3)}-{int(m.group(1)):02d}-{int(m.group(2)):02d}"
 
-    # YYYY年MM月DD日
     m = re.search(r'(\d{4})年(\d{1,2})月(\d{1,2})日', title)
     if m:
         return f"{m.group(1)}-{int(m.group(2)):02d}-{int(m.group(3)):02d}"
 
-    # M月D日 (Chinese, no year)
     m = re.search(r'(\d{1,2})月(\d{1,2})日', title)
     if m:
         from datetime import date
@@ -240,7 +245,7 @@ def _extract_video_id(url: str) -> str | None:
     return None
 
 
-def _download_subtitles(video_url: str) -> str:
+async def _download_subtitles(video_url: str) -> str:
     """Download auto-generated subtitles and merge into plain text."""
     with tempfile.TemporaryDirectory() as tmpdir:
         cmd = [
@@ -253,14 +258,13 @@ def _download_subtitles(video_url: str) -> str:
             video_url,
         ]
         try:
-            result = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
-            if result.returncode != 0:
-                logger.debug("yt-dlp subtitle download failed: %s", result.stderr[:200])
-                return ""
-        except subprocess.TimeoutExpired:
+            proc = await asyncio.create_subprocess_exec(
+                *cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE,
+            )
+            await asyncio.wait_for(proc.communicate(), timeout=60)
+        except asyncio.TimeoutError:
             return ""
 
-        # Find and parse subtitle files
         for srt_file in Path(tmpdir).glob("*.srt"):
             text = _parse_srt(srt_file)
             if text:
@@ -279,12 +283,10 @@ def _parse_srt(path: Path) -> str:
     lines: list[str] = []
     for line in content.splitlines():
         line = line.strip()
-        # Skip sequence numbers, timestamps, empty lines
         if not line or "-->" in line or line.isdigit():
             continue
-        # Remove HTML tags
         line = re.sub(r'<[^>]+>', '', line)
-        if line and line not in lines[-1:]:  # dedup consecutive identical lines
+        if line and line not in lines[-1:]:
             lines.append(line)
 
     return "\n".join(lines)

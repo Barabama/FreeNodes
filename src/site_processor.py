@@ -88,8 +88,8 @@ class SiteProcessor:
 
         # 3. For each video, get description → extract Drive links → download zip
         print(f"\n[2/3] Processing {len(picked)} videos...")
-        all_txt: set[str] = set()
-        all_yaml: set[str] = set()
+        txt_contents: list[str] = []
+        yaml_contents: list[str] = []
 
         for p in picked:
             print(f"  → {p['title'][:60]}")
@@ -113,11 +113,11 @@ class SiteProcessor:
                             body = path.read_text(encoding="utf-8", errors="replace")
                             ext = path.suffix.lower()
                             if ext == ".txt":
-                                all_txt.add(body)
+                                txt_contents.append(body)
                                 result.txt_count += 1
                                 result.total_bytes += len(body)
                             elif ext in (".yaml", ".yml"):
-                                all_yaml.add(body)
+                                yaml_contents.append(body)
                                 result.yaml_count += 1
                                 result.total_bytes += len(body)
                             print(f"    extracted: {path.name} ({len(body)}B)")
@@ -127,7 +127,7 @@ class SiteProcessor:
 
         # 4. Save outputs
         result.articles_processed = len(picked)
-        return self._save_and_finish(result, list(all_txt), list(all_yaml))
+        return self._save_and_finish(result, txt_contents, yaml_contents)
 
     async def _run_blog(self, site_type: str) -> SiteResult:
         """Process a blog (simple or yt_pwd type)."""
@@ -224,53 +224,70 @@ class SiteProcessor:
     # ── YouTube password flow ──
 
     async def _try_youtube_password_flow(self, page: Page) -> list[str]:
-        """Find YouTube link → get subtitles → extract password → decrypt page."""
-        from src.youtube import get_video_metadata, extract_password_from_text
-        from src.decryptor import detect_protection, try_decrypt, brute_force_4digit, generate_password_candidates
+        """Find YouTube link → get subtitles → extract password → decrypt page.
 
-        # 1. Find YouTube links in the page
+        Also checks for paste.to links with fragment keys.
+        """
+        from src.youtube import get_video_metadata, extract_password_from_text
+        from src.youtube import extract_paste_links
+        from src.decryptor import detect_protection, try_decrypt, brute_force_4digit, generate_password_candidates
+        from src.paste import extract_paste_url, decrypt_paste
+
+        page_text = page.html + page.markdown
+
+        # 1. Check for paste.to links first (ZYFXS flow)
+        paste_url = extract_paste_url(page_text)
+        if paste_url:
+            print(f"    found paste.to URL: {paste_url[:50]}...")
+            # Try without password first (some pastes don't need one)
+            paste_result = await decrypt_paste(paste_url, password="")
+            if paste_result and paste_result.links:
+                print(f"    paste decrypted without password → {len(paste_result.links)} links")
+                return [l["href"] for l in paste_result.links]
+
+        # 2. Check if page is actually password-protected
+        if not detect_protection(page.html):
+            print("    page not password-protected, skipping decrypt")
+            return []
+
+        # 3. Find YouTube links in the page
         yt_links = re.findall(
             r'https?://(?:www\.)?(?:youtube\.com/watch\?v=|youtu\.be/)[\w-]+',
-            page.html + page.markdown,
+            page_text,
         )
         if not yt_links:
             print("    no YouTube links found in page")
-            return []
-
-        # 2. For each YouTube video, extract password candidates
-        passwords: list[str] = []
-        for yt_url in yt_links[:2]:  # try first 2 at most
-            print(f"    checking YouTube: {yt_url[:50]}...")
-            try:
-                video = await get_video_metadata(yt_url)
-                if not video.success:
+            # Try brute-force anyway if page is protected
+            passwords = generate_password_candidates("AABB")[:20]
+        else:
+            # 4. For each YouTube video, extract password candidates
+            passwords = []
+            for yt_url in yt_links[:2]:
+                print(f"    checking YouTube: {yt_url[:50]}...")
+                try:
+                    video = await get_video_metadata(yt_url)
+                    if not video.success:
+                        continue
+                    pwd_candidates = extract_password_from_text(video.subtitles_text)
+                    if not pwd_candidates:
+                        pwd_candidates = extract_password_from_text(video.description)
+                    passwords.extend(pwd_candidates)
+                    if pwd_candidates:
+                        print(f"    found passwords in subtitles: {pwd_candidates[:5]}")
+                        break
+                except Exception as e:
+                    print(f"    yt-dlp error: {e}")
                     continue
-                # Try subtitles first, then description
-                pwd_candidates = extract_password_from_text(video.subtitles_text)
-                if not pwd_candidates:
-                    pwd_candidates = extract_password_from_text(video.description)
-                passwords.extend(pwd_candidates)
-                if pwd_candidates:
-                    print(f"    found passwords in subtitles: {pwd_candidates[:5]}")
-                    break
-            except Exception as e:
-                print(f"    yt-dlp error: {e}")
-                continue
 
-        # 3. If no passwords from YouTube, fall back to brute-force pattern
-        if not passwords:
-            passwords = generate_password_candidates("AABB")[:50]  # top 50 AABB
+            if not passwords:
+                passwords = generate_password_candidates("AABB")[:50]
 
-        # 4. Try each password
-        print(f"    trying {len(passwords)} password candidates...")
-        for pwd in passwords[:20]:  # max 20 attempts
+        # 5. Try each password
+        print(f"    trying {min(len(passwords), 20)} password candidates...")
+        for pwd in passwords[:20]:
             result = await try_decrypt(page.url, pwd)
             if result.success and result.content:
                 # Re-extract links from decrypted content
-                decrypted_page = Page(
-                    url=page.url, markdown=result.content, html="",
-                    links=[], success=True,
-                )
                 llm_result = await self.llm.extract_links(result.content)
                 links = (
                     llm_result.get("txt", [])

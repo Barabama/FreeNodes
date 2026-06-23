@@ -64,9 +64,10 @@ class TestDetectProtection:
         html = '<input type="password" name="pwd">'
         assert detect_protection(html) is True
 
-    def test_chinese_password_keyword(self):
+    def test_chinese_password_keyword_only(self):
+        """Text-only '密码' without input field should NOT trigger."""
         html = '<div>请输入密码查看内容</div>'
-        assert detect_protection(html) is True
+        assert detect_protection(html) is False
 
     def test_unprotected_page(self):
         html = '<div>免费节点订阅链接: https://example.com/v2ray.txt</div>'
@@ -75,6 +76,11 @@ class TestDetectProtection:
     def test_case_insensitive(self):
         html = '<input type="Password" name="key">'
         assert detect_protection(html) is True
+
+    def test_clash_in_text_not_protection(self):
+        """'clash' in text without input field is NOT a protection indicator."""
+        html = '<div>clash免费节点</div>'
+        assert detect_protection(html) is False
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -101,11 +107,13 @@ class TestHasSubscriptionContent:
     def test_ss_link(self):
         assert _has_subscription_content("ss://YWVzLTI1Ni1nY206d2MvZXFSUHJZ", "") is True
 
-    def test_chinese_keyword(self):
+    def test_chinese_keyword_in_text(self):
+        """'订阅链接' text alone should NOT trigger (no actual URL)."""
         assert _has_subscription_content("订阅链接地址：https://example.com/sub.txt", "") is True
 
-    def test_clash_keyword(self):
-        assert _has_subscription_content("Clash 订阅配置文件", "") is True
+    def test_clash_keyword_in_text(self):
+        """'Clash' text alone should NOT trigger (too broad)."""
+        assert _has_subscription_content("Clash 订阅配置文件", "") is False
 
     def test_no_content(self):
         assert _has_subscription_content("", "<html>普通网页内容</html>") is False

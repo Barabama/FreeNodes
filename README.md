@@ -14,9 +14,9 @@ v2ray、Clash 免费节点爬虫（AI 版），每日 12:00 自动运行。
 | [site-a](http://a.test/) | — | — | — |
 | [site-b](http://b.test/) | — | — | — |
 | [site-c](http://c.test/) | — | — | — |
-| [merged](https://github.com/Barabama/FreeNodes/tree/feat/ai-crawler-v2) | [merged.txt](https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/feat/ai-crawler-v2/nodes/merged.txt)<br>[merged.yaml](https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/feat/ai-crawler-v2/nodes/merged.yaml)<br>[provider.yaml](https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/feat/ai-crawler-v2/nodes/provider.yaml) | [镜像](https://gh-proxy.com/raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/feat/ai-crawler-v2/nodes/merged.txt)<br>[镜像](https://gh-proxy.com/raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/feat/ai-crawler-v2/nodes/merged.yaml)<br>[镜像](https://gh-proxy.com/raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/feat/ai-crawler-v2/nodes/provider.yaml) | 2026-06-22 |
+| [merged](https://github.com/Barabama/FreeNodes/tree/feat/ai-crawler-v2) | [merged.txt](https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/feat/ai-crawler-v2/nodes/merged.txt)<br>[merged.yaml](https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/feat/ai-crawler-v2/nodes/merged.yaml)<br>[provider.yaml](https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/feat/ai-crawler-v2/nodes/provider.yaml) | [镜像](https://gh-proxy.com/raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/feat/ai-crawler-v2/nodes/merged.txt)<br>[镜像](https://gh-proxy.com/raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/feat/ai-crawler-v2/nodes/merged.yaml)<br>[镜像](https://gh-proxy.com/raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/feat/ai-crawler-v2/nodes/provider.yaml) | 2026-06-23 |
 
 ---
 
-*上次更新: 2026-06-22 | 运行方式: GitHub Actions (feat/ai-crawler-v2)*
+*上次更新: 2026-06-23 | 运行方式: GitHub Actions (feat/ai-crawler-v2)*
 

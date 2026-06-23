@@ -27,7 +27,7 @@ def generate_password_candidates(hint: str = "AABB") -> list[str]:
     """Generate 4-digit password candidates sorted by pattern priority.
 
     hint controls which patterns to try first:
-      - "AABB": 0011, 0022, ..., 1122, 1133, ... (100 candidates)
+      - "AABB": 0011, 0022, ..., 1122, 1133, ... (90 candidates)
       - "ABAB": 0101, 0202, ..., 1212, 1313, ... (90 candidates)
       - "all":  exhaustive 0000-9999 (10000 candidates, last resort)
     """
@@ -59,14 +59,16 @@ def generate_password_candidates(hint: str = "AABB") -> list[str]:
 
 
 def detect_protection(html: str) -> bool:
-    """Detect if a page requires password input (rule-based, 0 token)."""
+    """Detect if a page requires password input (structural indicators only).
+
+    Only checks for actual input fields and decrypt buttons, not text content.
+    """
     indicators = [
         'class="cl-input"',
         'placeholder="在此输入密码"',
         'class="cl-btn"',
-        '解密',
-        'password',
-        '密码',
+        'type="password"',
+        'input[type="text"][class*="cl-input"]',
     ]
     html_lower = html.lower()
     return any(ind.lower() in html_lower for ind in indicators)
@@ -141,36 +143,84 @@ async def brute_force_4digit(
 ) -> DecryptResult:
     """Brute-force 4-digit password with pattern priority.
 
-    hint: "AABB" (fast, 100 attempts), "ABAB" (190), "all" (10000, slow)
+    hint: "AABB" (fast, 90 attempts), "ABAB" (180), "all" (10000, slow)
+
+    Note: Each attempt creates a new Crawl4AI instance (slow for brute-force).
+    This is a last-resort fallback when YouTube subtitle extraction fails.
     """
     candidates = generate_password_candidates(hint)[:max_attempts]
     logger.info("Brute-forcing %s pattern: %d candidates", hint, len(candidates))
 
-    for i, pwd in enumerate(candidates):
-        result = await try_decrypt(url, pwd, input_selector, button_selector, timeout_ms)
-        if result.success:
-            logger.info("Password found: %s (attempt %d/%d)", pwd, i + 1, len(candidates))
-            return result
+    # Reuse a single Crawl4AI instance for all attempts
+    async with AsyncWebCrawler() as crawler:
+        for i, pwd in enumerate(candidates):
+            result = await _try_password_with_crawler(
+                crawler, url, pwd, input_selector, button_selector, timeout_ms,
+            )
+            if result.success:
+                logger.info("Password found: %s (attempt %d/%d)", pwd, i + 1, len(candidates))
+                return result
 
-        # Log progress every 20 attempts
-        if (i + 1) % 20 == 0:
-            logger.info("Brute-force progress: %d/%d", i + 1, len(candidates))
+            if (i + 1) % 20 == 0:
+                logger.info("Brute-force progress: %d/%d", i + 1, len(candidates))
 
     return DecryptResult(success=False, error=f"Exhausted {len(candidates)} candidates")
 
 
+async def _try_password_with_crawler(
+    crawler: AsyncWebCrawler,
+    url: str,
+    password: str,
+    input_selector: str,
+    button_selector: str,
+    timeout_ms: int,
+) -> DecryptResult:
+    """Try a single password with a reused crawler instance."""
+    js_code = f"""
+    (async () => {{
+        const input = document.querySelector('{input_selector}');
+        if (!input) return 'no_input';
+        input.value = '{password}';
+        input.dispatchEvent(new Event('input', {{ bubbles: true }}));
+        input.dispatchEvent(new Event('change', {{ bubbles: true }}));
+        const btn = document.querySelector('{button_selector}');
+        if (!btn) return 'no_button';
+        btn.click();
+        await new Promise(r => setTimeout(r, 3000));
+        return document.body.innerText;
+    }})()
+    """
+    try:
+        result = await crawler.arun(
+            url=url,
+            config=CrawlerRunConfig(
+                cache_mode=CacheMode.BYPASS,
+                page_timeout=timeout_ms,
+                js_code=js_code,
+            ),
+        )
+        if not result.success:
+            return DecryptResult(success=False, password=password, error=result.error_message)
+
+        content = result.markdown.raw_markdown if result.markdown and hasattr(result.markdown, "raw_markdown") else ""
+        html = result.html or ""
+
+        if _has_subscription_content(content, html):
+            return DecryptResult(success=True, password=password, content=content)
+        return DecryptResult(success=False, password=password)
+    except Exception as e:
+        return DecryptResult(success=False, password=password, error=str(e)[:100])
+
+
 def _has_subscription_content(text: str, html: str) -> bool:
-    """Check if page content contains subscription links or node data."""
+    """Check if page content contains subscription links or protocol URIs.
+
+    Only matches actual subscription URLs and protocol links, not generic
+    keywords like "clash" or "v2ray" which appear in ads and navigation.
+    """
     combined = text + html
     patterns = [
         r'https?://[^"\'<\s]+\.(txt|yaml)',
-        r'vmess://',
-        r'vless://',
-        r'trojan://',
-        r'ss://',
-        r'ssr://',
-        r'订阅链接',
-        r'clash',
-        r'v2ray',
+        r'(vmess|vless|trojan|ss|ssr)://[a-zA-Z0-9+/=:@.#-]+',
     ]
     return any(re.search(p, combined, re.IGNORECASE) for p in patterns)
