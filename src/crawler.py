@@ -1,4 +1,4 @@
-"""双引擎爬取：Crawl4AI 取页面结构 + httpx 下载文件."""
+"""Dual-engine crawler: Crawl4AI for page structure, httpx for file downloads."""
 import httpx
 from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, CacheMode
 from dataclasses import dataclass
@@ -15,7 +15,7 @@ class Page:
 
 
 async def fetch_page(url: str, timeout_ms: int = 60000) -> Page:
-    """Crawl4AI 爬取页面，返回结构化内容."""
+    """Fetch a page via Crawl4AI and return structured content."""
     try:
         async with AsyncWebCrawler() as crawler:
             result = await crawler.arun(
@@ -47,7 +47,7 @@ async def fetch_page(url: str, timeout_ms: int = 60000) -> Page:
 
 
 async def download_file(url: str) -> str:
-    """httpx 下载文件，加大 read timeout 避免大 yaml 超时."""
+    """Download file via httpx with extended read timeout for large files."""
     async with httpx.AsyncClient(
         timeout=httpx.Timeout(60.0, connect=15.0, read=60.0),
         follow_redirects=True,

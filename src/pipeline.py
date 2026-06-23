@@ -1,11 +1,11 @@
-"""去重 + base64 decode + 输出到 nodes/."""
+"""Node dedup + base64 decode + output to nodes/ directory."""
 import base64
 import hashlib
 from pathlib import Path
 
 
 def process_txt(raw: str) -> str:
-    """Decode base64 v2ray 节点，按行 hash 去重."""
+    """Decode base64 v2ray nodes, dedup by line hash."""
     try:
         decoded = base64.b64decode(raw).decode("utf-8", errors="ignore")
     except Exception:
@@ -25,7 +25,7 @@ def process_txt(raw: str) -> str:
 
 
 def save(site: str, ext: str, content: str, out_dir: str = "nodes"):
-    """输出到 nodes/{site}.{ext}."""
+    """Write deduped content to nodes/{site}.{ext}."""
     path = Path(out_dir)
     path.mkdir(exist_ok=True)
     if ext == ".txt":
