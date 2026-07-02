@@ -1,5 +1,5 @@
 # FreeNodeSpider - Proxy-provider based config (for Clash Meta / Mihomo)
-# Generated: 2026-07-01 08:08:03
+# Generated: 2026-07-02 07:29:54
 # Docs: https://github.com/FreeNodeSpider
 # ------------------------------------------------------------
 allow-lan: true
@@ -48,6 +48,12 @@ proxy-groups:
   type: url-test
   url: http://www.gstatic.com/generate_204
   use: *id001
+- include: (英国|GB|UK|United Kingdom|London|LHR)
+  interval: 300
+  name: 🇬🇧 GB 英国
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  use: *id001
 - include: (香港|HK|Hong Kong|HongKong|HKG)
   interval: 300
   name: 🇭🇰 HK 香港
@@ -75,6 +81,12 @@ proxy-groups:
 - include: (荷兰|NL|Netherlands|Amsterdam)
   interval: 300
   name: 🇳🇱 NL 荷兰
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  use: *id001
+- include: (俄罗斯|RU|Russia|Moscow)
+  interval: 300
+  name: 🇷🇺 RU 俄罗斯
   type: url-test
   url: http://www.gstatic.com/generate_204
   use: *id001
@@ -115,11 +127,13 @@ proxy-groups:
   - 🇨🇦 CA 加拿大
   - 🇩🇪 DE 德国
   - 🇫🇷 FR 法国
+  - 🇬🇧 GB 英国
   - 🇭🇰 HK 香港
   - 🇮🇳 IN 印度
   - 🇯🇵 JP 日本
   - 🇰🇷 KR 韩国
   - 🇳🇱 NL 荷兰
+  - 🇷🇺 RU 俄罗斯
   - 🇸🇬 SG 新加坡
   - 🇹🇼 TW 台湾
   - 🇺🇸 US 美国
