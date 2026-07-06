@@ -19181,180 +19181,80 @@ rules:
   - GEOIP,CN,🎯 全球直连
   - MATCH,🐟 漏网之鱼
 ---
-port: 7890
-socks-port: 7891
-allow-lan: true
-mode: Rule
-log-level: info
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: warning
 external-controller: 127.0.0.1:9090
+clash-for-android:
+  append-system-dns: false
+unified-delay: true
+global-client-fingerprint: chrome
+keep-alive-interval: 360
 proxies:
-  - {name: 8元老牌专线机场：cczzuu.top, server: efan.dnsefan04881.com, port: 7754, type: vmess, uuid: 009e558d-3cf4-49d8-b5e4-82c9e14fe1a4, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false}
-  - {name: 🇸🇬 新加坡 Choopa数据中心, server: 45.32.122.179, port: 23027, type: ss, cipher: chacha20-ietf-poly1305, password: I-bP3lFh.dTG3XitF7XtVK83CZ7rI2Ut=n}
-  - {name: 🇺🇸 美国 CloudFlare节点, server: 172.64.52.134, port: 8443, type: vless, uuid: eeb6823c-b926-4ea2-866a-5542edd26e59, tls: true, tfo: false, skip-cert-verify: false, servername: t1s1.rittbo.kdns.fr, client-fingerprint: chrome, network: ws, ws-opts: {path: /, headers: {Host: t1s1.rittbo.kdns.fr}}}
-  - {name: 🇺🇸 美国 华盛顿Cogent通信公司, server: 38.60.220.65, port: 443, type: trojan, password: t5FsyeQXkNCY6eVGiqBXmPu4..jBEpNbak, skip-cert-verify: false}
-  - {name: 🇷🇺 俄罗斯 starcorenode.com, server: 78.159.250.32, port: 1111, type: vless, uuid: 9d748910-8306-411a-9b2e-11f0a2a4486f, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, reality-opts: {public-key: YuhNgtj_Tf8WNLiSB2bNJKPvfwmqa6PNRpbP8TvNkzA}, servername: api-maps.yandex.ru, client-fingerprint: firefox, network: tcp}
-  - {name: 🇺🇸 美国 CloudFlare节点 2, server: 104.18.152.187, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: false, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}}
-  - {name: 🇺🇸 美国 CloudFlare节点 3, server: 162.159.32.239, port: 443, type: vless, uuid: eeb6823c-b926-4ea2-866a-5542edd26e59, tls: true, tfo: false, skip-cert-verify: false, servername: t1s1.rittbo.kdns.fr, client-fingerprint: chrome, network: ws, ws-opts: {path: /, headers: {Host: t1s1.rittbo.kdns.fr}}}
-  - {name: 阿富汗 starcorenode.com, server: 117.55.202.15, port: 443, type: vless, uuid: 17930cee-cbea-484b-ad7f-7b8062825fee, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, reality-opts: {public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc}, servername: max.ru, client-fingerprint: chrome, network: tcp}
-  - {name: 🇷🇴 罗马尼亚 starcorenode.com, server: 185.137.157.145, port: 443, type: trojan, password: dh-Ws-YoJIgTYLZ-A5VljeduVse-vhDl7Q, skip-cert-verify: false}
-  - {name: 🇯🇵 日本 东京Choopa数据中心, server: s5976.wagahaha.xyz, port: 443, type: vless, uuid: 9794d18f-9280-3553-a7a5-a23da75aca76, tls: true, alpn: [h2%2Chttp%2F1.1], tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: u691611uee859f33s5969.wagahaha.xyz, client-fingerprint: firefox, network: tcp}
-  - {name: 亚太地区 starcorenode.com, server: 103.125.216.18, port: 443, type: trojan, password: T9qoEuuxUEa9Dk3KxnTWrs6J8ilng9sCIf, skip-cert-verify: false}
-  - {name: 委内瑞拉 starcorenode.com, server: 158.160.198.162, port: 443, type: vless, uuid: a5ea9247-79f3-4655-aece-3fb51e1e669e, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, reality-opts: {public-key: 6QIHdF1dvSK8mDPOeWXvGIqJmZ2ySq5fyc7N15h1WFE, short-id: "34256b39b4ebb864" }, servername: rezerv11.yunus.guru, client-fingerprint: edge, network: tcp}
-  - {name: 🇺🇸 美国 starcorenode.com, server: usa.mohammadaz2.shop, port: 42348, type: vless, uuid: e286cebe-7473-44e9-8c30-273ac36ac83b, tls: false, tfo: false, skip-cert-verify: false, network: http, http-opts: {method: GET, path: [/], headers: {Host: [play.google.com]}}}
-  - {name: 🇷🇺 俄罗斯 starcorenode.com 2, server: 109.120.176.37, port: 443, type: vless, uuid: 10a6b923-e349-4594-92bb-d81a6245aaec, tls: true, tfo: false, skip-cert-verify: false, servername: sertraline.adaspoloandco.com, client-fingerprint: chrome, network: ws, ws-opts: {path: /download.php, headers: {Host: sertraline.adaspoloandco.com}}}
-  - {name: 🇺🇸 美国 CloudFlare节点 4, server: 104.17.121.71, port: 443, type: trojan, password: humanity, sni: www.creationlong.org, alpn: [http%2F1.1], skip-cert-verify: false, network: ws, ws-opts: {path: /assignment, headers: {Host: www.creationlong.org}}}
-  - {name: 🇺🇸 美国 CloudFlare节点 5, server: www.calmlunch.com, port: 443, type: trojan, password: humanity, sni: www.calmlunch.com, skip-cert-verify: false, network: ws, ws-opts: {path: /assignment, headers: {Host: www.calmlunch.com}}}
+  - {name: 🇺🇸 US美国(mibei77.com 米贝节点分享), server: 165.215.250.14, port: 443, type: trojan, password: humanity, sni: www.ignitelimit.com, skip-cert-verify: true, network: ws, ws-opts: {path: /assignment, headers: {Host: www.ignitelimit.com}}, udp: true}
+  - {name: 🇺🇸 US美国(mibei77.com 米贝节点分享) 2, server: 165.215.250.14, port: 443, type: trojan, password: humanity, sni: www.creationlong.org, skip-cert-verify: true, network: ws, ws-opts: {path: /assignment, headers: {Host: www.creationlong.org}}, udp: true}
+  - {name: 🇺🇸 US美国(mibei77.com 米贝节点分享) 3, server: 165.215.250.14, port: 443, type: trojan, password: humanity, sni: www.calmlunch.com, skip-cert-verify: true, network: ws, ws-opts: {path: /assignment, headers: {Host: www.calmlunch.com}}, udp: true}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
     proxies:
       - ♻️ 自动选择
       - DIRECT
-      - 8元老牌专线机场：cczzuu.top
-      - 🇸🇬 新加坡 Choopa数据中心
-      - 🇺🇸 美国 CloudFlare节点
-      - 🇺🇸 美国 华盛顿Cogent通信公司
-      - 🇷🇺 俄罗斯 starcorenode.com
-      - 🇺🇸 美国 CloudFlare节点 2
-      - 🇺🇸 美国 CloudFlare节点 3
-      - 阿富汗 starcorenode.com
-      - 🇷🇴 罗马尼亚 starcorenode.com
-      - 🇯🇵 日本 东京Choopa数据中心
-      - 亚太地区 starcorenode.com
-      - 委内瑞拉 starcorenode.com
-      - 🇺🇸 美国 starcorenode.com
-      - 🇷🇺 俄罗斯 starcorenode.com 2
-      - 🇺🇸 美国 CloudFlare节点 4
-      - 🇺🇸 美国 CloudFlare节点 5
+      - 🇺🇸 US美国(mibei77.com 米贝节点分享)
+      - 🇺🇸 US美国(mibei77.com 米贝节点分享) 2
+      - 🇺🇸 US美国(mibei77.com 米贝节点分享) 3
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     proxies:
-      - 8元老牌专线机场：cczzuu.top
-      - 🇸🇬 新加坡 Choopa数据中心
-      - 🇺🇸 美国 CloudFlare节点
-      - 🇺🇸 美国 华盛顿Cogent通信公司
-      - 🇷🇺 俄罗斯 starcorenode.com
-      - 🇺🇸 美国 CloudFlare节点 2
-      - 🇺🇸 美国 CloudFlare节点 3
-      - 阿富汗 starcorenode.com
-      - 🇷🇴 罗马尼亚 starcorenode.com
-      - 🇯🇵 日本 东京Choopa数据中心
-      - 亚太地区 starcorenode.com
-      - 委内瑞拉 starcorenode.com
-      - 🇺🇸 美国 starcorenode.com
-      - 🇷🇺 俄罗斯 starcorenode.com 2
-      - 🇺🇸 美国 CloudFlare节点 4
-      - 🇺🇸 美国 CloudFlare节点 5
+      - 🇺🇸 US美国(mibei77.com 米贝节点分享)
+      - 🇺🇸 US美国(mibei77.com 米贝节点分享) 2
+      - 🇺🇸 US美国(mibei77.com 米贝节点分享) 3
   - name: 🌍 国外媒体
     type: select
     proxies:
       - 🚀 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - 8元老牌专线机场：cczzuu.top
-      - 🇸🇬 新加坡 Choopa数据中心
-      - 🇺🇸 美国 CloudFlare节点
-      - 🇺🇸 美国 华盛顿Cogent通信公司
-      - 🇷🇺 俄罗斯 starcorenode.com
-      - 🇺🇸 美国 CloudFlare节点 2
-      - 🇺🇸 美国 CloudFlare节点 3
-      - 阿富汗 starcorenode.com
-      - 🇷🇴 罗马尼亚 starcorenode.com
-      - 🇯🇵 日本 东京Choopa数据中心
-      - 亚太地区 starcorenode.com
-      - 委内瑞拉 starcorenode.com
-      - 🇺🇸 美国 starcorenode.com
-      - 🇷🇺 俄罗斯 starcorenode.com 2
-      - 🇺🇸 美国 CloudFlare节点 4
-      - 🇺🇸 美国 CloudFlare节点 5
+      - 🇺🇸 US美国(mibei77.com 米贝节点分享)
+      - 🇺🇸 US美国(mibei77.com 米贝节点分享) 2
+      - 🇺🇸 US美国(mibei77.com 米贝节点分享) 3
   - name: 📲 电报信息
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - 8元老牌专线机场：cczzuu.top
-      - 🇸🇬 新加坡 Choopa数据中心
-      - 🇺🇸 美国 CloudFlare节点
-      - 🇺🇸 美国 华盛顿Cogent通信公司
-      - 🇷🇺 俄罗斯 starcorenode.com
-      - 🇺🇸 美国 CloudFlare节点 2
-      - 🇺🇸 美国 CloudFlare节点 3
-      - 阿富汗 starcorenode.com
-      - 🇷🇴 罗马尼亚 starcorenode.com
-      - 🇯🇵 日本 东京Choopa数据中心
-      - 亚太地区 starcorenode.com
-      - 委内瑞拉 starcorenode.com
-      - 🇺🇸 美国 starcorenode.com
-      - 🇷🇺 俄罗斯 starcorenode.com 2
-      - 🇺🇸 美国 CloudFlare节点 4
-      - 🇺🇸 美国 CloudFlare节点 5
+      - 🇺🇸 US美国(mibei77.com 米贝节点分享)
+      - 🇺🇸 US美国(mibei77.com 米贝节点分享) 2
+      - 🇺🇸 US美国(mibei77.com 米贝节点分享) 3
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
-      - 8元老牌专线机场：cczzuu.top
-      - 🇸🇬 新加坡 Choopa数据中心
-      - 🇺🇸 美国 CloudFlare节点
-      - 🇺🇸 美国 华盛顿Cogent通信公司
-      - 🇷🇺 俄罗斯 starcorenode.com
-      - 🇺🇸 美国 CloudFlare节点 2
-      - 🇺🇸 美国 CloudFlare节点 3
-      - 阿富汗 starcorenode.com
-      - 🇷🇴 罗马尼亚 starcorenode.com
-      - 🇯🇵 日本 东京Choopa数据中心
-      - 亚太地区 starcorenode.com
-      - 委内瑞拉 starcorenode.com
-      - 🇺🇸 美国 starcorenode.com
-      - 🇷🇺 俄罗斯 starcorenode.com 2
-      - 🇺🇸 美国 CloudFlare节点 4
-      - 🇺🇸 美国 CloudFlare节点 5
+      - 🇺🇸 US美国(mibei77.com 米贝节点分享)
+      - 🇺🇸 US美国(mibei77.com 米贝节点分享) 2
+      - 🇺🇸 US美国(mibei77.com 米贝节点分享) 3
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - 8元老牌专线机场：cczzuu.top
-      - 🇸🇬 新加坡 Choopa数据中心
-      - 🇺🇸 美国 CloudFlare节点
-      - 🇺🇸 美国 华盛顿Cogent通信公司
-      - 🇷🇺 俄罗斯 starcorenode.com
-      - 🇺🇸 美国 CloudFlare节点 2
-      - 🇺🇸 美国 CloudFlare节点 3
-      - 阿富汗 starcorenode.com
-      - 🇷🇴 罗马尼亚 starcorenode.com
-      - 🇯🇵 日本 东京Choopa数据中心
-      - 亚太地区 starcorenode.com
-      - 委内瑞拉 starcorenode.com
-      - 🇺🇸 美国 starcorenode.com
-      - 🇷🇺 俄罗斯 starcorenode.com 2
-      - 🇺🇸 美国 CloudFlare节点 4
-      - 🇺🇸 美国 CloudFlare节点 5
+      - 🇺🇸 US美国(mibei77.com 米贝节点分享)
+      - 🇺🇸 US美国(mibei77.com 米贝节点分享) 2
+      - 🇺🇸 US美国(mibei77.com 米贝节点分享) 3
   - name: 📢 谷歌FCM
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - 8元老牌专线机场：cczzuu.top
-      - 🇸🇬 新加坡 Choopa数据中心
-      - 🇺🇸 美国 CloudFlare节点
-      - 🇺🇸 美国 华盛顿Cogent通信公司
-      - 🇷🇺 俄罗斯 starcorenode.com
-      - 🇺🇸 美国 CloudFlare节点 2
-      - 🇺🇸 美国 CloudFlare节点 3
-      - 阿富汗 starcorenode.com
-      - 🇷🇴 罗马尼亚 starcorenode.com
-      - 🇯🇵 日本 东京Choopa数据中心
-      - 亚太地区 starcorenode.com
-      - 委内瑞拉 starcorenode.com
-      - 🇺🇸 美国 starcorenode.com
-      - 🇷🇺 俄罗斯 starcorenode.com 2
-      - 🇺🇸 美国 CloudFlare节点 4
-      - 🇺🇸 美国 CloudFlare节点 5
+      - 🇺🇸 US美国(mibei77.com 米贝节点分享)
+      - 🇺🇸 US美国(mibei77.com 米贝节点分享) 2
+      - 🇺🇸 US美国(mibei77.com 米贝节点分享) 3
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -19377,22 +19277,9 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - 8元老牌专线机场：cczzuu.top
-      - 🇸🇬 新加坡 Choopa数据中心
-      - 🇺🇸 美国 CloudFlare节点
-      - 🇺🇸 美国 华盛顿Cogent通信公司
-      - 🇷🇺 俄罗斯 starcorenode.com
-      - 🇺🇸 美国 CloudFlare节点 2
-      - 🇺🇸 美国 CloudFlare节点 3
-      - 阿富汗 starcorenode.com
-      - 🇷🇴 罗马尼亚 starcorenode.com
-      - 🇯🇵 日本 东京Choopa数据中心
-      - 亚太地区 starcorenode.com
-      - 委内瑞拉 starcorenode.com
-      - 🇺🇸 美国 starcorenode.com
-      - 🇷🇺 俄罗斯 starcorenode.com 2
-      - 🇺🇸 美国 CloudFlare节点 4
-      - 🇺🇸 美国 CloudFlare节点 5
+      - 🇺🇸 US美国(mibei77.com 米贝节点分享)
+      - 🇺🇸 US美国(mibei77.com 米贝节点分享) 2
+      - 🇺🇸 US美国(mibei77.com 米贝节点分享) 3
 rules:
   - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
   - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
@@ -22922,7 +22809,6 @@ rules:
   - IP-CIDR,101.199.196.0/22,🎯 全球直连,no-resolve
   - GEOIP,CN,🎯 全球直连
   - MATCH,🐟 漏网之鱼
-
 ---
 port: 7890
 socks-port: 7891
@@ -30400,6 +30286,421 @@ rules:
   - GEOIP,CN,🎯 全球直连
   - MATCH,🐟 漏网之鱼
 
+---
+mixed-port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+ipv6: true
+external-controller: 127.0.0.1:9090
+dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  ipv6: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  default-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+  nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+proxies:
+  - name: 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
+    type: vless
+    server: 85.234.114.53
+    port: 22231
+    uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
+    servername: r1.mizulina.top
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+    udp: true
+  - name: 🇵🇱_PL_波兰
+    type: vless
+    server: pl.prostosetup.org
+    port: 443
+    uuid: 1b43419a-b711-40d4-a0ee-eb5c73e60c92
+    servername: pl.prostosetup.org
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: ps7eCLLKAqgSGPFRQl1-R1PhzUeO1Z1EwNl02Ac63UA
+      short-id: 514d02a2addd6476
+    udp: true
+  - name: 🇲🇾_MY_马来西亚->🇺🇸_US_美国
+    type: vmess
+    server: v24.hdacd.com
+    port: 30824
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 2
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 🇳🇱_NL_荷兰
+    type: vless
+    server: 144.124.228.113
+    port: 443
+    uuid: ea484535-0170-4ec8-bb3c-a9dbaa7412d7
+    servername: nl3.panel11.ru
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: odHeTqoDcoPA6jeZStmaFPqoFg0ZiWwOKREEB0X-ez4
+      short-id: e069bfaf9ba2069c
+    udp: true
+  - name: 🇭🇰_HK_中国香港->🇹🇼_TW_中国台湾
+    type: vmess
+    server: world.t.51guangtaobao.com
+    port: 2510
+    uuid: 1d3d868e-ae7b-3762-b9d9-a7f267494c7e
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 🇺🇸_US_美国->🇨🇭_CH_瑞士
+    type: trojan
+    server: 90081bb25c.node.tro.cac.cab
+    port: 45553
+    password: 4f4d1167-ef14-4304-9bce-0740472503ef
+    sni: ch.01.naiun.bilibili.com
+    skip-cert-verify: true
+    tls: false
+    udp: true
+  - name: 🇫🇮_FI_芬兰
+    type: ss
+    server: 109.107.182.229
+    port: 51544
+    cipher: chacha20-ietf-poly1305
+    password: MZeSTvpl2uoey1R0frhPyJ
+    udp: true
+  - name: 🇩🇪_DE_德国
+    type: vless
+    server: 178.215.238.148
+    port: 8443
+    uuid: 21c1132b-068c-46fb-880e-3268f6a30e7f
+    network: raw
+    servername: eh.vk.com
+    tls: true
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: Crjd0I6hcasRXZcfNf7cs-YtJLpQ8u-t1CbwHIDAciU
+      short-id: 478dc6
+    udp: true
+  - name: 🇭🇰_HK_中国香港
+    type: vless
+    server: 47.83.153.19
+    port: 59750
+    uuid: 9e76cfb8-b7a6-40f6-c2aa-9905aa19f31b
+    servername: www.amd.com
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: W9BjX6YmCIVsjhKMlz233Yoe0xcf0SVHfvPKqbf3vCg
+    udp: true
+  - name: 🇺🇸_US_美国->🇸🇬_SG_新加坡
+    type: vmess
+    server: gtm-sg-cc54q7d1q01.365cloud0285.com
+    port: 6004
+    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 🇺🇸_US_美国
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 🇩🇪_DE_德国_1
+    type: vless
+    server: 87.120.126.205
+    port: 443
+    uuid: 91e120bc-159a-4390-b4e1-197b19602ea0
+    servername: sub.sbrf-cdn342.ru
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: qq
+    udp: true
+  - name: 🇱🇻_LV_拉脱维亚
+    type: vless
+    server: 90.156.254.164
+    port: 19562
+    uuid: 5b96be74-656d-4bb7-85c2-d2d8a3b7c2f3
+    network: raw
+    servername: yahoo.com
+    tls: true
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: T66pm2f_PN4Hya_A_5K0X1HQb717SUCODyoUO7Gk3Ws
+      short-id: 9e
+    udp: true
+  - name: 🇺🇸_US_美国->🇫🇷_FR_法国
+    type: trojan
+    server: 90081bb25c.node.tro.cac.cab
+    port: 45619
+    password: 4f4d1167-ef14-4304-9bce-0740472503ef
+    sni: fr.01.naiun.bilibili.com
+    skip-cert-verify: true
+    tls: false
+    udp: true
+  - name: 🇨🇦_CA_加拿大
+    type: ss
+    server: 15.223.186.62
+    port: 443
+    cipher: aes-256-cfb
+    password: amazonskr05
+    udp: true
+  - name: 🇫🇮_FI_芬兰_1
+    type: ss
+    server: 195.133.2.2
+    port: 34898
+    cipher: chacha20-ietf-poly1305
+    password: v2LIewZzNUsIrqODr22FVc
+    udp: true
+  - name: 🇫🇮_FI_芬兰_2
+    type: vless
+    server: 138.124.244.248
+    port: 443
+    uuid: 476caa1d-7c04-48ab-8de5-2c1af0d13a66
+    servername: yahoo.com
+    tls: true
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: PYX0lu3m0L_h28eW4186s63gRFHXoTc3K9wKeFewDUQ
+      short-id: e9a8
+    udp: true
+  - name: 🇺🇸_US_美国_1
+    type: trojan
+    server: 90081bb25c.node.tro.cac.cab
+    port: 47909
+    password: 4f4d1167-ef14-4304-9bce-0740472503ef
+    sni: is.01.naiun.bilibili.com
+    skip-cert-verify: true
+    tls: false
+    udp: true
+  - name: 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
+    type: trojan
+    server: 90081bb25c.node.tro.cac.cab
+    port: 41943
+    password: 4f4d1167-ef14-4304-9bce-0740472503ef
+    sni: az.01.naiun.bilibili.com
+    skip-cert-verify: true
+    tls: false
+    udp: true
+  - name: 🇷🇺_RU_俄罗斯
+    type: ss
+    server: 45.140.169.216
+    port: 30129
+    cipher: aes-256-gcm
+    password: c5fcdf7829112cb4
+    udp: true
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - DIRECT
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
+      - 🇵🇱_PL_波兰
+      - 🇲🇾_MY_马来西亚->🇺🇸_US_美国
+      - 🇳🇱_NL_荷兰
+      - 🇭🇰_HK_中国香港->🇹🇼_TW_中国台湾
+      - 🇺🇸_US_美国->🇨🇭_CH_瑞士
+      - 🇫🇮_FI_芬兰
+      - 🇩🇪_DE_德国
+      - 🇭🇰_HK_中国香港
+      - 🇺🇸_US_美国->🇸🇬_SG_新加坡
+      - 🇺🇸_US_美国
+      - 🇩🇪_DE_德国_1
+      - 🇱🇻_LV_拉脱维亚
+      - 🇺🇸_US_美国->🇫🇷_FR_法国
+      - 🇨🇦_CA_加拿大
+      - 🇫🇮_FI_芬兰_1
+      - 🇫🇮_FI_芬兰_2
+      - 🇺🇸_US_美国_1
+      - 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
+      - 🇷🇺_RU_俄罗斯
+  - name: ♻️ 自动选择
+    type: url-test
+    proxies:
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
+      - 🇵🇱_PL_波兰
+      - 🇲🇾_MY_马来西亚->🇺🇸_US_美国
+      - 🇳🇱_NL_荷兰
+      - 🇭🇰_HK_中国香港->🇹🇼_TW_中国台湾
+      - 🇺🇸_US_美国->🇨🇭_CH_瑞士
+      - 🇫🇮_FI_芬兰
+      - 🇩🇪_DE_德国
+      - 🇭🇰_HK_中国香港
+      - 🇺🇸_US_美国->🇸🇬_SG_新加坡
+      - 🇺🇸_US_美国
+      - 🇩🇪_DE_德国_1
+      - 🇱🇻_LV_拉脱维亚
+      - 🇺🇸_US_美国->🇫🇷_FR_法国
+      - 🇨🇦_CA_加拿大
+      - 🇫🇮_FI_芬兰_1
+      - 🇫🇮_FI_芬兰_2
+      - 🇺🇸_US_美国_1
+      - 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
+      - 🇷🇺_RU_俄罗斯
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+  - name: 🌍 国外媒体
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🎯 全球直连
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
+      - 🇵🇱_PL_波兰
+      - 🇲🇾_MY_马来西亚->🇺🇸_US_美国
+      - 🇳🇱_NL_荷兰
+      - 🇭🇰_HK_中国香港->🇹🇼_TW_中国台湾
+      - 🇺🇸_US_美国->🇨🇭_CH_瑞士
+      - 🇫🇮_FI_芬兰
+      - 🇩🇪_DE_德国
+      - 🇭🇰_HK_中国香港
+      - 🇺🇸_US_美国->🇸🇬_SG_新加坡
+      - 🇺🇸_US_美国
+      - 🇩🇪_DE_德国_1
+      - 🇱🇻_LV_拉脱维亚
+      - 🇺🇸_US_美国->🇫🇷_FR_法国
+      - 🇨🇦_CA_加拿大
+      - 🇫🇮_FI_芬兰_1
+      - 🇫🇮_FI_芬兰_2
+      - 🇺🇸_US_美国_1
+      - 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
+      - 🇷🇺_RU_俄罗斯
+  - name: 📲 电报信息
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
+      - 🇵🇱_PL_波兰
+      - 🇲🇾_MY_马来西亚->🇺🇸_US_美国
+      - 🇳🇱_NL_荷兰
+      - 🇭🇰_HK_中国香港->🇹🇼_TW_中国台湾
+      - 🇺🇸_US_美国->🇨🇭_CH_瑞士
+      - 🇫🇮_FI_芬兰
+      - 🇩🇪_DE_德国
+      - 🇭🇰_HK_中国香港
+      - 🇺🇸_US_美国->🇸🇬_SG_新加坡
+      - 🇺🇸_US_美国
+      - 🇩🇪_DE_德国_1
+      - 🇱🇻_LV_拉脱维亚
+      - 🇺🇸_US_美国->🇫🇷_FR_法国
+      - 🇨🇦_CA_加拿大
+      - 🇫🇮_FI_芬兰_1
+      - 🇫🇮_FI_芬兰_2
+      - 🇺🇸_US_美国_1
+      - 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
+      - 🇷🇺_RU_俄罗斯
+  - name: Ⓜ️ 微软服务
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
+      - 🇵🇱_PL_波兰
+      - 🇲🇾_MY_马来西亚->🇺🇸_US_美国
+      - 🇳🇱_NL_荷兰
+      - 🇭🇰_HK_中国香港->🇹🇼_TW_中国台湾
+      - 🇺🇸_US_美国->🇨🇭_CH_瑞士
+      - 🇫🇮_FI_芬兰
+      - 🇩🇪_DE_德国
+      - 🇭🇰_HK_中国香港
+      - 🇺🇸_US_美国->🇸🇬_SG_新加坡
+      - 🇺🇸_US_美国
+      - 🇩🇪_DE_德国_1
+      - 🇱🇻_LV_拉脱维亚
+      - 🇺🇸_US_美国->🇫🇷_FR_法国
+      - 🇨🇦_CA_加拿大
+      - 🇫🇮_FI_芬兰_1
+      - 🇫🇮_FI_芬兰_2
+      - 🇺🇸_US_美国_1
+      - 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
+      - 🇷🇺_RU_俄罗斯
+  - name: 🍎 苹果服务
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
+      - 🇵🇱_PL_波兰
+      - 🇲🇾_MY_马来西亚->🇺🇸_US_美国
+      - 🇳🇱_NL_荷兰
+      - 🇭🇰_HK_中国香港->🇹🇼_TW_中国台湾
+      - 🇺🇸_US_美国->🇨🇭_CH_瑞士
+      - 🇫🇮_FI_芬兰
+      - 🇩🇪_DE_德国
+      - 🇭🇰_HK_中国香港
+      - 🇺🇸_US_美国->🇸🇬_SG_新加坡
+      - 🇺🇸_US_美国
+      - 🇩🇪_DE_德国_1
+      - 🇱🇻_LV_拉脱维亚
+      - 🇺🇸_US_美国->🇫🇷_FR_法国
+      - 🇨🇦_CA_加拿大
+      - 🇫🇮_FI_芬兰_1
+      - 🇫🇮_FI_芬兰_2
+      - 🇺🇸_US_美国_1
+      - 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
+      - 🇷🇺_RU_俄罗斯
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+  - name: 🛑 全球拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🍃 应用净化
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - ♻️ 自动选择
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
+      - 🇵🇱_PL_波兰
+      - 🇲🇾_MY_马来西亚->🇺🇸_US_美国
+      - 🇳🇱_NL_荷兰
+      - 🇭🇰_HK_中国香港->🇹🇼_TW_中国台湾
+      - 🇺🇸_US_美国->🇨🇭_CH_瑞士
+      - 🇫🇮_FI_芬兰
+      - 🇩🇪_DE_德国
+      - 🇭🇰_HK_中国香港
+      - 🇺🇸_US_美国->🇸🇬_SG_新加坡
+      - 🇺🇸_US_美国
+      - 🇩🇪_DE_德国_1
+      - 🇱🇻_LV_拉脱维亚
+      - 🇺🇸_US_美国->🇫🇷_FR_法国
+      - 🇨🇦_CA_加拿大
+      - 🇫🇮_FI_芬兰_1
+      - 🇫🇮_FI_芬兰_2
+      - 🇺🇸_US_美国_1
+      - 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
+      - 🇷🇺_RU_俄罗斯
 ---
 mixed-port: 7890
 allow-lan: true
