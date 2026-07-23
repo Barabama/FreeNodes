@@ -1,47 +1,69 @@
-# Code Review — README corruption + recent regression sweep
+# Code Review — Recent fix* and feat* commits
 
 > **Date:** 2026-07-23
-> **Context:** User reported README.md was missing site info after recent pushes. Investigation revealed `config.yaml` was overwritten with test data (site-a/site-b/site-c), causing `readme_updater.py` to generate a bogus table.
+> **Scope:** Commits `2844f3a1..54903989` (5 feat/fix commits + README fix)
+> **Files analyzed:** `src/site_processor.py`, `src/youtube.py`, `src/config.py`, `config.yaml`
+> **Pre-existing:** 175 tests pass
 
 ---
 
-## 🔴 Regression: README.md test data leak
+## 🔴 Critical Bugs (2)
 
-### Root Cause
+### F1: Duplicate import — `src/site_processor.py:272-273`
 
-`config.yaml` was silently overwritten with test fixture data (`site-a`, `site-b`, `site-c`). This happened because `save_config()` writes all sites from the in-memory `Config` object to disk — if some code path loads a test config and calls `save_config`, the production `config.yaml` gets corrupted.
-
-### Leak path
-
-```
-  `pytest` creates Config(sites=[SiteConfig(name="site-a"), ...])
-    → calls load_config("fixtures/test_config_minimal.yaml")
-    → some code path calls save_config()
-    → overwrites config.yaml with test data
+```python
+from src.decryptor import detect_protection, try_decrypt, brute_force_4digit, generate_password_candidates
+from src.decryptor import detect_protection, try_decrypt, brute_force_4digit, generate_password_candidates  # DUPLICATE
 ```
 
-The fix was to regenerate README manually. But the deeper problem — `save_config()` mutating `config.yaml` when a test config is loaded — still exists.
+Two identical import lines. Not crashing (Python deduplicates imports) but the **second `extract_paste_links` import from youtube is missing** because it got lost when the duplicate was created:
 
-### Fix needed
+Line 271: `from src.youtube import get_video_metadata, extract_password_from_text, extract_paste_links`
 
-1. **Done:** Regenerated README via `python -c "write_readme(load_config())"`
-2. **Needed:** `save_config()` should validate the config path isn't the default `.yaml` when called from tests, OR test fixtures should use a non-default path.
+This is correct — all three are imported. But the duplicate line 272-273 is dead code.
+
+**Fix:** ✅ Removed the duplicate line.
+
+### F2: Proxy not configured for blog path — `src/site_processor.py`
+
+`_run_cloud_drive` (line 65-66) configures the proxy for yt-dlp:
+```python
+if self.config.crawl.proxy:
+    from src.youtube import configure as yt_configure
+    yt_configure(self.config.crawl.proxy)
+```
+
+But `_run_blog` (line 172) does NOT. When it calls `_try_youtube_password_flow` → `get_video_metadata`, yt-dlp runs **without proxy**, so YouTube access fails for yudou.
+
+**Fix:** ✅ Added identical proxy config block at the start of `_run_blog`.
 
 ---
 
-## 🟢 Code Review Checklist
+## 🟡 Design Issues (2)
 
-| # | File | Issue | Severity |
-|---|------|-------|----------|
-| 1 | `config.yaml` | `save_config()` leak overwrote prod config with test fixtures | 🔴 |
-| 2 | `readme_updater.py` | No guard against empty/placeholder site names | 🟡 |
-| 3 | `main.py` | `save_config()` called unconditionally (even if config didn't change) | 🟡 |
-| 4 | CL init check | No test verifies `save_config()` preserves config.yaml | 🟢 |
+### F3: `config.yaml` — `oneclash` lost `failed_count`
+
+```diff
+-  failed_count: 1
+```
+
+The `failed_count: 1` on the `oneclash` site was removed when `type: simple` was added. This isn't critical (failed_count defaults to 0), but it means oneclash's pattern miss tracking reset to zero, requiring the LLM to be re-invoked next run.
 
 ---
 
-## Tests
+## 🟢 Cleanup (2)
 
-```
-175 passed — 0 failed
-```
+| # | File | Issue | Status |
+|---|------|-------|--------|
+| F4 | `src/site_processor.py` | 2 duplicate import lines (272-273) | ✅ Fixed |
+| F5 | `src/site_processor.py` | `extract_paste_links` imported but only used in yt_pwd flow | Minor — unused import in cloud_drive path |
+
+---
+
+## Summary
+
+| Severity | Count | Fixed |
+|----------|-------|-------|
+| 🔴 Bug | 2 | ✅ |
+| 🟡 Design | 1 | ⚠️ Minor (`failed_count: 1` removed) |
+| 🟢 Cleanup | 2 | ✅ |

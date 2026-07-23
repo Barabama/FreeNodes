@@ -172,6 +172,12 @@ class SiteProcessor:
     async def _run_blog(self, site_type: str) -> SiteResult:
         """Process a blog (simple or yt_pwd type)."""
         result = SiteResult(site_name=self.site.name)
+
+        # Configure proxy for yt-dlp (YouTube access in yt_pwd flow)
+        if self.config.crawl.proxy:
+            from src.youtube import configure as yt_configure
+            yt_configure(self.config.crawl.proxy)
+
         print(f"\n{'='*60}")
         print(f"SITE: {self.site.name} ({self.site.start_url})")
         print(f"Cfg:  pattern={self.site.link_pattern or 'null (LLM)'}")
@@ -269,7 +275,6 @@ class SiteProcessor:
         Also checks for paste.to links with fragment keys.
         """
         from src.youtube import get_video_metadata, extract_password_from_text, extract_paste_links
-        from src.decryptor import detect_protection, try_decrypt, brute_force_4digit, generate_password_candidates
         from src.decryptor import detect_protection, try_decrypt, brute_force_4digit, generate_password_candidates
         from src.paste import extract_paste_url, decrypt_paste
 
