@@ -43,6 +43,7 @@ sites:
   name: clashmeta
   node_count: 20
   start_url: https://clash-meta.github.io/free-nodes/
+  type: simple
   up_date: '2026-07-23'
 - description: blog listing articles with date in title like '6月19日|...', each article
     contains clash/v2ray txt/yaml subscription links
@@ -50,12 +51,14 @@ sites:
   name: nodev2ray
   node_count: 22
   start_url: https://nodev2ray.com/free-node/
+  type: simple
   up_date: '2026-07-23'
 - description: blog with dated articles (URLs contain YYYY-M-D), each article lists
     clash/v2ray/sing-box subscription file links
   name: freeclashnode
   node_count: 2
   start_url: https://www.freeclashnode.com/free-node/
+  type: simple
   up_date: '2026-07-23'
 - description: blog listing articles with date in title and URL, each provides clash/v2ray
     txt/yaml subscription links
@@ -63,30 +66,34 @@ sites:
   name: clashnode
   node_count: 13
   start_url: https://clashnode.cc/free-node/
+  type: simple
   up_date: '2026-07-23'
 - description: blog with article titles containing dates (month-day format), articles
     contain clash/v2ray subscription links
-  failed_count: 1
   link_pattern: https://oss\.oneclash\.cc/\d{4}/\d{2}/\d{8}\.(?:txt|yaml)
   name: oneclash
   node_count: 4
   start_url: https://oneclash.cc/freenode/
+  type: simple
   up_date: '2026-07-23'
 - description: blogger blog, article dates in title as 'YYYY年MM月DD日', each post contains
     subscription links
   link_pattern: https://nodebuf\.com/files/public/[a-z0-9]+/preview
   name: cfmem
   start_url: https://www.cfmem.com/
+  type: simple
 - description: blog with dated articles (title format '2026-06-19'), each article
     lists free subscription links
   name: jichangx
   start_url: https://jichangx.com/free-subscription/
+  type: simple
 - description: blog listing articles with date in title like '2026/6/19' or '6月19日',
     each contains SSR/V2Ray/Clash links
   link_pattern: https?://clashstair\.cczzuu\.top/node/\d{8}\.(?:txt|yaml)
   name: clashstair
   node_count: 6
   start_url: https://clashstair.com/category/freenode/
+  type: simple
   up_date: '2026-07-23'
 - description: blog with dates in both title ('YYYY年MM月DD日') and URL (/post/YYYYMMDD/),
     each post has subscription links
@@ -94,4 +101,29 @@ sites:
   name: datiya
   node_count: 3
   start_url: https://free.datiya.com/
+  type: simple
   up_date: '2026-07-23'
+
+  # ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
+  # Complex: Password-protected blog + YouTube
+  # ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
+
+- name: yudou
+  start_url: https://www.yudou789.top/category/jiedian/
+  type: yt_pwd
+  description: "blog with password-protected articles, password from YouTube video subtitles (4-digit AABB/ABAB)"
+  pwd_hint: "4-digit AABB or ABAB pattern, password verbally given in YouTube video"
+  yt_hint: "each article has a YouTube link, video subtitles contain the decryption password"
+
+- name: fxrj
+  start_url: https://www.youtube.com/@fxrj/videos/
+  type: cloud_drive
+  description: "YouTube channel, each video description contains a Google Drive link, zip file contains subscription files"
+  yt_hint: "video description has '本期资源下载地址' section with drive link"
+
+- name: zyfxs
+  start_url: https://www.youtube.com/@ZYFXS/videos/
+  type: yt_pwd
+  description: "YouTube channel, each video description contains a paste.to link, paste.to requires password from subtitles"
+  pwd_hint: "4-digit password from video subtitles, paste.to fragment key also in description"
+  yt_hint: "video description contains '本期资源' paste.to link with fragment key"
