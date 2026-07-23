@@ -60,8 +60,9 @@ class SiteProcessor:
         print(f"URL:  {self.site.start_url}")
         print(f"{'='*60}")
 
-        from src.youtube import list_channel_videos, extract_date_from_title, extract_external_links, extract_cloud_drive_links
+        from src.youtube import list_channel_videos, get_video_metadata, extract_date_from_title, extract_external_links, extract_cloud_drive_links, extract_paste_links
         from src.drive import extract_drive_id, download_and_extract_zip
+        from src.paste import extract_paste_url, decrypt_paste
 
         # 1. List channel videos
         print(f"\n[1/3] Listing channel videos...")
@@ -121,6 +122,40 @@ class SiteProcessor:
                                 result.yaml_count += 1
                                 result.total_bytes += len(body)
                             print(f"    extracted: {path.name} ({len(body)}B)")
+
+                # Fallback: try paste.to links if no Drive links
+                if not drive_urls:
+                    paste_url = extract_paste_url(video.description)
+                    if paste_url:
+                        print(f"    paste.to found: {paste_url[:60]}...")
+                        # Get password from subtitles
+                        from src.youtube import extract_password_from_text
+                        pwd_list = extract_password_from_text(video.subtitles_text + "\n" + video.description)
+                        for pwd in (pwd_list[:5] or [""]):
+                            paste_page = await decrypt_paste(paste_url, password=pwd)
+                            if paste_page and paste_page.links:
+                                print(f"    paste.to decrypted → {len(paste_page.links)} links")
+                                for link in paste_page.links:
+                                    content = link["href"]
+                                    if content.endswith((".txt", ".yaml", ".yml", ".conf", ".json")):
+                                        try:
+                                            import httpx
+                                            async with httpx.AsyncClient(timeout=30) as c:
+                                                resp = await c.get(content)
+                                                body = resp.text
+                                                ext = content.rsplit(".", 1)[-1]
+                                                if ext == "txt":
+                                                    txt_contents.append(body)
+                                                    result.txt_count += 1
+                                                elif ext in ("yaml", "yml"):
+                                                    yaml_contents.append(body)
+                                                    result.yaml_count += 1
+                                                result.total_bytes += len(body)
+                                                print(f"    downloaded: {content} ({len(body)}B)")
+                                        except Exception as e:
+                                            print(f"    failed: {content} ({e})")
+                                break
+
             except Exception as e:
                 result.errors.append(f"video {p['title'][:40]}...: {e}")
                 continue
@@ -306,7 +341,21 @@ class SiteProcessor:
         """Select the *max_articles* newest articles from a blog listing page.
 
         Rule-only: tries several date formats found across different blog sites.
+        Falls back to scanning markdown content for article links when ``links`` is empty.
         """
+        articles: list[dict] = []
+
+        # Strategy 1: Use Crawl4AI's parsed links
+        articles = self._pick_articles_from_links(blog)
+        if articles:
+            return articles
+
+        # Strategy 2: Fallback — parse markdown for [title](url) article links
+        articles = self._pick_articles_from_markdown(blog.markdown)
+        return articles[:self.max_articles]
+
+    def _pick_articles_from_links(self, blog: Page) -> list[dict]:
+        """Extract article links from Crawl4AI's parsed link list."""
         articles: list[dict] = []
         for link in blog.links:
             text = link.get("text", "")
@@ -324,6 +373,29 @@ class SiteProcessor:
 
             full = urljoin(self._base, href)
             articles.append({"url": full, "date": d, "text": text[:80]})
+
+        seen: set[str] = set()
+        unique: list[dict] = []
+        for a in sorted(articles, key=lambda x: x["date"], reverse=True):
+            if a["url"] not in seen:
+                seen.add(a["url"])
+                unique.append(a)
+        return unique[:self.max_articles]
+
+    def _pick_articles_from_markdown(self, markdown: str) -> list[dict]:
+        """Fallback: parse markdown headings for ``[title](url)`` article links with Chinese dates.
+
+        Handles WordPress blogs where articles are rendered in headings
+        but not captured in Crawl4AI's ``links`` structure (e.g. yudou, oneclash).
+        """
+        articles: list[dict] = []
+        # Match markdown headings: ## [title text](url)
+        for m in re.finditer(r'^## \[(.+?)\]\((https?://[^\s)]+)\)', markdown, re.MULTILINE):
+            text = m.group(1)
+            url = m.group(2).rstrip('.,;)')
+            d = self._parse_article_date(text, url)
+            if d:
+                articles.append({"url": url, "date": d, "text": text[:80]})
 
         seen: set[str] = set()
         unique: list[dict] = []

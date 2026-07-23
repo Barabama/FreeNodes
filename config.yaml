@@ -103,27 +103,29 @@ sites:
   start_url: https://free.datiya.com/
   type: simple
   up_date: '2026-07-23'
-
-  # ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
-  # Complex: Password-protected blog + YouTube
-  # ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
-
-- name: yudou
+- description: blog with password-protected articles, password from YouTube video
+    subtitles (4-digit AABB/ABAB)
+  name: yudou
+  node_count: 2
+  pwd_hint: 4-digit AABB or ABAB pattern, password verbally given in YouTube video
   start_url: https://www.yudou789.top/category/jiedian/
   type: yt_pwd
-  description: "blog with password-protected articles, password from YouTube video subtitles (4-digit AABB/ABAB)"
-  pwd_hint: "4-digit AABB or ABAB pattern, password verbally given in YouTube video"
-  yt_hint: "each article has a YouTube link, video subtitles contain the decryption password"
-
-- name: fxrj
+  up_date: '2026-07-23'
+  yt_hint: each article has a YouTube link, video subtitles contain the decryption
+    password
+- description: YouTube channel, each video description contains a Google Drive link,
+    zip file contains subscription files
+  name: fxrj
+  node_count: 6
   start_url: https://www.youtube.com/@fxrj/videos/
   type: cloud_drive
-  description: "YouTube channel, each video description contains a Google Drive link, zip file contains subscription files"
-  yt_hint: "video description has '本期资源下载地址' section with drive link"
-
-- name: zyfxs
+  up_date: '2026-07-23'
+  yt_hint: video description has '本期资源下载地址' section with drive link
+- description: YouTube channel, each video description contains a paste.to link, paste.to
+    requires password from subtitles
+  name: zyfxs
+  pwd_hint: 4-digit password from video subtitles, paste.to fragment key also in description
   start_url: https://www.youtube.com/@ZYFXS/videos/
-  type: yt_pwd
-  description: "YouTube channel, each video description contains a paste.to link, paste.to requires password from subtitles"
-  pwd_hint: "4-digit password from video subtitles, paste.to fragment key also in description"
-  yt_hint: "video description contains '本期资源' paste.to link with fragment key"
+  type: cloud_drive
+  up_date: '2026-07-23'
+  yt_hint: video description contains '本期资源' paste.to link with fragment key
