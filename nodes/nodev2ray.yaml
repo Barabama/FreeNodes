@@ -240441,314 +240441,314 @@ rules:
   - 'GEOIP,CN,🎯 全球直连'
   - 'MATCH,🐟 漏网之鱼'
 ---
-mixed-port: 7890
-allow-lan: true
-mode: rule
-log-level: info
-ipv6: true
-external-controller: 127.0.0.1:9090
-dns:
-  enable: true
-  listen: 0.0.0.0:1053
-  ipv6: true
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
-  default-nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
-  nameserver:
-    - https://dns.alidns.com/dns-query
-    - https://doh.pub/dns-query
-proxies:
-  - name: 🇫🇷_FR_法国
-    type: vless
-    server: fr.noooo.win
-    port: 443
-    uuid: 7b241232-208d-4d36-857e-913f91b044f4
-    tls: true
-    flow: xtls-rprx-vision
-    skip-cert-verify: true
-    udp: true
-  - name: 🇭🇰_HK_中国香港
-    type: vless
-    server: 47.86.55.200
-    port: 19321
-    uuid: 394086c4-d8a4-4298-9b62-f70fa711082d
-    tls: false
-    skip-cert-verify: true
-    udp: true
-  - name: 🇺🇸_US_美国
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    udp: true
-  - name: 🇭🇰_HK_中国香港_1
-    type: vmess
-    server: 154.37.223.19
-    port: 56972
-    uuid: ae225455-5e8c-491d-d931-c06ac56f4aee
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    network: http
-    udp: true
-  - name: 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
-    type: vless
-    server: r1.mizulina.top
-    port: 22231
-    uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
-    servername: r1.mizulina.top
-    tls: true
-    flow: xtls-rprx-vision
-    client-fingerprint: edge
-    skip-cert-verify: true
-    udp: true
-  - name: 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_1
-    type: vless
-    server: 85.234.114.53
-    port: 443
-    uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
-    servername: r1.mizulina.top
-    tls: true
-    flow: xtls-rprx-vision
-    client-fingerprint: edge
-    skip-cert-verify: true
-    udp: true
-  - name: 🇮🇩_ID_印度尼西亚->🇫🇷_FR_法国
-    type: vmess
-    server: v35.hdacd.com
-    port: 30835
-    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-    alterId: 2
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    udp: true
-  - name: 🇭🇰_HK_中国香港_2
-    type: vmess
-    server: v10.hdacd.com
-    port: 30807
-    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-    alterId: 2
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    udp: true
-  - name: 🇺🇸_US_美国_1
-    type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    udp: true
-  - name: 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_2
-    type: vless
-    server: 85.234.114.53
-    port: 22231
-    uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
-    servername: r1.mizulina.top
-    tls: true
-    flow: xtls-rprx-vision
-    client-fingerprint: edge
-    skip-cert-verify: true
-    udp: true
-  - name: 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
-    type: trojan
-    server: 90081bb25c.node.tro.cac.cab
-    port: 41943
-    password: 4f4d1167-ef14-4304-9bce-0740472503ef
-    sni: az.01.naiun.bilibili.com
-    skip-cert-verify: true
-    tls: false
-    udp: true
-  - name: 🇮🇩_ID_印度尼西亚->🇬🇧_GB_英国
-    type: vmess
-    server: v36.hdacd.com
-    port: 30836
-    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-    alterId: 2
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    udp: true
-  - name: 🇺🇸_US_美国_2
-    type: vless
-    server: 47.77.214.201
-    port: 10035
-    uuid: e4e7866d-920b-4a53-a8e2-6ae9b2a42fc2
-    tls: false
-    skip-cert-verify: true
-    udp: true
-  - name: 🇺🇸_US_美国_3
-    type: trojan
-    server: 90081bb25c.node.tro.cac.cab
-    port: 48697
-    password: 4f4d1167-ef14-4304-9bce-0740472503ef
-    sni: gh.01.naiun.bilibili.com
-    skip-cert-verify: true
-    tls: false
-    udp: true
-proxy-groups:
-  - name: 🚀 节点选择
-    type: select
-    proxies:
-      - ♻️ 自动选择
-      - DIRECT
-      - 🇫🇷_FR_法国
-      - 🇭🇰_HK_中国香港
-      - 🇺🇸_US_美国
-      - 🇭🇰_HK_中国香港_1
-      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
-      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_1
-      - 🇮🇩_ID_印度尼西亚->🇫🇷_FR_法国
-      - 🇭🇰_HK_中国香港_2
-      - 🇺🇸_US_美国_1
-      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_2
-      - 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
-      - 🇮🇩_ID_印度尼西亚->🇬🇧_GB_英国
-      - 🇺🇸_US_美国_2
-      - 🇺🇸_US_美国_3
-  - name: ♻️ 自动选择
-    type: url-test
-    proxies:
-      - 🇫🇷_FR_法国
-      - 🇭🇰_HK_中国香港
-      - 🇺🇸_US_美国
-      - 🇭🇰_HK_中国香港_1
-      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
-      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_1
-      - 🇮🇩_ID_印度尼西亚->🇫🇷_FR_法国
-      - 🇭🇰_HK_中国香港_2
-      - 🇺🇸_US_美国_1
-      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_2
-      - 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
-      - 🇮🇩_ID_印度尼西亚->🇬🇧_GB_英国
-      - 🇺🇸_US_美国_2
-      - 🇺🇸_US_美国_3
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
-  - name: 🌍 国外媒体
-    type: select
-    proxies:
-      - 🚀 节点选择
-      - ♻️ 自动选择
-      - 🎯 全球直连
-      - 🇫🇷_FR_法国
-      - 🇭🇰_HK_中国香港
-      - 🇺🇸_US_美国
-      - 🇭🇰_HK_中国香港_1
-      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
-      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_1
-      - 🇮🇩_ID_印度尼西亚->🇫🇷_FR_法国
-      - 🇭🇰_HK_中国香港_2
-      - 🇺🇸_US_美国_1
-      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_2
-      - 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
-      - 🇮🇩_ID_印度尼西亚->🇬🇧_GB_英国
-      - 🇺🇸_US_美国_2
-      - 🇺🇸_US_美国_3
-  - name: 📲 电报信息
-    type: select
-    proxies:
-      - 🚀 节点选择
-      - 🎯 全球直连
-      - 🇫🇷_FR_法国
-      - 🇭🇰_HK_中国香港
-      - 🇺🇸_US_美国
-      - 🇭🇰_HK_中国香港_1
-      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
-      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_1
-      - 🇮🇩_ID_印度尼西亚->🇫🇷_FR_法国
-      - 🇭🇰_HK_中国香港_2
-      - 🇺🇸_US_美国_1
-      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_2
-      - 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
-      - 🇮🇩_ID_印度尼西亚->🇬🇧_GB_英国
-      - 🇺🇸_US_美国_2
-      - 🇺🇸_US_美国_3
-  - name: Ⓜ️ 微软服务
-    type: select
-    proxies:
-      - 🎯 全球直连
-      - 🚀 节点选择
-      - 🇫🇷_FR_法国
-      - 🇭🇰_HK_中国香港
-      - 🇺🇸_US_美国
-      - 🇭🇰_HK_中国香港_1
-      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
-      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_1
-      - 🇮🇩_ID_印度尼西亚->🇫🇷_FR_法国
-      - 🇭🇰_HK_中国香港_2
-      - 🇺🇸_US_美国_1
-      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_2
-      - 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
-      - 🇮🇩_ID_印度尼西亚->🇬🇧_GB_英国
-      - 🇺🇸_US_美国_2
-      - 🇺🇸_US_美国_3
-  - name: 🍎 苹果服务
-    type: select
-    proxies:
-      - 🚀 节点选择
-      - 🎯 全球直连
-      - 🇫🇷_FR_法国
-      - 🇭🇰_HK_中国香港
-      - 🇺🇸_US_美国
-      - 🇭🇰_HK_中国香港_1
-      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
-      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_1
-      - 🇮🇩_ID_印度尼西亚->🇫🇷_FR_法国
-      - 🇭🇰_HK_中国香港_2
-      - 🇺🇸_US_美国_1
-      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_2
-      - 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
-      - 🇮🇩_ID_印度尼西亚->🇬🇧_GB_英国
-      - 🇺🇸_US_美国_2
-      - 🇺🇸_US_美国_3
-  - name: 🎯 全球直连
-    type: select
-    proxies:
-      - DIRECT
-      - 🚀 节点选择
-      - ♻️ 自动选择
-  - name: 🛑 全球拦截
-    type: select
-    proxies:
-      - REJECT
-      - DIRECT
-  - name: 🍃 应用净化
-    type: select
-    proxies:
-      - REJECT
-      - DIRECT
-  - name: 🐟 漏网之鱼
-    type: select
-    proxies:
-      - 🚀 节点选择
-      - 🎯 全球直连
-      - ♻️ 自动选择
-      - 🇫🇷_FR_法国
-      - 🇭🇰_HK_中国香港
-      - 🇺🇸_US_美国
-      - 🇭🇰_HK_中国香港_1
-      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
-      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_1
-      - 🇮🇩_ID_印度尼西亚->🇫🇷_FR_法国
-      - 🇭🇰_HK_中国香港_2
-      - 🇺🇸_US_美国_1
-      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_2
-      - 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
-      - 🇮🇩_ID_印度尼西亚->🇬🇧_GB_英国
-      - 🇺🇸_US_美国_2
+mixed-port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+ipv6: true
+external-controller: 127.0.0.1:9090
+dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  ipv6: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  default-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+  nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+proxies:
+  - name: 🇫🇷_FR_法国
+    type: vless
+    server: fr.noooo.win
+    port: 443
+    uuid: 7b241232-208d-4d36-857e-913f91b044f4
+    tls: true
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    udp: true
+  - name: 🇭🇰_HK_中国香港
+    type: vless
+    server: 47.86.55.200
+    port: 19321
+    uuid: 394086c4-d8a4-4298-9b62-f70fa711082d
+    tls: false
+    skip-cert-verify: true
+    udp: true
+  - name: 🇺🇸_US_美国
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    udp: true
+  - name: 🇭🇰_HK_中国香港_1
+    type: vmess
+    server: 154.37.223.19
+    port: 56972
+    uuid: ae225455-5e8c-491d-d931-c06ac56f4aee
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    network: http
+    udp: true
+  - name: 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
+    type: vless
+    server: r1.mizulina.top
+    port: 22231
+    uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
+    servername: r1.mizulina.top
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: edge
+    skip-cert-verify: true
+    udp: true
+  - name: 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_1
+    type: vless
+    server: 85.234.114.53
+    port: 443
+    uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
+    servername: r1.mizulina.top
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: edge
+    skip-cert-verify: true
+    udp: true
+  - name: 🇮🇩_ID_印度尼西亚->🇫🇷_FR_法国
+    type: vmess
+    server: v35.hdacd.com
+    port: 30835
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 2
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    udp: true
+  - name: 🇭🇰_HK_中国香港_2
+    type: vmess
+    server: v10.hdacd.com
+    port: 30807
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 2
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    udp: true
+  - name: 🇺🇸_US_美国_1
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    udp: true
+  - name: 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_2
+    type: vless
+    server: 85.234.114.53
+    port: 22231
+    uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
+    servername: r1.mizulina.top
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: edge
+    skip-cert-verify: true
+    udp: true
+  - name: 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
+    type: trojan
+    server: 90081bb25c.node.tro.cac.cab
+    port: 41943
+    password: 4f4d1167-ef14-4304-9bce-0740472503ef
+    sni: az.01.naiun.bilibili.com
+    skip-cert-verify: true
+    tls: false
+    udp: true
+  - name: 🇮🇩_ID_印度尼西亚->🇬🇧_GB_英国
+    type: vmess
+    server: v36.hdacd.com
+    port: 30836
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 2
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    udp: true
+  - name: 🇺🇸_US_美国_2
+    type: vless
+    server: 47.77.214.201
+    port: 10035
+    uuid: e4e7866d-920b-4a53-a8e2-6ae9b2a42fc2
+    tls: false
+    skip-cert-verify: true
+    udp: true
+  - name: 🇺🇸_US_美国_3
+    type: trojan
+    server: 90081bb25c.node.tro.cac.cab
+    port: 48697
+    password: 4f4d1167-ef14-4304-9bce-0740472503ef
+    sni: gh.01.naiun.bilibili.com
+    skip-cert-verify: true
+    tls: false
+    udp: true
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - DIRECT
+      - 🇫🇷_FR_法国
+      - 🇭🇰_HK_中国香港
+      - 🇺🇸_US_美国
+      - 🇭🇰_HK_中国香港_1
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_1
+      - 🇮🇩_ID_印度尼西亚->🇫🇷_FR_法国
+      - 🇭🇰_HK_中国香港_2
+      - 🇺🇸_US_美国_1
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_2
+      - 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
+      - 🇮🇩_ID_印度尼西亚->🇬🇧_GB_英国
+      - 🇺🇸_US_美国_2
+      - 🇺🇸_US_美国_3
+  - name: ♻️ 自动选择
+    type: url-test
+    proxies:
+      - 🇫🇷_FR_法国
+      - 🇭🇰_HK_中国香港
+      - 🇺🇸_US_美国
+      - 🇭🇰_HK_中国香港_1
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_1
+      - 🇮🇩_ID_印度尼西亚->🇫🇷_FR_法国
+      - 🇭🇰_HK_中国香港_2
+      - 🇺🇸_US_美国_1
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_2
+      - 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
+      - 🇮🇩_ID_印度尼西亚->🇬🇧_GB_英国
+      - 🇺🇸_US_美国_2
+      - 🇺🇸_US_美国_3
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+  - name: 🌍 国外媒体
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🎯 全球直连
+      - 🇫🇷_FR_法国
+      - 🇭🇰_HK_中国香港
+      - 🇺🇸_US_美国
+      - 🇭🇰_HK_中国香港_1
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_1
+      - 🇮🇩_ID_印度尼西亚->🇫🇷_FR_法国
+      - 🇭🇰_HK_中国香港_2
+      - 🇺🇸_US_美国_1
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_2
+      - 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
+      - 🇮🇩_ID_印度尼西亚->🇬🇧_GB_英国
+      - 🇺🇸_US_美国_2
+      - 🇺🇸_US_美国_3
+  - name: 📲 电报信息
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - 🇫🇷_FR_法国
+      - 🇭🇰_HK_中国香港
+      - 🇺🇸_US_美国
+      - 🇭🇰_HK_中国香港_1
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_1
+      - 🇮🇩_ID_印度尼西亚->🇫🇷_FR_法国
+      - 🇭🇰_HK_中国香港_2
+      - 🇺🇸_US_美国_1
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_2
+      - 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
+      - 🇮🇩_ID_印度尼西亚->🇬🇧_GB_英国
+      - 🇺🇸_US_美国_2
+      - 🇺🇸_US_美国_3
+  - name: Ⓜ️ 微软服务
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+      - 🇫🇷_FR_法国
+      - 🇭🇰_HK_中国香港
+      - 🇺🇸_US_美国
+      - 🇭🇰_HK_中国香港_1
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_1
+      - 🇮🇩_ID_印度尼西亚->🇫🇷_FR_法国
+      - 🇭🇰_HK_中国香港_2
+      - 🇺🇸_US_美国_1
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_2
+      - 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
+      - 🇮🇩_ID_印度尼西亚->🇬🇧_GB_英国
+      - 🇺🇸_US_美国_2
+      - 🇺🇸_US_美国_3
+  - name: 🍎 苹果服务
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - 🇫🇷_FR_法国
+      - 🇭🇰_HK_中国香港
+      - 🇺🇸_US_美国
+      - 🇭🇰_HK_中国香港_1
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_1
+      - 🇮🇩_ID_印度尼西亚->🇫🇷_FR_法国
+      - 🇭🇰_HK_中国香港_2
+      - 🇺🇸_US_美国_1
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_2
+      - 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
+      - 🇮🇩_ID_印度尼西亚->🇬🇧_GB_英国
+      - 🇺🇸_US_美国_2
+      - 🇺🇸_US_美国_3
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+  - name: 🛑 全球拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🍃 应用净化
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - ♻️ 自动选择
+      - 🇫🇷_FR_法国
+      - 🇭🇰_HK_中国香港
+      - 🇺🇸_US_美国
+      - 🇭🇰_HK_中国香港_1
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_1
+      - 🇮🇩_ID_印度尼西亚->🇫🇷_FR_法国
+      - 🇭🇰_HK_中国香港_2
+      - 🇺🇸_US_美国_1
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_2
+      - 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
+      - 🇮🇩_ID_印度尼西亚->🇬🇧_GB_英国
+      - 🇺🇸_US_美国_2
       - 🇺🇸_US_美国_3
 ---
 port: 7890
