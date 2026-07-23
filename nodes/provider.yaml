@@ -1,5 +1,5 @@
 # FreeNodeSpider - Proxy-provider based config (for Clash Meta / Mihomo)
-# Generated: 2026-06-23 20:06:06
+# Generated: 2026-07-23 06:31:40
 # Docs: https://github.com/FreeNodeSpider
 # ------------------------------------------------------------
 allow-lan: true
@@ -17,9 +17,9 @@ log-level: info
 mixed-port: 7890
 mode: rule
 proxy-groups:
-- include: (加拿大|CA|Canada|Toronto|YVR|YYZ)
+- include: (澳大利亚|AU|Australia|Sydney|SYD)
   interval: 300
-  name: 🇨🇦 CA 加拿大
+  name: 🇦🇺 AU 澳大利亚
   type: url-test
   url: http://www.gstatic.com/generate_204
   use: &id001
@@ -30,6 +30,12 @@ proxy-groups:
   - freeclashnode
   - nodev2ray
   - oneclash
+- include: (加拿大|CA|Canada|Toronto|YVR|YYZ)
+  interval: 300
+  name: 🇨🇦 CA 加拿大
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  use: *id001
 - include: (德国|DE|Germany|Frankfurt|FRA)
   interval: 300
   name: 🇩🇪 DE 德国
@@ -54,6 +60,12 @@ proxy-groups:
   type: url-test
   url: http://www.gstatic.com/generate_204
   use: *id001
+- include: (印度|IN|India|Mumbai|BOM)
+  interval: 300
+  name: 🇮🇳 IN 印度
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  use: *id001
 - include: (日本|JP|Japan|TYO|Tokyo|Osaka|NRT)
   interval: 300
   name: 🇯🇵 JP 日本
@@ -69,6 +81,12 @@ proxy-groups:
 - include: (荷兰|NL|Netherlands|Amsterdam)
   interval: 300
   name: 🇳🇱 NL 荷兰
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  use: *id001
+- include: (俄罗斯|RU|Russia|Moscow)
+  interval: 300
+  name: 🇷🇺 RU 俄罗斯
   type: url-test
   url: http://www.gstatic.com/generate_204
   use: *id001
@@ -105,14 +123,17 @@ proxy-groups:
 - name: 🌍 手动选择
   proxies:
   - 🚀 自动选择
+  - 🇦🇺 AU 澳大利亚
   - 🇨🇦 CA 加拿大
   - 🇩🇪 DE 德国
   - 🇫🇷 FR 法国
   - 🇬🇧 GB 英国
   - 🇭🇰 HK 香港
+  - 🇮🇳 IN 印度
   - 🇯🇵 JP 日本
   - 🇰🇷 KR 韩国
   - 🇳🇱 NL 荷兰
+  - 🇷🇺 RU 俄罗斯
   - 🇸🇬 SG 新加坡
   - 🇹🇼 TW 台湾
   - 🇺🇸 US 美国
