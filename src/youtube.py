@@ -6,12 +6,31 @@ yt-dlp handles anti-bot measures better and requires no OAuth.
 import asyncio
 import json
 import logging
+import os
 import re
 import tempfile
 from dataclasses import dataclass
 from pathlib import Path
 
 logger = logging.getLogger(__name__)
+
+# Proxy config — set via config.yaml crawl.proxy
+_YOUTUBE_PROXY: str = ""
+
+
+def configure(proxy: str = ""):
+    """Set global proxy for yt-dlp subprocess calls."""
+    global _YOUTUBE_PROXY
+    _YOUTUBE_PROXY = proxy
+
+
+def _proxy_env() -> dict[str, str]:
+    """Return environment dict with proxy set for yt-dlp subprocess."""
+    env = os.environ.copy()
+    if _YOUTUBE_PROXY:
+        env["HTTP_PROXY"] = _YOUTUBE_PROXY
+        env["HTTPS_PROXY"] = _YOUTUBE_PROXY
+    return env
 
 
 @dataclass
@@ -46,6 +65,7 @@ async def list_channel_videos(channel_url: str, limit: int = 10) -> list[YouTube
     try:
         proc = await asyncio.create_subprocess_exec(
             *cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE,
+            env=_proxy_env(),
         )
         stdout, stderr = await asyncio.wait_for(proc.communicate(), timeout=60)
     except asyncio.TimeoutError:
@@ -98,6 +118,7 @@ async def get_video_metadata(video_url: str) -> YouTubeVideo:
     try:
         proc = await asyncio.create_subprocess_exec(
             *cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE,
+            env=_proxy_env(),
         )
         stdout, stderr = await asyncio.wait_for(proc.communicate(), timeout=60)
     except asyncio.TimeoutError:

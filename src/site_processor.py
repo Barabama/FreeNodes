@@ -60,6 +60,11 @@ class SiteProcessor:
         print(f"URL:  {self.site.start_url}")
         print(f"{'='*60}")
 
+        # Configure proxy for yt-dlp (YouTube access)
+        if self.config.crawl.proxy:
+            from src.youtube import configure as yt_configure
+            yt_configure(self.config.crawl.proxy)
+
         from src.youtube import list_channel_videos, get_video_metadata, extract_date_from_title, extract_external_links, extract_cloud_drive_links, extract_paste_links
         from src.drive import extract_drive_id, download_and_extract_zip
         from src.paste import extract_paste_url, decrypt_paste
@@ -263,8 +268,8 @@ class SiteProcessor:
 
         Also checks for paste.to links with fragment keys.
         """
-        from src.youtube import get_video_metadata, extract_password_from_text
-        from src.youtube import extract_paste_links
+        from src.youtube import get_video_metadata, extract_password_from_text, extract_paste_links
+        from src.decryptor import detect_protection, try_decrypt, brute_force_4digit, generate_password_candidates
         from src.decryptor import detect_protection, try_decrypt, brute_force_4digit, generate_password_candidates
         from src.paste import extract_paste_url, decrypt_paste
 

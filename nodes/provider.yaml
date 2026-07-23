@@ -1,5 +1,5 @@
 # FreeNodeSpider - Proxy-provider based config (for Clash Meta / Mihomo)
-# Generated: 2026-07-23 18:53:46
+# Generated: 2026-07-23 19:52:19
 # Docs: https://github.com/FreeNodeSpider
 # ------------------------------------------------------------
 allow-lan: true
@@ -28,8 +28,10 @@ proxy-groups:
   - clashstair
   - datiya
   - freeclashnode
+  - fxrj
   - nodev2ray
   - oneclash
+  - yudou
 - include: (加拿大|CA|Canada|Toronto|YVR|YYZ)
   interval: 300
   name: 🇨🇦 CA 加拿大
@@ -118,8 +120,10 @@ proxy-groups:
   - clashstair
   - datiya
   - freeclashnode
+  - fxrj
   - nodev2ray
   - oneclash
+  - yudou
 - name: 🌍 手动选择
   proxies:
   - 🚀 自动选择
@@ -174,6 +178,13 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
     path: ./nodes/freeclashnode.yaml
     type: file
+  fxrj:
+    health-check:
+      enable: true
+      interval: 300
+      url: http://www.gstatic.com/generate_204
+    path: ./nodes/fxrj.yaml
+    type: file
   nodev2ray:
     health-check:
       enable: true
@@ -187,6 +198,13 @@ proxy-providers:
       interval: 300
       url: http://www.gstatic.com/generate_204
     path: ./nodes/oneclash.yaml
+    type: file
+  yudou:
+    health-check:
+      enable: true
+      interval: 300
+      url: http://www.gstatic.com/generate_204
+    path: ./nodes/yudou.yaml
     type: file
 rules:
 - MATCH,🌍 手动选择

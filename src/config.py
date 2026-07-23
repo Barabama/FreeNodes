@@ -39,6 +39,7 @@ class CrawlConfig:
     max_articles: int = 3
     timeout: int = 30
     concurrency: int = 3
+    proxy: str = ""                             # HTTP proxy for YouTube access
 
 
 @dataclass
