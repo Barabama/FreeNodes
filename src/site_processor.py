@@ -36,6 +36,7 @@ class SiteProcessor:
     """Process a single site end-to-end: blog/videos → links → download → save."""
 
     def __init__(self, site: SiteConfig, config: Config, llm: LLMRouter):
+        self.config = config
         self.site = site
         self.max_articles = config.crawl.max_articles
         self.output_dir = config.output.get("dir", "nodes")
