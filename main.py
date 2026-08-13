@@ -14,6 +14,13 @@ from dotenv import load_dotenv
 from src.config import load_config, save_config
 from src.scheduler import Scheduler
 
+# Windows console (GBK) can't encode flag emojis in summary output.
+# Force UTF-8 with replacement chars so prints don't crash.
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
 load_dotenv()
 sys.path.insert(0, ".")
 

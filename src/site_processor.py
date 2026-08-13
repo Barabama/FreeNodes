@@ -203,8 +203,7 @@ class SiteProcessor:
 
         # 3. Process each article
         print(f"\n[3/4] Processing {len(articles)} articles...")
-        all_txt: set[str] = set()
-        all_yaml: set[str] = set()
+        all_links: set[str] = set()
         pattern_saved = False
 
         for i, article in enumerate(articles):
@@ -223,48 +222,41 @@ class SiteProcessor:
             if not links and site_type in ('yt_pwd', 'youtube_password'):
                 links = await self._try_youtube_password_flow(article_page)
 
-            for url in links:
-                if url.endswith(".txt"):
-                    all_txt.add(url)
-                elif url.endswith(".yaml"):
-                    all_yaml.add(url)
+            all_links.update(links)
 
         result.articles_processed = len(articles)
         result.pattern_saved = pattern_saved
         result.link_pattern = self.site.link_pattern
 
-        total_links = len(all_txt) + len(all_yaml)
-        print(f"\n       total: {len(all_txt)} txt + {len(all_yaml)} yaml = {total_links} unique links")
+        total_links = len(all_links)
+        print(f"\n       total: {total_links} unique links")
         if not total_links:
             result.errors.append("no subscription links found")
             return result
 
-        # 4. Download files
+        # 4. Download files — detect type from content, not URL extension.
+        # Some sites use extension-less subscription URLs (cfmem /preview,
+        # jichangx /nodes/v2ray-YYYYMMDD-01).
         print(f"\n[4/4] Downloading {total_links} files (up to 3 retries)...")
         txt_contents: list[str] = []
         yaml_contents: list[str] = []
 
-        for url in sorted(all_txt):
+        for url in sorted(all_links):
             body = await self._download_retry(url)
-            if body:
-                txt_contents.append(body)
-                result.txt_count += 1
-                result.total_bytes += len(body)
-                print(f"  OK  txt: {url} ({len(body)}B)")
-            else:
-                result.errors.append(f"txt download failed: {url}")
-                print(f"  FAIL txt: {url}")
-
-        for url in sorted(all_yaml):
-            body = await self._download_retry(url)
-            if body:
+            if not body:
+                result.errors.append(f"download failed: {url}")
+                print(f"  FAIL: {url}")
+                continue
+            if self._is_yaml_content(body):
                 yaml_contents.append(body)
                 result.yaml_count += 1
                 result.total_bytes += len(body)
                 print(f"  OK  yaml: {url} ({len(body)}B)")
             else:
-                result.errors.append(f"yaml download failed: {url}")
-                print(f"  FAIL yaml: {url}")
+                txt_contents.append(body)
+                result.txt_count += 1
+                result.total_bytes += len(body)
+                print(f"  OK  txt: {url} ({len(body)}B)")
 
         return self._save_and_finish(result, txt_contents, yaml_contents)
 
@@ -504,6 +496,21 @@ class SiteProcessor:
         print(f"{'='*60}")
 
         return result
+
+    @staticmethod
+    def _is_yaml_content(body: str) -> bool:
+        """Detect if downloaded content is Clash YAML vs plain-text node list.
+
+        YAML configs contain YAML structure keys like ``proxies:``, ``mixed-port:``,
+        or ``proxy-groups:`` at the start of lines. Plain node lists contain
+        protocol links (vmess://, ss://) or base64.
+        """
+        for line in body.splitlines()[:20]:
+            line = line.strip()
+            if line.startswith(("proxies:", "proxy-groups:", "mixed-port:",
+                                "allow-lan:", "mode:", "rules:", "dns:")):
+                return True
+        return False
 
     @staticmethod
     def _parse_article_date(text: str, href: str) -> str | None:

@@ -8,9 +8,17 @@ Three output modes:
 import base64
 import hashlib
 import re
+import sys
 from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
+
+# Windows console uses GBK which can't encode flag emoji in region names.
+# Force UTF-8 output with replacement chars instead of crashing.
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
 
 
 @dataclass
@@ -71,10 +79,17 @@ class Merger:
             result.txt_sources += 1
             try:
                 raw = f.read_text(encoding="utf-8", errors="replace")
-                # Base64 decode if possible (standard V2Ray sub encoding)
-                try:
-                    decoded = base64.b64decode(raw).decode("utf-8", errors="replace")
-                except Exception:
+                # Only base64-decode if the file is actually base64-encoded.
+                # Pipeline already decodes subscription files when saving,
+                # so files may already be plain text (vmess:// lines).
+                # Re-decoding plain text silently corrupts it (base64 ignores
+                # invalid chars and produces garbage).
+                if self._is_base64_sub(raw):
+                    try:
+                        decoded = base64.b64decode(raw).decode("utf-8", errors="replace")
+                    except Exception:
+                        decoded = raw
+                else:
                     decoded = raw
                 for line in decoded.splitlines():
                     line = line.strip()
@@ -216,6 +231,22 @@ class Merger:
         return str(out)
 
     # ── Helpers ──
+
+    @staticmethod
+    def _is_base64_sub(raw: str) -> bool:
+        """Detect if txt content is base64-encoded subscription data.
+
+        Plain-text subscription files contain protocol links (vmess://, ss://…).
+        Base64-encoded files contain only base64 alphabet + whitespace + padding.
+        """
+        stripped = raw.strip()
+        if not stripped:
+            return False
+        # If it already contains protocol links, it's plain text.
+        if re.search(r'(vmess|vless|trojan|ss|ssr|socks|hysteria)://', stripped):
+            return False
+        # Check if it looks like base64: only [A-Za-z0-9+/=\s]
+        return bool(re.fullmatch(r'[A-Za-z0-9+/=\s]+', stripped))
 
     @staticmethod
     def _dedup_proxies(proxies: list[dict]) -> list[dict]:

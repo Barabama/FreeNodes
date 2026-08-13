@@ -73,11 +73,11 @@ async def list_channel_videos(channel_url: str, limit: int = 10) -> list[YouTube
         return []
 
     if proc.returncode != 0:
-        logger.warning("yt-dlp list_channel failed: %s", stderr.decode()[:200])
+        logger.warning("yt-dlp list_channel failed: %s", stderr.decode(errors="replace")[:200])
         return []
 
     videos: list[YouTubeVideo] = []
-    for line in stdout.decode().strip().splitlines():
+    for line in stdout.decode(errors="replace").strip().splitlines():
         try:
             data = json.loads(line)
         except json.JSONDecodeError:
@@ -129,10 +129,10 @@ async def get_video_metadata(video_url: str) -> YouTubeVideo:
     if proc.returncode != 0:
         return YouTubeVideo(url=video_url, video_id=video_id, title="",
                             description="", upload_date="", subtitles_text="",
-                            channel="", error=stderr.decode()[:200])
+                            channel="", error=stderr.decode(errors="replace")[:200])
 
     try:
-        data = json.loads(stdout.decode())
+        data = json.loads(stdout.decode(errors="replace"))
     except (json.JSONDecodeError, UnicodeDecodeError):
         return YouTubeVideo(url=video_url, video_id=video_id, title="",
                             description="", upload_date="", subtitles_text="",
