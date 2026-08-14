@@ -1,95 +1,591 @@
-<!DOCTYPE html><html  lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>访问声明</title><style id="nuxt-ui-colors">@layer theme {
-:root, :host {
---ui-color-primary-50: var(--color-sky-50, oklch(97.7% 0.013 236.62));
---ui-color-primary-100: var(--color-sky-100, oklch(95.1% 0.026 236.824));
---ui-color-primary-200: var(--color-sky-200, oklch(90.1% 0.058 230.902));
---ui-color-primary-300: var(--color-sky-300, oklch(82.8% 0.111 230.318));
---ui-color-primary-400: var(--color-sky-400, oklch(74.6% 0.16 232.661));
---ui-color-primary-500: var(--color-sky-500, oklch(68.5% 0.169 237.323));
---ui-color-primary-600: var(--color-sky-600, oklch(58.8% 0.158 241.966));
---ui-color-primary-700: var(--color-sky-700, oklch(50% 0.134 242.749));
---ui-color-primary-800: var(--color-sky-800, oklch(44.3% 0.11 240.79));
---ui-color-primary-900: var(--color-sky-900, oklch(39.1% 0.09 240.876));
---ui-color-primary-950: var(--color-sky-950, oklch(29.3% 0.066 243.157));
---ui-color-secondary-50: var(--color-blue-50, oklch(97% 0.014 254.604));
---ui-color-secondary-100: var(--color-blue-100, oklch(93.2% 0.032 255.585));
---ui-color-secondary-200: var(--color-blue-200, oklch(88.2% 0.059 254.128));
---ui-color-secondary-300: var(--color-blue-300, oklch(80.9% 0.105 251.813));
---ui-color-secondary-400: var(--color-blue-400, oklch(70.7% 0.165 254.624));
---ui-color-secondary-500: var(--color-blue-500, oklch(62.3% 0.214 259.815));
---ui-color-secondary-600: var(--color-blue-600, oklch(54.6% 0.245 262.881));
---ui-color-secondary-700: var(--color-blue-700, oklch(48.8% 0.243 264.376));
---ui-color-secondary-800: var(--color-blue-800, oklch(42.4% 0.199 265.638));
---ui-color-secondary-900: var(--color-blue-900, oklch(37.9% 0.146 265.522));
---ui-color-secondary-950: var(--color-blue-950, oklch(28.2% 0.091 267.935));
---ui-color-success-50: var(--color-green-50, oklch(98.2% 0.018 155.826));
---ui-color-success-100: var(--color-green-100, oklch(96.2% 0.044 156.743));
---ui-color-success-200: var(--color-green-200, oklch(92.5% 0.084 155.995));
---ui-color-success-300: var(--color-green-300, oklch(87.1% 0.15 154.449));
---ui-color-success-400: var(--color-green-400, oklch(79.2% 0.209 151.711));
---ui-color-success-500: var(--color-green-500, oklch(72.3% 0.219 149.579));
---ui-color-success-600: var(--color-green-600, oklch(62.7% 0.194 149.214));
---ui-color-success-700: var(--color-green-700, oklch(52.7% 0.154 150.069));
---ui-color-success-800: var(--color-green-800, oklch(44.8% 0.119 151.328));
---ui-color-success-900: var(--color-green-900, oklch(39.3% 0.095 152.535));
---ui-color-success-950: var(--color-green-950, oklch(26.6% 0.065 152.934));
---ui-color-info-50: var(--color-blue-50, oklch(97% 0.014 254.604));
---ui-color-info-100: var(--color-blue-100, oklch(93.2% 0.032 255.585));
---ui-color-info-200: var(--color-blue-200, oklch(88.2% 0.059 254.128));
---ui-color-info-300: var(--color-blue-300, oklch(80.9% 0.105 251.813));
---ui-color-info-400: var(--color-blue-400, oklch(70.7% 0.165 254.624));
---ui-color-info-500: var(--color-blue-500, oklch(62.3% 0.214 259.815));
---ui-color-info-600: var(--color-blue-600, oklch(54.6% 0.245 262.881));
---ui-color-info-700: var(--color-blue-700, oklch(48.8% 0.243 264.376));
---ui-color-info-800: var(--color-blue-800, oklch(42.4% 0.199 265.638));
---ui-color-info-900: var(--color-blue-900, oklch(37.9% 0.146 265.522));
---ui-color-info-950: var(--color-blue-950, oklch(28.2% 0.091 267.935));
---ui-color-warning-50: var(--color-yellow-50, oklch(98.7% 0.026 102.212));
---ui-color-warning-100: var(--color-yellow-100, oklch(97.3% 0.071 103.193));
---ui-color-warning-200: var(--color-yellow-200, oklch(94.5% 0.129 101.54));
---ui-color-warning-300: var(--color-yellow-300, oklch(90.5% 0.182 98.111));
---ui-color-warning-400: var(--color-yellow-400, oklch(85.2% 0.199 91.936));
---ui-color-warning-500: var(--color-yellow-500, oklch(79.5% 0.184 86.047));
---ui-color-warning-600: var(--color-yellow-600, oklch(68.1% 0.162 75.834));
---ui-color-warning-700: var(--color-yellow-700, oklch(55.4% 0.135 66.442));
---ui-color-warning-800: var(--color-yellow-800, oklch(47.6% 0.114 61.907));
---ui-color-warning-900: var(--color-yellow-900, oklch(42.1% 0.095 57.708));
---ui-color-warning-950: var(--color-yellow-950, oklch(28.6% 0.066 53.813));
---ui-color-error-50: var(--color-red-50, oklch(97.1% 0.013 17.38));
---ui-color-error-100: var(--color-red-100, oklch(93.6% 0.032 17.717));
---ui-color-error-200: var(--color-red-200, oklch(88.5% 0.062 18.334));
---ui-color-error-300: var(--color-red-300, oklch(80.8% 0.114 19.571));
---ui-color-error-400: var(--color-red-400, oklch(70.4% 0.191 22.216));
---ui-color-error-500: var(--color-red-500, oklch(63.7% 0.237 25.331));
---ui-color-error-600: var(--color-red-600, oklch(57.7% 0.245 27.325));
---ui-color-error-700: var(--color-red-700, oklch(50.5% 0.213 27.518));
---ui-color-error-800: var(--color-red-800, oklch(44.4% 0.177 26.899));
---ui-color-error-900: var(--color-red-900, oklch(39.6% 0.141 25.723));
---ui-color-error-950: var(--color-red-950, oklch(25.8% 0.092 26.042));
---ui-color-neutral-50: var(--color-slate-50, oklch(98.4% 0.003 247.858));
---ui-color-neutral-100: var(--color-slate-100, oklch(96.8% 0.007 247.896));
---ui-color-neutral-200: var(--color-slate-200, oklch(92.9% 0.013 255.508));
---ui-color-neutral-300: var(--color-slate-300, oklch(86.9% 0.022 252.894));
---ui-color-neutral-400: var(--color-slate-400, oklch(70.4% 0.04 256.788));
---ui-color-neutral-500: var(--color-slate-500, oklch(55.4% 0.046 257.417));
---ui-color-neutral-600: var(--color-slate-600, oklch(44.6% 0.043 257.281));
---ui-color-neutral-700: var(--color-slate-700, oklch(37.2% 0.044 257.287));
---ui-color-neutral-800: var(--color-slate-800, oklch(27.9% 0.041 260.031));
---ui-color-neutral-900: var(--color-slate-900, oklch(20.8% 0.042 265.755));
---ui-color-neutral-950: var(--color-slate-950, oklch(12.9% 0.042 264.695));
+vless://ed1cd50f-ead9-4e01-b5ae-b7d2dfb532fc@201.51.5.253:2200?host=rzd.ru&path=%2Fv1&type=ws#%F0%9F%87%B7%F0%9F%87%BA_RU_%E4%BF%84%E7%BD%97%E6%96%AF
+vmess://eyJhZGQiOiJ2OS5oZGFjZC5jb20iLCJhaWQiOjIsImlkIjoiY2JiM2Y4NzctZDFmYi0zNDRjLTg3YTktZDE1M2JmZmQ1NDg0IiwibmV0IjoidGNwIiwicG9ydCI6MzA4MDksInBzIjoi8J+HqPCfh7NfQ05f5Lit5Zu9LT7wn4et8J+HsF9IS1/kuK3lm73pppnmuK8iLCJzZWN1cml0eSI6ImF1dG8ifQ==
+vmess://eyJhZGQiOiJndWFud2FuZy5hd3Nuby5jb20iLCJhaWQiOjAsImlkIjoiNmE4OWEyMTUtMjJiZi00YmQ3LTk2NDItYjk1YjJlMDk1ODNhIiwibmV0IjoidGNwIiwicG9ydCI6NDQzLCJwcyI6IvCfh7rwn4e4X1VTX+e+juWbvSIsInNlY3VyaXR5IjoiYXV0byIsInRscyI6InRscyJ9
+vmess://eyJhZGQiOiJ2MTAuaGRhY2QuY29tIiwiYWlkIjoyLCJpZCI6ImNiYjNmODc3LWQxZmItMzQ0Yy04N2E5LWQxNTNiZmZkNTQ4NCIsIm5ldCI6InRjcCIsInBvcnQiOjMwODA3LCJwcyI6IvCfh63wn4ewX0hLX+S4reWbvemmmea4ryIsInNlY3VyaXR5IjoiYXV0byJ9
+vless://59eefc04-b831-45cf-8d68-63ca23381171@104.26.1.195:8080?host=premium-us-az-01-hostinger.efgwf.online&path=%2Fws-hTopcF3L&type=ws#%F0%9F%87%BA%F0%9F%87%B8_US_%E7%BE%8E%E5%9B%BD
+vless://7ce54bb3-d612-4aa7-be08-089d3c461d53@18.238.109.17:443?fp=chrome&host=d1yxsk0zprgivr.cloudfront.net&path=%2F&security=tls&sni=d1yxsk0zprgivr.cloudfront.net&type=ws#%F0%9F%87%BA%F0%9F%87%B8_US_%E7%BE%8E%E5%9B%BD-%3E%F0%9F%87%B9%F0%9F%87%AD_TH_%E6%B3%B0%E5%9B%BD
+vless://53c76647-14d1-4df5-99cb-be99ad2e6bd9@fr199.mechvpn.online:443?encryption=none&flow=xtls-rprx-vision&security=tls#%F0%9F%87%AB%F0%9F%87%B7_FR_%E6%B3%95%E5%9B%BD
+vmess://eyJhZGQiOiJ2NC5oZGFjZC5jb20iLCJhaWQiOjIsImlkIjoiY2JiM2Y4NzctZDFmYi0zNDRjLTg3YTktZDE1M2JmZmQ1NDg0IiwibmV0IjoidGNwIiwicG9ydCI6MzA4MDQsInBzIjoi8J+HqPCfh7NfQ05f5Lit5Zu9LT7wn4eu8J+Hql9JRV/niLHlsJTlhbAiLCJzZWN1cml0eSI6ImF1dG8ifQ==
+vmess://eyJhZGQiOiJ2MjQuaGRhY2QuY29tIiwiYWlkIjoyLCJpZCI6ImNiYjNmODc3LWQxZmItMzQ0Yy04N2E5LWQxNTNiZmZkNTQ4NCIsIm5ldCI6InRjcCIsInBvcnQiOjMwODI0LCJwcyI6IvCfh6jwn4ezX0NOX+S4reWbvS0+8J+HuvCfh7hfVVNf576O5Zu9Iiwic2VjdXJpdHkiOiJhdXRvIn0=
+vmess://eyJhZGQiOiJ2Ni5oZGFjZC5jb20iLCJhaWQiOjIsImlkIjoiY2JiM2Y4NzctZDFmYi0zNDRjLTg3YTktZDE1M2JmZmQ1NDg0IiwibmV0IjoidGNwIiwicG9ydCI6MzA4MDYsInBzIjoi8J+HqPCfh7NfQ05f5Lit5Zu9LT7wn4ev8J+HtV9KUF/ml6XmnKwiLCJzZWN1cml0eSI6ImF1dG8ifQ==
+vless://4f375fb4-3c95-425f-bc7b-8085487a6f3c@18.198.227.161:443?fp=chrome&host=titandarkness.mooo.com&path=%2F21381%2F0kO2id8FMQ&security=tls&sni=titandarkness.mooo.com&type=ws#%F0%9F%87%A9%F0%9F%87%AA_DE_%E5%BE%B7%E5%9B%BD-%3E%F0%9F%87%A7%F0%9F%87%B7_BR_%E5%B7%B4%E8%A5%BF
+vmess://eyJhZGQiOiIxNzguODMuNDUuMjkiLCJhaWQiOjAsImlkIjoiNDg0MjIzMDAtNDU4Zi00ZGJiLWIwZjUtOTZmNDU0NTBhYjlmIiwibmV0IjoidGNwIiwicG9ydCI6Mzg5OTgsInBzIjoi8J+HqfCfh6pfREVf5b635Zu9Iiwic2VjdXJpdHkiOiJhdXRvIn0=
+vless://d5d72f0a-42b0-4f43-b568-9cf7fbff073d@104.171.137.141:2200?host=rzd.ru&path=%2Fv1&type=ws#%F0%9F%87%B7%F0%9F%87%BA_RU_%E4%BF%84%E7%BD%97%E6%96%AF
+vless://f0169b08-43fd-4dc3-8195-18f6ad2fe39d@120.227.1.43:12528?encryption=none&type=tcp#%F0%9F%87%A8%F0%9F%87%B3_CN_%E4%B8%AD%E5%9B%BD
+ss://MjAyMi1ibGFrZTMtYWVzLTI1Ni1nY206bWtLZnhuZENaOWMzWUlrQUFtQU5ydGZJL21sR0p3d1Y5L0dkVlRZZ1czTT06SmF6eGlZYzNNYzV0TG4vVGUzVDU5VzZadzRaL0JQdWVwUTBWbFZEL2NaOD1AMTkzLjEyNC4yMDMuMTQ0OjQ0Mw==#%F0%9F%87%B3%F0%9F%87%B1_NL_%E8%8D%B7%E5%85%B0
+vless://218fd696-e3a2-4c33-b397-a5f13a82969e@46.8.220.182:443?fp=firefox&pbk=vxhkDXfYpz1OLqZ-_9QVoQr3_UJLtJFheb5bD5YH7z8&security=tls&serviceName=grpc&sid=3303c7a5&sni=media2.tcpdoor.net&type=grpc#%F0%9F%87%B7%F0%9F%87%BA_RU_%E4%BF%84%E7%BD%97%E6%96%AF-%3E%F0%9F%87%A9%F0%9F%87%AA_DE_%E5%BE%B7%E5%9B%BD
+vless://ed1cd50f-ead9-4e01-b5ae-b7d2dfb532fc@201.51.5.253:4100?host=live.ok.ru&path=%2Fv1&type=ws#%F0%9F%87%B7%F0%9F%87%BA_RU_%E4%BF%84%E7%BD%97%E6%96%AF
+{
+"log": {
+"level": "info",
+"timestamp": true
+},
+"experimental": {
+"clash_api": {
+"external_controller": "127.0.0.1:9090",
+"external_ui": "ui",
+"secret": "",
+"external_ui_download_url": "https://gh-proxy.com/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
+"external_ui_download_detour": "direct",
+"default_mode": "rule"
+"cache_file": {
+"enabled": true,
+"store_fakeip": true,
+"store_dns": true
 }
-:root, :host, .light {
---ui-primary: var(--ui-color-primary-500);
---ui-secondary: var(--ui-color-secondary-500);
---ui-success: var(--ui-color-success-500);
---ui-info: var(--ui-color-info-500);
---ui-warning: var(--ui-color-warning-500);
---ui-error: var(--ui-color-error-500);
-.dark {
---ui-primary: var(--ui-color-primary-400);
---ui-secondary: var(--ui-color-secondary-400);
---ui-success: var(--ui-color-success-400);
---ui-info: var(--ui-color-info-400);
---ui-warning: var(--ui-color-warning-400);
---ui-error: var(--ui-color-error-400);
-}</style><link rel="stylesheet" href="/_nuxt/entry.ChV9avwy.css" crossorigin><style>@layer base {:where(.i-lucide\:shield-alert){display:inline-block;width:1em;height:1em;background-color:currentColor;-webkit-mask-image:var(--svg);mask-image:var(--svg);-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:100% 100%;mask-size:100% 100%;--svg:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1zm-8-5v4m0 4h.01'/%3E%3C/svg%3E")}}</style><link rel="modulepreload" as="script" crossorigin href="/_nuxt/-a9hQDt_.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/BgL4G9Hc.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/EgtVN7ku.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/MVUj_0ab.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/o4_--5vI.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/CO0bxzyo.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/BEzGhwHq.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/D4k11_F0.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/BA55zYzk.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/BCKi2q8A.js"><script type="module" src="/_nuxt/-a9hQDt_.js" crossorigin></script><link rel="canonical" href="https://nodebuf.com/region-notice"><link rel="alternate" hreflang="zh-CN" href="https://nodebuf.com/region-notice"><link rel="alternate" hreflang="en" href="https://nodebuf.com/en/region-notice"><link rel="alternate" hreflang="x-default" href="https://nodebuf.com/region-notice"><link rel="icon" href="/favicon.ico"><meta name="description" content="根据当前访问地区，本服务暂不提供继续访问。"><meta name="robots" content="noindex, nofollow"><meta property="og:title" content="访问声明"><meta property="og:description" content="根据当前访问地区，本服务暂不提供继续访问。"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="访问声明"><meta name="twitter:description" content="根据当前访问地区，本服务暂不提供继续访问。"><script type="application/ld+json" data-hid="site-organization-json-ld">[{"@context":"https://schema.org","@type":"Organization","@id":"https://nodebuf.com/#organization","name":"NodeBuf","url":"https://nodebuf.com","logo":"https://nodebuf.com/logo/default.png"},{"@context":"https://schema.org","@type":"WebSite","@id":"https://nodebuf.com/#website","url":"https://nodebuf.com","name":"NodeBuf","description":"根据当前访问地区，本服务暂不提供继续访问。适合需要在线处理代理节点、订阅链接、客户端配置、规则调试和文件化管理的用户，可在浏览器中完成分析、转换、复制、下载或保存结果。","inLanguage":"zh-CN","publisher":{"@id":"https://nodebuf.com/#organization"}}]</script><script>"use strict";(()=>{const t=window,e=document.documentElement,c=["dark","light"],n=getStorageValue("localStorage","nuxt-color-mode")||"system";let i=n==="system"?u():n;const r=e.getAttribute("data-color-mode-forced");r&&(i=r),l(i),t["__NUXT_COLOR_MODE__"]={preference:n,value:i,getColorScheme:u,addColorScheme:l,removeColorScheme:d};function l(o){const s=""+o+"",a="";e.classList?e.classList.add(s):e.className+=" "+s,a&&e.setAttribute("data-"+a,o)}function d(o){const s=""+o+"",a="";e.classList?e.classList.remove(s):e.className=e.className.replace(new RegExp(s,"g"),""),a&&e.removeAttribute("data-"+a)}function f(o){return t.matchMedia("(prefers-color-scheme"+o+")")}function u(){if(t.matchMedia&&f("").media!=="not all"){for(const o of c)if(f(":"+o).matches)return o}return"light"}})();function getStorageValue(t,e){switch(t){case"localStorage":return window.localStorage.getItem(e);case"sessionStorage":return window.sessionStorage.getItem(e);case"cookie":return getCookie(e);default:return null}}function getCookie(t){const c=("; "+window.document.cookie).split("; "+t+"=");if(c.length===2)return c.pop()?.split(";").shift()}</script></head><body><div id="__nuxt" class="isolate"><!--[--><!--[--><!--[--><!--[--><!--[--><!--[--><!--[--><main class="min-h-screen bg-default text-default"><section class="mx-auto flex min-h-screen max-w-3xl items-center justify-center px-4 py-10 sm:px-6 lg:px-8"><div data-slot="root" class="overflow-hidden bg-default ring ring-default divide-y divide-default w-full rounded-2xl shadow-sm"><!----><div data-slot="body" class="p-6 sm:p-8"><!--[--><!--[--><div class="mx-auto flex max-w-xl flex-col items-center text-center"><div class="mb-5 flex size-14 items-center justify-center rounded-2xl bg-warning/10 text-warning"><span class="iconify i-lucide:shield-alert size-7" aria-hidden="true" style=""></span></div><span data-slot="base" class="font-medium inline-flex items-center text-xs px-2 py-1 gap-1 rounded-md bg-warning/10 text-warning mb-4"><!--[--><!----><!--]--><!--[--><!--[-->访问声明<!--]--><!--]--><!--[--><!----><!--]--></span><h1 class="text-2xl font-semibold tracking-tight text-highlighted sm:text-3xl">本服务不面向中国大陆地区用户提供访问</h1><p class="mt-4 text-base leading-7 text-muted">根据当前访问地区，本服务暂不提供继续访问。</p><p class="mt-3 text-sm leading-6 text-muted">请遵守所在地法律法规。</p></div><!--]--><!--]--></div><!----></div></section></main><!--]--><!--[--><!--[--><!--]--><!--]--><div></div><!--]--><!--]--><!--]--><!--[--><!--]--><!--v-if--><!--]--><!--[--><!--]--><!--]--><!--]--></div><div id="teleports"></div><script>window.__NUXT__={};window.__NUXT__.config={public:{editorFrameUrl:"https://editor.tool.ren/",siteUrl:"https://nodebuf.com",googleAnalyticsId:"G-MWDLVCZ1YD",customDomainCnameTarget:"nodebuf.com",auth:{loadStrategy:"server-first"},i18n:{baseUrl:"",defaultLocale:"zh",rootRedirect:"",redirectStatusCode:302,skipSettingLocaleOnNavigate:false,locales:[{code:"zh",name:"简体中文",language:"zh-CN"},{code:"en",name:"English",language:"en-US"}],detectBrowserLanguage:false,experimental:{localeDetector:"",typedPages:true,typedOptionsAndMessages:false,alternateLinkCanonicalQueries:true,devCache:false,cacheLifetime:"",stripMessagesPayload:false,preload:false,strictSeo:false,nitroContextDetection:true,httpCacheDuration:10,compactRoutes:false},domainLocales:{zh:{domain:""},en:{domain:""}}}},app:{baseURL:"/",buildId:"e54aad15-6264-47b1-bef5-cbdfc637e857",buildAssetsDir:"/_nuxt/",cdnURL:""}}</script><script type="application/json" data-nuxt-data="nuxt-app" data-ssr="true" id="__NUXT_DATA__">[["ShallowReactive",1],{"data":2,"state":19,"once":34,"_errors":35,"serverRendered":12,"path":5,"isCached":11},["ShallowReactive",3],{"public-seo":4,"public-site-settings":13},{"path":5,"title":6,"description":7,"keywords":8,"ogTitle":6,"ogDescription":7,"ogImage":8,"twitterCard":9,"twitterTitle":6,"twitterDescription":7,"twitterImage":8,"canonicalUrl":8,"robots":10,"landingToolPath":8,"initialTarget":8,"detailMarkdown":8,"hasDynamicLanding":11,"hasRouteOverride":12},"\u002Fregion-notice","访问声明","根据当前访问地区，本服务暂不提供继续访问。","","summary","noindex, nofollow",false,true,{"title":14,"subtitle":15,"logoUrl":16,"faviconUrl":17,"publicUrl":18},"NodeBuf","科学上网工具箱","\u002Flogo\u002Fdefault.png","\u002Ffavicon.ico","https:\u002F\u002Fnodebuf.com",["Reactive",20],{"$snuxt-session":21,"$snuxt-auth-ready":12,"$scolor-mode":22,"$si18n:cached-locale-configs":24,"$si18n:resolved-locale":8,"$stoasts":30,"$sglobal-content-overlay:open":11,"$sglobal-content-overlay:payload":31},null,{"preference":23,"value":23,"unknown":12,"forced":11},"system",{"zh":25,"en":27},{"fallbacks":26,"cacheable":12},[],{"fallbacks":28,"cacheable":12},[29],"zh",[],{"title":8,"subtitle":-1,"logo":-1,"icon":-1,"language":32,"content":8,"editable":11,"actions":33,"downloadFilename":-1,"actionLabel":-1,"actionIcon":-1,"directAdToolPath":-1,"primaryDirectAdKey":-1,"onAction":-1},"text",{"cancel":12,"download":12,"copy":12,"primary":12},["Set"],["ShallowReactive",36],{"public-site-settings":-1,"public-seo":-1}]</script></body></html>
+"dns": {
+"servers": [
+"tag": "local",
+"type": "local"
+"tag": "hosts",
+"type": "hosts",
+"predefined": {
+"dns.alidns.com": [
+"223.5.5.5",
+"223.6.6.6"
+],
+"dns.google": [
+"8.8.8.8",
+"8.8.4.4"
+]
+"tag": "alidns",
+"type": "https",
+"server": "dns.alidns.com",
+"domain_resolver": "hosts"
+"tag": "ggdns",
+"server": "dns.google",
+"domain_resolver": "hosts",
+"detour": "Proxy"
+"tag": "fakeip",
+"type": "fakeip",
+"inet4_range": "198.18.0.0/15",
+"inet6_range": "fc00::/18"
+"rules": [
+"clash_mode": "direct",
+"server": "local"
+"clash_mode": "global",
+"server": "ggdns"
+"query_type": [
+"A",
+"AAAA"
+"server": "fakeip"
+"rule_set": "geosite-cn",
+"action": "evaluate",
+"server": "alidns"
+"match_response": true,
+"rule_set": "geoip-cn",
+"action": "respond"
+"final": "ggdns",
+"strategy": "prefer_ipv4"
+"inbounds": [
+"tag": "tun-in",
+"type": "tun",
+"address": [
+"172.19.0.0/30",
+"fdfe:dcba:9876::0/126"
+"stack": "system",
+"auto_route": true,
+"strict_route": true,
+"platform": {
+"http_proxy": {
+"server": "127.0.0.1",
+"server_port": 7890
+"tag": "mixed-in",
+"type": "mixed",
+"listen": "127.0.0.1",
+"listen_port": 7890
+"outbounds": [
+"tag": "Proxy",
+"type": "selector",
+"auto",
+"direct",
+"🇷🇺_RU_俄罗斯",
+"🇨🇳_CN_中国->🇭🇰_HK_中国香港",
+"🇺🇸_US_美国",
+"🇭🇰_HK_中国香港",
+"🇺🇸_US_美国_1",
+"🇺🇸_US_美国->🇹🇭_TH_泰国",
+"🇫🇷_FR_法国",
+"🇨🇳_CN_中国->🇮🇪_IE_爱尔兰",
+"🇨🇳_CN_中国->🇺🇸_US_美国",
+"🇨🇳_CN_中国->🇯🇵_JP_日本",
+"🇩🇪_DE_德国->🇧🇷_BR_巴西",
+"🇩🇪_DE_德国",
+"🇷🇺_RU_俄罗斯_1",
+"🇨🇳_CN_中国",
+"🇳🇱_NL_荷兰",
+"🇷🇺_RU_俄罗斯->🇩🇪_DE_德国",
+"🇷🇺_RU_俄罗斯_2"
+"tag": "OpenAI",
+"TaiWan",
+"Singapore",
+"Japan",
+"America",
+"Others"
+"default": "America"
+"tag": "Google",
+"HongKong",
+"tag": "Telegram",
+"tag": "Twitter",
+"tag": "Facebook",
+"tag": "BiliBili",
+"TaiWan"
+"tag": "Bahamut",
+"Proxy"
+"tag": "Spotify",
+"tag": "TikTok",
+"America"
+"tag": "Netflix",
+"tag": "Disney+",
+"tag": "Apple",
+"tag": "Microsoft",
+"tag": "Games",
+"default": "Japan"
+"tag": "Streaming",
+"tag": "Global",
+"Others",
+"direct"
+"tag": "China",
+"tag": "HongKong",
+"🇭🇰_HK_中国香港"
+"tag": "TaiWan",
+"tag": "Singapore",
+"tag": "Japan",
+"🇨🇳_CN_中国->🇯🇵_JP_日本"
+"tag": "America",
+"🇨🇳_CN_中国->🇺🇸_US_美国"
+"tag": "Others",
+"tag": "auto",
+"type": "urltest",
+"url": "http://www.gstatic.com/generate_204",
+"interval": "10m",
+"tolerance": 50
+"type": "direct",
+"tag": "direct"
+"tag": "🇷🇺_RU_俄罗斯",
+"type": "vless",
+"server": "201.51.5.253",
+"server_port": 2200,
+"uuid": "ed1cd50f-ead9-4e01-b5ae-b7d2dfb532fc",
+"transport": {
+"type": "ws",
+"path": "/v1",
+"headers": {
+"Host": "rzd.ru"
+"early_data_header_name": "Sec-WebSocket-Protocol",
+"max_early_data": 2560
+"tls": {
+"enabled": false,
+"insecure": true
+"tag": "🇨🇳_CN_中国->🇭🇰_HK_中国香港",
+"type": "vmess",
+"server": "v9.hdacd.com",
+"server_port": 30809,
+"uuid": "cbb3f877-d1fb-344c-87a9-d153bffd5484",
+"alter_id": 2,
+"security": "auto",
+"tag": "🇺🇸_US_美国",
+"server": "guanwang.awsno.com",
+"server_port": 443,
+"uuid": "6a89a215-22bf-4bd7-9642-b95b2e09583a",
+"alter_id": 0,
+"tag": "🇭🇰_HK_中国香港",
+"server": "v10.hdacd.com",
+"server_port": 30807,
+"tag": "🇺🇸_US_美国_1",
+"server": "104.26.1.195",
+"server_port": 8080,
+"uuid": "59eefc04-b831-45cf-8d68-63ca23381171",
+"path": "/ws-hTopcF3L",
+"Host": "premium-us-az-01-hostinger.efgwf.online"
+"tag": "🇺🇸_US_美国->🇹🇭_TH_泰国",
+"server": "18.238.109.17",
+"uuid": "7ce54bb3-d612-4aa7-be08-089d3c461d53",
+"path": "/",
+"Host": "d1yxsk0zprgivr.cloudfront.net"
+"server_name": "d1yxsk0zprgivr.cloudfront.net",
+"utls": {
+"fingerprint": "chrome"
+"tag": "🇫🇷_FR_法国",
+"server": "fr199.mechvpn.online",
+"uuid": "53c76647-14d1-4df5-99cb-be99ad2e6bd9",
+"flow": "xtls-rprx-vision",
+"tag": "🇨🇳_CN_中国->🇮🇪_IE_爱尔兰",
+"server": "v4.hdacd.com",
+"server_port": 30804,
+"tag": "🇨🇳_CN_中国->🇺🇸_US_美国",
+"server": "v24.hdacd.com",
+"server_port": 30824,
+"tag": "🇨🇳_CN_中国->🇯🇵_JP_日本",
+"server": "v6.hdacd.com",
+"server_port": 30806,
+"tag": "🇩🇪_DE_德国->🇧🇷_BR_巴西",
+"server": "18.198.227.161",
+"uuid": "4f375fb4-3c95-425f-bc7b-8085487a6f3c",
+"path": "/21381/0kO2id8FMQ",
+"Host": "titandarkness.mooo.com"
+"server_name": "titandarkness.mooo.com",
+"tag": "🇩🇪_DE_德国",
+"server": "178.83.45.29",
+"server_port": 38998,
+"uuid": "48422300-458f-4dbb-b0f5-96f45450ab9f",
+"tag": "🇷🇺_RU_俄罗斯_1",
+"server": "104.171.137.141",
+"uuid": "d5d72f0a-42b0-4f43-b568-9cf7fbff073d",
+"tag": "🇨🇳_CN_中国",
+"server": "120.227.1.43",
+"server_port": 12528,
+"uuid": "f0169b08-43fd-4dc3-8195-18f6ad2fe39d",
+"tag": "🇳🇱_NL_荷兰",
+"type": "shadowsocks",
+"server": "193.124.203.144",
+"method": "2022-blake3-aes-256-gcm",
+"password": "mkKfxndCZ9c3YIkAAmANrtfI/mlGJwwV9/GdVTYgW3M=:JazxiYc3Mc5tLn/Te3T59W6Zw4Z/BPuepQ0VlVD/cZ8="
+"tag": "🇷🇺_RU_俄罗斯->🇩🇪_DE_德国",
+"server": "46.8.220.182",
+"uuid": "218fd696-e3a2-4c33-b397-a5f13a82969e",
+"type": "grpc",
+"service_name": "grpc"
+"server_name": "media2.tcpdoor.net",
+"fingerprint": "firefox"
+"reality": {
+"public_key": "vxhkDXfYpz1OLqZ-_9QVoQr3_UJLtJFheb5bD5YH7z8",
+"short_id": "3303c7a5"
+"tag": "🇷🇺_RU_俄罗斯_2",
+"server_port": 4100,
+"Host": "live.ok.ru"
+"http_clients": [
+"tag": "default",
+"tag": "direct",
+"detour": "direct"
+"route": {
+"default_domain_resolver": {
+"auto_detect_interface": true,
+"final": "Proxy",
+"inbound": [
+"tun-in",
+"mixed-in"
+"action": "sniff"
+"type": "logical",
+"mode": "or",
+"port": 53
+"protocol": "dns"
+"action": "hijack-dns"
+"rule_set": "geosite-category-ads-all",
+"clash_mode": "rule",
+"action": "reject"
+"outbound": "Proxy"
+"outbound": "direct"
+"domain": [
+"clash.razord.top",
+"yacd.metacubex.one",
+"yacd.haishan.me",
+"d.metacubex.one"
+"ip_is_private": true,
+"rule_set": "geosite-openai",
+"outbound": "OpenAI"
+"rule_set": [
+"geosite-youtube",
+"geoip-google",
+"geosite-google",
+"geosite-github"
+"outbound": "Google"
+"geoip-telegram",
+"geosite-telegram"
+"outbound": "Telegram"
+"geoip-twitter",
+"geosite-twitter"
+"outbound": "Twitter"
+"geoip-facebook",
+"geosite-facebook"
+"outbound": "Facebook"
+"rule_set": "geosite-bilibili",
+"outbound": "BiliBili"
+"rule_set": "geosite-bahamut",
+"outbound": "Bahamut"
+"rule_set": "geosite-spotify",
+"outbound": "Spotify"
+"rule_set": "geosite-tiktok",
+"outbound": "TikTok"
+"geoip-netflix",
+"geosite-netflix"
+"outbound": "Netflix"
+"rule_set": "geosite-disney",
+"outbound": "Disney+"
+"geoip-apple",
+"geosite-apple",
+"geosite-amazon"
+"outbound": "Apple"
+"rule_set": "geosite-microsoft",
+"outbound": "Microsoft"
+"geosite-category-games",
+"geosite-dmm"
+"outbound": "Games"
+"geosite-hbo",
+"geosite-primevideo"
+"outbound": "Streaming"
+"rule_set": "geosite-geolocation-!cn",
+"outbound": "Global"
+"geoip-cn",
+"geosite-cn"
+"outbound": "China"
+"tag": "geosite-category-ads-all",
+"type": "remote",
+"format": "binary",
+"url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ads-all.srs",
+"http_client": "default"
+"tag": "geosite-openai",
+"url": "https://gh-proxy.com/raw.githubusercontent.com/Toperlock/sing-box-geosite/main/rule/OpenAI.srs",
+"tag": "geosite-youtube",
+"url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/youtube.srs",
+"tag": "geoip-google",
+"url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/google.srs",
+"tag": "geosite-google",
+"url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google.srs",
+"tag": "geosite-github",
+"url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/github.srs",
+"tag": "geoip-telegram",
+"url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs",
+"tag": "geosite-telegram",
+"url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/telegram.srs",
+"tag": "geoip-twitter",
+"url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/twitter.srs",
+"tag": "geosite-twitter",
+"url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/twitter.srs",
+"tag": "geoip-facebook",
+"url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/facebook.srs",
+"tag": "geosite-facebook",
+"url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/facebook.srs",
+"tag": "geosite-bilibili",
+"url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/bilibili.srs",
+"tag": "geosite-bahamut",
+"url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/bahamut.srs",
+"tag": "geosite-spotify",
+"url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/spotify.srs",
+"tag": "geosite-tiktok",
+"url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/tiktok.srs",
+"tag": "geoip-netflix",
+"url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/netflix.srs",
+"tag": "geosite-netflix",
+"url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/netflix.srs",
+"tag": "geosite-disney",
+"url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/disney.srs",
+"tag": "geoip-apple",
+"url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geoip/apple.srs",
+"tag": "geosite-apple",
+"url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/apple.srs",
+"tag": "geosite-amazon",
+"url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/amazon.srs",
+"tag": "geosite-microsoft",
+"url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/microsoft.srs",
+"tag": "geosite-category-games",
+"url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-games.srs",
+"tag": "geosite-dmm",
+"url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/dmm.srs",
+"tag": "geosite-hbo",
+"url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/hbo.srs",
+"tag": "geosite-primevideo",
+"url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/primevideo.srs",
+"tag": "geosite-geolocation-!cn",
+"url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/geolocation-!cn.srs",
+"tag": "geoip-cn",
+"url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs",
+"tag": "geosite-cn",
+"url": "https://gh-proxy.com/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs",
+"🇨🇦_CA_加拿大",
+"🇭🇰_HK_中国香港->🇯🇵_JP_日本",
+"🇯🇵_JP_日本",
+"🇮🇪_IE_爱尔兰",
+"🇮🇪_IE_爱尔兰_1",
+"🇸🇬_SG_新加坡",
+"🇯🇵_JP_日本_1",
+"🇦🇺_AU_澳大利亚",
+"🇯🇵_JP_日本_2",
+"🇦🇺_AU_澳大利亚_1",
+"🇯🇵_JP_日本_3",
+"🇰🇷_KR_韩国",
+"🇵🇱_PL_波兰",
+"🇵🇱_PL_波兰_1",
+"🇩🇪_DE_德国_1",
+"🇷🇺_RU_俄罗斯->🇫🇮_FI_芬兰",
+"🇯🇵_JP_日本_4",
+"🇵🇱_PL_波兰_2"
+"🇸🇬_SG_新加坡"
+"🇯🇵_JP_日本_4"
+"🇺🇸_US_美国"
+"tag": "🇨🇦_CA_加拿大",
+"server": "212.193.6.107",
+"server_port": 30331,
+"method": "aes-256-gcm",
+"password": "fbcec76953a2d173"
+"tag": "🇭🇰_HK_中国香港->🇯🇵_JP_日本",
+"type": "trojan",
+"server": "oplosgru-c.catcat321.com",
+"server_port": 20004,
+"password": "ba07a8af-5544-48ac-ab62-3b6c00a44fa6",
+"network": "tcp",
+"server_name": "hk.catxstar.com",
+"tag": "🇯🇵_JP_日本",
+"server": "supreme-lobster.rooster465.autos",
+"password": "AE62539071",
+"server_name": "supreme-lobster.rooster465.autos",
+"tag": "🇮🇪_IE_爱尔兰",
+"server": "kind-stork.rooster465.autos",
+"tag": "🇮🇪_IE_爱尔兰_1",
+"server": "unbiased-garfish.rooster465.autos",
+"tag": "🇸🇬_SG_新加坡",
+"server": "integral-quetzal.rooster465.autos",
+"tag": "🇯🇵_JP_日本_1",
+"server": "premium-weevil.rooster465.autos",
+"tag": "🇦🇺_AU_澳大利亚",
+"server": "together-dingo.rooster465.autos",
+"server": "distinct-quail.rooster465.autos",
+"tag": "🇯🇵_JP_日本_2",
+"server": "polished-imp.rooster465.autos",
+"server_name": "polished-imp.rooster465.autos",
+"server": "195.133.23.200",
+"password": "81a20429165df87e"
+"tag": "🇦🇺_AU_澳大利亚_1",
+"server": "darling-mutt.rooster465.autos",
+"tag": "🇯🇵_JP_日本_3",
+"server": "literate-cow.rooster465.autos",
+"tag": "🇰🇷_KR_韩国",
+"server": "sacred-hound.rooster465.autos",
+"tag": "🇵🇱_PL_波兰",
+"server": "194.61.121.93",
+"server_port": 7538,
+"method": "chacha20-ietf-poly1305",
+"password": "U9YAoqBgg5VyGBc6vQv1sN"
+"server": "sterling-macaw.rooster465.autos",
+"server": "thorough-falcon.rooster465.autos",
+"tag": "🇵🇱_PL_波兰_1",
+"server": "tolerant-mosquito.rooster465.autos",
+"tag": "🇩🇪_DE_德国_1",
+"server": "moved-bluegill.rooster465.autos",
+"tag": "🇷🇺_RU_俄罗斯->🇫🇮_FI_芬兰",
+"server": "ru211.mechvpn.online",
+"uuid": "1c6824de-312c-4876-aa3f-5a30e3df2de7",
+"tag": "🇯🇵_JP_日本_4",
+"server": "main-impala.rooster465.autos",
+"server": "upright-bedbug.rooster465.autos",
+"tag": "🇵🇱_PL_波兰_2",
+"server": "relative-locust.rooster465.autos",
+ss://YWVzLTI1Ni1nY206ZmJjZWM3Njk1M2EyZDE3M0AyMTIuMTkzLjYuMTA3OjMwMzMx#%F0%9F%87%A8%F0%9F%87%A6_CA_%E5%8A%A0%E6%8B%BF%E5%A4%A7
+trojan://ba07a8af-5544-48ac-ab62-3b6c00a44fa6@oplosgru-c.catcat321.com:20004?security=tls&sni=hk.catxstar.com#%F0%9F%87%AD%F0%9F%87%B0_HK_%E4%B8%AD%E5%9B%BD%E9%A6%99%E6%B8%AF-%3E%F0%9F%87%AF%F0%9F%87%B5_JP_%E6%97%A5%E6%9C%AC
+trojan://AE62539071@supreme-lobster.rooster465.autos:443?allowInsecure=1&sni=supreme-lobster.rooster465.autos#%F0%9F%87%AF%F0%9F%87%B5_JP_%E6%97%A5%E6%9C%AC
+trojan://AE62539071@kind-stork.rooster465.autos:443?security=tls#%F0%9F%87%AE%F0%9F%87%AA_IE_%E7%88%B1%E5%B0%94%E5%85%B0
+trojan://AE62539071@unbiased-garfish.rooster465.autos:443?security=tls#%F0%9F%87%AE%F0%9F%87%AA_IE_%E7%88%B1%E5%B0%94%E5%85%B0
+trojan://AE62539071@integral-quetzal.rooster465.autos:443?security=tls#%F0%9F%87%B8%F0%9F%87%AC_SG_%E6%96%B0%E5%8A%A0%E5%9D%A1
+trojan://AE62539071@premium-weevil.rooster465.autos:443?security=tls#%F0%9F%87%AF%F0%9F%87%B5_JP_%E6%97%A5%E6%9C%AC
+trojan://AE62539071@together-dingo.rooster465.autos:443?security=tls#%F0%9F%87%A6%F0%9F%87%BA_AU_%E6%BE%B3%E5%A4%A7%E5%88%A9%E4%BA%9A
+trojan://AE62539071@distinct-quail.rooster465.autos:443?security=tls#%F0%9F%87%AB%F0%9F%87%B7_FR_%E6%B3%95%E5%9B%BD
+trojan://AE62539071@polished-imp.rooster465.autos:443?allowInsecure=1&sni=polished-imp.rooster465.autos#%F0%9F%87%AF%F0%9F%87%B5_JP_%E6%97%A5%E6%9C%AC
+ss://YWVzLTI1Ni1nY206ODFhMjA0MjkxNjVkZjg3ZUAxOTUuMTMzLjIzLjIwMDozMDMzMQ==#%F0%9F%87%B7%F0%9F%87%BA_RU_%E4%BF%84%E7%BD%97%E6%96%AF
+trojan://AE62539071@darling-mutt.rooster465.autos:443?security=tls#%F0%9F%87%A6%F0%9F%87%BA_AU_%E6%BE%B3%E5%A4%A7%E5%88%A9%E4%BA%9A
+trojan://AE62539071@literate-cow.rooster465.autos:443?security=tls#%F0%9F%87%AF%F0%9F%87%B5_JP_%E6%97%A5%E6%9C%AC
+trojan://AE62539071@sacred-hound.rooster465.autos:443?security=tls#%F0%9F%87%B0%F0%9F%87%B7_KR_%E9%9F%A9%E5%9B%BD
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpVOVlBb3FCZ2c1VnlHQmM2dlF2MXNOQDE5NC42MS4xMjEuOTM6NzUzOA==#%F0%9F%87%B5%F0%9F%87%B1_PL_%E6%B3%A2%E5%85%B0
+trojan://AE62539071@sterling-macaw.rooster465.autos:443?security=tls#%F0%9F%87%A9%F0%9F%87%AA_DE_%E5%BE%B7%E5%9B%BD
+trojan://AE62539071@thorough-falcon.rooster465.autos:443?security=tls#%F0%9F%87%B3%F0%9F%87%B1_NL_%E8%8D%B7%E5%85%B0
+trojan://AE62539071@tolerant-mosquito.rooster465.autos:443?security=tls#%F0%9F%87%B5%F0%9F%87%B1_PL_%E6%B3%A2%E5%85%B0
+trojan://AE62539071@moved-bluegill.rooster465.autos:443?security=tls#%F0%9F%87%A9%F0%9F%87%AA_DE_%E5%BE%B7%E5%9B%BD
+vless://1c6824de-312c-4876-aa3f-5a30e3df2de7@ru211.mechvpn.online:443?encryption=none&flow=xtls-rprx-vision&security=tls#%F0%9F%87%B7%F0%9F%87%BA_RU_%E4%BF%84%E7%BD%97%E6%96%AF-%3E%F0%9F%87%AB%F0%9F%87%AE_FI_%E8%8A%AC%E5%85%B0
+trojan://AE62539071@main-impala.rooster465.autos:443?security=tls#%F0%9F%87%AF%F0%9F%87%B5_JP_%E6%97%A5%E6%9C%AC
+trojan://AE62539071@upright-bedbug.rooster465.autos:443?security=tls#%F0%9F%87%AD%F0%9F%87%B0_HK_%E4%B8%AD%E5%9B%BD%E9%A6%99%E6%B8%AF
+trojan://AE62539071@relative-locust.rooster465.autos:443?security=tls#%F0%9F%87%B5%F0%9F%87%B1_PL_%E6%B3%A2%E5%85%B0
+vless://7ce54bb3-d612-4aa7-be08-089d3c461d53@3.170.185.121:443?fp=chrome&host=d1yxsk0zprgivr.cloudfront.net&path=%2F&security=tls&sni=d1yxsk0zprgivr.cloudfront.net&type=ws#%F0%9F%87%BA%F0%9F%87%B8_US_%E7%BE%8E%E5%9B%BD-%3E%F0%9F%87%B9%F0%9F%87%AD_TH_%E6%B3%B0%E5%9B%BD
+vmess://eyJhZGQiOiJ2OS5oZGFjZC5jb20iLCJhaWQiOjIsImFsbG93SW5zZWN1cmUiOiIxIiwiaWQiOiJjYmIzZjg3Ny1kMWZiLTM0NGMtODdhOS1kMTUzYmZmZDU0ODQiLCJwb3J0IjozMDgwOSwicHMiOiLwn4eo8J+Hs19DTl/kuK3lm70tPvCfh63wn4ewX0hLX+S4reWbvemmmea4ryIsInNlY3VyaXR5IjoiYXV0byJ9
+trojan://AE62539071@humorous-llama.rooster465.autos:443?allowInsecure=1&sni=humorous-llama.rooster465.autos#%F0%9F%87%A6%F0%9F%87%BA_AU_%E6%BE%B3%E5%A4%A7%E5%88%A9%E4%BA%9A
+vless://518a99df-54f6-4f42-819d-b60abd880edf@176.96.138.122:443?flow=xtls-rprx-vision&fp=qq&pbk=O_YZOJVON0LE1U01hAtNUOVRy7z6fkBUXbMtpCGoGEg&security=tls&sni=kind-vortex.cdn.cachefleet.com#%F0%9F%87%A9%F0%9F%87%AA_DE_%E5%BE%B7%E5%9B%BD
+vless://e911c552-3a98-41e0-b5fb-0dd3879887b7@103.161.237.54:443?host=vod.ensf.top&path=%2Fapi%2Fv1%2Firc&security=tls&sni=vod.ensf.top&type=ws#%F0%9F%87%A6%F0%9F%87%AB_AF_%E9%98%BF%E5%AF%8C%E6%B1%97-%3E%F0%9F%87%A6%F0%9F%87%B9_AT_%E5%A5%A5%E5%9C%B0%E5%88%A9
+vless://413f9465-0d30-4a71-9ef2-8e34d8bd0f8d@77.105.130.117:443?flow=xtls-rprx-vision&fp=firefox&pbk=3NcyuRV1ZD2Pfyh5xuxVftHBu0s65uc3IvXrw-SxEXc&security=tls&sid=0686931b969eda82&sni=www.cloudflare.com#%F0%9F%87%AB%F0%9F%87%AE_FI_%E8%8A%AC%E5%85%B0
+vless://40cfbd0a-f133-4174-8e03-ab0e587e1099@193.238.153.15:443?flow=xtls-rprx-vision&fp=firefox&pbk=dzknsuwujuOacNHTXzdPxBLNUEJfEImiwLinPPNFmwU&security=tls&sid=1ea21a140beaecc5&sni=www.cloudflare.com#%F0%9F%87%BA%F0%9F%87%A6_UA_%E4%B9%8C%E5%85%8B%E5%85%B0
+trojan://AE62539071@strong-haddock.rooster465.autos:443?allowInsecure=1&sni=strong-haddock.rooster465.autos#%F0%9F%87%AD%F0%9F%87%B0_HK_%E4%B8%AD%E5%9B%BD%E9%A6%99%E6%B8%AF
+vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@149.130.189.173:62145?encryption=none&type=tcp#%F0%9F%87%A8%F0%9F%87%B4_CO_%E5%93%A5%E4%BC%A6%E6%AF%94%E4%BA%9A
+vmess://eyJhZGQiOiIzNjYtMTA5NS5yYWJiaXRwcm8taW4tMy5jb20iLCJhaWQiOjAsImFsbG93SW5zZWN1cmUiOiIxIiwiaWQiOiJlMzUxZDZkOC1jMTY3LTNlMDctOGZkYS0zZjJmNGVjMDc2MGIiLCJuZXQiOiJ0Y3AiLCJwb3J0IjoyOTA1MywicHMiOiLwn4et8J+HsF9IS1/kuK3lm73pppnmuK8iLCJzZWN1cml0eSI6ImF1dG8ifQ==
+vless://7ce54bb3-d612-4aa7-be08-089d3c461d53@18.154.132.94:443?fp=chrome&host=d1yxsk0zprgivr.cloudfront.net&path=%2F&security=tls&sni=d1yxsk0zprgivr.cloudfront.net&type=ws#%F0%9F%87%BA%F0%9F%87%B8_US_%E7%BE%8E%E5%9B%BD-%3E%F0%9F%87%B9%F0%9F%87%AD_TH_%E6%B3%B0%E5%9B%BD
+trojan://0010996f-3eab-4804-9b3a-3a889d6767fc@a8zbx9xj.catcat321.com:20088?allowInsecure=1&sni=iepl.krz3.cat.bilibili.com#%F0%9F%87%AD%F0%9F%87%B0_HK_%E4%B8%AD%E5%9B%BD%E9%A6%99%E6%B8%AF-%3E%F0%9F%87%B0%F0%9F%87%B7_KR_%E9%9F%A9%E5%9B%BD
+vless://463a26c2-eba8-40ea-89c4-ee5c1373ccbe@84.32.49.223:443?flow=xtls-rprx-vision&fp=firefox&pbk=g0mDPNlv3uOrnxXvBYP3cEjd0ewJuIFlBh93KE5bU3A&security=tls&sid=d0ca141e839394a3&sni=dsech.mostserv.xyz#%F0%9F%87%B8%F0%9F%87%AA_SE_%E7%91%9E%E5%85%B8
+vless://7ce54bb3-d612-4aa7-be08-089d3c461d53@18.238.109.28:443?fp=chrome&host=d1yxsk0zprgivr.cloudfront.net&path=%2F&security=tls&sni=d1yxsk0zprgivr.cloudfront.net&type=ws#%F0%9F%87%BA%F0%9F%87%B8_US_%E7%BE%8E%E5%9B%BD-%3E%F0%9F%87%B9%F0%9F%87%AD_TH_%E6%B3%B0%E5%9B%BD
+vless://218fd696-e3a2-4c33-b397-a5f13a82969e@193.233.205.117:443?fp=firefox&pbk=iUc9JqWjFemnQo8R5fgiwssCjEdWmixB4X-mRJkx2VE&security=tls&serviceName=grpc&sid=3182f9ae&sni=media3.abvphelp.cc&type=grpc#%F0%9F%87%BA%F0%9F%87%B8_US_%E7%BE%8E%E5%9B%BD
+vless://7ce54bb3-d612-4aa7-be08-089d3c461d53@52.84.199.57:443?fp=chrome&host=d1yxsk0zprgivr.cloudfront.net&path=%2F&security=tls&sni=d1yxsk0zprgivr.cloudfront.net&type=ws#%F0%9F%87%BA%F0%9F%87%B8_US_%E7%BE%8E%E5%9B%BD-%3E%F0%9F%87%B9%F0%9F%87%AD_TH_%E6%B3%B0%E5%9B%BD
+vless://8fb65472-5957-4f64-ba2d-b5812b2f155a@149.130.172.133:62145?encryption=none&type=tcp#%F0%9F%87%A8%F0%9F%87%B4_CO_%E5%93%A5%E4%BC%A6%E6%AF%94%E4%BA%9A
+vmess://eyJhZGQiOiJ2NC5oZGFjZC5jb20iLCJhaWQiOjIsImFsbG93SW5zZWN1cmUiOiIxIiwiaWQiOiJjYmIzZjg3Ny1kMWZiLTM0NGMtODdhOS1kMTUzYmZmZDU0ODQiLCJwb3J0IjozMDgwNCwicHMiOiLwn4eo8J+Hs19DTl/kuK3lm70tPvCfh67wn4eqX0lFX+eIseWwlOWFsCIsInNlY3VyaXR5IjoiYXV0byJ9
+vless://b3d66abd-ea82-4616-92f0-1dec8d1e4cfc@194.26.229.222:4100?host=live.ok.ru&path=%2Fv1&type=ws#%F0%9F%87%B7%F0%9F%87%BA_RU_%E4%BF%84%E7%BD%97%E6%96%AF
+vless://7ce54bb3-d612-4aa7-be08-089d3c461d53@18.244.214.27:443?fp=chrome&host=d1yxsk0zprgivr.cloudfront.net&path=%2F&security=tls&sni=d1yxsk0zprgivr.cloudfront.net&type=ws#%F0%9F%87%BA%F0%9F%87%B8_US_%E7%BE%8E%E5%9B%BD-%3E%F0%9F%87%B9%F0%9F%87%AD_TH_%E6%B3%B0%E5%9B%BD
+"🇦🇫_AF_阿富汗->🇦🇹_AT_奥地利",
+"🇫🇮_FI_芬兰",
+"🇺🇦_UA_乌克兰",
+"🇨🇴_CO_哥伦比亚",
+"🇭🇰_HK_中国香港_1",
+"🇺🇸_US_美国->🇹🇭_TH_泰国_1",
+"🇭🇰_HK_中国香港->🇰🇷_KR_韩国",
+"🇸🇪_SE_瑞典",
+"🇺🇸_US_美国->🇹🇭_TH_泰国_2",
+"🇺🇸_US_美国->🇹🇭_TH_泰国_3",
+"🇨🇴_CO_哥伦比亚_1",
+"🇺🇸_US_美国->🇹🇭_TH_泰国_4"
+"🇭🇰_HK_中国香港->🇰🇷_KR_韩国"
+"🇷🇺_RU_俄罗斯"
+"server": "3.170.185.121",
+"server": "humorous-llama.rooster465.autos",
+"server_name": "humorous-llama.rooster465.autos",
+"server": "176.96.138.122",
+"uuid": "518a99df-54f6-4f42-819d-b60abd880edf",
+"server_name": "kind-vortex.cdn.cachefleet.com",
+"fingerprint": "qq"
+"public_key": "O_YZOJVON0LE1U01hAtNUOVRy7z6fkBUXbMtpCGoGEg"
+"tag": "🇦🇫_AF_阿富汗->🇦🇹_AT_奥地利",
+"server": "103.161.237.54",
+"uuid": "e911c552-3a98-41e0-b5fb-0dd3879887b7",
+"path": "/api/v1/irc",
+"Host": "vod.ensf.top"
+"server_name": "vod.ensf.top",
+"tag": "🇫🇮_FI_芬兰",
+"server": "77.105.130.117",
+"uuid": "413f9465-0d30-4a71-9ef2-8e34d8bd0f8d",
+"server_name": "www.cloudflare.com",
+"public_key": "3NcyuRV1ZD2Pfyh5xuxVftHBu0s65uc3IvXrw-SxEXc",
+"short_id": "0686931b969eda82"
+"tag": "🇺🇦_UA_乌克兰",
+"server": "193.238.153.15",
+"uuid": "40cfbd0a-f133-4174-8e03-ab0e587e1099",
+"public_key": "dzknsuwujuOacNHTXzdPxBLNUEJfEImiwLinPPNFmwU",
+"short_id": "1ea21a140beaecc5"
+"server": "strong-haddock.rooster465.autos",
+"server_name": "strong-haddock.rooster465.autos",
+"tag": "🇨🇴_CO_哥伦比亚",
+"server": "149.130.189.173",
+"server_port": 62145,
+"uuid": "8fb65472-5957-4f64-ba2d-b5812b2f155a",
+"tag": "🇭🇰_HK_中国香港_1",
+"server": "366-1095.rabbitpro-in-3.com",
+"server_port": 29053,
+"uuid": "e351d6d8-c167-3e07-8fda-3f2f4ec0760b",
+"tag": "🇺🇸_US_美国->🇹🇭_TH_泰国_1",
+"server": "18.154.132.94",
+"tag": "🇭🇰_HK_中国香港->🇰🇷_KR_韩国",
+"server": "a8zbx9xj.catcat321.com",
+"server_port": 20088,
+"password": "0010996f-3eab-4804-9b3a-3a889d6767fc",
+"server_name": "iepl.krz3.cat.bilibili.com",
+"tag": "🇸🇪_SE_瑞典",
+"server": "84.32.49.223",
+"uuid": "463a26c2-eba8-40ea-89c4-ee5c1373ccbe",
+"server_name": "dsech.mostserv.xyz",
+"public_key": "g0mDPNlv3uOrnxXvBYP3cEjd0ewJuIFlBh93KE5bU3A",
+"short_id": "d0ca141e839394a3"
+"tag": "🇺🇸_US_美国->🇹🇭_TH_泰国_2",
+"server": "18.238.109.28",
+"server": "193.233.205.117",
+"server_name": "media3.abvphelp.cc",
+"public_key": "iUc9JqWjFemnQo8R5fgiwssCjEdWmixB4X-mRJkx2VE",
+"short_id": "3182f9ae"
+"tag": "🇺🇸_US_美国->🇹🇭_TH_泰国_3",
+"server": "52.84.199.57",
+"tag": "🇨🇴_CO_哥伦比亚_1",
+"server": "149.130.172.133",
+"server": "194.26.229.222",
+"uuid": "b3d66abd-ea82-4616-92f0-1dec8d1e4cfc",
+"tag": "🇺🇸_US_美国->🇹🇭_TH_泰国_4",
+"server": "18.244.214.27",

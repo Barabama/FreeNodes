@@ -1,5 +1,5 @@
 # FreeNodeSpider - Proxy-provider based config (for Clash Meta / Mihomo)
-# Generated: 2026-08-13 14:44:29
+# Generated: 2026-08-14 05:30:47
 # Docs: https://github.com/FreeNodeSpider
 # ------------------------------------------------------------
 allow-lan: true
@@ -23,6 +23,7 @@ proxy-groups:
   type: url-test
   url: http://www.gstatic.com/generate_204
   use: &id001
+  - cfmem
   - clashmeta
   - clashnode
   - clashstair
@@ -115,6 +116,7 @@ proxy-groups:
   type: url-test
   url: http://www.gstatic.com/generate_204
   use:
+  - cfmem
   - clashmeta
   - clashnode
   - clashstair
@@ -143,6 +145,13 @@ proxy-groups:
   - 🇺🇸 US 美国
   type: select
 proxy-providers:
+  cfmem:
+    health-check:
+      enable: true
+      interval: 300
+      url: http://www.gstatic.com/generate_204
+    path: ./nodes/cfmem.yaml
+    type: file
   clashmeta:
     health-check:
       enable: true
