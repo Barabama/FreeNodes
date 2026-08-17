@@ -2,6 +2,7 @@ crawl:
   concurrency: 2
   max_articles: 3
   timeout: 30
+  proxy: ''
 llm:
   providers:
   - api_key_env: OPENROUTER_API_KEY
@@ -16,7 +17,7 @@ llm:
     default_weight: 30
     is_reasoning_model: true
     models:
-    - zai-glm-4.7
+    - qwen-3-235b-a22b-instruct-2507
     - gpt-oss-120b
     name: cerebras
   - api_key_env: OPENCODE_API_KEY
@@ -24,7 +25,7 @@ llm:
     default_weight: 20
     is_reasoning_model: false
     models:
-    - deepseek-v4-flash-free
+    - deepseek-v4-flash
     name: opencode
   task_routing:
     extract_links:
