@@ -8,6 +8,7 @@ Usage:
 """
 import argparse
 import asyncio
+import logging
 import sys
 from dotenv import load_dotenv
 
@@ -20,6 +21,9 @@ try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 except Exception:
     pass
+
+# Surface LLM warnings/errors (provider failures, model not found).
+logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 
 load_dotenv()
 sys.path.insert(0, ".")

@@ -130,6 +130,11 @@ class LLMRouter:
                 self._health.record_success(name)
                 return result
             self._health.record_failure(name)
+        logger.error(
+            "ALL LLM providers failed for task_type='%s'. Providers tried: %s. "
+            "Check provider API keys and model names in config.yaml.",
+            task_type, sorted(tried) if tried else "none",
+        )
         return ""
 
     async def extract_links(self, markdown: str) -> dict[str, list[str]]:
