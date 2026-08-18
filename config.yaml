@@ -14,7 +14,7 @@ llm:
     name: openrouter
   - api_key_env: CEREBRAS_API_KEY
     base_url: https://api.cerebras.ai/v1
-    default_weight: 30
+    default_weight: 5
     is_reasoning_model: true
     models:
     - gpt-oss-120b
@@ -26,13 +26,22 @@ llm:
     models:
     - deepseek-v4-flash-free
     name: opencode
+  - api_key_env: KILOCODE_API_KEY
+    base_url: https://api.kilo.ai/api/gateway
+    default_weight: 30
+    is_reasoning_model: false
+    models:
+    - kilo-auto/free
+    name: kilocode
   task_routing:
     extract_links:
-      cerebras: 30
+      cerebras: 5
+      kilocode: 30
       opencode: 10
       openrouter: 60
     generate_pattern:
-      cerebras: 30
+      cerebras: 5
+      kilocode: 20
       opencode: 0
       openrouter: 70
 output:
