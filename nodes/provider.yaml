@@ -1,5 +1,5 @@
 # FreeNodeSpider - Proxy-provider based config (for Clash Meta / Mihomo)
-# Generated: 2026-09-01 09:06:10
+# Generated: 2026-09-02 08:23:56
 # Docs: https://github.com/FreeNodeSpider
 # ------------------------------------------------------------
 allow-lan: true
@@ -17,9 +17,9 @@ log-level: info
 mixed-port: 7890
 mode: rule
 proxy-groups:
-- include: (澳大利亚|AU|Australia|Sydney|SYD)
+- include: (加拿大|CA|Canada|Toronto|YVR|YYZ)
   interval: 300
-  name: 🇦🇺 AU 澳大利亚
+  name: 🇨🇦 CA 加拿大
   type: url-test
   url: http://www.gstatic.com/generate_204
   use: &id001
@@ -33,12 +33,6 @@ proxy-groups:
   - nodev2ray
   - oneclash
   - yudou
-- include: (加拿大|CA|Canada|Toronto|YVR|YYZ)
-  interval: 300
-  name: 🇨🇦 CA 加拿大
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  use: *id001
 - include: (德国|DE|Germany|Frankfurt|FRA)
   interval: 300
   name: 🇩🇪 DE 德国
@@ -60,12 +54,6 @@ proxy-groups:
 - include: (香港|HK|Hong Kong|HongKong|HKG)
   interval: 300
   name: 🇭🇰 HK 香港
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  use: *id001
-- include: (印度|IN|India|Mumbai|BOM)
-  interval: 300
-  name: 🇮🇳 IN 印度
   type: url-test
   url: http://www.gstatic.com/generate_204
   use: *id001
@@ -129,13 +117,11 @@ proxy-groups:
 - name: 🌍 手动选择
   proxies:
   - 🚀 自动选择
-  - 🇦🇺 AU 澳大利亚
   - 🇨🇦 CA 加拿大
   - 🇩🇪 DE 德国
   - 🇫🇷 FR 法国
   - 🇬🇧 GB 英国
   - 🇭🇰 HK 香港
-  - 🇮🇳 IN 印度
   - 🇯🇵 JP 日本
   - 🇰🇷 KR 韩国
   - 🇳🇱 NL 荷兰
