@@ -1,115 +1,329 @@
-port: 7890
-socks-port: 7891
-allow-lan: true
-mode: Rule
-log-level: info
-external-controller: 127.0.0.1:9090
 proxies:
-  - {name: 8元老牌专线机场：cczzuu.top, server: us22.sofast.live, port: 58011, type: vless, uuid: 0afc6426-606c-48e7-bd70-3c424a416842, tls: false, tfo: false, skip-cert-verify: false, network: tcp, udp: true}
-  - {name: "🇯🇵 日本_0RRL4V", server: 130.12.102.125, port: 443, type: vless, uuid: 6429d27e-a7d4-4e04-ae57-e88243fbbfe3, tls: true, tfo: false, skip-cert-verify: false, reality-opts: {public-key: F2VfBr2UmjDTErB_oruvW5aIvzH_xGfM2AW5_w-DF0I, short-id: ""}, servername: localhost, client-fingerprint: chrome, network: tcp, udp: true}
-  - {name: "🇫🇮 芬兰_B82IVP", server: brightharbor.download, port: 443, type: vless, uuid: 6429d27e-a7d4-4e04-ae57-e88243fbbfe3, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, reality-opts: {public-key: F2VfBr2UmjDTErB_oruvW5aIvzH_xGfM2AW5_w-DF0I, short-id: ""}, servername: localhost, client-fingerprint: chrome, network: tcp, udp: true}
-  - {name: "🇷🇴 罗马尼亚_NAC3G0", server: ro-xh02.tcp-reset-club.net, port: 8443, type: vless, uuid: 4fb82973-a7f1-4fc2-9958-cb21f5162f06, tls: true, tfo: false, skip-cert-verify: false, reality-opts: {public-key: Gu_QdtOX6E8pZcYvDWgHKA5dxcit7hrpU27sizCEWXg, short-id: e0}, servername: s3.netavex.com, client-fingerprint: chrome, network: xhttp, udp: true}
-  - {name: "🇳🇱 荷兰_0YVUQY", server: 31.59.150.174, port: 9443, type: vless, uuid: 92089155-6602-4122-86d4-fe6de20e8c4d, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, reality-opts: {public-key: RWu6ktBE4DFbUz_prmz-5KuolLhO53ehh19mNxhP-wI, short-id: a1b2c3d4}, servername: hotcoals.aeternavpn.space, client-fingerprint: firefox, network: tcp, udp: true}
-proxy-groups:
-  - name: 🚀 节点选择
-    type: select
-    proxies:
-      - "♻️ 自动选择"
-      - DIRECT
-      - 8元老牌专线机场：cczzuu.top
-      - "🇯🇵 日本_0RRL4V"
-      - "🇫🇮 芬兰_B82IVP"
-      - "🇷🇴 罗马尼亚_NAC3G0"
-      - "🇳🇱 荷兰_0YVUQY"
-  - name: ♻️ 自动选择
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
-    proxies:
-      - 8元老牌专线机场：cczzuu.top
-      - "🇯🇵 日本_0RRL4V"
-      - "🇫🇮 芬兰_B82IVP"
-      - "🇷🇴 罗马尼亚_NAC3G0"
-      - "🇳🇱 荷兰_0YVUQY"
-  - name: 🌍 国外媒体
-    type: select
-    proxies:
-      - "🚀 节点选择"
-      - "♻️ 自动选择"
-      - "🎯 全球直连"
-      - 8元老牌专线机场：cczzuu.top
-      - "🇯🇵 日本_0RRL4V"
-      - "🇫🇮 芬兰_B82IVP"
-      - "🇷🇴 罗马尼亚_NAC3G0"
-      - "🇳🇱 荷兰_0YVUQY"
-  - name: 📲 电报信息
-    type: select
-    proxies:
-      - "🚀 节点选择"
-      - "🎯 全球直连"
-      - 8元老牌专线机场：cczzuu.top
-      - "🇯🇵 日本_0RRL4V"
-      - "🇫🇮 芬兰_B82IVP"
-      - "🇷🇴 罗马尼亚_NAC3G0"
-      - "🇳🇱 荷兰_0YVUQY"
-  - name: Ⓜ️ 微软服务
-    type: select
-    proxies:
-      - "🎯 全球直连"
-      - "🚀 节点选择"
-      - 8元老牌专线机场：cczzuu.top
-      - "🇯🇵 日本_0RRL4V"
-      - "🇫🇮 芬兰_B82IVP"
-      - "🇷🇴 罗马尼亚_NAC3G0"
-      - "🇳🇱 荷兰_0YVUQY"
-  - name: 🍎 苹果服务
-    type: select
-    proxies:
-      - "🚀 节点选择"
-      - "🎯 全球直连"
-      - 8元老牌专线机场：cczzuu.top
-      - "🇯🇵 日本_0RRL4V"
-      - "🇫🇮 芬兰_B82IVP"
-      - "🇷🇴 罗马尼亚_NAC3G0"
-      - "🇳🇱 荷兰_0YVUQY"
-  - name: 📢 谷歌FCM
-    type: select
-    proxies:
-      - "🚀 节点选择"
-      - "🎯 全球直连"
-      - "♻️ 自动选择"
-      - 8元老牌专线机场：cczzuu.top
-      - "🇯🇵 日本_0RRL4V"
-      - "🇫🇮 芬兰_B82IVP"
-      - "🇷🇴 罗马尼亚_NAC3G0"
-      - "🇳🇱 荷兰_0YVUQY"
-  - name: 🎯 全球直连
-    type: select
-    proxies:
-      - DIRECT
-      - "🚀 节点选择"
-      - "♻️ 自动选择"
-  - name: 🛑 全球拦截
-    type: select
-    proxies:
-      - REJECT
-      - DIRECT
-  - name: 🍃 应用净化
-    type: select
-    proxies:
-      - REJECT
-      - DIRECT
-  - name: 🐟 漏网之鱼
-    type: select
-    proxies:
-      - "🚀 节点选择"
-      - "🎯 全球直连"
-      - "♻️ 自动选择"
-      - 8元老牌专线机场：cczzuu.top
-      - "🇯🇵 日本_0RRL4V"
-      - "🇫🇮 芬兰_B82IVP"
-      - "🇷🇴 罗马尼亚_NAC3G0"
-      - "🇳🇱 荷兰_0YVUQY"
-rules:
-  - MATCH,🐟 漏网之鱼
+- name: 8元老牌专线机场：cczzuu.top
+  server: us22.sofast.live
+  port: 58011
+  type: vless
+  uuid: 0afc6426-606c-48e7-bd70-3c424a416842
+  tls: false
+  tfo: false
+  skip-cert-verify: false
+  network: tcp
+  udp: true
+- name: 🇯🇵 日本_894LG2
+  server: 116.206.93.227
+  port: 443
+  type: vless
+  uuid: 99ee7869-84e6-4e07-a7d2-1f56acd3a295
+  tls: true
+  tfo: false
+  flow: xtls-rprx-vision
+  skip-cert-verify: false
+  reality-opts:
+    public-key: gj-WwJGn9OMgKeREW-gOPyl1YP88IXD5k4zunEl2-iE
+    short-id: 190378398fd796c3
+  servername: www.apple.com
+  client-fingerprint: safari
+  network: tcp
+  udp: true
+- name: 🇺🇸 美国_GWQ5WD
+  server: 165.140.217.2
+  port: 443
+  type: vmess
+  udp: true
+  uuid: b65a2d69-5634-42a2-e4be-54e8a6176900
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+- name: 🇩🇪 德国_JU9XJG
+  server: 178.105.61.61
+  port: 2083
+  type: vless
+  uuid: cb077bf2-70b7-457b-af42-27cdc3e0e544
+  tls: true
+  tfo: false
+  flow: xtls-rprx-vision
+  skip-cert-verify: false
+  reality-opts:
+    public-key: H0nCazQFHVhSObfqSUhGLhK7KRwKzTMggIBPjnMMqhk
+    short-id: af04ff8094115e93
+  servername: 178.105.61.61
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: 🇫🇮 芬兰_QG4ZPA
+  server: 2.26.178.166
+  port: 443
+  type: vless
+  uuid: 6429d27e-a7d4-4e04-ae57-e88243fbbfe3
+  tls: true
+  tfo: false
+  flow: xtls-rprx-vision
+  skip-cert-verify: false
+  reality-opts:
+    public-key: F2VfBr2UmjDTErB_oruvW5aIvzH_xGfM2AW5_w-DF0I
+    short-id: ''
+  servername: localhost
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: 🇫🇮 芬兰_PO5GE1
+  server: 2.26.178.184
+  port: 443
+  type: vless
+  uuid: 6429d27e-a7d4-4e04-ae57-e88243fbbfe3
+  tls: true
+  tfo: false
+  flow: xtls-rprx-vision
+  skip-cert-verify: false
+  reality-opts:
+    public-key: F2VfBr2UmjDTErB_oruvW5aIvzH_xGfM2AW5_w-DF0I
+    short-id: ''
+  servername: localhost
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: 🇫🇮 芬兰_FKTK04
+  server: 2.26.178.129
+  port: 443
+  type: vless
+  uuid: 6429d27e-a7d4-4e04-ae57-e88243fbbfe3
+  tls: true
+  tfo: false
+  flow: xtls-rprx-vision
+  skip-cert-verify: false
+  reality-opts:
+    public-key: F2VfBr2UmjDTErB_oruvW5aIvzH_xGfM2AW5_w-DF0I
+    short-id: ''
+  servername: localhost
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: 🇫🇮 芬兰_GQD7CF
+  server: 2.26.178.152
+  port: 443
+  type: vless
+  uuid: 6429d27e-a7d4-4e04-ae57-e88243fbbfe3
+  tls: true
+  tfo: false
+  flow: xtls-rprx-vision
+  skip-cert-verify: false
+  reality-opts:
+    public-key: F2VfBr2UmjDTErB_oruvW5aIvzH_xGfM2AW5_w-DF0I
+    short-id: ''
+  servername: localhost
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: 🇫🇮 芬兰_BKVTJ5
+  server: 2.26.178.187
+  port: 443
+  type: vless
+  uuid: 6429d27e-a7d4-4e04-ae57-e88243fbbfe3
+  tls: true
+  tfo: false
+  flow: xtls-rprx-vision
+  skip-cert-verify: false
+  reality-opts:
+    public-key: F2VfBr2UmjDTErB_oruvW5aIvzH_xGfM2AW5_w-DF0I
+    short-id: ''
+  servername: localhost
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: 🇭🇰 香港_M09QC7
+  server: planb.mojcn.com.linuxlh.xin
+  port: 16632
+  type: vmess
+  udp: true
+  uuid: bc8a58c9-a544-4f85-87cf-274f6eb4d8cb
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: 9531724e3efc3135bdf7f4339b2e04d7.mobgslb.tbcache.com
+- name: 🇨🇦 加拿大_ZHL35Z
+  server: 151.244.30.176
+  port: 443
+  type: vless
+  uuid: c928859b-424d-429c-b1fe-c99137af7c4b
+  tls: true
+  tfo: false
+  flow: xtls-rprx-vision
+  skip-cert-verify: false
+  reality-opts:
+    public-key: V4MbF_aWSZ8bw6WbRL_wApaf4uagzBnu0c62g3dyNQY
+    short-id: c16225938b61882e
+  servername: smartcaptcha.yandexcloud.net
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: 🇫🇮 芬兰_HTK90Z
+  server: 2.26.178.172
+  port: 443
+  type: vless
+  uuid: 6429d27e-a7d4-4e04-ae57-e88243fbbfe3
+  tls: true
+  tfo: false
+  flow: xtls-rprx-vision
+  skip-cert-verify: false
+  reality-opts:
+    public-key: F2VfBr2UmjDTErB_oruvW5aIvzH_xGfM2AW5_w-DF0I
+    short-id: ''
+  servername: localhost
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: 🇮🇹 意大利_S5MIAT
+  server: 31.59.150.174
+  port: 9443
+  type: vless
+  uuid: 92089155-6602-4122-86d4-fe6de20e8c4d
+  tls: true
+  tfo: false
+  flow: xtls-rprx-vision
+  skip-cert-verify: false
+  reality-opts:
+    public-key: RWu6ktBE4DFbUz_prmz-5KuolLhO53ehh19mNxhP-wI
+    short-id: a1b2c3d4
+  servername: hotcoals.aeternavpn.space
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: 🇫🇮 芬兰_S18EKF
+  server: 2.26.178.128
+  port: 443
+  type: vless
+  uuid: 6429d27e-a7d4-4e04-ae57-e88243fbbfe3
+  tls: true
+  tfo: false
+  flow: xtls-rprx-vision
+  skip-cert-verify: false
+  reality-opts:
+    public-key: F2VfBr2UmjDTErB_oruvW5aIvzH_xGfM2AW5_w-DF0I
+    short-id: ''
+  servername: localhost
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: 🇹🇷 土耳其_5KZPTW
+  server: rital-caca.tempfast.ir
+  port: 4323
+  type: vless
+  uuid: 78440584-c334-44a8-bab1-8b1a7d08012b
+  tls: true
+  tfo: false
+  skip-cert-verify: false
+  reality-opts:
+    public-key: T7pTw3G0AIiLmvi96auuSsRjv1q52lpexxO2oITguhA
+    short-id: 40d9e0206a1bd03d
+  servername: play.googleapis.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: 🇹🇷 土耳其_2F7OFQ
+  server: 45.74.158.180
+  port: 443
+  type: vless
+  uuid: 42994234-1689-48bc-8d01-cfb16e7b017a
+  tls: true
+  tfo: false
+  skip-cert-verify: false
+  reality-opts:
+    public-key: MgyA2FY0p2q_VOwoL9T1Z3rzpKEcGjfN61QliGcyHA8
+    short-id: ca41ef1263c02279
+  servername: refersion.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: 🇯🇵 日本_8AEV59
+  server: 130.12.102.125
+  port: 443
+  type: vless
+  uuid: 6429d27e-a7d4-4e04-ae57-e88243fbbfe3
+  tls: true
+  tfo: false
+  skip-cert-verify: false
+  reality-opts:
+    public-key: F2VfBr2UmjDTErB_oruvW5aIvzH_xGfM2AW5_w-DF0I
+    short-id: ''
+  servername: localhost
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: 8元老牌专线机场：cczzuu.top
+  server: jp.sofast.live
+  port: 52683
+  type: vless
+  uuid: 5aaa5259-f924-4682-a4a3-149d472a9dcc
+  tls: false
+  tfo: false
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: 🇮🇹 意大利_CT5EXO
+  server: 31.59.150.174
+  port: 9443
+  type: vless
+  uuid: 92089155-6602-4122-86d4-fe6de20e8c4d
+  tls: true
+  tfo: false
+  flow: xtls-rprx-vision
+  skip-cert-verify: false
+  reality-opts:
+    public-key: RWu6ktBE4DFbUz_prmz-5KuolLhO53ehh19mNxhP-wI
+    short-id: a1b2c3d4
+  servername: hotcoals.aeternavpn.space
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: 🇷🇺 俄罗斯_PQOH8Q
+  server: 84.38.187.134
+  port: 443
+  type: vless
+  uuid: 82282910-54a0-0032-b2df-86bfbce8ed36
+  tls: true
+  tfo: false
+  skip-cert-verify: false
+  reality-opts:
+    public-key: QSAIpsE696lDqkumfo7dyBt92XzrVDPTF6KogbeKhGc
+    short-id: 2c9431dc7a306018
+  servername: git.xpkg.ru
+  client-fingerprint: edge
+  network: xhttp
+  udp: true
+- name: 🇦🇺 澳大利亚_2IA0FF
+  server: 103.75.119.11
+  port: 443
+  type: vless
+  uuid: 682300d9-74d0-4dae-923c-09cb5d5e9951
+  tls: true
+  tfo: false
+  skip-cert-verify: false
+  reality-opts:
+    public-key: OvlkCDO6YdWR0ec3kVHW-Ul7I9TuEmJVfxXdaZiy5Ug
+    short-id: 2cbe511ff1f9200b
+  servername: sberbank.ru
+  client-fingerprint: chrome
+  network: xhttp
+  udp: true
+- name: 🇷🇺 俄罗斯_TFX08T
+  server: 84.38.187.169
+  port: 443
+  type: vless
+  uuid: 82282910-54a0-0032-b2df-86bfbce8ed36
+  tls: true
+  tfo: false
+  skip-cert-verify: false
+  reality-opts:
+    public-key: rJMYW6mHgjs61mHxfm8Gmm_Re23sV_xe5b0IrTpLsiQ
+    short-id: 94c9dbbf07366d96
+  servername: mc.yandex.tr
+  client-fingerprint: edge
+  network: xhttp
+  udp: true
