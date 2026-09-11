@@ -1,36 +1,17 @@
-"""Node dedup + base64 decode + output to nodes/ directory."""
-import base64
+"""Node dedup + subscription normalization + output to nodes/ directory."""
 import hashlib
-import re
 from pathlib import Path
 
-
-def _is_base64_sub(raw: str) -> bool:
-    """Detect if content is base64-encoded subscription data (not already plain text)."""
-    stripped = raw.strip()
-    if not stripped:
-        return False
-    if re.search(r'(vmess|vless|trojan|ss|ssr|socks|hysteria)://', stripped):
-        return False
-    return bool(re.fullmatch(r'[A-Za-z0-9+/=\s]+', stripped))
+from src.node_validator import normalize_yaml_text, valid_txt_lines, decode_subscription_text
 
 
 def process_txt(raw: str) -> str:
-    """Decode base64 v2ray nodes if needed, dedup by line hash."""
-    if _is_base64_sub(raw):
-        try:
-            decoded = base64.b64decode(raw).decode("utf-8", errors="ignore")
-        except Exception:
-            decoded = raw
-    else:
-        decoded = raw
-
+    """Decode, validate, and deduplicate proxy URI lines."""
+    decoded = decode_subscription_text(raw)
+    valid, _issues = valid_txt_lines(decoded)
     seen: set[str] = set()
     unique: list[str] = []
-    for line in decoded.splitlines():
-        line = line.strip()
-        if not line:
-            continue
+    for line in valid:
         h = hashlib.md5(line.encode()).hexdigest()
         if h not in seen:
             seen.add(h)
@@ -39,11 +20,13 @@ def process_txt(raw: str) -> str:
 
 
 def save(site: str, ext: str, content: str, out_dir: str = "nodes"):
-    """Write deduped content to nodes/{site}.{ext}."""
+    """Write validated content to nodes/{site}.{ext}."""
     path = Path(out_dir)
     path.mkdir(exist_ok=True)
     if ext == ".txt":
         content = process_txt(content)
+    elif ext in {".yaml", ".yml"}:
+        content = normalize_yaml_text(content)
     filepath = path / f"{site}{ext}"
     filepath.write_text(content, encoding="utf-8")
     lines = content.count("\n") + 1 if content else 0

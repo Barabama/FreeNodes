@@ -32,6 +32,11 @@ jobs:
           OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
         run: python main.py
 
+      # Validation is report-only: legacy node files are not cleaned or deleted.
+      - name: Validate node artifacts
+        continue-on-error: true
+        run: validate-nodes nodes
+
       - name: Commit output
         run: |
           git config user.name "github-actions[bot]"

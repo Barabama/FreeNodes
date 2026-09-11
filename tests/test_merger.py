@@ -121,14 +121,15 @@ class TestFileIntegration:
         # Create a sample txt file (base64 encoded V2Ray sub)
         import base64
         txt_content = base64.b64encode(
-            b"vmess://abc-line-1\nvmess://def-line-2\n"
+            b"vless://418048af-a293-4b99-9b0c-98ca3580dd24@example.com:443\n"
+            b"vless://518048af-a293-4b99-9b0c-98ca3580dd24@example.org:8443\n"
         ).decode()
         (nodes / "site1.txt").write_text(txt_content, encoding="utf-8")
 
         # Create a sample yaml file
         yaml_content = """proxies:
-  - {name: HK 01, server: 1.1.1.1, port: 443, type: vmess}
-  - {name: JP 01, server: 2.2.2.2, port: 443, type: trojan}
+  - {name: HK 01, server: 1.1.1.1, port: 443, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24}
+  - {name: JP 01, server: 2.2.2.2, port: 443, type: trojan, password: secret}
 """
         (nodes / "site1.yaml").write_text(yaml_content, encoding="utf-8")
 

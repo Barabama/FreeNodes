@@ -5,13 +5,13 @@ Three output modes:
   2. merged.yaml      — physical merge of all Clash yaml files
   3. provider.yaml    — proxy-provider based config (references each site file)
 """
-import base64
 import hashlib
-import re
 import sys
 from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
+
+from src.node_validator import validate_proxy, valid_txt_lines
 
 # Windows console uses GBK which can't encode flag emoji in region names.
 # Force UTF-8 output with replacement chars instead of crashing.
@@ -79,22 +79,12 @@ class Merger:
             result.txt_sources += 1
             try:
                 raw = f.read_text(encoding="utf-8", errors="replace")
-                # Only base64-decode if the file is actually base64-encoded.
-                # Pipeline already decodes subscription files when saving,
-                # so files may already be plain text (vmess:// lines).
-                # Re-decoding plain text silently corrupts it (base64 ignores
-                # invalid chars and produces garbage).
-                if self._is_base64_sub(raw):
-                    try:
-                        decoded = base64.b64decode(raw).decode("utf-8", errors="replace")
-                    except Exception:
-                        decoded = raw
-                else:
-                    decoded = raw
-                for line in decoded.splitlines():
-                    line = line.strip()
-                    if not line:
-                        continue
+                # Decode base64 subscriptions and reject comments, JSON/YAML
+                # configuration fragments, and malformed protocol lines.
+                valid_lines, issues = valid_txt_lines(raw)
+                if issues:
+                    print(f"  [merger] txt filtered {f.name}: {len(issues)} invalid lines")
+                for line in valid_lines:
                     h = hashlib.md5(line.encode()).hexdigest()
                     if h not in seen:
                         seen.add(h)
@@ -126,8 +116,13 @@ class Merger:
             try:
                 text = f.read_text(encoding="utf-8", errors="replace")
                 for doc in yaml.safe_load_all(text):
-                    if isinstance(doc, dict) and "proxies" in doc:
-                        all_proxies.extend(doc["proxies"])
+                    if not isinstance(doc, dict) or not isinstance(doc.get("proxies"), list):
+                        continue
+                    for index, proxy in enumerate(doc["proxies"], 1):
+                        if validate_proxy(proxy, f"{f.name}.proxies[{index}]", strict=False).ok:
+                            all_proxies.append(proxy)
+                        else:
+                            print(f"  [merger] yaml filtered invalid proxy in {f.name} at index {index}")
             except Exception as e:
                 print(f"  [merger] yaml skip {f.name}: {e}")
 
@@ -178,8 +173,9 @@ class Merger:
                 text = f.read_text(encoding="utf-8", errors="replace")
                 for doc in yaml.safe_load_all(text):
                     if isinstance(doc, dict):
-                        for p in doc.get("proxies", []):
-                            all_names.append(p.get("name", ""))
+                        for index, proxy in enumerate(doc.get("proxies", []), 1):
+                            if validate_proxy(proxy, f"{f.name}.proxies[{index}]", strict=False).ok:
+                                all_names.append(proxy.get("name", ""))
             except Exception as e:
                 print(f"  [merger] warning: {f.name} parse skipped ({e})")
                 continue
@@ -231,22 +227,6 @@ class Merger:
         return str(out)
 
     # ── Helpers ──
-
-    @staticmethod
-    def _is_base64_sub(raw: str) -> bool:
-        """Detect if txt content is base64-encoded subscription data.
-
-        Plain-text subscription files contain protocol links (vmess://, ss://…).
-        Base64-encoded files contain only base64 alphabet + whitespace + padding.
-        """
-        stripped = raw.strip()
-        if not stripped:
-            return False
-        # If it already contains protocol links, it's plain text.
-        if re.search(r'(vmess|vless|trojan|ss|ssr|socks|hysteria)://', stripped):
-            return False
-        # Check if it looks like base64: only [A-Za-z0-9+/=\s]
-        return bool(re.fullmatch(r'[A-Za-z0-9+/=\s]+', stripped))
 
     @staticmethod
     def _dedup_proxies(proxies: list[dict]) -> list[dict]:

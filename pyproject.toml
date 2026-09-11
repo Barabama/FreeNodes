@@ -15,8 +15,14 @@ dependencies = [
     "python-dotenv>=1.0.0",
 ]
 
+[project.scripts]
+validate-nodes = "src.node_validator:_main"
+
 [project.optional-dependencies]
 dev = [
     "pytest>=8.0.0",
     "pytest-asyncio>=0.24.0",
 ]
+
+[tool.setuptools.packages.find]
+include = ["src*"]

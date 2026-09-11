@@ -17,6 +17,7 @@ from src.config import SiteConfig, Config
 from src.crawler import Page, fetch_page, download_file
 from src.llm_router import LLMRouter
 from src.pipeline import save
+from src.node_validator import validate_txt_text, validate_yaml_text
 
 
 @dataclass
@@ -118,16 +119,18 @@ class SiteProcessor:
                         )
                         for path in extracted:
                             body = path.read_text(encoding="utf-8", errors="replace")
-                            ext = path.suffix.lower()
-                            if ext == ".txt":
+                            kind = self._detect_content_kind(body)
+                            if kind == "txt":
                                 txt_contents.append(body)
                                 result.txt_count += 1
                                 result.total_bytes += len(body)
-                            elif ext in (".yaml", ".yml"):
+                            elif kind == "yaml":
                                 yaml_contents.append(body)
                                 result.yaml_count += 1
                                 result.total_bytes += len(body)
-                            print(f"    extracted: {path.name} ({len(body)}B)")
+                            else:
+                                result.errors.append(f"unsupported subscription content: {path.name}")
+                            print(f"    extracted: {path.name} ({len(body)}B, {kind})")
 
                 # Fallback: try paste.to links if no Drive links
                 if not drive_urls:
@@ -149,15 +152,18 @@ class SiteProcessor:
                                             async with httpx.AsyncClient(timeout=30) as c:
                                                 resp = await c.get(content)
                                                 body = resp.text
-                                                ext = content.rsplit(".", 1)[-1]
-                                                if ext == "txt":
+                                                kind = self._detect_content_kind(body)
+                                                if kind == "txt":
                                                     txt_contents.append(body)
                                                     result.txt_count += 1
-                                                elif ext in ("yaml", "yml"):
+                                                    result.total_bytes += len(body)
+                                                elif kind == "yaml":
                                                     yaml_contents.append(body)
                                                     result.yaml_count += 1
-                                                result.total_bytes += len(body)
-                                                print(f"    downloaded: {content} ({len(body)}B)")
+                                                    result.total_bytes += len(body)
+                                                else:
+                                                    result.errors.append(f"unsupported subscription content: {content}")
+                                                print(f"    downloaded: {content} ({len(body)}B, {kind})")
                                         except Exception as e:
                                             print(f"    failed: {content} ({e})")
                                 break
@@ -247,16 +253,20 @@ class SiteProcessor:
                 result.errors.append(f"download failed: {url}")
                 print(f"  FAIL: {url}")
                 continue
-            if self._is_yaml_content(body):
+            kind = self._detect_content_kind(body)
+            if kind == "yaml":
                 yaml_contents.append(body)
                 result.yaml_count += 1
                 result.total_bytes += len(body)
                 print(f"  OK  yaml: {url} ({len(body)}B)")
-            else:
+            elif kind == "txt":
                 txt_contents.append(body)
                 result.txt_count += 1
                 result.total_bytes += len(body)
                 print(f"  OK  txt: {url} ({len(body)}B)")
+            else:
+                result.errors.append(f"unsupported subscription content: {url}")
+                print(f"  SKIP unsupported: {url} ({len(body)}B)")
 
         return self._save_and_finish(result, txt_contents, yaml_contents)
 
@@ -498,6 +508,19 @@ class SiteProcessor:
         return result
 
     @staticmethod
+    def _detect_content_kind(body: str) -> str:
+        """Classify downloaded content as a proxy TXT list, Mihomo YAML, or unknown."""
+        yaml_result = validate_yaml_text(body)
+        if yaml_result.stats.get("valid_proxy_entries", 0) > 0 and not any(
+            issue.code == "yaml_parse_error" for issue in yaml_result.errors
+        ):
+            return "yaml"
+        txt_result = validate_txt_text(body)
+        if txt_result.stats.get("valid_lines", 0) > 0:
+            return "txt"
+        return "unknown"
+
+    @staticmethod
     def _is_yaml_content(body: str) -> bool:
         """Detect if downloaded content is Clash YAML vs plain-text node list.
 
@@ -505,12 +528,7 @@ class SiteProcessor:
         or ``proxy-groups:`` at the start of lines. Plain node lists contain
         protocol links (vmess://, ss://) or base64.
         """
-        for line in body.splitlines()[:20]:
-            line = line.strip()
-            if line.startswith(("proxies:", "proxy-groups:", "mixed-port:",
-                                "allow-lan:", "mode:", "rules:", "dns:")):
-                return True
-        return False
+        return SiteProcessor._detect_content_kind(body) == "yaml"
 
     @staticmethod
     def _parse_article_date(text: str, href: str) -> str | None:
