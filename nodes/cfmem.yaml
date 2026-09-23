@@ -1,349 +1,40 @@
 proxies:
-- name: 🇭🇰_HK_中国香港->🇬🇧_GB_英国
-  type: vmess
-  server: v36.hdacd.com
-  port: 30836
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇮_FI_芬兰
-  type: vless
-  server: 196.196.206.38
-  port: 443
-  uuid: 4bdeee92-97e8-414d-bef6-ec1d5e2ab73b
-  servername: finkafsb.finiki.lol
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  reality-opts:
-    public-key: YBKHp6R7xp2Ss2kxbvDNMFPpRrf3oh1wQ2dVMukPHmA
-    short-id: d110331f200987ae
-  skip-cert-verify: true
-  udp: true
-- name: 🇪🇸_ES_西班牙
-  type: vless
-  server: es.cache-4d8a.com
-  port: 443
-  uuid: ddf09ad0-02dc-485b-9048-1038de5bebf0
-  network: grpc
-  servername: es.cache-4d8a.com
-  tls: true
-  client-fingerprint: chrome
-  grpc-opts:
-    grpc-service-name: grpc
-  reality-opts:
-    public-key: S6t9-gOX2mxWKNGvGSJ8NxDdlJy78d4gN2-wv2d0hFw
-    short-id: 8319913f2e5f5711
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇮_FI_芬兰_1
-  type: vless
-  server: finkafsb.finiki.lol
-  port: 443
-  uuid: 4bdeee92-97e8-414d-bef6-ec1d5e2ab73b
-  servername: finkafsb.finiki.lol
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: random
-  reality-opts:
-    public-key: YBKHp6R7xp2Ss2kxbvDNMFPpRrf3oh1wQ2dVMukPHmA
-    short-id: d110331f200987ae
-  skip-cert-verify: true
-  udp: true
-- name: 🇭🇰_HK_中国香港->🇩🇪_DE_德国
-  type: vmess
-  server: v33.hdacd.com
-  port: 30833
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  udp: true
-- name: 🇩🇪_DE_德国
-  type: vless
-  server: gesmankos.sadiepinki.com
-  port: 443
-  uuid: c5694dc5-39fd-4a92-8430-3837baa522a3
-  servername: gesmankos.sadiepinki.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  reality-opts:
-    public-key: rCkSHJ7goy7ZvSlau4LfXF-QLloOJMNeMxpeeQtwtVs
-    short-id: 4fa44664f6a566d3
-  skip-cert-verify: true
-  udp: true
-- name: 🇩🇪_DE_德国_1
-  type: vless
-  server: 2.59.134.226
-  port: 443
-  uuid: 88281d02-b387-4fe3-918e-26ed331e6d08
-  servername: rich-falcon.cdn.cachefleet.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: qq
-  reality-opts:
-    public-key: 1sSmdw90uTiGuitDvp_q8zcXTcHXKQS3IVjA7T1UNiY
-  skip-cert-verify: true
-  udp: true
-- name: 🇷🇺_RU_俄罗斯->🇺🇸_US_美国
-  type: vless
-  server: 176.109.104.195
-  port: 9873
-  uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
-  network: grpc
-  servername: dl.google.com
-  tls: true
-  client-fingerprint: qq
-  grpc-opts:
-    grpc-service-name: grpc-tunnel
-  reality-opts:
-    public-key: bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU
-    short-id: aabb
-  skip-cert-verify: true
-  udp: true
-- name: 🇯🇵_JP_日本
-  type: hysteria2
-  server: msjp1.mangshe.xyz
-  port: 20561
-  password: 5d0a6445-a30d-4522-bb1f-94f1d3ad63be
-  sni: www.microsoft.com
-  skip-cert-verify: true
-  udp: true
 - name: 🇺🇸_US_美国
-  type: vless
-  server: lyra.yokkastars.com
-  port: 40443
-  uuid: 5be7fb02-b6a5-450f-b041-3243b98e8420
-  servername: deepl.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: edge
-  reality-opts:
-    public-key: Uvj5H9pDJP0HX2bN7NN7sCQwVCrC5N2NbKf-yuy1ikE
-    short-id: ee33
-  skip-cert-verify: true
-  udp: true
-- name: 🇩🇪_DE_德国_2
-  type: hysteria
-  server: 5.83.129.90
-  port: 54177
-  auth_str: dongtaiwang.com
-  up: '500'
-  down: '1000'
-  sni: apple.com
-  skip-cert-verify: true
-  alpn:
-  - h3
-  udp: true
-- name: 🇨🇳_CN_中国
   type: vmess
-  server: 112.132.215.108
-  port: 50002
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 64
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  udp: true
-- name: 🇨🇳_CN_中国->🇺🇸_US_美国
-  type: vless
-  server: jp.sofast.live
-  port: 52683
-  uuid: 399b6b23-cc40-4831-a494-61948e2df133
-  tls: false
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷_FR_法国
-  type: vless
-  server: francecadscr3qcr3v4213xwbterny54vtw4rfsedvr23vfdszc.nevoxa.ir
-  port: 32210
-  uuid: 24051e17-a1c9-4566-a331-789e6b681007
-  tls: false
-  skip-cert-verify: true
-  udp: true
-- name: 🇭🇰_HK_中国香港
-  type: vmess
-  server: v10.hdacd.com
-  port: 30807
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  udp: true
-- name: 🇭🇰_HK_中国香港_1
-  type: hysteria2
-  server: 24.233.8.109
+  server: www.shopify.com
   port: 443
-  password: 8294f130408299df8cab08c80bf6f819
-  sni: www.bing.com
-  skip-cert-verify: true
-  obfs: salamander
-  obfs-password: c8827ab99e316c5bd414e21afa915ddf
-  udp: true
-- name: 🇭🇰_HK_中国香港->🇫🇷_FR_法国
-  type: vmess
-  server: v35.hdacd.com
-  port: 30835
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  udp: true
-- name: 🇨🇳_CN_中国->🇺🇸_US_美国
-  type: vless
-  server: jp.sofast.live
-  port: 52683
-  uuid: 399b6b23-cc40-4831-a494-61948e2df133
-  tls: false
-  skip-cert-verify: true
-  udp: true
-- name: 🇭🇰_HK_中国香港->🇬🇧_GB_英国
-  type: vmess
-  server: v36.hdacd.com
-  port: 30836
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  udp: true
-- name: 🇹🇷_TR_土耳其
-  type: vless
-  server: 144.225.65.177
-  port: 443
-  uuid: 443b2e33-8e9c-4f7b-a48a-383a93895d1e
-  tls: false
-  skip-cert-verify: true
-  udp: true
-- name: 🇭🇰_HK_中国香港->🇺🇸_US_美国
-  type: vmess
-  server: v4.hdacd.com
-  port: 30804
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: none
-  tls: false
-  skip-cert-verify: true
-  udp: true
-- name: 🇩🇪_DE_德国
-  type: vless
-  server: gesmankos.sadiepinki.com
-  port: 443
-  uuid: c5694dc5-39fd-4a92-8430-3837baa522a3
-  servername: gesmankos.sadiepinki.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  reality-opts:
-    public-key: rCkSHJ7goy7ZvSlau4LfXF-QLloOJMNeMxpeeQtwtVs
-    short-id: 4fa44664f6a566d3
-  skip-cert-verify: true
-  udp: true
-- name: 🇪🇸_ES_西班牙
-  type: vless
-  server: es.cache-4d8a.com
-  port: 443
-  uuid: ddf09ad0-02dc-485b-9048-1038de5bebf0
-  network: grpc
-  servername: es.cache-4d8a.com
-  tls: true
-  client-fingerprint: chrome
-  grpc-opts:
-    grpc-service-name: grpc
-  reality-opts:
-    public-key: S6t9-gOX2mxWKNGvGSJ8NxDdlJy78d4gN2-wv2d0hFw
-    short-id: 8319913f2e5f5711
-  skip-cert-verify: true
-  udp: true
-- name: 🇩🇪_DE_德国_1
-  type: vless
-  server: 2.59.134.226
-  port: 443
-  uuid: 88281d02-b387-4fe3-918e-26ed331e6d08
-  servername: rich-falcon.cdn.cachefleet.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: qq
-  reality-opts:
-    public-key: 1sSmdw90uTiGuitDvp_q8zcXTcHXKQS3IVjA7T1UNiY
-  skip-cert-verify: true
-  udp: true
-- name: 🇭🇰_HK_中国香港->🇩🇪_DE_德国
-  type: vmess
-  server: v33.hdacd.com
-  port: 30833
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  udp: true
-- name: 🇨🇳_CN_中国
-  type: vmess
-  server: 112.132.215.108
-  port: 50002
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 64
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  udp: true
-- name: 🇩🇪_DE_德国_2
-  type: hysteria
-  server: 5.83.129.90
-  port: 54177
-  auth_str: dongtaiwang.com
-  up: '500'
-  down: '1000'
-  sni: apple.com
-  skip-cert-verify: true
-  alpn:
-  - h3
-  udp: true
-- name: 🇹🇼_TW_中国台湾
-  type: vmess
-  server: dee2309db4se3grs6e8hg4w61sd53g1.oylfmxz.cn
-  port: 443
-  uuid: d90e4077-bc7e-414d-a650-70bf1baae4d6
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
   alterId: 0
   cipher: auto
   tls: true
   skip-cert-verify: true
+  servername: guanwang.awsno.com
   network: ws
-  udp: true
-- name: 🇯🇵_JP_日本
-  type: vless
-  server: 161.33.29.51
-  port: 443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  network: ws
-  servername: shuma.ccwu.cc
-  tls: true
-  client-fingerprint: chrome
   ws-opts:
-    path: /
+    path: /hls/cctv5phd.m3u8
     headers:
-      Host: shuma.ccwu.cc
-  skip-cert-verify: true
+      Host: guanwang.awsno.com
   udp: true
-- name: 🇭🇰_HK_中国香港->🇯🇵_JP_日本
+- name: 🇨🇳_CN_中国
   type: vmess
-  server: v6.hdacd.com
-  port: 30806
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
+  server: 112.132.215.108
+  port: 50002
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
   cipher: auto
   tls: false
   skip-cert-verify: true
   udp: true
-- name: 🇯🇵_JP_日本_1
+- name: 🇩🇪_DE_德国
+  type: vless
+  server: de777.lavivas.org
+  port: 7444
+  uuid: 44e1105d-b46e-402f-933b-eaa136fcbb24
+  tls: true
+  flow: xtls-rprx-vision
+  skip-cert-verify: true
+  udp: true
+- name: 🇯🇵_JP_日本
   type: hysteria2
   server: msjp1.mangshe.xyz
   port: 20561
@@ -351,24 +42,31 @@ proxies:
   sni: www.microsoft.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸_US_美国
+- name: 🇨🇳_CN_中国->🇺🇸_US_美国
   type: vless
-  server: 172.64.229.170
-  port: 2082
-  uuid: 47fcef29-ab4e-4aa6-932b-d95a18f28a4e
-  network: ws
+  server: us22.sofast.live
+  port: 58011
+  uuid: 0afc6426-606c-48e7-bd70-3c424a416842
   tls: false
-  client-fingerprint: chrome
-  ws-opts:
-    path: /?ed=2560security=tls
-    headers:
-      Host: 8nj2r.2k8t.f88.hh.vavava.kdns.fr
   skip-cert-verify: true
   udp: true
-- name: 🇭🇰_HK_中国香港->🇸🇬_SG_新加坡
+- name: 🇩🇪_DE_德国_1
   type: vless
-  server: 103.143.81.178
+  server: 2.59.134.226
   port: 443
+  uuid: 88281d02-b387-4fe3-918e-26ed331e6d08
+  servername: rich-falcon.cdn.cachefleet.com
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: qq
+  reality-opts:
+    public-key: 1sSmdw90uTiGuitDvp_q8zcXTcHXKQS3IVjA7T1UNiY
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸_US_美国->🇳🇱_NL_荷兰
+  type: vless
+  server: shuma.ccwu.cc
+  port: 2053
   uuid: c18b978e-1c4e-415c-8bea-07942b563a64
   network: ws
   servername: shuma.ccwu.cc
@@ -382,25 +80,296 @@ proxies:
   udp: true
 - name: 🇺🇸_US_美国_1
   type: vless
-  server: lyra.yokkastars.com
-  port: 40443
-  uuid: 5be7fb02-b6a5-450f-b041-3243b98e8420
-  servername: deepl.com
+  server: 66.33.22.219
+  port: 27534
+  uuid: 55333b48-43d2-40f5-99ef-982046bdf437
+  network: ws
+  tls: false
+  skip-cert-verify: true
+  udp: true
+- name: 🇪🇸_ES_西班牙
+  type: vless
+  server: 152.114.195.163
+  port: 8443
+  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
+  network: ws
+  servername: shuma.ccwu.cc
   tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: edge
-  reality-opts:
-    public-key: Uvj5H9pDJP0HX2bN7NN7sCQwVCrC5N2NbKf-yuy1ikE
-    short-id: ee33
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: shuma.ccwu.cc
+  skip-cert-verify: true
+  udp: true
+- name: 🇩🇪_DE_德国_2
+  type: hysteria
+  server: 5.83.129.90
+  port: 54177
+  auth_str: dongtaiwang.com
+  up: '500'
+  down: '1000'
+  sni: apple.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  udp: true
+- name: 🇦🇲_AM_亚美尼亚
+  type: vless
+  server: 2.56.204.183
+  port: 443
+  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
+  network: ws
+  servername: shuma.ccwu.cc
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: shuma.ccwu.cc
+  skip-cert-verify: true
+  udp: true
+- name: 🇭🇰_HK_中国香港
+  type: vmess
+  server: v10.hdacd.com
+  port: 30807
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
   skip-cert-verify: true
   udp: true
 - name: 🇨🇳_CN_中国->🇺🇸_US_美国_1
+  type: vless
+  server: jp.sofast.live
+  port: 52683
+  uuid: 399b6b23-cc40-4831-a494-61948e2df133
+  tls: false
+  skip-cert-verify: true
+  udp: true
+- name: 🇵🇱_PL_波兰
+  type: vless
+  server: 103.167.234.26
+  port: 443
+  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
+  network: ws
+  servername: shuma.ccwu.cc
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: shuma.ccwu.cc
+  skip-cert-verify: true
+  udp: true
+- name: 🇹🇼_TW_中国台湾
+  type: vmess
+  server: 654168416355441.oylfmxz.cn
+  port: 443
+  uuid: d90e4077-bc7e-414d-a650-70bf1baae4d6
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  udp: true
+- name: 🇺🇸_US_美国_2
+  type: vmess
+  server: guanwang.awsno.com
+  port: 443
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: guanwang.awsno.com
+  network: ws
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: guanwang.awsno.com
+  udp: true
+- name: 🇺🇸_US_美国->🇳🇱_NL_荷兰_1
+  type: vless
+  server: shuma.ccwu.cc
+  port: 443
+  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
+  network: ws
+  servername: shuma.ccwu.cc
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: shuma.ccwu.cc
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸_US_美国->🇳🇱_NL_荷兰_2
+  type: vless
+  server: shuma.ccwu.cc
+  port: 8443
+  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
+  network: ws
+  servername: shuma.ccwu.cc
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: shuma.ccwu.cc
+  skip-cert-verify: true
+  udp: true
+- name: 🇲🇩_MD_摩尔多瓦
+  type: vless
+  server: 185.153.198.86
+  port: 443
+  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
+  network: ws
+  servername: shuma.ccwu.cc
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: shuma.ccwu.cc
+  skip-cert-verify: true
+  udp: true
+- name: 🇩🇪_DE_德国->🇳🇱_NL_荷兰
+  type: vless
+  server: 109.176.202.20
+  port: 443
+  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
+  network: ws
+  servername: shuma.ccwu.cc
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: shuma.ccwu.cc
+  skip-cert-verify: true
+  udp: true
+- name: 🇷🇺_RU_俄罗斯
+  type: vless
+  server: tr3.wba-pn.ru
+  port: 443
+  uuid: af2a0c18-b08c-471f-baa3-259ac2ce3a85
+  network: ws
+  tls: true
+  skip-cert-verify: true
+  udp: true
+- name: 🇨🇳_CN_中国->🇺🇸_US_美国
   type: vless
   server: us22.sofast.live
   port: 58011
   uuid: 0afc6426-606c-48e7-bd70-3c424a416842
   tls: false
   skip-cert-verify: true
+  udp: true
+- name: 🇭🇰_HK_中国香港->🇺🇸_US_美国
+  type: vmess
+  server: v4.hdacd.com
+  port: 30804
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸_US_美国
+  type: vmess
+  server: guanwang.awsno.com
+  port: 443
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: guanwang.awsno.com
+  network: ws
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: guanwang.awsno.com
+  udp: true
+- name: 🇭🇰_HK_中国香港
+  type: vmess
+  server: dee2309db4944c248b6d4372c6641e7b.oylfmxz.cn
+  port: 443
+  uuid: d90e4077-bc7e-414d-a650-70bf1baae4d6
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: dee2309db4944c248b6d4372c6641e7b.oylfmxz.cn
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: dee2309db4944c248b6d4372c6641e7b.oylfmxz.cn
+  udp: true
+- name: 🇭🇰_HK_中国香港->🇩🇪_DE_德国
+  type: vmess
+  server: v33.hdacd.com
+  port: 30833
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  udp: true
+- name: 🇨🇳_CN_中国->🇺🇸_US_美国_1
+  type: vless
+  server: jp.sofast.live
+  port: 52683
+  uuid: 399b6b23-cc40-4831-a494-61948e2df133
+  tls: false
+  skip-cert-verify: true
+  udp: true
+- name: 🇭🇰_HK_中国香港_1
+  type: vmess
+  server: v10.hdacd.com
+  port: 30807
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸_US_美国_1
+  type: vless
+  server: 7-m16.PhUkEt2035.kdNS.fr
+  port: 443
+  uuid: ef5c5d5c-08c6-4549-b05e-d1ff29ecc8ba
+  network: ws
+  servername: 7-m16.PhUkEt2035.kdNS.fr
+  tls: true
+  ws-opts:
+    path: /JRr6VGcSLFc034DC6sDbwyWJLbB
+    headers:
+      Host: 7-m16.PhUkEt2035.kdNS.fr
+  skip-cert-verify: true
+  udp: true
+- name: 🇨🇳_CN_中国
+  type: vmess
+  server: 112.132.215.108
+  port: 50002
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  udp: true
+- name: 🇭🇰_HK_中国香港_2
+  type: vmess
+  server: hkgb707.ifastcdncache.com
+  port: 60852
+  uuid: f8eca8df-a1a5-4918-a194-d34112a3673f
+  alterId: 2
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: ws
   udp: true
 - name: 🇺🇸_US_美国_2
   type: vmess
@@ -418,18 +387,43 @@ proxies:
     headers:
       Host: guanwang.awsno.com
   udp: true
-- name: 🇯🇵_JP_日本_2
+- name: 🇩🇪_DE_德国
+  type: hysteria
+  server: 5.83.129.90
+  port: 54177
+  auth_str: dongtaiwang.com
+  up: '500'
+  down: '1000'
+  sni: apple.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  udp: true
+- name: 🇩🇪_DE_德国_1
   type: vless
-  server: 35.72.179.15
+  server: 2.59.134.226
   port: 443
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
+  uuid: 88281d02-b387-4fe3-918e-26ed331e6d08
+  servername: rich-falcon.cdn.cachefleet.com
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: qq
+  reality-opts:
+    public-key: 1sSmdw90uTiGuitDvp_q8zcXTcHXKQS3IVjA7T1UNiY
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇮_FI_芬兰
+  type: vless
+  server: hub-fi-03.hanvpn.cc
+  port: 443
+  uuid: d9d0f208-d582-41d5-bb7b-742671402810
   network: ws
-  servername: shuma.ccwu.cc
+  servername: hub-fi-03.hanvpn.cc
   tls: true
   client-fingerprint: chrome
   ws-opts:
-    path: /
+    path: /fi03-ws-8e47a
     headers:
-      Host: shuma.ccwu.cc
+      Host: hub-fi-03.hanvpn.cc
   skip-cert-verify: true
   udp: true
