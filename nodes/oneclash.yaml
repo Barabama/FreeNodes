@@ -1,306 +1,311 @@
 proxies:
-- name: 🇺🇸_US_美国->🇦🇹_AT_奥地利
+- name: 🇲🇩_MD_摩尔多瓦
   type: vless
-  server: 152.53.116.71
+  server: rezerv23.yunus.guru
   port: 443
-  uuid: 0d328214-7ebc-413a-9820-2260b38d2242
-  servername: yahoo.com
-  tls: true
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: L0T7BLyB6gtVckvnxryaK-GGd2XwgoJ3YFM9M8kXmho
-    short-id: '7554'
-- name: 🇺🇸_US_美国
-  type: vless
-  server: s842.ccgfw.top
-  port: 443
-  uuid: 8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e
-  network: grpc
-  servername: u708330u0378s842.ccgfw.top
-  tls: true
-  client-fingerprint: chrome
-  grpc-opts:
-    grpc-service-name: ssp
-- name: 🇫🇷_FR_法国
-  type: vless
-  server: 193.160.130.112
-  port: 443
-  uuid: 70b49349-9c87-497e-818c-46006e1c3ce0
-  servername: yimg.com
+  uuid: a5ea9247-79f3-4655-aece-3fb51e1e669e
+  servername: rezerv23.yunus.guru
   tls: true
   flow: xtls-rprx-vision
-  client-fingerprint: chrome
+  client-fingerprint: firefox
   reality-opts:
-    public-key: ckRcueERkPqqjZABwxqni_J_Nbb70Q6k5fEEUAjoImw
-- name: 🇺🇸_US_美国_1
-  type: vless
-  server: nodejs.org
-  port: 2052
-  uuid: f8ae018b-b84d-4c9b-b03b-4642c3a25977
-  network: ws
-  tls: false
-  ws-opts:
-    path: /?ed
-    headers:
-      Host: ExEMplAry-MILkytsxQiQYso.sPortlaNd.CoMPANy.
-- name: 🇷🇺_RU_俄罗斯
-  type: vless
-  server: 185.156.72.124
-  port: 52042
-  uuid: f557eadb-1715-4c0b-aaae-f9b9577d827d
-  servername: yandex.ru
-  tls: true
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Z23_1wSIy1CNUEB7YEJwPZzCEsMTmzTNGe_h5bzEMHY
-    short-id: 8e8dcb9a67bf43f1
-- name: 🇬🇧_GB_英国->🇧🇬_BG_保加利亚
+    public-key: zT7a-PnmIWP4c-G1EDUT3KZ7URi1kc8EppAWPr3h5lk
+    short-id: afeed89ae23b36ed
+  skip-cert-verify: true
+  udp: true
+- name: 🇭🇰_HK_中国香港
   type: vmess
-  server: 82.198.246.97
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  server: 47.86.167.194
+  port: 800
+  uuid: f2c67cae-c09d-4739-947d-f5302d87a3c0
   alterId: 0
   cipher: auto
   tls: false
-  skip-cert-verify: false
-- name: 🇺🇸_US_美国_2
-  type: vless
-  server: www.visasoutheasteurope.com
-  port: 2096
-  uuid: fc625795-792d-4d9d-9d38-bffe59467d2d
-  network: ws
-  servername: daluan.eu.org
-  tls: true
-  client-fingerprint: randomized
-  ws-opts:
-    path: /?ed=2560
+  skip-cert-verify: true
+  network: http
+  http-opts:
+    path:
+    - /x
     headers:
-      Host: daluan.eu.org
-- name: 🇨🇦_CA_加拿大->🇩🇪_DE_德国
-  type: vless
-  server: 162.248.166.74
-  port: 4444
-  uuid: 1b0ad61b-1be2-4cda-9979-984a965b0da5
-  network: grpc
-  servername: github.com
-  tls: true
-  client-fingerprint: chrome
-  grpc-opts:
-    grpc-service-name: grpc
-  reality-opts:
-    public-key: 5XB_N3ATilH-6tp_MXht-84_y5YaJnx_Z7MbuY2otHE
-    short-id: aa7e96542880027a
-- name: 🇷🇺_RU_俄罗斯->🇨🇭_CH_瑞士
-  type: vless
-  server: de.prod.n7.homes
-  port: 8443
-  uuid: 010c8bf7-0a43-404f-a6c5-2427acb4d476
-  servername: sun6-21.userapi.com
-  tls: true
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: upDCW94g-pSYQrmXvOrTVYlwBUrSKhYFF9QwrqObdVo
-    short-id: 3ca620a7ed5f3196
-- name: 🇮🇷_IR_伊朗
-  type: vless
-  server: 151.241.173.62
-  port: 4444
-  uuid: 1b0ad61b-1be2-4cda-9979-984a965b0da5
-  network: grpc
-  servername: github.com
-  tls: true
-  client-fingerprint: chrome
-  grpc-opts:
-    grpc-service-name: grpc
-  reality-opts:
-    public-key: 5XB_N3ATilH-6tp_MXht-84_y5YaJnx_Z7MbuY2otHE
-    short-id: aa7e96542880027a
-- name: 未知
-  type: ss
-  server: 103.186.154.149
-  port: 38388
-  cipher: aes-256-cfb
-  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-- name: 🇺🇸_US_美国_3
-  type: ss
-  server: 38.54.57.90
-  port: 989
-  cipher: aes-256-cfb
-  password: f8f7aCzcPKbsF8p3
-- name: 🇺🇸_US_美国_4
-  type: vless
-  server: s719.okgfw.top
+      Host:
+      - sjskendn.dingtalk.com
+  udp: true
+- name: 🇭🇰_HK_中国香港_1
+  type: vmess
+  server: drbkg16egf3fzlm3.v.3dns.vip
   port: 443
-  uuid: 8c6118b9-78a8-3b3b-a49a-6aa9cb5b1d4e
-  servername: u708330u9530s719.okgfw.top
+  uuid: f23bb427c1f94373876c2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /ws-vmess
+  udp: true
+- name: 🇩🇪_DE_德国
+  type: vless
+  server: 94.156.122.215
+  port: 8443
+  uuid: ce5b6383-60f2-4aa3-9099-eacb6b01cf2b
+  servername: www.github.com
   tls: true
   flow: xtls-rprx-vision
-  client-fingerprint: random
-- name: 🇺🇸_US_美国->🇳🇿_NZ_新西兰
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: m8NlVgma3zCfxdXIzMreVvi_O4c2-lZqPh_9UHOsM1I
+    short-id: 99defbf4759b
+  skip-cert-verify: true
+  udp: true
+- name: 🇦🇪_AE_阿拉伯联合酋长国->🇩🇪_DE_德国
   type: vless
-  server: 69.84.182.13
+  server: 217.60.193.1
   port: 443
-  uuid: da8a47cb-3cc6-425b-a4da-24abe9b2c332
+  uuid: 5c192fd7-ef98-4112-a20c-129108fcd7e9
+  servername: ddc-akn.astralweb.tech
+  tls: true
+  client-fingerprint: firefox
+  skip-cert-verify: true
+  udp: true
+- name: 🇫🇷_FR_法国
+  type: vless
+  server: 15.237.177.139
+  port: 43248
+  uuid: f9d8ca28-2fff-45de-9b25-3bf29186018e
+  servername: yahoo.com
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: LPLKpq5_G1WB6BqJhrCKQp1oQly3akbsVjvYPZrbGgg
+    short-id: 3355cf9734b0150e
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸_US_美国->🇫🇮_FI_芬兰
+  type: vless
+  server: 199.232.78.159
+  port: 443
+  uuid: 6e2e03e2-4f66-479a-a186-a34d66ca8c91
   network: ws
-  servername: jp1-jp1.aiopen.sbs
+  servername: ssl.fastly.com
   tls: true
   client-fingerprint: chrome
   ws-opts:
-    path: /kbjc/jp1
+    path: /TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER?ed=2053
     headers:
-      Host: jp1-jp1.aiopen.sbs
-- name: 🇷🇺_RU_俄罗斯_1
+      Host: pan11.global.ssl.fastly.net
+  skip-cert-verify: true
+  udp: true
+- name: 🇩🇪_DE_德国_1
   type: vless
-  server: 78.153.139.68
+  server: 45.80.111.7
+  port: 443
+  uuid: 926bc4cd-709e-4e90-8aa7-78db75fbe86b
+  network: ws
+  servername: 2--ldej--MiTiVPN---MiTiVPN-o.KingNetwork.ir
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/de2---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
+    headers:
+      Host: De2-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.KinGNetWork.iR
+  skip-cert-verify: true
+  udp: true
+- name: 🇭🇰_HK_中国香港->🇩🇪_DE_德国
+  type: trojan
+  server: hkdcrtc-e.catcat321.com
+  port: 20041
+  password: ba07a8af-5544-48ac-ab62-3b6c00a44fa6
+  sni: de.catxstar.com
+  skip-cert-verify: true
+  tls: true
+  udp: true
+- name: 🇭🇰_HK_中国香港_2
+  type: vmess
+  server: m01c7b2z26dtqgee.v.3dns.vip
+  port: 443
+  uuid: f23bb427c1f94373876c2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /ws-vmess
+  udp: true
+- name: 🇨🇭_CH_瑞士
+  type: vless
+  server: 199.68.196.79
+  port: 443
+  uuid: ab7d5ea9-6eca-47c3-b14b-67378fc2d7c2
+  servername: ch.tunnelx.space
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: q_lfutznS1iTS7bGphTIGMYVeht-8clcf_IfzIf4mBQ
+    short-id: 10a5c8e2f4b7d936
+  skip-cert-verify: true
+  udp: true
+- name: 🇨🇭_CH_瑞士_1
+  type: vless
+  server: ch.tunnelx.space
+  port: 443
+  uuid: ab7d5ea9-6eca-47c3-b14b-67378fc2d7c2
+  servername: ch.tunnelx.space
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: q_lfutznS1iTS7bGphTIGMYVeht-8clcf_IfzIf4mBQ
+    short-id: 10a5c8e2f4b7d936
+  skip-cert-verify: true
+  udp: true
+- name: 🇩🇪_DE_德国_2
+  type: vless
+  server: 159.195.139.217
   port: 8443
-  uuid: fd8972d7-cf5e-11f0-9970-45e1d80c4039
-  servername: images.apple.com
+  uuid: 48267e65-8bf0-4046-923f-4ee967009344
+  servername: sellflow.org
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+  skip-cert-verify: true
+  udp: true
+- name: 🇪🇸_ES_西班牙
+  type: vless
+  server: 46.28.71.104
+  port: 2053
+  uuid: 504d0b6e-400d-45ec-b2d0-1c79006ebc16
+  servername: web.abubibabu.ru
+  tls: true
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: aFsY-EZjSNTomlAFShKwQIQMJ5pHiZQXXJpWvcz8WkQ
+    short-id: 0858af97f4e7324d
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸_US_美国
+  type: vless
+  server: 88.218.44.4
+  port: 993
+  uuid: 7c74b0e4-f132-5583-4692-622a7d6b71a4
+  servername: download.nvidia.com
   tls: true
   flow: xtls-rprx-vision
   client-fingerprint: chrome
   reality-opts:
-    public-key: pekfYPV5U8EjfQ4_zS5c6I2NnOZ2jUlyMGAWa4FWPF4
-    short-id: 58c512b4422e2517
-- name: 🇮🇷_IR_伊朗_1
+    public-key: EG3y7UktGRlzSZZ2oXT_YaO2gVP4ca3Xe6AQ0u9A5DQ
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸_US_美国_1
   type: vless
-  server: 151.241.173.62
-  port: 4443
-  uuid: 1b0ad61b-1be2-4cda-9979-984a965b0da5
-  servername: github.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: 5XB_N3ATilH-6tp_MXht-84_y5YaJnx_Z7MbuY2otHE
-    short-id: aa7e96542880027a
-- name: 🇬🇧_GB_英国
-  type: vless
-  server: 51.250.46.121
-  port: 5443
-  uuid: 001c68ea-7186-4d3e-863b-7b513e73e7a0
-  servername: max.ru
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Po6vtOwHYjzS-ibY01_2yrvhpw7jhOBDFesZKMcxUi8
-    short-id: 8cd9d7c88b8fd22c
-- name: 🇮🇷_IR_伊朗->🇷🇺_RU_俄罗斯
-  type: vless
-  server: 83.147.252.165
+  server: 217.177.75.7
   port: 443
-  uuid: 95e3a7e6-ff2b-4554-b107-8ff4c58b7981
-  servername: sun6-20.userapi.com
+  uuid: ab7d5ea9-6eca-47c3-b14b-67378fc2d7c2
+  servername: usa.tunnelx.space
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: 6INA8Jxa9oQT3XrW4uXd0leo2upMdUn8s_XbSP0qB3I
+    short-id: f0a9d2b1c7e4f648
+  skip-cert-verify: true
+  udp: true
+- name: 🇩🇪_DE_德国_3
+  type: vless
+  server: 31.76.11.46.cdn-one.org
+  port: 443
+  uuid: 4f375fb4-3c95-425f-bc7b-8085487a6f3c
+  network: ws
+  servername: 31.76.11.46.cdn-one.org
   tls: true
   client-fingerprint: chrome
-  reality-opts:
-    public-key: C1ZoKW-5BWP4D6hQwpF4X-5TMI2HkevyJMo-FletEQs
-    short-id: a196aa52
-- name: 🇮🇶_IQ_伊拉克
+  ws-opts:
+    path: /52872/BNzG4FvIAr
+    headers:
+      Host: 31.76.11.46.cdn-one.org
+  skip-cert-verify: true
+  udp: true
+- name: 🇩🇪_DE_德国_4
   type: vless
-  server: deu469.unboundworld.org
-  port: 8443
-  uuid: cc9f7840-757a-430b-bddc-a73478bea434
+  server: 185.126.67.76
+  port: 443
+  uuid: b6f3b292-00c9-430e-bc4c-b1294bd895c0
+  servername: cdn-de-4.ai-apiroute.cc
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: kaw2U8L2ZTcgo56qUBONfylYJpHprI_CgZfv1I4q2Sc
+    short-id: b512d49930874a31
+  skip-cert-verify: true
+  udp: true
+- name: 🇳🇱_NL_荷兰
+  type: vless
+  server: 31.76.79.118
+  port: 2444
+  uuid: fc1ee51e-72ec-4af0-ab0f-540c9e22427b
+  servername: www.cloudflare.com
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: JsSTmS0VKNaHF-_QKYS-_utnS-LJuPOBrWcMbVE2RDA
+    short-id: 0809f782a29a2030
+  skip-cert-verify: true
+  udp: true
+- name: 🇵🇱_PL_波兰
+  type: vless
+  server: pl01.auragg.org
+  port: 25224
+  uuid: 6af3672b-8994-4cf1-aa15-23ce6574ebf0
   network: grpc
-  servername: deu469.unboundworld.org
+  servername: cloudflare.com
   tls: true
-  client-fingerprint: chrome
+  client-fingerprint: qq
   grpc-opts:
-    grpc-service-name: grpc-vless
-- name: 🇮🇷_IR_伊朗_2
-  type: vless
-  server: 151.241.173.61
-  port: 4443
-  uuid: 1b0ad61b-1be2-4cda-9979-984a965b0da5
-  servername: github.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
+    grpc-service-name: auragrpc
   reality-opts:
-    public-key: 5XB_N3ATilH-6tp_MXht-84_y5YaJnx_Z7MbuY2otHE
-    short-id: aa7e96542880027a
-- name: 🇷🇺_RU_俄罗斯_2
+    public-key: uXV7VKWM7wlzSVCp1MxVMQHJJ3GvjJmVCMPqw_vIZUs
+    short-id: e7c3f9a2b6d4f8e1
+  skip-cert-verify: true
+  udp: true
+- name: 🇨🇿_CZ_捷克
   type: vless
-  server: 62.182.195.78
-  port: 8443
-  uuid: 9a63b59c-5e54-437a-b7a1-2788780a7c13
-  servername: retn.net
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: qBcUlVqkzWxGORpDCj_FcNHACi3mrAYTCZeJyVQa5yU
-    short-id: 6b374e33af12fd1e
-- name: 🇫🇷_FR_法国->🇺🇸_US_美国
+  server: 141.133.172.222
+  port: 20342
+  uuid: 5eecb34f-c905-4c77-b7fb-d830b451cd11
+  tls: false
+  skip-cert-verify: true
+  udp: true
+- name: 🇩🇪_DE_德国_5
   type: vless
-  server: 185.171.202.55
-  port: 443
-  uuid: ccedb1b1-35f3-46d1-a85a-c699eef5f3e1
-  servername: fran.scroogethebest.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: AYQOZFxjvHN-RIzKYEibwFiFsp03cdlWGdCmyFfuNVc
-    short-id: 4fa44664f6a566d3
-- name: 🇨🇦_CA_加拿大->🇩🇪_DE_德国_1
-  type: vless
-  server: 162.248.166.75
-  port: 4444
-  uuid: 1b0ad61b-1be2-4cda-9979-984a965b0da5
+  server: 159.195.201.235
+  port: 25310
+  uuid: 6af3672b-8994-4cf1-aa15-23ce6574ebf0
   network: grpc
-  servername: github.com
+  servername: cloudflare.com
   tls: true
-  client-fingerprint: chrome
+  client-fingerprint: firefox
   grpc-opts:
-    grpc-service-name: grpc
+    grpc-service-name: auragrpc
   reality-opts:
-    public-key: 5XB_N3ATilH-6tp_MXht-84_y5YaJnx_Z7MbuY2otHE
-    short-id: aa7e96542880027a
-- name: 🇷🇺_RU_俄罗斯_3
+    public-key: 3Ow1WhWHN1nUEkOR4kThVpzEuvlcB5ZrqoBcHtJGyiY
+    short-id: a3d8f1e9b2c7d4e6
+  skip-cert-verify: true
+  udp: true
+- name: 🇦🇪_AE_阿拉伯联合酋长国->🇩🇪_DE_德国_1
   type: vless
-  server: 176.123.165.51
+  server: ddc-akn.astralweb.tech
   port: 443
-  uuid: 1160c9ed-96b2-4a3d-84b0-da0df343b31b
-  servername: imgs.strelkavpn.com
+  uuid: 04b9e828-43ed-4faf-8952-41069ec08355
   tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: NEZpSiuf6l2Cp1UcmAaPENQ2CjheHo15j9Hi3KxFLG4
-    short-id: d04be486ccd758e8
-- name: 未知_1
-  type: ss
-  server: 103.186.154.78
-  port: 38388
-  cipher: aes-256-cfb
-  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-- name: 🇨🇦_CA_加拿大
-  type: vless
-  server: 162.248.166.210
-  port: 4444
-  uuid: 1b0ad61b-1be2-4cda-9979-984a965b0da5
-  network: grpc
-  servername: github.com
-  tls: true
-  client-fingerprint: chrome
-  grpc-opts:
-    grpc-service-name: grpc
-  reality-opts:
-    public-key: 5XB_N3ATilH-6tp_MXht-84_y5YaJnx_Z7MbuY2otHE
-    short-id: aa7e96542880027a
-- name: 🇬🇧_GB_英国_1
-  type: vless
-  server: 217.154.194.55
-  port: 443
-  uuid: f0b15f64-db59-438c-b1b6-f1b83db52240
-  servername: azure.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: ckRcueERkPqqjZABwxqni_J_Nbb70Q6k5fEEUAjoImw
-- name: 🇨🇳_CN_中国->🇺🇸_US_美国
+  skip-cert-verify: true
+  udp: true
+- name: 🇨🇳_CN_中国->🇭🇰_HK_中国香港
   type: vmess
   server: v9.hdacd.com
   port: 30809
@@ -308,152 +313,85 @@ proxies:
   alterId: 2
   cipher: auto
   tls: false
-  skip-cert-verify: false
-- name: 🇮🇷_IR_伊朗->🇩🇪_DE_德国
+  skip-cert-verify: true
+  udp: true
+- name: 🇩🇪_DE_德国->🇹🇭_TH_泰国
   type: vless
-  server: 193.151.134.218
-  port: 39102
-  uuid: 668279e3-ff43-423a-a785-cc4e7e4719c7
-  servername: www.intel.com
+  server: www.true.th
+  port: 80
+  uuid: 89c3b66f-c849-4602-a5a8-84b6f06af478
+  network: ws
+  servername: d2pwbkmfr5lxa4.cloudfront.net
+  tls: false
+  ws-opts:
+    path: /
+    headers:
+      Host: d2pwbkmfr5lxa4.cloudfront.net
+  skip-cert-verify: true
+  udp: true
+- name: 🇲🇰_MK_MK
+  type: vless
+  server: 195.144.24.84
+  port: 443
+  uuid: b6f3b292-00c9-430e-bc4c-b1294bd895c0
+  servername: cdn-mk.ai-apiroute.cc
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: PCF6GYA_TCdb28mM6zsxJ38MAtmnSrJJEygkXvrt1AE
+    short-id: b512d49930874a31
+  skip-cert-verify: true
+  udp: true
+- name: 🇵🇱_PL_波兰_1
+  type: vless
+  server: 31.76.251.127.cdn-one.org
+  port: 443
+  uuid: 4f375fb4-3c95-425f-bc7b-8085487a6f3c
+  network: ws
+  servername: 31.76.251.127.cdn-one.org
   tls: true
   client-fingerprint: chrome
-  reality-opts:
-    public-key: 4hZrG1nOTw4Z_uPhVEIe8Eo_-hMyClhbJhHS_OGbYCI
-    short-id: a77dd89b7cdcc068
-- name: 🇫🇷_FR_法国
-  type: vless
-  server: fr.noooo.win
-  port: 443
-  uuid: 7b241232-208d-4d36-857e-913f91b044f4
-  tls: true
-  flow: xtls-rprx-vision
-  skip-cert-verify: true
-  udp: true
-- name: 🇭🇰_HK_中国香港
-  type: vless
-  server: 47.86.55.200
-  port: 19321
-  uuid: 394086c4-d8a4-4298-9b62-f70fa711082d
-  tls: false
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸_US_美国
-  type: vmess
-  server: 82.198.246.214
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  udp: true
-- name: 🇭🇰_HK_中国香港_1
-  type: vmess
-  server: 154.37.223.19
-  port: 56972
-  uuid: ae225455-5e8c-491d-d931-c06ac56f4aee
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  network: http
-  udp: true
-- name: 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
-  type: vless
-  server: r1.mizulina.top
-  port: 22231
-  uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
-  servername: r1.mizulina.top
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: edge
-  skip-cert-verify: true
-  udp: true
-- name: 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_1
-  type: vless
-  server: 85.234.114.53
-  port: 443
-  uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
-  servername: r1.mizulina.top
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: edge
-  skip-cert-verify: true
-  udp: true
-- name: 🇮🇩_ID_印度尼西亚->🇫🇷_FR_法国
-  type: vmess
-  server: v35.hdacd.com
-  port: 30835
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  udp: true
-- name: 🇭🇰_HK_中国香港_2
-  type: vmess
-  server: v10.hdacd.com
-  port: 30807
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸_US_美国_1
-  type: vmess
-  server: 82.198.246.250
-  port: 180
-  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  udp: true
-- name: 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚_2
-  type: vless
-  server: 85.234.114.53
-  port: 22231
-  uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
-  servername: r1.mizulina.top
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: edge
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
-  type: trojan
-  server: 90081bb25c.node.tro.cac.cab
-  port: 41943
-  password: 4f4d1167-ef14-4304-9bce-0740472503ef
-  sni: az.01.naiun.bilibili.com
-  skip-cert-verify: true
-  tls: false
-  udp: true
-- name: 🇮🇩_ID_印度尼西亚->🇬🇧_GB_英国
-  type: vmess
-  server: v36.hdacd.com
-  port: 30836
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
+  ws-opts:
+    path: /10336/2GCOqG7bvA
+    headers:
+      Host: 31.76.251.127.cdn-one.org
   skip-cert-verify: true
   udp: true
 - name: 🇺🇸_US_美国_2
   type: vless
-  server: 47.77.214.201
-  port: 10035
-  uuid: e4e7866d-920b-4a53-a8e2-6ae9b2a42fc2
+  server: 104.17.21.32
+  port: 8880
+  uuid: 300f44af-adb8-42b7-b869-bef70b205d7e
+  network: ws
   tls: false
+  ws-opts:
+    path: /pyip=ProxyIP.KR.CMLiussss.net
+    headers:
+      Host: icy-rice-3c1c.340-680.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 🇲🇩_MD_摩尔多瓦_1
+  type: vless
+  server: 176.123.2.210
+  port: 443
+  uuid: a5ea9247-79f3-4655-aece-3fb51e1e669e
+  servername: rezerv23.yunus.guru
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: zT7a-PnmIWP4c-G1EDUT3KZ7URi1kc8EppAWPr3h5lk
+    short-id: afeed89ae23b36ed
   skip-cert-verify: true
   udp: true
 - name: 🇺🇸_US_美国_3
-  type: trojan
-  server: 90081bb25c.node.tro.cac.cab
-  port: 48697
-  password: 4f4d1167-ef14-4304-9bce-0740472503ef
-  sni: gh.01.naiun.bilibili.com
+  type: vmess
+  server: guanwang.awsno.com
+  port: 443
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  alterId: 0
+  cipher: auto
+  tls: true
   skip-cert-verify: true
-  tls: false
   udp: true
