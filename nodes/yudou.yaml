@@ -1,19 +1,40 @@
 proxies:
-- name: 美国(yudou99.com 玉豆分享)
-  type: vless
-  server: saas.sin.fan
+- name: 台湾(yudou99.com 玉豆分享)
+  type: anytls
+  server: 684616s4.df6h451rh.xin
   port: 443
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  network: ws
-  servername: snip.edgeoneai.cc.cd
-  tls: true
-  ws-opts:
-    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443
-    headers:
-      Host: snip.edgeoneai.cc.cd
+  password: ec74bb6a86c2
+  sni: px.ads.linkedin.com
   skip-cert-verify: true
+  tls: true
+  udp: true
+  client-fingerprint: chrome
+- name: 台湾(yudou99.com 玉豆分享)_1
+  type: vmess
+  server: 24864168545164.d6f54hd1j.cc
+  port: 443
+  uuid: ecdc303d-bcbf-4129-bc02-dd67703f7081
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: 24864168545164.d6f54hd1j.cc
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: 24864168545164.d6f54hd1j.cc
   udp: true
 - name: 日本(yudou99.com 玉豆分享)
+  type: anytls
+  server: l3hl4mwo.zf-mix.9999231.xyz
+  port: 1001
+  password: a7c5d30b-ce9b-4e34-b5cb-66f8308790ef
+  sni: tw01.9999231.xyz
+  skip-cert-verify: true
+  tls: true
+  udp: true
+- name: 日本(yudou99.com 玉豆分享)_1
   type: vless
   server: 154.31.112.237
   port: 26418
@@ -28,74 +49,128 @@ proxies:
       Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
   skip-cert-verify: true
   udp: true
+- name: 台湾(yudou99.com 玉豆分享)_2
+  type: vmess
+  server: 654168416355441.d6f54hd1j.cc
+  port: 443
+  uuid: ecdc303d-bcbf-4129-bc02-dd67703f7081
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  servername: 654168416355441.d6f54hd1j.cc
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: 654168416355441.d6f54hd1j.cc
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)
+  type: vless
+  server: www.speedtest.net
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@vpn748359672.opengw.net:1458?ed=2560#Telegram---bored_vpn
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  alpn:
+  - http/1.1
+  skip-cert-verify: true
+  udp: true
+- name: 韩国(yudou99.com 玉豆分享)
+  type: vless
+  server: 220.71.172.2
+  port: 16034
+  uuid: bfa5cd1f-1465-4850-b7c9-08e1a63dac2c
+  network: ws
+  servername: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 荷兰(yudou99.com 玉豆分享)
+  type: vless
+  server: c20s5.portablesubmarines.com
+  port: 443
+  uuid: 85fe968d-fbb5-40dc-8422-30635eccb149
+  servername: portal.citygrainla.com
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE
+    short-id: 051f20c2344a2dfd
+  skip-cert-verify: true
+  udp: true
 - name: 美国(yudou99.com 玉豆分享)_1
   type: vless
-  server: saas.sin.fan
+  server: 43.174.195.1
   port: 443
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  uuid: 24916ad0-847d-4522-9e17-f4347dee57fd
   network: ws
-  servername: snip.edgeoneai.cc.cd
-  tls: true
-  ws-opts:
-    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443?ed=2560fp=chrome
-    headers:
-      Host: snip.edgeoneai.cc.cd
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_2
-  type: vless
-  server: saas.sin.fan
-  port: 443
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  network: ws
-  servername: snip.edgeoneai.cc.cd
+  servername: kv.074167.xyz
   tls: true
   client-fingerprint: chrome
   ws-opts:
     path: /
     headers:
-      Host: snip.edgeoneai.cc.cd
-  alpn:
-  - h3
-  - h2
+      Host: kv.074167.xyz
   skip-cert-verify: true
   udp: true
-- name: 美国(yudou99.com 玉豆分享)_3
+- name: 德国(yudou99.com 玉豆分享)
   type: vless
-  server: saas.sin.fan
-  port: 443
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  network: ws
-  servername: snip.edgeoneai.cc.cd
+  server: 135.125.248.200
+  port: 27250
+  uuid: 36b98b4a-fc76-4738-bd7d-274ca800c8fd
+  network: grpc
+  servername: image.samsung.com
   tls: true
-  ws-opts:
-    path: /
-    headers:
-      Host: snip.edgeoneai.cc.cd
-  alpn:
-  - h3
-  - h2
+  grpc-opts:
+    grpc-service-name: grpc_common1
+  reality-opts:
+    public-key: bqV9CFadimhl6zgliRrOdx-XoJ0vioLqmwxU4tWjTgc
+    short-id: 8d1e96
   skip-cert-verify: true
   udp: true
-- name: 美国(yudou99.com 玉豆分享)_4
+- name: 日本(yudou99.com 玉豆分享)_2
   type: vless
-  server: saas.sin.fan
-  port: 443
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  server: 107.191.53.86
+  port: 4798
+  uuid: 16a5e4f6-246f-406d-9787-1b5686a97cbc
   network: ws
-  servername: snip.edgeoneai.cc.cd
+  servername: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
   tls: true
   client-fingerprint: chrome
   ws-opts:
-    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443?ed=2560
+    path: /@Marisa_kristi
     headers:
-      Host: snip.edgeoneai.cc.cd
-  alpn:
-  - h3
-  - h2
+      Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
   skip-cert-verify: true
   udp: true
 - name: 新加坡(yudou99.com 玉豆分享)
+  type: vless
+  server: 43.174.195.1
+  port: 443
+  uuid: 24916ad0-847d-4522-9e17-f4347dee57fd
+  network: ws
+  servername: kv.074167.xyz
+  tls: true
+  ws-opts:
+    path: /
+    headers:
+      Host: kv.074167.xyz
+  skip-cert-verify: true
+  udp: true
+- name: 新加坡(yudou99.com 玉豆分享)_1
   type: vless
   server: 175.41.179.37
   port: 51262
@@ -110,133 +185,75 @@ proxies:
       Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
   skip-cert-verify: true
   udp: true
+- name: 美国(yudou99.com 玉豆分享)_2
+  type: vless
+  server: 45.158.185.172
+  port: 443
+  uuid: 49e4b91a-bd15-4e54-9b51-41a3380afb51
+  network: ws
+  servername: z5n1.vpnpolar.online
+  tls: true
+  ws-opts:
+    path: /beeline
+    headers:
+      Host: z5n1.vpnpolar.online
+  alpn:
+  - http/1.1
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_3
+  type: vless
+  server: 162.159.135.234
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_4
+  type: vless
+  server: 162.159.135.234
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  skip-cert-verify: true
+  udp: true
 - name: 美国(yudou99.com 玉豆分享)_5
   type: vless
-  server: saas.sin.fan
+  server: 216.24.57.1
   port: 443
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  uuid: 974c2588-c1cd-43ac-8823-ce3d879b09fd
   network: ws
-  servername: snip.edgeoneai.cc.cd
+  servername: somersby.pt.ex33r.eu.cc
   tls: true
   ws-opts:
-    path: /
-    headers:
-      Host: snip.edgeoneai.cc.cd
+    path: /id-amz
   skip-cert-verify: true
   udp: true
-- name: 美国(yudou99.com 玉豆分享)_6
+- name: 法国(yudou99.com 玉豆分享)
   type: vless
-  server: saas.sin.fan
+  server: fr4.sodahub.online
   port: 443
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  network: ws
-  servername: snip.edgeoneai.cc.cd
-  tls: true
-  ws-opts:
-    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443?ed=2560fp=chrome
-    headers:
-      Host: snip.edgeoneai.cc.cd
-  alpn:
-  - h3
-  - h2
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_7
-  type: vless
-  server: saas.sin.fan
-  port: 443
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  network: ws
-  servername: snip.edgeoneai.cc.cd
-  tls: true
-  ws-opts:
-    path: /fdip=sstp://vpn:vpn@vpn748359672.opengw.net:1458?ed=2560fp=chrome
-    headers:
-      Host: snip.edgeoneai.cc.cd
-  alpn:
-  - h3
-  - h2
-  skip-cert-verify: true
-  udp: true
-- name: 日本(yudou99.com 玉豆分享)_1
-  type: anytls
-  server: l3hl4mwo.zf-mix.9999231.xyz
-  port: 1001
-  password: a7c5d30b-ce9b-4e34-b5cb-66f8308790ef
-  sni: tw01.9999231.xyz
-  skip-cert-verify: true
-  tls: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_8
-  type: vless
-  server: saas.sin.fan
-  port: 443
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  network: ws
-  servername: snip.edgeoneai.cc.cd
-  tls: true
-  ws-opts:
-    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443?ed=2560
-    headers:
-      Host: snip.edgeoneai.cc.cd
-  skip-cert-verify: true
-  udp: true
-- name: 日本(yudou99.com 玉豆分享)_2
-  type: vless
-  server: 161.33.37.121
-  port: 443
-  uuid: fea92fee-3202-43bf-bca5-ff06db0f95c0
-  servername: www.cloudflare.com
+  uuid: c6db98c5-9959-425e-9340-300779fc4e4b
+  servername: fr4.cyphervpn.pro
   tls: true
   flow: xtls-rprx-vision
-  client-fingerprint: chrome
+  client-fingerprint: firefox
   reality-opts:
-    public-key: zRYILDpfkddIbXYu10kE3d-NouoDNvQR_Rq9UPx-lyM
-    short-id: ed9e79c488173f57
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_9
-  type: vless
-  server: saas.sin.fan
-  port: 443
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  network: ws
-  servername: snip.edgeoneai.cc.cd
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443?ed=2560
-    headers:
-      Host: snip.edgeoneai.cc.cd
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_10
-  type: vless
-  server: saas.sin.fan
-  port: 443
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  network: ws
-  servername: snip.edgeoneai.cc.cd
-  tls: true
-  ws-opts:
-    path: /fdip=sstp://vpn:vpn@vpn748359672.opengw.net:1458?ed=2560fp=chrome
-    headers:
-      Host: snip.edgeoneai.cc.cd
-  skip-cert-verify: true
-  udp: true
-- name: 德国(yudou99.com 玉豆分享)
-  type: vless
-  server: 188.245.191.19
-  port: 2040
-  uuid: bdd897a6-57f2-4311-835f-0b6c5ac5a1a2
-  network: ws
-  servername: 9qohadlkywguh.hlf9x1796lkopyju2kplt9c9smz1vyuv0u8azzk.workers.dev
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /@Marisa_kristi
-    headers:
-      Host: 9qohadlkywguh.hlf9x1796lkopyju2kplt9c9smz1vyuv0u8azzk.workers.dev
+    public-key: 8_v9Eq0VarPDLDLElqECI0ZrqFpL3lMVuluuPXB-DAo
+    short-id: 662fdf1f4412b654
   skip-cert-verify: true
   udp: true
 - name: 德国(yudou99.com 玉豆分享)_1
@@ -254,82 +271,7 @@ proxies:
       Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
   skip-cert-verify: true
   udp: true
-- name: 美国(yudou99.com 玉豆分享)_11
-  type: vless
-  server: 162.159.130.234
-  port: 443
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  network: ws
-  servername: snip.edgeoneai.cc.cd
-  tls: true
-  ws-opts:
-    path: /
-    headers:
-      Host: snip.edgeoneai.cc.cd
-  skip-cert-verify: true
-  udp: true
 - name: 德国(yudou99.com 玉豆分享)_2
-  type: vless
-  server: 5.75.195.83
-  port: 56879
-  uuid: 7b0f8733-03cc-472b-9c50-ed159b48ef59
-  network: ws
-  servername: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /@Marisa_kristi
-    headers:
-      Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_12
-  type: vless
-  server: 162.159.135.234
-  port: 443
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  network: ws
-  servername: snip.edgeoneai.cc.cd
-  tls: true
-  ws-opts:
-    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443fp=chrome
-    headers:
-      Host: snip.edgeoneai.cc.cd
-  alpn:
-  - h3
-  - h2
-  skip-cert-verify: true
-  udp: true
-- name: 日本(yudou99.com 玉豆分享)_3
-  type: vless
-  server: 141.147.150.232
-  port: 443
-  uuid: bf6f8771-654f-4072-a1c9-dadb3b36da56
-  servername: www.cloudflare.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: FE18081Cm-WUzpu6JyGpmlJqHEZpDmeWCAcisuRKtX4
-    short-id: e295fe30ac8e9c41
-  skip-cert-verify: true
-  udp: true
-- name: 加拿大(yudou99.com 玉豆分享)
-  type: vless
-  server: 209.206.51.240
-  port: 443
-  uuid: 573c6482-37db-454a-8c31-5b45a338a580
-  network: ws
-  servername: and-75r.pages.dev
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: and-75r.pages.dev
-  skip-cert-verify: true
-  udp: true
-- name: 德国(yudou99.com 玉豆分享)_3
   type: vless
   server: 178.105.133.160
   port: 4443
@@ -342,146 +284,6 @@ proxies:
     path: /@Marisa_kristi
     headers:
       Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_13
-  type: vless
-  server: dey.lnmarketplace.net
-  port: 443
-  uuid: 3536e1fa-0850-44d1-b123-925ce12476cf
-  network: xhttp
-  servername: dey.lnmarketplace.net
-  tls: true
-  alpn:
-  - h2
-  xhttp-opts:
-    path: /kavir
-    host: dey.lnmarketplace.net
-    mode: stream-one
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_14
-  type: vless
-  server: dey.lnmarketplace.net
-  port: 443
-  uuid: 3536e1fa-0850-44d1-b123-925ce12476cf
-  network: xhttp
-  servername: dey.lnmarketplace.net
-  tls: true
-  client-fingerprint: firefox
-  alpn:
-  - h2
-  xhttp-opts:
-    path: /kavir
-    host: dey.lnmarketplace.net
-    mode: stream-one
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_15
-  type: vless
-  server: 162.159.130.234
-  port: 443
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  network: ws
-  servername: snip.edgeoneai.cc.cd
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443?ed=2560
-    headers:
-      Host: snip.edgeoneai.cc.cd
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_16
-  type: vless
-  server: dey.lnmarketplace.net
-  port: 443
-  uuid: 3536e1fa-0850-44d1-b123-925ce12476cf
-  network: xhttp
-  servername: dey.lnmarketplace.net
-  tls: true
-  alpn:
-  - h2
-  xhttp-opts:
-    path: /kavir
-    host: dey.lnmarketplace.net
-    mode: stream-one
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_17
-  type: vless
-  server: 216.24.57.1
-  port: 443
-  uuid: 974c2588-c1cd-43ac-8823-ce3d879b09fd
-  network: ws
-  servername: somersby.pt.ex33r.eu.cc
-  tls: true
-  ws-opts:
-    path: /id-amz
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_18
-  type: vless
-  server: 162.159.135.234
-  port: 443
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  network: ws
-  servername: snip.edgeoneai.cc.cd
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-    headers:
-      Host: snip.edgeoneai.cc.cd
-  alpn:
-  - h3
-  - h2
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_19
-  type: vless
-  server: 162.159.135.234
-  port: 443
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  network: ws
-  servername: snip.edgeoneai.cc.cd
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443?ed=2560
-    headers:
-      Host: snip.edgeoneai.cc.cd
-  alpn:
-  - h3
-  - h2
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_20
-  type: vless
-  server: jp64.australiacaregroup.site
-  port: 10002
-  uuid: aec8e5e3-bb81-4b22-8802-0b88c54997b3
-  servername: jp64.australiacaregroup.site
-  tls: true
-  client-fingerprint: chrome
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_21
-  type: vless
-  server: 162.159.135.234
-  port: 443
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  network: ws
-  servername: snip.edgeoneai.cc.cd
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443
-    headers:
-      Host: snip.edgeoneai.cc.cd
-  alpn:
-  - h3
-  - h2
   skip-cert-verify: true
   udp: true
 - name: 英国(yudou99.com 玉豆分享)
@@ -499,7 +301,215 @@ proxies:
       Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
   skip-cert-verify: true
   udp: true
-- name: 荷兰(yudou99.com 玉豆分享)
+- name: 加拿大(yudou99.com 玉豆分享)
+  type: vless
+  server: 209.206.51.240
+  port: 443
+  uuid: 573c6482-37db-454a-8c31-5b45a338a580
+  network: ws
+  servername: and-75r.pages.dev
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: and-75r.pages.dev
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_6
+  type: vless
+  server: 209.206.51.240
+  port: 443
+  uuid: 573c6482-37db-454a-8c31-5b45a338a580
+  network: ws
+  servername: and-75r.pages.dev
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_7
+  type: vless
+  server: 162.159.135.234
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  alpn:
+  - h3
+  - h2
+  skip-cert-verify: true
+  udp: true
+- name: 德国(yudou99.com 玉豆分享)_3
+  type: vless
+  server: 188.245.191.19
+  port: 2040
+  uuid: bdd897a6-57f2-4311-835f-0b6c5ac5a1a2
+  network: ws
+  servername: 9qohadlkywguh.hlf9x1796lkopyju2kplt9c9smz1vyuv0u8azzk.workers.dev
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: 9qohadlkywguh.hlf9x1796lkopyju2kplt9c9smz1vyuv0u8azzk.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_8
+  type: vless
+  server: 162.159.135.234
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  ws-opts:
+    path: /
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  skip-cert-verify: true
+  udp: true
+- name: 德国(yudou99.com 玉豆分享)_4
+  type: vless
+  server: 5.75.195.83
+  port: 56879
+  uuid: 7b0f8733-03cc-472b-9c50-ed159b48ef59
+  network: ws
+  servername: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_9
+  type: vless
+  server: 162.159.135.234
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443?ed=2560
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  alpn:
+  - h3
+  - h2
+  skip-cert-verify: true
+  udp: true
+- name: 德国(yudou99.com 玉豆分享)_5
+  type: vless
+  server: 94.130.38.26
+  port: 8080
+  uuid: 873dcafc-d840-457b-8507-4fcb7864b42c
+  encryption: mlkem768x25519plus.random.0rtt.LV2n-PVOv3YEA33KG_qeGVFHxtbpBGumDTq6DAKaLH8
+  network: xhttp
+  servername: lagaa9.api3-max.ru
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: wBo9CO_oe4iyHmg4K0RaocUC0SIUz0CsLbJyqRrlN20
+    short-id: 60613260a10be878
+  xhttp-opts:
+    path: /v6
+    mode: auto
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_10
+  type: ss
+  server: ruot.ayucloudservices.nl
+  port: 22069
+  cipher: aes-256-gcm
+  password: bd962c9a-d6f2-4561-bd80-34206c4d5279
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_11
+  type: vless
+  server: 162.159.130.234
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443?ed=2560
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  skip-cert-verify: true
+  udp: true
+- name: 荷兰(yudou99.com 玉豆分享)_1
+  type: vless
+  server: 37.49.229.6
+  port: 443
+  uuid: c6db98c5-9959-425e-9340-300779fc4e4b
+  servername: n3.vimeostream.online
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: nSDCUz3Hfy3iu_EtHXZKAqRV87rPoP_EFQe3QyhcKik
+    short-id: eba7ad82c6344ab6
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_12
+  type: vless
+  server: 80.93.202.40
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: false
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime02.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_13
+  type: vless
+  server: 162.159.135.234
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443fp=chrome
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  alpn:
+  - h3
+  - h2
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_14
+  type: vless
+  server: 84.32.109.20
+  port: 443
+  uuid: ee18d188-14cc-417e-beb1-70e4add6d023
+  servername: litv.nztvpn.com
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: random
+  reality-opts:
+    public-key: 3jySGemfaqPZ2vM66Qtzo5SotO3eoRn1FeGaKp6KBQ4
+    short-id: 0da7e14db353e7d0
+  skip-cert-verify: true
+  udp: true
+- name: 荷兰(yudou99.com 玉豆分享)_2
   type: vless
   server: 79.137.197.212
   port: 2105
@@ -514,86 +524,7 @@ proxies:
       Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
   skip-cert-verify: true
   udp: true
-- name: 新加坡(yudou99.com 玉豆分享)_1
-  type: vless
-  server: 142.91.101.39
-  port: 627
-  uuid: aff1ffd0-594c-44c9-9f79-4096fde005ea
-  network: ws
-  servername: 9qohadlkywguh.hlf9x1796lkopyju2kplt9c9smz1vyuv0u8azzk.workers.dev
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /@Marisa_kristi
-    headers:
-      Host: 9qohadlkywguh.hlf9x1796lkopyju2kplt9c9smz1vyuv0u8azzk.workers.dev
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_22
-  type: vless
-  server: 162.159.135.234
-  port: 443
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  network: ws
-  servername: snip.edgeoneai.cc.cd
-  tls: true
-  ws-opts:
-    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443
-    headers:
-      Host: snip.edgeoneai.cc.cd
-  skip-cert-verify: true
-  udp: true
-- name: 英国(yudou99.com 玉豆分享)_1
-  type: vless
-  server: 89.117.112.30
-  port: 8880
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  network: ws
-  tls: false
-  ws-opts:
-    path: /
-    headers:
-      Host: vms.lifetime11.workers.dev
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_23
-  type: vless
-  server: 209.206.51.240
-  port: 443
-  uuid: 573c6482-37db-454a-8c31-5b45a338a580
-  network: ws
-  servername: and-75r.pages.dev
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-  skip-cert-verify: true
-  udp: true
-- name: 俄罗斯(yudou99.com 玉豆分享)
-  type: vless
-  server: 185.153.198.86
-  port: 443
-  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
-  network: ws
-  servername: vlso5.1d.mom
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /socks5=888:888@hkip.1d.mom:1080
-    headers:
-      Host: vlso5.1d.mom
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_24
-  type: anytls
-  server: anytls2.864106.xyz
-  port: 19000
-  password: github.com/Alvin9999-newpac/fanqiang
-  sni: anytls2.864106.xyz
-  skip-cert-verify: true
-  tls: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_25
+- name: 美国(yudou99.com 玉豆分享)_15
   type: vless
   server: 156.229.163.237
   port: 10238
@@ -608,19 +539,18 @@ proxies:
       Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
   skip-cert-verify: true
   udp: true
-- name: 日本(yudou99.com 玉豆分享)_4
+- name: 美国(yudou99.com 玉豆分享)_16
   type: vless
-  server: 107.191.53.86
-  port: 4798
-  uuid: 16a5e4f6-246f-406d-9787-1b5686a97cbc
+  server: 162.159.130.234
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
   network: ws
-  servername: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+  servername: snip.edgeoneai.cc.cd
   tls: true
-  client-fingerprint: chrome
   ws-opts:
-    path: /@Marisa_kristi
+    path: /
     headers:
-      Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+      Host: snip.edgeoneai.cc.cd
   skip-cert-verify: true
   udp: true
 - name: 新加坡(yudou99.com 玉豆分享)_2
@@ -638,131 +568,183 @@ proxies:
       Host: 9qohadlkywguh.hlf9x1796lkopyju2kplt9c9smz1vyuv0u8azzk.workers.dev
   skip-cert-verify: true
   udp: true
-- name: 美国(yudou99.com 玉豆分享)_26
+- name: 美国(yudou99.com 玉豆分享)_17
   type: vless
-  server: 80.93.202.40
-  port: 8880
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  server: 162.159.130.234
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
   network: ws
-  tls: false
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  client-fingerprint: chrome
   ws-opts:
     path: /
     headers:
-      Host: vms.lifetime02.workers.dev
+      Host: snip.edgeoneai.cc.cd
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_18
+  type: vless
+  server: 172.67.171.191
+  port: 8080
+  uuid: 0b2ea024-3ffd-46a7-87ce-86cbb79d7a48
+  network: ws
+  tls: false
+  ws-opts:
+    path: /eyJqdW5rIjoiT3FNeW1sMVdGVHlvNTIiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByZWZpeCIsInBhbmVsSVBzIjpbIlsyYTAyOjg5ODoxNDY6NjQ6Ol0iLCJbMjYwMjpmYzU5OmIwOjY0OjpdIiwiWzI2MDI6ZmM1OToxMTo2NDo6XSJdfQ==
+    headers:
+      Host: server18.peekconfig2.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 荷兰(yudou99.com 玉豆分享)_3
+  type: vless
+  server: 178.214.113.10
+  port: 8443
+  uuid: c6db98c5-9959-425e-9340-300779fc4e4b
+  network: grpc
+  servername: n2.vimeostream.online
+  tls: true
+  client-fingerprint: firefox
+  grpc-opts:
+    grpc-service-name: nl1grpc
+  skip-cert-verify: true
+  udp: true
+- name: 新加坡(yudou99.com 玉豆分享)_3
+  type: vless
+  server: 142.91.101.39
+  port: 627
+  uuid: aff1ffd0-594c-44c9-9f79-4096fde005ea
+  network: ws
+  servername: 9qohadlkywguh.hlf9x1796lkopyju2kplt9c9smz1vyuv0u8azzk.workers.dev
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: 9qohadlkywguh.hlf9x1796lkopyju2kplt9c9smz1vyuv0u8azzk.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_19
+  type: vless
+  server: saas.sin.fan
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_20
+  type: vless
+  server: saas.sin.fan
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443?ed=2560
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_21
+  type: vless
+  server: 162.159.135.234
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  alpn:
+  - h3
+  - h2
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_22
+  type: vless
+  server: saas.sin.fan
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@vpn748359672.opengw.net:1458?ed=2560
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  alpn:
+  - h3
+  - h2
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_23
+  type: anytls
+  server: anytls2.864106.xyz
+  port: 19000
+  password: github.com/Alvin9999-newpac/fanqiang
+  sni: anytls2.864106.xyz
+  skip-cert-verify: true
+  tls: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_24
+  type: vless
+  server: saas.sin.fan
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443?ed=2560fp=chrome
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_25
+  type: vless
+  server: saas.sin.fan
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443?ed=2560
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_26
+  type: vless
+  server: saas.sin.fan
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  alpn:
+  - h3
+  - h2
   skip-cert-verify: true
   udp: true
 - name: 美国(yudou99.com 玉豆分享)_27
-  type: vless
-  server: 91.206.71.8
-  port: 80
-  uuid: c20a0bcf-aa6f-4c35-9e62-a39b47b04e73
-  network: ws
-  tls: false
-  ws-opts:
-    path: /pyip=Telegram🇨🇳 @WangCai2
-    headers:
-      Host: round-haze-8783.294.workers.dev
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_28
-  type: vless
-  server: 91.206.71.8
-  port: 80
-  uuid: c20a0bcf-aa6f-4c35-9e62-a39b47b04e73
-  network: ws
-  tls: false
-  ws-opts:
-    path: /pyip=Telegram🇨🇳+@WangCai2
-    headers:
-      Host: round-haze-8783.294.workers.dev
-  skip-cert-verify: true
-  udp: true
-- name: 荷兰(yudou99.com 玉豆分享)_1
-  type: vless
-  server: dey.lnmarketplace.net
-  port: 443
-  uuid: 3536e1fa-0850-44d1-b123-925ce12476cf
-  network: xhttp
-  servername: dey.lnmarketplace.net
-  tls: true
-  client-fingerprint: chrome
-  alpn:
-  - h2
-  xhttp-opts:
-    path: /kavir
-    host: dey.lnmarketplace.net
-    mode: stream-one
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_29
-  type: vless
-  server: 92.53.189.40
-  port: 8880
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  network: ws
-  tls: false
-  ws-opts:
-    path: /
-    headers:
-      Host: vms.lifetime19.workers.dev
-  skip-cert-verify: true
-  udp: true
-- name: 印度(yudou99.com 玉豆分享)
-  type: vless
-  server: 203.202.232.110
-  port: 443
-  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
-  network: ws
-  servername: vlso5.1d.mom
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /socks5=888:888@hkip.1d.mom:1080
-    headers:
-      Host: vlso5.1d.mom
-  skip-cert-verify: true
-  udp: true
-- name: 日本(yudou99.com 玉豆分享)_5
-  type: vless
-  server: 141.147.150.232
-  port: 2053
-  uuid: fa13a9f7-5cba-4dca-b6b7-c14953f0ac65
-  servername: www.cloudflare.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: FE18081Cm-WUzpu6JyGpmlJqHEZpDmeWCAcisuRKtX4
-    short-id: 2235c8526bc59d67
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_30
-  type: vless
-  server: 104.26.4.2
-  port: 443
-  uuid: d342d11e-d224-4463-b982-532309285094
-  network: ws
-  servername: ccc.010304.xyz
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /
-  skip-cert-verify: true
-  udp: true
-- name: 荷兰(yudou99.com 玉豆分享)_2
-  type: vless
-  server: 157.228.150.34
-  port: 443
-  uuid: df53b6c2-8005-475c-9eb9-74e1be785dc8
-  servername: addons.mozilla.org
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: NOw-idkk3OCn-N0IRS93leujH4ik-E749O2T5BYJQ0M
-    short-id: 3cef317b
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_31
   type: vless
   server: saas.sin.fan
   port: 443
@@ -776,18 +758,92 @@ proxies:
       Host: snip.edgeoneai.cc.cd
   skip-cert-verify: true
   udp: true
-- name: 美国(yudou99.com 玉豆分享)_32
+- name: 荷兰(yudou99.com 玉豆分享)_4
   type: vless
-  server: 157.228.160.166
+  server: 37.49.229.6
+  port: 8443
+  uuid: c6db98c5-9959-425e-9340-300779fc4e4b
+  network: grpc
+  servername: n3.vimeostream.online
+  tls: true
+  client-fingerprint: firefox
+  grpc-opts:
+    grpc-service-name: nl3grpc
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_28
+  type: vless
+  server: saas.sin.fan
   port: 443
-  uuid: df53b6c2-8005-475c-9eb9-74e1be785dc8
-  servername: addons.mozilla.org
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  alpn:
+  - h3
+  - h2
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_29
+  type: vless
+  server: 162.159.130.234
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443?ed=2560#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_30
+  type: vless
+  server: 213.21.232.230
+  port: 443
+  uuid: 616c7b3b-41f4-4038-88c6-d6fedd0ae4a7
+  servername: pl-1.ardesnode.ru
   tls: true
   flow: xtls-rprx-vision
-  client-fingerprint: randomized
+  client-fingerprint: random
   reality-opts:
-    public-key: NOw-idkk3OCn-N0IRS93leujH4ik-E749O2T5BYJQ0M
-    short-id: 3cef317b
+    public-key: PKlt_5ASsz137EvA9SKSadtjEv1k_U7VRtoelKCgADs
+    short-id: 9ea74b83f4993ca9
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_31
+  type: vless
+  server: 63.141.128.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: false
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime42.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 俄罗斯(yudou99.com 玉豆分享)
+  type: vless
+  server: 185.153.198.86
+  port: 443
+  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
+  network: ws
+  servername: vlso5.1d.mom
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /socks5=888:888@hkip.1d.mom:1080
+    headers:
+      Host: vlso5.1d.mom
   skip-cert-verify: true
   udp: true
 - name: 香港(yudou99.com 玉豆分享)
@@ -807,20 +863,39 @@ proxies:
     mode: stream-one
   skip-cert-verify: true
   udp: true
-- name: 美国(yudou99.com 玉豆分享)_33
+- name: 美国(yudou99.com 玉豆分享)_32
   type: vless
-  server: 155.46.167.30
-  port: 8880
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  server: saas.sin.fan
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
   network: ws
-  tls: false
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  client-fingerprint: chrome
   ws-opts:
-    path: /
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443
     headers:
-      Host: vms.lifetime50.workers.dev
+      Host: snip.edgeoneai.cc.cd
   skip-cert-verify: true
   udp: true
-- name: 荷兰(yudou99.com 玉豆分享)_3
+- name: 美国(yudou99.com 玉豆分享)_33
+  type: vless
+  server: saas.sin.fan
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443?ed=2560fp=chrome
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  alpn:
+  - h3
+  - h2
+  skip-cert-verify: true
+  udp: true
+- name: 荷兰(yudou99.com 玉豆分享)_5
   type: vless
   server: dey.lnmarketplace.net
   port: 443
@@ -837,7 +912,274 @@ proxies:
     mode: stream-one
   skip-cert-verify: true
   udp: true
+- name: 荷兰(yudou99.com 玉豆分享)_6
+  type: vless
+  server: dey.lnmarketplace.net
+  port: 443
+  uuid: 3536e1fa-0850-44d1-b123-925ce12476cf
+  network: xhttp
+  servername: dey.lnmarketplace.net
+  tls: true
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  xhttp-opts:
+    path: /kavir
+    host: dey.lnmarketplace.net
+    mode: stream-one
+  skip-cert-verify: true
+  udp: true
 - name: 美国(yudou99.com 玉豆分享)_34
+  type: vless
+  server: saas.sin.fan
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  ws-opts:
+    path: /
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  alpn:
+  - h3
+  - h2
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_35
+  type: vless
+  server: 155.46.167.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: false
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime50.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_36
+  type: vless
+  server: 91.206.71.8
+  port: 80
+  uuid: c20a0bcf-aa6f-4c35-9e62-a39b47b04e73
+  network: ws
+  tls: false
+  ws-opts:
+    path: /pyip=Telegram🇨🇳 @WangCai2
+    headers:
+      Host: round-haze-8783.294.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_37
+  type: vless
+  server: 91.206.71.8
+  port: 80
+  uuid: c20a0bcf-aa6f-4c35-9e62-a39b47b04e73
+  network: ws
+  tls: false
+  ws-opts:
+    path: /pyip=Telegram🇨🇳+@WangCai2
+    headers:
+      Host: round-haze-8783.294.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_38
+  type: vless
+  server: dey.lnmarketplace.net
+  port: 443
+  uuid: 3536e1fa-0850-44d1-b123-925ce12476cf
+  network: xhttp
+  servername: dey.lnmarketplace.net
+  tls: true
+  client-fingerprint: firefox
+  alpn:
+  - h2
+  xhttp-opts:
+    path: /kavir
+    host: dey.lnmarketplace.net
+    mode: stream-one
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_39
+  type: vless
+  server: saas.sin.fan
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@vpn748359672.opengw.net:1458?ed=2560fp=chrome
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  alpn:
+  - h3
+  - h2
+  skip-cert-verify: true
+  udp: true
+- name: 芬兰(yudou99.com 玉豆分享)
+  type: vless
+  server: fi.pythonsetupbib.online
+  port: 443
+  uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
+  servername: fi.pythonsetupbib.online
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: ZqVz1kWNxh_5zQ5PPkoPHoaXQOvppM0ZyIo8uKp2dCg
+    short-id: bdf5852d1423e694
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_40
+  type: vless
+  server: 103.126.51.58
+  port: 995
+  uuid: 1fc575d3-81bb-44d5-9efa-4131c7cc677a
+  network: httpupgrade
+  servername: ocober-romania-new.yyuyy.com
+  tls: true
+  client-fingerprint: random
+  http-opts:
+    path:
+    - /api/v1
+    headers:
+      Host:
+      - ocober-romania-new.yyuyy.com
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_41
+  type: vless
+  server: saas.sin.fan
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  ws-opts:
+    path: /
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_42
+  type: vless
+  server: 92.53.189.40
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: false
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime19.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_43
+  type: vless
+  server: 188.114.97.6
+  port: 443
+  uuid: 49ccad64-c854-4f33-b334-793cf0d02b74
+  network: ws
+  servername: newcscf.jisucf.cloudns.ch
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: newcscf.jisucf.cloudns.ch
+  alpn:
+  - http/1.1
+  skip-cert-verify: true
+  udp: true
+- name: 印度(yudou99.com 玉豆分享)
+  type: vless
+  server: 203.202.232.110
+  port: 443
+  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
+  network: ws
+  servername: vlso5.1d.mom
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /socks5=888:888@hkip.1d.mom:1080
+    headers:
+      Host: vlso5.1d.mom
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_44
+  type: ss
+  server: ruot.ayucloudservices.nl
+  port: 22073
+  cipher: aes-256-gcm
+  password: bd962c9a-d6f2-4561-bd80-34206c4d5279
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_45
+  type: vless
+  server: saas.sin.fan
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443?ed=2560
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  alpn:
+  - h3
+  - h2
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_46
+  type: vless
+  server: saas.sin.fan
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@vpn748359672.opengw.net:1458?ed=2560fp=chrome
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_47
+  type: vless
+  server: saas.sin.fan
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_48
+  type: vless
+  server: 185.148.104.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  servername: 185.148.104.30
+  tls: false
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime51.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_49
   type: vless
   server: 45.131.208.4
   port: 80
@@ -852,61 +1194,22 @@ proxies:
       Host: floral-thunder-10d3.82-67d.workers.dev
   skip-cert-verify: true
   udp: true
-- name: 美国(yudou99.com 玉豆分享)_35
+- name: 俄罗斯(yudou99.com 玉豆分享)_1
   type: vless
-  server: 172.67.171.191
-  port: 8080
-  uuid: 0b2ea024-3ffd-46a7-87ce-86cbb79d7a48
-  network: ws
-  tls: false
-  ws-opts:
-    path: /eyJqdW5rIjoiT3FNeW1sMVdGVHlvNTIiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByZWZpeCIsInBhbmVsSVBzIjpbIlsyYTAyOjg5ODoxNDY6NjQ6Ol0iLCJbMjYwMjpmYzU5OmIwOjY0OjpdIiwiWzI2MDI6ZmM1OToxMTo2NDo6XSJdfQ==
-    headers:
-      Host: server18.peekconfig2.workers.dev
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_36
-  type: vless
-  server: 157.228.128.59
+  server: 93.188.184.150
   port: 443
-  uuid: df53b6c2-8005-475c-9eb9-74e1be785dc8
-  servername: addons.mozilla.org
+  uuid: c6e3c24c-ce20-4ad5-8c8c-68cb05890ea8
+  network: grpc
+  servername: ru-1-2.unturned-rust-dead.lol
   tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: randomized
+  client-fingerprint: random
+  grpc-opts:
+    grpc-service-name: ru-api
   reality-opts:
-    public-key: QnxkyscHouhaLDJHT47beyenVd4LHi62yfJIeRV01Ws
-    short-id: 06e00e7c
+    public-key: aYz4_13W8gtAXGBrWeqJXtExahAJ9kUPDapqeyAlYCk
   skip-cert-verify: true
   udp: true
-- name: 美国(yudou99.com 玉豆分享)_37
-  type: vless
-  server: 162.159.130.234
-  port: 443
-  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-  network: ws
-  servername: snip.edgeoneai.cc.cd
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443?ed=2560#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
-    headers:
-      Host: snip.edgeoneai.cc.cd
-  skip-cert-verify: true
-  udp: true
-- name: 台湾(yudou99.com 玉豆分享)
-  type: anytls
-  server: 98416548.df6h451rh.xin
-  port: 443
-  password: 6725d134ee80
-  sni: images.ctfassets.net
-  alpn:
-  - http/1.1
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  client-fingerprint: chrome
-- name: 美国(yudou99.com 玉豆分享)_38
+- name: 美国(yudou99.com 玉豆分享)_50
   type: vless
   server: 31.59.210.25
   port: 2087
@@ -922,15 +1225,7 @@ proxies:
     short-id: ed435c242097fd05
   skip-cert-verify: true
   udp: true
-- name: 芬兰(yudou99.com 玉豆分享)
-  type: vless
-  server: test.keoplentuio.xyz
-  port: 2053
-  uuid: 9ef61079-6f7d-4911-9608-943da85d8e6f
-  tls: false
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_39
+- name: 美国(yudou99.com 玉豆分享)_51
   type: vless
   server: 157.228.128.59
   port: 443
@@ -942,6 +1237,95 @@ proxies:
   reality-opts:
     public-key: QnxkyscHouhaLDJHT47beyenVd4LHi62yfJIeRV01Ws
     short-id: 06e00e7c
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_52
+  type: vless
+  server: dey.lnmarketplace.net
+  port: 443
+  uuid: 3536e1fa-0850-44d1-b123-925ce12476cf
+  network: xhttp
+  servername: dey.lnmarketplace.net
+  tls: true
+  alpn:
+  - h2
+  xhttp-opts:
+    path: /kavir
+    host: dey.lnmarketplace.net
+    mode: stream-one
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_53
+  type: vless
+  server: 31.59.210.26
+  port: 2088
+  uuid: 5413edfb-08d6-4fba-b51c-809c04feb127
+  network: grpc
+  servername: www.yandex.ru
+  tls: true
+  client-fingerprint: qq
+  grpc-opts:
+    grpc-service-name: astracat
+  reality-opts:
+    public-key: Eq3c19Y0WGB1APWMADQB-oxCvZFSVFAQxG5L6b8EkUg
+    short-id: b1ad165f903c62fe
+  skip-cert-verify: true
+  udp: true
+- name: 波兰(yudou99.com 玉豆分享)
+  type: vless
+  server: 80.47.12.94
+  port: 443
+  uuid: c6e3c24c-ce20-4ad5-8c8c-68cb05890ea8
+  servername: pl-1-1.unturned-rust-dead.lol
+  tls: true
+  client-fingerprint: random
+  reality-opts:
+    public-key: gS0qvWKumWcOVoAgf8SHt6Sm3tqpBw07c5sA_Clb1hg
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_54
+  type: vless
+  server: 157.228.128.59
+  port: 443
+  uuid: df53b6c2-8005-475c-9eb9-74e1be785dc8
+  servername: addons.mozilla.org
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: QnxkyscHouhaLDJHT47beyenVd4LHi62yfJIeRV01Ws
+    short-id: 06e00e7c
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_55
+  type: vless
+  server: 31.59.210.26
+  port: 2088
+  uuid: 5413edfb-08d6-4fba-b51c-809c04feb127
+  network: grpc
+  servername: www.yandex.ru
+  tls: true
+  client-fingerprint: safari
+  grpc-opts:
+    grpc-service-name: astracat
+  reality-opts:
+    public-key: Eq3c19Y0WGB1APWMADQB-oxCvZFSVFAQxG5L6b8EkUg
+    short-id: b1ad165f903c62fe
+  skip-cert-verify: true
+  udp: true
+- name: 荷兰(yudou99.com 玉豆分享)_7
+  type: vless
+  server: 144.31.135.38
+  port: 9444
+  uuid: 9a48995b-dd98-40a4-98cb-5fbb270f3d63
+  network: ws
+  servername: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
   skip-cert-verify: true
   udp: true
 - name: 芬兰(yudou99.com 玉豆分享)_1
@@ -958,7 +1342,21 @@ proxies:
     short-id: 06e00e7c
   skip-cert-verify: true
   udp: true
-- name: 英国(yudou99.com 玉豆分享)_2
+- name: 美国(yudou99.com 玉豆分享)_56
+  type: vless
+  server: 157.228.128.59
+  port: 443
+  uuid: df53b6c2-8005-475c-9eb9-74e1be785dc8
+  servername: addons.mozilla.org
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: randomized
+  reality-opts:
+    public-key: QnxkyscHouhaLDJHT47beyenVd4LHi62yfJIeRV01Ws
+    short-id: 06e00e7c
+  skip-cert-verify: true
+  udp: true
+- name: 英国(yudou99.com 玉豆分享)_1
   type: vless
   server: 129.151.64.169
   port: 31867
@@ -973,149 +1371,40 @@ proxies:
       Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
   skip-cert-verify: true
   udp: true
-- name: 美国(yudou99.com 玉豆分享)_40
-  type: anytls
-  server: jp2.australiacaregroup.site
-  port: 10005
-  password: aec8e5e3-bb81-4b22-8802-0b88c54997b3
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  client-fingerprint: chrome
-- name: 德国(yudou99.com 玉豆分享)_4
+- name: 波兰(yudou99.com 玉豆分享)_1
   type: vless
-  server: 177.1.187.251
+  server: pl-1-1.unturned-rust-dead.lol
   port: 443
-  uuid: 318c935d-c195-41d3-99ad-9bbcfdab3386
-  servername: de2.srv.vbuste.ru
+  uuid: c6e3c24c-ce20-4ad5-8c8c-68cb05890ea8
+  servername: pl-1-1.unturned-rust-dead.lol
   tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: randomized
+  client-fingerprint: random
   reality-opts:
-    public-key: 0-or5ogGhYbBgsVSrSC2Fhxyp2BN97Y9pqIdg61Qd08
-    short-id: 4be4110078ebed4a
+    public-key: gS0qvWKumWcOVoAgf8SHt6Sm3tqpBw07c5sA_Clb1hg
   skip-cert-verify: true
   udp: true
-- name: 美国(yudou99.com 玉豆分享)_41
+- name: 波兰(yudou99.com 玉豆分享)_2
   type: vless
-  server: 157.228.150.34
+  server: pl-1-1.unturned-rust-dead.lol
   port: 443
-  uuid: df53b6c2-8005-475c-9eb9-74e1be785dc8
-  servername: addons.mozilla.org
+  uuid: c6e3c24c-ce20-4ad5-8c8c-68cb05890ea8
+  servername: pl-1-1.unturned-rust-dead.lol
   tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: randomized
+  client-fingerprint: random
   reality-opts:
-    public-key: NOw-idkk3OCn-N0IRS93leujH4ik-E749O2T5BYJQ0M
-    short-id: 3cef317b
+    public-key: gS0qvWKumWcOVoAgf8SHt6Sm3tqpBw07c5sA_Clb1hg
   skip-cert-verify: true
   udp: true
-- name: 美国(yudou99.com 玉豆分享)_42
+- name: 英国(yudou99.com 玉豆分享)_2
   type: vless
-  server: 157.228.160.166
+  server: pl-1-1.unturned-rust-dead.lol
   port: 443
-  uuid: df53b6c2-8005-475c-9eb9-74e1be785dc8
-  servername: addons.mozilla.org
+  uuid: c6e3c24c-ce20-4ad5-8c8c-68cb05890ea8
+  servername: pl-1-1.unturned-rust-dead.lol
   tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: randomized
+  client-fingerprint: random
   reality-opts:
-    public-key: NOw-idkk3OCn-N0IRS93leujH4ik-E749O2T5BYJQ0M
-    short-id: 3cef317b
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_43
-  type: vless
-  server: 157.228.128.59
-  port: 443
-  uuid: df53b6c2-8005-475c-9eb9-74e1be785dc8
-  servername: addons.mozilla.org
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: QnxkyscHouhaLDJHT47beyenVd4LHi62yfJIeRV01Ws
-    short-id: 06e00e7c
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_44
-  type: vless
-  server: milo.rubinaz.xyz
-  port: 8080
-  uuid: 6bceb548-d9b6-461f-8e37-a5a7fbcdc2c8
-  tls: false
-  skip-cert-verify: true
-  udp: true
-- name: 俄罗斯(yudou99.com 玉豆分享)_1
-  type: vless
-  server: 194.226.121.119
-  port: 2087
-  uuid: ec6f8131-7a5d-4117-9627-6fb2b39ae0da
-  network: grpc
-  servername: www.apple.com
-  tls: true
-  client-fingerprint: chrome
-  grpc-opts:
-    grpc-service-name: grpc
-  reality-opts:
-    public-key: sXOLkj_L8EpGL0yZA9laLDaPfpwVEcBVHLSvunPVQwA
-    short-id: a644f94155c87551
-  skip-cert-verify: true
-  udp: true
-- name: 荷兰(yudou99.com 玉豆分享)_4
-  type: vless
-  server: 157.228.150.34
-  port: 443
-  uuid: df53b6c2-8005-475c-9eb9-74e1be785dc8
-  servername: addons.mozilla.org
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: NOw-idkk3OCn-N0IRS93leujH4ik-E749O2T5BYJQ0M
-    short-id: 3cef317b
-  skip-cert-verify: true
-  udp: true
-- name: 英国(yudou99.com 玉豆分享)_3
-  type: vless
-  server: 157.228.160.166
-  port: 443
-  uuid: df53b6c2-8005-475c-9eb9-74e1be785dc8
-  servername: addons.mozilla.org
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: randomized
-  reality-opts:
-    public-key: NOw-idkk3OCn-N0IRS93leujH4ik-E749O2T5BYJQ0M
-    short-id: 3cef317b
-  skip-cert-verify: true
-  udp: true
-- name: 芬兰(yudou99.com 玉豆分享)_2
-  type: vless
-  server: 157.228.128.59
-  port: 443
-  uuid: df53b6c2-8005-475c-9eb9-74e1be785dc8
-  servername: addons.mozilla.org
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: randomized
-  reality-opts:
-    public-key: QnxkyscHouhaLDJHT47beyenVd4LHi62yfJIeRV01Ws
-    short-id: 06e00e7c
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_45
-  type: vless
-  server: 192.227.169.125
-  port: 10829
-  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
-  servername: u695098u764943ccs478.gogocs.xyz
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: firefox
-  alpn:
-  - h2
-  - http/1.1
+    public-key: gS0qvWKumWcOVoAgf8SHt6Sm3tqpBw07c5sA_Clb1hg
   skip-cert-verify: true
   udp: true
 - name: 俄罗斯(yudou99.com 玉豆分享)_2
@@ -1134,170 +1423,7 @@ proxies:
     short-id: b1ad165f903c62fe
   skip-cert-verify: true
   udp: true
-- name: 荷兰(yudou99.com 玉豆分享)_5
-  type: vless
-  server: 144.31.135.38
-  port: 9444
-  uuid: 9a48995b-dd98-40a4-98cb-5fbb270f3d63
-  network: ws
-  servername: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /@Marisa_kristi
-    headers:
-      Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
-  skip-cert-verify: true
-  udp: true
-- name: 芬兰(yudou99.com 玉豆分享)_3
-  type: vless
-  server: 95.111.212.241
-  port: 443
-  uuid: 924fe46b-b6e0-479e-ae7f-a3661680e706
-  servername: www.samsung.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: BSTnEthBXhb_UyuWpLBDxg82-C-wcpU2_kOD5ohS12g
-    short-id: 3a697adb4c58d495
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_46
-  type: trojan
-  server: 104.18.32.47
-  port: 443
-  password: humanity
-  sni: www.calmlunch.com
-  skip-cert-verify: true
-  ws-opts:
-    path: /assignment
-  udp: true
-- name: 日本(yudou99.com 玉豆分享)_6
-  type: anytls
-  server: q7mtpgxo.zf-mix.9999231.xyz
-  port: 1019
-  password: a7c5d30b-ce9b-4e34-b5cb-66f8308790ef
-  sni: pl-house.9999231.xyz
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  client-fingerprint: chrome
-- name: 美国(yudou99.com 玉豆分享)_47
-  type: vless
-  server: 213.111.177.107
-  port: 443
-  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
-  network: ws
-  servername: vlso5.1d.mom
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /socks5=888:888@hkip.1d.mom:1080
-    headers:
-      Host: vlso5.1d.mom
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_48
-  type: vmess
-  server: or3.sfacg.uk
-  port: 2083
-  uuid: ac251237-576f-40c8-a543-554960c958b1
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: true
-  servername: cdn.sfacg.uk
-  network: ws
-  ws-opts:
-    path: /or3
-    headers:
-      Host: or3.sfacg.uk
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_49
-  type: trojan
-  server: 104.18.32.47
-  port: 443
-  password: humanity
-  sni: www.calmlunch.com
-  skip-cert-verify: true
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-  udp: true
-- name: 日本(yudou99.com 玉豆分享)_7
-  type: anytls
-  server: 06nn6kxv.zf-mix.9999231.xyz
-  port: 1020
-  password: a7c5d30b-ce9b-4e34-b5cb-66f8308790ef
-  sni: se-house.9999231.xyz
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  client-fingerprint: chrome
-- name: 美国(yudou99.com 玉豆分享)_50
-  type: vless
-  server: 13.143.137.206
-  port: 8443
-  uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
-  servername: ya.ru
-  tls: true
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
-    short-id: d2061bb1
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_51
-  type: vless
-  server: 31.59.210.24
-  port: 2087
-  uuid: 5413edfb-08d6-4fba-b51c-809c04feb127
-  network: grpc
-  servername: www.yandex.ru
-  tls: true
-  client-fingerprint: safari
-  grpc-opts:
-    grpc-service-name: astracat
-  reality-opts:
-    public-key: W2OLbQ682PLJ9yHQ21Q0nPJk9U8RuL5YnlP-U1fdQzI
-    short-id: a11023050f134216
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_52
-  type: vless
-  server: 31.59.210.37
-  port: 443
-  uuid: 5413edfb-08d6-4fba-b51c-809c04feb127
-  network: grpc
-  servername: www.yandex.ru
-  tls: true
-  client-fingerprint: safari
-  grpc-opts:
-    grpc-service-name: astracat
-  reality-opts:
-    public-key: 5k0dtOSzmshCubdYeKppsUdHU4i2ghaB9uSJSzGjHW4
-    short-id: 6dbf4931096f9890
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_53
-  type: vless
-  server: 31.59.210.24
-  port: 2087
-  uuid: 5413edfb-08d6-4fba-b51c-809c04feb127
-  network: grpc
-  servername: www.yandex.ru
-  tls: true
-  client-fingerprint: firefox
-  grpc-opts:
-    grpc-service-name: astracat
-  reality-opts:
-    public-key: W2OLbQ682PLJ9yHQ21Q0nPJk9U8RuL5YnlP-U1fdQzI
-    short-id: a11023050f134216
-  skip-cert-verify: true
-  udp: true
-- name: 德国(yudou99.com 玉豆分享)_5
+- name: 德国(yudou99.com 玉豆分享)_6
   type: vless
   server: 179.61.251.244
   port: 7443
@@ -1312,9 +1438,129 @@ proxies:
       Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
   skip-cert-verify: true
   udp: true
-- name: 美国(yudou99.com 玉豆分享)_54
+- name: 波兰(yudou99.com 玉豆分享)_3
   type: vless
-  server: 139.84.242.103
+  server: 213.21.232.26
+  port: 443
+  uuid: 616c7b3b-41f4-4038-88c6-d6fedd0ae4a7
+  servername: pl-3.ardesnode.ru
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: PKlt_5ASsz137EvA9SKSadtjEv1k_U7VRtoelKCgADs
+    short-id: 9ea74b83f4993ca9
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_57
+  type: hysteria2
+  server: me17.msjia8844.site
+  port: 7443
+  password: M8LP9DztTr3znqCkmf-r08CQLBLLFK1r
+  sni: me17.msjia8844.site
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: u3Soh9_Ui0UmcuY6vk0ug8Lq
+  udp: true
+- name: 意大利(yudou99.com 玉豆分享)
+  type: vless
+  server: 185.119.19.105
+  port: 10829
+  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
+  servername: u695098u2c5f47d6s8746.gogocs.xyz
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  alpn:
+  - h2
+  - http/1.1
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_58
+  type: vless
+  server: dey.lnmarketplace.net
+  port: 443
+  uuid: 3536e1fa-0850-44d1-b123-925ce12476cf
+  network: xhttp
+  servername: dey.lnmarketplace.net
+  tls: true
+  alpn:
+  - h2
+  xhttp-opts:
+    path: /kavir
+    host: dey.lnmarketplace.net
+    mode: stream-one
+  skip-cert-verify: true
+  udp: true
+- name: 波兰(yudou99.com 玉豆分享)_4
+  type: vless
+  server: 213.21.232.224
+  port: 443
+  uuid: 616c7b3b-41f4-4038-88c6-d6fedd0ae4a7
+  servername: pl-4.ardesnode.ru
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: PKlt_5ASsz137EvA9SKSadtjEv1k_U7VRtoelKCgADs
+    short-id: 9ea74b83f4993ca9
+  skip-cert-verify: true
+  udp: true
+- name: 意大利(yudou99.com 玉豆分享)_1
+  type: vless
+  server: s8748.okgg.top
+  port: 10829
+  uuid: 30e52776-55ac-3cb4-8d36-e2910f07e2c3
+  servername: u695098u2c5f47d6s8746.gogocs.xyz
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  alpn:
+  - h2
+  - http/1.1
+  skip-cert-verify: true
+  udp: true
+- name: 德国(yudou99.com 玉豆分享)_7
+  type: vless
+  server: 177.1.187.251
+  port: 443
+  uuid: 318c935d-c195-41d3-99ad-9bbcfdab3386
+  servername: de2.srv.vbuste.ru
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: randomized
+  reality-opts:
+    public-key: 0-or5ogGhYbBgsVSrSC2Fhxyp2BN97Y9pqIdg61Qd08
+    short-id: 4be4110078ebed4a
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_59
+  type: anytls
+  server: nly5gl7n.zf-mix.9999231.xyz
+  port: 1007
+  password: a7c5d30b-ce9b-4e34-b5cb-66f8308790ef
+  sni: iosapps.itunes.apple.com
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  client-fingerprint: chrome
+- name: 荷兰(yudou99.com 玉豆分享)_8
+  type: vless
+  server: w205.luxcloud.space
+  port: 443
+  uuid: fc87e0d6-0f6a-423a-828e-1fed7e7ef29c
+  servername: w205.luxcloud.space
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: firefox
+  alpn:
+  - h2
+  - http/1.1
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_60
+  type: vless
+  server: 213.111.177.107
   port: 443
   uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
   network: ws
@@ -1327,48 +1573,89 @@ proxies:
       Host: vlso5.1d.mom
   skip-cert-verify: true
   udp: true
-- name: 美国(yudou99.com 玉豆分享)_55
+- name: 美国(yudou99.com 玉豆分享)_61
   type: vless
-  server: 31.59.210.24
-  port: 2087
-  uuid: 5413edfb-08d6-4fba-b51c-809c04feb127
-  network: grpc
-  servername: www.yandex.ru
+  server: 157.228.128.59
+  port: 443
+  uuid: df53b6c2-8005-475c-9eb9-74e1be785dc8
+  servername: addons.mozilla.org
   tls: true
-  client-fingerprint: edge
-  grpc-opts:
-    grpc-service-name: astracat
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
   reality-opts:
-    public-key: W2OLbQ682PLJ9yHQ21Q0nPJk9U8RuL5YnlP-U1fdQzI
-    short-id: a11023050f134216
+    public-key: QnxkyscHouhaLDJHT47beyenVd4LHi62yfJIeRV01Ws
+    short-id: 06e00e7c
   skip-cert-verify: true
   udp: true
-- name: 美国(yudou99.com 玉豆分享)_56
+- name: 芬兰(yudou99.com 玉豆分享)_2
   type: vless
-  server: 31.59.210.24
-  port: 2087
-  uuid: 5413edfb-08d6-4fba-b51c-809c04feb127
-  network: grpc
-  servername: www.yandex.ru
+  server: 157.228.128.59
+  port: 443
+  uuid: df53b6c2-8005-475c-9eb9-74e1be785dc8
+  servername: addons.mozilla.org
   tls: true
-  client-fingerprint: ios
-  grpc-opts:
-    grpc-service-name: astracat
+  flow: xtls-rprx-vision
+  client-fingerprint: randomized
   reality-opts:
-    public-key: W2OLbQ682PLJ9yHQ21Q0nPJk9U8RuL5YnlP-U1fdQzI
-    short-id: a11023050f134216
+    public-key: QnxkyscHouhaLDJHT47beyenVd4LHi62yfJIeRV01Ws
+    short-id: 06e00e7c
   skip-cert-verify: true
   udp: true
-- name: 日本(yudou99.com 玉豆分享)_8
-  type: anytls
-  server: q7mtpgxo.zf-mix.9999231.xyz
-  port: 1019
-  password: a7c5d30b-ce9b-4e34-b5cb-66f8308790ef
-  sni: pl-house.9999231.xyz
+- name: 美国(yudou99.com 玉豆分享)_62
+  type: vless
+  server: 188.114.99.0
+  port: 8880
+  uuid: 3ee10440-225e-4cbc-83ed-3c80b90bcb07
+  encryption: mlkem768x25519plus.native.0rtt.BheP3zTPlA3cijplJnfrJSIp9rYlrGqnqEOnYD-wA20
+  network: ws
+  tls: false
+  ws-opts:
+    path: /notls
+    headers:
+      Host: ovh-gr1.mahkhorshidi.ir
   skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_63
+  type: trojan
+  server: 104.18.32.47
+  port: 443
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_64
+  type: vless
+  server: 206.223.249.90
+  port: 33891
+  uuid: 9977ba41-b6aa-4033-9492-2f6abfcade31
+  servername: browser.yandex.com
   tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: fj5f0rWTOAgd2gqCCWgag3oAGwb6MCef3OFNdnQLWW8
+    short-id: f5bc6788
+  skip-cert-verify: true
   udp: true
-- name: 美国(yudou99.com 玉豆分享)_57
+- name: 波兰(yudou99.com 玉豆分享)_5
+  type: vless
+  server: 144.31.101.196
+  port: 33891
+  uuid: 1c794e75-bcd4-4a65-9f69-ed0a10f33d60
+  servername: browser.yandex.com
+  tls: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: HXXIkFRPeRpluXJ7SOoUGf9EOq4Lw-oJpvg1W0UPbEw
+    short-id: 5bd7b68ca4c04443
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_65
   type: vless
   server: 31.59.210.37
   port: 443
@@ -1384,40 +1671,10 @@ proxies:
     short-id: 6dbf4931096f9890
   skip-cert-verify: true
   udp: true
-- name: 美国(yudou99.com 玉豆分享)_58
+- name: 美国(yudou99.com 玉豆分享)_66
   type: vless
-  server: 31.59.210.37
+  server: 139.84.242.103
   port: 443
-  uuid: 5413edfb-08d6-4fba-b51c-809c04feb127
-  network: grpc
-  servername: www.yandex.ru
-  tls: true
-  client-fingerprint: edge
-  grpc-opts:
-    grpc-service-name: astracat
-  reality-opts:
-    public-key: 5k0dtOSzmshCubdYeKppsUdHU4i2ghaB9uSJSzGjHW4
-    short-id: 6dbf4931096f9890
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_59
-  type: vless
-  server: 157.228.160.166
-  port: 443
-  uuid: df53b6c2-8005-475c-9eb9-74e1be785dc8
-  servername: addons.mozilla.org
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: randomized
-  reality-opts:
-    public-key: NOw-idkk3OCn-N0IRS93leujH4ik-E749O2T5BYJQ0M
-    short-id: 3cef317b
-  skip-cert-verify: true
-  udp: true
-- name: 美国(yudou99.com 玉豆分享)_60
-  type: vless
-  server: 156.38.157.171
-  port: 8443
   uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
   network: ws
   servername: vlso5.1d.mom
@@ -1429,7 +1686,38 @@ proxies:
       Host: vlso5.1d.mom
   skip-cert-verify: true
   udp: true
-- name: 美国(yudou99.com 玉豆分享)_61
+- name: 美国(yudou99.com 玉豆分享)_67
+  type: trojan
+  server: 104.18.32.47
+  port: 443
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  ws-opts:
+    path: /assignment
+  udp: true
+- name: 日本(yudou99.com 玉豆分享)_3
+  type: anytls
+  server: 06nn6kxv.zf-mix.9999231.xyz
+  port: 1020
+  password: a7c5d30b-ce9b-4e34-b5cb-66f8308790ef
+  sni: se-house.9999231.xyz
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  client-fingerprint: chrome
+- name: 澳洲(yudou99.com 玉豆分享)
+  type: hysteria2
+  server: 137.23.2.56
+  port: 20000
+  password: b42d90fa667942aebc734d60
+  sni: rmgyvpn.rest
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: b42d90fa667942aebc734d60
+  ports: 20000-30000
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_68
   type: vless
   server: 31.59.210.37
   port: 443
@@ -1445,11 +1733,86 @@ proxies:
     short-id: 6dbf4931096f9890
   skip-cert-verify: true
   udp: true
-- name: 韩国(yudou99.com 玉豆分享)
+- name: 美国(yudou99.com 玉豆分享)_69
   type: vless
-  server: 220.71.172.2
-  port: 16034
-  uuid: bfa5cd1f-1465-4850-b7c9-08e1a63dac2c
+  server: 31.59.210.37
+  port: 443
+  uuid: 5413edfb-08d6-4fba-b51c-809c04feb127
+  network: grpc
+  servername: www.yandex.ru
+  tls: true
+  client-fingerprint: edge
+  grpc-opts:
+    grpc-service-name: astracat
+  reality-opts:
+    public-key: 5k0dtOSzmshCubdYeKppsUdHU4i2ghaB9uSJSzGjHW4
+    short-id: 6dbf4931096f9890
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_70
+  type: vless
+  server: 156.38.157.171
+  port: 8443
+  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
+  network: ws
+  servername: vlso5.1d.mom
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /socks5=888:888@hkip.1d.mom:1080
+    headers:
+      Host: vlso5.1d.mom
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_71
+  type: vless
+  server: 31.59.210.37
+  port: 443
+  uuid: 5413edfb-08d6-4fba-b51c-809c04feb127
+  network: grpc
+  servername: www.yandex.ru
+  tls: true
+  client-fingerprint: safari
+  grpc-opts:
+    grpc-service-name: astracat
+  reality-opts:
+    public-key: 5k0dtOSzmshCubdYeKppsUdHU4i2ghaB9uSJSzGjHW4
+    short-id: 6dbf4931096f9890
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)
+  type: vless
+  server: saas.sin.fan
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@vpn748359672.opengw.net:1458?ed=2560fp=chrome
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_1
+  type: vless
+  server: saas.sin.fan
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443?ed=2560
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  skip-cert-verify: true
+  udp: true
+- name: 日本(yudou99.com 玉豆分享)
+  type: vless
+  server: 154.31.112.237
+  port: 26418
+  uuid: ab2a5cc0-11d1-4bc4-a9d4-b5654ad18dc4
   network: ws
   servername: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
   tls: true
@@ -1460,17 +1823,1534 @@ proxies:
       Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
   skip-cert-verify: true
   udp: true
-- name: 日本(yudou99.com 玉豆分享)_9
+- name: 美国(yudou99.com 玉豆分享)_2
   type: vless
-  server: 158.179.191.37
+  server: saas.sin.fan
   port: 443
-  uuid: 53f1e11a-2b55-43f0-953f-d44c5fba92b6
-  servername: www.apple.com
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443?ed=2560fp=chromefp=chrome
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_3
+  type: vless
+  server: saas.sin.fan
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_4
+  type: vless
+  server: 172.66.0.162
+  port: 443
+  uuid: d342d11e-d224-4463-b982-532309285094
+  network: ws
+  servername: ccc.010304.xyz
+  tls: true
+  ws-opts:
+    path: /
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_5
+  type: vless
+  server: saas.sin.fan
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_6
+  type: vless
+  server: 162.159.135.234
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443fp=chrome
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  alpn:
+  - h3
+  - h2
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_7
+  type: vless
+  server: saas.sin.fan
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443?ed=2560fp=chrome
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_8
+  type: vless
+  server: 162.159.130.234
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  ws-opts:
+    path: /
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_9
+  type: vless
+  server: saas.sin.fan
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  alpn:
+  - h3
+  - h2
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_10
+  type: vless
+  server: saas.sin.fan
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@vpn748359672.opengw.net:1458?ed=2560fp=chrome
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  alpn:
+  - h3
+  - h2
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_11
+  type: vless
+  server: 162.159.135.234
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_12
+  type: vless
+  server: 162.159.135.234
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  alpn:
+  - h3
+  - h2
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_13
+  type: vless
+  server: 162.159.135.234
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  ws-opts:
+    path: /
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_14
+  type: vless
+  server: 162.159.135.234
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_15
+  type: vless
+  server: 162.159.135.234
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  ws-opts:
+    path: /
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  alpn:
+  - h3
+  - h2
+  skip-cert-verify: true
+  udp: true
+- name: 台湾(yudou99.com 玉豆分享)
+  type: anytls
+  server: er8u54dh.df6h451rh.xin
+  port: 443
+  password: ec74bb6a86c2
+  sni: px.ads.linkedin.com
+  alpn:
+  - http/1.1
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  client-fingerprint: chrome
+- name: 美国(yudou99.com 玉豆分享)_16
+  type: vless
+  server: 162.159.135.234
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  alpn:
+  - h3
+  - h2
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_17
+  type: anytls
+  server: er8u54dh.df6h451rh.xin
+  port: 443
+  password: ec74bb6a86c2
+  sni: px.ads.linkedin.com
+  skip-cert-verify: true
+  tls: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_18
+  type: vless
+  server: saas.sin.fan
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443?ed=2560
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  alpn:
+  - h3
+  - h2
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_19
+  type: vless
+  server: saas.sin.fan
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  ws-opts:
+    path: /
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_20
+  type: vless
+  server: 162.159.135.234
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_21
+  type: vless
+  server: 162.159.130.234
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443?ed=2560#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_22
+  type: vless
+  server: saas.sin.fan
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  alpn:
+  - h3
+  - h2
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_23
+  type: vless
+  server: 162.159.130.234
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_24
+  type: vless
+  server: saas.sin.fan
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443?ed=2560fp=chrome
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  alpn:
+  - h3
+  - h2
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_25
+  type: vless
+  server: saas.sin.fan
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443?ed=2560
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_26
+  type: vless
+  server: 162.159.135.234
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443?ed=2560
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  alpn:
+  - h3
+  - h2
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_27
+  type: vless
+  server: 43.174.195.1
+  port: 443
+  uuid: 24916ad0-847d-4522-9e17-f4347dee57fd
+  network: ws
+  servername: kv.074167.xyz
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: kv.074167.xyz
+  skip-cert-verify: true
+  udp: true
+- name: 新加坡(yudou99.com 玉豆分享)
+  type: vless
+  server: 43.174.195.1
+  port: 443
+  uuid: 24916ad0-847d-4522-9e17-f4347dee57fd
+  network: ws
+  servername: kv.074167.xyz
+  tls: true
+  ws-opts:
+    path: /
+    headers:
+      Host: kv.074167.xyz
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_28
+  type: vless
+  server: 162.159.130.234
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443?ed=2560
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_29
+  type: vless
+  server: saas.sin.fan
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  ws-opts:
+    path: /
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  alpn:
+  - h3
+  - h2
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_30
+  type: vless
+  server: 172.67.171.191
+  port: 8080
+  uuid: 0b2ea024-3ffd-46a7-87ce-86cbb79d7a48
+  network: ws
+  tls: false
+  ws-opts:
+    path: /eyJqdW5rIjoiT3FNeW1sMVdGVHlvNTIiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByZWZpeCIsInBhbmVsSVBzIjpbIlsyYTAyOjg5ODoxNDY6NjQ6Ol0iLCJbMjYwMjpmYzU5OmIwOjY0OjpdIiwiWzI2MDI6ZmM1OToxMTo2NDo6XSJdfQ==
+    headers:
+      Host: server18.peekconfig2.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 台湾(yudou99.com 玉豆分享)_1
+  type: anytls
+  server: 684616s4.df6h451rh.xin
+  port: 443
+  password: ec74bb6a86c2
+  sni: px.ads.linkedin.com
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  client-fingerprint: chrome
+- name: 新加坡(yudou99.com 玉豆分享)_1
+  type: vless
+  server: 175.41.179.37
+  port: 51262
+  uuid: 6c6ea474-0cf5-4a3d-bc81-aa2eeb6516d6
+  network: ws
+  servername: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_31
+  type: vless
+  server: saas.sin.fan
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@vpn748359672.opengw.net:1458?ed=2560
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  alpn:
+  - h3
+  - h2
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_32
+  type: vless
+  server: 3696b38bsg.murphyweb.sbs
+  port: 32134
+  uuid: 5b01dc2d-6892-49b8-8289-3f73a32e00e4
+  servername: buylite.music.apple.com
   tls: true
   flow: xtls-rprx-vision
   client-fingerprint: chrome
   reality-opts:
-    public-key: DbiBFFM_s7eBSN20U4fxvliZdcBfV2_41T_PWX2mrj0
-    short-id: 708f353722c36d17
+    public-key: OdTELUjAUKO_qr-O-uihaAZJAhA8GyIWVI6CpozVCU4
+    short-id: 6c6c7c97
+  skip-cert-verify: true
+  udp: true
+- name: 荷兰(yudou99.com 玉豆分享)
+  type: vless
+  server: 45.12.69.152
+  port: 443
+  uuid: b0a100ee-c397-43f2-bdae-2adfb7a0d4e5
+  network: ws
+  servername: rnxq-1lpi3m.linmeisoft.com
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /b0a100ee-c397-43f2-bdae-2adfb7a0d4e5
+    headers:
+      Host: rnxq-1lpi3m.linmeisoft.com
+  skip-cert-verify: true
+  udp: true
+- name: 德国(yudou99.com 玉豆分享)
+  type: vless
+  server: 188.245.191.19
+  port: 2040
+  uuid: bdd897a6-57f2-4311-835f-0b6c5ac5a1a2
+  network: ws
+  servername: 9qohadlkywguh.hlf9x1796lkopyju2kplt9c9smz1vyuv0u8azzk.workers.dev
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: 9qohadlkywguh.hlf9x1796lkopyju2kplt9c9smz1vyuv0u8azzk.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 德国(yudou99.com 玉豆分享)_1
+  type: vless
+  server: 178.105.133.160
+  port: 4443
+  uuid: fb0818b3-4031-4843-b5f7-1d75177a1758
+  network: ws
+  servername: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_33
+  type: vless
+  server: saas.sin.fan
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  skip-cert-verify: true
+  udp: true
+- name: 德国(yudou99.com 玉豆分享)_2
+  type: vless
+  server: 188.245.191.19
+  port: 2040
+  uuid: d30ba47d-596b-4087-9fa6-a2c9bf4dbe1d
+  network: ws
+  servername: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 英国(yudou99.com 玉豆分享)
+  type: vless
+  server: 57.129.130.34
+  port: 52014
+  uuid: 53367702-4b8d-431a-a193-34d7d057a065
+  network: ws
+  servername: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_34
+  type: vless
+  server: 63.141.128.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: false
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime42.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_35
+  type: vless
+  server: 172.67.209.127
+  port: 8880
+  uuid: 3e553ebf-db9d-4858-b608-03d6ff615a41
+  network: ws
+  servername: 172.67.209.127
+  tls: false
+  ws-opts:
+    path: /pyip=ProxyIP.JP.CMLiussss.net
+    headers:
+      Host: rapid-waterfall-7270.255-22b.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 加拿大(yudou99.com 玉豆分享)
+  type: vless
+  server: 209.206.51.240
+  port: 443
+  uuid: 573c6482-37db-454a-8c31-5b45a338a580
+  network: ws
+  servername: and-75r.pages.dev
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: and-75r.pages.dev
+  skip-cert-verify: true
+  udp: true
+- name: 德国(yudou99.com 玉豆分享)_3
+  type: vless
+  server: 5.75.195.83
+  port: 56879
+  uuid: 7b0f8733-03cc-472b-9c50-ed159b48ef59
+  network: ws
+  servername: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_36
+  type: vless
+  server: 209.206.51.240
+  port: 443
+  uuid: 573c6482-37db-454a-8c31-5b45a338a580
+  network: ws
+  servername: and-75r.pages.dev
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_37
+  type: vless
+  server: www.speedtest.net
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /fdip=sstp://vpn:vpn@vpn748359672.opengw.net:1458?ed=2560#Telegram---bored_vpn
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  alpn:
+  - http/1.1
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_38
+  type: vless
+  server: 45.131.208.4
+  port: 80
+  uuid: 424fa201-3f94-479e-b533-d5257cf9a207
+  network: ws
+  servername: 45.131.208.4
+  tls: false
+  client-fingerprint: chrome
+  ws-opts:
+    path: /pyip=Telegram🇨🇳+@WangCai2
+    headers:
+      Host: floral-thunder-10d3.82-67d.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_39
+  type: vless
+  server: 80.93.202.40
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: false
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime02.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_40
+  type: vless
+  server: 155.46.167.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: false
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime50.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_41
+  type: vless
+  server: 91.206.71.8
+  port: 80
+  uuid: c20a0bcf-aa6f-4c35-9e62-a39b47b04e73
+  network: ws
+  tls: false
+  ws-opts:
+    path: /pyip=Telegram🇨🇳 @WangCai2
+    headers:
+      Host: round-haze-8783.294.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_42
+  type: vless
+  server: 92.53.189.40
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  tls: false
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime19.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_43
+  type: vless
+  server: 185.148.104.30
+  port: 8880
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  network: ws
+  servername: 185.148.104.30
+  tls: false
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: vms.lifetime51.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 新加坡(yudou99.com 玉豆分享)_2
+  type: vless
+  server: 142.91.101.39
+  port: 627
+  uuid: 8199228b-e84b-42a2-9268-e400391e483a
+  network: ws
+  servername: 9qohadlkywguh.hlf9x1796lkopyju2kplt9c9smz1vyuv0u8azzk.workers.dev
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: 9qohadlkywguh.hlf9x1796lkopyju2kplt9c9smz1vyuv0u8azzk.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 新加坡(yudou99.com 玉豆分享)_3
+  type: vless
+  server: 142.91.101.39
+  port: 627
+  uuid: aff1ffd0-594c-44c9-9f79-4096fde005ea
+  network: ws
+  servername: 9qohadlkywguh.hlf9x1796lkopyju2kplt9c9smz1vyuv0u8azzk.workers.dev
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: 9qohadlkywguh.hlf9x1796lkopyju2kplt9c9smz1vyuv0u8azzk.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 俄罗斯(yudou99.com 玉豆分享)
+  type: vless
+  server: 185.153.198.86
+  port: 443
+  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
+  network: ws
+  servername: vlso5.1d.mom
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /socks5=888:888@hkip.1d.mom:1080
+    headers:
+      Host: vlso5.1d.mom
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_44
+  type: vmess
+  server: 2001:bc8:32d7:1a9::3
+  port: 18901
+  uuid: 3a966d20-7b9d-48cc-ba2c-8d38161b6d3a
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /github.com/Alvin9999-newpac/fanqiang
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_45
+  type: vless
+  server: www.speedtest.net
+  port: 443
+  uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+  network: ws
+  servername: snip.edgeoneai.cc.cd
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: snip.edgeoneai.cc.cd
+  alpn:
+  - http/1.1
+  skip-cert-verify: true
+  udp: true
+- name: 荷兰(yudou99.com 玉豆分享)_1
+  type: vless
+  server: 45.131.208.4
+  port: 80
+  uuid: 424fa201-3f94-479e-b533-d5257cf9a207
+  network: ws
+  servername: 45.131.208.4
+  tls: false
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: floral-thunder-10d3.82-67d.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_46
+  type: vless
+  server: 104.16.99.215
+  port: 8880
+  uuid: c6d29888-78d5-446a-b2f0-f3968e6d1634
+  network: ws
+  tls: false
+  ws-opts:
+    path: /
+    headers:
+      Host: lingering-cherry-5f41.42-08a.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_47
+  type: vless
+  server: 217.60.39.188
+  port: 443
+  uuid: b0a100ee-c397-43f2-bdae-2adfb7a0d4e5
+  network: ws
+  servername: rnxq-1lpi3m.linmeisoft.com
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /b0a100ee-c397-43f2-bdae-2adfb7a0d4e5
+    headers:
+      Host: rnxq-1lpi3m.linmeisoft.com
+  skip-cert-verify: true
+  udp: true
+- name: 台湾(yudou99.com 玉豆分享)_2
+  type: hysteria2
+  server: sweedenqfds777.qcloud.surf
+  port: 21223
+  password: 4ad3dbf5-2005-4d96-b56c-a0ca9905cab6
+  sni: sweedenqfds777.qcloud.surf
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_48
+  type: vless
+  server: 216.24.57.1
+  port: 443
+  uuid: 974c2588-c1cd-43ac-8823-ce3d879b09fd
+  network: ws
+  servername: somersby.pt.ex33r.eu.cc
+  tls: true
+  ws-opts:
+    path: /id-amz
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_49
+  type: vless
+  server: 91.206.71.8
+  port: 80
+  uuid: c20a0bcf-aa6f-4c35-9e62-a39b47b04e73
+  network: ws
+  tls: false
+  ws-opts:
+    path: /pyip=Telegram🇨🇳+@WangCai2
+    headers:
+      Host: round-haze-8783.294.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_50
+  type: vless
+  server: 172.67.209.127
+  port: 8880
+  uuid: 3e553ebf-db9d-4858-b608-03d6ff615a41
+  network: ws
+  servername: 172.67.209.127
+  tls: false
+  client-fingerprint: chrome
+  ws-opts:
+    path: /pyip=ProxyIP.JP.CMLiussss.net
+    headers:
+      Host: rapid-waterfall-7270.255-22b.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_51
+  type: vless
+  server: 104.27.82.154
+  port: 8880
+  uuid: fb5058f5-a9ed-424e-9ed7-33d455438286
+  network: ws
+  tls: false
+  ws-opts:
+    path: /pyip=ProxyIP.SG.CMLiussss.net
+    headers:
+      Host: old-violet-a5ce.29-440.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 荷兰(yudou99.com 玉豆分享)_2
+  type: vless
+  server: 79.137.197.212
+  port: 2105
+  uuid: 663c0d65-f2bc-43f3-b329-1a4e2b781d44
+  network: ws
+  servername: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_52
+  type: vless
+  server: 172.67.203.138
+  port: 8080
+  uuid: 015fada5-2c95-4251-9c58-39fa3abf1e24
+  network: ws
+  servername: 172.67.203.138
+  tls: false
+  ws-opts:
+    path: /eyJqdW5rIjoidzY2QTdySkdOeiIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJlZml4IiwicGFuZWxJUHMiOlsiWzJhMDI6ODk4OjE0Njo2NDo6XSIsIlsyNjAyOmZjNTk6MTE6NjQ6Ol0iLCJbMjYwMjpmYzU5OmIwOjY0OjpdIl19?ed=2560
+    headers:
+      Host: server17.peekconfig1.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_53
+  type: vless
+  server: 188.114.99.0
+  port: 8880
+  uuid: 3ee10440-225e-4cbc-83ed-3c80b90bcb07
+  encryption: mlkem768x25519plus.native.0rtt.BheP3zTPlA3cijplJnfrJSIp9rYlrGqnqEOnYD-wA20
+  network: ws
+  tls: false
+  ws-opts:
+    path: /notls
+    headers:
+      Host: ovh-gr1.mahkhorshidi.ir
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_54
+  type: vless
+  server: nl.riotvpn.eu
+  port: 6443
+  uuid: d7b4d5b3-2c2d-493c-9b83-f25e3f6771b2
+  network: xhttp
+  servername: avatars.mds.yandex.net
+  tls: true
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: sgFFdQvfeujBKh6g7N7klU_u0mKYlr800MFbko5FzUg
+    short-id: 844352756c1fabba
+  xhttp-opts:
+    path: /
+  skip-cert-verify: true
+  udp: true
+- name: 荷兰(yudou99.com 玉豆分享)_3
+  type: vless
+  server: 144.31.135.38
+  port: 9444
+  uuid: 9a48995b-dd98-40a4-98cb-5fbb270f3d63
+  network: ws
+  servername: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 俄罗斯(yudou99.com 玉豆分享)_1
+  type: vless
+  server: fi-p1.h1cloud.net
+  port: 25633
+  uuid: ec572cf0-1337-4c51-b4ec-ff2f538c1f4c
+  servername: www.icloud.com
+  tls: true
+  client-fingerprint: random
+  reality-opts:
+    public-key: YLIRYJ8UkT0nSSgxJr7YckNuXnokVyEs2G6thNyx1GE
+    short-id: 200811f031ae7463
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_55
+  type: vmess
+  server: us5-1.998998.best
+  port: 443
+  uuid: 5504eaa8-1395-402f-8e0e-75ecd762e627
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /androirfdsreoightrjh?ed=2560
+    headers:
+      Host: server4.9966338.xyz
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_56
+  type: vless
+  server: 188.114.96.1
+  port: 8080
+  uuid: 0fbe0c5e-b479-4d91-8b42-f194f781b6bb
+  network: ws
+  tls: false
+  ws-opts:
+    path: /vl/BzwF7raXrOtxHuyMFleIwRW4wCWBg35?ed
+    headers:
+      Host: z0ndd1onnp04unxjemim9lf8.abaravi51.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 荷兰(yudou99.com 玉豆分享)_4
+  type: vless
+  server: dey.lnmarketplace.net
+  port: 443
+  uuid: 3536e1fa-0850-44d1-b123-925ce12476cf
+  network: xhttp
+  servername: dey.lnmarketplace.net
+  tls: true
+  client-fingerprint: firefox
+  alpn:
+  - h2
+  xhttp-opts:
+    path: /kavir
+    host: dey.lnmarketplace.net
+    mode: stream-one
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_57
+  type: vless
+  server: renderer-bridge-2-114.mirra.now
+  port: 443
+  uuid: 8ffa41d4-e6b5-4af5-a8a9-69e26bec75f5
+  network: grpc
+  servername: renderer-bridge-2-114.mirra.now
+  tls: true
+  client-fingerprint: chrome
+  grpc-opts:
+    grpc-service-name: VideoRenderer
+  alpn:
+  - h2
+  skip-cert-verify: true
+  udp: true
+- name: 俄罗斯(yudou99.com 玉豆分享)_2
+  type: vless
+  server: ware.tunnelgate.org
+  port: 443
+  uuid: 4deb9957-e037-4ae2-8892-da357cc6f99f
+  encryption: mlkem768x25519plus.native.0rtt.fsGtiqlb1xuwUZF-iPrG-9aedIIVJyMnPCNu9EiNrMKVfwcDmvBNvhRpcaxvSMuhMjDI1qh0W1wI1rRzA3OB_TKFqNomhKW841Na5qKCCFYAGRENYXCVY0qqLaU1a9gqdak6T2LG9aUtXLdY_sY1jxI5JOhcNtc6lQGIj6NVHPOa5Zd3FhdRGUo8aFopsJJUaCePlkWN4UxrzUA5geFtM1g7WcVNiFpuV_vOEQKPgHQNgwAdWYGZWfVIp6TJTfk3HYvChZgjbUkeU9y6t8A9H2Ut9QiTqjA-z1IV8CgUUNa7PvuHYOUgsLipX9BeFYOf4VSpwsmMtWtywIN2LyBU69wjyhMPmEwGOdGWdvGyVJWQ4xULffWEpvlCBBCRSJAQGyIMHPVdYuU7ALzE5dgM_Aodphek1LLAcAx3ZWIAdtowSvKD9GwuPIotC-TFNaa60qCHbsW1YFQS1CJDGxDIUCYbwKGgIqM4__BYhtDIrGtmltQKyjxJJrI3ndKrHaJb4tjDc2dJ1yO_Lom8K8mZfpVM9qg0xIE3aqeBaSFIxiueWzVf4uy0FISgxip0pzw7E4tjepIXkXbI1ZkMG2VtPmwr0wR4fWddPPV-rdklaeNzonguCspC9-JEwTjFQ3nG5yXPrLm5LcovgjIHPylwDqsQiqN2J8ESI9xOQcKJ-JVrSzZwnEhO8iZ4wVhm_Ga7qIk-TDK23JDHRRJAkvy7WYWtCluPIlXK_upU_gN-BAUrC3V81AvHQqWnBeopVaGppFo7QZd9JpoXB_RqqpXGRfXGHptsPhGUR0h-7dYnEFR_MCIV_jNLCwy2U2UDd2TBBODKF5fEPisCoYMiXQrKhhhacZqL5Io5UpWYB9lmH9VFyHwTBFfJuAuYrhcKx_Ag5kNJoBJDRTiMDifBS7MewSSrzeWCoIuiK2Q5BGodsSZAdcbGs5mySwsmQBwQWCqgDObMYzeHMxu-IksLlLKMCVQET5smRdRTkgtJclAvsuB9l4rDkPcVsKCCH8ktxGO6aSPLS4ib2Hc32qNgKASVRZYfyGM6GoN5c9hsa_QVtfa4ANqaqMzJmbJaxcA2FmsHXhaG6UXGqDd32hofLjt1NyUH8DjAIksdA2Ycy5xz3yRZCIIeKHaUR5s9uoQWfZYYMYJfl6o6ohmEXrScGGN_BYgb1GSkX5OcODGDKBVdPEd20IQ62je4pYUJzjtw66MkZUuS2_VRlni1aqNz4JB3sKpAtDyMqYApa-x2v5YU1tdH1BQkYmty16pqE1w4akVZ-rJOQwnJlrY6-1gz2PtjWHQoWju_31E92WYYwoMBSPkEhgCcbTys0FAD6sxu6Mh2UrSh0AZIX3mdXWk2IlmSd7QuoFuNEClwRCiNpokoclMkyvOe7oEFa6xIGvGMGnc2RzkmCyXBjyZgIgussYtl8ZplgcOAiAZzf-sM7-XItKlWAABWituyNyOiL_FtLkGgrpYw4NjJ_iZtoJaVpkGcALwtnrSWv1M9yvMV4wFlkDiyOyaWERidV5s75sA0l_ADPKpMd0_DPh_PN_2luzFs4QMrudBp2KJEE8Jn5Ob0_dk
+  network: ws
+  servername: ware.tunnelgate.org
+  tls: true
+  ws-opts:
+    path: /ws/v1/ru
+    headers:
+      Host: ware.tunnelgate.org
+  skip-cert-verify: true
+  udp: true
+- name: 荷兰(yudou99.com 玉豆分享)_5
+  type: vless
+  server: dey.lnmarketplace.net
+  port: 443
+  uuid: 3536e1fa-0850-44d1-b123-925ce12476cf
+  network: xhttp
+  servername: dey.lnmarketplace.net
+  tls: true
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  xhttp-opts:
+    path: /kavir
+    host: dey.lnmarketplace.net
+    mode: stream-one
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_58
+  type: vless
+  server: dey.lnmarketplace.net
+  port: 443
+  uuid: 3536e1fa-0850-44d1-b123-925ce12476cf
+  network: xhttp
+  servername: dey.lnmarketplace.net
+  tls: true
+  alpn:
+  - h2
+  xhttp-opts:
+    path: /kavir
+    host: dey.lnmarketplace.net
+    mode: stream-one
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_59
+  type: vless
+  server: dey.lnmarketplace.net
+  port: 443
+  uuid: 3536e1fa-0850-44d1-b123-925ce12476cf
+  network: xhttp
+  servername: dey.lnmarketplace.net
+  tls: true
+  client-fingerprint: firefox
+  alpn:
+  - h2
+  xhttp-opts:
+    path: /kavir
+    host: dey.lnmarketplace.net
+    mode: stream-one
+  skip-cert-verify: true
+  udp: true
+- name: 香港(yudou99.com 玉豆分享)
+  type: vless
+  server: dey.lnmarketplace.net
+  port: 443
+  uuid: 3536e1fa-0850-44d1-b123-925ce12476cf
+  network: xhttp
+  servername: dey.lnmarketplace.net
+  tls: true
+  client-fingerprint: firefox
+  alpn:
+  - h2
+  xhttp-opts:
+    path: /kavir
+    host: dey.lnmarketplace.net
+    mode: stream-one
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_60
+  type: vless
+  server: 104.16.111.102
+  port: 443
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+  network: ws
+  servername: jp3.yohototo.top
+  tls: true
+  ws-opts:
+    path: /tyxyws
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_61
+  type: vless
+  server: 78.159.246.179
+  port: 8443
+  uuid: 6a2aff19-ff1f-4a13-96c8-a4d8986a9699
+  network: xhttp
+  servername: randomquaint.net
+  tls: true
+  client-fingerprint: firefox
+  xhttp-opts:
+    path: /api/v1/upload
+    host: randomquaint.net
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_62
+  type: vless
+  server: 179.61.251.244
+  port: 7443
+  uuid: f95b160e-d716-4ac1-89d2-b16a5f3257e1
+  network: ws
+  servername: ruu2rx-oycdrnsrzc.9uokolpk04vmg2ecqb8oys7.workers.dev
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: ruu2rx-oycdrnsrzc.9uokolpk04vmg2ecqb8oys7.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_63
+  type: vless
+  server: 213.111.177.107
+  port: 443
+  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
+  network: ws
+  servername: vlso5.1d.mom
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /socks5=888:888@hkip.1d.mom:1080
+    headers:
+      Host: vlso5.1d.mom
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_64
+  type: vless
+  server: dey.lnmarketplace.net
+  port: 443
+  uuid: 3536e1fa-0850-44d1-b123-925ce12476cf
+  network: xhttp
+  servername: dey.lnmarketplace.net
+  tls: true
+  alpn:
+  - h2
+  xhttp-opts:
+    path: /kavir
+    host: dey.lnmarketplace.net
+    mode: stream-one
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_65
+  type: vless
+  server: renderer-bridge-2-114.mirra.now
+  port: 443
+  uuid: 8ffa41d4-e6b5-4af5-a8a9-69e26bec75f5
+  network: grpc
+  servername: renderer-bridge-2-114.mirra.now
+  tls: true
+  client-fingerprint: edge
+  grpc-opts:
+    grpc-service-name: VideoRenderer
+  alpn:
+  - h2
+  skip-cert-verify: true
+  udp: true
+- name: 韩国(yudou99.com 玉豆分享)
+  type: hysteria2
+  server: 130.162.134.218
+  port: 20000
+  password: C0DD7bgChaltqnh/T2az6ijM
+  sni: rmgyvpn.rest
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: C0DD7bgChaltqnh/T2az6ijM
+  ports: 20000-30000
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_66
+  type: trojan
+  server: 104.18.32.47
+  port: 443
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_67
+  type: vless
+  server: 213.111.177.107
+  port: 443
+  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
+  network: ws
+  servername: vlso5.1d.mom
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: vlso5.1d.mom
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_68
+  type: vless
+  server: 31.58.95.11
+  port: 443
+  uuid: c6e3c24c-ce20-4ad5-8c8c-68cb05890ea8
+  network: grpc
+  servername: de-gdd-1.unturned-rust-dead.lol
+  tls: true
+  client-fingerprint: chrome
+  grpc-opts:
+    grpc-service-name: gdd-grpc
+  reality-opts:
+    public-key: aYz4_13W8gtAXGBrWeqJXtExahAJ9kUPDapqeyAlYCk
+  skip-cert-verify: true
+  udp: true
+- name: 德国(yudou99.com 玉豆分享)_4
+  type: vless
+  server: 179.61.251.244
+  port: 7443
+  uuid: 635e8406-9253-4444-88a2-dad1f0826034
+  network: ws
+  servername: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /@Marisa_kristi
+    headers:
+      Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_69
+  type: vless
+  server: de-gdd-1.unturned-rust-dead.lol
+  port: 443
+  uuid: c6e3c24c-ce20-4ad5-8c8c-68cb05890ea8
+  network: grpc
+  servername: de-gdd-1.unturned-rust-dead.lol
+  tls: true
+  client-fingerprint: random
+  grpc-opts:
+    grpc-service-name: gdd-grpc
+  reality-opts:
+    public-key: aYz4_13W8gtAXGBrWeqJXtExahAJ9kUPDapqeyAlYCk
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_70
+  type: trojan
+  server: 104.18.32.47
+  port: 443
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  ws-opts:
+    path: /assignment
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_71
+  type: vmess
+  server: renderer-stream-2-114.mirra.now
+  port: 443
+  uuid: 8ffa41d4-e6b5-4af5-a8a9-69e26bec75f5
+  alterId: 0
+  cipher: auto
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /api/v1/gpu-stream/socket
+    headers:
+      Host: renderer-stream-2-114.mirra.now
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_72
+  type: vless
+  server: 31.58.95.10
+  port: 443
+  uuid: c6e3c24c-ce20-4ad5-8c8c-68cb05890ea8
+  network: grpc
+  servername: de-gdd-1.unturned-rust-dead.lol
+  tls: true
+  client-fingerprint: random
+  grpc-opts:
+    grpc-service-name: gdd-grpc
+  reality-opts:
+    public-key: aYz4_13W8gtAXGBrWeqJXtExahAJ9kUPDapqeyAlYCk
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_73
+  type: vless
+  server: 64.176.53.200
+  port: 443
+  uuid: b0a100ee-c397-43f2-bdae-2adfb7a0d4e5
+  network: ws
+  servername: rnxq-1lpi3m.linmeisoft.com
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /b0a100ee-c397-43f2-bdae-2adfb7a0d4e5
+    headers:
+      Host: rnxq-1lpi3m.linmeisoft.com
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_74
+  type: vless
+  server: 31.58.95.10
+  port: 443
+  uuid: c6e3c24c-ce20-4ad5-8c8c-68cb05890ea8
+  network: grpc
+  servername: de-gdd-1.unturned-rust-dead.lol
+  tls: true
+  client-fingerprint: chrome
+  grpc-opts:
+    grpc-service-name: gdd-grpc
+  reality-opts:
+    public-key: aYz4_13W8gtAXGBrWeqJXtExahAJ9kUPDapqeyAlYCk
+  skip-cert-verify: true
+  udp: true
+- name: 新加坡(yudou99.com 玉豆分享)_4
+  type: vless
+  server: renderer-bridge-2-114.mirra.now
+  port: 443
+  uuid: 8ffa41d4-e6b5-4af5-a8a9-69e26bec75f5
+  network: grpc
+  servername: renderer-bridge-2-114.mirra.now
+  tls: true
+  client-fingerprint: firefox
+  grpc-opts:
+    grpc-service-name: VideoRenderer
+  alpn:
+  - h2
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_75
+  type: vless
+  server: 31.58.95.11
+  port: 443
+  uuid: c6e3c24c-ce20-4ad5-8c8c-68cb05890ea8
+  network: grpc
+  servername: de-gdd-1.unturned-rust-dead.lol
+  tls: true
+  client-fingerprint: random
+  grpc-opts:
+    grpc-service-name: gdd-grpc
+  reality-opts:
+    public-key: aYz4_13W8gtAXGBrWeqJXtExahAJ9kUPDapqeyAlYCk
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_76
+  type: trojan
+  server: 104.18.32.47
+  port: 443
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: true
+  ws-opts:
+    path: /assignment
+  udp: true
+- name: 澳洲(yudou99.com 玉豆分享)
+  type: hysteria2
+  server: 137.23.2.56
+  port: 20000
+  password: b42d90fa667942aebc734d60
+  sni: rmgyvpn.rest
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: b42d90fa667942aebc734d60
+  ports: 20000-30000
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_77
+  type: vless
+  server: 139.84.242.103
+  port: 443
+  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
+  network: ws
+  servername: vlso5.1d.mom
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /
+    headers:
+      Host: vlso5.1d.mom
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_78
+  type: vless
+  server: 139.84.242.103
+  port: 443
+  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
+  network: ws
+  servername: vlso5.1d.mom
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /socks5=888:888@hkip.1d.mom:1080
+    headers:
+      Host: vlso5.1d.mom
+  skip-cert-verify: true
+  udp: true
+- name: 美国(yudou99.com 玉豆分享)_79
+  type: vless
+  server: 156.38.157.171
+  port: 8443
+  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
+  network: ws
+  servername: vlso5.1d.mom
+  tls: true
+  client-fingerprint: chrome
+  ws-opts:
+    path: /socks5=888:888@hkip.1d.mom:1080
+    headers:
+      Host: vlso5.1d.mom
   skip-cert-verify: true
   udp: true
