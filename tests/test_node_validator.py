@@ -66,6 +66,58 @@ class TestProxyValidation:
         })
         assert result.ok
 
+    def test_rejects_invalid_reality_public_key(self):
+        result = validate_proxy({
+            "name": "bad-reality",
+            "type": "vless",
+            "server": "example.com",
+            "port": 443,
+            "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24",
+            "reality-opts": {"public-key": "enabled"},
+        })
+        assert not result.ok
+        assert any(issue.code == "invalid_reality_public_key" for issue in result.errors)
+
+    def test_rejects_non_hex_reality_short_id(self):
+        result = validate_proxy({
+            "name": "bad-short-id",
+            "type": "vless",
+            "server": "example.com",
+            "port": 443,
+            "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24",
+            "reality-opts": {
+                "public-key": "L3X1eh1Jq_6PKJ6LlwjgiWq0XNaDOqCVKgIElJ5nkVA",
+                "short-id": "zzzz",
+            },
+        })
+        assert not result.ok
+        assert any(issue.code == "invalid_reality_short_id" for issue in result.errors)
+
+    def test_accepts_hex_reality_short_id(self):
+        result = validate_proxy({
+            "name": "good-short-id",
+            "type": "vless",
+            "server": "example.com",
+            "port": 443,
+            "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24",
+            "reality-opts": {
+                "public-key": "L3X1eh1Jq_6PKJ6LlwjgiWq0XNaDOqCVKgIElJ5nkVA",
+                "short-id": "062898e8",
+            },
+        })
+        assert result.ok
+
+    def test_accepts_valid_reality_public_key(self):
+        result = validate_proxy({
+            "name": "good-reality",
+            "type": "vless",
+            "server": "example.com",
+            "port": 443,
+            "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24",
+            "reality-opts": {"public-key": "L3X1eh1Jq_6PKJ6LlwjgiWq0XNaDOqCVKgIElJ5nkVA"},
+        })
+        assert result.ok
+
     def test_rejects_vmess_without_uuid(self):
         result = validate_proxy({
             "name": "vmess",
@@ -103,3 +155,47 @@ class TestYamlValidation:
         assert result.stats["documents"] == 1
         assert result.stats["proxy_entries"] == 2
         assert result.stats["valid_proxy_entries"] == 2
+
+class TestFragmentRepair:
+    def test_repairs_params_written_after_hash(self):
+        from src.node_validator import _repair_trapped_fragment_params as repair
+        fixed = repair("vless://u@h:443?type=tcp#Name&pbk=KEY#Tag")
+        assert "&pbk=KEY" in fixed
+        assert fixed.endswith("#Tag")
+
+    def test_keeps_single_fragment_untouched(self):
+        from src.node_validator import _repair_trapped_fragment_params as repair
+        line = "vless://u@h:443?type=tcp#Tag"
+        assert repair(line) == line
+
+    def test_repaired_reality_uri_passes_validation(self):
+        from src.node_validator import valid_txt_lines
+        bad = "vless://418048af-a293-4b99-9b0c-98ca3580dd24@h:443?type=tcp#n&security=reality&pbk=L3X1eh1Jq_6PKJ6LlwjgiWq0XNaDOqCVKgIElJ5nkVA&sid=062898e8#Tag"
+        valid, issues = valid_txt_lines(bad)
+        assert valid, issues
+
+class TestYamlNameUniqueness:
+    def test_normalize_makes_duplicate_names_unique(self):
+        from src.node_validator import normalize_yaml_text, validate_yaml_text
+        raw = "proxies:\n  - {name: dup, type: trojan, server: a.com, port: 443, password: p}\n  - {name: dup, type: trojan, server: b.com, port: 443, password: p}\n"
+        normalized = normalize_yaml_text(raw)
+        result = validate_yaml_text(normalized)
+        assert result.stats["proxy_entries"] == 2
+        import yaml as _yaml
+        names = [p["name"] for p in _yaml.safe_load(normalized)["proxies"]]
+        assert len(set(names)) == 2
+
+class TestClientFingerprint:
+    def test_unsafe_fingerprint_is_dropped(self):
+        from src.node_validator import normalize_yaml_text
+        raw = "proxies:\n  - {name: n, type: trojan, server: a.com, port: 443, password: p, client-fingerprint: unsafe}\n"
+        import yaml as _yaml
+        out = _yaml.safe_load(normalize_yaml_text(raw))["proxies"][0]
+        assert "client-fingerprint" not in out
+
+    def test_valid_fingerprint_is_kept(self):
+        from src.node_validator import normalize_yaml_text
+        raw = "proxies:\n  - {name: n, type: trojan, server: a.com, port: 443, password: p, client-fingerprint: chrome}\n"
+        import yaml as _yaml
+        out = _yaml.safe_load(normalize_yaml_text(raw))["proxies"][0]
+        assert out["client-fingerprint"] == "chrome"

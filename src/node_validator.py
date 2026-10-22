@@ -173,6 +173,26 @@ def _non_empty(value: object) -> bool:
     return isinstance(value, (str, int, float)) and str(value).strip() != ""
 
 
+def _valid_reality_short_id(value: object) -> bool:
+    """Return whether *value* is a Mihomo-compatible Reality short ID."""
+    if not isinstance(value, str):
+        return False
+    if len(value) > 16 or len(value) % 2 != 0:
+        return False
+    return re.fullmatch(r"[0-9a-fA-F]+", value) is not None
+
+
+def _valid_reality_public_key(value: object) -> bool:
+    """Return whether *value* is a base64url X25519 public key (32 bytes)."""
+    if not isinstance(value, str) or not value.strip():
+        return False
+    try:
+        decoded = _decode_base64(value)
+    except (ValueError, TypeError):
+        return False
+    return decoded is not None and len(decoded) == 32
+
+
 def _looks_uuid(value: object) -> bool:
     if not isinstance(value, str):
         return False
@@ -231,6 +251,41 @@ def validate_proxy(proxy: object, location: str = "proxy", strict: bool = True) 
         # configurations.  At least one credential is required for a usable node.
         if proxy_type == "hysteria" and not any(_non_empty(proxy.get(k)) for k in ("auth", "auth-str", "password")):
             _issue(result, "warning", "missing_auth", "hysteria has no auth/password field")
+
+    # Mihomo parses reality-opts.public-key as a 32-byte X25519 key.
+    reality = proxy.get("reality-opts")
+    if reality is not None:
+        if not isinstance(reality, dict):
+            _issue(result, "error", "invalid_reality_opts", "reality-opts must be a mapping", "reality-opts")
+        else:
+            public_key = reality.get("public-key")
+            if not _valid_reality_public_key(public_key):
+                _issue(
+                    result,
+                    "error",
+                    "invalid_reality_public_key",
+                    "reality-opts.public-key must be a base64url-encoded 32-byte key",
+                    "reality-opts.public-key",
+                )
+            short_id = reality.get("short-id")
+            if short_id is not None and not _valid_reality_short_id(short_id):
+                _issue(
+                    result,
+                    "error",
+                    "invalid_reality_short_id",
+                    "reality-opts.short-id must be an even-length hex string (max 16 chars)",
+                    "reality-opts.short-id",
+                )
+
+    fingerprint = proxy.get("client-fingerprint")
+    if _non_empty(fingerprint) and str(fingerprint).strip().lower() not in MIHOMO_CLIENT_FINGERPRINTS:
+        _issue(
+            result,
+            "warning",
+            "unknown_client_fingerprint",
+            f"client-fingerprint '{fingerprint}' is not recognised by Mihomo and will be ignored",
+            "client-fingerprint",
+        )
 
     result.stats["proxies"] = 1
     result.stats[f"proxy_type_{proxy_type}"] = 1
@@ -344,6 +399,41 @@ def _looks_like_config_fragment(line: str) -> bool:
     return False
 
 
+def _fix_html_entities(line: str) -> str:
+    """Undo HTML entity escaping inside proxy links (``&amp;`` -> ``&``).
+
+    Several blog platforms HTML-escape ampersands; the escaped form survives
+    into TXT artifacts and hides every query parameter after the first one.
+    """
+    if "&amp;" not in line and "&#38;" not in line and "&#x26;" not in line:
+        return line
+    return (
+        line.replace("&amp;", "&")
+        .replace("&#38;", "&")
+        .replace("&#x26;", "&")
+    )
+
+
+def _repair_trapped_fragment_params(line: str) -> str:
+    """Re-attach query parameters that upstream wrote after a literal ``#``.
+
+    Some subscriptions emit ``vless://...#NAME&pbk=KEY#TAG`` where the real
+    parameters were placed after a ``#``.  The segment between the first and
+    last ``#`` is moved back into the query string (mirroring the approach
+    used by ``multi-proxy-config-fetcher``), so clients can read ``pbk``/``sid``
+    and friends again.
+    """
+    parts = line.split("#")
+    if len(parts) < 3:
+        return line
+    base, middle = parts[0], parts[1]
+    rest = "#".join(parts[2:])
+    if "=" not in middle or "&" not in middle:
+        return line
+    separator = "&" if "?" in base else "?"
+    return f"{base}{separator}{middle}#{rest}"
+
+
 def _expand_txt_lines(raw: str) -> list[tuple[int, str]]:
     """Expand mixed URI/base64 subscription lines without accepting config JSON."""
     decoded = decode_subscription_text(raw)
@@ -355,7 +445,9 @@ def _expand_txt_lines(raw: str) -> list[tuple[int, str]]:
         if _looks_like_config_fragment(line):
             continue
         if "://" in line:
-            expanded.append((line_number, line))
+            expanded.append(
+                (line_number, _repair_trapped_fragment_params(_fix_html_entities(line)))
+            )
             continue
         if len(line) >= 20 and re.fullmatch(r"[A-Za-z0-9+/=_\-\s]+", line):
             nested = _decode_base64(line)
@@ -477,6 +569,94 @@ def validate_yaml_text(raw: str, path: str = "<text>") -> ValidationResult:
     return result
 
 
+class QuotedString(str):
+    """Marker type serialized as a double-quoted YAML string."""
+
+
+def _represent_quoted_string(dumper, value):
+    return dumper.represent_scalar("tag:yaml.org,2002:str", value, style='"')
+
+
+def make_safe_dumper():
+    """Return a SafeDumper that preserves Mihomo Reality string fields."""
+    import yaml
+
+    class SafeDumper(yaml.SafeDumper):
+        pass
+
+    SafeDumper.add_representer(QuotedString, _represent_quoted_string)
+    return SafeDumper
+
+
+MIHOMO_CLIENT_FINGERPRINTS = {
+    "chrome", "firefox", "safari", "ios", "android", "edge", "360", "qq", "random",
+    "chrome120", "firefox120", "safari16",
+}
+
+
+def _normalize_client_fingerprint(proxy: dict) -> dict:
+    """Drop fingerprints Mihomo cannot use (e.g. sing-box's ``unsafe``).
+
+    Mihomo logs ``wrong clientFingerprint`` and falls back to it defaults, so
+    removing the value keeps behaviour identical while keeping logs clean and
+    the artifact honest about what will actually be applied.
+    """
+    value = proxy.get("client-fingerprint")
+    if value is None:
+        return proxy
+    if str(value).strip().lower() in MIHOMO_CLIENT_FINGERPRINTS:
+        return proxy
+    clone = {**proxy}
+    clone.pop("client-fingerprint", None)
+    return clone
+
+
+def force_string_proxy_fields(proxies: list[dict]) -> list[dict]:
+    """Force Mihomo fields that must stay strings to serialize quoted."""
+    result: list[dict] = []
+    for proxy in proxies:
+        if not isinstance(proxy, dict):
+            result.append(proxy)
+            continue
+        clone = _normalize_client_fingerprint(proxy)
+        reality = clone.get("reality-opts")
+        if isinstance(reality, dict):
+            reality = {**reality}
+            for field_name in ("public-key", "short-id"):
+                value = reality.get(field_name)
+                if value is not None:
+                    reality[field_name] = QuotedString(str(value))
+            clone["reality-opts"] = reality
+        result.append(clone)
+    return result
+
+
+def _unique_names(proxies: list[dict]) -> list[dict]:
+    """Return *proxies* with duplicate names suffixed so the list is loadable.
+
+    Mihomo rejects a configuration outright when two proxies share a name, so
+    published node lists must be unique before they can be used as a
+    ``file`` proxy-provider source.
+    """
+    seen: set[str] = set()
+    counters: dict[str, int] = {}
+    result: list[dict] = []
+    for proxy in proxies:
+        name = str(proxy.get("name") or "unknown")
+        if name in seen:
+            index = counters.get(name, 1)
+            while True:
+                index += 1
+                candidate = f"{name}_{index}"
+                if candidate not in seen:
+                    counters[name] = index
+                    name = candidate
+                    break
+        seen.add(name)
+        result.append({**proxy, "name": name})
+    return result
+
+
 def normalize_yaml_text(raw: str) -> str:
     """Collapse a multi-document proxy subscription into one provider document.
 
@@ -494,9 +674,16 @@ def normalize_yaml_text(raw: str) -> str:
         for proxy in doc["proxies"]:
             if isinstance(proxy, dict) and validate_proxy(proxy).ok:
                 proxies.append(proxy)
+    proxies = force_string_proxy_fields(_unique_names(proxies))
     if not proxies:
         return "" if saw_proxy_list else raw.strip() + ("\n" if raw.strip() else "")
-    return yaml.safe_dump({"proxies": proxies}, allow_unicode=True, sort_keys=False, default_flow_style=False)
+    return yaml.dump(
+        {"proxies": proxies},
+        Dumper=make_safe_dumper(),
+        allow_unicode=True,
+        sort_keys=False,
+        default_flow_style=False,
+    )
 
 
 def validate_file(path: str | Path) -> ValidationResult:

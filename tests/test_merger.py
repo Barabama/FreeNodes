@@ -39,6 +39,31 @@ class TestDedupProxies:
         assert "HK 01" in names
         assert "HK 01_2" in names
 
+    def test_renames_three_same_name_proxies_uniquely(self):
+        proxies = [
+            {"name": "HK 01", "server": "1.1.1.1", "port": 443, "type": "vmess"},
+            {"name": "HK 01", "server": "2.2.2.2", "port": 443, "type": "vmess"},
+            {"name": "HK 01", "server": "3.3.3.3", "port": 443, "type": "vmess"},
+        ]
+        result = Merger._dedup_proxies(proxies)
+        names = [p["name"] for p in result]
+        assert len(names) == len(set(names)) == 3
+        assert names == ["HK 01", "HK 01_2", "HK 01_3"]
+
+    def test_reality_fields_remain_strings(self):
+        proxies = [{
+            "name": "reality",
+            "type": "vless",
+            "server": "example.com",
+            "port": 443,
+            "reality-opts": {"public-key": 123, "short-id": "062898e8"},
+        }]
+        result = Merger._stringify_reality_fields(proxies)
+        assert result[0]["reality-opts"]["public-key"] == "123"
+        assert result[0]["reality-opts"]["short-id"] == "062898e8"
+
+    def test_empty_list(self):
+        assert Merger._dedup_proxies([]) == []
     def test_empty_list(self):
         assert Merger._dedup_proxies([]) == []
 

@@ -11,7 +11,7 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
 
-from src.node_validator import validate_proxy, valid_txt_lines
+from src.node_validator import force_string_proxy_fields, make_safe_dumper, validate_proxy, valid_txt_lines
 
 # Windows console uses GBK which can't encode flag emoji in region names.
 # Force UTF-8 output with replacement chars instead of crashing.
@@ -129,13 +129,19 @@ class Merger:
         if not all_proxies:
             return ""
 
-        proxies = self._dedup_proxies(all_proxies)
+        proxies = self._stringify_reality_fields(self._dedup_proxies(all_proxies))
         proxy_names = [p["name"] for p in proxies]
         groups = self._build_default_groups(proxy_names)
 
         output = self._base_clash_config(proxies=proxies, groups=groups)
 
-        yaml_text = yaml.safe_dump(output, allow_unicode=True, default_flow_style=False)
+        yaml_text = yaml.dump(
+            output,
+            Dumper=make_safe_dumper(),
+            allow_unicode=True,
+            default_flow_style=False,
+            sort_keys=False,
+        )
         out = self.nodes_dir / "merged.yaml"
         out.write_text(self._header(f"Merged {result.yaml_sources} yaml files") + yaml_text, encoding="utf-8")
         print(f"  [merger] merged.yaml: {result.yaml_sources} files, {len(proxies)} proxies")
@@ -229,6 +235,11 @@ class Merger:
     # ── Helpers ──
 
     @staticmethod
+    def _stringify_reality_fields(proxies: list[dict]) -> list[dict]:
+        """Force Mihomo Reality string fields to serialize as quoted strings."""
+        return force_string_proxy_fields(proxies)
+
+    @staticmethod
     def _dedup_proxies(proxies: list[dict]) -> list[dict]:
         """Deduplicate by server:port:type; rename name collisions with _N suffix."""
         seen_key: set[str] = set()
@@ -246,10 +257,16 @@ class Merger:
 
             name = p.get("name", "unknown")
             if name in seen_name:
-                name_counter[name] = name_counter.get(name, 1) + 1
-                name = f"{name}_{name_counter[name]}"
-            else:
-                seen_name.add(name)
+                base = name
+                index = name_counter.get(base, 1)
+                while True:
+                    index += 1
+                    candidate = f"{base}_{index}"
+                    if candidate not in seen_name:
+                        name_counter[base] = index
+                        name = candidate
+                        break
+            seen_name.add(name)
 
             result.append({**p, "name": name})
 
