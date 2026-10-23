@@ -157,6 +157,6 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 ## GitHub Actions
 
 - Workflow: `.github/workflows/crawl.yml` — daily at UTC 04:00 (Beijing 12:00)
-- Runs on default branch (`feat/ai-crawler-v2`)
+- Runs on default branch (`main`)
 - Output: `nodes/*`, `config.yaml`, `README.md` committed back via `git add --force`
 - API keys from GitHub Secrets: `OPENROUTER_API_KEY`, `CEREBRAS_API_KEY`, `OPENCODE_API_KEY`

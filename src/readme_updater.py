@@ -7,7 +7,7 @@ from src.config import Config
 
 GITHUB_BASE = "https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads"
 GITHUB_PROXY = "https://gh-proxy.com/raw.githubusercontent.com/Barabama/FreeNodes/refs/heads"
-BRANCH = "feat/ai-crawler-v2"
+BRANCH = "main"
 
 
 def build_readme(config: Config) -> str:
@@ -85,7 +85,7 @@ def build_readme(config: Config) -> str:
         "---",
         "",
         f"*上次更新: {today} | "
-        f"运行方式: GitHub Actions (feat/ai-crawler-v2)*",
+        f"运行方式: GitHub Actions (main)*",
         "",
     ])
 
