@@ -1,24 +1,161 @@
 proxies:
-- name: 🇨🇳_CN_中国->🇺🇸_US_美国_1
-  type: trojan
-  server: 36.151.251.59
-  port: 7815
-  password: RlzoEILU
-  skip-cert-verify: true
+- name: 🇨🇳_CN_中国
+  type: vmess
+  server: fac9e438-sunz40-svabg7-1td06.cu.plebai.net
+  port: 5228
+  uuid: de5486da-f19c-11ef-8eaf-f23c9164ca5d
+  network: tcp
   ip-version: dual
   udp: true
+  alterId: 0
+  cipher: auto
 - name: 🇺🇸_US_美国_1
+  type: vmess
+  server: dd26bf3b-sunz40-tavn57-1mtqy.se.plebai.net
+  port: 8083
+  uuid: e27137c8-5952-11ef-aa23-f23c9164ca5d
+  network: ws
+  ip-version: dual
+  udp: true
+  alterId: 0
+  cipher: auto
+- name: 🇮🇸_IS_冰岛
+  type: ss
+  server: 37.235.49.152
+  port: 989
+  password: f8f7aCzcPKbsF8p3
+  ip-version: dual
+  udp: true
+  cipher: aes-256-cfb
+- name: 🇫🇷_FR_法国_1
   type: trojan
-  server: 104.21.84.58
+  server: 141.227.138.29
+  port: 1935
+  network: tcp
+  password: hZ7JkYVAfB
+  sni: x1ch-ovh.devefun.net
+  alpn:
+  - h3
+  - h2
+  - http/1.1
+  ip-version: dual
+  udp: true
+- name: 🇺🇸_US_美国_2
+  type: vmess
+  server: ef87a39e-sunz40-t1tfcf-1o3sh.se.plebai.net
+  port: 8083
+  uuid: 96b3f2ee-5f66-11ee-804b-f23c9164ca5d
+  network: ws
+  sni: ''
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      host: broadcastlv.chat.bilibili.com
+  ip-version: dual
+  udp: true
+  alterId: 0
+  cipher: auto
+- name: 🇺🇸_US_美国->🇨🇳_CN_中国
+  type: vmess
+  server: dcd6b19c-sunz40-t78iw5-e7db.se.plebai.net
+  port: 8083
+  uuid: 213e222c-8e0f-11ef-8dc4-f23c91cfbbc9
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      host: broadcastlv.chat.bilibili.com
+  ip-version: dual
+  udp: true
+  alterId: 0
+  cipher: auto
+- name: 🇨🇳_CN_中国->🇮🇱_IL_以色列
+  type: vmess
+  server: f37db099-sum4g0-sy7yrp-1j3kc.cu.plebai.net
+  port: 5228
+  uuid: 3a45a384-4ea7-11ed-a8bf-f23c91cfbbc9
+  network: tcp
+  ip-version: dual
+  udp: true
+  alterId: 0
+  cipher: auto
+- name: 🇨🇳_CN_中国->🇺🇸_US_美国_1
+  type: ss
+  server: gsyd.aicheetah.lol
+  port: 55601
+  password: d192a833-b118-4b46-8e54-12cf5025d4cd
+  ip-version: dual
+  udp: true
+  cipher: chacha20-ietf-poly1305
+- name: 🇺🇸_US_美国_3
+  type: vmess
+  server: 8cf5cc50-sunz40-sumf02-155d9.se.plebai.net
+  port: 8083
+  uuid: 34f0cf42-0f8a-11ec-a8bf-f23c91cfbbc9
+  network: ws
+  ip-version: dual
+  udp: true
+  alterId: 0
+  cipher: auto
+- name: 🇺🇸_US_美国_4
+  type: vmess
+  server: 7af650bd-sunz40-svgb54-1m0fq.se.plebai.net
+  port: 8083
+  uuid: a698c4a6-c3c9-11ee-9693-f23c91cfbbc9
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      host: 7af650bd-sunz40-svgb54-1m0fq.se.plebai.net
+  ip-version: dual
+  udp: true
+  alterId: 0
+  cipher: auto
+- name: 🇺🇸_US_美国->🇪🇸_ES_西班牙_1
+  type: trojan
+  server: 104.21.96.1
   port: 443
   network: ws
-  password: 2734c14b-e4ce-48b3-b3de-f80788cb4c47
-  sni: XXXcddDe.IRaN2035.dpdNs.orG
-  alpn:
-  - http/1.1
-  skip-cert-verify: false
+  password: a8fce442-ae9a-4cc1-a0cc-20308ff0a0db
+  sni: 1g.890699.xyZ
   ws-opts:
-    path: /bdtuD5eD7Q29WxRG8DqNAB
+    path: /lXENb74xF4ylXngZ
+    headers:
+      host: 1g.890699.xyZ
+  ip-version: dual
+  udp: true
+- name: 🇺🇸_US_美国->🇪🇸_ES_西班牙_2
+  type: vmess
+  server: 2ebc590b-suvds0-sv5llu-1ldl3.se.plebai.net
+  port: 8083
+  uuid: fd224a6c-addc-11ed-a8bf-f23c91cfbbc9
+  network: ws
+  ws-opts:
+    path: /
+  ip-version: dual
+  udp: true
+  alterId: 0
+  cipher: auto
+- name: 🇪🇸_ES_西班牙
+  type: ss
+  server: 92.38.171.215
+  port: 31348
+  password: 0RsrcFJ1vOsWEqg3P55hvaacKfuShT0cc1h0t8AD0NA8u1uR
+  ip-version: dual
+  udp: true
+  cipher: chacha20-ietf-poly1305
+- name: 🇫🇷_FR_法国_2
+  type: trojan
+  server: 141.227.160.167
+  port: 1935
+  network: tcp
+  password: AXpQXM4vNh
+  sni: x2swe-ovh.devefun.net
+  alpn:
+  - h3
+  - h2
+  - http/1.1
   ip-version: dual
   udp: true
 - name: 🇨🇳_CN_中国->🇺🇸_US_美国_2
@@ -37,26 +174,20 @@ proxies:
   udp: true
   alterId: 2
   cipher: auto
-- name: 🇳🇱_NL_荷兰
-  type: ss
-  server: 45.128.151.67
-  port: 31348
-  password: d3TphPPfMkIxFmPJpA0j7RkPJHjeHqaJk2D7Co7VsFuUU2v1
-  ip-version: dual
-  udp: true
-  cipher: chacha20-ietf-poly1305
-- name: 🇷🇺_RU_俄罗斯_1
-  type: ss
-  server: 46.17.44.47
-  port: 2015
-  password: e6b547de43730e23
-  ip-version: dual
-  udp: true
-  cipher: aes-256-gcm
-- name: 🇨🇳_CN_中国->🇨🇦_CA_加拿大_1
+- name: 🇺🇸_US_美国->🇩🇪_DE_德国
   type: vmess
-  server: v35.heduian.link
-  port: 30835
+  server: ab4cbb3b-suvds0-t0qij6-j20q.se.plebai.net
+  port: 8083
+  uuid: 5bd3e78e-f4b7-11ed-ab21-f23c913c8d2b
+  network: ws
+  ip-version: dual
+  udp: true
+  alterId: 0
+  cipher: auto
+- name: 🇨🇳_CN_中国->🇺🇸_US_美国_3
+  type: vmess
+  server: v30.heduian.link
+  port: 30830
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   network: ws
   sni: ''
@@ -64,90 +195,188 @@ proxies:
   ws-opts:
     path: /oooo
     headers:
-      host: baidu.com
+      host: ocbc.com
   ip-version: dual
   udp: true
   alterId: 2
   cipher: auto
-- name: 🇺🇸_US_美国_2
-  type: trojan
-  server: 172.67.144.126
-  port: 443
-  network: ws
-  password: 895552fa-6284-4c1d-ba00-3944e0c7c626
-  sni: CFR56ty7890.288288.sHOP
-  alpn:
-  - http/1.1
-  skip-cert-verify: false
-  ws-opts:
-    path: /By7cEmOrNRS58yeduy9AOG
+- name: 🇮🇱_IL_以色列
+  type: vmess
+  server: 91.194.11.162
+  port: 58891
+  uuid: 4439cf3e-d072-4a5b-88b2-2a2ec6d71340
+  network: tcp
   ip-version: dual
   udp: true
-- name: 🇨🇳_CN_中国->🇺🇸_US_美国_3
-  type: trojan
-  server: 76b15373-swd340-tcudgo-1sa5k.cu.plebai.net
-  port: 15229
-  password: 3e6ae2e4-a8a5-11ef-8578-f23c913c8d2b
-  sni: 76b15373-swd340-tcudgo-1sa5k.cu.plebai.net
-  ip-version: dual
-  udp: true
-- name: 🇺🇸_US_美国_3
-  type: trojan
-  server: 172.67.138.187
-  port: 443
-  network: ws
-  password: c8eac4b7-95ba-4ce0-920d-c3279eb3b391
-  sni: CdVftY.7282728.xYz
-  alpn:
-  - http/1.1
-  skip-cert-verify: false
-  ws-opts:
-    path: /ptGwaGzcA4KNAXX
-  ip-version: dual
-  udp: true
-- name: 🇺🇸_US_美国_4
+  alterId: 0
+  cipher: auto
+- name: 🇬🇧_GB_英国
   type: ss
-  server: 184.170.241.194
-  port: 443
-  password: shadowsocks
-  ip-version: dual
-  udp: true
-  cipher: aes-128-cfb
-- name: 🇨🇳_CN_中国->🇺🇸_US_美国_4
-  type: trojan
-  server: c378385c-swd340-swy6li-tni2.cu.plebai.net
-  port: 15229
-  password: 5e2f888c-68ef-11ef-96ca-f23c9164ca5d
-  ip-version: dual
-  udp: true
-- name: 🇨🇳_CN_中国->🇺🇸_US_美国_5
-  type: trojan
-  server: 4ef54dd8-swd340-t1bnjq-1krtb.cu.plebai.net
-  port: 15229
-  password: 60f6b4c4-9d70-11ed-a4d2-f23c9164ca5d
-  ip-version: dual
-  udp: true
-- name: 🇷🇺_RU_俄罗斯_2
-  type: ss
-  server: 185.231.233.112
+  server: 51.15.15.82
   port: 989
   password: f8f7aCzcPKbsF8p3
   ip-version: dual
   udp: true
   cipher: aes-256-cfb
-- name: 🇨🇳_CN_中国->🇳🇱_NL_荷兰
+- name: 🇨🇳_CN_中国->🇺🇸_US_美国_4
+  type: vmess
+  server: 20697491-supts0-t1rksu-1ssud.cu.plebai.net
+  port: 5229
+  uuid: e6aa39b6-f0b5-11ef-bca1-f23c91cfbbc9
+  network: tcp
+  ip-version: dual
+  udp: true
+  alterId: 0
+  cipher: auto
+- name: 🇺🇸_US_美国_5
+  type: vmess
+  server: 69bd7056-sunz40-tazb7x-1t848.se.plebai.net
+  port: 8083
+  uuid: 6b795e40-e75d-11ef-b717-f23c913c8d2b
+  network: ws
+  sni: ''
+  skip-cert-verify: true
+  ws-opts:
+    path: /
+    headers:
+      host: broadcastlv.chat.bilibili.com
+  ip-version: dual
+  udp: true
+  alterId: 0
+  cipher: auto
+- name: 🇺🇸_US_美国_6
+  type: vmess
+  server: 2b72f3b0-sunz40-suqjqq-1pr35.se.plebai.net
+  port: 8083
+  uuid: 6b7c1278-ff9d-11ee-84ca-f23c913c8d2b
+  network: ws
+  ip-version: dual
+  udp: true
+  alterId: 0
+  cipher: auto
+- name: 🇺🇸_US_美国_7
+  type: vmess
+  server: 40fd5436-suvds0-tb6yrr-1tfcw.se.plebai.net
+  port: 8083
+  uuid: 1282cc1a-f426-11ef-9495-f23c91cfbbc9
+  network: ws
+  ip-version: dual
+  udp: true
+  alterId: 0
+  cipher: auto
+- name: 🇺🇸_US_美国_8
+  type: vmess
+  server: 6a9461b5-sunz40-tbxbrk-1t53t.se.plebai.net
+  port: 8083
+  uuid: 0e8a3ddc-c83e-11ef-8e74-f23c913c8d2b
+  network: ws
+  ip-version: dual
+  udp: true
+  alterId: 0
+  cipher: auto
+- name: 🇨🇳_CN_中国->🇺🇸_US_美国_5
+  type: vmess
+  server: 42317099-supts0-sxw44d-1re2s.cu.plebai.net
+  port: 5229
+  uuid: a6a3c7fc-0de8-11ef-ba67-f23c91cfbbc9
+  network: tcp
+  ip-version: dual
+  udp: true
+  alterId: 0
+  cipher: auto
+- name: 🇨🇳_CN_中国->🇺🇸_US_美国_6
+  type: vmess
+  server: v40.heduian.link
+  port: 30840
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  network: ws
+  ws-opts:
+    path: /index
+    headers:
+      host: api100-core-quic-lf.amemv.com
+  ip-version: dual
+  udp: true
+  alterId: 0
+  cipher: auto
+- name: 🇨🇳_CN_中国->🇺🇸_US_美国_1_2
+  type: vmess
+  server: v30.heduian.link
+  port: 30830
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  network: ws
+  sni: ''
+  skip-cert-verify: true
+  ws-opts:
+    path: /oooo
+    headers:
+      host: ocbc.com
+  ip-version: dual
+  udp: true
+  alterId: 2
+  cipher: auto
+- name: 🇬🇧_GB_英国_1
   type: trojan
-  server: 58.254.186.231
-  port: 43591
-  password: 905edb54-b4ce-47ad-ac94-51d58161a59a
-  sni: q08m.vgraxiw73s.hasyaf.cn
+  server: handy-sparrow.dolphin109.quest
+  port: 443
+  password: '3828095943467868160'
+  sni: handy-sparrow.dolphin109.quest
   skip-cert-verify: true
   ip-version: dual
   udp: true
-- name: 🇨🇳_CN_中国->🇺🇸_US_美国_6
+- name: 🇯🇴_JO_约旦_1
+  type: trojan
+  server: grateful-mako.dolphin109.quest
+  port: 443
+  password: '3828095943467868160'
+  sni: grateful-mako.dolphin109.quest
+  skip-cert-verify: true
+  ip-version: dual
+  udp: true
+- name: 🇬🇧_GB_英国_2
+  type: ss
+  server: 62.100.205.48
+  port: 989
+  password: f8f7aCzcPKbsF8p3
+  ip-version: dual
+  udp: true
+  cipher: aes-256-cfb
+- name: 🇺🇸_US_美国_1_2
+  type: ss
+  server: 85.209.158.11
+  port: 8388
+  password: MWYyN
+  ip-version: dual
+  udp: true
+  cipher: chacha20-ietf-poly1305
+- name: 🇨🇳_CN_中国->🇺🇸_US_美国_2_2
   type: vmess
-  server: v24.heduian.link
-  port: 30824
+  server: v29.heduian.link
+  port: 30829
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  network: ws
+  sni: ''
+  skip-cert-verify: true
+  ws-opts:
+    path: /oooo
+    headers:
+      host: v29.heduian.link
+  ip-version: dual
+  udp: true
+  alterId: 2
+  cipher: auto
+- name: 🇦🇱_AL_阿尔巴尼亚_1
+  type: trojan
+  server: exotic-wahoo.dolphin109.quest
+  port: 443
+  password: '3828095943467868160'
+  sni: exotic-wahoo.dolphin109.quest
+  skip-cert-verify: true
+  ip-version: dual
+  udp: true
+- name: 🇨🇳_CN_中国->🇬🇧_GB_英国
+  type: vmess
+  server: v36.heduian.link
+  port: 30836
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   network: ws
   sni: ''
@@ -160,329 +389,522 @@ proxies:
   udp: true
   alterId: 2
   cipher: auto
-- name: 🇨🇳_CN_中国
+- name: 🇪🇸_ES_西班牙_1
   type: ss
-  server: 62.60.231.81
-  port: 59945
-  password: VfaEatGj7iXncVpijKFC1e
+  server: 92.38.171.215
+  port: 31348
+  password: 0RsrcFJ1vOsWEqg3P55hvaacKfuShT0cc1h0t8AD0NA8u1uR
   ip-version: dual
   udp: true
   cipher: chacha20-ietf-poly1305
-- name: 🇺🇸_US_美国->🇧🇪_BE_比利时
+- name: 未知
+  type: vmess
+  server: 89.18.58.206
+  port: 180
+  uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+  network: tcp
+  ip-version: dual
+  udp: true
+  alterId: 0
+  cipher: auto
+- name: 🇨🇳_CN_中国_2
   type: ss
-  server: 35.90.251.87
-  port: 443
-  password: awsps0501
+  server: 62.60.231.81
+  port: 39008
+  password: W7fIo8Gp6TLb1YHZNH1fu5
+  ip-version: dual
+  udp: true
+  cipher: chacha20-ietf-poly1305
+- name: 🇮🇸_IS_冰岛_2
+  type: ss
+  server: 37.235.49.152
+  port: 989
+  password: f8f7aCzcPKbsF8p3
   ip-version: dual
   udp: true
   cipher: aes-256-cfb
-- name: 🇨🇳_CN_中国->🇨🇦_CA_加拿大_2
+- name: 🇨🇳_CN_中国->🇪🇸_ES_西班牙
+  type: vmess
+  server: v5.heduian.link
+  port: 30805
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  network: ws
+  sni: ''
+  skip-cert-verify: true
+  ws-opts:
+    path: /oooo
+    headers:
+      host: ocbc.com
+  ip-version: dual
+  udp: true
+  alterId: 2
+  cipher: auto
+- name: 🇺🇸_US_美国->🇮🇳_IN_印度
   type: trojan
-  server: 120.233.128.68
-  port: 39001
-  password: b6200af42ccadea353f5b5856dd20d70
-  sni: 120.233.128.68
+  server: 3.66.134.189
+  port: 22222
+  network: tcp
+  password: telegram-id-vlessconfig
+  sni: trojan.burgerip.co.uk
+  alpn:
+  - http/1.1
+  ip-version: dual
+  udp: true
+- name: 🇺🇸_US_美国_2_2
+  type: trojan
+  server: 172.67.204.22
+  port: 443
+  network: ws
+  password: 5453ae26-250d-4e79-b4ec-016baf806865
+  sni: 1SdfghJk.890602.xyz
+  ws-opts:
+    path: /OYzPAeaZdXUq2d6J3gc4aj
+  ip-version: dual
+  udp: true
+- name: 🇪🇸_ES_西班牙_2
+  type: trojan
+  server: 212.192.2.202
+  port: 443
+  password: '3828095943467868160'
+  sni: lucky-lynx.dolphin109.quest
   skip-cert-verify: true
   ip-version: dual
   udp: true
-- name: 🇨🇳_CN_中国->🇺🇸_US_美国_7
+- name: 🇦🇱_AL_阿尔巴尼亚_2
   type: trojan
-  server: 5541c006-swexs0-swy6li-tni2.cu.plebai.net
-  port: 15229
-  password: 5e2f888c-68ef-11ef-96ca-f23c9164ca5d
-  sni: 5541c006-swexs0-swy6li-tni2.cu.plebai.net
+  server: 109.104.153.229
+  port: 443
+  password: '3828095943467868160'
+  sni: exotic-wahoo.dolphin109.quest
+  skip-cert-verify: true
   ip-version: dual
   udp: true
-- name: 🇺🇸_US_美国
-  type: vless
-  server: ae2.suio.me
+- name: 🇦🇱_AL_阿尔巴尼亚_3
+  type: trojan
+  server: choice-gar.dolphin109.quest
   port: 443
-  uuid: 6ca2c654-53b3-4ac1-a2ef-c4b4ee88727a
-  servername: ae2.suio.me
-  tls: true
-- name: 🇩🇪_DE_德国
-  type: vless
-  server: best4.pineappled.org
+  password: '3828095943467868160'
+  sni: choice-gar.dolphin109.quest
+  skip-cert-verify: true
+  ip-version: dual
+  udp: true
+- name: 🇦🇱_AL_阿尔巴尼亚_4
+  type: trojan
+  server: 109.104.154.201
   port: 443
-  uuid: 71322f86-f37a-4929-ada0-05e6a2688145
-  servername: www.apple.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "V6FabatADtcX7aO9KMjGCadJC4LuQ_5nRViab-z-nFQ"
-    short-id: "23"
-- name: 🇰🇷_KR_韩国->🇰🇵_KP_朝鲜
-  type: vless
-  server: 218.150.33.69
-  port: 15050
-  uuid: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+  password: '3828095943467868160'
+  sni: choice-gar.dolphin109.quest
+  skip-cert-verify: true
+  ip-version: dual
+  udp: true
+- name: 🇨🇳_CN_中国->🇺🇸_US_美国_3_2
+  type: vmess
+  server: v32.heduian.link
+  port: 30832
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
   network: ws
-  servername: ylnhh.cc.cd
-  tls: true
-  client-fingerprint: chrome
+  sni: ''
+  skip-cert-verify: true
   ws-opts:
-    path: /Telegram🇨🇳@WangCai2
+    path: /oooo
     headers:
-      Host: ylnhh.cc.cd
-- name: 🇰🇷_KR_韩国
-  type: vless
-  server: 119.192.158.53
-  port: 25095
-  uuid: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
-  network: ws
-  servername: ylnhh.cc.cd
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /Telegram🇨🇳@WangCai2
-    headers:
-      Host: ylnhh.cc.cd
-- name: 🇳🇱_NL_荷兰_2
-  type: vless
-  server: nl4.pineappled.org
-  port: 443
-  uuid: 71322f86-f37a-4929-ada0-05e6a2688145
-  servername: www.apple.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "V6FabatADtcX7aO9KMjGCadJC4LuQ_5nRViab-z-nFQ"
-    short-id: "23"
-- name: 🇦🇺_AU_澳大利亚->🇸🇬_SG_新加坡
-  type: vless
-  server: 43.160.248.66
-  port: 8443
-  uuid: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
-  network: ws
-  servername: ylnhh.cc.cd
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /Telegram🇨🇳@WangCai2
-    headers:
-      Host: ylnhh.cc.cd
-- name: 🇨🇿_CZ_捷克->🇧🇬_BG_保加利亚
-  type: vless
-  server: est.top.subtrust.ru
-  port: 443
-  uuid: 3130fccb-e72e-468d-b2ce-0721bb3058c8
-  servername: www.apple.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "pOdL1l8cGGg7qnOPAbDcAIVOgA7O8f75XevxeYyaYCg"
-    short-id: "cd11af"
-- name: 🇰🇷_KR_韩国_1
-  type: vless
-  server: 218.155.23.9
-  port: 12184
-  uuid: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
-  network: ws
-  servername: ylnhh.cc.cd
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /Telegram🇨🇳@WangCai2
-    headers:
-      Host: ylnhh.cc.cd
-- name: 🇸🇦_SA_沙特阿拉伯
-  type: vless
-  server: dee1.shubnechkin.online
-  port: 443
-  uuid: 7a1f4deb-0ea9-427e-bc9d-9297a08afa12
-  servername: vk.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "nBxkzpHPJpW3AXzEZSQc8V00RuPj1zrxe-hYSgNtzUY"
-    short-id: "b7"
-- name: 未知
-  type: vless
-  server: dns.dressforida.monster
-  port: 443
-  uuid: 79149019-5abe-46f9-91ae-e1e7d1d2c408
-  servername: www.techradar.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "4YLfHf90V012Oyd2wHbwAXaJNvNUGrKWmatTKc165U8"
-    short-id: "174c6cf22e22"
-- name: 🇰🇷_KR_韩国->🇰🇵_KP_朝鲜_1
-  type: vless
-  server: 116.93.199.28
-  port: 21510
-  uuid: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
-  network: ws
-  servername: ylnhh.cc.cd
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /Telegram🇨🇳@WangCai2
-    headers:
-      Host: ylnhh.cc.cd
-- name: 🇳🇱_NL_荷兰_1
-  type: vless
-  server: nll.scroogethebest.com
-  port: 443
-  uuid: e2e1ddaa-1acf-4c4c-a211-92284f6440ed
-  servername: nll.scroogethebest.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "AYQOZFxjvHN-RIzKYEibwFiFsp03cdlWGdCmyFfuNVc"
-    short-id: "4fa44664f6a566d3"
-- name: 🇺🇸_US_美国_1_2
-  type: ss
-  server: admin.c1.webramz.co
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: W74XFALLLuw6m5IA
-- name: 🇪🇸_ES_西班牙
-  type: vless
-  server: es.fasti.win
-  port: 443
-  uuid: a16bd0e2-ff2e-4e4c-a955-0c684255a065
-  servername: es.fasti.win
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "-YTGWg5DjsLDyaDfr1D83kiUK22LVcrK3yC53lqqigs"
-    short-id: "feedbacc"
-- name: 🇰🇷_KR_韩国->🇰🇵_KP_朝鲜_2
-  type: vless
-  server: 121.157.190.209
-  port: 11717
-  uuid: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
-  network: ws
-  servername: ylnhh.cc.cd
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /Telegram🇨🇳@WangCai2
-    headers:
-      Host: ylnhh.cc.cd
-- name: 🇺🇸_US_美国_2_2
-  type: vless
-  server: 104.18.32.47
-  port: 2052
-  uuid: 5e62ddcf-78c9-4b15-803a-436c8c839ddc
-  network: ws
-  tls: false
-  ws-opts:
-    path: /
-    headers:
-      Host: oBEDiENt-noiseqJf5ja18yF.wIndLer.CO.UK.
-- name: 未知_1
-  type: ss
-  server: 103.186.155.23
-  port: 38388
-  cipher: aes-256-cfb
-  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-- name: 🇰🇷_KR_韩国_2
-  type: vless
-  server: 211.33.238.198
-  port: 15380
-  uuid: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
-  network: ws
-  servername: ylnhh.cc.cd
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /Telegram🇨🇳@WangCai2
-    headers:
-      Host: ylnhh.cc.cd
-- name: 未知_2
-  type: ss
-  server: 103.186.154.64
-  port: 38388
-  cipher: aes-256-cfb
-  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+      host: baidu.com
+  ip-version: dual
+  udp: true
+  alterId: 2
+  cipher: auto
 - name: 🇳🇱_NL_荷兰->🇺🇸_US_美国
-  type: vless
-  server: 45.145.42.170
-  port: 8005
-  uuid: 00000000-0000-4000-8000-000000000000
+  type: trojan
+  server: 45.146.232.173
+  port: 27301
+  password: 038f067a-213a-4c7d-89d7-e8fdeebcfe71
+  sni: q08m.vgraxiw73s.hasyaf.cn
+  skip-cert-verify: false
+  ip-version: dual
+  udp: true
+- name: 🇷🇴_RO_罗马尼亚
+  type: trojan
+  server: concrete-lion.dolphin109.quest
+  port: 443
+  password: '3828095943467868160'
+  sni: concrete-lion.dolphin109.quest
+  skip-cert-verify: true
+  ip-version: dual
+  udp: true
+- name: 🇪🇸_ES_西班牙_3
+  type: trojan
+  server: lucky-lynx.dolphin109.quest
+  port: 443
+  password: '3828095943467868160'
+  sni: lucky-lynx.dolphin109.quest
+  skip-cert-verify: true
+  ip-version: dual
+  udp: true
+- name: 🇯🇴_JO_约旦_2
+  type: trojan
+  server: 109.107.159.202
+  port: 443
+  password: '3828095943467868160'
+  sni: grateful-mako.dolphin109.quest
+  skip-cert-verify: true
+  ip-version: dual
+  udp: true
+- name: 🇬🇧_GB_英国->🇩🇪_DE_德国
+  type: trojan
+  server: 85.234.65.100
+  port: 443
+  password: '3828095943467868160'
+  sni: handy-sparrow.dolphin109.quest
+  skip-cert-verify: true
+  ip-version: dual
+  udp: true
+- name: 🇷🇴_RO_罗马尼亚->🇦🇱_AL_阿尔巴尼亚
+  type: trojan
+  server: 93.174.164.49
+  port: 443
+  password: '3828095943467868160'
+  sni: concrete-lion.dolphin109.quest
+  skip-cert-verify: true
+  ip-version: dual
+  udp: true
+- name: 🇳🇱_NL_荷兰
+  type: vmess
+  server: 188.114.96.3
+  port: 8880
+  cipher: auto
+  uuid: e8ef1f51-3985-4d9b-bf29-46d26da65a4b
+  alterId: 0
+  tls: false
+  skip-cert-verify: true
   network: ws
-  servername: sub.mot.ip-ddns.com
-  tls: true
-  client-fingerprint: chrome
+  ws-opts:
+    path: /telegram-Lookivpn,telegram-Lookivpn,telegram-Lookivpn,telegram-Lookivpn,telegram-Lookivpn,telegram-Lookivpn,telegram-Lookivpn,telegram-Lookivpn,telegram-Lookivpn,telegram-Lookivpn,telegram-Lookivpn,telegram-Lookivpn,telegram-Lookivpn,telegram-Lookivpn,telegram-Lookivpn,Mmdv2rayng-V2rayngmmd-telegram-mehran-v2ray?ed=2056
+    headers:
+      host: SvnProBotV2rayNethOne6.9.6.9.ir.shop.com.xn--fhqpqv8rrth13sbaaac958pc94anf0d8gm.ayfadesigns.com.
+- name: 🇨🇳_CN_中国->🇺🇸_US_美国_1_3
+  type: trojan
+  server: 183.232.139.22
+  port: 50611
+  udp: true
+  password: gkviEOYc
+  skip-cert-verify: true
+  network: tcp
+- name: 🇺🇸_US_美国_1_3
+  type: trojan
+  server: 104.16.1.10
+  port: 443
+  udp: true
+  password: qj1Dz1CJmFQRhWr1SP80aA
+  sni: cdn-21.gsmxreality.com
+  skip-cert-verify: true
+  network: grpc
+  grpc-opts:
+    grpc-service-name: 443trojan
+- name: 🇺🇸_US_美国_2_3
+  type: trojan
+  server: 172.67.175.243
+  port: 2053
+  udp: true
+  password: 3080amimVq
+  sni: frankfoortvip.followprovider.ir
+  skip-cert-verify: true
+  network: ws
   ws-opts:
     path: /
-    headers:
-      Host: sub.mot.ip-ddns.com
-- name: 🇰🇷_KR_韩国->🇰🇵_KP_朝鲜_3
-  type: vless
-  server: 59.29.89.197
-  port: 18765
-  uuid: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
+- name: 🇺🇸_US_美国->🇩🇪_DE_德国_1
+  type: vmess
+  server: 104.26.14.85
+  port: 2095
+  cipher: auto
+  uuid: 3e540874-0730-452a-8b2e-e719b5d34470
+  alterId: 0
+  tls: false
+  skip-cert-verify: true
   network: ws
-  servername: ylnhh.cc.cd
-  tls: true
-  client-fingerprint: chrome
   ws-opts:
-    path: /Telegram🇨🇳@WangCai2
+    path: /@HosseinStore_Za/@HosseinStore_Za/@HosseinStore_Za/@HosseinStore_Za/@HosseinStore_Za/@HosseinStore_Za/@HosseinStore_Za/@HosseinStore_Za/@HosseinStore_Za/@HosseinStore_Za
     headers:
-      Host: ylnhh.cc.cd
-- name: 🇩🇪_DE_德国_1
-  type: vless
-  server: 5.254.85.151
-  port: 443
-  uuid: ccedb1b1-35f3-46d1-a85a-c699eef5f3e1
-  servername: germany.scroogethebest.com
-  tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "AYQOZFxjvHN-RIzKYEibwFiFsp03cdlWGdCmyFfuNVc"
-    short-id: "4fa44664f6a566d3"
-- name: 🇰🇷_KR_韩国->🇰🇵_KP_朝鲜_4
-  type: vless
-  server: 116.93.199.28
-  port: 25524
-  uuid: 14b02e2a-8930-4afb-8412-ea4a4954ca5b
-  network: ws
-  servername: ylnhh.cc.cd
-  tls: true
-  client-fingerprint: chrome
-  ws-opts:
-    path: /Telegram🇨🇳@WangCai2
-    headers:
-      Host: ylnhh.cc.cd
+      host: Yakuza.unique69.com
 - name: 🇺🇸_US_美国_3_2
-  type: ss
-  server: series-a1.samanehha.co
-  port: 443
-  cipher: chacha20-ietf-poly1305
-  password: W74XFALLLuw6m5IA
-- name: 🇷🇺_RU_俄罗斯->🇺🇸_US_美国
-  type: vless
-  server: 89.208.113.120
-  port: 8082
-  uuid: 00000000-0000-4000-8000-000000000000
+  type: vmess
+  server: russia.com
+  port: 8080
+  cipher: auto
+  uuid: 4b05abf5-c68d-4ffc-915f-add2f3786dca
+  alterId: 0
+  tls: false
+  skip-cert-verify: true
   network: ws
-  servername: sub.mot.ip-ddns.com
-  tls: true
-  client-fingerprint: chrome
+  ws-opts:
+    path: /api/v3/download.getFile
+    headers:
+      host: sssub.v2.001.ssrsub.com
+- name: 🇺🇸_US_美国->🇩🇪_DE_德国_2
+  type: trojan
+  server: 104.21.34.77
+  port: 2096
+  udp: true
+  password: A9l6_eMgylRZu0YiSqunsQ
+  sni: usa.iwontletgo.cloud
+  skip-cert-verify: false
+  network: grpc
+  grpc-opts:
+    grpc-service-name: trojan
+- name: 🇺🇸_US_美国->🇦🇹_AT_奥地利
+  type: vmess
+  server: 172.67.193.67
+  port: 80
+  cipher: auto
+  uuid: 408438b0-fe40-44de-af19-0e5e6bb750ce
+  alterId: 0
+  tls: false
+  skip-cert-verify: true
+  network: ws
   ws-opts:
     path: /
     headers:
-      Host: sub.mot.ip-ddns.com
-- name: 🇳🇱_NL_荷兰->🇵🇱_PL_波兰
-  type: vless
-  server: 45.144.51.136
-  port: 443
-  uuid: a16bd0e2-ff2e-4e4c-a955-0c684255a065
-  servername: pl.fasti.win
+      host: gulasch.online
+- name: 🇨🇳_CN_中国_3
+  type: vmess
+  server: 47.92.152.169
+  port: 50002
+  cipher: auto
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  tls: false
+  skip-cert-verify: true
+  network: tcp
+- name: 🇺🇸_US_美国->🇩🇪_DE_德国_3
+  type: vmess
+  server: zula.ir
+  port: 2095
+  cipher: auto
+  uuid: 3e540874-0730-452a-8b2e-e719b5d34470
+  alterId: 0
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /@HosseinStore_Za/@HosseinStore_Za/@HosseinStore_Za/@HosseinStore_Za/@HosseinStore_Za/@HosseinStore_Za/@HosseinStore_Za/@HosseinStore_Za/@HosseinStore_Za/@HosseinStore_Za
+    headers:
+      host: Yakuza.unique69.com
+- name: 🇺🇸_US_美国_4_2
+  type: vmess
+  server: kz-v2ray.ipracevpn.com
+  port: 2083
+  cipher: auto
+  uuid: b32504f9-c51c-4aa0-b1ff-1316ce82033b
+  alterId: 0
   tls: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "-YTGWg5DjsLDyaDfr1D83kiUK22LVcrK3yC53lqqigs"
-    short-id: "feedbacc"
+  skip-cert-verify: true
+  network: tcp
+- name: 🇺🇸_US_美国_5_2
+  type: ss
+  server: 184.170.241.194
+  port: 443
+  password: shadowsocks
+  cipher: aes-128-cfb
+- name: 🇬🇧_GB_英国_1_2
+  type: ss
+  server: 212.102.53.193
+  port: 443
+  password: shadowsocks
+  cipher: aes-128-gcm
+- name: 🇵🇱_PL_波兰_1
+  type: ss
+  server: 51.77.53.200
+  port: 2376
+  password: faBAoD54k87UJG7
+  cipher: aes-256-gcm
+- name: 🇵🇱_PL_波兰_2
+  type: ss
+  server: 51.77.53.200
+  port: 9101
+  password: e4FCWrgpkji3QY
+  cipher: aes-256-gcm
+- name: 🇵🇱_PL_波兰_3
+  type: ss
+  server: 51.77.53.200
+  port: 8118
+  password: cdBIDV42DCwnfIN
+  cipher: aes-256-gcm
+- name: 🇵🇱_PL_波兰_4
+  type: ss
+  server: 51.77.53.200
+  port: 8008
+  password: XKFKl2rULjIp74
+  cipher: aes-256-gcm
+- name: 🇵🇱_PL_波兰_5
+  type: ss
+  server: 51.77.53.200
+  port: 6379
+  password: zDNVedRFPQexG9v
+  cipher: aes-256-gcm
+- name: 🇵🇱_PL_波兰_6
+  type: ss
+  server: 51.77.53.200
+  port: 2375
+  password: faBAoD54k87UJG7
+  cipher: aes-256-gcm
+- name: 🇵🇱_PL_波兰_7
+  type: ss
+  server: 51.77.53.200
+  port: 7306
+  password: FoOiGlkAA9yPEGP
+  cipher: aes-256-gcm
+- name: 🇵🇱_PL_波兰_8
+  type: ss
+  server: 51.77.53.200
+  port: 8091
+  password: PCnnH6SQSnfoS27
+  cipher: aes-256-gcm
+- name: 🇵🇱_PL_波兰_9
+  type: ss
+  server: 51.77.53.200
+  port: 8882
+  password: kDWvXYZoTBcGkC4
+  cipher: aes-256-gcm
+- name: 🇬🇧_GB_英国_2_2
+  type: ss
+  server: 212.102.53.195
+  port: 443
+  password: shadowsocks
+  cipher: aes-128-gcm
+- name: 🇵🇱_PL_波兰_10
+  type: ss
+  server: 51.77.53.200
+  port: 3306
+  password: Y6R9pAtvxxzmGC
+  cipher: aes-256-gcm
+- name: 🇬🇧_GB_英国_3
+  type: ss
+  server: 212.102.53.196
+  port: 443
+  password: shadowsocks
+  cipher: aes-128-gcm
+- name: 🇵🇱_PL_波兰_11
+  type: ss
+  server: 51.77.53.200
+  port: 8090
+  password: PCnnH6SQSnfoS27
+  cipher: aes-256-gcm
+- name: 🇨🇳_CN_中国->🇩🇪_DE_德国
+  type: ss
+  server: 5.forlive.live
+  port: 60033
+  password: 54d73e4b-054d-4148-bab6-22646f4431a9
+  cipher: chacha20-ietf-poly1305
+- name: 🇵🇱_PL_波兰_12
+  type: ss
+  server: 51.77.53.200
+  port: 8080
+  password: KixLvKzwjekG00rm
+  cipher: aes-256-gcm
+- name: 🇵🇱_PL_波兰_13
+  type: ss
+  server: 51.77.53.200
+  port: 3389
+  password: Y6R9pAtvxxzmGC
+  cipher: aes-256-gcm
+- name: 🇵🇱_PL_波兰_14
+  type: ss
+  server: 51.77.53.200
+  port: 8000
+  password: KixLvKzwjekG00rm
+  cipher: aes-256-gcm
+- name: 🇦🇱_AL_阿尔巴尼亚
+  type: ss
+  server: 109.104.152.186
+  port: 11223
+  password: 7/bb9x3TJQ4Y5SRA/Al3OdwxIk4uf3Jg8N9wDQg+Uto=
+  cipher: 2022-blake3-chacha20-poly1305
+- name: 🇵🇱_PL_波兰_15
+  type: ss
+  server: 51.77.53.200
+  port: 5003
+  password: g5MeD6Ft3CWlJId
+  cipher: aes-256-gcm
+- name: 🇬🇧_GB_英国_4
+  type: ss
+  server: 89.185.84.185
+  port: 52338
+  password: aXuV8k5a4NFmkphgr5NTlL
+  cipher: chacha20-ietf-poly1305
+- name: 🇨🇳_CN_中国->🇺🇸_US_美国_2_3
+  type: ss
+  server: 59.56.77.178
+  port: 16058
+  password: hGkQ6915tD
+  cipher: aes-256-cfb
+- name: 🇵🇱_PL_波兰_16
+  type: ss
+  server: 51.77.53.200
+  port: 8881
+  password: kDWvXYZoTBcGkC4
+  cipher: aes-256-gcm
+- name: 🇺🇸_US_美国_6_2
+  type: ss
+  server: 172.232.37.114
+  port: 80
+  password: zGLrOR92Jh0mhaqrpZBcKU
+  cipher: chacha20-ietf-poly1305
+- name: 🇬🇧_GB_英国_5
+  type: ss
+  server: 212.102.53.80
+  port: 443
+  password: shadowsocks
+  cipher: aes-128-gcm
+- name: 🇵🇱_PL_波兰_17
+  type: ss
+  server: 51.77.53.200
+  port: 7307
+  password: FoOiGlkAA9yPEGP
+  cipher: aes-256-gcm
+- name: 🇵🇱_PL_波兰_18
+  type: ss
+  server: 51.77.53.200
+  port: 5004
+  password: g5MeD6Ft3CWlJId
+  cipher: aes-256-gcm
+- name: 🇵🇱_PL_波兰_19
+  type: ss
+  server: 51.77.53.200
+  port: 4444
+  password: pKEW8JPByTVTLtM
+  cipher: aes-256-gcm
+- name: 🇨🇦_CA_加拿大
+  type: ss
+  server: ca.yangon.club
+  port: 443
+  password: qkotZ0f94vUH38YhrXGkUd
+  cipher: chacha20-ietf-poly1305
+- name: 🇺🇸_US_美国_7_2
+  type: ss
+  server: 54.218.48.199
+  port: 443
+  password: amazonskr05
+  cipher: aes-256-cfb
+- name: 🇵🇱_PL_波兰_20
+  type: ss
+  server: 51.77.53.200
+  port: 9102
+  password: e4FCWrgpkji3QY
+  cipher: aes-256-gcm
+- name: 🇵🇱_PL_波兰_21
+  type: ss
+  server: 51.77.53.200
+  port: 5001
+  password: Y6R9pAtvxxzmGC
+  cipher: aes-256-gcm
+- name: 🇵🇱_PL_波兰_22
+  type: ss
+  server: 51.77.53.200
+  port: 5000
+  password: Y6R9pAtvxxzmGC
+  cipher: aes-256-gcm
+- name: 🇵🇱_PL_波兰_23
+  type: ss
+  server: 51.77.53.200
+  port: 7001
+  password: RexnBgU7EV5ADxG
+  cipher: aes-256-gcm
