@@ -324,8 +324,7 @@ async def _probe_mihomo(items: list[ProbeItem], settings: ProbeSettings) -> Prob
     import httpx
 
     report = ProbeReport(backend="mihomo")
-    # Mihomo would happily dial whatever the subscription names, so only nodes
-    # whose server resolves to a public address are handed to it.
+    # Nodes without a proxy mapping (unsupported URI scheme) cannot be judged.
     candidates = [item for item in items if item.proxy]
     for item in items:
         if not item.proxy:
@@ -338,21 +337,6 @@ async def _probe_mihomo(items: list[ProbeItem], settings: ProbeSettings) -> Prob
     if not binary.exists() and not _which(settings.mihomo_binary):
         report.unavailable = f"mihomo binary not found: {settings.mihomo_binary}"
         return report
-
-    server_checks = await asyncio.gather(*(
-        resolve_target(
-            str(item.proxy.get("server", "")),
-            require_public=settings.require_public_targets,
-        )
-        for item in candidates
-    ))
-    allowed = [item for item, (addresses, _unsafe) in zip(candidates, server_checks) if addresses]
-    for item, (addresses, _unsafe) in zip(candidates, server_checks):
-        if not addresses:
-            report.unprobed.add(item.key)
-    if not allowed:
-        return report
-    candidates = allowed
     proxies = [item.proxy for item in candidates]
     name_to_key = {item.proxy["name"]: item.key for item in candidates}
     mixed_port, controller_port = _free_port(), _free_port()

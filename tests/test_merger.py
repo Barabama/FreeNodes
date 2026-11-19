@@ -297,7 +297,8 @@ class TestProbeFiltering:
         monkeypatch.setattr("src.merger.probe", fake_probe)
         Merger(nodes_dir=str(nodes), probe_settings=ProbeSettings()).run()
 
-        # The YAML side still has live nodes... none here, so both are kept.
+        # Every node is judged dead, but the artifact must not be emptied: the
+        # previous merged.txt is kept rather than overwritten with nothing.
         assert len((nodes / "merged.txt").read_text(encoding="utf-8").splitlines()) == 2
 
     def test_without_probe_settings_no_filtering_happens(self, tmp_path):

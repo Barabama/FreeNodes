@@ -24,27 +24,50 @@ _SCHEME_RE = re.compile(r"^([A-Za-z][A-Za-z0-9+.-]*)://(.+)$", re.DOTALL)
 
 # ── Value canonicalisation ──
 
-def canonical_value(value: object) -> str:
-    """Render a field value so semantically equal values compare equal.
 
-    ``443`` and ``"443"`` must produce the same fingerprint, and mapping key
-    order must not matter.
+def _normalize(value: object) -> object:
+    """Return a hashable form that is equal for semantically equal values.
+
+    Only scalars whose representations are interchangeable are folded
+    together: integers and digit-only strings, which appear both in Clash
+    files and in URIs. Booleans stay distinct from "1". Mappings and
+    sequences are converted recursively and compared structurally, so no
+    nested value can collide with a neighbour through a separator.
     """
     if isinstance(value, bool):
-        return "true" if value else "false"
+        return ("bool", value)
+    if isinstance(value, int):
+        return ("int", value)
+    if isinstance(value, float):
+        return ("float", value)
+    if isinstance(value, str):
+        stripped = value.strip()
+        if stripped.isdecimal():
+            return ("int", int(stripped))
+        return ("str", stripped)
     if isinstance(value, dict):
-        return "{" + ",".join(
-            f"{key}={canonical_value(value[key])}" for key in sorted(value)
-        ) + "}"
+        items = frozenset(
+            (str(key), _normalize(item)) for key, item in value.items()
+        )
+        return ("map", items)
     if isinstance(value, (list, tuple)):
-        return "[" + ",".join(canonical_value(item) for item in value) + "]"
-    return str(value)
+        return ("seq", tuple(_normalize(item) for item in value))
+    return ("other", repr(value))
 
 
-def proxy_fingerprint(proxy: dict) -> tuple[str, ...]:
-    """Return the connection-configuration fingerprint of a Clash proxy."""
+def canonical_value(value: object) -> object:
+    """Return the comparison key for one field value."""
+    return _normalize(value)
+
+
+def proxy_fingerprint(proxy: dict) -> tuple:
+    """Return the connection-configuration fingerprint of a Clash proxy.
+
+    A tuple of ``(field, normalized_value)`` pairs: structured, so no field
+    value can ever run into the next one.
+    """
     return tuple(
-        f"{key}={canonical_value(proxy[key])}"
+        (key, canonical_value(proxy[key]))
         for key in sorted(proxy)
         if key not in DISPLAY_FIELDS and proxy[key] is not None
     )

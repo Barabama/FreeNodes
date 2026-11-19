@@ -39,6 +39,25 @@ class TestCanonicalValue:
     def test_list_order_matters(self):
         assert canonical_value(["a", "b"]) != canonical_value(["b", "a"])
 
+    def test_nested_values_do_not_collide_across_fields(self):
+        # With string joining, these two mappings could flatten to the same text.
+        left = {"a": {"b": "c"}, "d": "e"}
+        right = {"a": "b", "d": {"c": "e"}}
+        assert canonical_value(left) != canonical_value(right)
+
+    def test_list_containing_separator_text_does_not_collide(self):
+        left = ["a,b", "c"]
+        right = ["a", "b,c"]
+        assert canonical_value(left) != canonical_value(right)
+
+    def test_map_and_list_of_same_items_are_distinct(self):
+        assert canonical_value({"a": "1"}) != canonical_value([("a", "1")])
+
+    def test_map_value_is_normalized(self):
+        assert canonical_value({"a": 1, "b": {"c": "2"}}) == canonical_value(
+            {"a": "1", "b": {"c": 2}}
+        )
+
 
 class TestProxyFingerprint:
 
