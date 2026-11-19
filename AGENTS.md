@@ -1,4 +1,4 @@
-# CLAUDE.md
+# AGENTS.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
@@ -124,7 +124,7 @@ src/
   paste.py           # paste.to / PrivateBin client-side encrypted paste decryption
 main.py              # CLI entry: python main.py [site_name]
 config.yaml          # Site definitions + LLM routing + crawl strategy
-tests/               # pytest-asyncio tests, ~175 tests total
+tests/               # pytest-asyncio tests, ~316 tests total
 ```
 
 ## Environment Variables
@@ -144,7 +144,7 @@ OPENCODE_API_KEY=sk-...   # optional, some models work without key
 - `tmp_path` fixture for file I/O tests
 - Test naming: `test_<function>_<scenario>` e.g. `test_extract_by_pattern_no_match`
 - Each test file: `tests/test_<module>.py`
-- **~175 tests, all must pass before commit**
+- **~316 tests, all must pass before commit**
 
 ## Commit Style
 
