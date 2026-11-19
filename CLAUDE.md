@@ -107,12 +107,15 @@ README update + config.yaml up_date persist
 
 ```
 src/
-  config.py          # SiteConfig, ProviderConfig, LLMConfig, CrawlConfig, Config
+  config.py          # SiteConfig, ProviderConfig, LLMConfig, CrawlConfig, ProbeConfig, Config
   crawler.py         # Page dataclass + fetch_page (Crawl4AI) + download_file (httpx)
   llm_router.py      # LLMRouter: weighted routing + health tracking + ask/extract/generate
   site_processor.py  # SiteProcessor: per-site lifecycle, dispatches by type
   scheduler.py       # Scheduler: asyncio gather with concurrency control
-  merger.py          # Merger: cross-site dedup + provider.yaml with region groups
+  merger.py          # Merger: cross-site dedup (connection fingerprint) + optional probe filter + provider.yaml
+  node_fingerprint.py# Dedup keys: URI/proxy connection fingerprint (ignores display names)
+  node_probe.py      # Optional liveness probe: tcp (default) | mihomo backends
+  clash_uri.py       # URI → Mihomo proxy mapping (used by the mihomo probe)
   pipeline.py        # process_txt (base64 decode + dedup) + save
   readme_updater.py  # Generate README.md subscription table from config + nodes/
   youtube.py         # yt-dlp wrapper: list_channel, get_metadata, subtitles, password extraction

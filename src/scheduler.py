@@ -6,6 +6,7 @@ from src.config import Config, SiteConfig
 from src.llm_router import LLMRouter
 from src.site_processor import SiteProcessor, SiteResult
 from src.merger import Merger
+from src.node_probe import ProbeSettings
 from src.readme_updater import write_readme
 
 logger = logging.getLogger(__name__)
@@ -66,8 +67,9 @@ class Scheduler:
         # Run merger + readme after all sites processed
         if not target:
             out_dir = self.config.output.get("dir", "nodes")
-            merger = Merger(nodes_dir=out_dir)
-            merge_result = merger.run()
+            probe_settings = self._probe_settings()
+            merger = Merger(nodes_dir=out_dir, probe_settings=probe_settings)
+            merge_result = await merger.run_async()
             print(f"\n  merge: {merge_result.total_nodes} total nodes across "
                   f"{merge_result.txt_sources} txt + {merge_result.yaml_sources} yaml sources")
             print(f"  files: {merge_result.merged_txt or '(skip)'}, "
@@ -75,9 +77,23 @@ class Scheduler:
                   f"{merge_result.provider_yaml or '(skip)'}")
 
             # Update README with latest dates
-            write_readme(self.config)
+            write_readme(self.config, path=self.config.output.get("readme", "README.md"))
 
         return final
+
+    def _probe_settings(self) -> ProbeSettings | None:
+        """Build probe settings when probing is enabled, else ``None``."""
+        probe = self.config.probe
+        if not probe.enabled:
+            return None
+        return ProbeSettings(
+            backend=probe.backend,
+            max_delay_ms=probe.max_delay_ms,
+            timeout_ms=probe.timeout_ms,
+            concurrency=probe.concurrency,
+            mihomo_binary=probe.mihomo_binary,
+            url=probe.url,
+        )
 
     def _resolve_sites(self, target: str | None) -> list[SiteConfig]:
         """Resolve target string to a list of SiteConfig."""
