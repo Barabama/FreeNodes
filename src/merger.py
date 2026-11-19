@@ -14,6 +14,7 @@ cannot run, or it would remove every node, the previous artifacts are left in
 place instead of publishing an empty subscription.
 """
 import asyncio
+import os
 import sys
 from dataclasses import dataclass, field
 from datetime import datetime
@@ -85,7 +86,16 @@ class Merger:
         yaml_proxies = self._collect_yaml_proxies(result)
 
         report = await self._probe(txt_lines, yaml_proxies, result)
-        if report is not None and report.usable:
+        if report is not None:
+            if not report.usable:
+                # A probe that cannot run must not replace verified artifacts
+                # with an unverified list.
+                print("  [merger] probe unavailable — keeping previous merged artifacts")
+                result.merged_txt = str(self.nodes_dir / "merged.txt")
+                result.merged_yaml = str(self.nodes_dir / "merged.yaml")
+                result.provider_yaml = str(self.nodes_dir / "provider.yaml")
+                self._print_summary(result)
+                return result
             txt_lines, yaml_proxies = self._filter_nodes(txt_lines, yaml_proxies, report, result)
 
         result.merged_txt = self._write_txt(txt_lines, result)
@@ -151,7 +161,8 @@ class Merger:
         if self.probe_settings is None:
             return None
 
-        items = self._probe_items(txt_lines, yaml_proxies)
+        convert_txt = (self.probe_settings.backend or "tcp").strip().lower() == "mihomo"
+        items = self._probe_items(txt_lines, yaml_proxies, convert_txt=convert_txt)
         report = await probe(items, self.probe_settings)
         result.probe_backend = report.backend
         result.probe_alive = len(report.alive)
@@ -166,14 +177,16 @@ class Merger:
         return report
 
     @staticmethod
-    def _probe_items(txt_lines: list[str], yaml_proxies: list[dict]) -> list[ProbeItem]:
+    def _probe_items(txt_lines: list[str], yaml_proxies: list[dict],
+                     convert_txt: bool = False) -> list[ProbeItem]:
         """Index probe targets the same way filtering will look them up.
 
-        TXT lines are converted to Clash proxies so the mihomo backend can load
-        them; a line that cannot be converted stays unprobed rather than being
-        treated as dead. Proxy names are made unique because Mihomo refuses a
-        config with duplicate names; filtering uses the original mappings, so
-        renaming never leaks into the output.
+        YAML proxies are always addressable (they carry server/port). TXT lines
+        only need Clash conversion for the mihomo backend, so the default TCP
+        path skips it. A line that cannot be converted stays unprobed rather
+        than being treated as dead. Proxy names are made unique because Mihomo
+        refuses a config with duplicate names; the fingerprint ignores names, so
+        renaming never affects the keys used for filtering.
         """
         items: list[ProbeItem] = []
         used_names: set[str] = set()
@@ -188,18 +201,15 @@ class Merger:
             return candidate
 
         for proxy in yaml_proxies:
-            # The probe key folds in the unique name, so filtering must use the
-            # same key the probe saw after renaming (names may differ post-write).
-            probed = {**proxy, "name": unique_name(proxy.get("name", ""))}
             items.append(ProbeItem(
-                key=_yaml_key(probed),
-                proxy=probed,
+                key=_yaml_key(proxy),
+                proxy={**proxy, "name": unique_name(proxy.get("name", ""))},
                 proxy_type=str(proxy.get("type", "")).lower(),
             ))
         for line in txt_lines:
             endpoint = txt_endpoint(line)
             host, port = endpoint if endpoint else (None, None)
-            proxy = uri_to_proxy(line)
+            proxy = uri_to_proxy(line) if convert_txt else None
             if proxy is not None:
                 proxy = {**proxy, "name": unique_name(proxy.get("name", ""))}
             items.append(ProbeItem(
@@ -234,12 +244,19 @@ class Merger:
 
     # ── Writing ──
 
+    def _write_atomic(self, path: Path, content: str) -> None:
+        """Write *content* to *path* via a temp file, so readers never see a
+        truncated artifact if the process dies mid-write."""
+        temp = path.with_name(path.name + ".tmp")
+        temp.write_text(content, encoding="utf-8")
+        os.replace(temp, path)
+
     def _write_txt(self, lines: list[str], result: MergeResult) -> str:
         if not lines:
             return ""
         txt = "\n".join(lines)
         out = self.nodes_dir / "merged.txt"
-        out.write_text(txt, encoding="utf-8")
+        self._write_atomic(out, txt)
         print(f"  [merger] merged.txt: {result.txt_sources} files, {len(lines)} nodes")
         return str(out)
 
@@ -263,7 +280,9 @@ class Merger:
             sort_keys=False,
         )
         out = self.nodes_dir / "merged.yaml"
-        out.write_text(self._header(f"Merged {result.yaml_sources} yaml files") + yaml_text, encoding="utf-8")
+        self._write_atomic(
+            out, self._header(f"Merged {result.yaml_sources} yaml files") + yaml_text
+        )
         print(f"  [merger] merged.yaml: {result.yaml_sources} files, {len(stringified)} proxies")
         return str(out)
 
@@ -348,7 +367,10 @@ class Merger:
 
         yaml_text = yaml.safe_dump(output, allow_unicode=True, default_flow_style=False)
         out = self.nodes_dir / "provider.yaml"
-        out.write_text(self._header("Proxy-provider based config (for Clash Meta / Mihomo)") + yaml_text, encoding="utf-8")
+        self._write_atomic(
+            out,
+            self._header("Proxy-provider based config (for Clash Meta / Mihomo)") + yaml_text,
+        )
         print(f"  [merger] provider.yaml: {len(yaml_files)} providers, {len(regions)} regions")
         return str(out)
 
@@ -490,11 +512,12 @@ class Merger:
 # ── Probe keys ──
 #
 # Probing runs before filtering, and filtering must look up exactly the keys
-# the probe produced. These helpers keep both sides in sync.
+# the probe produced. Keys are structured tuples rather than joined strings so
+# that two different configurations can never collide on a separator.
 
-def _txt_key(line: str) -> str:
-    return "txt:" + "|".join(txt_fingerprint(line))
+def _txt_key(line: str) -> tuple:
+    return ("txt", *txt_fingerprint(line))
 
 
-def _yaml_key(proxy: dict) -> str:
-    return "yaml:" + "|".join(proxy_fingerprint(proxy))
+def _yaml_key(proxy: dict) -> tuple:
+    return ("yaml", *proxy_fingerprint(proxy))

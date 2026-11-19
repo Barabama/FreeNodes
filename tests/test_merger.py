@@ -248,12 +248,42 @@ class TestProbeFiltering:
         assert result.probe_unprobed == 1
         assert len((tmp_path / "nodes/merged.txt").read_text(encoding="utf-8").splitlines()) == 2
 
-    def test_unavailable_probe_keeps_all_nodes(self, tmp_path, monkeypatch):
+    def test_unavailable_probe_keeps_previous_artifacts_byte_for_byte(
+        self, tmp_path, monkeypatch
+    ):
+        """A probe that cannot run must not overwrite verified artifacts."""
+        nodes = tmp_path / "nodes"
+        nodes.mkdir()
+        TestFileIntegration()._site_files(nodes)
+
+        previous = {
+            "merged.txt": "vless://previous@example.com:443#PREV\n",
+            "merged.yaml": (
+                "proxies:\n"
+                "- {name: PREV, type: vless, server: example.com, port: 443, uuid: u}\n"
+            ),
+            "provider.yaml": "proxy-providers: {}\n",
+        }
+        for name, content in previous.items():
+            (nodes / name).write_text(content, encoding="utf-8")
+
+        async def fake_probe(items, settings):
+            return ProbeReport(backend="mihomo", unavailable="binary missing")
+
+        monkeypatch.setattr("src.merger.probe", fake_probe)
+        result = Merger(nodes_dir=str(nodes), probe_settings=ProbeSettings()).run()
+
+        assert result.probe_unavailable == "binary missing"
+        for name, content in previous.items():
+            assert (nodes / name).read_text(encoding="utf-8") == content, name
+
+    def test_unavailable_probe_keeps_all_nodes_when_no_previous_artifacts(
+        self, tmp_path, monkeypatch
+    ):
         report = ProbeReport(backend="mihomo", unavailable="binary missing")
         result = self._merge(tmp_path, monkeypatch, report)
         assert result.probe_unavailable == "binary missing"
-        assert len((tmp_path / "nodes/merged.txt").read_text(encoding="utf-8").splitlines()) == 2
-        assert len(yaml.safe_load((tmp_path / "nodes/merged.yaml").read_text(encoding="utf-8"))["proxies"]) == 2
+        assert not (tmp_path / "nodes/merged.txt").exists()
 
     def test_filter_that_would_empty_txt_keeps_it(self, tmp_path, monkeypatch):
         nodes = tmp_path / "nodes"
@@ -285,8 +315,8 @@ class TestProbeFiltering:
 
         async def fake_probe(items, settings):
             keys = {item.key for item in items}
-            txt_keys = {key for key in keys if key.startswith("txt:")}
-            yaml_keys = {key for key in keys if key.startswith("yaml:")}
+            txt_keys = {key for key in keys if key[0] == "txt"}
+            yaml_keys = {key for key in keys if key[0] == "yaml"}
             # Keep one txt node and one yaml proxy, drop the rest.
             return ProbeReport(
                 backend="tcp",

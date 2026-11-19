@@ -55,7 +55,9 @@ async def test_tcp_probe_drops_dead_node_and_keeps_unprobed(tmp_path):
     try:
         result = await Merger(
             nodes_dir=str(nodes),
-            probe_settings=ProbeSettings(backend="tcp", timeout_ms=1000),
+            probe_settings=ProbeSettings(
+                backend="tcp", timeout_ms=1000, require_public_targets=False
+            ),
         ).run_async()
     finally:
         server.close()

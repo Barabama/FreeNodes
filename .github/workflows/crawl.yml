@@ -25,15 +25,6 @@ jobs:
           pip install playwright
           playwright install --with-deps chromium
 
-      # Optional: switch probe.backend to "mihomo" in config.yaml to use it.
-      # TCP probing (the default) needs no extra binary.
-      - name: Fetch mihomo (only when probing with mihomo)
-        if: ${{ vars.PROBE_MIHOMO_BINARY != '' }}
-        run: |
-          curl -fsSL -o mihomo.gz \
-            "https://github.com/MetaCubeX/mihomo/releases/latest/download/mihomo-linux-$(uname -m)-v$(curl -fsSL https://api.github.com/repos/MetaCubeX/mihomo/releases/latest | grep -oP '"tag_name": "v\K[^"]+').gz"
-          gunzip -f mihomo.gz && chmod +x mihomo
-
       - name: Run crawler
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}

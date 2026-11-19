@@ -16,7 +16,7 @@
 | 产物 | 改动前 | 问题 |
 | --- | --- | --- |
 | `merged.txt` | 5,779 行 | 只做**整行** MD5 去重。同一节点仅显示名（`#备注`）不同就被当成两个节点 |
-| `merged.yaml` | 3,118 条 | `_dedup_proxies` 用 `server:port:type` 去重，**会误合并**：凭据或传输参数不同、端口相同的两个节点被当成一个 |
+| `merged.yaml` | 4,368 条 | `_dedup_proxies` 用 `server:port:type` 去重，**会误合并**：凭据或传输参数不同、端口相同的两个节点被当成一个 |
 | `provider.yaml` | 仅引用 | 不做节点级筛选 |
 | 测速 | **不存在** | `node_validator` 只做格式校验，`scripts/validate_with_clients.py` 只做客户端加载检查，都不能证明节点可用 |
 
@@ -61,25 +61,34 @@
   `asyncio.run() cannot be called from a running event loop`。
 - `Scheduler` 从 `config.probe` 构造 `ProbeSettings`；`probe.enabled=false` 时完全不探测。
 - `provider.yaml` 仍引用各站点原始文件，**不宣称**它经过筛选（按需求明确不切换）。
+- 探测不可用（后端缺失/API 未就绪）时**保留上一份产物**，不覆盖；写入使用
+  临时文件 + `os.replace` 原子替换。
+- 探测前先解析并校验目标地址：非公网（回环/私网/链路本地/保留地址）一律视为
+  「不可探测」并保留节点，TCP 与 mihomo 两个后端都执行此检查。
 - README 由 `readme_updater` 生成，写明去重/筛选口径与 TCP 测速的局限；
   写进生成器才不会在下次抓取时被覆盖。
 
 ### 4. Workflow
 
-`.github/workflows/crawl.yml` 增加可选步骤：仅当仓库变量 `PROBE_MIHOMO_BINARY`
-非空时下载 Mihomo。默认 TCP 后端不需要任何额外二进制。
+`.github/workflows/crawl.yml` **无需改动**：默认 TCP 后端不依赖任何外部二进制。
+如需 mihomo 后端，在本地或 CI 自行提供二进制路径（`probe.mihomo_binary`）。
 
 ## 验证
 
-- 单元测试 294 个全部通过（`pytest tests/`）。
+- 单元测试 312 个全部通过（`pytest tests/`）。
 - 新增 `tests/test_node_fingerprint.py`、`tests/test_node_probe.py`、
   `tests/test_clash_uri.py`、`tests/test_probe_integration.py`。
-- 探测相关测试只用**本地** TCP 监听器与伪造的 HTTP 客户端，不接触任何公开节点。
-- 真实数据试跑（临时目录副本）：`merged.txt` 5,779 → 3,188 行（−44.8%），
-  `merged.yaml` 3,118 项去重后仍为 3,118（旧规则在本快照下未触发误合并，但规则已加固）。
+- 探测相关测试只用**本地** TCP 监听器与伪造的 HTTP 客户端，不接触任何公开节点；
+  测试里显式关闭 `require_public_targets` 才能用 `127.0.0.1`。
+- 真实数据试跑（临时目录副本）：`merged.txt` 5,779 → 3,188 行（−44.8%）。
+  `merged.yaml` 重建为 4,368 条：旧规则以 `server:port:type` 为键时，同一快照上
+  有 1,647 组同名键，合计 5,993 条会被删掉，而这些条目的凭据或传输参数并不相同。
 
 ## 已知限制
 
 - TCP 测速不等于可用性：能连上端口但认证失败/额度耗尽的节点仍会保留。
 - 需要真实可用性时把 `probe.backend` 改为 `mihomo`，代价是运行时间显著增加。
-- 订阅者会看到 `merged.*` 数量下降，属预期行为。
+- 订阅者会看到 `merged.txt` 数量下降，属预期行为；`merged.yaml` 反而可能变多，
+  因为旧规则误合并的节点被还原。
+- 探测拒绝非公网目标（回环/私网/链路本地 → 视为不可探测并保留），
+  这样第三方订阅无法把 runner 引向内网。

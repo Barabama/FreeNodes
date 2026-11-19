@@ -58,6 +58,9 @@ class ProbeConfig:
     concurrency: int = 32
     mihomo_binary: str = "mihomo"
     url: str = "http://www.gstatic.com/generate_204"
+    # Refuse probing non-public destinations: subscription content is untrusted,
+    # so this prevents it from steering the runner onto a local network.
+    require_public_targets: bool = True
 
 
 @dataclass
@@ -147,6 +150,7 @@ def save_config(config: Config, path: str = "config.yaml"):
             "concurrency": config.probe.concurrency,
             "mihomo_binary": config.probe.mihomo_binary,
             "url": config.probe.url,
+            "require_public_targets": config.probe.require_public_targets,
         },
         "sites": raw_sites,
         "llm": raw_llm,

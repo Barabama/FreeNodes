@@ -93,6 +93,7 @@ class Scheduler:
             concurrency=probe.concurrency,
             mihomo_binary=probe.mihomo_binary,
             url=probe.url,
+            require_public_targets=probe.require_public_targets,
         )
 
     def _resolve_sites(self, target: str | None) -> list[SiteConfig]:

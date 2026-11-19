@@ -10,6 +10,10 @@ import pytest
 
 from src.node_probe import (
     ProbeItem,
+    UnsafeTargetError,
+    _is_public_ip,
+    _tcp_connect,
+    resolve_target,
     ProbeReport,
     ProbeSettings,
     probe,
@@ -45,6 +49,46 @@ class _FakeClient:
         return response or _FakeResponse(404)
 
 
+
+class TestAddressPolicy:
+    """Subscription content is untrusted, so non-public targets are refused."""
+
+    @pytest.mark.parametrize("address", [
+        "127.0.0.1", "10.0.0.1", "192.168.1.1", "169.254.1.1", "0.0.0.0",
+        "::1", "fe80::1", "224.0.0.1", "::ffff:127.0.0.1",
+    ])
+    def test_non_public_addresses_are_rejected(self, address):
+        assert _is_public_ip(address) is False
+
+    @pytest.mark.parametrize("address", ["1.1.1.1", "8.8.8.8", "2606:4700:4700::1111"])
+    def test_public_addresses_are_accepted(self, address):
+        assert _is_public_ip(address) is True
+
+    async def test_loopback_literal_is_reported_unsafe(self):
+        addresses, unsafe = await resolve_target("127.0.0.1")
+        assert addresses is None
+        assert unsafe is True
+
+    async def test_loopback_literal_is_allowed_when_policy_disabled(self):
+        addresses, unsafe = await resolve_target("127.0.0.1", require_public=False)
+        assert addresses == ["127.0.0.1"]
+        assert unsafe is False
+
+    async def test_empty_host_is_not_unsafe(self):
+        addresses, unsafe = await resolve_target("   ")
+        assert addresses is None
+        assert unsafe is False
+
+    async def test_connect_raises_for_non_public_target(self):
+        with pytest.raises(UnsafeTargetError):
+            await _tcp_connect("127.0.0.1", 1, timeout=1, require_public=True)
+
+    async def test_probe_tcp_keeps_non_public_targets_as_unprobed(self):
+        items = [ProbeItem(key="a", host="127.0.0.1", port=1, proxy_type="vless")]
+        report = await _probe_tcp(items, ProbeSettings(timeout_ms=500))
+        assert report.unprobed == {"a"}
+        assert not report.dead
+
 class TestProbeReport:
 
     def test_unavailable_report_keeps_everything(self):
@@ -70,7 +114,7 @@ class TestTcpProbe:
         port = server.sockets[0].getsockname()[1]
         try:
             items = [ProbeItem(key="a", host="127.0.0.1", port=port, proxy_type="vless")]
-            report = await _probe_tcp(items, ProbeSettings(timeout_ms=2000))
+            report = await _probe_tcp(items, ProbeSettings(timeout_ms=2000, require_public_targets=False))
         finally:
             server.close()
             await server.wait_closed()
@@ -85,38 +129,38 @@ class TestTcpProbe:
         await server.wait_closed()
 
         items = [ProbeItem(key="a", host="127.0.0.1", port=port, proxy_type="vless")]
-        report = await _probe_tcp(items, ProbeSettings(timeout_ms=500))
+        report = await _probe_tcp(items, ProbeSettings(timeout_ms=500, require_public_targets=False))
         assert report.dead == {"a"}
 
     async def test_delay_above_threshold_is_dead(self, monkeypatch):
-        async def slow_connect(host, port, timeout):
+        async def slow_connect(host, port, timeout, require_public=True):
             return 4000
 
         monkeypatch.setattr("src.node_probe._tcp_connect", slow_connect)
         items = [ProbeItem(key="a", host="127.0.0.1", port=1, proxy_type="vless")]
-        report = await _probe_tcp(items, ProbeSettings(max_delay_ms=3000))
+        report = await _probe_tcp(items, ProbeSettings(max_delay_ms=3000, require_public_targets=False))
         assert report.dead == {"a"}
         assert report.delays["a"] == 4000
 
     async def test_delay_at_threshold_is_alive(self, monkeypatch):
-        async def borderline_connect(host, port, timeout):
+        async def borderline_connect(host, port, timeout, require_public=True):
             return 3000
 
         monkeypatch.setattr("src.node_probe._tcp_connect", borderline_connect)
         items = [ProbeItem(key="a", host="127.0.0.1", port=1, proxy_type="vless")]
-        report = await _probe_tcp(items, ProbeSettings(max_delay_ms=3000))
+        report = await _probe_tcp(items, ProbeSettings(max_delay_ms=3000, require_public_targets=False))
         assert report.alive == {"a"}
 
     async def test_udp_only_protocol_is_unprobed(self):
         items = [ProbeItem(key="h", host="127.0.0.1", port=1, proxy_type="hysteria2")]
-        report = await _probe_tcp(items, ProbeSettings(timeout_ms=100))
+        report = await _probe_tcp(items, ProbeSettings(timeout_ms=100, require_public_targets=False))
         assert report.unprobed == {"h"}
         assert not report.alive
         assert not report.dead
 
     async def test_endpoint_without_host_is_unprobed(self):
         items = [ProbeItem(key="x", host=None, port=None, proxy_type="vless")]
-        report = await _probe_tcp(items, ProbeSettings(timeout_ms=100))
+        report = await _probe_tcp(items, ProbeSettings(timeout_ms=100, require_public_targets=False))
         assert report.unprobed == {"x"}
 
     async def test_shared_endpoint_is_probed_once(self):
@@ -127,7 +171,7 @@ class TestTcpProbe:
                 ProbeItem(key="a", host="127.0.0.1", port=port, proxy_type="vless"),
                 ProbeItem(key="b", host="127.0.0.1", port=port, proxy_type="vless"),
             ]
-            report = await _probe_tcp(items, ProbeSettings(timeout_ms=2000))
+            report = await _probe_tcp(items, ProbeSettings(timeout_ms=2000, require_public_targets=False))
         finally:
             server.close()
             await server.wait_closed()
