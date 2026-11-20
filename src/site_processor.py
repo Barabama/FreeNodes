@@ -9,7 +9,8 @@ import asyncio
 import re
 import tempfile
 from dataclasses import dataclass, field
-from datetime import date
+from datetime import date, datetime, timezone
+from email.utils import parsedate_to_datetime
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
 
@@ -30,7 +31,14 @@ class SiteResult:
     total_bytes: int = 0
     pattern_saved: bool = False
     link_pattern: str | None = None
+    skipped: int = 0
     errors: list[str] = field(default_factory=list)
+
+
+# Fixed delay between download retries when the server gives no guidance.
+_DEFAULT_RETRY_DELAY_S = 1.5
+# Cap on Retry-After so a hostile header cannot stall the whole run.
+_MAX_RETRY_AFTER_S = 30.0
 
 
 class SiteProcessor:
@@ -129,7 +137,7 @@ class SiteProcessor:
                                 result.yaml_count += 1
                                 result.total_bytes += len(body)
                             else:
-                                result.errors.append(f"unsupported subscription content: {path.name}")
+                                result.skipped += 1
                             print(f"    extracted: {path.name} ({len(body)}B, {kind})")
 
                 # Fallback: try paste.to links if no Drive links
@@ -162,7 +170,7 @@ class SiteProcessor:
                                                     result.yaml_count += 1
                                                     result.total_bytes += len(body)
                                                 else:
-                                                    result.errors.append(f"unsupported subscription content: {content}")
+                                                    result.skipped += 1
                                                 print(f"    downloaded: {content} ({len(body)}B, {kind})")
                                         except Exception as e:
                                             print(f"    failed: {content} ({e})")
@@ -248,10 +256,15 @@ class SiteProcessor:
         yaml_contents: list[str] = []
 
         for url in sorted(all_links):
-            body = await self._download_retry(url)
+            body, error = await self._download_retry(url)
+            if body is None:
+                detail = f" ({error})" if error else ""
+                result.errors.append(f"download failed: {url}{detail}")
+                print(f"  FAIL: {url}{detail}")
+                continue
             if not body:
-                result.errors.append(f"download failed: {url}")
-                print(f"  FAIL: {url}")
+                result.skipped += 1
+                print(f"  SKIP empty file (0 bytes): {url}")
                 continue
             kind = self._detect_content_kind(body)
             if kind == "yaml":
@@ -265,7 +278,7 @@ class SiteProcessor:
                 result.total_bytes += len(body)
                 print(f"  OK  txt: {url} ({len(body)}B)")
             else:
-                result.errors.append(f"unsupported subscription content: {url}")
+                result.skipped += 1
                 print(f"  SKIP unsupported: {url} ({len(body)}B)")
 
         return self._save_and_finish(result, txt_contents, yaml_contents)
@@ -501,6 +514,8 @@ class SiteProcessor:
 
         print(f"\n{'='*60}")
         print(f"DONE: {self.site.name} — {result.txt_count} txt + {result.yaml_count} yaml ({result.total_bytes}B)")
+        if result.skipped:
+            print(f"  skipped: {result.skipped} (unsupported or empty content)")
         if result.pattern_saved:
             print(f"  pattern self-healed: {self.site.link_pattern}")
         print(f"{'='*60}")
@@ -582,17 +597,56 @@ class SiteProcessor:
         return cleaned
 
     @staticmethod
-    async def _download_retry(url: str, retries: int = 3) -> str | None:
-        """Download a file with retry."""
+    async def _download_retry(url: str, retries: int = 3) -> tuple[str | None, str | None]:
+        """Download a file with retry.
+
+        Returns ``(body, error)``. ``body`` is ``""`` for a 200 response with an
+        empty payload, or ``None`` when all attempts failed; ``error`` then
+        describes the last failure (for example ``"HTTP 404"``).
+
+        A valid ``Retry-After`` header overrides the default delay, capped at
+        :data:`_MAX_RETRY_AFTER_S` so a hostile value cannot stall the run.
+        """
+        last_error: str | None = None
         for attempt in range(retries):
             try:
-                return await download_file(url)
+                return await download_file(url), None
             except Exception as e:
-                msg = str(e) or "timeout"
+                last_error = str(e) or "timeout"
                 if attempt < retries - 1:
-                    print(f"    retry {attempt+1}/{retries} {url} ({msg})")
-                    await asyncio.sleep(1.5)
-        return None
+                    retry_after = getattr(e, "retry_after", None)
+                    seconds = SiteProcessor._parse_retry_after(retry_after)
+                    delay = _DEFAULT_RETRY_DELAY_S if seconds is None else seconds
+                    print(f"    retry {attempt+1}/{retries} {url} ({last_error}, {delay:g}s)")
+                    await asyncio.sleep(delay)
+        return None, last_error
+
+    @staticmethod
+    def _parse_retry_after(value: str | None) -> float | None:
+        """Parse a ``Retry-After`` header into seconds.
+
+        Accepts both RFC 9110 forms: delta-seconds (``"120"``) and an HTTP-date
+        (``"Wed, 21 Oct 2015 07:28:00 GMT"``). Returns ``None`` when the value
+        is absent or malformed, so the caller falls back to its default delay.
+        """
+        if not value:
+            return None
+        text = value.strip()
+        if not text:
+            return None
+        if text.isascii() and text.isdigit():
+            seconds = float(text)
+        else:
+            try:
+                when = parsedate_to_datetime(text)
+            except (TypeError, ValueError):
+                return None
+            if when is None:
+                return None
+            if when.tzinfo is None:
+                when = when.replace(tzinfo=timezone.utc)
+            seconds = (when - datetime.now(timezone.utc)).total_seconds()
+        return min(max(seconds, 0.0), _MAX_RETRY_AFTER_S)
 
     @staticmethod
     def _derive_base(start_url: str) -> str:
