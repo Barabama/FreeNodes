@@ -338,6 +338,68 @@ class TestDownloadRetry:
         assert body is None
         assert error == "HTTP 404"
 
+    async def test_permanent_4xx_is_not_retried(self, monkeypatch):
+        """A stale 404 link cannot recover within one run; retrying wastes time."""
+        calls: list[str] = []
+
+        async def fake_download(url):
+            calls.append(url)
+            raise DownloadError("HTTP 404", status_code=404)
+
+        monkeypatch.setattr("src.site_processor.download_file", fake_download)
+        body, error = await SiteProcessor._download_retry("http://x.com/missing.txt", retries=3)
+        assert body is None
+        assert error == "HTTP 404"
+        assert len(calls) == 1
+
+    async def test_403_is_not_retried(self, monkeypatch):
+        calls: list[str] = []
+
+        async def fake_download(url):
+            calls.append(url)
+            raise DownloadError("HTTP 403", status_code=403)
+
+        monkeypatch.setattr("src.site_processor.download_file", fake_download)
+        await SiteProcessor._download_retry("http://x.com/blocked.txt", retries=3)
+        assert len(calls) == 1
+
+    async def test_429_is_retried(self, monkeypatch):
+        """Rate limiting is transient, so the retry budget still applies."""
+        calls: list[str] = []
+
+        async def fake_download(url):
+            calls.append(url)
+            raise DownloadError("HTTP 429", status_code=429, retry_after="0")
+
+        monkeypatch.setattr("src.site_processor.download_file", fake_download)
+        body, error = await SiteProcessor._download_retry("http://x.com/limited.txt", retries=3)
+        assert body is None
+        assert error == "HTTP 429"
+        assert len(calls) == 3
+
+    async def test_5xx_is_retried(self, monkeypatch):
+        calls: list[str] = []
+
+        async def fake_download(url):
+            calls.append(url)
+            raise DownloadError("HTTP 502", status_code=502, retry_after="0")
+
+        monkeypatch.setattr("src.site_processor.download_file", fake_download)
+        await SiteProcessor._download_retry("http://x.com/bad-gateway.txt", retries=2)
+        assert len(calls) == 2
+
+    async def test_network_error_is_retried(self, monkeypatch):
+        """Exceptions without a status code stay retryable."""
+        calls: list[str] = []
+
+        async def fake_download(url):
+            calls.append(url)
+            raise OSError("connection reset")
+
+        monkeypatch.setattr("src.site_processor.download_file", fake_download)
+        await SiteProcessor._download_retry("http://x.com/x.txt", retries=2)
+        assert len(calls) == 2
+
     async def test_retry_after_delta_seconds_honoured(self, monkeypatch):
         """Retry-After: 5 → sleep 5s instead of the fixed 1.5s."""
         delays: list[float] = []

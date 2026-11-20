@@ -613,6 +613,11 @@ class SiteProcessor:
                 return await download_file(url), None
             except Exception as e:
                 last_error = str(e) or "timeout"
+                # A 4xx other than 429/408 means the resource will not appear on
+                # a retry (404 stale link, 403 blocked); retrying only wastes
+                # time. 429 and 5xx are transient.
+                if SiteProcessor._is_permanent_failure(e):
+                    break
                 if attempt < retries - 1:
                     retry_after = getattr(e, "retry_after", None)
                     seconds = SiteProcessor._parse_retry_after(retry_after)
@@ -620,6 +625,19 @@ class SiteProcessor:
                     print(f"    retry {attempt+1}/{retries} {url} ({last_error}, {delay:g}s)")
                     await asyncio.sleep(delay)
         return None, last_error
+
+    @staticmethod
+    def _is_permanent_failure(exc: Exception) -> bool:
+        """Whether retrying *exc* cannot help.
+
+        ``429`` (rate limited) and ``408`` (timeout) are transient by
+        definition; other 4xx responses (404 stale link, 403 blocked) will not
+        change within one run.
+        """
+        status = getattr(exc, "status_code", None)
+        if not isinstance(status, int):
+            return False
+        return 400 <= status < 500 and status not in {408, 429}
 
     @staticmethod
     def _parse_retry_after(value: str | None) -> float | None:
