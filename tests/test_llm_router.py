@@ -220,9 +220,9 @@ def _make_router(config: Config | None = None, providers: dict[str, list[str | N
         def fake_try(cfg, prompt, max_tokens):
             try:
                 resp = next(iterator)
-                return resp.choices[0].message.content
+                return resp.choices[0].message.content, False
             except StopIteration:
-                return None
+                return None, True
 
         router._try_provider = fake_try
 
@@ -265,7 +265,7 @@ class TestLLMRouter:
         router = LLMRouter(config, timeout_s=5)
 
         async def fake_try(cfg, prompt, mt):
-            return "ok-from-p1"
+            return "ok-from-p1", False
 
         router._try_provider = fake_try
         result = await router.ask("hi")
@@ -293,8 +293,8 @@ class TestLLMRouter:
         async def fake_try(cfg, prompt, mt):
             calls.append(cfg.name)
             if cfg.name == "p1":
-                return None  # p1 fails
-            return "ok-from-p2"
+                return None, True  # p1 fails
+            return "ok-from-p2", False
 
         router._try_provider = fake_try
         result = await router.ask("hi")
@@ -303,34 +303,118 @@ class TestLLMRouter:
     async def test_ask_returns_empty_when_all_fail(self):
         """When every provider fails, return empty string (never raise)."""
         router = _make_router()
-        async def always_fail(cfg, prompt, mt): return None
+        async def always_fail(cfg, prompt, mt): return None, True
         router._try_provider = always_fail
         result = await router.ask("hi")
         assert result == ""
+
+    async def test_empty_responses_do_not_disable_providers(self):
+        """HTTP 200 with no text is not an outage and must not trip health."""
+        router = _make_router()
+
+        async def empty(cfg, prompt, mt):
+            return None, False
+
+        router._try_provider = empty
+        for _ in range(10):
+            assert await router.ask("hi") == ""
+
+        report = router._health.health_report()
+        assert report.get("mock-a", {}).get("failures", 0) == 0
+        assert report.get("mock-b", {}).get("failures", 0) == 0
+        assert router._health.is_healthy("mock-a")
+        assert router._health.is_healthy("mock-b")
+
+    async def test_provider_errors_still_disable(self):
+        """Real errors keep the existing health-tracking behaviour."""
+        router = _make_router()
+
+        async def broken(cfg, prompt, mt):
+            return None, True
+
+        router._try_provider = broken
+        for _ in range(10):
+            await router.ask("hi")
+
+        assert not router._health.is_healthy("mock-a")
+        assert not router._health.is_healthy("mock-b")
+
+    async def test_try_provider_reads_reasoning_when_content_empty(self, monkeypatch):
+        """Reasoning models must not be silently treated as failures."""
+        monkeypatch.setattr("src.llm_router.os.getenv", lambda key, default="": "key")
+
+        msg = FakeResponseMessage(content=None, reasoning="answer from reasoning")
+        response = type("R", (), {"choices": [type("C", (), {"message": msg})]})()
+
+        class FakeCompletions:
+            async def create(self, **kwargs):
+                return response
+
+        class FakeChat:
+            completions = FakeCompletions()
+
+        class FakeClient:
+            def __init__(self, **kwargs):
+                self.chat = FakeChat()
+
+        monkeypatch.setattr("src.llm_router.AsyncOpenAI", FakeClient)
+        router = _make_router()
+        cfg = router._providers["mock-a"]
+        text, failed = await router._try_provider(cfg, "hi", 10)
+        assert text == "answer from reasoning"
+        assert failed is False
+
+    async def test_try_provider_flags_only_real_errors(self, monkeypatch):
+        monkeypatch.setattr("src.llm_router.os.getenv", lambda key, default="": "key")
+
+        class FakeCompletions:
+            async def create(self, **kwargs):
+                if kwargs["model"] == "m-a":
+                    raise RuntimeError("boom")
+                msg = FakeResponseMessage(content=None, reasoning=None)
+                return type("R", (), {"choices": [type("C", (), {"message": msg})]})()
+
+        class FakeChat:
+            completions = FakeCompletions()
+
+        class FakeClient:
+            def __init__(self, **kwargs):
+                self.chat = FakeChat()
+
+        monkeypatch.setattr("src.llm_router.AsyncOpenAI", FakeClient)
+        router = LLMRouter.__new__(LLMRouter)
+        router._timeout_s = 5
+        cfg = ProviderConfig(name="p", base_url="http://x", api_key_env="K",
+                             models=["m-a", "m-b"])
+        text, failed = await router._try_provider(cfg, "hi", 10)
+        assert text is None
+        # One model raised, the other answered with empty text: the endpoint
+        # worked, so the provider is not marked unhealthy.
+        assert failed is False
 
     # ── _response_text ──
 
     def test_response_text_normal(self):
         resp = FakeResponse("hello")
-        text = LLMRouter._response_text(resp, is_reasoning=False)
+        text = LLMRouter._response_text(resp)
         assert text == "hello"
 
-    def test_response_text_reasoning_model(self):
+    def test_response_text_uses_reasoning_when_content_empty(self):
         msg = FakeResponseMessage(content=None, reasoning="thinking... answer: 42")
         resp = type("R", (), {"choices": [type("C", (), {"message": msg})]})()
-        text = LLMRouter._response_text(resp, is_reasoning=True)
+        text = LLMRouter._response_text(resp)
         assert text == "thinking... answer: 42"
 
     def test_response_text_empty_when_both_none(self):
         msg = FakeResponseMessage(content=None, reasoning=None)
         resp = type("R", (), {"choices": [type("C", (), {"message": msg})]})()
-        text = LLMRouter._response_text(resp, is_reasoning=False)
+        text = LLMRouter._response_text(resp)
         assert text == ""
 
     def test_response_text_prefers_content_over_reasoning(self):
         msg = FakeResponseMessage(content="real answer", reasoning="thinking...")
         resp = type("R", (), {"choices": [type("C", (), {"message": msg})]})()
-        text = LLMRouter._response_text(resp, is_reasoning=True)
+        text = LLMRouter._response_text(resp)
         assert text == "real answer"
 
     # ── _parse_json ──

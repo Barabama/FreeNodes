@@ -125,11 +125,15 @@ class LLMRouter:
             provider = self._providers.get(name)
             if provider is None:
                 continue
-            result = await self._try_provider(provider, prompt, max_tokens)
+            result, provider_failed = await self._try_provider(provider, prompt, max_tokens)
             if result is not None:
                 self._health.record_success(name)
                 return result
-            self._health.record_failure(name)
+            # An HTTP 200 with no usable text is not a provider outage: the
+            # endpoint answered, the model just returned nothing. Counting it
+            # would eventually disable the only working provider.
+            if provider_failed:
+                self._health.record_failure(name)
         logger.error(
             "ALL LLM providers failed for task_type='%s'. Providers tried: %s. "
             "Check provider API keys and model names in config.yaml.",
@@ -178,7 +182,7 @@ class LLMRouter:
             "- No explanations — not even a single word outside the regex\n"
             "Regex:"
         )
-        text = await self.ask(prompt, task_type="generate_pattern", max_tokens=256)
+        text = await self.ask(prompt, task_type="generate_pattern", max_tokens=1024)
         if not text:
             return None
         return self._extract_regex(text)
@@ -220,13 +224,21 @@ class LLMRouter:
     # ── Internals ──
 
     async def _try_provider(self, cfg: ProviderConfig, prompt: str,
-                            max_tokens: int) -> str | None:
+                            max_tokens: int) -> tuple[str | None, bool]:
+        """Try every model of *cfg*.
+
+        Returns ``(text, provider_failed)``. ``provider_failed`` is true only
+        when every model raised an error; a model that answered with empty
+        content is logged but does not mark the provider as unhealthy.
+        """
         api_key = os.getenv(cfg.api_key_env, "")
         if not api_key:
             logger.warning("No API key for %s (env: %s)", cfg.name, cfg.api_key_env)
-            return None
+            return None, True
         client = AsyncOpenAI(base_url=cfg.base_url, api_key=api_key,
                              timeout=self._timeout_s)
+        saw_error = False
+        saw_empty = False
         for model in cfg.models:
             try:
                 resp = await client.chat.completions.create(
@@ -235,21 +247,31 @@ class LLMRouter:
                     temperature=0.1,
                     max_tokens=max_tokens,
                 )
-                text = self._response_text(resp, cfg.is_reasoning_model)
-                if text:
-                    return text
             except Exception as e:
                 logger.warning("LLM call failed [%s/%s]: %s", cfg.name, model, e)
+                saw_error = True
                 continue
-        return None
+            text = self._response_text(resp)
+            if text:
+                return text, False
+            logger.warning("LLM returned empty content [%s/%s]", cfg.name, model)
+            saw_empty = True
+        return None, saw_error and not saw_empty
 
     @staticmethod
-    def _response_text(resp, is_reasoning: bool) -> str:
+    def _response_text(resp) -> str:
+        """Extract usable text from a completion.
+
+        Reasoning models may put everything in ``reasoning`` while ``content``
+        is empty, so that field is used whenever content is missing — the
+        provider config's ``is_reasoning_model`` flag is too coarse to rely on.
+        """
         msg = resp.choices[0].message
         if msg.content:
             return msg.content
-        if is_reasoning and msg.reasoning:
-            return msg.reasoning
+        reasoning = getattr(msg, "reasoning", None)
+        if reasoning:
+            return reasoning
         return ""
 
     @staticmethod
