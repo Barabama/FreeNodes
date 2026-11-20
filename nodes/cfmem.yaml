@@ -1,17 +1,106 @@
 proxies:
 - type: vless
-  name: 🇺🇸_US_美国_IPV4
-  server: 172.233.129.179
+  name: 🇯🇵_JP_日本_IPV4
+  server: 149.28.29.156
   port: 443
-  uuid: 8d602a84-d258-4953-8ef7-d64afff2e879
+  uuid: aa1a9052-720f-4bb0-92be-21b6baf9f386
   tls: true
   servername: itunes.apple.com
   sni: itunes.apple.com
   skip-cert-verify: false
   client-fingerprint: chrome
   reality-opts:
-    public-key: "5UVOUoMBYxyWuF-FCbXoEt8LHFkj7iZqZOABlvyvXV8"
-    short-id: "955c702b"
+    public-key: "qgCGmxD1lyAEIGZVEk4buAMGcvGvHLl9wGxPQlHCYX0"
+    short-id: "e535df57"
+  network: ws
+  ws-opts:
+    path: /ws
+    headers:
+      Host: itunes.apple.com
+- type: vless
+  name: 🇯🇵_JP_日本_IPV4 (2)
+  server: 198.13.53.39
+  port: 443
+  uuid: 8f21c635-ef0a-4b05-8356-f44d463b6e34
+  tls: true
+  servername: itunes.apple.com
+  sni: itunes.apple.com
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: "xxPVgbxguyYuVIml6Eh6ZGcDLO1z0OWKZXfDdUGFv1k"
+    short-id: "7a7cc838"
+  network: ws
+  ws-opts:
+    path: /ws
+    headers:
+      Host: itunes.apple.com
+- type: ss
+  name: 🇺🇸_US_美国_IPV4
+  server: 47.85.162.44
+  port: 443
+  password: 3NBsnBLanPfG6i3S2GTHineswr6EeSJPb0PCeMQoGoA=
+  cipher: 2022-blake3-chacha20-poly1305
+  tls: false
+  skip-cert-verify: false
+- type: vless
+  name: 🇩🇪_DE_德国->🇫🇷_FR_法国_IPV4
+  server: 163.245.42.87
+  port: 443
+  uuid: b9bfa54d-bc44-4592-a6d6-89a9665d286f
+  flow: xtls-rprx-vision
+  tls: true
+  servername: mother-earth.fyi
+  sni: mother-earth.fyi
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+- type: hysteria
+  name: 🇫🇷_FR_法国_IPV4
+  server: 62.210.124.132
+  port: 24667
+  password: dongtaiwang.com
+  tls: true
+  servername: bing.com
+  sni: bing.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  up: '11'
+  down: '55'
+  auth-str: dongtaiwang.com
+- type: vless
+  name: 🇸🇬_SG_新加坡_IPV4
+  server: 139.162.20.241
+  port: 443
+  uuid: 7f0270f9-1abc-4c4f-960d-0a23e32f1eb8
+  tls: true
+  servername: itunes.apple.com
+  sni: itunes.apple.com
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: "fG1u2AZj5pgSNWO3MBmkoY6K61xBwnuYX3_z1fSeR0o"
+    short-id: "640c807d"
+  network: ws
+  ws-opts:
+    path: /ws
+    headers:
+      Host: itunes.apple.com
+- type: vless
+  name: 🇯🇵_JP_日本_IPV4 (3)
+  server: 139.162.91.239
+  port: 443
+  uuid: b0dc852a-97ec-4d4e-9179-f0e5c2ef1489
+  tls: true
+  servername: itunes.apple.com
+  sni: itunes.apple.com
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: "7PBmAR6CGAh2naIi09rlP_PtmLmqhlXF_toZEdAHmRo"
+    short-id: "7c6d6833"
   network: ws
   ws-opts:
     path: /ws
@@ -19,42 +108,6 @@ proxies:
       Host: itunes.apple.com
 - type: vless
   name: 🇺🇸_US_美国_IPV4 (2)
-  server: 172.233.139.98
-  port: 443
-  uuid: 62b5a30a-89de-4da7-b1c0-08abfad0cd1d
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "ZtWVf2gAix3etGziWVZ9apsWfWb5UOepCWQqVyIGxHI"
-    short-id: "4d3f31a1"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (3)
-  server: 172.233.157.18
-  port: 443
-  uuid: 9a10a216-c8db-48d5-bb91-cf1ef245bd1d
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "4DL3ZveBq9TIQbtIp2ZtIPI6zRFHGdcVAW-poC0UqDA"
-    short-id: "30aa62c5"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (4)
   server: 172.235.63.167
   port: 443
   uuid: d95f222c-3a63-47f8-8e61-af83e1f143f5
@@ -72,7 +125,7 @@ proxies:
     headers:
       Host: itunes.apple.com
 - type: vless
-  name: 🇺🇸_US_美国_IPV4 (5)
+  name: 🇺🇸_US_美国_IPV4 (3)
   server: 45.32.70.42
   port: 443
   uuid: 8c392beb-524d-4d0a-a3a6-4d542d54a1ff
@@ -90,7 +143,7 @@ proxies:
     headers:
       Host: itunes.apple.com
 - type: vless
-  name: 🇸🇬_SG_新加坡_IPV4
+  name: 🇸🇬_SG_新加坡_IPV4 (2)
   server: 172.104.48.194
   port: 443
   uuid: a28d0884-193d-4591-aa64-8638ba1481ce
@@ -108,25 +161,7 @@ proxies:
     headers:
       Host: itunes.apple.com
 - type: vless
-  name: 🇯🇵_JP_日本_IPV4
-  server: 139.162.91.224
-  port: 443
-  uuid: ff3038b1-a2f5-428f-89cd-5d5e4efba8e7
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "wmbc3kcjbG9-A9Fi7zaHuRVPH7A7UQkKNNvqyqJtMEk"
-    short-id: "e5b03494"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇯🇵_JP_日本_IPV4 (2)
+  name: 🇯🇵_JP_日本_IPV4 (4)
   server: 172.104.86.181
   port: 443
   uuid: 010431f3-04f6-4404-a801-b93bf2e3c2b2
@@ -144,61 +179,7 @@ proxies:
     headers:
       Host: itunes.apple.com
 - type: vless
-  name: 🇯🇵_JP_日本_IPV4 (3)
-  server: 172.105.197.24
-  port: 443
-  uuid: 81f4e114-5a60-41b5-9038-8d742380c84f
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "EfNOl6-YAuW-WSg7Op-1YOqKZV9emIuLwH8YPhzc7ms"
-    short-id: "772bef67"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇯🇵_JP_日本_IPV4 (4)
-  server: 139.162.91.137
-  port: 443
-  uuid: 5e6575a1-459c-4077-ac3d-92dea966ad7c
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "4LfX16VwHkHQzoZ04o2VnO85N1o_Y8OcoJwfYdfaIGw"
-    short-id: "0c0c806b"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
   name: 🇯🇵_JP_日本_IPV4 (5)
-  server: 139.162.101.74
-  port: 443
-  uuid: 1e709d98-d4c3-45c1-bdcc-4268cf83eff8
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "jd8UNLpim43LVV-iEzIXlUgTVuvi9Pf7E0kgQb3o0CI"
-    short-id: "7e1e09f4"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇯🇵_JP_日本_IPV4 (6)
   server: 172.105.203.15
   port: 443
   uuid: c8c9b995-b4b9-4915-9c7d-dee94aa733ba
@@ -216,97 +197,7 @@ proxies:
     headers:
       Host: itunes.apple.com
 - type: vless
-  name: 🇯🇵_JP_日本_IPV4 (7)
-  server: 172.105.212.91
-  port: 443
-  uuid: 1f08d52f-126e-46e3-929a-4b6a58e21168
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "jb8kqeM_3z0NW3huxWLD0ma2eUCFRsiwapF9I_O3Ei8"
-    short-id: "17676229"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇸🇬_SG_新加坡_IPV4 (2)
-  server: 172.104.186.205
-  port: 443
-  uuid: eafa7d0d-db1c-4c91-8fd8-587cd218008e
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "dT50iKOzQz2utAi1tcwsU86hbaS78JeDY_xST0nP5D4"
-    short-id: "aea01663"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇯🇵_JP_日本_IPV4 (8)
-  server: 139.162.91.200
-  port: 443
-  uuid: 847bdd83-9e2f-4708-81ed-729a2ca6eeec
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "-g20lzrrmgQb5wbq0vJ2OkZo_-j4KcFq_JDGVp5n_TQ"
-    short-id: "7bae4b22"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇯🇵_JP_日本_IPV4 (9)
-  server: 139.162.89.151
-  port: 443
-  uuid: dbca719d-2cfb-48a2-8bc6-8c658a24b142
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "Q_HUTa9IpIBeTmm71KVwJrzdgBag_PpMtTKoH2fY3Qo"
-    short-id: "07febec7"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (6)
-  server: 172.233.129.46
-  port: 443
-  uuid: 325a2d32-286c-44d8-8bf7-d6dc85ecfd53
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "Z0yUixOaVZhwnYyI9XtSSqgxBCerCWqticoYPmwPzzA"
-    short-id: "dd282cb2"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (7)
+  name: 🇺🇸_US_美国_IPV4 (4)
   server: 172.236.227.60
   port: 443
   uuid: 3c8a110d-f04d-4f0e-9579-fd00631b8830
@@ -324,7 +215,7 @@ proxies:
     headers:
       Host: itunes.apple.com
 - type: vless
-  name: 🇺🇸_US_美国_IPV4 (8)
+  name: 🇺🇸_US_美国_IPV4 (5)
   server: 172.233.142.149
   port: 443
   uuid: 61e3954d-0d66-4b69-b6cd-9b4fc2352303
@@ -342,115 +233,43 @@ proxies:
     headers:
       Host: itunes.apple.com
 - type: vless
-  name: 🇺🇸_US_美国_IPV4 (9)
-  server: 172.233.156.229
-  port: 443
-  uuid: b9bc6f6c-09b7-43ce-b9c7-312d37f1a312
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "jTnoGvXzAIa2lsfioHHRJ1lAj1xqjowhcCwGcfme8QY"
-    short-id: "826efd30"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (10)
-  server: 172.233.139.212
-  port: 443
-  uuid: b21a60ef-9042-42c8-bb13-160528ea19c6
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "bRB-Z_UOQ_sk8UFczAjrpkgKIg6cVdTNGnsyC7vAoyg"
-    short-id: "7a87386b"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
   name: 🇸🇬_SG_新加坡_IPV4 (3)
-  server: 149.28.152.20
+  server: 139.180.221.53
   port: 443
-  uuid: e17ca473-bd02-4fe6-873f-5866d729b0a3
+  uuid: 2b30d0df-6ebe-4aed-9bad-b7c554e35e1d
   tls: true
   servername: itunes.apple.com
   sni: itunes.apple.com
   skip-cert-verify: false
   client-fingerprint: chrome
   reality-opts:
-    public-key: "sli7AT0WEhYMVMARhHh-ZQMK7zHHn0cGsxw2gPhoBis"
-    short-id: "107ff148"
+    public-key: "plfXwkb-ewI6iibJBTRmPnf8eqPId1BfdArMIm3_mB4"
+    short-id: "2f6f6f87"
   network: ws
   ws-opts:
     path: /ws
     headers:
       Host: itunes.apple.com
 - type: vless
-  name: 🇸🇬_SG_新加坡_IPV4 (4)
-  server: 139.180.215.25
+  name: 🇯🇵_JP_日本_IPV4 (6)
+  server: 45.76.222.108
   port: 443
-  uuid: bbc20d3e-0391-48f1-ad72-90a6802f728e
+  uuid: bd95a04e-e3e1-460e-b89d-e9a693d393e0
   tls: true
   servername: itunes.apple.com
   sni: itunes.apple.com
   skip-cert-verify: false
   client-fingerprint: chrome
   reality-opts:
-    public-key: "ybu5pFdSV23WsnMNhbpa8TwV6TJd6NLZ6HX-ggww61A"
-    short-id: "83f673ba"
+    public-key: "-_YzpVlKrn08il_kQdHxHTvJyWYAdetWN_IFRtvPgmE"
+    short-id: "b5c85d2d"
   network: ws
   ws-opts:
     path: /ws
     headers:
       Host: itunes.apple.com
 - type: vless
-  name: 🇸🇬_SG_新加坡_IPV4 (5)
-  server: 45.76.191.30
-  port: 443
-  uuid: d8aaaf9a-cea4-4c5a-975b-68ddc26f9891
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "-KlJUCwLvYy2pz5jR2RgmYMEhacPNPhwvlbdiKkAh1Y"
-    short-id: "6cc51755"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (11)
-  server: 172.235.51.71
-  port: 443
-  uuid: 3c17ead6-201a-4fba-8246-6327b911a1be
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "rzeXNEmuocvPVMnmettRsJbHQGjQGaZoH7jNw_3GUD8"
-    short-id: "4bf84b30"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (12)
+  name: 🇺🇸_US_美国_IPV4 (6)
   server: 172.236.241.130
   port: 443
   uuid: 21117a67-21c2-4e2a-ba8f-bc49e23b0ae8
@@ -468,25 +287,7 @@ proxies:
     headers:
       Host: itunes.apple.com
 - type: vless
-  name: 🇯🇵_JP_日本_IPV4 (10)
-  server: 172.237.14.205
-  port: 443
-  uuid: 4796e022-f377-4a97-bc03-fbf525d7913c
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "dllB1KTn7oiEqa6OlmZl-j2kF5GN9bAQeoBinYV2cUQ"
-    short-id: "da26e5a2"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (13)
+  name: 🇺🇸_US_美国_IPV4 (7)
   server: 172.235.37.168
   port: 443
   uuid: dbac71f3-ab05-4194-985b-f07088bf1a4a
@@ -504,25 +305,25 @@ proxies:
     headers:
       Host: itunes.apple.com
 - type: vless
-  name: 🇺🇸_US_美国_IPV4 (14)
-  server: 172.233.140.139
+  name: 🇺🇸_US_美国_IPV4 (8)
+  server: 172.236.233.130
   port: 443
-  uuid: 82b258c9-f4ae-46f6-8c1a-322b316a2e0d
+  uuid: a663dc28-28dc-4f97-9665-6ac215c8e567
   tls: true
   servername: itunes.apple.com
   sni: itunes.apple.com
   skip-cert-verify: false
   client-fingerprint: chrome
   reality-opts:
-    public-key: "l1Tts2VQAnD1We9lPKqw9GqnMAHiIlYhsaw5ASVrTGM"
-    short-id: "5c298270"
+    public-key: "4wXbhUoSy9s9bGy9PaK18XVTTw3wXkBDjEusiMHaMB4"
+    short-id: "53908445"
   network: ws
   ws-opts:
     path: /ws
     headers:
       Host: itunes.apple.com
 - type: vless
-  name: 🇺🇸_US_美国_IPV4 (15)
+  name: 🇺🇸_US_美国_IPV4 (9)
   server: 107.191.58.86
   port: 443
   uuid: 4444e77e-3d2a-4dc9-bf31-936f038f5570
@@ -540,313 +341,43 @@ proxies:
     headers:
       Host: itunes.apple.com
 - type: vless
-  name: 🇺🇸_US_美国_IPV4_2
-  server: 45.32.70.42
+  name: 🇺🇸_US_美国_IPV4 (10)
+  server: 172.235.48.245
   port: 443
-  uuid: 8c392beb-524d-4d0a-a3a6-4d542d54a1ff
+  uuid: c923b26b-a941-456d-8ccc-834f3b4080e0
   tls: true
   servername: itunes.apple.com
   sni: itunes.apple.com
   skip-cert-verify: false
   client-fingerprint: chrome
   reality-opts:
-    public-key: "cQZ-dTY4QSQteDYpngP2PavOsn9yY9lIP-OscwzwAio"
-    short-id: "4dda4608"
+    public-key: "WoN4MfFQoLTmHhsa6cgsjjDtditjn2VfDbp9jd3hbSs"
+    short-id: "7378fab7"
   network: ws
   ws-opts:
     path: /ws
     headers:
       Host: itunes.apple.com
 - type: vless
-  name: 🇸🇬_SG_新加坡_IPV4_2
-  server: 172.104.186.205
+  name: 🇯🇵_JP_日本_IPV4 (7)
+  server: 139.162.125.126
   port: 443
-  uuid: eafa7d0d-db1c-4c91-8fd8-587cd218008e
+  uuid: eb6cf336-03bd-4dac-9f2a-3e456389279e
   tls: true
   servername: itunes.apple.com
   sni: itunes.apple.com
   skip-cert-verify: false
   client-fingerprint: chrome
   reality-opts:
-    public-key: "dT50iKOzQz2utAi1tcwsU86hbaS78JeDY_xST0nP5D4"
-    short-id: "aea01663"
+    public-key: "mMLchVbQzhQ2bGV6wkg1LP5Q7eqL2hCVHHMT0B03dwg"
+    short-id: "bd6e3e70"
   network: ws
   ws-opts:
     path: /ws
     headers:
       Host: itunes.apple.com
 - type: vless
-  name: 🇺🇸_US_美国_IPV4 (2)_2
-  server: 172.236.227.60
-  port: 443
-  uuid: 3c8a110d-f04d-4f0e-9579-fd00631b8830
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "BHBzo_I0M-sChoOqTyOczYBP8l1L_dkmB6u3ijAOaGo"
-    short-id: "664c1530"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (3)_2
-  server: 172.233.156.229
-  port: 443
-  uuid: b9bc6f6c-09b7-43ce-b9c7-312d37f1a312
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "jTnoGvXzAIa2lsfioHHRJ1lAj1xqjowhcCwGcfme8QY"
-    short-id: "826efd30"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇸🇬_SG_新加坡_IPV4 (2)_2
-  server: 149.28.152.20
-  port: 443
-  uuid: e17ca473-bd02-4fe6-873f-5866d729b0a3
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "sli7AT0WEhYMVMARhHh-ZQMK7zHHn0cGsxw2gPhoBis"
-    short-id: "107ff148"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇸🇬_SG_新加坡_IPV4 (3)_2
-  server: 139.180.215.25
-  port: 443
-  uuid: bbc20d3e-0391-48f1-ad72-90a6802f728e
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "ybu5pFdSV23WsnMNhbpa8TwV6TJd6NLZ6HX-ggww61A"
-    short-id: "83f673ba"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇸🇬_SG_新加坡_IPV4 (4)_2
-  server: 45.76.191.30
-  port: 443
-  uuid: d8aaaf9a-cea4-4c5a-975b-68ddc26f9891
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "-KlJUCwLvYy2pz5jR2RgmYMEhacPNPhwvlbdiKkAh1Y"
-    short-id: "6cc51755"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (4)_2
-  server: 172.235.51.71
-  port: 443
-  uuid: 3c17ead6-201a-4fba-8246-6327b911a1be
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "rzeXNEmuocvPVMnmettRsJbHQGjQGaZoH7jNw_3GUD8"
-    short-id: "4bf84b30"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (5)_2
-  server: 172.236.241.130
-  port: 443
-  uuid: 21117a67-21c2-4e2a-ba8f-bc49e23b0ae8
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "ibi0jOH5SfYhh7ycxdBrqq5oN4ajN3-dNiHKWC2VYWs"
-    short-id: "51ecfe9e"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (6)_2
-  server: 172.233.140.139
-  port: 443
-  uuid: 82b258c9-f4ae-46f6-8c1a-322b316a2e0d
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "l1Tts2VQAnD1We9lPKqw9GqnMAHiIlYhsaw5ASVrTGM"
-    short-id: "5c298270"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (7)_2
-  server: 107.191.58.86
-  port: 443
-  uuid: 4444e77e-3d2a-4dc9-bf31-936f038f5570
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "ZZwZGoX0Us8t6nLvckDWskC1c25F9rL0_nUXmd8BFxQ"
-    short-id: "8dd324c1"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇯🇵_JP_日本_IPV4_2
-  server: 45.76.106.69
-  port: 443
-  uuid: db102c51-5f7f-4283-b9c1-942c5c6e2616
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "nZzY--8K_-mm8x4JDzkUFt1be1SQzriGIOmYkbpq1C8"
-    short-id: "034f5d5a"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇯🇵_JP_日本_IPV4 (2)_2
-  server: 104.238.160.118
-  port: 443
-  uuid: 396266a6-5617-4f57-9f01-a168756ee553
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "noQmtZ2k0k7U_tlDJEXfL8Xxvv5t13LS6fm8NrvdCUY"
-    short-id: "7b11dca1"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇯🇵_JP_日本_IPV4 (3)_2
-  server: 45.77.8.233
-  port: 443
-  uuid: 242212a6-200b-4c09-b2e5-86a8dd490331
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "JSC_NT5_PEEbNCQIJjSSlpwkWWF94o0XAP3iboF6nlY"
-    short-id: "de193635"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (8)_2
-  server: 45.63.53.81
-  port: 443
-  uuid: c512dcbd-1847-40a2-9c99-989c8bfe4717
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "6nTROV2ELz-3vNUl0A00hp378QngpYABrPgjCpUknD0"
-    short-id: "f436f707"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (9)_2
-  server: 172.235.40.143
-  port: 443
-  uuid: 44fd6b93-9cc5-4ca1-9c2d-77a6497eaf7c
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "JbbnGIAzXawujJHGI4QWdKMGDi01uSjyasC3VhpMMQU"
-    short-id: "f0d46c7f"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (10)_2
-  server: 172.235.36.11
-  port: 443
-  uuid: a15c47e7-0d24-4e82-a759-891d0e951a01
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "lhkyTN5zj2bK7HhMVfer5RoDz0K67YK8VyiiK8TvkEE"
-    short-id: "afc7874d"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (11)_2
+  name: 🇺🇸_US_美国_IPV4 (11)
   server: 172.233.129.65
   port: 443
   uuid: 9d91b606-9117-4f8f-8df7-dda7facf3a57
@@ -864,132 +395,25 @@ proxies:
     headers:
       Host: itunes.apple.com
 - type: vless
-  name: 🇺🇸_US_美国_IPV4 (12)_2
-  server: 172.239.67.142
+  name: 🇺🇸_US_美国_IPV4 (12)
+  server: 172.233.129.172
   port: 443
-  uuid: b0d814b5-7232-4fe9-9ce9-e552c9abbae8
+  uuid: 40a4b915-5e6f-4316-9bb1-e899f30608e3
   tls: true
   servername: itunes.apple.com
   sni: itunes.apple.com
   skip-cert-verify: false
   client-fingerprint: chrome
   reality-opts:
-    public-key: "Knpni0SBmL6d1nGWtqmHRDsOQvQxcD2Wd0eOf2KZtgs"
-    short-id: "ba356a45"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (13)_2
-  server: 172.235.49.52
-  port: 443
-  uuid: ff5fc681-8548-4621-87d1-6b123db48f64
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "Md-qJgtcKVbuLuwCX8r-VZnfKq3z_3CtyPt3CRcqdQE"
-    short-id: "270d474c"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (14)_2
-  server: 172.233.146.140
-  port: 443
-  uuid: 23ef891c-d5bc-400d-84a2-f3a0c8c102d0
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "wn6AvldKYnxY_vOi6LqsI7fgBj8wqCNw3_YpyOPDhig"
-    short-id: "618ad724"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (15)_2
-  server: 172.235.36.156
-  port: 443
-  uuid: 5b01153c-1cde-4efb-ae09-d97dbc4da44b
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "0RcPjVCZ7X7qXylKu6eGttBaRCh1YmAqpXL6IRXu6Cc"
-    short-id: "7e759265"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (16)
-  server: 172.235.32.253
-  port: 443
-  uuid: 62fe4c8e-2620-478c-9c39-3d4e12848ff4
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "r__vI0YVD9j6Fttsb4aZ0TwvUggV493v6GILKXWIZwA"
-    short-id: "ac184496"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (17)
-  server: 172.233.129.187
-  port: 443
-  uuid: ac28b793-b9cb-4795-8a49-311595469328
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "iNGO54Z98Rf8PR858MMTGjqGaEEOpcqEFSrZJbeGtlY"
-    short-id: "4a979563"
+    public-key: "LWfC_chpo4uDtzJ9VVnuTcf6zTzWKx-LCJAE2Ltl7h4"
+    short-id: "5818adc3"
   network: ws
   ws-opts:
     path: /ws
     headers:
       Host: itunes.apple.com
 - type: hysteria2
-  name: 🇫🇷_FR_法国_IPV6
-  server: 2001:bc8:32d7:17b::3
-  port: 22000
-  password: dongtaiwang.com
-  tls: true
-  servername: www.microsoft.com
-  sni: www.microsoft.com
-  skip-cert-verify: true
-- type: ss
-  name: 🇩🇪_DE_德国_IPV4
-  server: 47.254.175.2
-  port: 443
-  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
-  cipher: 2022-blake3-chacha20-poly1305
-  tls: false
-  skip-cert-verify: false
-- type: hysteria2
-  name: 🇺🇸_US_美国_IPV4 (18)
+  name: 🇺🇸_US_美国_IPV4 (13)
   server: starlink-ft.251313.xyz
   port: 443
   password: https://xship.2fa.cat
@@ -998,44 +422,81 @@ proxies:
   sni: xship.top
   skip-cert-verify: true
 - type: vless
-  name: 🇳🇱_NL_荷兰_IPV4
-  server: 79.182.39.131
+  name: 🇸🇨_SC_塞舌尔->🇳🇱_NL_荷兰_IPV4
+  server: 196.196.148.63
   port: 443
   uuid: cda0862a-0f87-4be9-8ed8-1d0c9e382839
   tls: true
   servername: 717252g.nl8.h1clayd.click
   sni: 717252g.nl8.h1clayd.click
   skip-cert-verify: false
-  client-fingerprint: chrome
+  client-fingerprint: firefox
   reality-opts:
     public-key: "PD8Jdlg3xB9QY--jwQjp8PFPzCS8-Oryw6-HWBcHMFU"
     short-id: "d3bd772514c87d28"
   network: grpc
   grpc-opts:
     grpc-service-name: 204adda7e3da
-- type: hysteria
-  name: 🇩🇪_DE_德国->🇳🇱_NL_荷兰_IPV4
-  server: 5.83.129.143
-  port: 26691
-  password: dongtaiwang.com
+- type: vmess
+  name: 🇺🇸 机场推荐:dafei.de 美国 89_IPV4
+  server: 188.114.99.137
+  port: 443
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  cipher: auto
+  alterId: 0
   tls: true
-  skip-cert-verify: true
-  alpn:
-  - h3
-  up: '11'
-  down: '55'
-  auth-str: dongtaiwang.com
-- type: vless
-  name: 🇯🇵_JP_日本_IPV4 (4)_2
-  server: zfapi.zalolink.com
-  port: 43149
-  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  flow: xtls-rprx-vision
+  servername: guanwang.awsno.com
+  sni: guanwang.awsno.com
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: guanwang.awsno.com
+- type: vmess
+  name: 🇺🇸_US_美国_IPV4 (14)
+  server: 104.18.42.163
+  port: 443
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  cipher: auto
+  alterId: 0
   tls: true
-  servername: psstatic.cdn.bcebos.com
-  sni: psstatic.cdn.bcebos.com
-  skip-cert-verify: false
-  client-fingerprint: firefox
-  reality-opts:
-    public-key: "cvong7paE8XIzzbKWgV5iUruP1pBqI2IhMuBHc8c0UE"
-    short-id: "15aa0ad4"
+  servername: guanwang.awsno.com
+  sni: guanwang.awsno.com
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: guanwang.awsno.com
+- type: vmess
+  name: '@DeltaKroneckerGithub_3021_IPV4'
+  server: 172.64.145.93
+  port: 443
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  cipher: auto
+  alterId: 0
+  tls: true
+  servername: guanwang.awsno.com
+  sni: guanwang.awsno.com
+  network: ws
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: guanwang.awsno.com
+- type: vmess
+  name: 🇺🇸 机场推荐:dafei.de 美国 15_IPV4
+  server: 172.67.190.164
+  port: 443
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  cipher: auto
+  alterId: 0
+  tls: true
+  servername: guanwang.awsno.com
+  sni: guanwang.awsno.com
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: guanwang.awsno.com
