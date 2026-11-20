@@ -82,6 +82,20 @@ def build_readme(config: Config) -> str:
 
     lines.extend([
         "",
+        "## 关于 merged 订阅",
+        "",
+        "`merged.txt` 与 `merged.yaml` 在发布前做了两步处理：",
+        "",
+        "1. **去重** — 按连接配置去重，同一节点被多个站点以不同名称重复发布时只保留一条；"
+        "凭据或传输参数不同的节点不会被合并。",
+        "2. **连通性筛选** — 默认对每个节点的端口做 TCP 握手，"
+        f"超过 {config.probe.max_delay_ms} ms 或无法连接的节点会被移除。"
+        "TCP 测速只说明端口在时限内可连，**不能验证代理认证或实际转发是否可用**；"
+        "UDP 类协议（Hysteria2、TUIC 等）无法用 TCP 判定，一律保留。"
+        "如需真实可用性，可将 `probe.backend` 改为 `mihomo`。",
+        "",
+        "`provider.yaml` 引用的是各站点原始文件，未经上述筛选。",
+        "",
         "---",
         "",
         f"*上次更新: {today} | "

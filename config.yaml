@@ -2,6 +2,15 @@ crawl:
   concurrency: 2
   max_articles: 3
   timeout: 30
+probe:
+  enabled: true
+  backend: tcp
+  max_delay_ms: 3000
+  timeout_ms: 5000
+  concurrency: 32
+  mihomo_binary: mihomo
+  url: http://www.gstatic.com/generate_204
+  require_public_targets: true
 llm:
   providers:
   - api_key_env: OPENROUTER_API_KEY

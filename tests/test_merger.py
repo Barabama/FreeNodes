@@ -2,9 +2,13 @@
 
 Run: pytest tests/test_merger.py -v
 """
+import base64
+
+import pytest
 import yaml
 from pathlib import Path
 from src.merger import Merger, MergeResult, REGION_KEYWORDS
+from src.node_probe import ProbeReport, ProbeSettings
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -62,8 +66,34 @@ class TestDedupProxies:
         assert result[0]["reality-opts"]["public-key"] == "123"
         assert result[0]["reality-opts"]["short-id"] == "062898e8"
 
-    def test_empty_list(self):
-        assert Merger._dedup_proxies([]) == []
+    def test_keeps_same_endpoint_with_different_credentials(self):
+        """Same host/port with different UUIDs are distinct nodes, not duplicates."""
+        proxies = [
+            {"name": "HK 01", "server": "1.1.1.1", "port": 443, "type": "vless", "uuid": "u1"},
+            {"name": "HK 02", "server": "1.1.1.1", "port": 443, "type": "vless", "uuid": "u2"},
+        ]
+        result = Merger._dedup_proxies(proxies)
+        assert len(result) == 2
+
+    def test_keeps_same_endpoint_with_different_transport(self):
+        proxies = [
+            {"name": "HK 01", "server": "1.1.1.1", "port": 443, "type": "vmess",
+             "uuid": "u", "network": "ws", "ws-opts": {"path": "/a"}},
+            {"name": "HK 01", "server": "1.1.1.1", "port": 443, "type": "vmess",
+             "uuid": "u", "network": "grpc", "grpc-opts": {"grpc-service-name": "x"}},
+        ]
+        result = Merger._dedup_proxies(proxies)
+        assert len(result) == 2
+
+    def test_dedup_ignores_display_name_only(self):
+        proxies = [
+            {"name": "HK 01", "server": "1.1.1.1", "port": 443, "type": "vmess", "uuid": "u"},
+            {"name": "香港 节点", "server": "1.1.1.1", "port": 443, "type": "vmess", "uuid": "u"},
+        ]
+        result = Merger._dedup_proxies(proxies)
+        assert len(result) == 1
+        assert result[0]["name"] == "HK 01"
+
     def test_empty_list(self):
         assert Merger._dedup_proxies([]) == []
 
@@ -138,25 +168,27 @@ class TestRegionKeywords:
 
 class TestFileIntegration:
 
-    def test_merge_creates_output_files(self, tmp_path):
-        """Run merger against a temp directory with sample yaml/txt files."""
-        nodes = tmp_path / "nodes"
-        nodes.mkdir()
-
-        # Create a sample txt file (base64 encoded V2Ray sub)
-        import base64
+    def _site_files(self, nodes: Path):
+        # A base64 V2Ray subscription: two distinct nodes plus one republished
+        # copy of the first node under a different remark.
         txt_content = base64.b64encode(
-            b"vless://418048af-a293-4b99-9b0c-98ca3580dd24@example.com:443\n"
-            b"vless://518048af-a293-4b99-9b0c-98ca3580dd24@example.org:8443\n"
+            b"vless://418048af-a293-4b99-9b0c-98ca3580dd24@example.com:443?security=tls#HK\n"
+            b"vless://418048af-a293-4b99-9b0c-98ca3580dd24@example.com:443?security=tls#%E9%A6%99%E6%B8%AF\n"
+            b"vless://518048af-a293-4b99-9b0c-98ca3580dd24@example.org:8443#JP\n"
         ).decode()
         (nodes / "site1.txt").write_text(txt_content, encoding="utf-8")
 
-        # Create a sample yaml file
         yaml_content = """proxies:
   - {name: HK 01, server: 1.1.1.1, port: 443, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24}
   - {name: JP 01, server: 2.2.2.2, port: 443, type: trojan, password: secret}
 """
         (nodes / "site1.yaml").write_text(yaml_content, encoding="utf-8")
+
+    def test_merge_creates_output_files(self, tmp_path):
+        """Run merger against a temp directory with sample yaml/txt files."""
+        nodes = tmp_path / "nodes"
+        nodes.mkdir()
+        self._site_files(nodes)
 
         merger = Merger(nodes_dir=str(nodes))
         result = merger.run()
@@ -164,7 +196,20 @@ class TestFileIntegration:
         assert (nodes / "merged.txt").exists()
         assert (nodes / "merged.yaml").exists()
         assert (nodes / "provider.yaml").exists()
+        # Two txt nodes (the duplicate remark collapses) and two yaml proxies.
         assert result.total_nodes == 2
+
+    def test_merge_dedups_republished_txt_node(self, tmp_path):
+        nodes = tmp_path / "nodes"
+        nodes.mkdir()
+        self._site_files(nodes)
+
+        Merger(nodes_dir=str(nodes)).run()
+
+        lines = (nodes / "merged.txt").read_text(encoding="utf-8").splitlines()
+        assert len(lines) == 2
+        # The first remark seen wins.
+        assert lines[0].endswith("#HK")
 
     def test_merge_empty_dir(self, tmp_path):
         nodes = tmp_path / "nodes"
@@ -180,6 +225,112 @@ class TestFileIntegration:
 # ═══════════════════════════════════════════════════════════════
 # MergeResult dataclass
 # ═══════════════════════════════════════════════════════════════
+
+class TestProbeFiltering:
+    """Probe integration is exercised with a stubbed backend, never the network."""
+
+    @staticmethod
+    def _merge(tmp_path, monkeypatch, report: ProbeReport) -> MergeResult:
+        nodes = tmp_path / "nodes"
+        nodes.mkdir()
+        TestFileIntegration()._site_files(nodes)
+
+        async def fake_probe(items, settings):
+            return report
+
+        monkeypatch.setattr("src.merger.probe", fake_probe)
+        return Merger(nodes_dir=str(nodes), probe_settings=ProbeSettings()).run()
+
+    def test_dead_nodes_are_removed_from_txt_and_yaml(self, tmp_path, monkeypatch):
+        report = ProbeReport(backend="tcp", alive=set(), dead=set(), unprobed={"*"})
+        # Every node unprobed → nothing is dropped.
+        result = self._merge(tmp_path, monkeypatch, report)
+        assert result.probe_unprobed == 1
+        assert len((tmp_path / "nodes/merged.txt").read_text(encoding="utf-8").splitlines()) == 2
+
+    def test_unavailable_probe_keeps_previous_artifacts_byte_for_byte(
+        self, tmp_path, monkeypatch
+    ):
+        """A probe that cannot run must not overwrite verified artifacts."""
+        nodes = tmp_path / "nodes"
+        nodes.mkdir()
+        TestFileIntegration()._site_files(nodes)
+
+        previous = {
+            "merged.txt": "vless://previous@example.com:443#PREV\n",
+            "merged.yaml": (
+                "proxies:\n"
+                "- {name: PREV, type: vless, server: example.com, port: 443, uuid: u}\n"
+            ),
+            "provider.yaml": "proxy-providers: {}\n",
+        }
+        for name, content in previous.items():
+            (nodes / name).write_text(content, encoding="utf-8")
+
+        async def fake_probe(items, settings):
+            return ProbeReport(backend="mihomo", unavailable="binary missing")
+
+        monkeypatch.setattr("src.merger.probe", fake_probe)
+        result = Merger(nodes_dir=str(nodes), probe_settings=ProbeSettings()).run()
+
+        assert result.probe_unavailable == "binary missing"
+        for name, content in previous.items():
+            assert (nodes / name).read_text(encoding="utf-8") == content, name
+
+    def test_unavailable_probe_keeps_all_nodes_when_no_previous_artifacts(
+        self, tmp_path, monkeypatch
+    ):
+        report = ProbeReport(backend="mihomo", unavailable="binary missing")
+        result = self._merge(tmp_path, monkeypatch, report)
+        assert result.probe_unavailable == "binary missing"
+        assert not (tmp_path / "nodes/merged.txt").exists()
+
+    def test_filter_that_would_empty_txt_keeps_it(self, tmp_path, monkeypatch):
+        nodes = tmp_path / "nodes"
+        nodes.mkdir()
+        TestFileIntegration()._site_files(nodes)
+
+        async def fake_probe(items, settings):
+            probe_keys = {item.key for item in items}
+            return ProbeReport(backend="tcp", dead=probe_keys)
+
+        monkeypatch.setattr("src.merger.probe", fake_probe)
+        Merger(nodes_dir=str(nodes), probe_settings=ProbeSettings()).run()
+
+        # Every node is judged dead, but the artifact must not be emptied: the
+        # previous merged.txt is kept rather than overwritten with nothing.
+        assert len((nodes / "merged.txt").read_text(encoding="utf-8").splitlines()) == 2
+
+    def test_without_probe_settings_no_filtering_happens(self, tmp_path):
+        nodes = tmp_path / "nodes"
+        nodes.mkdir()
+        TestFileIntegration()._site_files(nodes)
+        result = Merger(nodes_dir=str(nodes)).run()
+        assert result.probe_backend == ""
+        assert len((nodes / "merged.txt").read_text(encoding="utf-8").splitlines()) == 2
+
+    def test_partial_filter_keeps_only_alive_nodes(self, tmp_path, monkeypatch):
+        nodes = tmp_path / "nodes"
+        nodes.mkdir()
+        TestFileIntegration()._site_files(nodes)
+
+        async def fake_probe(items, settings):
+            keys = {item.key for item in items}
+            txt_keys = {key for key in keys if key[0] == "txt"}
+            yaml_keys = {key for key in keys if key[0] == "yaml"}
+            # Keep one txt node and one yaml proxy, drop the rest.
+            return ProbeReport(
+                backend="tcp",
+                alive={sorted(txt_keys)[0], sorted(yaml_keys)[0]},
+                dead=(txt_keys | yaml_keys) - {sorted(txt_keys)[0], sorted(yaml_keys)[0]},
+            )
+
+        monkeypatch.setattr("src.merger.probe", fake_probe)
+        Merger(nodes_dir=str(nodes), probe_settings=ProbeSettings()).run()
+
+        assert len((nodes / "merged.txt").read_text(encoding="utf-8").splitlines()) == 1
+        assert len(yaml.safe_load((nodes / "merged.yaml").read_text(encoding="utf-8"))["proxies"]) == 1
+
 
 class TestMergeResult:
 

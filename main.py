@@ -4,6 +4,7 @@
 Usage:
     python main.py                     # run all sites
     python main.py clashmeta           # run single site
+    python main.py --max-delay 5000     # override probe latency threshold
     python main.py --help              # show usage
 """
 import argparse
@@ -39,12 +40,26 @@ def parse_args() -> argparse.Namespace:
         default=None,
         help="Site name to process (default: all sites in config)",
     )
+    parser.add_argument(
+        "--max-delay",
+        type=int,
+        default=None,
+        metavar="MS",
+        help="Override probe.max_delay_ms for this run (e.g. 3000)",
+    )
     return parser.parse_args()
 
 
 async def main():
     args = parse_args()
     config = load_config()
+
+    # Persist probe tuning even for single-site runs (merger is skipped there,
+    # but settings must survive save_config below).
+    if args.max_delay is not None:
+        if args.max_delay < 0:
+            raise SystemExit("--max-delay must be >= 0")
+        config.probe.max_delay_ms = args.max_delay
 
     scheduler = Scheduler(config)
     results = await scheduler.run(target=args.target)

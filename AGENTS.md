@@ -1,4 +1,4 @@
-# CLAUDE.md
+# AGENTS.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
@@ -107,12 +107,15 @@ README update + config.yaml up_date persist
 
 ```
 src/
-  config.py          # SiteConfig, ProviderConfig, LLMConfig, CrawlConfig, Config
+  config.py          # SiteConfig, ProviderConfig, LLMConfig, CrawlConfig, ProbeConfig, Config
   crawler.py         # Page dataclass + fetch_page (Crawl4AI) + download_file (httpx)
   llm_router.py      # LLMRouter: weighted routing + health tracking + ask/extract/generate
   site_processor.py  # SiteProcessor: per-site lifecycle, dispatches by type
   scheduler.py       # Scheduler: asyncio gather with concurrency control
-  merger.py          # Merger: cross-site dedup + provider.yaml with region groups
+  merger.py          # Merger: cross-site dedup (connection fingerprint) + optional probe filter + provider.yaml
+  node_fingerprint.py# Dedup keys: URI/proxy connection fingerprint (ignores display names)
+  node_probe.py      # Optional liveness probe: tcp (default) | mihomo backends
+  clash_uri.py       # URI → Mihomo proxy mapping (used by the mihomo probe)
   pipeline.py        # process_txt (base64 decode + dedup) + save
   readme_updater.py  # Generate README.md subscription table from config + nodes/
   youtube.py         # yt-dlp wrapper: list_channel, get_metadata, subtitles, password extraction
@@ -121,7 +124,7 @@ src/
   paste.py           # paste.to / PrivateBin client-side encrypted paste decryption
 main.py              # CLI entry: python main.py [site_name]
 config.yaml          # Site definitions + LLM routing + crawl strategy
-tests/               # pytest-asyncio tests, ~175 tests total
+tests/               # pytest-asyncio tests, ~316 tests total
 ```
 
 ## Environment Variables
@@ -141,7 +144,7 @@ OPENCODE_API_KEY=sk-...   # optional, some models work without key
 - `tmp_path` fixture for file I/O tests
 - Test naming: `test_<function>_<scenario>` e.g. `test_extract_by_pattern_no_match`
 - Each test file: `tests/test_<module>.py`
-- **~175 tests, all must pass before commit**
+- **~316 tests, all must pass before commit**
 
 ## Commit Style
 

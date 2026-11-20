@@ -13,7 +13,8 @@ from src.config import Config, SiteConfig, CrawlConfig, LLMConfig
 
 
 @pytest.fixture
-def three_site_config():
+def three_site_config(tmp_path):
+    # The merger and README generator write real files, so keep them in tmp.
     return Config(
         sites=[
             SiteConfig(name="site-a", start_url="http://a.test/"),
@@ -21,7 +22,7 @@ def three_site_config():
             SiteConfig(name="site-c", start_url="http://c.test/"),
         ],
         crawl=CrawlConfig(max_articles=2, timeout=5, concurrency=2),
-        output={"dir": "nodes"},
+        output={"dir": str(tmp_path / "nodes"), "readme": str(tmp_path / "README.md")},
         llm=LLMConfig(),
     )
 

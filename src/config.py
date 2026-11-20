@@ -43,11 +43,33 @@ class CrawlConfig:
 
 
 @dataclass
+class ProbeConfig:
+    """Liveness probing applied to merged artifacts.
+
+    ``backend`` is either ``tcp`` (default, no external binary) or ``mihomo``
+    (real HTTP request through each proxy, requires the Mihomo binary).
+    Probing is opt-in: ``enabled=False`` keeps the merged output unfiltered.
+    """
+
+    enabled: bool = False
+    backend: str = "tcp"
+    max_delay_ms: int = 3000
+    timeout_ms: int = 5000
+    concurrency: int = 32
+    mihomo_binary: str = "mihomo"
+    url: str = "http://www.gstatic.com/generate_204"
+    # Refuse probing non-public destinations: subscription content is untrusted,
+    # so this prevents it from steering the runner onto a local network.
+    require_public_targets: bool = True
+
+
+@dataclass
 class Config:
     sites: list[SiteConfig]
     crawl: CrawlConfig
     output: dict
     llm: LLMConfig
+    probe: ProbeConfig = field(default_factory=ProbeConfig)
 
 
 def load_config(path: str = "config.yaml") -> Config:
@@ -63,7 +85,13 @@ def load_config(path: str = "config.yaml") -> Config:
     providers = [ProviderConfig(**p) for p in llm_raw.get("providers", [])]
     llm = LLMConfig(providers=providers, task_routing=llm_raw.get("task_routing", {}))
 
-    return Config(sites=sites, crawl=crawl, output=output, llm=llm)
+    probe_raw = raw.get("probe") or {}
+    probe = ProbeConfig(**{
+        key: value for key, value in probe_raw.items()
+        if key in ProbeConfig.__dataclass_fields__
+    })
+
+    return Config(sites=sites, crawl=crawl, output=output, llm=llm, probe=probe)
 
 
 def save_config(config: Config, path: str = "config.yaml"):
@@ -114,6 +142,16 @@ def save_config(config: Config, path: str = "config.yaml"):
             "concurrency": config.crawl.concurrency,
         },
         "output": config.output,
+        "probe": {
+            "enabled": config.probe.enabled,
+            "backend": config.probe.backend,
+            "max_delay_ms": config.probe.max_delay_ms,
+            "timeout_ms": config.probe.timeout_ms,
+            "concurrency": config.probe.concurrency,
+            "mihomo_binary": config.probe.mihomo_binary,
+            "url": config.probe.url,
+            "require_public_targets": config.probe.require_public_targets,
+        },
         "sites": raw_sites,
         "llm": raw_llm,
     }

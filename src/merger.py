@@ -4,13 +4,25 @@ Three output modes:
   1. merged.txt       — all V2Ray txt files deduped and concatenated
   2. merged.yaml      — physical merge of all Clash yaml files
   3. provider.yaml    — proxy-provider based config (references each site file)
+
+Deduplication follows the connection configuration (see ``node_fingerprint``),
+so the same node republished under different display names collapses into one
+entry, while nodes that differ in credentials or transport options are kept.
+
+Merged artifacts are optionally filtered by a liveness probe. When the probe
+cannot run, or it would remove every node, the previous artifacts are left in
+place instead of publishing an empty subscription.
 """
-import hashlib
+import asyncio
+import os
 import sys
 from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
 
+from src.clash_uri import uri_to_proxy
+from src.node_fingerprint import proxy_fingerprint, txt_endpoint, txt_fingerprint, unique_by, uri_scheme
+from src.node_probe import ProbeItem, ProbeReport, ProbeSettings, probe
 from src.node_validator import force_string_proxy_fields, make_safe_dumper, validate_proxy, valid_txt_lines
 
 # Windows console uses GBK which can't encode flag emoji in region names.
@@ -30,6 +42,11 @@ class MergeResult:
     txt_sources: int = 0
     yaml_sources: int = 0
     region_count: dict[str, int] = field(default_factory=dict)
+    probe_backend: str = ""
+    probe_alive: int = 0
+    probe_dead: int = 0
+    probe_unprobed: int = 0
+    probe_unavailable: str = ""
 
 
 REGION_KEYWORDS: dict[str, list[str]] = {
@@ -54,24 +71,44 @@ REGION_KEYWORDS: dict[str, list[str]] = {
 class Merger:
     """Merge site output files into cross-site aggregated files."""
 
-    def __init__(self, nodes_dir: str = "nodes"):
+    def __init__(self, nodes_dir: str = "nodes", probe_settings: ProbeSettings | None = None):
         self.nodes_dir = Path(nodes_dir)
+        self.probe_settings = probe_settings
 
     def run(self) -> MergeResult:
-        """Run all three merge stages and return results."""
+        """Run all three merge stages synchronously (CLI, tests)."""
+        return asyncio.run(self.run_async())
+
+    async def run_async(self) -> MergeResult:
+        """Run the merge inside an existing event loop (Scheduler / asyncio)."""
         result = MergeResult()
-        result.merged_txt = self._merge_txt(result)
-        result.merged_yaml = self._merge_yaml(result)
+        txt_lines = self._collect_txt_lines(result)
+        yaml_proxies = self._collect_yaml_proxies(result)
+
+        report = await self._probe(txt_lines, yaml_proxies, result)
+        if report is not None:
+            if not report.usable:
+                # A probe that cannot run must not replace verified artifacts
+                # with an unverified list.
+                print("  [merger] probe unavailable — keeping previous merged artifacts")
+                result.merged_txt = str(self.nodes_dir / "merged.txt")
+                result.merged_yaml = str(self.nodes_dir / "merged.yaml")
+                result.provider_yaml = str(self.nodes_dir / "provider.yaml")
+                self._print_summary(result)
+                return result
+            txt_lines, yaml_proxies = self._filter_nodes(txt_lines, yaml_proxies, report, result)
+
+        result.merged_txt = self._write_txt(txt_lines, result)
+        result.merged_yaml = self._write_yaml(yaml_proxies, result)
         result.provider_yaml = self._build_provider(result)
         self._print_summary(result)
         return result
 
-    # ── TXT merge ──
+    # ── Collection ──
 
-    def _merge_txt(self, result: MergeResult) -> str:
-        """Concatenate all .txt files, dedup by line hash."""
+    def _collect_txt_lines(self, result: MergeResult) -> list[str]:
+        """Read every .txt source, validate, and dedup by node fingerprint."""
         all_lines: list[str] = []
-        seen: set[str] = set()
 
         for f in sorted(self.nodes_dir.glob("*.txt")):
             if f.name == "merged.txt":
@@ -84,28 +121,16 @@ class Merger:
                 valid_lines, issues = valid_txt_lines(raw)
                 if issues:
                     print(f"  [merger] txt filtered {f.name}: {len(issues)} invalid lines")
-                for line in valid_lines:
-                    h = hashlib.md5(line.encode()).hexdigest()
-                    if h not in seen:
-                        seen.add(h)
-                        all_lines.append(line)
-                        result.total_nodes += 1
+                all_lines.extend(valid_lines)
             except Exception as e:
                 print(f"  [merger] txt skip {f.name}: {e}")
 
-        if not all_lines:
-            return ""
+        unique = unique_by(all_lines, txt_fingerprint)
+        result.total_nodes = len(unique)
+        return unique
 
-        txt = "\n".join(all_lines)
-        out = self.nodes_dir / "merged.txt"
-        out.write_text(txt, encoding="utf-8")
-        print(f"  [merger] merged.txt: {result.txt_sources} files, {result.total_nodes} nodes")
-        return str(out)
-
-    # ── YAML physical merge ──
-
-    def _merge_yaml(self, result: MergeResult) -> str:
-        """Extract proxies from all .yaml files, dedup, rebuild groups."""
+    def _collect_yaml_proxies(self, result: MergeResult) -> list[dict]:
+        """Read every .yaml source and validate individual proxies."""
         import yaml
 
         all_proxies: list[dict] = []
@@ -126,14 +151,126 @@ class Merger:
             except Exception as e:
                 print(f"  [merger] yaml skip {f.name}: {e}")
 
-        if not all_proxies:
+        return self._dedup_proxies(all_proxies)
+
+    # ── Probing ──
+
+    async def _probe(self, txt_lines: list[str], yaml_proxies: list[dict],
+                     result: MergeResult) -> ProbeReport | None:
+        """Probe nodes when enabled; return ``None`` when probing is off."""
+        if self.probe_settings is None:
+            return None
+
+        convert_txt = (self.probe_settings.backend or "tcp").strip().lower() == "mihomo"
+        items = self._probe_items(txt_lines, yaml_proxies, convert_txt=convert_txt)
+        report = await probe(items, self.probe_settings)
+        result.probe_backend = report.backend
+        result.probe_alive = len(report.alive)
+        result.probe_dead = len(report.dead)
+        result.probe_unprobed = len(report.unprobed)
+        result.probe_unavailable = report.unavailable
+        if report.unavailable:
+            print(f"  [merger] probe ({report.backend}) unavailable: {report.unavailable}")
+        else:
+            print(f"  [merger] probe ({report.backend}): {len(report.alive)} alive, "
+                  f"{len(report.dead)} dead, {len(report.unprobed)} unprobed")
+        return report
+
+    @staticmethod
+    def _probe_items(txt_lines: list[str], yaml_proxies: list[dict],
+                     convert_txt: bool = False) -> list[ProbeItem]:
+        """Index probe targets the same way filtering will look them up.
+
+        YAML proxies are always addressable (they carry server/port). TXT lines
+        only need Clash conversion for the mihomo backend, so the default TCP
+        path skips it. A line that cannot be converted stays unprobed rather
+        than being treated as dead. Proxy names are made unique because Mihomo
+        refuses a config with duplicate names; the fingerprint ignores names, so
+        renaming never affects the keys used for filtering.
+        """
+        items: list[ProbeItem] = []
+        used_names: set[str] = set()
+
+        def unique_name(name: str) -> str:
+            candidate = name or "node"
+            index = 1
+            while candidate in used_names:
+                index += 1
+                candidate = f"{name}_{index}"
+            used_names.add(candidate)
+            return candidate
+
+        for proxy in yaml_proxies:
+            items.append(ProbeItem(
+                key=_yaml_key(proxy),
+                proxy={**proxy, "name": unique_name(proxy.get("name", ""))},
+                proxy_type=str(proxy.get("type", "")).lower(),
+            ))
+        for line in txt_lines:
+            endpoint = txt_endpoint(line)
+            host, port = endpoint if endpoint else (None, None)
+            proxy = uri_to_proxy(line) if convert_txt else None
+            if proxy is not None:
+                proxy = {**proxy, "name": unique_name(proxy.get("name", ""))}
+            items.append(ProbeItem(
+                key=_txt_key(line),
+                host=host,
+                port=port,
+                proxy=proxy,
+                proxy_type=uri_scheme(line) or "",
+            ))
+        return items
+
+    def _filter_nodes(self, txt_lines: list[str], yaml_proxies: list[dict],
+                      report: ProbeReport, result: MergeResult) -> tuple[list[str], list[dict]]:
+        """Drop dead nodes; keep everything when that would empty an artifact.
+
+        Probe keys come from ``_probe_items``; filtering re-derives them from the
+        original nodes, so probe-time renaming never leaks into the output.
+        """
+        kept_txt = [line for line in txt_lines if report.survivor(_txt_key(line))]
+        kept_yaml = [proxy for proxy in yaml_proxies if report.survivor(_yaml_key(proxy))]
+
+        if txt_lines and not kept_txt:
+            print("  [merger] probe removed every txt node — keeping unfiltered txt")
+            kept_txt = txt_lines
+        if yaml_proxies and not kept_yaml:
+            print("  [merger] probe removed every yaml proxy — keeping unfiltered yaml")
+            kept_yaml = yaml_proxies
+
+        # Renaming can only introduce new fingerprints, so a second pass is safe
+        # and keeps the output free of name-only duplicates.
+        return unique_by(kept_txt, txt_fingerprint), unique_by(kept_yaml, proxy_fingerprint)
+
+    # ── Writing ──
+
+    def _write_atomic(self, path: Path, content: str) -> None:
+        """Write *content* to *path* via a temp file, so readers never see a
+        truncated artifact if the process dies mid-write."""
+        temp = path.with_name(path.name + ".tmp")
+        temp.write_text(content, encoding="utf-8")
+        os.replace(temp, path)
+
+    def _write_txt(self, lines: list[str], result: MergeResult) -> str:
+        if not lines:
+            return ""
+        txt = "\n".join(lines)
+        out = self.nodes_dir / "merged.txt"
+        self._write_atomic(out, txt)
+        print(f"  [merger] merged.txt: {result.txt_sources} files, {len(lines)} nodes")
+        return str(out)
+
+    def _write_yaml(self, proxies: list[dict], result: MergeResult) -> str:
+        import yaml
+
+        if not proxies:
             return ""
 
-        proxies = self._stringify_reality_fields(self._dedup_proxies(all_proxies))
-        proxy_names = [p["name"] for p in proxies]
+        stringified = self._stringify_reality_fields(proxies)
+        proxy_names = [p["name"] for p in stringified]
         groups = self._build_default_groups(proxy_names)
 
-        output = self._base_clash_config(proxies=proxies, groups=groups)
+        output = self._base_clash_config(proxies=stringified, groups=groups)
 
         yaml_text = yaml.dump(
             output,
@@ -143,8 +280,10 @@ class Merger:
             sort_keys=False,
         )
         out = self.nodes_dir / "merged.yaml"
-        out.write_text(self._header(f"Merged {result.yaml_sources} yaml files") + yaml_text, encoding="utf-8")
-        print(f"  [merger] merged.yaml: {result.yaml_sources} files, {len(proxies)} proxies")
+        self._write_atomic(
+            out, self._header(f"Merged {result.yaml_sources} yaml files") + yaml_text
+        )
+        print(f"  [merger] merged.yaml: {result.yaml_sources} files, {len(stringified)} proxies")
         return str(out)
 
     # ── Provider YAML ──
@@ -228,7 +367,10 @@ class Merger:
 
         yaml_text = yaml.safe_dump(output, allow_unicode=True, default_flow_style=False)
         out = self.nodes_dir / "provider.yaml"
-        out.write_text(self._header("Proxy-provider based config (for Clash Meta / Mihomo)") + yaml_text, encoding="utf-8")
+        self._write_atomic(
+            out,
+            self._header("Proxy-provider based config (for Clash Meta / Mihomo)") + yaml_text,
+        )
         print(f"  [merger] provider.yaml: {len(yaml_files)} providers, {len(regions)} regions")
         return str(out)
 
@@ -241,20 +383,26 @@ class Merger:
 
     @staticmethod
     def _dedup_proxies(proxies: list[dict]) -> list[dict]:
-        """Deduplicate by server:port:type; rename name collisions with _N suffix."""
-        seen_key: set[str] = set()
+        """Deduplicate by connection fingerprint; rename name collisions.
+
+        The fingerprint covers every connection field (credentials, transport,
+        TLS, plugin options) and ignores only the display name, so two nodes
+        sharing ``server:port`` but differing in UUID, path or SNI are both
+        kept. Mihomo rejects a config with duplicate names, so collisions are
+        still suffixed with ``_N``.
+        """
+        unique = unique_by(
+            (
+                p for p in proxies
+                if isinstance(p, dict) and proxy_fingerprint(p)
+            ),
+            proxy_fingerprint,
+        )
         seen_name: set[str] = set()
         result: list[dict] = []
         name_counter: dict[str, int] = {}
 
-        for p in proxies:
-            if not isinstance(p, dict):
-                continue
-            key = f"{p.get('server', '')}:{p.get('port', '')}:{p.get('type', '')}"
-            if key == "::" or key in seen_key:
-                continue
-            seen_key.add(key)
-
+        for p in unique:
             name = p.get("name", "unknown")
             if name in seen_name:
                 base = name
@@ -350,8 +498,26 @@ class Merger:
 
     @staticmethod
     def _print_summary(result: MergeResult):
+        if result.probe_backend and not result.probe_unavailable:
+            print(f"  [merger] probe ({result.probe_backend}): "
+                  f"{result.probe_alive} alive / {result.probe_dead} dead / "
+                  f"{result.probe_unprobed} unprobed")
         if result.region_count:
             print("  [merger] region distribution:")
             for region, count in sorted(result.region_count.items(),
                                          key=lambda x: -x[1]):
                 print(f"    {region}: {count} nodes")
+
+
+# ── Probe keys ──
+#
+# Probing runs before filtering, and filtering must look up exactly the keys
+# the probe produced. Keys are structured tuples rather than joined strings so
+# that two different configurations can never collide on a separator.
+
+def _txt_key(line: str) -> tuple:
+    return ("txt", *txt_fingerprint(line))
+
+
+def _yaml_key(proxy: dict) -> tuple:
+    return ("yaml", *proxy_fingerprint(proxy))
