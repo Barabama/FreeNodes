@@ -64,12 +64,25 @@ class ProbeConfig:
 
 
 @dataclass
+class MergeConfig:
+    """Policy applied while building merged artifacts.
+
+    ``max_node_age_days`` excludes per-site files whose last successful crawl is
+    older than this many days. A site that keeps failing would otherwise keep
+    contributing months-old nodes to ``merged.*`` forever.
+    """
+
+    max_node_age_days: int = 14
+
+
+@dataclass
 class Config:
     sites: list[SiteConfig]
     crawl: CrawlConfig
     output: dict
     llm: LLMConfig
     probe: ProbeConfig = field(default_factory=ProbeConfig)
+    merge: MergeConfig = field(default_factory=MergeConfig)
 
 
 def load_config(path: str = "config.yaml") -> Config:
@@ -91,7 +104,13 @@ def load_config(path: str = "config.yaml") -> Config:
         if key in ProbeConfig.__dataclass_fields__
     })
 
-    return Config(sites=sites, crawl=crawl, output=output, llm=llm, probe=probe)
+    merge_raw = raw.get("merge") or {}
+    merge = MergeConfig(**{
+        key: value for key, value in merge_raw.items()
+        if key in MergeConfig.__dataclass_fields__
+    })
+
+    return Config(sites=sites, crawl=crawl, output=output, llm=llm, probe=probe, merge=merge)
 
 
 def save_config(config: Config, path: str = "config.yaml"):
@@ -142,6 +161,9 @@ def save_config(config: Config, path: str = "config.yaml"):
             "concurrency": config.crawl.concurrency,
         },
         "output": config.output,
+        "merge": {
+            "max_node_age_days": config.merge.max_node_age_days,
+        },
         "probe": {
             "enabled": config.probe.enabled,
             "backend": config.probe.backend,

@@ -28,8 +28,8 @@ jobs:
       - name: Run crawler
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
           OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
+          KILOCODE_API_KEY: ${{ secrets.KILOCODE_API_KEY }}
         run: python main.py
 
       # Validation is report-only: legacy node files are not cleaned or deleted.

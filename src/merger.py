@@ -17,7 +17,7 @@ import asyncio
 import os
 import sys
 from dataclasses import dataclass, field
-from datetime import datetime
+from datetime import date, datetime
 from pathlib import Path
 
 from src.clash_uri import uri_to_proxy
@@ -71,9 +71,41 @@ REGION_KEYWORDS: dict[str, list[str]] = {
 class Merger:
     """Merge site output files into cross-site aggregated files."""
 
-    def __init__(self, nodes_dir: str = "nodes", probe_settings: ProbeSettings | None = None):
+    def __init__(self, nodes_dir: str = "nodes", probe_settings: ProbeSettings | None = None,
+                 site_up_dates: dict[str, str] | None = None,
+                 max_node_age_days: int = 0):
         self.nodes_dir = Path(nodes_dir)
         self.probe_settings = probe_settings
+        self.site_up_dates = site_up_dates or {}
+        self.max_node_age_days = max_node_age_days
+        self._stale_reported: set[str] = set()
+
+    def _is_stale(self, filename: str) -> bool:
+        """Whether a per-site artifact is older than the configured age limit.
+
+        Age is taken from ``config.yaml``'s ``up_date`` (the last successful
+        crawl), not from the file mtime: CI checks out every file at once, so
+        mtimes say nothing about when the data was actually collected.
+        """
+        if self.max_node_age_days <= 0:
+            return False
+        up_date = self.site_up_dates.get(Path(filename).stem)
+        if not up_date:
+            return False
+        try:
+            last = date.fromisoformat(up_date[:10])
+        except ValueError:
+            return False
+        return (date.today() - last).days > self.max_node_age_days
+
+    def _skip_stale(self, filename: str) -> bool:
+        if not self._is_stale(filename):
+            return False
+        if filename not in self._stale_reported:
+            self._stale_reported.add(filename)
+            up_date = self.site_up_dates.get(Path(filename).stem, "?")
+            print(f"  [merger] skip stale {filename} (last crawl {up_date})")
+        return True
 
     def run(self) -> MergeResult:
         """Run all three merge stages synchronously (CLI, tests)."""
@@ -113,6 +145,8 @@ class Merger:
         for f in sorted(self.nodes_dir.glob("*.txt")):
             if f.name == "merged.txt":
                 continue
+            if self._skip_stale(f.name):
+                continue
             result.txt_sources += 1
             try:
                 raw = f.read_text(encoding="utf-8", errors="replace")
@@ -136,6 +170,8 @@ class Merger:
         all_proxies: list[dict] = []
         for f in sorted(self.nodes_dir.glob("*.yaml")):
             if f.name in ("merged.yaml", "provider.yaml"):
+                continue
+            if self._skip_stale(f.name):
                 continue
             result.yaml_sources += 1
             try:
@@ -293,7 +329,8 @@ class Merger:
         import yaml
 
         yaml_files = sorted(f for f in self.nodes_dir.glob("*.yaml")
-                           if f.name not in ("merged.yaml", "provider.yaml"))
+                           if f.name not in ("merged.yaml", "provider.yaml")
+                           and not self._skip_stale(f.name))
         if not yaml_files:
             return ""
 

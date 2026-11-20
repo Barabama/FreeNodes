@@ -339,3 +339,74 @@ class TestMergeResult:
         assert r.merged_txt == ""
         assert r.total_nodes == 0
         assert r.region_count == {}
+
+
+# ═══════════════════════════════════════════════════════════════
+# Stale artifact filtering (merge.max_node_age_days)
+# ═══════════════════════════════════════════════════════════════
+
+class TestStaleArtifacts:
+
+    @staticmethod
+    def _write_sites(tmp_path):
+        from datetime import date, timedelta
+        nodes = tmp_path / "nodes"
+        nodes.mkdir()
+        (nodes / "fresh.txt").write_text(
+            "vless://u1@fresh.example.com:443#FRESH\n", encoding="utf-8"
+        )
+        (nodes / "old.txt").write_text(
+            "vless://u2@old.example.com:443#OLD\n", encoding="utf-8"
+        )
+        (nodes / "fresh.yaml").write_text(
+            "proxies:\n- {name: FRESH, type: vless, server: fresh.example.com, "
+            "port: 443, uuid: u1}\n", encoding="utf-8"
+        )
+        (nodes / "old.yaml").write_text(
+            "proxies:\n- {name: OLD, type: vless, server: old.example.com, "
+            "port: 443, uuid: u2}\n", encoding="utf-8"
+        )
+        return nodes, {
+            "fresh": date.today().isoformat(),
+            "old": (date.today() - timedelta(days=30)).isoformat(),
+        }
+
+    def test_stale_txt_and_yaml_are_not_merged(self, tmp_path):
+        nodes, dates = self._write_sites(tmp_path)
+        Merger(nodes_dir=str(nodes), site_up_dates=dates, max_node_age_days=14).run()
+
+        txt = (nodes / "merged.txt").read_text(encoding="utf-8")
+        assert "FRESH" in txt
+        assert "OLD" not in txt
+
+        proxies = yaml.safe_load((nodes / "merged.yaml").read_text(encoding="utf-8"))["proxies"]
+        assert {p["name"] for p in proxies} == {"FRESH"}
+
+    def test_stale_site_is_not_a_provider(self, tmp_path):
+        nodes, dates = self._write_sites(tmp_path)
+        Merger(nodes_dir=str(nodes), site_up_dates=dates, max_node_age_days=14).run()
+        provider_text = (nodes / "provider.yaml").read_text(encoding="utf-8")
+        assert "fresh" in provider_text
+        assert "old" not in provider_text
+
+    def test_zero_max_age_disables_filtering(self, tmp_path):
+        nodes, dates = self._write_sites(tmp_path)
+        Merger(nodes_dir=str(nodes), site_up_dates=dates, max_node_age_days=0).run()
+        txt = (nodes / "merged.txt").read_text(encoding="utf-8")
+        assert "FRESH" in txt and "OLD" in txt
+
+    def test_missing_up_date_is_not_stale(self, tmp_path):
+        nodes, _dates = self._write_sites(tmp_path)
+        Merger(nodes_dir=str(nodes), site_up_dates={}, max_node_age_days=1).run()
+        txt = (nodes / "merged.txt").read_text(encoding="utf-8")
+        assert "FRESH" in txt and "OLD" in txt
+
+    def test_unparsable_up_date_is_not_stale(self, tmp_path):
+        nodes, _dates = self._write_sites(tmp_path)
+        Merger(
+            nodes_dir=str(nodes),
+            site_up_dates={"old": "not-a-date", "fresh": "also-bad"},
+            max_node_age_days=1,
+        ).run()
+        txt = (nodes / "merged.txt").read_text(encoding="utf-8")
+        assert "OLD" in txt

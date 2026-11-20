@@ -71,6 +71,9 @@ async def list_channel_videos(channel_url: str, limit: int = 10) -> list[YouTube
     except asyncio.TimeoutError:
         logger.warning("yt-dlp list_channel timed out for %s", channel_url)
         return []
+    except FileNotFoundError:
+        logger.error("yt-dlp is not installed; cannot list %s", channel_url)
+        return []
 
     if proc.returncode != 0:
         logger.warning("yt-dlp list_channel failed: %s", stderr.decode(errors="replace")[:200])
@@ -125,6 +128,10 @@ async def get_video_metadata(video_url: str) -> YouTubeVideo:
         return YouTubeVideo(url=video_url, video_id=video_id, title="",
                             description="", upload_date="", subtitles_text="",
                             channel="", error="yt-dlp timed out")
+    except FileNotFoundError:
+        return YouTubeVideo(url=video_url, video_id=video_id, title="",
+                            description="", upload_date="", subtitles_text="",
+                            channel="", error="yt-dlp is not installed")
 
     if proc.returncode != 0:
         return YouTubeVideo(url=video_url, video_id=video_id, title="",
@@ -284,6 +291,9 @@ async def _download_subtitles(video_url: str) -> str:
             )
             await asyncio.wait_for(proc.communicate(), timeout=60)
         except asyncio.TimeoutError:
+            return ""
+        except FileNotFoundError:
+            logger.error("yt-dlp is not installed; cannot download subtitles for %s", video_url)
             return ""
 
         for srt_file in Path(tmpdir).glob("*.srt"):
