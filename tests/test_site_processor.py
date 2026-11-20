@@ -2,13 +2,16 @@
 
 Run: pytest tests/test_site_processor.py -v
 """
+from datetime import datetime, timedelta, timezone
+from email.utils import format_datetime
+
 import pytest
 
 pytestmark = pytest.mark.asyncio
 
 from src.site_processor import SiteProcessor, SiteResult
 from src.config import SiteConfig, Config, CrawlConfig, LLMConfig, ProviderConfig
-from src.crawler import Page
+from src.crawler import Page, DownloadError
 from src.llm_router import LLMRouter
 
 
@@ -282,26 +285,329 @@ class TestExtractLinks:
 class TestDownloadRetry:
 
     async def test_retries_on_failure(self, monkeypatch):
-        """Retries 3 times, returns None on total failure."""
+        """Retries 3 times, returns (None, error) on total failure."""
         call_count = 0
+        delays: list[float] = []
 
         async def fake_download(url):
             nonlocal call_count
             call_count += 1
             raise ConnectionError("timeout")
 
+        async def fake_sleep(seconds):
+            delays.append(seconds)
+
         monkeypatch.setattr("src.site_processor.download_file", fake_download)
-        result = await SiteProcessor._download_retry("http://x.com/f.yaml")
-        assert result is None
+        monkeypatch.setattr("src.site_processor.asyncio.sleep", fake_sleep)
+        body, error = await SiteProcessor._download_retry("http://x.com/f.yaml")
+        assert body is None
+        assert error == "timeout"
         assert call_count == 3
+        assert delays == [1.5, 1.5]
 
     async def test_succeeds_on_first_try(self, monkeypatch):
         async def fake_download(url):
             return "content ok"
 
         monkeypatch.setattr("src.site_processor.download_file", fake_download)
-        result = await SiteProcessor._download_retry("http://x.com/f.txt")
-        assert result == "content ok"
+        body, error = await SiteProcessor._download_retry("http://x.com/f.txt")
+        assert body == "content ok"
+        assert error is None
+
+    async def test_empty_body_is_returned_not_retried(self, monkeypatch):
+        """A 200 with a 0-byte payload is a success, not a failure."""
+        call_count = 0
+
+        async def fake_download(url):
+            nonlocal call_count
+            call_count += 1
+            return ""
+
+        monkeypatch.setattr("src.site_processor.download_file", fake_download)
+        body, error = await SiteProcessor._download_retry("http://x.com/empty.txt")
+        assert body == ""
+        assert error is None
+        assert call_count == 1
+
+    async def test_http_status_surfaced_in_error(self, monkeypatch):
+        async def fake_download(url):
+            raise DownloadError("HTTP 404", status_code=404)
+
+        monkeypatch.setattr("src.site_processor.download_file", fake_download)
+        body, error = await SiteProcessor._download_retry("http://x.com/missing.txt", retries=1)
+        assert body is None
+        assert error == "HTTP 404"
+
+    async def test_permanent_4xx_is_not_retried(self, monkeypatch):
+        """A stale 404 link cannot recover within one run; retrying wastes time."""
+        calls: list[str] = []
+
+        async def fake_download(url):
+            calls.append(url)
+            raise DownloadError("HTTP 404", status_code=404)
+
+        monkeypatch.setattr("src.site_processor.download_file", fake_download)
+        body, error = await SiteProcessor._download_retry("http://x.com/missing.txt", retries=3)
+        assert body is None
+        assert error == "HTTP 404"
+        assert len(calls) == 1
+
+    async def test_403_is_not_retried(self, monkeypatch):
+        calls: list[str] = []
+
+        async def fake_download(url):
+            calls.append(url)
+            raise DownloadError("HTTP 403", status_code=403)
+
+        monkeypatch.setattr("src.site_processor.download_file", fake_download)
+        await SiteProcessor._download_retry("http://x.com/blocked.txt", retries=3)
+        assert len(calls) == 1
+
+    async def test_429_is_retried(self, monkeypatch):
+        """Rate limiting is transient, so the retry budget still applies."""
+        calls: list[str] = []
+
+        async def fake_download(url):
+            calls.append(url)
+            raise DownloadError("HTTP 429", status_code=429, retry_after="0")
+
+        monkeypatch.setattr("src.site_processor.download_file", fake_download)
+        body, error = await SiteProcessor._download_retry("http://x.com/limited.txt", retries=3)
+        assert body is None
+        assert error == "HTTP 429"
+        assert len(calls) == 3
+
+    async def test_5xx_is_retried(self, monkeypatch):
+        calls: list[str] = []
+
+        async def fake_download(url):
+            calls.append(url)
+            raise DownloadError("HTTP 502", status_code=502, retry_after="0")
+
+        monkeypatch.setattr("src.site_processor.download_file", fake_download)
+        await SiteProcessor._download_retry("http://x.com/bad-gateway.txt", retries=2)
+        assert len(calls) == 2
+
+    async def test_network_error_is_retried(self, monkeypatch):
+        """Exceptions without a status code stay retryable."""
+        calls: list[str] = []
+
+        async def fake_download(url):
+            calls.append(url)
+            raise OSError("connection reset")
+
+        monkeypatch.setattr("src.site_processor.download_file", fake_download)
+        await SiteProcessor._download_retry("http://x.com/x.txt", retries=2)
+        assert len(calls) == 2
+
+    async def test_retry_after_delta_seconds_honoured(self, monkeypatch):
+        """Retry-After: 5 → sleep 5s instead of the fixed 1.5s."""
+        delays: list[float] = []
+
+        async def fake_download(url):
+            raise DownloadError("HTTP 429", status_code=429, retry_after="5")
+
+        async def fake_sleep(seconds):
+            delays.append(seconds)
+
+        monkeypatch.setattr("src.site_processor.download_file", fake_download)
+        monkeypatch.setattr("src.site_processor.asyncio.sleep", fake_sleep)
+        body, error = await SiteProcessor._download_retry("http://x.com/f.yaml")
+        assert body is None
+        assert error == "HTTP 429"
+        assert delays == [5.0, 5.0]
+
+    async def test_retry_after_http_date_honoured(self, monkeypatch):
+        """Retry-After as an HTTP-date → sleep the remaining seconds."""
+        delays: list[float] = []
+
+        async def fake_download(url):
+            when = datetime.now(timezone.utc) + timedelta(seconds=12)
+            raise DownloadError(
+                "HTTP 503", status_code=503,
+                retry_after=format_datetime(when, usegmt=True),
+            )
+
+        async def fake_sleep(seconds):
+            delays.append(seconds)
+
+        monkeypatch.setattr("src.site_processor.download_file", fake_download)
+        monkeypatch.setattr("src.site_processor.asyncio.sleep", fake_sleep)
+        body, error = await SiteProcessor._download_retry("http://x.com/f.yaml", retries=2)
+        assert body is None
+        assert error == "HTTP 503"
+        assert len(delays) == 1
+        assert 10 <= delays[0] <= 12
+
+    async def test_malformed_retry_after_falls_back(self, monkeypatch):
+        """Garbage Retry-After → fixed 1.5s delay."""
+        delays: list[float] = []
+
+        async def fake_download(url):
+            raise DownloadError("HTTP 429", status_code=429, retry_after="soon-ish")
+
+        async def fake_sleep(seconds):
+            delays.append(seconds)
+
+        monkeypatch.setattr("src.site_processor.download_file", fake_download)
+        monkeypatch.setattr("src.site_processor.asyncio.sleep", fake_sleep)
+        body, _error = await SiteProcessor._download_retry("http://x.com/f.yaml", retries=2)
+        assert body is None
+        assert delays == [1.5]
+
+    async def test_retry_after_capped_at_30s(self, monkeypatch):
+        """A hostile Retry-After cannot stall the run for more than 30s."""
+        delays: list[float] = []
+
+        async def fake_download(url):
+            raise DownloadError("HTTP 429", status_code=429, retry_after="86400")
+
+        async def fake_sleep(seconds):
+            delays.append(seconds)
+
+        monkeypatch.setattr("src.site_processor.download_file", fake_download)
+        monkeypatch.setattr("src.site_processor.asyncio.sleep", fake_sleep)
+        await SiteProcessor._download_retry("http://x.com/f.yaml", retries=2)
+        assert delays == [30.0]
+
+    async def test_past_http_date_yields_zero_delay(self, monkeypatch):
+        """A Retry-After date in the past means retry immediately."""
+        delays: list[float] = []
+
+        async def fake_download(url):
+            raise DownloadError(
+                "HTTP 503", status_code=503,
+                retry_after="Wed, 21 Oct 2015 07:28:00 GMT",
+            )
+
+        async def fake_sleep(seconds):
+            delays.append(seconds)
+
+        monkeypatch.setattr("src.site_processor.download_file", fake_download)
+        monkeypatch.setattr("src.site_processor.asyncio.sleep", fake_sleep)
+        await SiteProcessor._download_retry("http://x.com/f.yaml", retries=2)
+        assert delays == [0.0]
+
+
+# ═══════════════════════════════════════════════════════════════
+# _parse_retry_after
+# ═══════════════════════════════════════════════════════════════
+
+class TestParseRetryAfter:
+
+    def test_none_or_empty_returns_none(self):
+        assert SiteProcessor._parse_retry_after(None) is None
+        assert SiteProcessor._parse_retry_after("") is None
+        assert SiteProcessor._parse_retry_after("   ") is None
+
+    def test_delta_seconds(self):
+        assert SiteProcessor._parse_retry_after("120") == 30.0  # capped
+        assert SiteProcessor._parse_retry_after("5") == 5.0
+        assert SiteProcessor._parse_retry_after("0") == 0.0
+
+    def test_http_date(self):
+        when = datetime.now(timezone.utc) + timedelta(seconds=10)
+        result = SiteProcessor._parse_retry_after(format_datetime(when, usegmt=True))
+        assert result is not None
+        assert 8 <= result <= 10
+
+    def test_malformed_returns_none(self):
+        assert SiteProcessor._parse_retry_after("not-a-date") is None
+        assert SiteProcessor._parse_retry_after("12.5") is None
+        assert SiteProcessor._parse_retry_after("Wed, 99 Xxx 9999") is None
+        assert SiteProcessor._parse_retry_after("²") is None  # non-ASCII digit
+
+    def test_negative_date_clamped_to_zero(self):
+        assert SiteProcessor._parse_retry_after("Wed, 21 Oct 2015 07:28:00 GMT") == 0.0
+
+
+# ═══════════════════════════════════════════════════════════════
+# _run_blog: skip vs error classification
+# ═══════════════════════════════════════════════════════════════
+
+VALID_TXT = "vless://418048af-a293-4b99-9b0c-98ca3580dd24@example.com:443"
+
+
+def make_blog_config(tmp_path) -> Config:
+    return Config(
+        sites=[SiteConfig(name="skip-site", start_url="https://example.com/blog/")],
+        crawl=CrawlConfig(max_articles=1, timeout=30, concurrency=1),
+        output={"dir": str(tmp_path / "nodes")},
+        llm=LLMConfig(),
+    )
+
+
+class TestRunBlogClassification:
+
+    async def test_unsupported_and_empty_are_skipped(
+        self, monkeypatch, tmp_path,
+    ):
+        """Unsupported + 0-byte downloads increment ``skipped``, not ``errors``."""
+        config = make_blog_config(tmp_path)
+        processor = SiteProcessor(config.sites[0], config, None)
+
+        blog = make_page(links=[
+            {"href": "/post-2026-06-18.htm", "text": "6月18日 | Post"},
+        ])
+        downloads = {
+            "https://example.com/a.txt": VALID_TXT,
+            "https://example.com/b.json": '{"outbounds": []}',
+            "https://example.com/c.yaml": "",
+        }
+
+        async def fake_fetch(url, timeout_ms=60000):
+            if url == "https://example.com/blog/":
+                return blog
+            return make_page(url=url, markdown="")
+
+        async def fake_download(url):
+            return downloads[url]
+
+        async def fake_extract(page):
+            return sorted(downloads), False
+
+        monkeypatch.setattr("src.site_processor.fetch_page", fake_fetch)
+        monkeypatch.setattr("src.site_processor.download_file", fake_download)
+        monkeypatch.setattr(SiteProcessor, "_extract_links", staticmethod(fake_extract))
+
+        result = await processor.run()
+
+        assert result.txt_count == 1
+        assert result.skipped == 2
+        assert result.errors == []
+
+    async def test_real_download_error_is_an_error(
+        self, monkeypatch, tmp_path,
+    ):
+        """A 404 stays an error and reports the HTTP status."""
+        config = make_blog_config(tmp_path)
+        processor = SiteProcessor(config.sites[0], config, None)
+
+        blog = make_page(links=[
+            {"href": "/post-2026-06-18.htm", "text": "6月18日 | Post"},
+        ])
+
+        async def fake_fetch(url, timeout_ms=60000):
+            if url == "https://example.com/blog/":
+                return blog
+            return make_page(url=url, markdown="")
+
+        async def fake_download(url):
+            raise DownloadError("HTTP 404", status_code=404)
+
+        async def fake_extract(page):
+            return ["https://example.com/missing.txt"], False
+
+        monkeypatch.setattr("src.site_processor.fetch_page", fake_fetch)
+        monkeypatch.setattr("src.site_processor.download_file", fake_download)
+        monkeypatch.setattr(SiteProcessor, "_extract_links", staticmethod(fake_extract))
+
+        result = await processor.run()
+
+        assert result.skipped == 0
+        assert len(result.errors) == 1
+        assert "download failed: https://example.com/missing.txt" in result.errors[0]
+        assert "(HTTP 404)" in result.errors[0]
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -317,4 +623,5 @@ class TestSiteResult:
         assert r.yaml_count == 0
         assert r.total_bytes == 0
         assert r.pattern_saved is False
+        assert r.skipped == 0
         assert r.errors == []

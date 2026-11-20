@@ -14,6 +14,16 @@ class Page:
     error: str = ""
 
 
+class DownloadError(Exception):
+    """Download failed; carries HTTP status and ``Retry-After`` when present."""
+
+    def __init__(self, message: str, status_code: int | None = None,
+                 retry_after: str | None = None):
+        super().__init__(message)
+        self.status_code = status_code
+        self.retry_after = retry_after
+
+
 async def fetch_page(url: str, timeout_ms: int = 60000) -> Page:
     """Fetch a page via Crawl4AI and return structured content."""
     try:
@@ -47,12 +57,22 @@ async def fetch_page(url: str, timeout_ms: int = 60000) -> Page:
 
 
 async def download_file(url: str) -> str:
-    """Download file via httpx with extended read timeout for large files."""
+    """Download file via httpx with extended read timeout for large files.
+
+    Returns the decoded body, which may be empty when a server answers 200
+    with a 0-byte payload. Raises ``DownloadError`` for non-2xx responses,
+    including the status code and any ``Retry-After`` header value.
+    """
     async with httpx.AsyncClient(
         timeout=httpx.Timeout(60.0, connect=15.0, read=60.0),
         follow_redirects=True,
         limits=httpx.Limits(max_keepalive_connections=5, max_connections=10),
     ) as c:
         resp = await c.get(url)
-        resp.raise_for_status()
+        if not 200 <= resp.status_code < 300:
+            raise DownloadError(
+                f"HTTP {resp.status_code}",
+                status_code=resp.status_code,
+                retry_after=resp.headers.get("Retry-After"),
+            )
         return resp.text
