@@ -2,6 +2,8 @@
 
 Run: pytest tests/test_youtube.py -v
 """
+import pytest
+
 from src.youtube import (
     extract_password_from_text,
     extract_external_links,
@@ -168,3 +170,33 @@ class TestExtractVideoId:
 
     def test_with_extra_params(self):
         assert _extract_video_id("https://www.youtube.com/watch?v=abc123def45&t=120") == "abc123def45"
+
+
+# ═══════════════════════════════════════════════════════════════
+# Missing yt-dlp binary
+# ═══════════════════════════════════════════════════════════════
+
+class TestMissingYtDlp:
+
+    @pytest.mark.asyncio
+    async def test_list_channel_returns_empty_when_binary_missing(self, monkeypatch):
+        import asyncio as _asyncio
+        from src import youtube
+
+        async def missing(*args, **kwargs):
+            raise FileNotFoundError("yt-dlp")
+
+        monkeypatch.setattr(_asyncio, "create_subprocess_exec", missing)
+        assert await youtube.list_channel_videos("https://youtube.com/@x") == []
+
+    @pytest.mark.asyncio
+    async def test_get_metadata_reports_missing_binary(self, monkeypatch):
+        import asyncio as _asyncio
+        from src import youtube
+
+        async def missing(*args, **kwargs):
+            raise FileNotFoundError("yt-dlp")
+
+        monkeypatch.setattr(_asyncio, "create_subprocess_exec", missing)
+        video = await youtube.get_video_metadata("https://youtu.be/abc123def45")
+        assert video.error == "yt-dlp is not installed"

@@ -68,7 +68,12 @@ class Scheduler:
         if not target:
             out_dir = self.config.output.get("dir", "nodes")
             probe_settings = self._probe_settings()
-            merger = Merger(nodes_dir=out_dir, probe_settings=probe_settings)
+            merger = Merger(
+                nodes_dir=out_dir,
+                probe_settings=probe_settings,
+                site_up_dates={s.name: s.up_date for s in self.config.sites},
+                max_node_age_days=self.config.merge.max_node_age_days,
+            )
             merge_result = await merger.run_async()
             print(f"\n  merge: {merge_result.total_nodes} total nodes across "
                   f"{merge_result.txt_sources} txt + {merge_result.yaml_sources} yaml sources")

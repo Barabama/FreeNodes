@@ -11,22 +11,15 @@ llm:
     models:
     - openrouter/free
     name: openrouter
-  - api_key_env: CEREBRAS_API_KEY
-    base_url: https://api.cerebras.ai/v1
-    default_weight: 5
-    is_reasoning_model: true
-    models:
-    - gpt-oss-120b
-    - gemma-4-31b
-    name: cerebras
   - api_key_env: OPENCODE_API_KEY
     base_url: https://opencode.ai/zen/v1
     default_weight: 20
     is_reasoning_model: false
     models:
-    - deepseek-v4-flash-free
-    - mimo-v2.5-free
-    - qwen3.6-plus-free
+    - deepseek-v4.1-flash-free
+    - mimo-v2.6-flash-free
+    - longcat-2.5-free
+    - hy4-flash-free
     name: opencode
   - api_key_env: KILOCODE_API_KEY
     base_url: https://api.kilo.ai/api/gateway
@@ -37,15 +30,15 @@ llm:
     name: kilocode
   task_routing:
     extract_links:
-      cerebras: 5
       kilocode: 30
       opencode: 10
       openrouter: 60
     generate_pattern:
-      cerebras: 5
       kilocode: 20
       opencode: 0
       openrouter: 70
+merge:
+  max_node_age_days: 14
 output:
   dir: nodes
 probe:
