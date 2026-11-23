@@ -303,70 +303,6 @@ proxies:
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   udp: true
-- name: 🇯🇵 日本_3
-  server: 139.162.91.239
-  port: 443
-  type: vless
-  uuid: b0dc852a-97ec-4d4e-9179-f0e5c2ef1489
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  reality-opts:
-    public-key: "7PBmAR6CGAh2naIi09rlP_PtmLmqhlXF_toZEdAHmRo"
-    short-id: "7c6d6833"
-  servername: itunes.apple.com
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /ws
-  udp: true
-- name: 🇺🇸 美国_3
-  server: 167.82.76.27
-  port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: ssl.fastly.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇫🇷 法国_3
-  server: edge.bookmai.com
-  port: 443
-  type: vless
-  uuid: b9bfa54d-bc44-4592-a6d6-89a9665d286f
-  tls: true
-  tfo: false
-  flow: xtls-rprx-vision
-  skip-cert-verify: true
-  reality-opts:
-    public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-  servername: mother-earth.fyi
-  client-fingerprint: chrome
-  network: tcp
-  udp: true
-- name: 🇯🇵 日本2_3
-  server: v2jp.k1.ssnss.live
-  port: 44184
-  type: trojan
-  password: d050aca3-9df2-4461-90ec-92373c1d7636
-  skip-cert-verify: true
-  udp: true
-- name: 🇯🇵 日本3_3
-  server: 172.105.216.21
-  port: 443
-  type: vless
-  uuid: 76f1ce49-bcea-4680-b9ef-16592269445b
-  tls: true
-  tfo: false
-  skip-cert-verify: true
-  reality-opts:
-    public-key: "Mjv5qe_CrvfHdVwgtyqYbqPesZ-1oko2XYg3dguzvxg"
-    short-id: "c29f9af4"
-  servername: itunes.apple.com
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /ws
-  udp: true
 - name: 🇸🇬 新加坡_3
   server: 139.162.20.241
   port: 443
@@ -383,54 +319,261 @@ proxies:
   network: ws
   ws-opts:
     path: /ws
+    v2ray-http-upgrade: false
+  udp: true
+- name: 🇭🇰 香港
+  server: 116.213.43.43
+  port: 11103
+  type: vless
+  uuid: bb836d81-d0c5-4f01-a584-806cdf65e36a
+  tls: true
+  tfo: false
+  flow: xtls-rprx-vision
+  skip-cert-verify: true
+  reality-opts:
+    public-key: "5NNdXPMTBLP-xeDKFwcG-j6u-c4DhXIfnlHMqMJZ4n4"
+    short-id: "9564e1a7a1cf8b3a"
+  servername: www.apple.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: 🇭🇰 香港2
+  server: 116.213.43.43
+  port: 11107
+  type: vless
+  uuid: 08a37d1f-7bf1-4b5d-a2ec-5ced6a633d7f
+  tls: true
+  tfo: false
+  flow: xtls-rprx-vision
+  skip-cert-verify: true
+  reality-opts:
+    public-key: "6GRzkPbs12fKBdBBFzs5dmtmbSHCXMngUCBKLrXYm3U"
+    short-id: "e2ccd8eedcbee2ce"
+  servername: www.apple.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: 🇹🇼 台湾
+  server: 116.213.43.43
+  port: 11102
+  type: vless
+  uuid: 530d31fc-2690-49e4-bfc9-3f991e145008
+  tls: true
+  tfo: false
+  flow: xtls-rprx-vision
+  skip-cert-verify: true
+  reality-opts:
+    public-key: "oW6HMjniDmBJdjGKwhBAIS2zMS1VvHORubh9vdazqQ0"
+    short-id: "ed571d022f7bc3bf"
+  servername: www.apple.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: 🇭🇰 香港3
+  server: 47.243.230.253
+  port: 443
+  type: vless
+  uuid: 27c26119-090b-4ae3-80d2-e9f08a575862
+  tls: true
+  tfo: false
+  flow: xtls-rprx-vision
+  skip-cert-verify: true
+  reality-opts:
+    public-key: "NNBFlHVb2xbmURjkxXCZfqZNFmd5MprUtg5usEg_LRw"
+    short-id: "58d234c8c6a009bc"
+  servername: www.apple.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: 🇺🇸 美国_3
+  server: 103.119.15.175
+  port: 443
+  type: vless
+  uuid: 89be587f-0e93-4c67-822e-98ad0a56c29e
+  tls: true
+  tfo: false
+  flow: xtls-rprx-vision
+  skip-cert-verify: true
+  reality-opts:
+    public-key: "vQgrNIQTmbTIqtauDixzp2ePvd-aK_zlTctIDRPk3wQ"
+    short-id: "ce90a4459f024897"
+  servername: www.amazon.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: 🇩🇪 德国
+  server: 189.24.82.30
+  port: 443
+  type: vless
+  uuid: b354463f-ac84-422e-9a26-556c81ba001c
+  tls: true
+  tfo: false
+  flow: xtls-rprx-vision
+  skip-cert-verify: true
+  reality-opts:
+    public-key: "77HTpkO_F3cUfA5Trka3eSh8V18atRMLyclGqZ__8C8"
+    short-id: "b73c53b18b65dd90"
+  servername: www.apple.com
+  client-fingerprint: chrome
+  network: tcp
   udp: true
 - name: 🇺🇸 美国2_3
-  server: 172.235.53.103
-  port: 443
+  server: 116.213.43.43
+  port: 11105
   type: vless
-  uuid: 38ae2bc6-577c-4e0a-b49c-81c44a0b4383
+  uuid: 31d5b95e-aff2-4ffb-8160-b5ae941b46f6
   tls: true
   tfo: false
+  flow: xtls-rprx-vision
   skip-cert-verify: true
   reality-opts:
-    public-key: "YS1T3hKkZSWZBej5I1O2s3QQ-jf5JOAY24EZbp9faX8"
-    short-id: "60e39a7e"
-  servername: itunes.apple.com
+    public-key: "ghxoNrFX488_gXprrfDt-03Lkxj3YFqS2q-DDw-m6yE"
+    short-id: "d9180a5730e950d2"
+  servername: www.apple.com
   client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /ws
+  network: tcp
   udp: true
 - name: 🇺🇸 美国3_3
-  server: 172.236.239.126
+  server: 166.0.27.137
   port: 443
   type: vless
-  uuid: 6b4861de-7316-4a5a-bc45-0cbd8bf97eab
+  uuid: ad45be81-9ba1-4a41-9326-f6ceb63eb79f
   tls: true
   tfo: false
+  flow: xtls-rprx-vision
   skip-cert-verify: true
   reality-opts:
-    public-key: "SJAHlQal4h4gy7BFInw13ute3ZM49kXMWCkJj3F4tW0"
-    short-id: "357a37e1"
-  servername: itunes.apple.com
+    public-key: "AMv7Xq2QzEDvAotwLRbqCk-WAxlQ7lxxYffMCvmNGhE"
+    short-id: "5bcc25a95dcd415b"
+  servername: www.samsung.com
   client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /ws
+  network: tcp
   udp: true
-- name: 🇺🇸 美国4_3
-  server: 167.82.76.27
+- name: 🇬🇧 英国
+  server: 8.208.101.215
   port: 443
-  type: trojan
-  password: MiTiVPN
-  sni: ssl.fastly.com
+  type: vless
+  uuid: 3112c3f2-7172-417d-bce6-d168135d1603
+  tls: true
+  tfo: false
+  flow: xtls-rprx-vision
   skip-cert-verify: true
+  reality-opts:
+    public-key: "U6FtussjhSb81ka0z9IDf1n80syjsczIDrRTdmzyeGM"
+    short-id: "5a6f99962a27cdbc"
+  servername: www.ebay.com
+  client-fingerprint: chrome
+  network: tcp
   udp: true
-- name: 🇺🇸 美国5_3
-  server: 151.101.110.219
-  port: 443
-  type: trojan
-  password: Mitivpn
-  sni: ssl.fastly.com
+- name: 🇯🇵 日本_3
+  server: 116.213.43.43
+  port: 11101
+  type: vless
+  uuid: ca69a29d-60ef-433a-91bc-27537be993c8
+  tls: true
+  tfo: false
+  flow: xtls-rprx-vision
   skip-cert-verify: true
+  reality-opts:
+    public-key: "2eUT-b2e2lghUKWM3qf8uI3_Dphg9whKrQ08o4S-bzw"
+    short-id: "82f99830e7b834e2"
+  servername: www.apple.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: 🇸🇬 新加坡2
+  server: 47.84.39.7
+  port: 443
+  type: vless
+  uuid: a6fd460c-88bd-4425-bb56-2b73d29455cc
+  tls: true
+  tfo: false
+  flow: xtls-rprx-vision
+  skip-cert-verify: true
+  reality-opts:
+    public-key: "EXPjsObdfDnKuRmw4-A9_G4k-WP2cUXuuvUo8It1sAo"
+    short-id: "4d1244cd42a20e6c"
+  servername: www.amazon.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: 🇰🇷 韩国
+  server: 43.108.109.112
+  port: 443
+  type: vless
+  uuid: 4ded3111-b418-475a-93de-0360932508b2
+  tls: true
+  tfo: false
+  flow: xtls-rprx-vision
+  skip-cert-verify: true
+  reality-opts:
+    public-key: "vrFq4-k-eiTSyRF3T3e7Fqmlv4XSKmByKYsw55zeX3w"
+    short-id: "b79a86e2b1a586a0"
+  servername: www.samsung.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: 🇹🇭 泰国
+  server: 47.81.32.116
+  port: 443
+  type: vless
+  uuid: 33330382-a046-428d-9e95-9aae8bd6b90e
+  tls: true
+  tfo: false
+  flow: xtls-rprx-vision
+  skip-cert-verify: true
+  reality-opts:
+    public-key: "P3MHfKzFZhV5TRjdEj2r43fUr24iijLqB_k7rbSR2Bg"
+    short-id: "4446248c38c846e6"
+  servername: www.amazon.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: 🇵🇭 菲律宾
+  server: 47.80.76.105
+  port: 443
+  type: vless
+  uuid: ecdcc5d3-644a-4606-9e9e-130315da68cd
+  tls: true
+  tfo: false
+  flow: xtls-rprx-vision
+  skip-cert-verify: true
+  reality-opts:
+    public-key: "T7_XLYoPP1_kxIaOov9SovRMk-P1mS-FRhdWueHxaR0"
+    short-id: "58aa532948cab4a4"
+  servername: www.amazon.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: 🇲🇾 马来西亚
+  server: 47.250.146.252
+  port: 443
+  type: vless
+  uuid: 7a09c6e0-ad6e-4f96-980e-e0b198bb722f
+  tls: true
+  tfo: false
+  flow: xtls-rprx-vision
+  skip-cert-verify: true
+  reality-opts:
+    public-key: "SJyvyV7tQNPeJR-dnV11hve50q-En-mhh2eDXMX16C4"
+    short-id: "2fbe9d45d0754b78"
+  servername: www.ebay.com
+  client-fingerprint: chrome
+  network: tcp
+  udp: true
+- name: 🇮🇩 印尼
+  server: 147.139.197.200
+  port: 443
+  type: vless
+  uuid: a197af05-7048-478e-8d99-c3151adb4064
+  tls: true
+  tfo: false
+  flow: xtls-rprx-vision
+  skip-cert-verify: true
+  reality-opts:
+    public-key: "ulPGCwIg38AVGww0FBfCNROmu_0N1hykbHbhcAFgcl0"
+    short-id: "6135361d11cc2b31"
+  servername: www.ebay.com
+  client-fingerprint: chrome
+  network: tcp
   udp: true

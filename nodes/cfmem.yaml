@@ -1,15 +1,4 @@
 proxies:
-- type: vmess
-  name: 🇨🇳_CN_中国_IPV4
-  server: 39.108.113.127
-  port: 10086
-  uuid: a625d148-e988-4008-b957-e9051a6371d2
-  cipher: auto
-  alterId: 0
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
 - type: hysteria
   name: 🇺🇸_US_美国_IPV4
   server: 137.175.82.41
@@ -24,42 +13,6 @@ proxies:
   up: '11'
   down: '55'
   auth-str: dongtaiwang.com
-- type: hysteria2
-  name: 🇫🇷_FR_法国_IPV6
-  server: 2001:bc8:32d7:17b::7
-  port: 22000
-  password: dongtaiwang.com
-  tls: true
-  servername: www.microsoft.com
-  sni: www.microsoft.com
-  skip-cert-verify: true
-- type: hysteria2
-  name: 🇫🇷_FR_法国_IPV6 (2)
-  server: 2001:bc8:32d7:17b::6
-  port: 22000
-  password: dongtaiwang.com
-  tls: true
-  servername: www.microsoft.com
-  sni: www.microsoft.com
-  skip-cert-verify: true
-- type: hysteria2
-  name: 🇫🇷_FR_法国_IPV6 (3)
-  server: 2001:bc8:32d7:17b::5
-  port: 22000
-  password: dongtaiwang.com
-  tls: true
-  servername: www.microsoft.com
-  sni: www.microsoft.com
-  skip-cert-verify: true
-- type: hysteria2
-  name: 🇫🇷_FR_法国_IPV6 (4)
-  server: 2001:bc8:32d7:17b::4
-  port: 22000
-  password: dongtaiwang.com
-  tls: true
-  servername: www.microsoft.com
-  sni: www.microsoft.com
-  skip-cert-verify: true
 - type: hysteria
   name: 🇺🇸_US_美国_IPV4 (2)
   server: 38.6.222.132
@@ -88,16 +41,6 @@ proxies:
   up: '11'
   down: '55'
   auth-str: dongtaiwang.com
-- type: trojan
-  name: 🇸🇬_SG_新加坡->🇳🇬_NG_尼日利亚_IPV4
-  server: sclass-b1.catcat321.com
-  port: 20051
-  password: d7563108-615c-4338-a7bd-77f359869a4a
-  tls: true
-  servername: hk.catxstar.com
-  sni: hk.catxstar.com
-  skip-cert-verify: true
-  client-fingerprint: chrome
 - type: vless
   name: 🇷🇺_RU_俄罗斯_IPV4
   server: 136.148.83.69
@@ -110,6 +53,14 @@ proxies:
   client-fingerprint: chrome
 - type: ss
   name: 🇩🇪_DE_德国_IPV4
+  server: 47.254.128.109
+  port: 443
+  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
+  cipher: 2022-blake3-chacha20-poly1305
+  tls: false
+  skip-cert-verify: false
+- type: ss
+  name: 🇩🇪_DE_德国_IPV4 (2)
   server: 47.254.167.157
   port: 443
   password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
@@ -168,6 +119,20 @@ proxies:
     headers:
       Host: itunes.apple.com
 - type: vless
+  name: 🇹🇼_TW_台湾_IPV4
+  server: free.fugui.lol
+  port: 47396
+  uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
+  flow: xtls-rprx-vision
+  tls: true
+  servername: swdist.apple.com
+  sni: swdist.apple.com
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: "IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ"
+    short-id: "fa514b83"
+- type: vless
   name: 🇩🇪_DE_德国->🇫🇷_FR_法国_IPV4
   server: 163.245.42.87
   port: 443
@@ -195,24 +160,6 @@ proxies:
   down: '55'
   auth-str: dongtaiwang.com
 - type: vless
-  name: 🇸🇬_SG_新加坡_IPV4
-  server: 139.162.20.241
-  port: 443
-  uuid: 7f0270f9-1abc-4c4f-960d-0a23e32f1eb8
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "fG1u2AZj5pgSNWO3MBmkoY6K61xBwnuYX3_z1fSeR0o"
-    short-id: "640c807d"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
   name: 🇺🇸_US_美国_IPV4 (4)
   server: 45.32.70.42
   port: 443
@@ -225,24 +172,6 @@ proxies:
   reality-opts:
     public-key: "cQZ-dTY4QSQteDYpngP2PavOsn9yY9lIP-OscwzwAio"
     short-id: "4dda4608"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇯🇵_JP_日本_IPV4 (3)
-  server: 172.104.86.181
-  port: 443
-  uuid: 010431f3-04f6-4404-a801-b93bf2e3c2b2
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "ujYDprigWFLxcj4BtitDNa-hoPjIbpSzrnEcqp3cgjk"
-    short-id: "c8559ca1"
   network: ws
   ws-opts:
     path: /ws
@@ -285,7 +214,7 @@ proxies:
     headers:
       Host: itunes.apple.com
 - type: vless
-  name: 🇸🇬_SG_新加坡_IPV4 (2)
+  name: 🇸🇬_SG_新加坡_IPV4
   server: 139.180.221.53
   port: 443
   uuid: 2b30d0df-6ebe-4aed-9bad-b7c554e35e1d
@@ -303,7 +232,7 @@ proxies:
     headers:
       Host: itunes.apple.com
 - type: vless
-  name: 🇯🇵_JP_日本_IPV4 (4)
+  name: 🇯🇵_JP_日本_IPV4 (3)
   server: 45.76.222.108
   port: 443
   uuid: bd95a04e-e3e1-460e-b89d-e9a693d393e0
@@ -340,24 +269,6 @@ proxies:
       Host: itunes.apple.com
 - type: vless
   name: 🇺🇸_US_美国_IPV4 (8)
-  server: 172.236.233.130
-  port: 443
-  uuid: a663dc28-28dc-4f97-9665-6ac215c8e567
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "4wXbhUoSy9s9bGy9PaK18XVTTw3wXkBDjEusiMHaMB4"
-    short-id: "53908445"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (9)
   server: 107.191.58.86
   port: 443
   uuid: 4444e77e-3d2a-4dc9-bf31-936f038f5570
@@ -375,7 +286,7 @@ proxies:
     headers:
       Host: itunes.apple.com
 - type: vless
-  name: 🇺🇸_US_美国_IPV4 (10)
+  name: 🇺🇸_US_美国_IPV4 (9)
   server: 172.233.129.172
   port: 443
   uuid: 40a4b915-5e6f-4316-9bb1-e899f30608e3
@@ -392,8 +303,17 @@ proxies:
     path: /ws
     headers:
       Host: itunes.apple.com
+- type: trojan
+  name: 🇨🇳_CN_中国_IPV4
+  server: sclass-01.catcat321.com
+  port: 20103
+  password: d7563108-615c-4338-a7bd-77f359869a4a
+  tls: true
+  servername: hk.catxstar.com
+  sni: hk.catxstar.com
+  skip-cert-verify: false
 - type: hysteria2
-  name: 🇺🇸_US_美国_IPV4 (11)
+  name: 🇺🇸_US_美国_IPV4 (10)
   server: starlink-ft.251313.xyz
   port: 443
   password: https://xship.2fa.cat
@@ -401,6 +321,22 @@ proxies:
   servername: xship.top
   sni: xship.top
   skip-cert-verify: true
+- type: vless
+  name: 🇸🇨_SC_塞舌尔->🇳🇱_NL_荷兰_IPV4
+  server: 196.196.148.63
+  port: 443
+  uuid: cda0862a-0f87-4be9-8ed8-1d0c9e382839
+  tls: true
+  servername: 717252g.nl8.h1clayd.click
+  sni: 717252g.nl8.h1clayd.click
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: "PD8Jdlg3xB9QY--jwQjp8PFPzCS8-Oryw6-HWBcHMFU"
+    short-id: "d3bd772514c87d28"
+  network: grpc
+  grpc-opts:
+    grpc-service-name: 204adda7e3da
 - type: vmess
   name: 🇺🇸 机场推荐:dafei.de 美国 89_IPV4
   server: 188.114.99.137
@@ -418,8 +354,23 @@ proxies:
     headers:
       Host: guanwang.awsno.com
 - type: vmess
-  name: 🇺🇸_US_美国_IPV4 (12)
-  server: 104.18.42.163
+  name: '@DeltaKroneckerGithub_3021_IPV4'
+  server: 172.64.145.93
+  port: 443
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  cipher: auto
+  alterId: 0
+  tls: true
+  servername: guanwang.awsno.com
+  sni: guanwang.awsno.com
+  network: ws
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: guanwang.awsno.com
+- type: vmess
+  name: 🇺🇸 机场推荐:dafei.de 美国 15_IPV4
+  server: 172.67.190.164
   port: 443
   uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
   cipher: auto
@@ -433,17 +384,39 @@ proxies:
     path: /hls/cctv5phd.m3u8
     headers:
       Host: guanwang.awsno.com
-- type: vmess
-  name: 🇨🇳_CN_中国_IPV4_2
-  server: 39.108.113.127
-  port: 10086
-  uuid: a625d148-e988-4008-b957-e9051a6371d2
-  cipher: auto
-  alterId: 0
+- type: anytls
+  name: 🇹🇼_TW_台湾->🇺🇸_US_美国_IPV4
+  server: sdf65h46wr.df6h451rh.xin
+  port: 443
+  password: 0324fbc29561
+  tls: true
+  servername: images.ctfassets.net
+  sni: images.ctfassets.net
+  skip-cert-verify: true
+- type: ss
+  name: 🇮🇹_IT_意大利_IPV4
+  server: 202.50.253.27
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
   tls: false
-  network: ws
-  ws-opts:
-    path: /
+  skip-cert-verify: false
+- type: ss
+  name: 🇮🇹_IT_意大利_IPV4 (2)
+  server: 202.50.253.36
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  tls: false
+  skip-cert-verify: false
+- type: ss
+  name: 🇮🇹_IT_意大利_IPV4 (3)
+  server: 202.50.253.90
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  tls: false
+  skip-cert-verify: false
 - type: hysteria
   name: 🇺🇸_US_美国_IPV4_2
   server: 137.175.82.41
@@ -458,42 +431,6 @@ proxies:
   up: '11'
   down: '55'
   auth-str: dongtaiwang.com
-- type: hysteria2
-  name: 🇫🇷_FR_法国_IPV6_2
-  server: 2001:bc8:32d7:17b::7
-  port: 22000
-  password: dongtaiwang.com
-  tls: true
-  servername: www.microsoft.com
-  sni: www.microsoft.com
-  skip-cert-verify: true
-- type: hysteria2
-  name: 🇫🇷_FR_法国_IPV6 (2)_2
-  server: 2001:bc8:32d7:17b::6
-  port: 22000
-  password: dongtaiwang.com
-  tls: true
-  servername: www.microsoft.com
-  sni: www.microsoft.com
-  skip-cert-verify: true
-- type: hysteria2
-  name: 🇫🇷_FR_法国_IPV6 (3)_2
-  server: 2001:bc8:32d7:17b::5
-  port: 22000
-  password: dongtaiwang.com
-  tls: true
-  servername: www.microsoft.com
-  sni: www.microsoft.com
-  skip-cert-verify: true
-- type: hysteria2
-  name: 🇫🇷_FR_法国_IPV6 (4)_2
-  server: 2001:bc8:32d7:17b::4
-  port: 22000
-  password: dongtaiwang.com
-  tls: true
-  servername: www.microsoft.com
-  sni: www.microsoft.com
-  skip-cert-verify: true
 - type: hysteria
   name: 🇺🇸_US_美国_IPV4 (2)_2
   server: 38.6.222.132
@@ -522,16 +459,6 @@ proxies:
   up: '11'
   down: '55'
   auth-str: dongtaiwang.com
-- type: trojan
-  name: 🇸🇬_SG_新加坡->🇳🇬_NG_尼日利亚_IPV4_2
-  server: sclass-b1.catcat321.com
-  port: 20051
-  password: d7563108-615c-4338-a7bd-77f359869a4a
-  tls: true
-  servername: hk.catxstar.com
-  sni: hk.catxstar.com
-  skip-cert-verify: true
-  client-fingerprint: chrome
 - type: vless
   name: 🇷🇺_RU_俄罗斯_IPV4_2
   server: 136.148.83.69
@@ -544,6 +471,14 @@ proxies:
   client-fingerprint: chrome
 - type: ss
   name: 🇩🇪_DE_德国_IPV4_2
+  server: 47.254.128.109
+  port: 443
+  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
+  cipher: 2022-blake3-chacha20-poly1305
+  tls: false
+  skip-cert-verify: false
+- type: ss
+  name: 🇩🇪_DE_德国_IPV4 (2)_2
   server: 47.254.167.157
   port: 443
   password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
@@ -602,6 +537,20 @@ proxies:
     headers:
       Host: itunes.apple.com
 - type: vless
+  name: 🇹🇼_TW_台湾_IPV4_2
+  server: free.fugui.lol
+  port: 47396
+  uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
+  flow: xtls-rprx-vision
+  tls: true
+  servername: swdist.apple.com
+  sni: swdist.apple.com
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: "IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ"
+    short-id: "fa514b83"
+- type: vless
   name: 🇩🇪_DE_德国->🇫🇷_FR_法国_IPV4_2
   server: 163.245.42.87
   port: 443
@@ -629,24 +578,6 @@ proxies:
   down: '55'
   auth-str: dongtaiwang.com
 - type: vless
-  name: 🇸🇬_SG_新加坡_IPV4_2
-  server: 139.162.20.241
-  port: 443
-  uuid: 7f0270f9-1abc-4c4f-960d-0a23e32f1eb8
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "fG1u2AZj5pgSNWO3MBmkoY6K61xBwnuYX3_z1fSeR0o"
-    short-id: "640c807d"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
   name: 🇺🇸_US_美国_IPV4 (4)_2
   server: 45.32.70.42
   port: 443
@@ -659,24 +590,6 @@ proxies:
   reality-opts:
     public-key: "cQZ-dTY4QSQteDYpngP2PavOsn9yY9lIP-OscwzwAio"
     short-id: "4dda4608"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇯🇵_JP_日本_IPV4 (3)_2
-  server: 172.104.86.181
-  port: 443
-  uuid: 010431f3-04f6-4404-a801-b93bf2e3c2b2
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "ujYDprigWFLxcj4BtitDNa-hoPjIbpSzrnEcqp3cgjk"
-    short-id: "c8559ca1"
   network: ws
   ws-opts:
     path: /ws
@@ -719,7 +632,7 @@ proxies:
     headers:
       Host: itunes.apple.com
 - type: vless
-  name: 🇸🇬_SG_新加坡_IPV4 (2)_2
+  name: 🇸🇬_SG_新加坡_IPV4_2
   server: 139.180.221.53
   port: 443
   uuid: 2b30d0df-6ebe-4aed-9bad-b7c554e35e1d
@@ -737,7 +650,7 @@ proxies:
     headers:
       Host: itunes.apple.com
 - type: vless
-  name: 🇯🇵_JP_日本_IPV4 (4)_2
+  name: 🇯🇵_JP_日本_IPV4 (3)_2
   server: 45.76.222.108
   port: 443
   uuid: bd95a04e-e3e1-460e-b89d-e9a693d393e0
@@ -774,24 +687,6 @@ proxies:
       Host: itunes.apple.com
 - type: vless
   name: 🇺🇸_US_美国_IPV4 (8)_2
-  server: 172.236.233.130
-  port: 443
-  uuid: a663dc28-28dc-4f97-9665-6ac215c8e567
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "4wXbhUoSy9s9bGy9PaK18XVTTw3wXkBDjEusiMHaMB4"
-    short-id: "53908445"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (9)_2
   server: 107.191.58.86
   port: 443
   uuid: 4444e77e-3d2a-4dc9-bf31-936f038f5570
@@ -809,7 +704,7 @@ proxies:
     headers:
       Host: itunes.apple.com
 - type: vless
-  name: 🇺🇸_US_美国_IPV4 (10)_2
+  name: 🇺🇸_US_美国_IPV4 (9)_2
   server: 172.233.129.172
   port: 443
   uuid: 40a4b915-5e6f-4316-9bb1-e899f30608e3
@@ -826,8 +721,17 @@ proxies:
     path: /ws
     headers:
       Host: itunes.apple.com
+- type: trojan
+  name: 🇨🇳_CN_中国_IPV4_2
+  server: sclass-01.catcat321.com
+  port: 20103
+  password: d7563108-615c-4338-a7bd-77f359869a4a
+  tls: true
+  servername: hk.catxstar.com
+  sni: hk.catxstar.com
+  skip-cert-verify: false
 - type: hysteria2
-  name: 🇺🇸_US_美国_IPV4 (11)_2
+  name: 🇺🇸_US_美国_IPV4 (10)_2
   server: starlink-ft.251313.xyz
   port: 443
   password: https://xship.2fa.cat
@@ -835,6 +739,22 @@ proxies:
   servername: xship.top
   sni: xship.top
   skip-cert-verify: true
+- type: vless
+  name: 🇸🇨_SC_塞舌尔->🇳🇱_NL_荷兰_IPV4_2
+  server: 196.196.148.63
+  port: 443
+  uuid: cda0862a-0f87-4be9-8ed8-1d0c9e382839
+  tls: true
+  servername: 717252g.nl8.h1clayd.click
+  sni: 717252g.nl8.h1clayd.click
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: "PD8Jdlg3xB9QY--jwQjp8PFPzCS8-Oryw6-HWBcHMFU"
+    short-id: "d3bd772514c87d28"
+  network: grpc
+  grpc-opts:
+    grpc-service-name: 204adda7e3da
 - type: vmess
   name: 🇺🇸 机场推荐:dafei.de 美国 89_IPV4_2
   server: 188.114.99.137
@@ -852,8 +772,23 @@ proxies:
     headers:
       Host: guanwang.awsno.com
 - type: vmess
-  name: 🇺🇸_US_美国_IPV4 (12)_2
-  server: 104.18.42.163
+  name: '@DeltaKroneckerGithub_3021_IPV4_2'
+  server: 172.64.145.93
+  port: 443
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  cipher: auto
+  alterId: 0
+  tls: true
+  servername: guanwang.awsno.com
+  sni: guanwang.awsno.com
+  network: ws
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: guanwang.awsno.com
+- type: vmess
+  name: 🇺🇸 机场推荐:dafei.de 美国 15_IPV4_2
+  server: 172.67.190.164
   port: 443
   uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
   cipher: auto
@@ -867,17 +802,39 @@ proxies:
     path: /hls/cctv5phd.m3u8
     headers:
       Host: guanwang.awsno.com
-- type: vmess
-  name: 🇨🇳_CN_中国_IPV4_3
-  server: 39.108.113.127
-  port: 10086
-  uuid: a625d148-e988-4008-b957-e9051a6371d2
-  cipher: auto
-  alterId: 0
+- type: anytls
+  name: 🇹🇼_TW_台湾->🇺🇸_US_美国_IPV4_2
+  server: sdf65h46wr.df6h451rh.xin
+  port: 443
+  password: 0324fbc29561
+  tls: true
+  servername: images.ctfassets.net
+  sni: images.ctfassets.net
+  skip-cert-verify: true
+- type: ss
+  name: 🇮🇹_IT_意大利_IPV4_2
+  server: 202.50.253.27
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
   tls: false
-  network: ws
-  ws-opts:
-    path: /
+  skip-cert-verify: false
+- type: ss
+  name: 🇮🇹_IT_意大利_IPV4 (2)_2
+  server: 202.50.253.36
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  tls: false
+  skip-cert-verify: false
+- type: ss
+  name: 🇮🇹_IT_意大利_IPV4 (3)_2
+  server: 202.50.253.90
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  tls: false
+  skip-cert-verify: false
 - type: hysteria
   name: 🇺🇸_US_美国_IPV4_3
   server: 137.175.82.41
@@ -892,42 +849,6 @@ proxies:
   up: '11'
   down: '55'
   auth-str: dongtaiwang.com
-- type: hysteria2
-  name: 🇫🇷_FR_法国_IPV6_3
-  server: 2001:bc8:32d7:17b::7
-  port: 22000
-  password: dongtaiwang.com
-  tls: true
-  servername: www.microsoft.com
-  sni: www.microsoft.com
-  skip-cert-verify: true
-- type: hysteria2
-  name: 🇫🇷_FR_法国_IPV6 (2)_3
-  server: 2001:bc8:32d7:17b::6
-  port: 22000
-  password: dongtaiwang.com
-  tls: true
-  servername: www.microsoft.com
-  sni: www.microsoft.com
-  skip-cert-verify: true
-- type: hysteria2
-  name: 🇫🇷_FR_法国_IPV6 (3)_3
-  server: 2001:bc8:32d7:17b::5
-  port: 22000
-  password: dongtaiwang.com
-  tls: true
-  servername: www.microsoft.com
-  sni: www.microsoft.com
-  skip-cert-verify: true
-- type: hysteria2
-  name: 🇫🇷_FR_法国_IPV6 (4)_3
-  server: 2001:bc8:32d7:17b::4
-  port: 22000
-  password: dongtaiwang.com
-  tls: true
-  servername: www.microsoft.com
-  sni: www.microsoft.com
-  skip-cert-verify: true
 - type: hysteria
   name: 🇺🇸_US_美国_IPV4 (2)_3
   server: 38.6.222.132
@@ -956,16 +877,6 @@ proxies:
   up: '11'
   down: '55'
   auth-str: dongtaiwang.com
-- type: trojan
-  name: 🇸🇬_SG_新加坡->🇳🇬_NG_尼日利亚_IPV4_3
-  server: sclass-b1.catcat321.com
-  port: 20051
-  password: d7563108-615c-4338-a7bd-77f359869a4a
-  tls: true
-  servername: hk.catxstar.com
-  sni: hk.catxstar.com
-  skip-cert-verify: true
-  client-fingerprint: chrome
 - type: vless
   name: 🇷🇺_RU_俄罗斯_IPV4_3
   server: 136.148.83.69
@@ -978,6 +889,14 @@ proxies:
   client-fingerprint: chrome
 - type: ss
   name: 🇩🇪_DE_德国_IPV4_3
+  server: 47.254.128.109
+  port: 443
+  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
+  cipher: 2022-blake3-chacha20-poly1305
+  tls: false
+  skip-cert-verify: false
+- type: ss
+  name: 🇩🇪_DE_德国_IPV4 (2)_3
   server: 47.254.167.157
   port: 443
   password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
@@ -1036,6 +955,20 @@ proxies:
     headers:
       Host: itunes.apple.com
 - type: vless
+  name: 🇹🇼_TW_台湾_IPV4_3
+  server: free.fugui.lol
+  port: 47396
+  uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
+  flow: xtls-rprx-vision
+  tls: true
+  servername: swdist.apple.com
+  sni: swdist.apple.com
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: "IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ"
+    short-id: "fa514b83"
+- type: vless
   name: 🇩🇪_DE_德国->🇫🇷_FR_法国_IPV4_3
   server: 163.245.42.87
   port: 443
@@ -1063,24 +996,6 @@ proxies:
   down: '55'
   auth-str: dongtaiwang.com
 - type: vless
-  name: 🇸🇬_SG_新加坡_IPV4_3
-  server: 139.162.20.241
-  port: 443
-  uuid: 7f0270f9-1abc-4c4f-960d-0a23e32f1eb8
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "fG1u2AZj5pgSNWO3MBmkoY6K61xBwnuYX3_z1fSeR0o"
-    short-id: "640c807d"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
   name: 🇺🇸_US_美国_IPV4 (4)_3
   server: 45.32.70.42
   port: 443
@@ -1093,24 +1008,6 @@ proxies:
   reality-opts:
     public-key: "cQZ-dTY4QSQteDYpngP2PavOsn9yY9lIP-OscwzwAio"
     short-id: "4dda4608"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇯🇵_JP_日本_IPV4 (3)_3
-  server: 172.104.86.181
-  port: 443
-  uuid: 010431f3-04f6-4404-a801-b93bf2e3c2b2
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "ujYDprigWFLxcj4BtitDNa-hoPjIbpSzrnEcqp3cgjk"
-    short-id: "c8559ca1"
   network: ws
   ws-opts:
     path: /ws
@@ -1153,7 +1050,7 @@ proxies:
     headers:
       Host: itunes.apple.com
 - type: vless
-  name: 🇸🇬_SG_新加坡_IPV4 (2)_3
+  name: 🇸🇬_SG_新加坡_IPV4_3
   server: 139.180.221.53
   port: 443
   uuid: 2b30d0df-6ebe-4aed-9bad-b7c554e35e1d
@@ -1171,7 +1068,7 @@ proxies:
     headers:
       Host: itunes.apple.com
 - type: vless
-  name: 🇯🇵_JP_日本_IPV4 (4)_3
+  name: 🇯🇵_JP_日本_IPV4 (3)_3
   server: 45.76.222.108
   port: 443
   uuid: bd95a04e-e3e1-460e-b89d-e9a693d393e0
@@ -1208,24 +1105,6 @@ proxies:
       Host: itunes.apple.com
 - type: vless
   name: 🇺🇸_US_美国_IPV4 (8)_3
-  server: 172.236.233.130
-  port: 443
-  uuid: a663dc28-28dc-4f97-9665-6ac215c8e567
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "4wXbhUoSy9s9bGy9PaK18XVTTw3wXkBDjEusiMHaMB4"
-    short-id: "53908445"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (9)_3
   server: 107.191.58.86
   port: 443
   uuid: 4444e77e-3d2a-4dc9-bf31-936f038f5570
@@ -1243,7 +1122,7 @@ proxies:
     headers:
       Host: itunes.apple.com
 - type: vless
-  name: 🇺🇸_US_美国_IPV4 (10)_3
+  name: 🇺🇸_US_美国_IPV4 (9)_3
   server: 172.233.129.172
   port: 443
   uuid: 40a4b915-5e6f-4316-9bb1-e899f30608e3
@@ -1260,8 +1139,17 @@ proxies:
     path: /ws
     headers:
       Host: itunes.apple.com
+- type: trojan
+  name: 🇨🇳_CN_中国_IPV4_3
+  server: sclass-01.catcat321.com
+  port: 20103
+  password: d7563108-615c-4338-a7bd-77f359869a4a
+  tls: true
+  servername: hk.catxstar.com
+  sni: hk.catxstar.com
+  skip-cert-verify: false
 - type: hysteria2
-  name: 🇺🇸_US_美国_IPV4 (11)_3
+  name: 🇺🇸_US_美国_IPV4 (10)_3
   server: starlink-ft.251313.xyz
   port: 443
   password: https://xship.2fa.cat
@@ -1269,6 +1157,22 @@ proxies:
   servername: xship.top
   sni: xship.top
   skip-cert-verify: true
+- type: vless
+  name: 🇸🇨_SC_塞舌尔->🇳🇱_NL_荷兰_IPV4_3
+  server: 196.196.148.63
+  port: 443
+  uuid: cda0862a-0f87-4be9-8ed8-1d0c9e382839
+  tls: true
+  servername: 717252g.nl8.h1clayd.click
+  sni: 717252g.nl8.h1clayd.click
+  skip-cert-verify: false
+  client-fingerprint: firefox
+  reality-opts:
+    public-key: "PD8Jdlg3xB9QY--jwQjp8PFPzCS8-Oryw6-HWBcHMFU"
+    short-id: "d3bd772514c87d28"
+  network: grpc
+  grpc-opts:
+    grpc-service-name: 204adda7e3da
 - type: vmess
   name: 🇺🇸 机场推荐:dafei.de 美国 89_IPV4_3
   server: 188.114.99.137
@@ -1286,8 +1190,23 @@ proxies:
     headers:
       Host: guanwang.awsno.com
 - type: vmess
-  name: 🇺🇸_US_美国_IPV4 (12)_3
-  server: 104.18.42.163
+  name: '@DeltaKroneckerGithub_3021_IPV4_3'
+  server: 172.64.145.93
+  port: 443
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  cipher: auto
+  alterId: 0
+  tls: true
+  servername: guanwang.awsno.com
+  sni: guanwang.awsno.com
+  network: ws
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: guanwang.awsno.com
+- type: vmess
+  name: 🇺🇸 机场推荐:dafei.de 美国 15_IPV4_3
+  server: 172.67.190.164
   port: 443
   uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
   cipher: auto
@@ -1301,3 +1220,36 @@ proxies:
     path: /hls/cctv5phd.m3u8
     headers:
       Host: guanwang.awsno.com
+- type: anytls
+  name: 🇹🇼_TW_台湾->🇺🇸_US_美国_IPV4_3
+  server: sdf65h46wr.df6h451rh.xin
+  port: 443
+  password: 0324fbc29561
+  tls: true
+  servername: images.ctfassets.net
+  sni: images.ctfassets.net
+  skip-cert-verify: true
+- type: ss
+  name: 🇮🇹_IT_意大利_IPV4_3
+  server: 202.50.253.27
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  tls: false
+  skip-cert-verify: false
+- type: ss
+  name: 🇮🇹_IT_意大利_IPV4 (2)_3
+  server: 202.50.253.36
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  tls: false
+  skip-cert-verify: false
+- type: ss
+  name: 🇮🇹_IT_意大利_IPV4 (3)_3
+  server: 202.50.253.90
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  tls: false
+  skip-cert-verify: false
