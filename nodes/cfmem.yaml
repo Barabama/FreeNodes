@@ -1,1255 +1,322 @@
 proxies:
-- type: hysteria
-  name: 🇺🇸_US_美国_IPV4
-  server: 137.175.82.41
-  port: 20022
-  password: dongtaiwang.com
-  tls: true
-  servername: bing.com
-  sni: bing.com
-  skip-cert-verify: true
-  alpn:
-  - h3
-  up: '11'
-  down: '55'
-  auth-str: dongtaiwang.com
-- type: hysteria
-  name: 🇺🇸_US_美国_IPV4 (2)
-  server: 38.6.222.132
-  port: 11008
-  password: dongtaiwang.com
-  tls: true
-  servername: bing.com
-  sni: bing.com
-  skip-cert-verify: true
-  alpn:
-  - h3
-  up: '11'
-  down: '55'
-  auth-str: dongtaiwang.com
-- type: hysteria
-  name: 🇺🇸_US_美国_IPV4 (3)
-  server: 38.6.222.131
-  port: 11008
-  password: dongtaiwang.com
-  tls: true
-  servername: bing.com
-  sni: bing.com
-  skip-cert-verify: true
-  alpn:
-  - h3
-  up: '11'
-  down: '55'
-  auth-str: dongtaiwang.com
-- type: vless
-  name: 🇷🇺_RU_俄罗斯_IPV4
-  server: 136.148.83.69
-  port: 443
-  uuid: 7dff1be7-b930-0001-a8ad-dc7850168215
-  tls: true
-  servername: szqbx-ru-77dc.my-fade.cloud
-  sni: szqbx-ru-77dc.my-fade.cloud
-  skip-cert-verify: true
-  client-fingerprint: chrome
-- type: ss
-  name: 🇩🇪_DE_德国_IPV4
-  server: 47.254.128.109
-  port: 443
-  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
-  cipher: 2022-blake3-chacha20-poly1305
-  tls: false
-  skip-cert-verify: false
-- type: ss
-  name: 🇩🇪_DE_德国_IPV4 (2)
-  server: 47.254.167.157
-  port: 443
-  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
-  cipher: 2022-blake3-chacha20-poly1305
-  tls: false
-  skip-cert-verify: false
-- type: vmess
-  name: 🇺🇸 机场推荐:dafei.de 美国 26_IPV4
-  server: www.shopify.com
-  port: 443
-  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
-  cipher: auto
-  alterId: 0
-  tls: true
-  servername: guanwang.awsno.com
-  sni: guanwang.awsno.com
-  network: ws
-  ws-opts:
-    path: /hls/cctv5phd.m3u8
-    headers:
-      Host: guanwang.awsno.com
-- type: vless
-  name: 🇯🇵_JP_日本_IPV4
-  server: 149.28.29.156
-  port: 443
-  uuid: aa1a9052-720f-4bb0-92be-21b6baf9f386
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "qgCGmxD1lyAEIGZVEk4buAMGcvGvHLl9wGxPQlHCYX0"
-    short-id: "e535df57"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇯🇵_JP_日本_IPV4 (2)
-  server: 198.13.53.39
-  port: 443
-  uuid: 8f21c635-ef0a-4b05-8356-f44d463b6e34
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "xxPVgbxguyYuVIml6Eh6ZGcDLO1z0OWKZXfDdUGFv1k"
-    short-id: "7a7cc838"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
+- type: anytls
   name: 🇹🇼_TW_台湾_IPV4
-  server: free.fugui.lol
-  port: 47396
-  uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
-  flow: xtls-rprx-vision
-  tls: true
-  servername: swdist.apple.com
-  sni: swdist.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ"
-    short-id: "fa514b83"
-- type: vless
-  name: 🇩🇪_DE_德国->🇫🇷_FR_法国_IPV4
-  server: 163.245.42.87
+  server: a54ge.df6h451rh.xin
   port: 443
-  uuid: b9bfa54d-bc44-4592-a6d6-89a9665d286f
-  flow: xtls-rprx-vision
+  password: 0324fbc29561
   tls: true
-  servername: mother-earth.fyi
-  sni: mother-earth.fyi
-  skip-cert-verify: false
-  client-fingerprint: firefox
-  reality-opts:
-    public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-- type: hysteria
-  name: 🇫🇷_FR_法国_IPV4
-  server: 62.210.124.132
-  port: 24667
-  password: dongtaiwang.com
-  tls: true
-  servername: bing.com
-  sni: bing.com
+  servername: docs.microsoft.com
+  sni: docs.microsoft.com
   skip-cert-verify: true
-  alpn:
-  - h3
-  up: '11'
-  down: '55'
-  auth-str: dongtaiwang.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (4)
-  server: 45.32.70.42
-  port: 443
-  uuid: 8c392beb-524d-4d0a-a3a6-4d542d54a1ff
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
   client-fingerprint: chrome
-  reality-opts:
-    public-key: "cQZ-dTY4QSQteDYpngP2PavOsn9yY9lIP-OscwzwAio"
-    short-id: "4dda4608"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (5)
-  server: 172.236.227.60
+- type: anytls
+  name: 🇭🇰_HK_香港_IPV4
+  server: 5641sdds.df6h451rh.xin
   port: 443
-  uuid: 3c8a110d-f04d-4f0e-9579-fd00631b8830
+  password: 0324fbc29561
   tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
+  servername: images.ctfassets.net
+  sni: images.ctfassets.net
+  skip-cert-verify: true
   client-fingerprint: chrome
-  reality-opts:
-    public-key: "BHBzo_I0M-sChoOqTyOczYBP8l1L_dkmB6u3ijAOaGo"
-    short-id: "664c1530"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (6)
-  server: 172.233.142.149
-  port: 443
-  uuid: 61e3954d-0d66-4b69-b6cd-9b4fc2352303
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "f9D1ZzG6vP1HgjCaCIutbykWkab8VEDuitwuwaeuBgY"
-    short-id: "4206512a"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
+- type: trojan
   name: 🇸🇬_SG_新加坡_IPV4
-  server: 139.180.221.53
+  server: 77.93.89.2
   port: 443
-  uuid: 2b30d0df-6ebe-4aed-9bad-b7c554e35e1d
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
   tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "plfXwkb-ewI6iibJBTRmPnf8eqPId1BfdArMIm3_mB4"
-    short-id: "2f6f6f87"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
+  servername: bgsg1.hikigo.com
+  sni: bgsg1.hikigo.com
+  skip-cert-verify: true
 - type: vless
-  name: 🇯🇵_JP_日本_IPV4 (3)
-  server: 45.76.222.108
+  name: 🇬🇧_GB_英国_IPV4
+  server: 167.99.203.0
   port: 443
-  uuid: bd95a04e-e3e1-460e-b89d-e9a693d393e0
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
+  uuid: 40992c2a-513e-4837-9594-23411fd42afd
+  tls: false
   skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "-_YzpVlKrn08il_kQdHxHTvJyWYAdetWN_IFRtvPgmE"
-    short-id: "b5c85d2d"
-  network: ws
-  ws-opts:
-    path: /ws
+  network: http
+  http-opts:
     headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (7)
-  server: 172.236.241.130
-  port: 443
-  uuid: 21117a67-21c2-4e2a-ba8f-bc49e23b0ae8
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "ibi0jOH5SfYhh7ycxdBrqq5oN4ajN3-dNiHKWC2VYWs"
-    short-id: "51ecfe9e"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (8)
-  server: 107.191.58.86
-  port: 443
-  uuid: 4444e77e-3d2a-4dc9-bf31-936f038f5570
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "ZZwZGoX0Us8t6nLvckDWskC1c25F9rL0_nUXmd8BFxQ"
-    short-id: "8dd324c1"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (9)
-  server: 172.233.129.172
-  port: 443
-  uuid: 40a4b915-5e6f-4316-9bb1-e899f30608e3
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "LWfC_chpo4uDtzJ9VVnuTcf6zTzWKx-LCJAE2Ltl7h4"
-    short-id: "5818adc3"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
+      Host:
+      - fast.com
 - type: trojan
-  name: 🇨🇳_CN_中国_IPV4
-  server: sclass-01.catcat321.com
-  port: 20103
-  password: d7563108-615c-4338-a7bd-77f359869a4a
-  tls: true
-  servername: hk.catxstar.com
-  sni: hk.catxstar.com
-  skip-cert-verify: false
-- type: hysteria2
-  name: 🇺🇸_US_美国_IPV4 (10)
-  server: starlink-ft.251313.xyz
+  name: 🇸🇬_SG_新加坡_IPV4 (2)
+  server: bgsg1.hikigo.com
   port: 443
-  password: https://xship.2fa.cat
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
   tls: true
-  servername: xship.top
-  sni: xship.top
+  servername: bgsg1.hikigo.com
+  sni: bgsg1.hikigo.com
   skip-cert-verify: true
-- type: vless
-  name: 🇸🇨_SC_塞舌尔->🇳🇱_NL_荷兰_IPV4
-  server: 196.196.148.63
-  port: 443
-  uuid: cda0862a-0f87-4be9-8ed8-1d0c9e382839
-  tls: true
-  servername: 717252g.nl8.h1clayd.click
-  sni: 717252g.nl8.h1clayd.click
-  skip-cert-verify: false
-  client-fingerprint: firefox
-  reality-opts:
-    public-key: "PD8Jdlg3xB9QY--jwQjp8PFPzCS8-Oryw6-HWBcHMFU"
-    short-id: "d3bd772514c87d28"
-  network: grpc
-  grpc-opts:
-    grpc-service-name: 204adda7e3da
 - type: vmess
-  name: 🇺🇸 机场推荐:dafei.de 美国 89_IPV4
-  server: 188.114.99.137
-  port: 443
-  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  name: '@DeltaKroneckerGithub_3774_IPV4'
+  server: 172.67.187.145
+  port: 80
+  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
+  cipher: auto
+  alterId: 0
+  tls: false
+  servername: vmess.lbw666.dpdns.org
+  sni: vmess.lbw666.dpdns.org
+  network: ws
+  ws-opts:
+    path: /ws
+    headers:
+      Host: vmess.lbw666.dpdns.org
+- type: vmess
+  name: '@DeltaKroneckerGithub_3499_IPV4'
+  server: 104.18.0.1
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
   cipher: auto
   alterId: 0
   tls: true
-  servername: guanwang.awsno.com
-  sni: guanwang.awsno.com
-  client-fingerprint: chrome
+  servername: v2ray1.dozapp.xyz
+  sni: v2ray1.dozapp.xyz
   network: ws
   ws-opts:
-    path: /hls/cctv5phd.m3u8
+    path: /lMnsZUN4/
     headers:
-      Host: guanwang.awsno.com
-- type: vmess
-  name: '@DeltaKroneckerGithub_3021_IPV4'
-  server: 172.64.145.93
-  port: 443
-  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
-  cipher: auto
-  alterId: 0
-  tls: true
-  servername: guanwang.awsno.com
-  sni: guanwang.awsno.com
-  network: ws
-  ws-opts:
-    path: /hls/cctv5phd.m3u8
-    headers:
-      Host: guanwang.awsno.com
-- type: vmess
-  name: 🇺🇸 机场推荐:dafei.de 美国 15_IPV4
-  server: 172.67.190.164
-  port: 443
-  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
-  cipher: auto
-  alterId: 0
-  tls: true
-  servername: guanwang.awsno.com
-  sni: guanwang.awsno.com
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /hls/cctv5phd.m3u8
-    headers:
-      Host: guanwang.awsno.com
+      Host: v2ray1.dozapp.xyz
 - type: anytls
-  name: 🇹🇼_TW_台湾->🇺🇸_US_美国_IPV4
-  server: sdf65h46wr.df6h451rh.xin
+  name: 🇹🇼_TW_台湾_IPV4 (2)
+  server: rtifgjdr.df6h451rh.xin
   port: 443
-  password: 0324fbc29561
+  password: 2902c46c8493
   tls: true
-  servername: images.ctfassets.net
-  sni: images.ctfassets.net
+  servername: docs.microsoft.com
+  sni: docs.microsoft.com
   skip-cert-verify: true
-- type: ss
-  name: 🇮🇹_IT_意大利_IPV4
-  server: 202.50.253.27
-  port: 19999
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
-  tls: false
-  skip-cert-verify: false
-- type: ss
-  name: 🇮🇹_IT_意大利_IPV4 (2)
-  server: 202.50.253.36
-  port: 19999
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
-  tls: false
-  skip-cert-verify: false
-- type: ss
-  name: 🇮🇹_IT_意大利_IPV4 (3)
-  server: 202.50.253.90
-  port: 19999
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
-  tls: false
-  skip-cert-verify: false
-- type: hysteria
-  name: 🇺🇸_US_美国_IPV4_2
-  server: 137.175.82.41
-  port: 20022
-  password: dongtaiwang.com
+- type: anytls
+  name: 🇭🇰_HK_香港_IPV4 (2)
+  server: ibsdsf.df6h451rh.xin
+  port: 443
+  password: 2902c46c8493
   tls: true
-  servername: bing.com
-  sni: bing.com
+  servername: docs.microsoft.com
+  sni: docs.microsoft.com
   skip-cert-verify: true
-  alpn:
-  - h3
-  up: '11'
-  down: '55'
-  auth-str: dongtaiwang.com
-- type: hysteria
-  name: 🇺🇸_US_美国_IPV4 (2)_2
-  server: 38.6.222.132
-  port: 11008
-  password: dongtaiwang.com
+- type: anytls
+  name: 🇹🇼_TW_台湾->🇯🇵_JP_日本_IPV4
+  server: im.frnhk.xyz
+  port: 443
+  password: e2413369-16de-4c90-97c5-b39b8d6b71cd
   tls: true
-  servername: bing.com
-  sni: bing.com
+  servername: im.frnhk.xyz
+  sni: im.frnhk.xyz
   skip-cert-verify: true
-  alpn:
-  - h3
-  up: '11'
-  down: '55'
-  auth-str: dongtaiwang.com
-- type: hysteria
-  name: 🇺🇸_US_美国_IPV4 (3)_2
-  server: 38.6.222.131
-  port: 11008
-  password: dongtaiwang.com
-  tls: true
-  servername: bing.com
-  sni: bing.com
-  skip-cert-verify: true
-  alpn:
-  - h3
-  up: '11'
-  down: '55'
-  auth-str: dongtaiwang.com
-- type: vless
-  name: 🇷🇺_RU_俄罗斯_IPV4_2
-  server: 136.148.83.69
-  port: 443
-  uuid: 7dff1be7-b930-0001-a8ad-dc7850168215
-  tls: true
-  servername: szqbx-ru-77dc.my-fade.cloud
-  sni: szqbx-ru-77dc.my-fade.cloud
-  skip-cert-verify: true
-  client-fingerprint: chrome
-- type: ss
-  name: 🇩🇪_DE_德国_IPV4_2
-  server: 47.254.128.109
-  port: 443
-  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
-  cipher: 2022-blake3-chacha20-poly1305
-  tls: false
-  skip-cert-verify: false
-- type: ss
-  name: 🇩🇪_DE_德国_IPV4 (2)_2
-  server: 47.254.167.157
-  port: 443
-  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
-  cipher: 2022-blake3-chacha20-poly1305
-  tls: false
-  skip-cert-verify: false
-- type: vmess
-  name: 🇺🇸 机场推荐:dafei.de 美国 26_IPV4_2
-  server: www.shopify.com
-  port: 443
-  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
-  cipher: auto
-  alterId: 0
-  tls: true
-  servername: guanwang.awsno.com
-  sni: guanwang.awsno.com
-  network: ws
-  ws-opts:
-    path: /hls/cctv5phd.m3u8
-    headers:
-      Host: guanwang.awsno.com
-- type: vless
-  name: 🇯🇵_JP_日本_IPV4_2
-  server: 149.28.29.156
-  port: 443
-  uuid: aa1a9052-720f-4bb0-92be-21b6baf9f386
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "qgCGmxD1lyAEIGZVEk4buAMGcvGvHLl9wGxPQlHCYX0"
-    short-id: "e535df57"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇯🇵_JP_日本_IPV4 (2)_2
-  server: 198.13.53.39
-  port: 443
-  uuid: 8f21c635-ef0a-4b05-8356-f44d463b6e34
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "xxPVgbxguyYuVIml6Eh6ZGcDLO1z0OWKZXfDdUGFv1k"
-    short-id: "7a7cc838"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
+- type: anytls
   name: 🇹🇼_TW_台湾_IPV4_2
-  server: free.fugui.lol
-  port: 47396
-  uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
-  flow: xtls-rprx-vision
-  tls: true
-  servername: swdist.apple.com
-  sni: swdist.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ"
-    short-id: "fa514b83"
-- type: vless
-  name: 🇩🇪_DE_德国->🇫🇷_FR_法国_IPV4_2
-  server: 163.245.42.87
+  server: a54ge.df6h451rh.xin
   port: 443
-  uuid: b9bfa54d-bc44-4592-a6d6-89a9665d286f
-  flow: xtls-rprx-vision
+  password: 0324fbc29561
   tls: true
-  servername: mother-earth.fyi
-  sni: mother-earth.fyi
-  skip-cert-verify: false
-  client-fingerprint: firefox
-  reality-opts:
-    public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-- type: hysteria
-  name: 🇫🇷_FR_法国_IPV4_2
-  server: 62.210.124.132
-  port: 24667
-  password: dongtaiwang.com
-  tls: true
-  servername: bing.com
-  sni: bing.com
+  servername: docs.microsoft.com
+  sni: docs.microsoft.com
   skip-cert-verify: true
-  alpn:
-  - h3
-  up: '11'
-  down: '55'
-  auth-str: dongtaiwang.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (4)_2
-  server: 45.32.70.42
-  port: 443
-  uuid: 8c392beb-524d-4d0a-a3a6-4d542d54a1ff
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
   client-fingerprint: chrome
-  reality-opts:
-    public-key: "cQZ-dTY4QSQteDYpngP2PavOsn9yY9lIP-OscwzwAio"
-    short-id: "4dda4608"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (5)_2
-  server: 172.236.227.60
+- type: anytls
+  name: 🇭🇰_HK_香港_IPV4_2
+  server: 5641sdds.df6h451rh.xin
   port: 443
-  uuid: 3c8a110d-f04d-4f0e-9579-fd00631b8830
+  password: 0324fbc29561
   tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
+  servername: images.ctfassets.net
+  sni: images.ctfassets.net
+  skip-cert-verify: true
   client-fingerprint: chrome
-  reality-opts:
-    public-key: "BHBzo_I0M-sChoOqTyOczYBP8l1L_dkmB6u3ijAOaGo"
-    short-id: "664c1530"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (6)_2
-  server: 172.233.142.149
-  port: 443
-  uuid: 61e3954d-0d66-4b69-b6cd-9b4fc2352303
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "f9D1ZzG6vP1HgjCaCIutbykWkab8VEDuitwuwaeuBgY"
-    short-id: "4206512a"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
+- type: trojan
   name: 🇸🇬_SG_新加坡_IPV4_2
-  server: 139.180.221.53
+  server: 77.93.89.2
   port: 443
-  uuid: 2b30d0df-6ebe-4aed-9bad-b7c554e35e1d
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
   tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "plfXwkb-ewI6iibJBTRmPnf8eqPId1BfdArMIm3_mB4"
-    short-id: "2f6f6f87"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
+  servername: bgsg1.hikigo.com
+  sni: bgsg1.hikigo.com
+  skip-cert-verify: true
 - type: vless
-  name: 🇯🇵_JP_日本_IPV4 (3)_2
-  server: 45.76.222.108
+  name: 🇬🇧_GB_英国_IPV4_2
+  server: 167.99.203.0
   port: 443
-  uuid: bd95a04e-e3e1-460e-b89d-e9a693d393e0
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
+  uuid: 40992c2a-513e-4837-9594-23411fd42afd
+  tls: false
   skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "-_YzpVlKrn08il_kQdHxHTvJyWYAdetWN_IFRtvPgmE"
-    short-id: "b5c85d2d"
-  network: ws
-  ws-opts:
-    path: /ws
+  network: http
+  http-opts:
     headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (7)_2
-  server: 172.236.241.130
-  port: 443
-  uuid: 21117a67-21c2-4e2a-ba8f-bc49e23b0ae8
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "ibi0jOH5SfYhh7ycxdBrqq5oN4ajN3-dNiHKWC2VYWs"
-    short-id: "51ecfe9e"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (8)_2
-  server: 107.191.58.86
-  port: 443
-  uuid: 4444e77e-3d2a-4dc9-bf31-936f038f5570
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "ZZwZGoX0Us8t6nLvckDWskC1c25F9rL0_nUXmd8BFxQ"
-    short-id: "8dd324c1"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (9)_2
-  server: 172.233.129.172
-  port: 443
-  uuid: 40a4b915-5e6f-4316-9bb1-e899f30608e3
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "LWfC_chpo4uDtzJ9VVnuTcf6zTzWKx-LCJAE2Ltl7h4"
-    short-id: "5818adc3"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
+      Host:
+      - fast.com
 - type: trojan
-  name: 🇨🇳_CN_中国_IPV4_2
-  server: sclass-01.catcat321.com
-  port: 20103
-  password: d7563108-615c-4338-a7bd-77f359869a4a
-  tls: true
-  servername: hk.catxstar.com
-  sni: hk.catxstar.com
-  skip-cert-verify: false
-- type: hysteria2
-  name: 🇺🇸_US_美国_IPV4 (10)_2
-  server: starlink-ft.251313.xyz
+  name: 🇸🇬_SG_新加坡_IPV4 (2)_2
+  server: bgsg1.hikigo.com
   port: 443
-  password: https://xship.2fa.cat
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
   tls: true
-  servername: xship.top
-  sni: xship.top
+  servername: bgsg1.hikigo.com
+  sni: bgsg1.hikigo.com
   skip-cert-verify: true
-- type: vless
-  name: 🇸🇨_SC_塞舌尔->🇳🇱_NL_荷兰_IPV4_2
-  server: 196.196.148.63
-  port: 443
-  uuid: cda0862a-0f87-4be9-8ed8-1d0c9e382839
-  tls: true
-  servername: 717252g.nl8.h1clayd.click
-  sni: 717252g.nl8.h1clayd.click
-  skip-cert-verify: false
-  client-fingerprint: firefox
-  reality-opts:
-    public-key: "PD8Jdlg3xB9QY--jwQjp8PFPzCS8-Oryw6-HWBcHMFU"
-    short-id: "d3bd772514c87d28"
-  network: grpc
-  grpc-opts:
-    grpc-service-name: 204adda7e3da
 - type: vmess
-  name: 🇺🇸 机场推荐:dafei.de 美国 89_IPV4_2
-  server: 188.114.99.137
-  port: 443
-  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  name: '@DeltaKroneckerGithub_3774_IPV4_2'
+  server: 172.67.187.145
+  port: 80
+  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
+  cipher: auto
+  alterId: 0
+  tls: false
+  servername: vmess.lbw666.dpdns.org
+  sni: vmess.lbw666.dpdns.org
+  network: ws
+  ws-opts:
+    path: /ws
+    headers:
+      Host: vmess.lbw666.dpdns.org
+- type: vmess
+  name: '@DeltaKroneckerGithub_3499_IPV4_2'
+  server: 104.18.0.1
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
   cipher: auto
   alterId: 0
   tls: true
-  servername: guanwang.awsno.com
-  sni: guanwang.awsno.com
-  client-fingerprint: chrome
+  servername: v2ray1.dozapp.xyz
+  sni: v2ray1.dozapp.xyz
   network: ws
   ws-opts:
-    path: /hls/cctv5phd.m3u8
+    path: /lMnsZUN4/
     headers:
-      Host: guanwang.awsno.com
-- type: vmess
-  name: '@DeltaKroneckerGithub_3021_IPV4_2'
-  server: 172.64.145.93
-  port: 443
-  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
-  cipher: auto
-  alterId: 0
-  tls: true
-  servername: guanwang.awsno.com
-  sni: guanwang.awsno.com
-  network: ws
-  ws-opts:
-    path: /hls/cctv5phd.m3u8
-    headers:
-      Host: guanwang.awsno.com
-- type: vmess
-  name: 🇺🇸 机场推荐:dafei.de 美国 15_IPV4_2
-  server: 172.67.190.164
-  port: 443
-  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
-  cipher: auto
-  alterId: 0
-  tls: true
-  servername: guanwang.awsno.com
-  sni: guanwang.awsno.com
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /hls/cctv5phd.m3u8
-    headers:
-      Host: guanwang.awsno.com
+      Host: v2ray1.dozapp.xyz
 - type: anytls
-  name: 🇹🇼_TW_台湾->🇺🇸_US_美国_IPV4_2
-  server: sdf65h46wr.df6h451rh.xin
+  name: 🇹🇼_TW_台湾_IPV4 (2)_2
+  server: rtifgjdr.df6h451rh.xin
   port: 443
-  password: 0324fbc29561
+  password: 2902c46c8493
   tls: true
-  servername: images.ctfassets.net
-  sni: images.ctfassets.net
+  servername: docs.microsoft.com
+  sni: docs.microsoft.com
   skip-cert-verify: true
-- type: ss
-  name: 🇮🇹_IT_意大利_IPV4_2
-  server: 202.50.253.27
-  port: 19999
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
-  tls: false
-  skip-cert-verify: false
-- type: ss
-  name: 🇮🇹_IT_意大利_IPV4 (2)_2
-  server: 202.50.253.36
-  port: 19999
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
-  tls: false
-  skip-cert-verify: false
-- type: ss
-  name: 🇮🇹_IT_意大利_IPV4 (3)_2
-  server: 202.50.253.90
-  port: 19999
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
-  tls: false
-  skip-cert-verify: false
-- type: hysteria
-  name: 🇺🇸_US_美国_IPV4_3
-  server: 137.175.82.41
-  port: 20022
-  password: dongtaiwang.com
+- type: anytls
+  name: 🇭🇰_HK_香港_IPV4 (2)_2
+  server: ibsdsf.df6h451rh.xin
+  port: 443
+  password: 2902c46c8493
   tls: true
-  servername: bing.com
-  sni: bing.com
+  servername: docs.microsoft.com
+  sni: docs.microsoft.com
   skip-cert-verify: true
-  alpn:
-  - h3
-  up: '11'
-  down: '55'
-  auth-str: dongtaiwang.com
-- type: hysteria
-  name: 🇺🇸_US_美国_IPV4 (2)_3
-  server: 38.6.222.132
-  port: 11008
-  password: dongtaiwang.com
+- type: anytls
+  name: 🇹🇼_TW_台湾->🇯🇵_JP_日本_IPV4_2
+  server: im.frnhk.xyz
+  port: 443
+  password: e2413369-16de-4c90-97c5-b39b8d6b71cd
   tls: true
-  servername: bing.com
-  sni: bing.com
+  servername: im.frnhk.xyz
+  sni: im.frnhk.xyz
   skip-cert-verify: true
-  alpn:
-  - h3
-  up: '11'
-  down: '55'
-  auth-str: dongtaiwang.com
-- type: hysteria
-  name: 🇺🇸_US_美国_IPV4 (3)_3
-  server: 38.6.222.131
-  port: 11008
-  password: dongtaiwang.com
-  tls: true
-  servername: bing.com
-  sni: bing.com
-  skip-cert-verify: true
-  alpn:
-  - h3
-  up: '11'
-  down: '55'
-  auth-str: dongtaiwang.com
-- type: vless
-  name: 🇷🇺_RU_俄罗斯_IPV4_3
-  server: 136.148.83.69
-  port: 443
-  uuid: 7dff1be7-b930-0001-a8ad-dc7850168215
-  tls: true
-  servername: szqbx-ru-77dc.my-fade.cloud
-  sni: szqbx-ru-77dc.my-fade.cloud
-  skip-cert-verify: true
-  client-fingerprint: chrome
-- type: ss
-  name: 🇩🇪_DE_德国_IPV4_3
-  server: 47.254.128.109
-  port: 443
-  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
-  cipher: 2022-blake3-chacha20-poly1305
-  tls: false
-  skip-cert-verify: false
-- type: ss
-  name: 🇩🇪_DE_德国_IPV4 (2)_3
-  server: 47.254.167.157
-  port: 443
-  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
-  cipher: 2022-blake3-chacha20-poly1305
-  tls: false
-  skip-cert-verify: false
-- type: vmess
-  name: 🇺🇸 机场推荐:dafei.de 美国 26_IPV4_3
-  server: www.shopify.com
-  port: 443
-  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
-  cipher: auto
-  alterId: 0
-  tls: true
-  servername: guanwang.awsno.com
-  sni: guanwang.awsno.com
-  network: ws
-  ws-opts:
-    path: /hls/cctv5phd.m3u8
-    headers:
-      Host: guanwang.awsno.com
-- type: vless
-  name: 🇯🇵_JP_日本_IPV4_3
-  server: 149.28.29.156
-  port: 443
-  uuid: aa1a9052-720f-4bb0-92be-21b6baf9f386
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "qgCGmxD1lyAEIGZVEk4buAMGcvGvHLl9wGxPQlHCYX0"
-    short-id: "e535df57"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇯🇵_JP_日本_IPV4 (2)_3
-  server: 198.13.53.39
-  port: 443
-  uuid: 8f21c635-ef0a-4b05-8356-f44d463b6e34
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "xxPVgbxguyYuVIml6Eh6ZGcDLO1z0OWKZXfDdUGFv1k"
-    short-id: "7a7cc838"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
+- type: anytls
   name: 🇹🇼_TW_台湾_IPV4_3
-  server: free.fugui.lol
-  port: 47396
-  uuid: ead3595f-4020-4e76-a3ec-c248e1a2f2f7
-  flow: xtls-rprx-vision
-  tls: true
-  servername: swdist.apple.com
-  sni: swdist.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ"
-    short-id: "fa514b83"
-- type: vless
-  name: 🇩🇪_DE_德国->🇫🇷_FR_法国_IPV4_3
-  server: 163.245.42.87
+  server: a54ge.df6h451rh.xin
   port: 443
-  uuid: b9bfa54d-bc44-4592-a6d6-89a9665d286f
-  flow: xtls-rprx-vision
+  password: 0324fbc29561
   tls: true
-  servername: mother-earth.fyi
-  sni: mother-earth.fyi
-  skip-cert-verify: false
-  client-fingerprint: firefox
-  reality-opts:
-    public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-- type: hysteria
-  name: 🇫🇷_FR_法国_IPV4_3
-  server: 62.210.124.132
-  port: 24667
-  password: dongtaiwang.com
-  tls: true
-  servername: bing.com
-  sni: bing.com
+  servername: docs.microsoft.com
+  sni: docs.microsoft.com
   skip-cert-verify: true
-  alpn:
-  - h3
-  up: '11'
-  down: '55'
-  auth-str: dongtaiwang.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (4)_3
-  server: 45.32.70.42
-  port: 443
-  uuid: 8c392beb-524d-4d0a-a3a6-4d542d54a1ff
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
   client-fingerprint: chrome
-  reality-opts:
-    public-key: "cQZ-dTY4QSQteDYpngP2PavOsn9yY9lIP-OscwzwAio"
-    short-id: "4dda4608"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (5)_3
-  server: 172.236.227.60
-  port: 443
-  uuid: 3c8a110d-f04d-4f0e-9579-fd00631b8830
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "BHBzo_I0M-sChoOqTyOczYBP8l1L_dkmB6u3ijAOaGo"
-    short-id: "664c1530"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (6)_3
-  server: 172.233.142.149
-  port: 443
-  uuid: 61e3954d-0d66-4b69-b6cd-9b4fc2352303
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "f9D1ZzG6vP1HgjCaCIutbykWkab8VEDuitwuwaeuBgY"
-    short-id: "4206512a"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇸🇬_SG_新加坡_IPV4_3
-  server: 139.180.221.53
-  port: 443
-  uuid: 2b30d0df-6ebe-4aed-9bad-b7c554e35e1d
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "plfXwkb-ewI6iibJBTRmPnf8eqPId1BfdArMIm3_mB4"
-    short-id: "2f6f6f87"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇯🇵_JP_日本_IPV4 (3)_3
-  server: 45.76.222.108
-  port: 443
-  uuid: bd95a04e-e3e1-460e-b89d-e9a693d393e0
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "-_YzpVlKrn08il_kQdHxHTvJyWYAdetWN_IFRtvPgmE"
-    short-id: "b5c85d2d"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (7)_3
-  server: 172.236.241.130
-  port: 443
-  uuid: 21117a67-21c2-4e2a-ba8f-bc49e23b0ae8
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "ibi0jOH5SfYhh7ycxdBrqq5oN4ajN3-dNiHKWC2VYWs"
-    short-id: "51ecfe9e"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (8)_3
-  server: 107.191.58.86
-  port: 443
-  uuid: 4444e77e-3d2a-4dc9-bf31-936f038f5570
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "ZZwZGoX0Us8t6nLvckDWskC1c25F9rL0_nUXmd8BFxQ"
-    short-id: "8dd324c1"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: vless
-  name: 🇺🇸_US_美国_IPV4 (9)_3
-  server: 172.233.129.172
-  port: 443
-  uuid: 40a4b915-5e6f-4316-9bb1-e899f30608e3
-  tls: true
-  servername: itunes.apple.com
-  sni: itunes.apple.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "LWfC_chpo4uDtzJ9VVnuTcf6zTzWKx-LCJAE2Ltl7h4"
-    short-id: "5818adc3"
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: itunes.apple.com
-- type: trojan
-  name: 🇨🇳_CN_中国_IPV4_3
-  server: sclass-01.catcat321.com
-  port: 20103
-  password: d7563108-615c-4338-a7bd-77f359869a4a
-  tls: true
-  servername: hk.catxstar.com
-  sni: hk.catxstar.com
-  skip-cert-verify: false
-- type: hysteria2
-  name: 🇺🇸_US_美国_IPV4 (10)_3
-  server: starlink-ft.251313.xyz
-  port: 443
-  password: https://xship.2fa.cat
-  tls: true
-  servername: xship.top
-  sni: xship.top
-  skip-cert-verify: true
-- type: vless
-  name: 🇸🇨_SC_塞舌尔->🇳🇱_NL_荷兰_IPV4_3
-  server: 196.196.148.63
-  port: 443
-  uuid: cda0862a-0f87-4be9-8ed8-1d0c9e382839
-  tls: true
-  servername: 717252g.nl8.h1clayd.click
-  sni: 717252g.nl8.h1clayd.click
-  skip-cert-verify: false
-  client-fingerprint: firefox
-  reality-opts:
-    public-key: "PD8Jdlg3xB9QY--jwQjp8PFPzCS8-Oryw6-HWBcHMFU"
-    short-id: "d3bd772514c87d28"
-  network: grpc
-  grpc-opts:
-    grpc-service-name: 204adda7e3da
-- type: vmess
-  name: 🇺🇸 机场推荐:dafei.de 美国 89_IPV4_3
-  server: 188.114.99.137
-  port: 443
-  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
-  cipher: auto
-  alterId: 0
-  tls: true
-  servername: guanwang.awsno.com
-  sni: guanwang.awsno.com
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /hls/cctv5phd.m3u8
-    headers:
-      Host: guanwang.awsno.com
-- type: vmess
-  name: '@DeltaKroneckerGithub_3021_IPV4_3'
-  server: 172.64.145.93
-  port: 443
-  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
-  cipher: auto
-  alterId: 0
-  tls: true
-  servername: guanwang.awsno.com
-  sni: guanwang.awsno.com
-  network: ws
-  ws-opts:
-    path: /hls/cctv5phd.m3u8
-    headers:
-      Host: guanwang.awsno.com
-- type: vmess
-  name: 🇺🇸 机场推荐:dafei.de 美国 15_IPV4_3
-  server: 172.67.190.164
-  port: 443
-  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
-  cipher: auto
-  alterId: 0
-  tls: true
-  servername: guanwang.awsno.com
-  sni: guanwang.awsno.com
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /hls/cctv5phd.m3u8
-    headers:
-      Host: guanwang.awsno.com
 - type: anytls
-  name: 🇹🇼_TW_台湾->🇺🇸_US_美国_IPV4_3
-  server: sdf65h46wr.df6h451rh.xin
+  name: 🇭🇰_HK_香港_IPV4_3
+  server: 5641sdds.df6h451rh.xin
   port: 443
   password: 0324fbc29561
   tls: true
   servername: images.ctfassets.net
   sni: images.ctfassets.net
   skip-cert-verify: true
-- type: ss
-  name: 🇮🇹_IT_意大利_IPV4_3
-  server: 202.50.253.27
-  port: 19999
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
+  client-fingerprint: chrome
+- type: trojan
+  name: 🇸🇬_SG_新加坡_IPV4_3
+  server: 77.93.89.2
+  port: 443
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  tls: true
+  servername: bgsg1.hikigo.com
+  sni: bgsg1.hikigo.com
+  skip-cert-verify: true
+- type: vless
+  name: 🇬🇧_GB_英国_IPV4_3
+  server: 167.99.203.0
+  port: 443
+  uuid: 40992c2a-513e-4837-9594-23411fd42afd
   tls: false
   skip-cert-verify: false
-- type: ss
-  name: 🇮🇹_IT_意大利_IPV4 (2)_3
-  server: 202.50.253.36
-  port: 19999
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
+  network: http
+  http-opts:
+    headers:
+      Host:
+      - fast.com
+- type: trojan
+  name: 🇸🇬_SG_新加坡_IPV4 (2)_3
+  server: bgsg1.hikigo.com
+  port: 443
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  tls: true
+  servername: bgsg1.hikigo.com
+  sni: bgsg1.hikigo.com
+  skip-cert-verify: true
+- type: vmess
+  name: '@DeltaKroneckerGithub_3774_IPV4_3'
+  server: 172.67.187.145
+  port: 80
+  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
+  cipher: auto
+  alterId: 0
   tls: false
-  skip-cert-verify: false
-- type: ss
-  name: 🇮🇹_IT_意大利_IPV4 (3)_3
-  server: 202.50.253.90
-  port: 19999
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-  cipher: aes-256-gcm
-  tls: false
-  skip-cert-verify: false
+  servername: vmess.lbw666.dpdns.org
+  sni: vmess.lbw666.dpdns.org
+  network: ws
+  ws-opts:
+    path: /ws
+    headers:
+      Host: vmess.lbw666.dpdns.org
+- type: vmess
+  name: '@DeltaKroneckerGithub_3499_IPV4_3'
+  server: 104.18.0.1
+  port: 8443
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  cipher: auto
+  alterId: 0
+  tls: true
+  servername: v2ray1.dozapp.xyz
+  sni: v2ray1.dozapp.xyz
+  network: ws
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
+- type: anytls
+  name: 🇹🇼_TW_台湾_IPV4 (2)_3
+  server: rtifgjdr.df6h451rh.xin
+  port: 443
+  password: 2902c46c8493
+  tls: true
+  servername: docs.microsoft.com
+  sni: docs.microsoft.com
+  skip-cert-verify: true
+- type: anytls
+  name: 🇭🇰_HK_香港_IPV4 (2)_3
+  server: ibsdsf.df6h451rh.xin
+  port: 443
+  password: 2902c46c8493
+  tls: true
+  servername: docs.microsoft.com
+  sni: docs.microsoft.com
+  skip-cert-verify: true
+- type: anytls
+  name: 🇹🇼_TW_台湾->🇯🇵_JP_日本_IPV4_3
+  server: im.frnhk.xyz
+  port: 443
+  password: e2413369-16de-4c90-97c5-b39b8d6b71cd
+  tls: true
+  servername: im.frnhk.xyz
+  sni: im.frnhk.xyz
+  skip-cert-verify: true
