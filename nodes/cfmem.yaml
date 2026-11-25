@@ -19,75 +19,6 @@ proxies:
   sni: images.ctfassets.net
   skip-cert-verify: true
   client-fingerprint: chrome
-- type: trojan
-  name: 🇸🇬_SG_新加坡_IPV4
-  server: 77.93.89.2
-  port: 443
-  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  tls: true
-  servername: bgsg1.hikigo.com
-  sni: bgsg1.hikigo.com
-  skip-cert-verify: true
-- type: vless
-  name: 🇬🇧_GB_英国_IPV4
-  server: 167.99.203.0
-  port: 443
-  uuid: 40992c2a-513e-4837-9594-23411fd42afd
-  tls: false
-  skip-cert-verify: false
-  network: http
-  http-opts:
-    headers:
-      Host:
-      - fast.com
-- type: trojan
-  name: 🇸🇬_SG_新加坡_IPV4 (2)
-  server: bgsg1.hikigo.com
-  port: 443
-  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  tls: true
-  servername: bgsg1.hikigo.com
-  sni: bgsg1.hikigo.com
-  skip-cert-verify: true
-- type: vmess
-  name: '@DeltaKroneckerGithub_3774_IPV4'
-  server: 172.67.187.145
-  port: 80
-  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
-  cipher: auto
-  alterId: 0
-  tls: false
-  servername: vmess.lbw666.dpdns.org
-  sni: vmess.lbw666.dpdns.org
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: vmess.lbw666.dpdns.org
-- type: vmess
-  name: '@DeltaKroneckerGithub_3499_IPV4'
-  server: 104.18.0.1
-  port: 8443
-  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
-  cipher: auto
-  alterId: 0
-  tls: true
-  servername: v2ray1.dozapp.xyz
-  sni: v2ray1.dozapp.xyz
-  network: ws
-  ws-opts:
-    path: /lMnsZUN4/
-    headers:
-      Host: v2ray1.dozapp.xyz
-- type: anytls
-  name: 🇹🇼_TW_台湾_IPV4 (2)
-  server: rtifgjdr.df6h451rh.xin
-  port: 443
-  password: 2902c46c8493
-  tls: true
-  servername: docs.microsoft.com
-  sni: docs.microsoft.com
-  skip-cert-verify: true
 - type: anytls
   name: 🇭🇰_HK_香港_IPV4 (2)
   server: ibsdsf.df6h451rh.xin
@@ -97,15 +28,225 @@ proxies:
   servername: docs.microsoft.com
   sni: docs.microsoft.com
   skip-cert-verify: true
-- type: anytls
-  name: 🇹🇼_TW_台湾->🇯🇵_JP_日本_IPV4
-  server: im.frnhk.xyz
-  port: 443
-  password: e2413369-16de-4c90-97c5-b39b8d6b71cd
+- type: hysteria
+  name: 🇺🇸_US_美国_IPV4
+  server: 137.175.82.41
+  port: 20022
+  password: dongtaiwang.com
   tls: true
-  servername: im.frnhk.xyz
-  sni: im.frnhk.xyz
+  servername: bing.com
+  sni: bing.com
   skip-cert-verify: true
+  alpn:
+  - h3
+  up: '11'
+  down: '55'
+  auth-str: dongtaiwang.com
+- type: hysteria
+  name: 🇺🇸_US_美国_IPV4 (2)
+  server: 38.6.222.132
+  port: 11008
+  password: dongtaiwang.com
+  tls: true
+  servername: bing.com
+  sni: bing.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  up: '11'
+  down: '55'
+  auth-str: dongtaiwang.com
+- type: hysteria
+  name: 🇺🇸_US_美国_IPV4 (3)
+  server: 38.6.222.131
+  port: 11008
+  password: dongtaiwang.com
+  tls: true
+  servername: bing.com
+  sni: bing.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  up: '11'
+  down: '55'
+  auth-str: dongtaiwang.com
+- type: ss
+  name: 🇩🇪_DE_德国_IPV4
+  server: 47.254.128.109
+  port: 443
+  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
+  cipher: 2022-blake3-chacha20-poly1305
+  tls: false
+  skip-cert-verify: false
+- type: vmess
+  name: 🇺🇸 机场推荐:dafei.de 美国 26_IPV4
+  server: www.shopify.com
+  port: 443
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  cipher: auto
+  alterId: 0
+  tls: true
+  servername: guanwang.awsno.com
+  sni: guanwang.awsno.com
+  network: ws
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: guanwang.awsno.com
+- type: vless
+  name: 🇯🇵_JP_日本_IPV4
+  server: 149.28.29.156
+  port: 443
+  uuid: aa1a9052-720f-4bb0-92be-21b6baf9f386
+  tls: true
+  servername: itunes.apple.com
+  sni: itunes.apple.com
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: "qgCGmxD1lyAEIGZVEk4buAMGcvGvHLl9wGxPQlHCYX0"
+    short-id: "e535df57"
+  network: ws
+  ws-opts:
+    path: /ws
+    headers:
+      Host: itunes.apple.com
+- type: hysteria
+  name: 🇫🇷_FR_法国_IPV4
+  server: 62.210.124.132
+  port: 24667
+  password: dongtaiwang.com
+  tls: true
+  servername: bing.com
+  sni: bing.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  up: '11'
+  down: '55'
+  auth-str: dongtaiwang.com
+- type: vless
+  name: 🇸🇬_SG_新加坡_IPV4
+  server: 139.180.221.53
+  port: 443
+  uuid: 2b30d0df-6ebe-4aed-9bad-b7c554e35e1d
+  tls: true
+  servername: itunes.apple.com
+  sni: itunes.apple.com
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: "plfXwkb-ewI6iibJBTRmPnf8eqPId1BfdArMIm3_mB4"
+    short-id: "2f6f6f87"
+  network: ws
+  ws-opts:
+    path: /ws
+    headers:
+      Host: itunes.apple.com
+- type: hysteria2
+  name: 🇺🇸_US_美国_IPV4 (4)
+  server: starlink-ft.251313.xyz
+  port: 443
+  password: https://xship.2fa.cat
+  tls: true
+  servername: xship.top
+  sni: xship.top
+  skip-cert-verify: true
+- type: vmess
+  name: 🇺🇸 机场推荐:dafei.de 美国 89_IPV4
+  server: 188.114.99.137
+  port: 443
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  cipher: auto
+  alterId: 0
+  tls: true
+  servername: guanwang.awsno.com
+  sni: guanwang.awsno.com
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: guanwang.awsno.com
+- type: vmess
+  name: 🇺🇸_US_美国_IPV4 (5)
+  server: 104.18.42.163
+  port: 443
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  cipher: auto
+  alterId: 0
+  tls: true
+  servername: guanwang.awsno.com
+  sni: guanwang.awsno.com
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: guanwang.awsno.com
+- type: vmess
+  name: '@DeltaKroneckerGithub_3021_IPV4'
+  server: 172.64.145.93
+  port: 443
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  cipher: auto
+  alterId: 0
+  tls: true
+  servername: guanwang.awsno.com
+  sni: guanwang.awsno.com
+  network: ws
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: guanwang.awsno.com
+- type: vmess
+  name: 🇺🇸 机场推荐:dafei.de 美国 15_IPV4
+  server: 172.67.190.164
+  port: 443
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  cipher: auto
+  alterId: 0
+  tls: true
+  servername: guanwang.awsno.com
+  sni: guanwang.awsno.com
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: guanwang.awsno.com
+- type: ss
+  name: 🇮🇹_IT_意大利_IPV4
+  server: 202.50.253.27
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  tls: false
+  skip-cert-verify: false
+- type: ss
+  name: 🇮🇹_IT_意大利_IPV4 (2)
+  server: 202.50.253.90
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  tls: false
+  skip-cert-verify: false
+- type: ss
+  name: 🇮🇹_IT_意大利_IPV4 (3)
+  server: 202.50.253.45
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  tls: false
+  skip-cert-verify: false
+- type: ss
+  name: 🇮🇹_IT_意大利_IPV4 (4)
+  server: 202.50.253.99
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  tls: false
+  skip-cert-verify: false
 - type: anytls
   name: 🇹🇼_TW_台湾_IPV4_2
   server: a54ge.df6h451rh.xin
@@ -126,75 +267,6 @@ proxies:
   sni: images.ctfassets.net
   skip-cert-verify: true
   client-fingerprint: chrome
-- type: trojan
-  name: 🇸🇬_SG_新加坡_IPV4_2
-  server: 77.93.89.2
-  port: 443
-  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  tls: true
-  servername: bgsg1.hikigo.com
-  sni: bgsg1.hikigo.com
-  skip-cert-verify: true
-- type: vless
-  name: 🇬🇧_GB_英国_IPV4_2
-  server: 167.99.203.0
-  port: 443
-  uuid: 40992c2a-513e-4837-9594-23411fd42afd
-  tls: false
-  skip-cert-verify: false
-  network: http
-  http-opts:
-    headers:
-      Host:
-      - fast.com
-- type: trojan
-  name: 🇸🇬_SG_新加坡_IPV4 (2)_2
-  server: bgsg1.hikigo.com
-  port: 443
-  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  tls: true
-  servername: bgsg1.hikigo.com
-  sni: bgsg1.hikigo.com
-  skip-cert-verify: true
-- type: vmess
-  name: '@DeltaKroneckerGithub_3774_IPV4_2'
-  server: 172.67.187.145
-  port: 80
-  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
-  cipher: auto
-  alterId: 0
-  tls: false
-  servername: vmess.lbw666.dpdns.org
-  sni: vmess.lbw666.dpdns.org
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: vmess.lbw666.dpdns.org
-- type: vmess
-  name: '@DeltaKroneckerGithub_3499_IPV4_2'
-  server: 104.18.0.1
-  port: 8443
-  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
-  cipher: auto
-  alterId: 0
-  tls: true
-  servername: v2ray1.dozapp.xyz
-  sni: v2ray1.dozapp.xyz
-  network: ws
-  ws-opts:
-    path: /lMnsZUN4/
-    headers:
-      Host: v2ray1.dozapp.xyz
-- type: anytls
-  name: 🇹🇼_TW_台湾_IPV4 (2)_2
-  server: rtifgjdr.df6h451rh.xin
-  port: 443
-  password: 2902c46c8493
-  tls: true
-  servername: docs.microsoft.com
-  sni: docs.microsoft.com
-  skip-cert-verify: true
 - type: anytls
   name: 🇭🇰_HK_香港_IPV4 (2)_2
   server: ibsdsf.df6h451rh.xin
@@ -204,15 +276,225 @@ proxies:
   servername: docs.microsoft.com
   sni: docs.microsoft.com
   skip-cert-verify: true
-- type: anytls
-  name: 🇹🇼_TW_台湾->🇯🇵_JP_日本_IPV4_2
-  server: im.frnhk.xyz
-  port: 443
-  password: e2413369-16de-4c90-97c5-b39b8d6b71cd
+- type: hysteria
+  name: 🇺🇸_US_美国_IPV4_2
+  server: 137.175.82.41
+  port: 20022
+  password: dongtaiwang.com
   tls: true
-  servername: im.frnhk.xyz
-  sni: im.frnhk.xyz
+  servername: bing.com
+  sni: bing.com
   skip-cert-verify: true
+  alpn:
+  - h3
+  up: '11'
+  down: '55'
+  auth-str: dongtaiwang.com
+- type: hysteria
+  name: 🇺🇸_US_美国_IPV4 (2)_2
+  server: 38.6.222.132
+  port: 11008
+  password: dongtaiwang.com
+  tls: true
+  servername: bing.com
+  sni: bing.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  up: '11'
+  down: '55'
+  auth-str: dongtaiwang.com
+- type: hysteria
+  name: 🇺🇸_US_美国_IPV4 (3)_2
+  server: 38.6.222.131
+  port: 11008
+  password: dongtaiwang.com
+  tls: true
+  servername: bing.com
+  sni: bing.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  up: '11'
+  down: '55'
+  auth-str: dongtaiwang.com
+- type: ss
+  name: 🇩🇪_DE_德国_IPV4_2
+  server: 47.254.128.109
+  port: 443
+  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
+  cipher: 2022-blake3-chacha20-poly1305
+  tls: false
+  skip-cert-verify: false
+- type: vmess
+  name: 🇺🇸 机场推荐:dafei.de 美国 26_IPV4_2
+  server: www.shopify.com
+  port: 443
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  cipher: auto
+  alterId: 0
+  tls: true
+  servername: guanwang.awsno.com
+  sni: guanwang.awsno.com
+  network: ws
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: guanwang.awsno.com
+- type: vless
+  name: 🇯🇵_JP_日本_IPV4_2
+  server: 149.28.29.156
+  port: 443
+  uuid: aa1a9052-720f-4bb0-92be-21b6baf9f386
+  tls: true
+  servername: itunes.apple.com
+  sni: itunes.apple.com
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: "qgCGmxD1lyAEIGZVEk4buAMGcvGvHLl9wGxPQlHCYX0"
+    short-id: "e535df57"
+  network: ws
+  ws-opts:
+    path: /ws
+    headers:
+      Host: itunes.apple.com
+- type: hysteria
+  name: 🇫🇷_FR_法国_IPV4_2
+  server: 62.210.124.132
+  port: 24667
+  password: dongtaiwang.com
+  tls: true
+  servername: bing.com
+  sni: bing.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  up: '11'
+  down: '55'
+  auth-str: dongtaiwang.com
+- type: vless
+  name: 🇸🇬_SG_新加坡_IPV4_2
+  server: 139.180.221.53
+  port: 443
+  uuid: 2b30d0df-6ebe-4aed-9bad-b7c554e35e1d
+  tls: true
+  servername: itunes.apple.com
+  sni: itunes.apple.com
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: "plfXwkb-ewI6iibJBTRmPnf8eqPId1BfdArMIm3_mB4"
+    short-id: "2f6f6f87"
+  network: ws
+  ws-opts:
+    path: /ws
+    headers:
+      Host: itunes.apple.com
+- type: hysteria2
+  name: 🇺🇸_US_美国_IPV4 (4)_2
+  server: starlink-ft.251313.xyz
+  port: 443
+  password: https://xship.2fa.cat
+  tls: true
+  servername: xship.top
+  sni: xship.top
+  skip-cert-verify: true
+- type: vmess
+  name: 🇺🇸 机场推荐:dafei.de 美国 89_IPV4_2
+  server: 188.114.99.137
+  port: 443
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  cipher: auto
+  alterId: 0
+  tls: true
+  servername: guanwang.awsno.com
+  sni: guanwang.awsno.com
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: guanwang.awsno.com
+- type: vmess
+  name: 🇺🇸_US_美国_IPV4 (5)_2
+  server: 104.18.42.163
+  port: 443
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  cipher: auto
+  alterId: 0
+  tls: true
+  servername: guanwang.awsno.com
+  sni: guanwang.awsno.com
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: guanwang.awsno.com
+- type: vmess
+  name: '@DeltaKroneckerGithub_3021_IPV4_2'
+  server: 172.64.145.93
+  port: 443
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  cipher: auto
+  alterId: 0
+  tls: true
+  servername: guanwang.awsno.com
+  sni: guanwang.awsno.com
+  network: ws
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: guanwang.awsno.com
+- type: vmess
+  name: 🇺🇸 机场推荐:dafei.de 美国 15_IPV4_2
+  server: 172.67.190.164
+  port: 443
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  cipher: auto
+  alterId: 0
+  tls: true
+  servername: guanwang.awsno.com
+  sni: guanwang.awsno.com
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: guanwang.awsno.com
+- type: ss
+  name: 🇮🇹_IT_意大利_IPV4_2
+  server: 202.50.253.27
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  tls: false
+  skip-cert-verify: false
+- type: ss
+  name: 🇮🇹_IT_意大利_IPV4 (2)_2
+  server: 202.50.253.90
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  tls: false
+  skip-cert-verify: false
+- type: ss
+  name: 🇮🇹_IT_意大利_IPV4 (3)_2
+  server: 202.50.253.45
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  tls: false
+  skip-cert-verify: false
+- type: ss
+  name: 🇮🇹_IT_意大利_IPV4 (4)_2
+  server: 202.50.253.99
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  tls: false
+  skip-cert-verify: false
 - type: anytls
   name: 🇹🇼_TW_台湾_IPV4_3
   server: a54ge.df6h451rh.xin
@@ -233,75 +515,6 @@ proxies:
   sni: images.ctfassets.net
   skip-cert-verify: true
   client-fingerprint: chrome
-- type: trojan
-  name: 🇸🇬_SG_新加坡_IPV4_3
-  server: 77.93.89.2
-  port: 443
-  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  tls: true
-  servername: bgsg1.hikigo.com
-  sni: bgsg1.hikigo.com
-  skip-cert-verify: true
-- type: vless
-  name: 🇬🇧_GB_英国_IPV4_3
-  server: 167.99.203.0
-  port: 443
-  uuid: 40992c2a-513e-4837-9594-23411fd42afd
-  tls: false
-  skip-cert-verify: false
-  network: http
-  http-opts:
-    headers:
-      Host:
-      - fast.com
-- type: trojan
-  name: 🇸🇬_SG_新加坡_IPV4 (2)_3
-  server: bgsg1.hikigo.com
-  port: 443
-  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  tls: true
-  servername: bgsg1.hikigo.com
-  sni: bgsg1.hikigo.com
-  skip-cert-verify: true
-- type: vmess
-  name: '@DeltaKroneckerGithub_3774_IPV4_3'
-  server: 172.67.187.145
-  port: 80
-  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
-  cipher: auto
-  alterId: 0
-  tls: false
-  servername: vmess.lbw666.dpdns.org
-  sni: vmess.lbw666.dpdns.org
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: vmess.lbw666.dpdns.org
-- type: vmess
-  name: '@DeltaKroneckerGithub_3499_IPV4_3'
-  server: 104.18.0.1
-  port: 8443
-  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
-  cipher: auto
-  alterId: 0
-  tls: true
-  servername: v2ray1.dozapp.xyz
-  sni: v2ray1.dozapp.xyz
-  network: ws
-  ws-opts:
-    path: /lMnsZUN4/
-    headers:
-      Host: v2ray1.dozapp.xyz
-- type: anytls
-  name: 🇹🇼_TW_台湾_IPV4 (2)_3
-  server: rtifgjdr.df6h451rh.xin
-  port: 443
-  password: 2902c46c8493
-  tls: true
-  servername: docs.microsoft.com
-  sni: docs.microsoft.com
-  skip-cert-verify: true
 - type: anytls
   name: 🇭🇰_HK_香港_IPV4 (2)_3
   server: ibsdsf.df6h451rh.xin
@@ -311,12 +524,222 @@ proxies:
   servername: docs.microsoft.com
   sni: docs.microsoft.com
   skip-cert-verify: true
-- type: anytls
-  name: 🇹🇼_TW_台湾->🇯🇵_JP_日本_IPV4_3
-  server: im.frnhk.xyz
-  port: 443
-  password: e2413369-16de-4c90-97c5-b39b8d6b71cd
+- type: hysteria
+  name: 🇺🇸_US_美国_IPV4_3
+  server: 137.175.82.41
+  port: 20022
+  password: dongtaiwang.com
   tls: true
-  servername: im.frnhk.xyz
-  sni: im.frnhk.xyz
+  servername: bing.com
+  sni: bing.com
   skip-cert-verify: true
+  alpn:
+  - h3
+  up: '11'
+  down: '55'
+  auth-str: dongtaiwang.com
+- type: hysteria
+  name: 🇺🇸_US_美国_IPV4 (2)_3
+  server: 38.6.222.132
+  port: 11008
+  password: dongtaiwang.com
+  tls: true
+  servername: bing.com
+  sni: bing.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  up: '11'
+  down: '55'
+  auth-str: dongtaiwang.com
+- type: hysteria
+  name: 🇺🇸_US_美国_IPV4 (3)_3
+  server: 38.6.222.131
+  port: 11008
+  password: dongtaiwang.com
+  tls: true
+  servername: bing.com
+  sni: bing.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  up: '11'
+  down: '55'
+  auth-str: dongtaiwang.com
+- type: ss
+  name: 🇩🇪_DE_德国_IPV4_3
+  server: 47.254.128.109
+  port: 443
+  password: 8yO3ANWefuuGs1lRKXECQA1FEhxlWFV2ppQMcBaZo5Y=
+  cipher: 2022-blake3-chacha20-poly1305
+  tls: false
+  skip-cert-verify: false
+- type: vmess
+  name: 🇺🇸 机场推荐:dafei.de 美国 26_IPV4_3
+  server: www.shopify.com
+  port: 443
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  cipher: auto
+  alterId: 0
+  tls: true
+  servername: guanwang.awsno.com
+  sni: guanwang.awsno.com
+  network: ws
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: guanwang.awsno.com
+- type: vless
+  name: 🇯🇵_JP_日本_IPV4_3
+  server: 149.28.29.156
+  port: 443
+  uuid: aa1a9052-720f-4bb0-92be-21b6baf9f386
+  tls: true
+  servername: itunes.apple.com
+  sni: itunes.apple.com
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: "qgCGmxD1lyAEIGZVEk4buAMGcvGvHLl9wGxPQlHCYX0"
+    short-id: "e535df57"
+  network: ws
+  ws-opts:
+    path: /ws
+    headers:
+      Host: itunes.apple.com
+- type: hysteria
+  name: 🇫🇷_FR_法国_IPV4_3
+  server: 62.210.124.132
+  port: 24667
+  password: dongtaiwang.com
+  tls: true
+  servername: bing.com
+  sni: bing.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  up: '11'
+  down: '55'
+  auth-str: dongtaiwang.com
+- type: vless
+  name: 🇸🇬_SG_新加坡_IPV4_3
+  server: 139.180.221.53
+  port: 443
+  uuid: 2b30d0df-6ebe-4aed-9bad-b7c554e35e1d
+  tls: true
+  servername: itunes.apple.com
+  sni: itunes.apple.com
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: "plfXwkb-ewI6iibJBTRmPnf8eqPId1BfdArMIm3_mB4"
+    short-id: "2f6f6f87"
+  network: ws
+  ws-opts:
+    path: /ws
+    headers:
+      Host: itunes.apple.com
+- type: hysteria2
+  name: 🇺🇸_US_美国_IPV4 (4)_3
+  server: starlink-ft.251313.xyz
+  port: 443
+  password: https://xship.2fa.cat
+  tls: true
+  servername: xship.top
+  sni: xship.top
+  skip-cert-verify: true
+- type: vmess
+  name: 🇺🇸 机场推荐:dafei.de 美国 89_IPV4_3
+  server: 188.114.99.137
+  port: 443
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  cipher: auto
+  alterId: 0
+  tls: true
+  servername: guanwang.awsno.com
+  sni: guanwang.awsno.com
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: guanwang.awsno.com
+- type: vmess
+  name: 🇺🇸_US_美国_IPV4 (5)_3
+  server: 104.18.42.163
+  port: 443
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  cipher: auto
+  alterId: 0
+  tls: true
+  servername: guanwang.awsno.com
+  sni: guanwang.awsno.com
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: guanwang.awsno.com
+- type: vmess
+  name: '@DeltaKroneckerGithub_3021_IPV4_3'
+  server: 172.64.145.93
+  port: 443
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  cipher: auto
+  alterId: 0
+  tls: true
+  servername: guanwang.awsno.com
+  sni: guanwang.awsno.com
+  network: ws
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: guanwang.awsno.com
+- type: vmess
+  name: 🇺🇸 机场推荐:dafei.de 美国 15_IPV4_3
+  server: 172.67.190.164
+  port: 443
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  cipher: auto
+  alterId: 0
+  tls: true
+  servername: guanwang.awsno.com
+  sni: guanwang.awsno.com
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: guanwang.awsno.com
+- type: ss
+  name: 🇮🇹_IT_意大利_IPV4_3
+  server: 202.50.253.27
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  tls: false
+  skip-cert-verify: false
+- type: ss
+  name: 🇮🇹_IT_意大利_IPV4 (2)_3
+  server: 202.50.253.90
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  tls: false
+  skip-cert-verify: false
+- type: ss
+  name: 🇮🇹_IT_意大利_IPV4 (3)_3
+  server: 202.50.253.45
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  tls: false
+  skip-cert-verify: false
+- type: ss
+  name: 🇮🇹_IT_意大利_IPV4 (4)_3
+  server: 202.50.253.99
+  port: 19999
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  cipher: aes-256-gcm
+  tls: false
+  skip-cert-verify: false
